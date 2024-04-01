@@ -1,0 +1,28 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
+    "time": 1711797549266,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/eLhe2xZzut"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
+    "time": 1711750897885,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/KSMHBHpTEP"
+    }
+  }
+]
