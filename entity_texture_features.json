@@ -1,5 +1,5 @@
 {
-  "illegalPathSupportMode": "None",
+  "illegalPathSupportMode": "Entity",
   "enableCustomTextures": true,
   "enableCustomBlockEntities": true,
   "textureUpdateFrequency_V2": "Fast",
@@ -15,8 +15,8 @@
   "emissiveRenderMode": "DULL",
   "alwaysCheckVanillaEmissiveSuffix": true,
   "enableArmorAndTrims": true,
-  "skinFeaturesEnabled": true,
-  "skinFeaturesEnableTransparency": true,
+  "skinFeaturesEnabled": false,
+  "skinFeaturesEnableTransparency": false,
   "skinFeaturesEnableFullTransparency": false,
   "tryETFTransparencyForAllSkins": false,
   "enableEnemyTeamPlayersSkinFeatures": true,
@@ -27,7 +27,7 @@
   "debugLoggingMode": "None",
   "logTextureDataInitialization": false,
   "ignoredConfigs2": [],
-  "hideConfigButton": false,
+  "hideConfigButton": true,
   "disableVanillaDirectoryVariantTextures": false,
   "use3DSkinLayerPatch": true,
   "enableFullBodyWardenTextures": true

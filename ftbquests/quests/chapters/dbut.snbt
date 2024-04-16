@@ -1,0 +1,45 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "dbut"
+	group: "0C00BA9B9554798A"
+	id: "1BCF34773E9A3A3D"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["dzddzzdzddzz"]
+			id: "607795FC06585ABA"
+			tasks: [{
+				id: "4328005A5774C3C3"
+				stage: "Vapeur"
+				type: "gamestage"
+			}]
+			title: "dzdzd"
+			x: -8.5d
+			y: -5.5d
+		}
+		{
+			id: "75ABA095B644FB40"
+			progression_mode: "linear"
+			require_sequential_tasks: true
+			tasks: [{
+				action: "catch"
+				entity: "cobblemon:geodude"
+				form: "choice_any"
+				gender: "choice_any"
+				id: "36988306E945603C"
+				pokemon_type: "choice_any"
+				region: "choice_any"
+				shiny: false
+				title: "Cette racaille"
+				type: "cobblemon_tasks:cobblemon_task"
+				value: 1L
+			}]
+			x: -6.5d
+			y: -5.5d
+		}
+	]
+	require_sequential_tasks: true
+	title: "Début"
+}

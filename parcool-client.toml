@@ -45,7 +45,7 @@
 	#Enable custom animations
 	enable_animation = true
 	#Enable custom animation of falling
-	enable_falling_animation = true
+	enable_falling_animation = false
 	#Enable first-person-view animations
 	enable_fov_animation = true
 	#Enable rotation of camera by Dodge
@@ -70,7 +70,7 @@
 		enable_ClingToCliffAnimator = true
 		enable_CrawlAnimator = true
 		enable_DiveAnimationHostAnimator = true
-		enable_DiveIntoWaterAnimator = true
+		enable_DiveIntoWaterAnimator = false
 		enable_DodgeAnimator = true
 		enable_FastRunningAnimator = true
 		enable_FastSwimAnimator = true

@@ -1,4 +1,4 @@
-ignoreUpdate:0
+ignoreUpdate:177
 updateNotification:true
 allowInternetAccess:true
 differentiateByServerAddress:true
@@ -38,7 +38,7 @@ displayStainedGlass:true
 caveModeDepth:30
 caveModeStart:2147483647
 autoCaveMode:-1
-legibleCaveMaps:false
+legibleCaveMaps:true
 displayCaveModeStart:true
 caveModeToggleTimer:1000
 defaultCaveModeType:2
@@ -99,4 +99,4 @@ globalVersion:1
 [XP] null OW Dim Dir:true
 [XP] Data Dir Mode:0
 [XP] Nether Cave Fix:true
-[XP] Disable Xaero Internet Access:false
+[XP] Disable Xaero Internet Access:true

@@ -5,6 +5,32 @@
       "name": "Daft_Hunk",
       "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
     },
+    "time": 1712244195200,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/LlaAxhKVus"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
+    "time": 1712244134808,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/2eDU31UZKl"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
     "time": 1711797549266,
     "type": "Profiler",
     "data": {

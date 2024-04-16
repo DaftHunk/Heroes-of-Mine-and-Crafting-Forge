@@ -1,0 +1,7 @@
+{
+	chapter_groups: [
+		{ id: "54B49986477CA0C9", title: "Age du fer" }
+		{ id: "0C00BA9B9554798A", title: "Age de la vapeur" }
+		{ id: "793641619484B8EE", title: "Age de l'électricité" }
+	]
+}

@@ -1,0 +1,153 @@
+{
+  "team": [
+    {
+      "species": "cobblemon:banette",
+      "gender": "FEMALE",
+      "level": 1,
+      "nature": "cobblemon:sassy",
+      "ability": "insomnia",
+      "moveset": [
+        "spite",
+        "screech",
+        "nightshade",
+        "knockoff"
+      ],
+      "ivs": {
+        "hp": 25,
+        "attack": 10,
+        "defence": 9,
+        "special_attack": 10,
+        "special_defence": 12,
+        "speed": 8
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air"
+    },
+    {
+      "species": "cobblemon:altaria",
+      "gender": "FEMALE",
+      "level": 1,
+      "nature": "cobblemon:lax",
+      "ability": "naturalcure",
+      "moveset": [
+        "pluck",
+        "peck",
+        "mist",
+        "growl"
+      ],
+      "ivs": {
+        "hp": 10,
+        "attack": 9,
+        "defence": 2,
+        "special_attack": 23,
+        "special_defence": 5,
+        "speed": 14
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air"
+    },
+    {
+      "species": "cobblemon:celebi",
+      "gender": "GENDERLESS",
+      "level": 1,
+      "nature": "cobblemon:careful",
+      "ability": "naturalcure",
+      "moveset": [
+        "recover",
+        "leechseed",
+        "healbell",
+        "confusion"
+      ],
+      "ivs": {
+        "hp": 14,
+        "attack": 18,
+        "defence": 29,
+        "special_attack": 5,
+        "special_defence": 25,
+        "speed": 18
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air"
+    },
+    {
+      "species": "cobblemon:cramorant",
+      "gender": "FEMALE",
+      "level": 1,
+      "nature": "cobblemon:brave",
+      "ability": "gulpmissile",
+      "moveset": [
+        "swallow",
+        "stockpile",
+        "spitup",
+        "peck"
+      ],
+      "ivs": {
+        "hp": 20,
+        "attack": 2,
+        "defence": 5,
+        "special_attack": 5,
+        "special_defence": 11,
+        "speed": 15
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air"
+    },
+    {
+      "species": "cobblemon:chiyu",
+      "gender": "GENDERLESS",
+      "level": 1,
+      "nature": "cobblemon:hasty",
+      "ability": "beadsofruin",
+      "moveset": [
+        "spite",
+        "meanlook",
+        "ember"
+      ],
+      "ivs": {
+        "hp": 28,
+        "attack": 1,
+        "defence": 1,
+        "special_attack": 18,
+        "special_defence": 13,
+        "speed": 4
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air"
+    },
+    {
+      "species": "cobblemon:dragapult",
+      "gender": "FEMALE",
+      "level": 1,
+      "nature": "cobblemon:brave",
+      "ability": "infiltrator",
+      "moveset": [
+        "suckerpunch",
+        "quickattack",
+        "infestation",
+        "dragonbreath"
+      ],
+      "ivs": {
+        "hp": 21,
+        "attack": 24,
+        "defence": 9,
+        "special_attack": 8,
+        "special_defence": 18,
+        "speed": 1
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air"
+    }
+  ],
+  "winCommand": "",
+  "lossCommand": "",
+  "canOnlyBeatOnce": false,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": []
+}

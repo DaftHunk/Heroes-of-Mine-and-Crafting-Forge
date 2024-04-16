@@ -51,8 +51,26 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
-  "immersiveengineering": {
-    "multiblock_icon": true
+  "jadeaddons": {
+    "equipment_requirement": ""
+  },
+  "workshop_for_handsome_adventurer": {
+    "jade_plugin2": true,
+    "jade_plugin3": true,
+    "jade_plugin1": true
+  },
+  "cobblemonintegrations": {
+    "healer": true,
+    "apricorn": true,
+    "pokemon_entity": true,
+    "berry_bush": true
+  },
+  "jadecolonies": {
+    "colony.citizens": true,
+    "colony.pack": true,
+    "colony.visitor_cost": true,
+    "colony.colonist": true,
+    "domum.materials": true
   },
   "supplementaries": {
     "hat_stand": true
@@ -71,5 +89,19 @@
     "fruit": true,
     "rooty": true,
     "branch": true
+  },
+  "create": {
+    "filter": true,
+    "backtank_capacity": true,
+    "goggles.requires_goggles": true,
+    "goggles": false,
+    "blaze_burner": true,
+    "exact_block": true,
+    "crafting_blueprint": true,
+    "goggles.detailed": false,
+    "placard": true
+  },
+  "corpse": {
+    "corpse": true
   }
 }

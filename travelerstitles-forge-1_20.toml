@@ -56,7 +56,7 @@
 		# Whether or not the biome text should be centered on the screen.
 		# The Text X Offset and Text Y Offset options are relative to the center of the screen if this is enabled.
 		# Default: true
-		"Center Title" = false
+		"Center Title" = true
 		# Traveler's Titles tracks a list of biomes the player most recently visited in order to
 		# prevent the player from being spammed with titles when they move between the same few biomes.
 		# This option determines whether or not that list should be cleared every time
