@@ -1,0 +1,33 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "apprentissage"
+	group: "5DF761E30124DB34"
+	icon: {
+		Count: 1b
+		id: "patchouli:guide_book"
+		tag: {
+			"patchouli:book": "cobblepedia:cobblepedia"
+		}
+	}
+	id: "69B8825E204032EE"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "255209775CB6CD0F"
+		tasks: [{
+			id: "019CBD03B6D3FD4F"
+			item: {
+				Count: 1b
+				id: "patchouli:guide_book"
+				tag: {
+					"patchouli:book": "cobblepedia:cobblepedia"
+				}
+			}
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Les infos du professeur chiant"
+}

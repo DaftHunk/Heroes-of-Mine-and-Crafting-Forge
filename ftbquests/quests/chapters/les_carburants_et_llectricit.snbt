@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_carburants_et_llectricit"
+	group: "6A4CFCAED0D5F76A"
+	icon: "createdieselgenerators:diesel_engine"
+	id: "4862020C1076D560"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+	title: "Les carburants et l'électricité"
+}

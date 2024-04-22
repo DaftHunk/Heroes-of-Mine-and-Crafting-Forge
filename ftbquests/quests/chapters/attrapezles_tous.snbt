@@ -1,0 +1,50 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "attrapezles_tous"
+	group: "5DF761E30124DB34"
+	icon: "cobblemon:poke_ball"
+	id: "3DF360E492898A0E"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "32706DD4214502BD"
+			tasks: [{
+				action: "obtain"
+				entity: "cobblemon:geodude"
+				form: "choice_any"
+				gender: "choice_any"
+				icon: "cobblemon:poke_ball"
+				id: "62A9C49D9962E017"
+				pokemon_type: "choice_any"
+				region: "choice_any"
+				shiny: false
+				type: "cobblemon_tasks:cobblemon_task"
+				value: 1L
+			}]
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			id: "7DB9E6759D6CECB2"
+			tasks: [{
+				action: "obtain"
+				entity: "cobblemon_quests:choice_any"
+				form: "choice_any"
+				gender: "choice_any"
+				icon: "cobblemon:master_ball"
+				id: "641902F0CB1EF298"
+				pokemon_type: "choice_any"
+				region: "choice_any"
+				shiny: false
+				title: "Attrapez-les tous !"
+				type: "cobblemon_tasks:cobblemon_task"
+				value: 1L
+			}]
+			x: -1.5d
+			y: -0.5d
+		}
+	]
+	title: "Attrapez-les tous !"
+}

@@ -9,7 +9,7 @@ followYaw = 45
 #Does camera should rotate freely during elytra flight
 freeCameraDuringElytraFlight = false
 #Completely remove third-person front view
-skipThirdPersonFrontView = false
+skipThirdPersonFrontView = true
 #How fast player changes movement direction in third-person
 #Range: 10 ~ 100
 playerRotationSpeed = 50

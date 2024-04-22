@@ -1,5 +1,5 @@
 {
-  "maxPhysicsObjects": 5079,
+  "maxPhysicsObjects": 8616,
   "particleLifetimeVines": 4.0,
   "particleLifetimeItems": 3.0,
   "particleLifetimeParticles": 0.1,
@@ -94,7 +94,7 @@
   "windVolume": 1.0,
   "weatherRainParticleAmount": 5,
   "weatherThunderParticleAmount": 2,
-  "oceanPhysics": true,
+  "oceanPhysics": false,
   "oceanAdjustHitbox": false,
   "oceanDetail": 1.0,
   "oceanWaveHeightMultiplier": 0.5,
@@ -140,6 +140,10 @@
     "minecraft:the_end",
     0.0,
     -9.81,
+    0.0,
+    "deeperdarker:otherside",
+    0.0,
+    -9.81,
     0.0
   ],
   "customizedBuoyancies": [
@@ -152,6 +156,10 @@
     2.0,
     0.0,
     "minecraft:the_end",
+    0.0,
+    2.0,
+    0.0,
+    "deeperdarker:otherside",
     0.0,
     2.0,
     0.0

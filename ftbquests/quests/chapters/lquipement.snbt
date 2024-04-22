@@ -1,0 +1,57 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lquipement"
+	group: "20D56E89F2CC58DE"
+	icon: "sophisticatedbackpacks:copper_backpack"
+	id: "3924DEBE438449A6"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "2B84DEDAE97D141A"
+			tasks: [{
+				id: "146D6A31DFE91063"
+				item: "sophisticatedbackpacks:copper_backpack"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "539D741F043DBF62"
+			tasks: [{
+				id: "05CD3540189D8C9F"
+				item: "comforts:sleeping_bag_white"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["36C80050F1FAC737"]
+			description: ["La &6nature's compass&r est vraiment utile, car elle vous permet de localiser n'importe quelle biome du monde, dans n'importe quelle dimension."]
+			id: "19B21BCDEC611C29"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "0AF218098B83D557"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Le meilleur moyen de trouver des biomes"
+			tasks: [{
+				id: "5961BA3997E85000"
+				item: {
+					Count: 1b
+					id: "naturescompass:naturescompass"
+					tag: { }
+				}
+				only_from_crafting: false
+				type: "item"
+			}]
+			x: 3.5d
+			y: 1.0d
+		}
+	]
+	title: "Bien s'équiper"
+}

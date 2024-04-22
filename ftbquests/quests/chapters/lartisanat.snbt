@@ -1,0 +1,42 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lartisanat"
+	group: "66973B46BDC2E762"
+	icon: "minecraft:anvil"
+	id: "24C498653C74CA36"
+	order_index: 1
+	quest_links: [ ]
+	quests: [{
+		icon: "storagedrawers:oak_full_drawers_4"
+		id: "1AC0EC7056C0DCD4"
+		rewards: [
+			{
+				id: "6E93307BF19A81B1"
+				type: "xp"
+				xp: 10
+			}
+			{
+				exclude_from_claim_all: true
+				id: "14A0D6785DB769FE"
+				type: "choice"
+			}
+		]
+		subtitle: "Craft any drawer"
+		tasks: [{
+			id: "4496EA8CA2B67871"
+			item: {
+				Count: 1b
+				id: "itemfilters:tag"
+				tag: {
+					value: "storagedrawers:drawers"
+				}
+			}
+			title: "Any #storagedrawers:drawers"
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "L'artisanat"
+}

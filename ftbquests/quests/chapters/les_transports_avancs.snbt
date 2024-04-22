@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_transports_avancs"
+	group: "6A4CFCAED0D5F76A"
+	icon: "man_of_many_planes:scarlet_biplane"
+	id: "11BE32BB82FB511B"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+	title: "Les transports avancés"
+}

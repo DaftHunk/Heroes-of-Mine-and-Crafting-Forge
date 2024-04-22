@@ -1,0 +1,22 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "crer_une_faction"
+	group: "447227F2EC4DD09E"
+	icon: "minecraft:white_banner"
+	id: "7BBA9167AE26B9B5"
+	order_index: 2
+	quest_links: [ ]
+	quests: [{
+		icon: "minecraft:white_banner"
+		id: "17729AD2411DF26A"
+		tasks: [{
+			id: "79DE1A4CF084EED0"
+			title: "Créer ou rejoindre une faction"
+			type: "checkmark"
+		}]
+		x: -1.5d
+		y: 0.0d
+	}]
+	title: "Créer une faction"
+}

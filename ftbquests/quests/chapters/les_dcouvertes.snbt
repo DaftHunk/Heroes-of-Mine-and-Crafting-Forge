@@ -1,0 +1,31 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_dcouvertes"
+	group: "20D56E89F2CC58DE"
+	icon: {
+		Count: 1b
+		id: "minecraft:brush"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "0C1AE7072CCF5A36"
+	order_index: 1
+	quest_links: [ ]
+	quests: [{
+		dependencies: ["19B21BCDEC611C29"]
+		id: "331CA30DFDF11D96"
+		progression_mode: "flexible"
+		tasks: [{
+			advancement: "minecraft:adventure/adventuring_time"
+			criterion: ""
+			id: "13402637638CEF44"
+			title: "Explore Every Biome"
+			type: "advancement"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Les découvertes"
+}
