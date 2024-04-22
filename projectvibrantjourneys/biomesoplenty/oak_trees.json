@@ -1,21 +1,5 @@
 [
   {
-    "biomeName": "biomesoplenty:prairie",
-    "chance": 10
-  },
-  {
-    "biomeName": "biomesoplenty:woodland",
-    "chance": 5
-  },
-  {
-    "biomeName": "biomesoplenty:old_growth_dead_forest",
-    "chance": 2
-  },
-  {
-    "biomeName": "biomesoplenty:mystic_grove",
-    "chance": 5
-  },
-  {
     "biomeName": "biomesoplenty:seasonal_forest",
     "chance": 10
   },
@@ -62,5 +46,21 @@
   {
     "biomeName": "biomesoplenty:dead_forest",
     "chance": 2
+  },
+  {
+    "biomeName": "biomesoplenty:prairie",
+    "chance": 10
+  },
+  {
+    "biomeName": "biomesoplenty:woodland",
+    "chance": 5
+  },
+  {
+    "biomeName": "biomesoplenty:old_growth_dead_forest",
+    "chance": 2
+  },
+  {
+    "biomeName": "biomesoplenty:mystic_grove",
+    "chance": 5
   }
 ]

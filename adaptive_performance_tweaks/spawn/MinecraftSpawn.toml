@@ -32,18 +32,18 @@
 	HostileMobsList = ["minecraft:chicken_jockey", "minecraft:creeper", "minecraft:ender_dragon", "minecraft:endermite", "minecraft:evoker", "minecraft:giant", "minecraft:husk", "minecraft:illusioner", "minecraft:phantom", "minecraft:pillager", "minecraft:ravager", "minecraft:ravager_jockey", "minecraft:shulker", "minecraft:silverfish", "minecraft:skeleton", "minecraft:skeleton_horseman", "minecraft:slime", "minecraft:stray", "minecraft:vex", "minecraft:vindicator", "minecraft:warden", "minecraft:witch", "minecraft:wither", "minecraft:zoglin", "minecraft:zombie", "minecraft:zombie_villager"]
 	#e.g. mostly fish
 	#Range: 1 ~ 64
-	MaxWaterPassiveMobsPerPlayer = 16
+	MaxWaterPassiveMobsPerPlayer = 8
 	#Range: 1 ~ 512
-	MaxWaterPassiveMobsPerWorld = 64
+	MaxWaterPassiveMobsPerWorld = 32
 	#Range: 1 ~ 1024
 	MaxWaterPassiveMobsPerServer = 320
 	#List of passive water Mobs to optimize
 	WaterPassiveMobsList = ["minecraft:axolotl", "minecraft:cod", "minecraft:pufferfish", "minecraft:salmon", "minecraft:tropical_fish"]
 	#e.g. squid, dolphin, ...
 	#Range: 1 ~ 64
-	MaxWaterNeutralMobsPerPlayer = 16
+	MaxWaterNeutralMobsPerPlayer = 6
 	#Range: 1 ~ 512
-	MaxWaterNeutralMobsPerWorld = 64
+	MaxWaterNeutralMobsPerWorld = 24
 	#Range: 1 ~ 1024
 	MaxWaterNeutralMobsPerServer = 320
 	#List of neutral water Mobs to optimize

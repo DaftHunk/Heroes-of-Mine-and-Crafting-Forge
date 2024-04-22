@@ -1,4 +1,8 @@
 
+[lectern]
+	#Improved lectern screen allowing to edit font of a book while on it
+	improved_screen = true
+
 [hanging_signs]
 	#Allows placing items on hanging signs
 	items_on_signs = true
@@ -27,16 +31,16 @@
 
 	#Map of potion ids to their inverse ids. Used for potion mixing
 	[cauldron.inverse_potions]
-		"minecraft:unluck" = "minecraft:luck"
 		"minecraft:speed" = "minecraft:slowness"
-		"minecraft:weakness" = "minecraft:strength"
-		"minecraft:luck" = "minecraft:unluck"
-		"minecraft:haste" = "minecraft:mining_fatigue"
-		"minecraft:instant_health" = "minecraft:instant_damage"
-		"minecraft:mining_fatigue" = "minecraft:haste"
-		"minecraft:strength" = "minecraft:weakness"
 		"minecraft:slowness" = "minecraft:speed"
+		"minecraft:strength" = "minecraft:weakness"
+		"minecraft:luck" = "minecraft:unluck"
+		"minecraft:unluck" = "minecraft:luck"
+		"minecraft:haste" = "minecraft:mining_fatigue"
 		"minecraft:instant_damage" = "minecraft:instant_health"
+		"minecraft:mining_fatigue" = "minecraft:haste"
+		"minecraft:weakness" = "minecraft:strength"
+		"minecraft:instant_health" = "minecraft:instant_damage"
 
 [tripwire_hook]
 	#Allows placing tools on tripwire hooks
@@ -97,8 +101,4 @@
 [lily_pad]
 	#Allows lilypads to have any block placed ontop
 	better_lilypads = true
-
-[lectern]
-	#Improved lectern screen allowing to edit font of a book while on it
-	improved_screen = true
 

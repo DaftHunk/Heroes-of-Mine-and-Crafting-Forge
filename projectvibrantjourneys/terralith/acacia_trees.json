@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "terralith:lavender_forest",
-    "chance": 3
-  },
-  {
     "biomeName": "terralith:amethyst_canyon",
     "chance": 15
   },
@@ -42,5 +38,9 @@
   {
     "biomeName": "terralith:skylands_summer",
     "chance": 10
+  },
+  {
+    "biomeName": "terralith:lavender_forest",
+    "chance": 3
   }
 ]

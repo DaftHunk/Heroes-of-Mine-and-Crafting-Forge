@@ -1,13 +1,5 @@
 [
   {
-    "biomeName": "byg:autumnal_forest",
-    "chance": 30
-  },
-  {
-    "biomeName": "byg:orchard",
-    "chance": 15
-  },
-  {
     "biomeName": "byg:allium_fields",
     "chance": 5
   },
@@ -42,5 +34,13 @@
   {
     "biomeName": "byg:coconino_meadow",
     "chance": 5
+  },
+  {
+    "biomeName": "byg:autumnal_forest",
+    "chance": 30
+  },
+  {
+    "biomeName": "byg:orchard",
+    "chance": 15
   }
 ]

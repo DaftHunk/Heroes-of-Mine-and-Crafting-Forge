@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "pioneer:windswept_cliffs",
-    "chance": 5
-  },
-  {
     "biomeName": "pioneer:overgrown_spires",
     "chance": 10
   },
@@ -22,5 +18,9 @@
   {
     "biomeName": "pioneer:aspen_grove",
     "chance": 10
+  },
+  {
+    "biomeName": "pioneer:windswept_cliffs",
+    "chance": 5
   }
 ]

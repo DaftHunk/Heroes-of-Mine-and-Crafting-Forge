@@ -1,6 +1,6 @@
 {
   "eggMovesLearnable": false,
-  "tutorMovesLearnable": true,
+  "tutorMovesLearnable": false,
   "anyMoveAnyPokemon": false,
   "imprintableBlankTMs": true,
   "tmCooldownTicks": 100,

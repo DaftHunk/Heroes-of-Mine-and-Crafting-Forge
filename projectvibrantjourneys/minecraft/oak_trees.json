@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "minecraft:dark_forest",
-    "chance": 2
-  },
-  {
     "biomeName": "minecraft:forest",
     "chance": 20
   },
@@ -30,5 +26,9 @@
   {
     "biomeName": "minecraft:plains",
     "chance": 5
+  },
+  {
+    "biomeName": "minecraft:dark_forest",
+    "chance": 2
   }
 ]

@@ -1,18 +1,18 @@
 #Overrides all other config options for easy difficulty management
 #This value is changed by the in-game config. It does nothing otherwise.
 #Range: 0 ~ 4
-Difficulty = 4
+Difficulty = 2
 
 ["Details about how the player is affected by temperature"]
 	#Defines the minimum habitable temperature
 	#Range: -Infinity ~ Infinity
-	"Minimum Habitable Temperature" = 0.30952380952380953
+	"Minimum Habitable Temperature" = 0.42857142857142855
 	#Defines the maximum habitable temperature
 	#Range: -Infinity ~ Infinity
-	"Maximum Habitable Temperature" = 1.8571428571428572
+	"Maximum Habitable Temperature" = 1.619047619047619
 	#Rate at which the player's body temperature changes (default: 1.0 (100%))
 	#Range: 0.0 ~ Infinity
-	"Rate Multiplier" = 0.75
+	"Rate Multiplier" = 1.0
 	#Damage dealt to the player when they are too hot or too cold
 	#Range: 0.0 ~ Infinity
 	"Temperature Damage" = 2.0
@@ -27,7 +27,7 @@ Difficulty = 4
 
 ["Misc temperature-related things"]
 	#Sets whether damage scales with difficulty
-	"Damage Scaling" = false
+	"Damage Scaling" = true
 	#When set to true, players cannot sleep if they are cold or hot enough to die
 	"Prevent Sleep When in Danger" = true
 
