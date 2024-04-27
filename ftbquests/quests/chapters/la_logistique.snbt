@@ -269,12 +269,13 @@
 			}]
 			subtitle: "Un siège, pour vous asseoir, dans un train où on s'asseoit."
 			tasks: [{
+				icon: "create:red_seat"
 				id: "333CE6EF38272291"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "create:seats"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(create:seats)"
 					}
 				}
 				title: "Any #create:seats"
