@@ -101,6 +101,9 @@
     "goggles.detailed": false,
     "placard": true
   },
+  "camera": {
+    "image_frame": true
+  },
   "corpse": {
     "corpse": true
   },

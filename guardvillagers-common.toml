@@ -40,7 +40,7 @@
 	#Illagers In Raids Attack Animals?
 	"Illagers in raids attack animals?" = false
 	#This will make Illusioners get involved in raids
-	"Have Illusioners in raids?" = false
+	"Have Illusioners in raids?" = true
 
 ["mob ai in general"]
 	#Guards will attack all hostiles with this option, when set to false guards will only attack zombies and illagers.

@@ -10,7 +10,7 @@
 		# If markers should include an arrow under the profession-specific icon.
 		show_arrow = true
 		# If icons should show on minimaps. (Currently supports Xaero's Minimap, FTB Chunks, and JourneyMap).
-		show_on_minimap = true
+		show_on_minimap = false
 		# Which overlay graphic to use (0 = backpack, 1 = emerald, 2 = coin stack, 3 = bag, 4 = profession level, -1 = none).
 		#Range: -1 ~ 4
 		overlay_icon = 3
@@ -60,5 +60,5 @@
 
 	[client.compatibility_options]
 		# If enabled, will force fast render on when using shaders with Optifine (due to a bug in Optifine, this is required for markers to render properly with some shaders).
-		optifine_workaround = true
+		optifine_workaround = false
 

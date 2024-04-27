@@ -11,7 +11,7 @@
 #Config specific to the discord bot
 [botConfig]
 	#The token of the Discord Bot to use. This will be encrypted on first load. See https://sdlink.fdd-docs.com/initial-setup/ to find this
-	botToken = "EKwPmpegS4x4xawOuA5NKZJgZW9Rvx2j+u4pjVgYICs63dt0QpfZLUxiBP8gLdGz544olf+auUy4sn4QS5zcNDnnlYx6o2Ujsf2At6mUs6K5Vh7blGP69pJOwl5y2a9YopQebqVodNb+mSx57mTKrDjP9J+dsrifLH7V9Kky0GX0FU4UW/CV8w=="
+	botToken = "flfnuKnq2S93V5eeX8S3X/8pgnvWKURK6rEM646W3K2BzgDVhJpOm0blnHWqtVzTn2aV/rkTdrdeciQ4i4ENtV3hF2lG81VqGVw93XAI/NBBX3ONi4V6Lg=="
 	#How often the Bot Status will update on Discord (in Seconds). Set to 0 to disable
 	statusUpdateInterval = 30
 

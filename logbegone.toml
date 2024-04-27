@@ -1,0 +1,5 @@
+
+[logbegone]
+	phrases = ["Disconnecting VANILLA connection attempt", "Channels ", "not creating a ShipObject"]
+	regex = ["Disconnecting VANILLA connection attempt", "Channels ", ".*not creating a ShipObject"]
+
