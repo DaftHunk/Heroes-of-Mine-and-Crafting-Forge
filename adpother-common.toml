@@ -72,4 +72,7 @@ maxGasEntitiesInChunk = 10
 		ImmersiveVehicles = 1.0
 		#Enables / disables emissions from this source
 		CreateInWorldProcessing = true
+		#Rate of emissions from this source
+		#Range: 0.0 ~ 10.0
+		TrajansTanks = 1.0
 

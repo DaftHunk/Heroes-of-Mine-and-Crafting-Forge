@@ -12,10 +12,10 @@ Difficulty = 2
 	"Maximum Habitable Temperature" = 1.619047619047619
 	#Rate at which the player's body temperature changes (default: 1.0 (100%))
 	#Range: 0.0 ~ Infinity
-	"Rate Multiplier" = 1.0
+	"Rate Multiplier" = 0.5
 	#Damage dealt to the player when they are too hot or too cold
 	#Range: 0.0 ~ Infinity
-	"Temperature Damage" = 2.0
+	"Temperature Damage" = 1.0
 
 ["Item settings"]
 	#Allow fire resistance to block overheating damage
@@ -27,9 +27,9 @@ Difficulty = 2
 
 ["Misc temperature-related things"]
 	#Sets whether damage scales with difficulty
-	"Damage Scaling" = true
+	"Damage Scaling" = false
 	#When set to true, players cannot sleep if they are cold or hot enough to die
-	"Prevent Sleep When in Danger" = true
+	"Prevent Sleep When in Danger" = false
 
 ["Temperature Effects"]
 

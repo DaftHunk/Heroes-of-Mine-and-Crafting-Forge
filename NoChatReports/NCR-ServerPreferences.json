@@ -1,3 +1,5 @@
 {
-  "signingModes": {}
+  "signingModes": {
+    "149.202.65.187:25565": "ALWAYS"
+  }
 }

@@ -12,6 +12,6 @@
     "minecraft:zombie": 0.01
   },
   "forceMobsToPickUp": true,
-  "clickedHelp": false,
+  "clickedHelp": true,
   "version": 1
 }

@@ -6,7 +6,7 @@ features:
   # Stops the server from loading spawn chunks.
   disable-spawn-chunks: false
   # Prevents lagspikes caused by players moving into unloaded chunks.
-  prevent-moving-into-unloaded-chunks: false
+  prevent-moving-into-unloaded-chunks: true
   # The amount of ticks between auto-saves when /save-on is active.
   autosave-interval: 6000
   # The fraction that decides the chance of experience orbs being able to merge with each other. (1 = 100%, 40 = 2.5%)
@@ -18,7 +18,7 @@ features:
   item-merge-radius: 0.5
   lobotomize-villagers:
     # Makes villagers tick less often if they are stuck in a 1x1 space.
-    enabled: false
+    enabled: true
     # Decides the interval in between villager ticks when lobotomized.
     tick-interval: 20
 
@@ -26,7 +26,7 @@ features:
 # Automatically modifies dynamic settings based on the server performance.
 dynamic:
   # Enables dynamic performance checks.
-  enabled: false
+  enabled: true
   # The average MSPT to target.
   target-mspt: 35
   # The settings that will be decreased when the server is overloaded, in the specified order.
@@ -38,7 +38,7 @@ dynamic:
   dynamic-settings:
     - setting: 'CHUNK_TICK_DISTANCE'
       max: 10
-      min: 2
+      min: 10
       increment: 1
       interval: 15
 
@@ -50,13 +50,13 @@ dynamic:
 
     - setting: 'SIMULATION_DISTANCE'
       max: 10
-      min: 2
+      min: 10
       increment: 1
       interval: 15
 
     - setting: 'VIEW_DISTANCE'
       max: 10
-      min: 2
+      min: 10
       increment: 1
       interval: 150
 
@@ -64,7 +64,7 @@ dynamic:
 # A special mobcap that only affects the breeding of animals and villagers.
 breeding-cap:
   # Enables breeding caps.
-  enabled: false
+  enabled: true
   # The breeding cap for villagers.
   # ► limit = The limit of mobs of the same type within range. Setting this to negative will disable the breeding cap.
   # ► range = The range it will check for entities of the same type.
@@ -87,17 +87,17 @@ mob-spawning:
   # ► additional-capacity = Additional capacity for this specific mobcap. Decides how much it can spawn over the regular mobcap.
   # It is recommended to allow them to spawn a bit over the regular mobcap as they would otherwise never get a chance to spawn.
   zombie-reinforcements:
-    enforce-mobcap: false
+    enforce-mobcap: true
     additional-capacity: 32
 
   # Mobcap settings for zombified piglin spawning from nether portal random ticks.
   nether-portal-randomticks:
-    enforce-mobcap: false
+    enforce-mobcap: true
     additional-capacity: 32
 
   # Mobcap settings for mobs spawned from monster spawners.
   monster-spawners:
-    enforce-mobcap: false
+    enforce-mobcap: true
     additional-capacity: 32
 
   # A list of mob categories with their respective mobcap and spawn interval.

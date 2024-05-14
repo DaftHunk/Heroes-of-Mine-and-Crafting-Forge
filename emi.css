@@ -231,7 +231,7 @@
 	/**
 	 * How much space to maintain between the top sidebar and obstructions, in pixels
 	 */
-	top-sidebar-margins: 44, 2, 2, -70;
+	top-sidebar-margins: 44, 2, 2, -50;
 
 	/**
 	 * Where to position the top sidebar
