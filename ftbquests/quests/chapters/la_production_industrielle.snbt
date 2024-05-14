@@ -111,25 +111,6 @@
 		}
 		{
 			dependencies: ["53BB590289D14A36"]
-			description: ["Either &6nuggets of experience&r or &6heaps of experience&r will be fully consumed and turned into their liquid form"]
-			id: "75E7A82BD3F3EC45"
-			progression_mode: "flexible"
-			rewards: [{
-				id: "6B287EF87FB18DF5"
-				item: "create_sa:heap_of_experience"
-				type: "item"
-			}]
-			subtitle: "4 Nuggets of Experience"
-			tasks: [{
-				id: "74A07D11B2230ED8"
-				item: "create_sa:heap_of_experience"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["53BB590289D14A36"]
 			description: ["Any &6enchanted item&r can be placed on a disenchanted and it will take the xp and store it as liquid and you will get what you put that was enchanted back, so &6enchanted book&r will give you a book back, or &6an enchanted piece of armour&r will give you the armour piece without any enchantments"]
 			id: "4D55A7ABD7557FF1"
 			progression_mode: "flexible"
@@ -175,7 +156,6 @@
 				"7A39A5B9E3CAC840"
 				"56BE267CE6F7C4F9"
 				"4D55A7ABD7557FF1"
-				"75E7A82BD3F3EC45"
 			]
 			description: ["Once you have the xp stored in a tank, all you need to get the xp orbs to fall back onto the player all you need is a pump and pipe with nothing on the end this will pull the liquid xp down and dispense the orbs for the player to pick up"]
 			hide_dependency_lines: true
@@ -202,7 +182,6 @@
 				"7A39A5B9E3CAC840"
 				"56BE267CE6F7C4F9"
 				"4D55A7ABD7557FF1"
-				"75E7A82BD3F3EC45"
 			]
 			description: ["With a spout attached to the tank of liquid xp via pipes, you will be able to put the liquid back into bottles either by right clicking bottles onto a depot or having bottles put on a belt line underneath the spout"]
 			hide_dependency_lines: true
@@ -225,7 +204,6 @@
 		}
 		{
 			dependencies: [
-				"75E7A82BD3F3EC45"
 				"56BE267CE6F7C4F9"
 				"4D55A7ABD7557FF1"
 				"7A39A5B9E3CAC840"
@@ -260,7 +238,6 @@
 				"7A39A5B9E3CAC840"
 				"56BE267CE6F7C4F9"
 				"4D55A7ABD7557FF1"
-				"75E7A82BD3F3EC45"
 			]
 			description: [
 				"With the &6enchanting guide&r you can give it a book that you want it to store the enchantment of."

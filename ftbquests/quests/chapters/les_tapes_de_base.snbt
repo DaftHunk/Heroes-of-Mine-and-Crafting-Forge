@@ -16,32 +16,24 @@
 	quests: [
 		{
 			id: "05DE72DD68A60883"
-			rewards: [
-				{
-					id: "25A94A24ECC03E8D"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "29048DFB8FCFB26D"
-					type: "choice"
-				}
-			]
+			rewards: [{
+				id: "25A94A24ECC03E8D"
+				type: "xp"
+				xp: 10
+			}]
 			tasks: [{
 				icon: "minecraft:oak_log"
 				id: "379771FBCB314F82"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "minecraft:logs"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:logs)"
 					}
 				}
-				title: "Any #minecraft:logs"
 				type: "item"
 			}]
-			title: "Obtain any log"
+			title: "Tabasser un arbre"
 			x: -28.0d
 			y: -1.0d
 		}
@@ -49,34 +41,26 @@
 			dependencies: ["05DE72DD68A60883"]
 			id: "226171470A06E7E8"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "6A17758B64BB063B"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "72E2583561478492"
-					type: "choice"
-				}
-			]
+			rewards: [{
+				id: "6A17758B64BB063B"
+				type: "xp"
+				xp: 10
+			}]
 			subtitle: "Get 4 planks"
 			tasks: [{
-				count: 4L
 				icon: "minecraft:oak_planks"
 				id: "352267CCE508BB36"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "minecraft:planks"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:planks)"
 					}
 				}
 				title: "Any #minecraft:planks"
 				type: "item"
 			}]
-			title: "Craft some planks"
+			title: "Du bois, merci"
 			x: -26.0d
 			y: -1.0d
 		}
@@ -84,24 +68,18 @@
 			dependencies: ["226171470A06E7E8"]
 			id: "3686BAC07C9F5E22"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "63E1B5F87BD80028"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "032D26D50701B052"
-					type: "choice"
-				}
-			]
+			rewards: [{
+				id: "63E1B5F87BD80028"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "La base de la fabrication"
 			tasks: [{
 				id: "22F1A01EC9E360BD"
 				item: "minecraft:crafting_table"
 				type: "item"
 			}]
-			title: "Make a crafting table"
+			title: "Bastissor"
 			x: -24.0d
 			y: -1.0d
 		}
@@ -109,20 +87,13 @@
 			dependencies: ["3686BAC07C9F5E22"]
 			id: "6FE386C83D27FF6F"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "2085431F0C99A074"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "04906720E7550615"
-					type: "choice"
-				}
-			]
+			rewards: [{
+				id: "2085431F0C99A074"
+				type: "xp"
+				xp: 10
+			}]
 			shape: "gear"
-			subtitle: "Make a wooden pickaxe"
+			subtitle: "Fabriquez-vous une pioche"
 			tasks: [{
 				id: "581D21B80F5799D1"
 				item: {
@@ -133,9 +104,10 @@
 					}
 				}
 				only_from_crafting: false
+				title: "Any #minecraft:pickaxes"
 				type: "item"
 			}]
-			title: "Start your mining adventures"
+			title: "SALUT A TOUS C'EST FANTA"
 			x: -22.0d
 			y: -1.0d
 		}
@@ -143,34 +115,27 @@
 			dependencies: ["3686BAC07C9F5E22"]
 			id: "13E39EE147F3A618"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "773F31F994ED6F42"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "1E33A7D6F1AB667E"
-					type: "choice"
-				}
-			]
+			rewards: [{
+				id: "773F31F994ED6F42"
+				type: "xp"
+				xp: 10
+			}]
 			shape: "gear"
-			subtitle: "Make a sword"
+			subtitle: "Fabriquez-vous une arme"
 			tasks: [{
 				id: "39F7A92EB0D64B21"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "minecraft:swords"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:swords)"
 					}
 				}
 				only_from_crafting: false
 				title: "Any #minecraft:swords"
 				type: "item"
 			}]
-			title: "Ready for combat"
+			title: "Poliré !"
 			x: -24.0d
 			y: -3.0d
 		}
@@ -179,34 +144,27 @@
 			dependency_requirement: "one_started"
 			id: "0228747D6C21928F"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "4CE6FB6CA3ECC909"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "4C614F75C8A3F9EE"
-					type: "choice"
-				}
-			]
+			rewards: [{
+				id: "4CE6FB6CA3ECC909"
+				type: "xp"
+				xp: 10
+			}]
 			shape: "gear"
-			subtitle: "Make a hoe"
+			subtitle: "Fabriquer une houe"
 			tasks: [{
 				id: "43A5D3C85DF20B1B"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "minecraft:hoes"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:hoes)"
 					}
 				}
 				only_from_crafting: false
 				title: "Any #minecraft:hoes"
 				type: "item"
 			}]
-			title: "Farming away"
+			title: "De la nourriture, merci"
 			x: -24.0d
 			y: 1.0d
 		}
@@ -215,33 +173,26 @@
 			dependency_requirement: "one_started"
 			id: "5A7B1CB5FB1E7D0C"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "5EDF81296762170A"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "7DFA50AD4E9360DA"
-					type: "choice"
-				}
-			]
-			subtitle: "Make a shovel"
+			rewards: [{
+				id: "5EDF81296762170A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Fabriquer une pelle"
 			tasks: [{
 				id: "6A58A421C46D6FA4"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "forge:tools/shovels"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:shovels)"
 					}
 				}
 				only_from_crafting: false
-				title: "Any #forge:tools/shovels"
+				title: "Any #minecraft:shovels"
 				type: "item"
 			}]
-			title: "The dirt destroyer"
+			title: "La pelle de la nature"
 			x: -22.0d
 			y: 1.0d
 		}
@@ -249,33 +200,26 @@
 			dependencies: ["3686BAC07C9F5E22"]
 			id: "609FC1AA946FCE5A"
 			progression_mode: "flexible"
-			rewards: [
-				{
-					id: "022A6D9ECCC3EEDC"
-					type: "xp"
-					xp: 10
-				}
-				{
-					exclude_from_claim_all: true
-					id: "675CE9AC4B366FF4"
-					type: "choice"
-				}
-			]
-			subtitle: "Make an axe"
+			rewards: [{
+				id: "022A6D9ECCC3EEDC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Fabriquez-vous une hache"
 			tasks: [{
 				id: "31F05EBFED2FD49E"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "forge:tools/axes"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:axes)"
 					}
 				}
 				only_from_crafting: false
-				title: "Any #forge:tools/axes"
+				title: "Any #minecraft:axes"
 				type: "item"
 			}]
-			title: "Becoming a lumberjack"
+			title: "Bucheron"
 			x: -22.0d
 			y: -3.0d
 		}
@@ -301,6 +245,7 @@
 				item: "minecraft:cobblestone"
 				type: "item"
 			}]
+			title: "De la pierre, merci"
 			x: -20.0d
 			y: -1.0d
 		}
@@ -503,6 +448,7 @@
 				item: "minecraft:raw_gold"
 				type: "item"
 			}]
+			title: "Tout ce qui blille n'est pas d'ol, mais tout ce qui est d'ol brille assullemment"
 			x: -12.0d
 			y: -3.0d
 		}
@@ -650,21 +596,21 @@
 					type: "item"
 				}
 			]
-			subtitle: "Sleep at night without setting spawn"
+			subtitle: "Dormir dans un lit pour changer votre point d'apparition en cas de mort par décès"
 			tasks: [{
 				id: "454E8B6E41EC258C"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "comforts:sleeping_bags"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:beds)"
 					}
 				}
 				only_from_crafting: false
-				title: "Any #comforts:sleeping_bags"
+				title: "Any #minecraft:beds"
 				type: "item"
 			}]
-			title: "Craft a sleeping bag"
+			title: "Bonne nuit les petits"
 			x: -24.0d
 			y: -4.5d
 		}

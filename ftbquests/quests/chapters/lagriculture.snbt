@@ -70,9 +70,9 @@
 				id: "651795093EA92D3A"
 				item: {
 					Count: 1b
-					id: "itemfilters:tag"
+					id: "ftbfiltersystem:smart_filter"
 					tag: {
-						value: "forge:tools/knives"
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(farmersdelight:tools/knives)"
 					}
 				}
 				title: "Any #forge:tools/knives"

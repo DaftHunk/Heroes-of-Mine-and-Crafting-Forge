@@ -1,5 +1,4 @@
 {
-	always_invisible: true
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "crer_une_faction"
@@ -9,8 +8,15 @@
 	order_index: 2
 	quest_links: [ ]
 	quests: [{
+		description: ["En ouvrant votre inventaire, vous trouverez un icone en haut à gauche vous permettant d'offre le menu des factions."]
 		icon: "minecraft:white_banner"
 		id: "17729AD2411DF26A"
+		rewards: [{
+			id: "7BB03FB943333C3E"
+			item: "minecraft:white_banner"
+			type: "item"
+		}]
+		subtitle: "Que vous vouliez être seul ou rejoindre un groupe, la collaboration est la clé. Créez ou rejoignez une faction participer au commerce et à la vie du serveur."
 		tasks: [{
 			id: "79DE1A4CF084EED0"
 			title: "Créer ou rejoindre une faction"

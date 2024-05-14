@@ -21,7 +21,7 @@
 
 ["Global Spawn Limitations"]
 	#Enable/Disable general spawn limitations.
-	spawnLimitationEnabled = true
+	spawnLimitationEnabled = false
 	#Blocks every x spawn to avoid an over population with the limited spawn area. Use 0 to disable this optimization.
 	#Range: 0 ~ 100
 	spawnLimitationLimiter = 16
