@@ -97,10 +97,10 @@
 	stealthMasteryModifier = 1.25
 	#Counter Attack skill duration to return the attack [default: 3]
 	#Range: 0 ~ 3600
-	counterAttackDuration = 3
+	counterAttackDuration = 0
 	#Counter Attack skill damage returned percent [default: 50]
 	#Range: 0 ~ 500
-	counterAttackPercent = 50
+	counterAttackPercent = 0
 	#Diamond Skin defence potion effect boost [default: 2]
 	#Range: 1 ~ 255
 	diamondSkinBoost = 2

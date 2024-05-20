@@ -2,7 +2,7 @@
 ["Possibility of Actions(Some do not have to work)"]
 	can_BreakfallReady = false
 	can_CatLeap = false
-	can_ClimbPoles = true
+	can_ClimbPoles = false
 	can_ClimbUp = true
 	can_ClingToCliff = true
 	can_Crawl = true
@@ -21,7 +21,7 @@
 	can_Tap = false
 	can_Vault = true
 	can_VerticalWallRun = false
-	can_WallJump = false
+	can_WallJump = true
 	can_WallSlide = false
 
 ["Stamina HUD Configuration"]

@@ -1,3 +1,4 @@
 {
-  "xpEnabled": true
+  "xpEnabled": true,
+  "commandExecutor": "CONSOLE"
 }
