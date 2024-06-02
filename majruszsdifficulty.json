@@ -1,6 +1,6 @@
 {
   "game_stages": {
-    "is_per_player_difficulty_enabled": false,
+    "is_per_player_difficulty_enabled": true,
     "list": [
       {
         "id": "normal",
@@ -408,8 +408,8 @@
   },
   "blood_moon": {
     "is_enabled": true,
-    "night_trigger_chance": 0.0666,
-    "spawn_rate_multiplier": 2.0,
+    "night_trigger_chance": 0.00666,
+    "spawn_rate_multiplier": 4.0,
     "crd_penalty": 0.5
   },
   "undead_army": {

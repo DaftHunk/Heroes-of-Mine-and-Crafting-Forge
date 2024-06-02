@@ -44,7 +44,7 @@
 		#The wither can only be spawned in the Nether.
 		#Note that this feature completely disables Wither Skulls from begin placed nearby Soul Sand when not in the Nether or when on the Nether Roof.
 		#Requires Minecraft restart.
-		"Wither Nether Only" = false
+		"Wither Nether Only" = true
 
 	#Wither will spawn deadly Minions
 	[Wither.Minions]
@@ -107,7 +107,7 @@
 		"Max Difficulty" = 8
 		#How much difficulty will players start with when joining a world? Note that this will apply when the first Wither is spawned so if the player has already spawned one this will not apply.
 		#Range: > 0
-		"Starting Difficulty" = 0
+		"Starting Difficulty" = 1
 		#How much blocks from wither will be scanned for players to check for difficulty
 		#Range: > 16
 		"Spawn Radius Player Check" = 128
@@ -185,7 +185,7 @@
 	[Wither.Health]
 		#Increase Wither's Health by this value at max difficulty (scales accordingly at lower difficulties)
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Health Bonus per Difficulty" = 720.0
+		"Health Bonus per Difficulty" = 1500.0
 		#Maximum bonus regeneration per second given by "Bonus Regeneration".
 		#Set to 0 to disable bonus health regeneration. This doesn't affect the natural regeneration of the Wither (1 Health per Second).
 		#Note that this bonus health regen is disabled when Wither's health is between 49% and 50% to prevent making it impossible to approach when reaches half health.
@@ -234,7 +234,7 @@
 	["Elder Guardian".Health]
 		#Increase Elder Guardians' Health by this percentage (1 = +100% health)
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Health Bonus" = 0.5
+		"Health Bonus" = 1
 		#Adds absorption health to Elder Guardians (health that doesn't regen)
 		#Range: 0.0 ~ 1.7976931348623157E308
 		"Absorption Health" = 40.0
@@ -365,7 +365,7 @@
 		"Max Difficulty" = 8
 		#How much difficulty will players start with when joining a world? Note that this will apply when the player joins the world if the current player difficulty is below this value.
 		#Range: > 0
-		"Starting Difficulty" = 0
+		"Starting Difficulty" = 1
 		#If false and there's more than 1 player around the Dragon, difficulty will be the average of all the players' difficulty instead of summing them.
 		"Sum Killed Dragons Difficulty" = false
 		#Percentage bonus difficulty added to the Dragon when more than one player is present. Each player past the first one will add this percentage to the difficulty.
@@ -423,7 +423,7 @@
 	["Ender Dragon".Health]
 		#Ender Dragon health will be increased by this value at max difficulty (scaling accordingly at lower difficulties)
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Health Bonus at Max Difficulty" = 200.0
+		"Health Bonus at Max Difficulty" = 1000.0
 		#How much health will the Ender Dragon regen at max difficulty (scaling accordingly at lower difficulties). This doesn't affect the health regen given by crystals.
 		#Range: 0.0 ~ 1.7976931348623157E308
 		"Bonus Regeneration" = 1.0

@@ -7,4 +7,6 @@
 	#Smog density
 	#Range: 0.0 ~ 1.0
 	density = 1.0
+	#Enables/disables particle effects of polluted air
+	particles = true
 
