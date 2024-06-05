@@ -1,21 +1,5 @@
 [
   {
-    "biomeName": "biomesoplenty:seasonal_forest",
-    "chance": 10
-  },
-  {
-    "biomeName": "biomesoplenty:old_growth_woodland",
-    "chance": 20
-  },
-  {
-    "biomeName": "biomesoplenty:fungal_jungle",
-    "chance": 5
-  },
-  {
-    "biomeName": "biomesoplenty:orchard",
-    "chance": 5
-  },
-  {
     "biomeName": "biomesoplenty:bamboo_grove",
     "chance": 10
   },
@@ -61,6 +45,22 @@
   },
   {
     "biomeName": "biomesoplenty:mystic_grove",
+    "chance": 5
+  },
+  {
+    "biomeName": "biomesoplenty:seasonal_forest",
+    "chance": 10
+  },
+  {
+    "biomeName": "biomesoplenty:old_growth_woodland",
+    "chance": 20
+  },
+  {
+    "biomeName": "biomesoplenty:fungal_jungle",
+    "chance": 5
+  },
+  {
+    "biomeName": "biomesoplenty:orchard",
     "chance": 5
   }
 ]

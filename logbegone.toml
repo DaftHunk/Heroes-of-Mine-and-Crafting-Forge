@@ -1,5 +1,5 @@
 
 [logbegone]
-	phrases = ["Disconnecting VANILLA connection attempt", "Channels ", "not creating a ShipObject", "Remove Collision box is too big! AABB"]
-	regex = ["Disconnecting VANILLA connection attempt", "Channels ", ".*not creating a ShipObject"]
+	phrases = ["Disconnecting VANILLA connection attempt", "Channels "]
+	regex = ["Disconnecting VANILLA connection attempt", "Channels "]
 

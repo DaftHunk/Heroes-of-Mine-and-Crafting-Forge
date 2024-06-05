@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "minecraft:old_growth_birch_forest",
-    "chance": 20
-  },
-  {
     "biomeName": "minecraft:forest",
     "chance": 10
   },
@@ -22,5 +18,9 @@
   {
     "biomeName": "minecraft:meadow",
     "chance": 5
+  },
+  {
+    "biomeName": "minecraft:old_growth_birch_forest",
+    "chance": 20
   }
 ]

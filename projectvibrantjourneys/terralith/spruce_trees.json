@@ -1,17 +1,5 @@
 [
   {
-    "biomeName": "terralith:alpine_highlands",
-    "chance": 5
-  },
-  {
-    "biomeName": "terralith:lush_valley",
-    "chance": 10
-  },
-  {
-    "biomeName": "terralith:bryce_canyon",
-    "chance": 5
-  },
-  {
     "biomeName": "terralith:rocky_shrublands",
     "chance": 5
   },
@@ -65,6 +53,18 @@
   },
   {
     "biomeName": "terralith:cold_shrublands",
+    "chance": 5
+  },
+  {
+    "biomeName": "terralith:alpine_highlands",
+    "chance": 5
+  },
+  {
+    "biomeName": "terralith:lush_valley",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:bryce_canyon",
     "chance": 5
   }
 ]

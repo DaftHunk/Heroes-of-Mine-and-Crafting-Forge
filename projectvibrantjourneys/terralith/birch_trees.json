@@ -1,17 +1,5 @@
 [
   {
-    "biomeName": "terralith:sakura_grove",
-    "chance": 5
-  },
-  {
-    "biomeName": "terralith:skylands_autumn",
-    "chance": 5
-  },
-  {
-    "biomeName": "terralith:orchid_swamp",
-    "chance": 10
-  },
-  {
     "biomeName": "terralith:lavender_forest",
     "chance": 10
   },
@@ -62,5 +50,17 @@
   {
     "biomeName": "terralith:haze_mountain",
     "chance": 5
+  },
+  {
+    "biomeName": "terralith:sakura_grove",
+    "chance": 5
+  },
+  {
+    "biomeName": "terralith:skylands_autumn",
+    "chance": 5
+  },
+  {
+    "biomeName": "terralith:orchid_swamp",
+    "chance": 10
   }
 ]

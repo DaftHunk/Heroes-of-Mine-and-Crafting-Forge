@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "byg:borealis_grove",
-    "chance": 10
-  },
-  {
     "biomeName": "byg:dacite_ridges",
     "chance": 10
   },
@@ -34,5 +30,9 @@
   {
     "biomeName": "byg:canadian_shield",
     "chance": 15
+  },
+  {
+    "biomeName": "byg:borealis_grove",
+    "chance": 10
   }
 ]
