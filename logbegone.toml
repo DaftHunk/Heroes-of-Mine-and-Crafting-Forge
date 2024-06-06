@@ -1,5 +1,5 @@
 
 [logbegone]
-	phrases = ["Disconnecting VANILLA connection attempt", "Channels "]
-	regex = ["Disconnecting VANILLA connection attempt", "Channels "]
+	phrases = ["Disconnecting VANILLA connection attempt", "Channels ", "Easy NPC", "OpenGL debug message", "mobGriefing.", "worlds_together", "Unable to decode loot conditions"]
+	regex = ["Disconnecting VANILLA connection attempt", "Channels ", "Easy NPC", "OpenGL debug message", "mobGriefing.", "worlds_together", "Unable to decode loot conditions"]
 

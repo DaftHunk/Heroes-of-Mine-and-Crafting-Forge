@@ -1,5 +1,5 @@
 {
-  "enable": true,
+  "enable": false,
   "watch_interval_seconds": 0.5,
   "server_port": 3876,
   "map_style": {

@@ -1,7 +1,7 @@
 #A few fixes
-"Enable Fixes" = true
+"Enable Fixes" = false
 #No more boring 2D Area of Effect Clouds
-"Enable Area Effect Cloud 3D" = true
+"Enable Area Effect Cloud 3D" = false
 
 #A few fixes
 [Fixes]

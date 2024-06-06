@@ -38,25 +38,25 @@ dynamic:
   dynamic-settings:
     - setting: 'CHUNK_TICK_DISTANCE'
       max: 10
-      min: 10
+      min: 6
       increment: 1
-      interval: 15
+      interval: 100
 
     - setting: 'MOBCAP_PERCENTAGE'
       max: 100
       min: 30
       increment: 10
-      interval: 15
+      interval: 100
 
     - setting: 'SIMULATION_DISTANCE'
       max: 10
-      min: 10
+      min: 6
       increment: 1
-      interval: 15
+      interval: 100
 
     - setting: 'VIEW_DISTANCE'
       max: 10
-      min: 10
+      min: 8
       increment: 1
       interval: 150
 
@@ -111,7 +111,7 @@ mob-spawning:
 
     - category: 'CREATURE'
       mobcap: 10
-      spawn-interval: 400
+      spawn-interval: 10
 
     - category: 'AMBIENT'
       mobcap: 15

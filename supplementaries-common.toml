@@ -462,7 +462,7 @@
 
 	[tweaks.traders_open_doors]
 		#Allows traders to open doors (because they couldnt aparently)
-		enabled = true
+		enabled = false
 
 	[tweaks.dispenser_tweaks]
 		#Allows dispensers to use axes on blocks to strip logs and scrape off copper oxidation and wax

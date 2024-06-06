@@ -8,7 +8,7 @@ mailboxInventoryRows = 1
 banSendingItemsWithInventories = true
 # The maximum amount of items that can be queued for delivery for a mail box
 # Valid range: 0 to 256 (inclusive)
-mailQueueSize = 18
+mailQueueSize = 0
 # Prevents items contained in this list from being sent through a Post Box.
 # An example of how the list is defined:
 # bannedItems = [

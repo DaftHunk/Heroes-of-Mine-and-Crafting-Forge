@@ -4,7 +4,9 @@
   "percentageDisplayType": "PERCENT_ONLY",
   "bucketWisePercentageCalculation": false,
   "reverseSortingButtonCooldown": 100,
+  "actionButtonAreaExpansion": 20,
   "scrollSize": 20,
+  "showButtonTooltips": false,
   "notifyIfPokemonIsNotFound": true,
   "trackArrowVerticalOffset": 70,
   "partyWidgetAdjustments": {}
