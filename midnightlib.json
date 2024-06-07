@@ -1,4 +1,3 @@
 {
-  "enabled": true,
-  "cullRoots": false
+  "config_screen_list": "FALSE"
 }

@@ -407,7 +407,7 @@
     }
   },
   "blood_moon": {
-    "is_enabled": true,
+    "is_enabled": false,
     "night_trigger_chance": 0.00666,
     "spawn_rate_multiplier": 4.0,
     "crd_penalty": 0.5

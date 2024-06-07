@@ -22,7 +22,7 @@
     "startFadingAt": 0.0,
     "renderOverMinimapFrame": 1.0,
     "icons": 1.0,
-    "heightLimit": 20.0,
+    "heightLimit": 40.0,
     "names": 1.0,
     "iconScale": 1.0
   },
@@ -44,6 +44,25 @@
       },
       "subCategories": [
         {
+          "hardInclude": "nothing",
+          "includeList": [
+            "easy_npc:*"
+          ],
+          "includeListInSuperCategory": true,
+          "excludeMode": "ONLY",
+          "excludeList": [],
+          "name": "PNJ",
+          "protection": false,
+          "settingOverrides": {
+            "displayed": true,
+            "heightBasedFade": true,
+            "names": 2.0,
+            "color": 1.0,
+            "icons": 2.0
+          },
+          "subCategories": []
+        },
+        {
           "hardInclude": "players",
           "includeList": [],
           "includeListInSuperCategory": true,
@@ -54,8 +73,10 @@
           "settingOverrides": {
             "displayed": true,
             "renderOrder": 6.0,
+            "names": 1.0,
             "heightLimit": 2050.0,
-            "color": 2.0
+            "color": 2.0,
+            "icons": 1.0
           },
           "subCategories": [
             {
@@ -117,7 +138,7 @@
           "name": "gui.xaero_entity_category_hostile",
           "protection": true,
           "settingOverrides": {
-            "displayed": true,
+            "displayed": false,
             "renderOrder": 3.0,
             "color": 4.0
           },
