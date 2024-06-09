@@ -1,5 +1,7 @@
 {
   "screenScale": 1.0,
+  "pokenavFinderType": "BEST",
+  "pokefinderFinderType": "BEST",
   "mainScreenWidget": "PARTY",
   "percentageDisplayType": "PERCENT_ONLY",
   "bucketWisePercentageCalculation": false,

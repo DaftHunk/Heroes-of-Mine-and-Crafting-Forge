@@ -40,7 +40,7 @@
 				#Configure horizontal max distance before cull entities
 				#Value is squared, default was 64^2 (or 64x64)
 				#Range: > 0
-				cullingMaxDistanceX = 4096
+				cullingMaxDistanceX = 1024
 				#Toggles distance culling for entities
 				#Maybe you use another mod for that :(
 				enable = true
@@ -109,7 +109,7 @@
 			#Allowed Values: TOTAL_DARKNESS, PITCH_BLACK, DARK, DIM, OFF
 			mode = "OFF"
 			#Toggles if moon phases affects darkness in the overworld
-			affectedByMoonPhase = true
+			affectedByMoonPhase = false
 			#List of all dimensions to use True Darkness
 			#This option overrides 'valueByDefault' state
 			dimensionWhitelist = []
@@ -127,5 +127,5 @@
 			#Only affects darkness effect
 			enableBlockLightOnly = false
 			#Toggle Darkness on Overworld dimension
-			enableOnOverworld = true
+			enableOnOverworld = false
 
