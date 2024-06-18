@@ -83,7 +83,7 @@
 	 * Whether to have the search bar in the center of the screen, instead of to the
 	 * side.
 	 */
-	center-search-bar: true;
+	center-search-bar: false;
 
 	/**
 	 * Which sidebar type to switch to when searching.
@@ -272,7 +272,7 @@
 	/**
 	 * Where to position the bottom sidebar
 	 */
-	bottom-sidebar-align: center, center;
+	bottom-sidebar-align: right, center;
 
 	/**
 	 * Whether to render the header buttons and page count for the bottom sidebar

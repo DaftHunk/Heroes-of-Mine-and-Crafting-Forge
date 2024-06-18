@@ -1,5 +1,7 @@
 {
+  "useCobbledexIntegration": false,
   "useCounterIntegration": false,
+  "onlySeenPokemonMode": false,
   "useCobblemonTrainersIntegration": false,
   "badges": {
     "badges": []

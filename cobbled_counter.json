@@ -1,5 +1,6 @@
 {
   "debug": false,
-  "broadcastKosToPlayer": true,
-  "broadcastCapturesToPlayer": true
+  "broadcastKosToPlayer": false,
+  "broadcastCapturesToPlayer": false,
+  "broadcastEncountersToPlayer": false
 }
