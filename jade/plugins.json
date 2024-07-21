@@ -50,20 +50,34 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
-  "jadeaddons": {
-    "equipment_requirement": ""
-  },
-  "workshop_for_handsome_adventurer": {
-    "jade_plugin2": true,
-    "jade_plugin3": true,
-    "jade_plugin1": true
-  },
   "cobblemonintegrations": {
     "healer": true,
     "apricorn": true,
     "fossil_analyzer": true,
     "pokemon_entity": true,
     "berry_bush": true
+  },
+  "jade": {
+    "coordinates.rel": false,
+    "distance": false,
+    "block_face": false,
+    "coordinates": false,
+    "registry_name": "OFF",
+    "mod_name": true
+  },
+  "ars_nouveau": {
+    "mob_jar": true
+  },
+  "jadeaddons": {
+    "equipment_requirement": ""
+  },
+  "hammerlib": {
+    "root": true
+  },
+  "workshop_for_handsome_adventurer": {
+    "jade_plugin2": true,
+    "jade_plugin3": true,
+    "jade_plugin1": true
   },
   "jadecolonies": {
     "colony.citizens": true,
@@ -74,14 +88,6 @@
   },
   "supplementaries": {
     "hat_stand": true
-  },
-  "jade": {
-    "coordinates.rel": false,
-    "distance": false,
-    "block_face": false,
-    "coordinates": false,
-    "registry_name": "OFF",
-    "mod_name": true
   },
   "dynamictrees": {
     "rooty_water": true,

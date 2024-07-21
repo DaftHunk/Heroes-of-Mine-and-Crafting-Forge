@@ -3,7 +3,7 @@
   "debugOnRightClick": false,
   "renderModeChoice": "NORMAL",
   "vanillaModelHologramRenderMode_2": "OFF",
-  "attemptRevertingEntityModelsAlteredByAnotherMod": true,
+  "attemptRevertingEntityModelsAlteredByAnotherMod": false,
   "modelExportMode": "NONE",
   "attemptPhysicsModPatch_2": "CUSTOM",
   "modelUpdateFrequency": "Average",
@@ -15,6 +15,7 @@
   "animationLODDistance": 10,
   "retainDetailOnLowFps": true,
   "retainDetailOnLargerMobs": true,
+  "animationFrameSkipDuringIrisShadowPass": true,
   "preventFirstPersonHandAnimating": false,
   "onlyClientPlayerModel": false
 }

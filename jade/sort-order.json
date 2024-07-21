@@ -1,4 +1,5 @@
 {
+  "ars_nouveau:mob_jar": null,
   "camera:image_frame": null,
   "cobblemonintegrations:apricorn": null,
   "cobblemonintegrations:berry_bush": null,
@@ -20,6 +21,7 @@
   "dynamictrees:pod": null,
   "dynamictrees:rooty": null,
   "dynamictrees:rooty_water": null,
+  "hammerlib:root": null,
   "jade:block_face": null,
   "jade:distance": null,
   "jade:mod_name": null,
@@ -75,6 +77,10 @@
   "supplementaries:hat_stand": null,
   "supplementaries:present": null,
   "supplementaries:safe": null,
+  "theurgy:mercury_flux": null,
+  "wizards_reborn:crystal_growth": null,
+  "wizards_reborn:numerical": null,
+  "wizards_reborn:salt_campfire": null,
   "workshop_for_handsome_adventurer:jade_plugin1": null,
   "workshop_for_handsome_adventurer:jade_plugin2": null,
   "workshop_for_handsome_adventurer:jade_plugin3": null
