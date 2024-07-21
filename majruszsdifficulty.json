@@ -398,7 +398,7 @@
       "head_drop_chance": 0.1
     },
     "spawn_rate_increaser": {
-      "is_enabled": true,
+      "is_enabled": false,
       "multiplier": {
         "__default": 1.0,
         "expert": 1.1,
