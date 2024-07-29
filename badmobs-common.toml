@@ -2721,39 +2721,6 @@
 		#Should the entity spawn via mob conversion? i.e. villager -> zombie
 		allowConversions = true
 
-	#Spawning options for createbigcannons:shrapnel
-	[createbigcannons.shrapnel]
-		#Should the entity be allowed to spawn normally?
-		allowNormalSpawning = true
-		#Should spawners be able to spawn the entity?
-		allowSpawners = true
-		#Should spawn eggs be able to spawn the entity?
-		allowSpawnEggs = true
-		#Should the entity spawn via mob conversion? i.e. villager -> zombie
-		allowConversions = true
-
-	#Spawning options for createbigcannons:grapeshot
-	[createbigcannons.grapeshot]
-		#Should the entity be allowed to spawn normally?
-		allowNormalSpawning = true
-		#Should spawners be able to spawn the entity?
-		allowSpawners = true
-		#Should spawn eggs be able to spawn the entity?
-		allowSpawnEggs = true
-		#Should the entity spawn via mob conversion? i.e. villager -> zombie
-		allowConversions = true
-
-	#Spawning options for createbigcannons:fluid_blob
-	[createbigcannons.fluid_blob]
-		#Should the entity be allowed to spawn normally?
-		allowNormalSpawning = true
-		#Should spawners be able to spawn the entity?
-		allowSpawners = true
-		#Should spawn eggs be able to spawn the entity?
-		allowSpawnEggs = true
-		#Should the entity spawn via mob conversion? i.e. villager -> zombie
-		allowConversions = true
-
 	#Spawning options for createbigcannons:smoke_emitter
 	[createbigcannons.smoke_emitter]
 		#Should the entity be allowed to spawn normally?
@@ -2800,6 +2767,61 @@
 
 	#Spawning options for createbigcannons:machine_gun_bullet
 	[createbigcannons.machine_gun_bullet]
+		#Should the entity be allowed to spawn normally?
+		allowNormalSpawning = true
+		#Should spawners be able to spawn the entity?
+		allowSpawners = true
+		#Should spawn eggs be able to spawn the entity?
+		allowSpawnEggs = true
+		#Should the entity spawn via mob conversion? i.e. villager -> zombie
+		allowConversions = true
+
+	#Spawning options for createbigcannons:shrapnel_burst
+	[createbigcannons.shrapnel_burst]
+		#Should the entity be allowed to spawn normally?
+		allowNormalSpawning = true
+		#Should spawners be able to spawn the entity?
+		allowSpawners = true
+		#Should spawn eggs be able to spawn the entity?
+		allowSpawnEggs = true
+		#Should the entity spawn via mob conversion? i.e. villager -> zombie
+		allowConversions = true
+
+	#Spawning options for createbigcannons:flak_burst
+	[createbigcannons.flak_burst]
+		#Should the entity be allowed to spawn normally?
+		allowNormalSpawning = true
+		#Should spawners be able to spawn the entity?
+		allowSpawners = true
+		#Should spawn eggs be able to spawn the entity?
+		allowSpawnEggs = true
+		#Should the entity spawn via mob conversion? i.e. villager -> zombie
+		allowConversions = true
+
+	#Spawning options for createbigcannons:grapeshot_burst
+	[createbigcannons.grapeshot_burst]
+		#Should the entity be allowed to spawn normally?
+		allowNormalSpawning = true
+		#Should spawners be able to spawn the entity?
+		allowSpawners = true
+		#Should spawn eggs be able to spawn the entity?
+		allowSpawnEggs = true
+		#Should the entity spawn via mob conversion? i.e. villager -> zombie
+		allowConversions = true
+
+	#Spawning options for createbigcannons:fluid_blob_burst
+	[createbigcannons.fluid_blob_burst]
+		#Should the entity be allowed to spawn normally?
+		allowNormalSpawning = true
+		#Should spawners be able to spawn the entity?
+		allowSpawners = true
+		#Should spawn eggs be able to spawn the entity?
+		allowSpawnEggs = true
+		#Should the entity spawn via mob conversion? i.e. villager -> zombie
+		allowConversions = true
+
+	#Spawning options for createbigcannons:gas_cloud
+	[createbigcannons.gas_cloud]
 		#Should the entity be allowed to spawn normally?
 		allowNormalSpawning = true
 		#Should spawners be able to spawn the entity?
@@ -9073,6 +9095,20 @@
 
 	#Spawning options for alexsmobs:triops
 	[alexsmobs.triops]
+		#Should the entity be allowed to spawn normally?
+		allowNormalSpawning = true
+		#Should spawners be able to spawn the entity?
+		allowSpawners = true
+		#Should spawn eggs be able to spawn the entity?
+		allowSpawnEggs = true
+		#Should the entity spawn via mob conversion? i.e. villager -> zombie
+		allowConversions = true
+
+#Options for the furnish mod.
+[furnish]
+
+	#Spawning options for furnish:seat
+	[furnish.seat]
 		#Should the entity be allowed to spawn normally?
 		allowNormalSpawning = true
 		#Should spawners be able to spawn the entity?
