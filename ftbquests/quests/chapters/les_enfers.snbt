@@ -4,7 +4,7 @@
 	filename: "les_enfers"
 	group: "20D56E89F2CC58DE"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "endrem:nether_eye"
 		tag: {
 			Damage: 0
@@ -16,7 +16,7 @@
 	quests: [
 		{
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:block/netherrack"
@@ -40,7 +40,7 @@
 		}
 		{
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:block/warped_stem"
@@ -64,7 +64,7 @@
 		}
 		{
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:block/crimson_stem"
@@ -97,7 +97,7 @@
 			tasks: [{
 				biome: "minecraft:basalt_deltas"
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "minecraft:block/smooth_basalt"
@@ -122,7 +122,7 @@
 				advancement: "minecraft:nether/find_bastion"
 				criterion: ""
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "minecraft:block/blackstone"
@@ -265,7 +265,7 @@
 				"30561294091DA7DF"
 			]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:item/netherite_ingot"
@@ -401,7 +401,7 @@
 			tasks: [{
 				id: "46891E7AEBD93301"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:netherite_pickaxe"
 					tag: {
 						Damage: 0

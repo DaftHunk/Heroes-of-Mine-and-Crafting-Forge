@@ -26,17 +26,16 @@
 		}
 		{
 			id: "539D741F043DBF62"
+			rewards: [{
+				count: 5
+				id: "5BB79352806A8ADB"
+				item: "minecraft:bread"
+				type: "item"
+			}]
 			subtitle: "Un bon sac de couchage vous permettra de dormir loin de chez vous sans casser votre point de réapparition"
 			tasks: [{
-				id: "05CD3540189D8C9F"
-				item: {
-					Count: 1b
-					id: "ftbfiltersystem:smart_filter"
-					tag: {
-						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(comforts:sleeping_bags)"
-					}
-				}
-				title: "Any #comforts:sleeping_bags"
+				id: "6432C5CFB9109E1F"
+				item: "comforts:sleeping_bag_white"
 				type: "item"
 			}]
 			title: "Sac de couchage"
@@ -56,7 +55,7 @@
 			tasks: [{
 				id: "5961BA3997E85000"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "naturescompass:naturescompass"
 					tag: { }
 				}

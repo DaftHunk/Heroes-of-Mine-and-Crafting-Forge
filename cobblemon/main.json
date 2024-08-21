@@ -5,7 +5,7 @@
   "announceDropItems": true,
   "defaultDropItemMethod": "ON_ENTITY",
   "ambientPokemonCryTicks": 1080,
-  "defaultBoxCount": 30,
+  "defaultBoxCount": 50,
   "pokemonSaveIntervalSeconds": 30,
   "storageFormat": "nbt",
   "preventCompletePartyDeposit": false,

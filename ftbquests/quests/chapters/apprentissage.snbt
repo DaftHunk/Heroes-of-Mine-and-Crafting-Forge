@@ -4,7 +4,7 @@
 	filename: "apprentissage"
 	group: "5DF761E30124DB34"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "patchouli:guide_book"
 		tag: {
 			"patchouli:book": "cobblepedia:cobblepedia"
@@ -25,7 +25,7 @@
 		tasks: [{
 			id: "019CBD03B6D3FD4F"
 			item: {
-				Count: 1b
+				Count: 1
 				id: "patchouli:guide_book"
 				tag: {
 					"patchouli:book": "cobblepedia:cobblepedia"

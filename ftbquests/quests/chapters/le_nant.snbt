@@ -14,7 +14,7 @@
 			tasks: [{
 				id: "5911ABE5A6EBB448"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:black_eye"
 					tag: {
 						Damage: 0
@@ -31,7 +31,7 @@
 			tasks: [{
 				id: "77481D7A5323409F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:old_eye"
 					tag: {
 						Damage: 0
@@ -48,7 +48,7 @@
 			tasks: [{
 				id: "4E6D978105F933FE"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:nether_eye"
 					tag: {
 						Damage: 0
@@ -65,7 +65,7 @@
 			tasks: [{
 				id: "7CB19736D5222C51"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:cold_eye"
 					tag: {
 						Damage: 0
@@ -82,7 +82,7 @@
 			tasks: [{
 				id: "79E7D71E6A857986"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:rogue_eye"
 					tag: {
 						Damage: 0
@@ -99,7 +99,7 @@
 			tasks: [{
 				id: "211C5BEDC88C0DC3"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:magical_eye"
 					tag: {
 						Damage: 0
@@ -116,7 +116,7 @@
 			tasks: [{
 				id: "56D42DAFCE57C934"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:lost_eye"
 					tag: {
 						Damage: 0
@@ -133,7 +133,7 @@
 			tasks: [{
 				id: "008DFEB8354AAFE4"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:corrupted_eye"
 					tag: {
 						Damage: 0
@@ -150,7 +150,7 @@
 			tasks: [{
 				id: "1B0D0648C0F15C7B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:wither_eye"
 					tag: {
 						Damage: 0
@@ -167,7 +167,7 @@
 			tasks: [{
 				id: "7FDE9C0618149891"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:guardian_eye"
 					tag: {
 						Damage: 0
@@ -184,7 +184,7 @@
 			tasks: [{
 				id: "217646C3A78DF60E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:witch_eye"
 					tag: {
 						Damage: 0
@@ -201,7 +201,7 @@
 			tasks: [{
 				id: "211C646BFC990664"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:cursed_eye"
 					tag: {
 						Damage: 0
@@ -218,7 +218,7 @@
 			tasks: [{
 				id: "0B6E691AD517D03E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:exotic_eye"
 					tag: {
 						Damage: 0
@@ -235,7 +235,7 @@
 			tasks: [{
 				id: "2B476337BACAEFE8"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:evil_eye"
 					tag: {
 						Damage: 0
@@ -252,7 +252,7 @@
 			tasks: [{
 				id: "24535CFD91CC0234"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:undead_eye"
 					tag: {
 						Damage: 0
@@ -269,7 +269,7 @@
 			tasks: [{
 				id: "13DB557DFEA4B29C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "endrem:cryptic_eye"
 					tag: {
 						Damage: 0
@@ -357,7 +357,7 @@
 				advancement: "minecraft:end/enter_end_gateway"
 				criterion: ""
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "minecraft:item/ender_pearl"
@@ -398,7 +398,7 @@
 		{
 			dependencies: ["72CFA89AAD7EC0A6"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:block/purpur_block"
@@ -420,7 +420,7 @@
 			]
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "minecraft:block/purpur_block"
@@ -447,7 +447,7 @@
 				{
 					id: "5578032B8C9CEB9E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:enchanted_book"
 						tag: {
 							StoredEnchantments: [{
@@ -463,7 +463,7 @@
 			tasks: [{
 				id: "3842CC441262F33A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:elytra"
 					tag: {
 						Damage: 0

@@ -272,7 +272,7 @@
 				icon: "create:red_seat"
 				id: "333CE6EF38272291"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(create:seats)"

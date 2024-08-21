@@ -728,7 +728,7 @@
 				{
 					id: "41B5A8A863D5C14A"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "create:sand_paper"
 						tag: {
 							Damage: 0
@@ -1041,7 +1041,7 @@
 			tasks: [{
 				id: "3ED9D7C27EB06AA7"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create:super_glue"
 					tag: {
 						Damage: 0

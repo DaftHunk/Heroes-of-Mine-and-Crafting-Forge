@@ -4,7 +4,7 @@
 	filename: "les_dcouvertes"
 	group: "20D56E89F2CC58DE"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "minecraft:brush"
 		tag: {
 			Damage: 0

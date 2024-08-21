@@ -4,7 +4,7 @@
 	filename: "les_tapes_de_base"
 	group: "66973B46BDC2E762"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "minecraft:diamond_pickaxe"
 		tag: {
 			Damage: 0
@@ -25,7 +25,7 @@
 				icon: "minecraft:oak_log"
 				id: "379771FBCB314F82"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:logs)"
@@ -51,7 +51,7 @@
 				icon: "minecraft:oak_planks"
 				id: "352267CCE508BB36"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:planks)"
@@ -97,7 +97,7 @@
 			tasks: [{
 				id: "581D21B80F5799D1"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:wooden_pickaxe"
 					tag: {
 						Damage: 0
@@ -125,7 +125,7 @@
 			tasks: [{
 				id: "39F7A92EB0D64B21"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:swords)"
@@ -154,7 +154,7 @@
 			tasks: [{
 				id: "43A5D3C85DF20B1B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:hoes)"
@@ -182,7 +182,7 @@
 			tasks: [{
 				id: "6A58A421C46D6FA4"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:shovels)"
@@ -209,7 +209,7 @@
 			tasks: [{
 				id: "31F05EBFED2FD49E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:axes)"
@@ -270,7 +270,7 @@
 			tasks: [{
 				id: "413A1A62A9E81ADF"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:stone_pickaxe"
 					tag: {
 						Damage: 0
@@ -355,7 +355,7 @@
 			tasks: [{
 				id: "0CF38D754090FD16"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:iron_pickaxe"
 					tag: {
 						Damage: 0
@@ -414,7 +414,7 @@
 			tasks: [{
 				id: "77E43BEAA7D616CC"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:diamond_pickaxe"
 					tag: {
 						Damage: 0
@@ -600,7 +600,7 @@
 			tasks: [{
 				id: "454E8B6E41EC258C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:beds)"

@@ -274,7 +274,7 @@
 				"You can pump the &bhyper experience liquid&r into the blaze enchanter and then give when enchanting it will enchant the tool 1 level higher than the book given to the &6blaze enchanter&r"
 			]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "create_enchantment_industry:item/hyper_experience_bottle"
@@ -300,7 +300,7 @@
 		{
 			dependencies: ["35BB0498DD5DC544"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:block/enchanting_table_top"

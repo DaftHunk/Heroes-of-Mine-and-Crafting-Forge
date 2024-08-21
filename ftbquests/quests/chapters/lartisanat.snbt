@@ -19,7 +19,7 @@
 		tasks: [{
 			id: "4496EA8CA2B67871"
 			item: {
-				Count: 1b
+				Count: 1
 				id: "ftbfiltersystem:smart_filter"
 				tag: {
 					"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(storagedrawers:drawers)"

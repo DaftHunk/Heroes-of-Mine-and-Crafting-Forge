@@ -39,7 +39,7 @@
 			tasks: [{
 				id: "34A041027ED34BD9"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "farmersdelight:skillet"
 					tag: {
 						Damage: 0
@@ -69,7 +69,7 @@
 			tasks: [{
 				id: "651795093EA92D3A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ftbfiltersystem:smart_filter"
 					tag: {
 						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(farmersdelight:tools/knives)"

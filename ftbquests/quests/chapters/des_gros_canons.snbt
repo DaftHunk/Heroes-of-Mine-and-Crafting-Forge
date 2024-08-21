@@ -4,7 +4,7 @@
 	filename: "des_gros_canons"
 	group: "6A4CFCAED0D5F76A"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "cgm:mini_gun"
 		tag: {
 			AmmoCount: 32

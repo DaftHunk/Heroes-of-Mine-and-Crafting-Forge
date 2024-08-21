@@ -4,7 +4,7 @@
 	filename: "les_arnes"
 	group: "5DF761E30124DB34"
 	icon: {
-		Count: 1b
+		Count: 1
 		ForgeCaps: {
 			Parent: {
 				Items: [ ]
@@ -27,7 +27,7 @@
 		tasks: [{
 			id: "5C441FA0CA420E92"
 			item: {
-				Count: 1b
+				Count: 1
 				ForgeCaps: {
 					Parent: {
 						Items: [ ]
