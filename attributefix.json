@@ -44,17 +44,6 @@
         "value": 100
       }
     },
-    "malum:soul_ward_capacity": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
     "irons_spellbooks:nature_spell_power": {
       "enabled": false,
       "min": {
@@ -143,28 +132,6 @@
         "value": 100
       }
     },
-    "malum:soul_ward_recovery_rate": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
-    "lodestone:magic_proficiency": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
     "minecolonies:mc_mob_damage": {
       "enabled": false,
       "min": {
@@ -176,33 +143,11 @@
         "value": 20
       }
     },
-    "malum:malignant_conversion": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
     "minecraft:generic.luck": {
       "enabled": true,
       "min": {
         "default": -1024,
         "value": -1024
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
-    "justleveling:magic_resist": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
       },
       "max": {
         "default": 1024,
@@ -218,17 +163,6 @@
       "max": {
         "default": 100,
         "value": 100
-      }
-    },
-    "eidolon:persistent_soul_hearts": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2000,
-        "value": 2000
       }
     },
     "obscure_api:magic_resistance": {
@@ -297,17 +231,6 @@
         "value": 100000
       }
     },
-    "eidolon:chanting_speed": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "tetra:draw_strength": {
       "enabled": false,
       "min": {
@@ -363,17 +286,6 @@
         "value": 100
       }
     },
-    "wizards_reborn:wissen_discount": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 75,
-        "value": 75
-      }
-    },
     "parcool:stamina_recovery": {
       "enabled": false,
       "min": {
@@ -416,17 +328,6 @@
       "max": {
         "default": 5,
         "value": 1000000
-      }
-    },
-    "lodestone:magic_resistance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
       }
     },
     "forge:swim_speed": {
@@ -473,17 +374,6 @@
         "value": 2048
       }
     },
-    "malum:scythe_proficiency": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
     "obscure_api:accuracy": {
       "enabled": false,
       "min": {
@@ -517,40 +407,18 @@
         "value": 100
       }
     },
-    "eidolon:magic_power": {
+    "ars_nouveau:ars_elemental.perk.summon_power": {
       "enabled": false,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 10,
-        "value": 10
-      }
-    },
-    "reach-entity-attributes:attack_range": {
-      "enabled": false,
-      "min": {
-        "default": -1024,
-        "value": -1024
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
+        "default": 10000,
+        "value": 10000
       }
     },
     "tetra:ability_cooldown": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
-    "malum:reserve_staff_charges": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -594,17 +462,6 @@
         "value": 64
       }
     },
-    "reach-entity-attributes:reach": {
-      "enabled": false,
-      "min": {
-        "default": -1024,
-        "value": -1024
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
     "irons_spellbooks:blood_magic_resist": {
       "enabled": false,
       "min": {
@@ -638,17 +495,6 @@
         "value": 100
       }
     },
-    "justleveling:beneficial_effect": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
     "forge:block_reach": {
       "enabled": false,
       "min": {
@@ -658,39 +504,6 @@
       "max": {
         "default": 1024,
         "value": 1024
-      }
-    },
-    "wizards_reborn:magic_armor": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
-    "malum:spirit_spoils": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
-    "malum:soul_ward_strength": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
       }
     },
     "obscure_api:parry": {
@@ -803,30 +616,8 @@
         "value": 100
       }
     },
-    "malum:arcane_resonance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
     "minecraft:generic.flying_speed": {
       "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
-    "justleveling:break_speed": {
-      "enabled": false,
       "min": {
         "default": 0,
         "value": 0
@@ -902,17 +693,6 @@
         "value": 100
       }
     },
-    "eidolon:max_soul_hearts": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2000,
-        "value": 2000
-      }
-    },
     "minecraft:generic.max_health": {
       "enabled": true,
       "min": {
@@ -944,17 +724,6 @@
       "max": {
         "default": 100,
         "value": 100
-      }
-    },
-    "justleveling:critical_damage": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
       }
     },
     "parcool:max_stamina": {
@@ -1021,28 +790,6 @@
       "max": {
         "default": 1,
         "value": 1
-      }
-    },
-    "justleveling:projectile_damage": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
-    "lodestone:magic_damage": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
       }
     }
   }

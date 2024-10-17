@@ -5,24 +5,12 @@ mode = "fancy"
 	block_entities = true
 	entities = true
 	self = true
+	tnt = "fancy"
+	creeper = "fancy"
 
 	[light_sources.settings]
 
 		[light_sources.settings.block_entities]
-
-			[light_sources.settings.block_entities.tetra]
-				rack = true
-				fractured_bedrock = true
-				scroll = true
-				chthonic_extractor = true
-				hammer_base = true
-				transfer_unit = true
-				hammer_head = true
-				extractor_piston = true
-				forged_container = true
-				holosphere = true
-				workbench = true
-				core_extractor = true
 
 			[light_sources.settings.block_entities.hexerei]
 				coffer_entity = true
@@ -40,6 +28,20 @@ mode = "fancy"
 				candle_dipper_entity = true
 				sage_burning_plate_entity = true
 				herb_jar_entity = true
+
+			[light_sources.settings.block_entities.tetra]
+				rack = true
+				fractured_bedrock = true
+				scroll = true
+				chthonic_extractor = true
+				hammer_base = true
+				transfer_unit = true
+				hammer_head = true
+				extractor_piston = true
+				forged_container = true
+				holosphere = true
+				workbench = true
+				core_extractor = true
 
 			[light_sources.settings.block_entities.tetra_tables]
 				tetra_table_be = true
@@ -66,6 +68,7 @@ mode = "fancy"
 				incomplete_cannon = true
 				finished_cannon_cast = true
 				cannon_drill = true
+				projectile_block = true
 				cannon_end = true
 				autocannon_breech = true
 				fluid_shell = true
@@ -83,6 +86,10 @@ mode = "fancy"
 
 			[light_sources.settings.block_entities.easyanvils]
 				anvil = true
+
+			[light_sources.settings.block_entities.cobgyms]
+				gym_exit_be = true
+				gym_entrance_be = true
 
 			[light_sources.settings.block_entities.alexsmobs]
 				capsid_te = true
@@ -125,8 +132,31 @@ mode = "fancy"
 				shipping_container_light_blue = true
 				shipping_container_orange = true
 
+			[light_sources.settings.block_entities.copycats]
+				copycat = true
+				copycat_glass_fluid_pipe = true
+				multistate_copycat = true
+				copycat_shaft = true
+				multistate_ladder_copycat = true
+				copycat_cogwheel = true
+				copycat_fluid_pipe = true
+
 			[light_sources.settings.block_entities.easymagic]
 				enchanting_table = true
+
+			[light_sources.settings.block_entities.furnish]
+				large_furniture = true
+				bookshelf_chest = true
+				flower_pot = true
+				plate = true
+				crate = true
+				amphora = true
+				shelf = true
+				disk_rack = true
+				mailbox = true
+				furniture = true
+				showcase = true
+				recycle_bin = true
 
 			[light_sources.settings.block_entities.multipiston]
 				multipistonte = true
@@ -312,6 +342,9 @@ mode = "fancy"
 			[light_sources.settings.block_entities.ends_delight]
 				end_stove = true
 
+			[light_sources.settings.block_entities.cobblefoods]
+				berry_blender = true
+
 			[light_sources.settings.block_entities.railways]
 				invisible_mono_bogey = true
 				portable_fuel_interface = true
@@ -392,8 +425,25 @@ mode = "fancy"
 				mycelial_sourcelink = true
 				drygmy_stone = true
 
+			[light_sources.settings.block_entities.soul_fire_d]
+				custom_campfire = true
+
 			[light_sources.settings.block_entities.dragonmounts]
 				dragon_egg = true
+
+			[light_sources.settings.block_entities.minecells]
+				cell_crafter = true
+				runic_vine_plant = true
+				barrier_controller = true
+				return_stone = true
+				doorway = true
+				rift = true
+				teleporter = true
+				decorative_statue = true
+				setup_block_entity = true
+				arrow_sign = true
+				biome_banner = true
+				spawner_rune = true
 
 			[light_sources.settings.block_entities.bclib]
 				barrel = true
@@ -446,12 +496,14 @@ mode = "fancy"
 				fluid_vessel = true
 				creative_fluid_vessel = true
 				linked_analog_lever = true
+				inventory_bridge = true
 				linked_transmitter = true
 				inverted_gearshift = true
 				brass_gearbox = true
 				shear_pin = true
 				centrifugal_clutch = true
 				brake = true
+				inventory_access_port = true
 				inverted_clutch = true
 				copycat = true
 				overstress_clutch = true
@@ -537,6 +589,7 @@ mode = "fancy"
 				loot_crate_opener = true
 
 			[light_sources.settings.block_entities.createoreexcavation]
+				sample_drill = true
 				multiblock = true
 				io = true
 				kinetic_input = true
@@ -568,12 +621,14 @@ mode = "fancy"
 			[light_sources.settings.block_entities.cataclysm]
 				mechanical_fusion_anvil = true
 				sadsotne_ignite_trap = true
-				cataclysm_skull = true
 				altar_of_abyss = true
-				altar_of_fire = true
+				cursed_tombstone = true
 				altar_of_amethyst = true
 				emp = true
 				obsidian_explosion_trap_bricks = true
+				cataclysm_skull = true
+				door_of_seal = true
+				altar_of_fire = true
 				abyssal_egg = true
 				altar_of_void = true
 
@@ -600,7 +655,10 @@ mode = "fancy"
 			[light_sources.settings.block_entities.storagedrawers]
 				controller = true
 				controller_slave = true
+				fractional_drawers_2 = true
 				fractional_drawers_3 = true
+				trim = true
+				framing_table = true
 				standard_drawers_2 = true
 				standard_drawers_1 = true
 				standard_drawers_4 = true
@@ -649,6 +707,31 @@ mode = "fancy"
 				dryer = true
 				displayer = true
 
+			[light_sources.settings.block_entities.scguns]
+				polar_generator = true
+				gun_bench = true
+				nitro_keg = true
+				vent_collector = true
+				auto_turret = true
+				advanced_composter = true
+				powered_mechanical_press = true
+				shotgun_turret = true
+				enemy_turret = true
+				gun_shelf = true
+				lightning_battery = true
+				powder_keg = true
+				mob_trap = true
+				ammo_module = true
+				thermolith = true
+				basic_turret = true
+				mechanical_press = true
+				powered_macerator = true
+				shell_catcher_module = true
+				ammo_box = true
+				cryoniter = true
+				macerator = true
+				penetrator = true
+
 			[light_sources.settings.block_entities.structurize]
 				tagsubstitution = true
 
@@ -686,6 +769,7 @@ mode = "fancy"
 
 			[light_sources.settings.block_entities.deeperdarker]
 				deeper_darker_signs = true
+				crystallized_amber = true
 				deeper_darker_hanging_signs = true
 
 			[light_sources.settings.block_entities.create_power_loader]
@@ -693,6 +777,11 @@ mode = "fancy"
 				empty_brass_chunk_loader = true
 				brass_chunk_loader = true
 				andesite_chunk_loader = true
+
+			[light_sources.settings.block_entities.trials]
+				crafter = true
+				trials_spawner = true
+				trials_vault = true
 
 			[light_sources.settings.block_entities.valkyrienskies]
 				test_hinge_block_entity = true
@@ -771,15 +860,15 @@ mode = "fancy"
 
 		[light_sources.settings.entities]
 
+			[light_sources.settings.entities.tetra]
+				thrown_modular_item = true
+				extractor_projectile = true
+
 			[light_sources.settings.entities.hexerei]
 				broom = true
 				crow = true
 				chest_boat = true
 				boat = true
-
-			[light_sources.settings.entities.tetra]
-				thrown_modular_item = true
-				extractor_projectile = true
 
 			[light_sources.settings.entities.easy_npc]
 				zombie_horse = true
@@ -787,14 +876,16 @@ mode = "fancy"
 				humanoid = true
 				orc_warrior = true
 				pig = true
-				pillager = true
 				allay = true
+				pillager = true
 				iron_golem = true
 				skeleton = true
 				humanoid_slim = true
 				husk = true
+				piglin = true
 				cat = true
 				zombie = true
+				zombie_raw = true
 				drowned = true
 				fairy = true
 				illusioner = true
@@ -805,6 +896,8 @@ mode = "fancy"
 				skeleton_horse = true
 				wither_skeleton = true
 				zombie_villager = true
+				piglin_brute = true
+				piglin_zombified = true
 				horse = true
 				vindicator = true
 				crash_test_dummy = true
@@ -815,26 +908,31 @@ mode = "fancy"
 				economy_plane = true
 
 			[light_sources.settings.entities.createbigcannons]
-				smoke_emitter = true
-				ap_shot = true
 				drop_mortar_shell = true
-				smoke_shell = true
-				cannon_carriage = true
-				pitch_contraption = true
+				ap_shot = true
+				gas_cloud = true
 				traffic_cone = true
-				flak_autocannon = true
-				shrapnel = true
-				grapeshot = true
 				ap_shell = true
 				shot = true
 				ap_autocannon = true
-				fluid_blob = true
-				fluid_shell = true
+				shrapnel_burst = true
+				fluid_blob_burst = true
 				shrapnel_shell = true
-				mortar_stone = true
-				machine_gun_bullet = true
 				he_shell = true
 				bag_of_grapeshot = true
+				smoke_emitter = true
+				smoke_shell = true
+				cannon_carriage = true
+				pitch_contraption = true
+				flak_autocannon = true
+				shrapnel = true
+				grapeshot = true
+				fluid_blob = true
+				fluid_shell = true
+				flak_burst = true
+				mortar_stone = true
+				grapeshot_burst = true
+				machine_gun_bullet = true
 
 			[light_sources.settings.entities.create_things_and_misc]
 				projectile_spout_gun_lava = true
@@ -847,6 +945,9 @@ mode = "fancy"
 				balloon_blaze = true
 				projectile_blaze_balloon_fire = true
 				projectile_spout_gun_chocolate = true
+
+			[light_sources.settings.entities.cobgyms]
+				trainer_villager = true
 
 			[light_sources.settings.entities.alexsmobs]
 				devils_hole_pupfish = true
@@ -986,6 +1087,9 @@ mode = "fancy"
 			[light_sources.settings.entities.rctmod]
 				trainer = true
 
+			[light_sources.settings.entities.furnish]
+				seat = true
+
 			[light_sources.settings.entities.laendli_transport]
 				projectile_airship_police_weapon = true
 				projectile_tank_light_weapon = true
@@ -1115,14 +1219,15 @@ mode = "fancy"
 				contraption_barge = true
 
 			[light_sources.settings.entities.relics]
+				death_essence = true
 				block_simulation = true
 				life_essence = true
 				shadow_saw = true
 				thrown_relic_experience_bottle = true
 				solid_snowball = true
 				spore = true
-				arrow_rain = true
 				shockwave = true
+				arrow_rain = true
 				dissection = true
 				shadow_glaive = true
 				stalactite = true
@@ -1205,6 +1310,41 @@ mode = "fancy"
 
 			[light_sources.settings.entities.dragonmounts]
 				dragon = true
+
+			[light_sources.settings.entities.minecells]
+				disgusting_worm_egg = true
+				protector = true
+				conjunctivius_projectile = true
+				elite_obelisk = true
+				cell = true
+				scorpion_spit = true
+				undead_archer = true
+				elevator = true
+				tentacle_weapon = true
+				inquisitor = true
+				runner = true
+				sewers_tentacle = true
+				shockwave_placer = true
+				concierge = true
+				scorpion = true
+				shocker = true
+				grenadier = true
+				rancid_rat = true
+				grenade = true
+				leaping_zombie = true
+				sweeper = true
+				conjunctivius_obelisk = true
+				kamikaze = true
+				conjunctivius = true
+				disgusting_worm = true
+				mutated_bat = true
+				magic_orb = true
+				concierge_obelisk = true
+				buzzcutter = true
+				custom_arrow = true
+				shieldbearer = true
+				big_grenade = true
+				spawner_rune = true
 
 			[light_sources.settings.entities.bclib]
 				chair = true
@@ -1404,6 +1544,75 @@ mode = "fancy"
 				badlands_enderman = true
 				pet_enderman = true
 
+			[light_sources.settings.entities.alekiships]
+				compartment_furnace = true
+				compartment_jukebox = true
+				cannon = true
+				compartment_smoker = true
+				compartment_blast_furnace = true
+				compartment_chest = true
+				compartment_grindstone = true
+				cannonball = true
+				compartment_crafting_table = true
+				compartment_cartography_table = true
+				vehicle_anchor = true
+				compartment_empty = true
+				compartment_ender_chest = true
+				vehicle_part = true
+				vehicle_construction = true
+				vehicle_switch_sail = true
+				vehicle_mast = true
+				compartment_note_block = true
+				vehicle_cleat = true
+				compartment_loom = true
+				compartment_stonecutter = true
+				compartment_smithing_table = true
+				vehicle_collider = true
+				compartment_shulker_box = true
+				compartment_block = true
+				compartment_brewing_stand = true
+				vehicle_switch_windlass = true
+				compartment_barrel = true
+
+				[light_sources.settings.entities.alekiships.sloop]
+					bamboo = true
+					cherry = true
+					crimson = true
+					birch = true
+					oak = true
+					acacia = true
+					warped = true
+					jungle = true
+					dark_oak = true
+					mangrove = true
+					spruce = true
+
+				[light_sources.settings.entities.alekiships.rowboat]
+					bamboo = true
+					cherry = true
+					crimson = true
+					birch = true
+					oak = true
+					acacia = true
+					warped = true
+					jungle = true
+					dark_oak = true
+					mangrove = true
+					spruce = true
+
+				[light_sources.settings.entities.alekiships.sloop_construction]
+					bamboo = true
+					cherry = true
+					crimson = true
+					birch = true
+					oak = true
+					acacia = true
+					warped = true
+					jungle = true
+					dark_oak = true
+					mangrove = true
+					spruce = true
+
 			[light_sources.settings.entities.astikorcarts]
 				plow = true
 				supply_cart = true
@@ -1418,6 +1627,7 @@ mode = "fancy"
 			[light_sources.settings.entities.cataclysm]
 				void_shard = true
 				portal_abyss_blast = true
+				maledictus = true
 				the_leviathan_tongue = true
 				wall_watcher = true
 				cm_falling_block = true
@@ -1427,6 +1637,7 @@ mode = "fancy"
 				ignis_abyss_fireball = true
 				coral_spear = true
 				abyss_blast_portal = true
+				royal_draugr = true
 				wither_homing_missile = true
 				deepling_brute = true
 				the_harbinger = true
@@ -1435,6 +1646,7 @@ mode = "fancy"
 				dimensional_rift = true
 				lava_bomb = true
 				void_scatter_arrow = true
+				axe_blade = true
 				wither_missile = true
 				ender_golem = true
 				wither_howitzer = true
@@ -1446,6 +1658,7 @@ mode = "fancy"
 				nameless_sorcerer = true
 				abyss_blast = true
 				void_rune = true
+				draugr = true
 				lionfish_spike = true
 				ignis_fireball = true
 				void_howitzer = true
@@ -1459,8 +1672,10 @@ mode = "fancy"
 				abyss_orb = true
 				sandstorm = true
 				endermaptera = true
+				elite_draugr = true
 				the_watcher = true
 				ignited_revenant = true
+				aptrgangr = true
 				abyss_mine = true
 				abyss_mark = true
 				ignited_berserker = true
@@ -1484,13 +1699,16 @@ mode = "fancy"
 				amethyst_cluster_projectile = true
 				laser_beam = true
 				ancient_desert_stele = true
+				ancient_ancient_remnant = true
 				coral_bardiche = true
 				tidal_tentacle = true
 				ender_guardian = true
+				phantom_halberd = true
 				deepling_warlock = true
 
 			[light_sources.settings.entities.protection_pixel]
 				projectile_pneumaticgrenadeentity = true
+				pneumaticgrenadeentity = true
 
 			[light_sources.settings.entities.quark]
 				quark_boat = true
@@ -1636,6 +1854,44 @@ mode = "fancy"
 			[light_sources.settings.entities.betterarcheology]
 				bombentity = true
 
+			[light_sources.settings.entities.scguns]
+				fire_round_projectile = true
+				hive = true
+				krahg_round_projectile = true
+				hornlin = true
+				throwable_gas_grenade = true
+				rocket = true
+				shulkshot_projectile = true
+				throwable_choke_bomb = true
+				brass_bolt = true
+				throwable_grenade = true
+				throwable_molotov_cocktail = true
+				dissident = true
+				primed_powder_keg = true
+				beowulf_projectile = true
+				cog_knight = true
+				sculk_cell = true
+				grenade = true
+				osborne_slug_projectile = true
+				throwable_swarm_bomb = true
+				bearpack_shell_projectile = true
+				plasma_projectile = true
+				blunderer = true
+				hog_round_projectile = true
+				cog_minion = true
+				microjet = true
+				throwable_stun_grenade = true
+				advanced_round_projectile = true
+				supply_scamp = true
+				swarm = true
+				basic_turret = true
+				primed_nitro_keg = true
+				zombified_hornlin = true
+				sky_carrier = true
+				projectile = true
+				ramrod_projectile = true
+				redcoat = true
+
 			[light_sources.settings.entities.minecolonies]
 				pirate = true
 				amazonspearman = true
@@ -1686,12 +1942,14 @@ mode = "fancy"
 
 			[light_sources.settings.entities.deeperdarker]
 				shattered = true
+				sludge = true
 				stalker = true
 				shriek_worm = true
 				sculk_centipede = true
 				sculk_leech = true
 				chest_boat = true
 				boat = true
+				angler_fish = true
 				sculk_snapper = true
 
 			[light_sources.settings.entities.smallships]
@@ -1700,6 +1958,11 @@ mode = "fancy"
 				drakkar = true
 				cog = true
 				cannon_ball = true
+
+			[light_sources.settings.entities.trials]
+				wind_charge = true
+				bogged = true
+				breeze = true
 
 			[light_sources.settings.entities.valkyrienskies]
 				ship_mounting_entity = true

@@ -3,7 +3,7 @@
 	"cascades": true,
 	"waterfallSpray": true,
 	"fireflies": true,
-	"fallingLeaves": true,
+	"fallingLeaves": false,
 	"caveDust": true,
 	"chestBubbles": true,
 	"soulSandBubbles": true,
@@ -32,9 +32,23 @@
 		"flowers": 1.0,
 		"tallFlowers": 0.5
 	},
-	"excludeCaveDust": [
-		"minecraft:lush_caves",
-		"minecraft:dripstone_caves",
-		"minecraft:deep_dark"
-	]
+	"fallingLeavesSettings": {
+		"spawnChance": 60,
+		"spawnRipples": true,
+		"layFlatOnGround": true,
+		"layFlatRightAngles": false
+	},
+	"caveDustSettings": {
+		"spawnChance": 700,
+		"baseMaxAge": 200,
+		"color": "#FF808080",
+		"fadeDuration": 20,
+		"maxAcceleration": 0.029999999329447746,
+		"accelChangeChance": 180,
+		"excludeBiomes": [
+			"minecraft:lush_caves",
+			"minecraft:dripstone_caves",
+			"minecraft:deep_dark"
+		]
+	}
 }

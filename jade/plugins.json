@@ -19,6 +19,7 @@
     "crop_progress": true,
     "command_block": true,
     "mob_growth": true,
+    "waxed": true,
     "harvest_tool.new_line": false,
     "entity_health.max_for_render": 40,
     "entity_health.show_fractions": false,
@@ -65,19 +66,28 @@
     "registry_name": "OFF",
     "mod_name": true
   },
+  "alekiships": {
+    "furnace": true,
+    "jukebox": true,
+    "brewing_stand": true,
+    "block": true,
+    "note_block": true
+  },
   "ars_nouveau": {
     "mob_jar": true
   },
   "jadeaddons": {
     "equipment_requirement": ""
   },
-  "hammerlib": {
-    "root": true
-  },
   "workshop_for_handsome_adventurer": {
     "jade_plugin2": true,
     "jade_plugin3": true,
     "jade_plugin1": true
+  },
+  "delightful": {
+    "crop_progress": true,
+    "pie_icons": true,
+    "mushroom_colony": true
   },
   "jadecolonies": {
     "colony.citizens": true,

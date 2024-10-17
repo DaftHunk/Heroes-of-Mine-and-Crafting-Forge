@@ -1,4 +1,5 @@
 {
   "xpEnabled": true,
-  "commandExecutor": "CONSOLE"
+  "commandExecutor": "CONSOLE",
+  "strongAILevel": -1
 }
