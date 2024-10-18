@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "minecraft:meadow",
-    "chance": 5
-  },
-  {
     "biomeName": "minecraft:swamp",
     "chance": 20
   },
@@ -29,6 +25,10 @@
   },
   {
     "biomeName": "minecraft:sunflower_plains",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:meadow",
     "chance": 5
   }
 ]

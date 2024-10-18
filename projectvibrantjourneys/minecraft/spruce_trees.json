@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "minecraft:taiga",
-    "chance": 20
-  },
-  {
     "biomeName": "minecraft:windswept_forest",
     "chance": 5
   },
@@ -17,6 +13,10 @@
   },
   {
     "biomeName": "minecraft:old_growth_spruce_taiga",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:taiga",
     "chance": 20
   }
 ]

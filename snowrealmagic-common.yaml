@@ -22,7 +22,7 @@ accumulation:
   accumulatesDuringSnowstorm: false
   accumulatesDuringSnowfall: false
 integration:
-  accumulationWinterOnly: true
+  accumulationWinterOnly: false
 debug:
   weatherTickSlowness: 16
   preventWorldgenLogSpam: true

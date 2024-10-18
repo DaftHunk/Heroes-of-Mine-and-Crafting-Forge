@@ -1,13 +1,5 @@
 [
   {
-    "biomeName": "byg:dacite_ridges",
-    "chance": 10
-  },
-  {
-    "biomeName": "byg:rose_fields",
-    "chance": 5
-  },
-  {
     "biomeName": "byg:howling_peaks",
     "chance": 5
   },
@@ -34,5 +26,13 @@
   {
     "biomeName": "byg:borealis_grove",
     "chance": 10
+  },
+  {
+    "biomeName": "byg:dacite_ridges",
+    "chance": 10
+  },
+  {
+    "biomeName": "byg:rose_fields",
+    "chance": 5
   }
 ]

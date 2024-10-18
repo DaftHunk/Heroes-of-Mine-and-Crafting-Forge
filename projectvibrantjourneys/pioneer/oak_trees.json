@@ -1,9 +1,5 @@
 [
   {
-    "biomeName": "pioneer:verdant_sands",
-    "chance": 5
-  },
-  {
     "biomeName": "pioneer:pine_meadows",
     "chance": 10
   },
@@ -22,5 +18,9 @@
   {
     "biomeName": "pioneer:flooded_forest",
     "chance": 20
+  },
+  {
+    "biomeName": "pioneer:verdant_sands",
+    "chance": 5
   }
 ]

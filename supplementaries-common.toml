@@ -181,10 +181,10 @@
 
 		#This is a map of special blocks that can be cleaned with soap
 		[functional.soap.special_blocks]
-			"minecraft:sticky_piston" = "minecraft:piston"
-			"quark:dirty_glass" = "minecraft:glass"
 			"#alexscaves:cave_paintings" = "alexscaves:smooth_limestone"
 			"quark:dirty_glass_pane" = "minecraft:glass_pane"
+			"minecraft:sticky_piston" = "minecraft:piston"
+			"quark:dirty_glass" = "minecraft:glass"
 
 	[functional.present]
 		enabled = true
@@ -273,15 +273,15 @@
 
 	[building.ash]
 		enabled = true
+		#Burnable blocks will have a chance to create ash layers when burned. Greater this number the greater the chance will be
+		#Range: 0.0 ~ 1.0
+		ash_from_fire_chance = 1.0
 		#Burning mobs will drop ash when they die
 		ash_from_burning_mobs = true
 		#Allows rain to wash away ash layers overtime
 		rain_wash_ash = true
 		#Use a datapack to tweak rarity
 		basalt_ash = true
-		#Burnable blocks will have a chance to create ash layers when burned. Greater this number the greater the chance will be
-		#Range: 0.0 ~ 1.0
-		ash_from_fire_chance = 1.0
 
 	[building.flag]
 		enabled = true
@@ -460,7 +460,7 @@
 
 	[tweaks.traders_open_doors]
 		#Allows traders to open doors (because they couldnt aparently)
-		enabled = false
+		enabled = true
 
 	[tweaks.dispenser_tweaks]
 		#Allows dispensers to use axes on blocks to strip logs and scrape off copper oxidation and wax

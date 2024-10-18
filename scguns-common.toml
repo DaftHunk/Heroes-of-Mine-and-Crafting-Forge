@@ -3,6 +3,13 @@
 
 	#Properties relating to gameplay
 	[common.gameplay]
+		#Multiplier to adjust the capacity of all ammo boxes.
+		#Range: 0.1 ~ 100.0
+		ammoBoxCapacityMultiplier = 1.0
+		#If true, guns will be damageable and can break, coward if you toggle this
+		enableGunDamage = true
+		#If true, gun attachments will be damageable and can break, also a coward
+		enableAttachmentDamage = true
 		#The extra amount to expand an entity's bounding box when checking for projectile collision. Setting this value higher will make it easier to hit entities
 		#Range: 0.0 ~ 1.0
 		growBoundingBoxAmount = 0.3
@@ -23,16 +30,9 @@
 		knockbackStrength = 0.15
 		#If true, improves the accuracy of weapons by considering the ping of the player. This has no affect on singleplayer. This will add a little overhead if enabled.
 		improvedHitboxes = false
-		#If true, guns will be damageable and can break, coward if you toggle this
-		enableGunDamage = true
-		#If true, gun attachments will be damageable and can break, also a coward
-		enableAttachmentDamage = true
 		#Damage dealt by the Enemy Guns
 		#Range: 0.0 ~ 1.7976931348623157E308
 		enemyBulletDamage = 4.5
-		#Multiplier to adjust the capacity of all ammo boxes.
-		#Range: 0.1 ~ 100.0
-		ammoBoxCapacityMultiplier = 1.0
 
 		#Properties related to gun griefing
 		[common.gameplay.griefing]
@@ -177,10 +177,10 @@
 		hog_round_damage = 5.0
 		#Base damage for SHOTGUN_SHELL turret projectile
 		#Range: 0.0 ~ 1.7976931348623157E308
-		shotgun_shell_damage = 12.0
+		shotgun_shell_damage = 18.0
 		#Base damage for BEARPACK_SHELL turret projectile
 		#Range: 0.0 ~ 1.7976931348623157E308
-		bearpack_shell_damage = 16.0
+		bearpack_shell_damage = 24.0
 		#If true, turret damage will scale over time
 		enable_damage_scaling = false
 		#The rate at which turret damage increases per day
