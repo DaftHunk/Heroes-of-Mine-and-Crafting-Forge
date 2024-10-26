@@ -15,7 +15,7 @@
 	#Hide background if inventory is empty
 	hideBackground = false
 	#Show Inventory HUD when debug menu is open
-	invWithDebug = true
+	invWithDebug = false
 
 #Settings for ArmorStatus HUD
 [armorhud]

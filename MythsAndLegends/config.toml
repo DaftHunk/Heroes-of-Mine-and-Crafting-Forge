@@ -86,3 +86,9 @@ server_only_mode = false
 # Enable/Disable Form Changes (DNA Splicer, Held Item Form Changes and so on). Possible values: true, false. Default: true
 form_changes = true
 
+# Enable/Disable DEBUG Mode | This should always be false only for devs :) LEAVE IT ALONE. Default: false
+debug_mode = false
+
+# Set the delay (in ticks(20 ticks = 1 second) after a player joins before applying forms and aspects to Pokémon. This ensures forms and aspects are properly initialized. Possible values: Any positive integer. Default: 100 ticks
+join_form_aspect_delay = 100
+

@@ -3,9 +3,6 @@
 
 	#Properties relating to gameplay
 	[common.gameplay]
-		#Multiplier to adjust the capacity of all ammo boxes.
-		#Range: 0.1 ~ 100.0
-		ammoBoxCapacityMultiplier = 1.0
 		#If true, guns will be damageable and can break, coward if you toggle this
 		enableGunDamage = true
 		#If true, gun attachments will be damageable and can break, also a coward
@@ -47,10 +44,6 @@
 			fragileBlockBreakChance = 1.0
 			#If true, allows guns enchanted with Fire Starter to light and spread fires on blocks
 			setFireToBlocks = true
-
-		[common.gameplay.gameplay]
-			#Set to false to disable the spawning of casing items when firing guns.
-			spawnCasings = true
 
 	#Properties relating to network
 	[common.network]
@@ -154,39 +147,4 @@
 		#The amount of times a player has to shoot within the spread threshold before the maximum amount of spread is applied. Setting the value higher means it will take longer for the spread to be applied.
 		#Range: > 1
 		maxCount = 10
-
-	#Properties relating to turrets
-	[common.turret]
-		#Base damage for STANDARD_COPPER_ROUND turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		standard_copper_round_damage = 4.0
-		#Base damage for ADVANCED_ROUND turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		advanced_round_damage = 6.0
-		#Base damage for GIBBS_ROUND turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		gibbs_round_damage = 8.0
-		#Base damage for COMPACT_COPPER_ROUND turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		compact_copper_round_damage = 2.0
-		#Base damage for COMPACT_ADVANCED_ROUND turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		compact_advanced_round_damage = 3.5
-		#Base damage for HOG_ROUND turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		hog_round_damage = 5.0
-		#Base damage for SHOTGUN_SHELL turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		shotgun_shell_damage = 18.0
-		#Base damage for BEARPACK_SHELL turret projectile
-		#Range: 0.0 ~ 1.7976931348623157E308
-		bearpack_shell_damage = 24.0
-		#If true, turret damage will scale over time
-		enable_damage_scaling = false
-		#The rate at which turret damage increases per day
-		#Range: 0.0 ~ 1.7976931348623157E308
-		damage_scaling_rate = 0.03
-		#The maximum damage that turret scaling can reach
-		#Range: 0.0 ~ 1.7976931348623157E308
-		max_scaled_damage = 1.7976931348623157E308
 

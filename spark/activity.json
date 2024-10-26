@@ -5,6 +5,58 @@
       "name": "Daft_Hunk",
       "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
     },
+    "time": 1729946634026,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/tA5R6SDYK8"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
+    "time": 1729598280529,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/G7JIUWWQ8j"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
+    "time": 1729598148981,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/zYnaF1ZC0J"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
+    "time": 1729596922214,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/SP1stRskB4"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
     "time": 1728907003637,
     "type": "Profiler",
     "data": {

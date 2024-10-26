@@ -36,7 +36,9 @@
     "cobgyms:ancient_relic",
     "cobgyms:deepslate_ancient_relic",
     "cobgyms:nether_ancient_relic",
-    "cobgyms:end_ancient_relic"
+    "cobgyms:end_ancient_relic",
+	"deeperdarker:sculk_transmitter",
+	"sophisticatedbackpacks:inception_upgrade"
   ],
   // -----------------------------------------------------------
   // Removes an item if it contains certain nbt tag. If the whole entry (or expression) is present, the item gets removed.
@@ -71,5 +73,5 @@
   //  
   // [!] Enabling this will disable all regular expressions
   // [!] Does not apply to NBT, only item blacklist / interaction / attack
-  "use_hashmap_optimizations": false
+  "use_hashmap_optimizations": true
 }
