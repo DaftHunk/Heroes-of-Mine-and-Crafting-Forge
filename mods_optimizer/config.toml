@@ -323,6 +323,7 @@ wynntils = "client"
 yungsmenutweaks = "client"
 zmedievalmusic = "client"
 zoomify = "client"
+cobblemon-ui-tweaks =  "client"
 
 [Debug]
 debugForceSide = "default"
