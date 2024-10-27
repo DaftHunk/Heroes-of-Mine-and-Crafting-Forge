@@ -1,0 +1,81 @@
+{
+  "team": [
+    {
+      "species": "cobblemon:decidueye",
+      "gender": "MALE",
+      "level": 40,
+      "nature": "cobblemon:brave",
+      "ability": "overgrow",
+      "moveset": [
+        "suckerpunch",
+        "aurasphere",
+        "gigadrain",
+        "synthesis"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 32,
+        "attack": 32,
+        "defence": 32,
+        "special_attack": 32,
+        "special_defence": 32,
+        "speed": 32
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "hisuian",
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:chesnaught",
+      "gender": "MALE",
+      "level": 40,
+      "nature": "cobblemon:brave",
+      "ability": "overgrow",
+      "moveset": [
+        "seedbomb",
+        "takedown",
+        "closecombat",
+        "leechseed"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 32,
+        "attack": 32,
+        "defence": 32,
+        "special_attack": 32,
+        "special_defence": 32,
+        "speed": 32
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 28a9e5f5-768f-428d-a572-38c301648fc4 %player% victory_dial",
+  "lossCommand": "easy_npc dialog open 28a9e5f5-768f-428d-a572-38c301648fc4 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Ivy"
+  ]
+}

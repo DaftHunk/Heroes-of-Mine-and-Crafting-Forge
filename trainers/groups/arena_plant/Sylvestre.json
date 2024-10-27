@@ -1,0 +1,46 @@
+{
+  "team": [
+    {
+      "species": "cobblemon:sceptile",
+      "gender": "MALE",
+      "level": 40,
+      "nature": "cobblemon:quirky",
+      "ability": "overgrow",
+      "moveset": [
+        "frenzyplant",
+        "slam",
+        "dig",
+        "gigadrain"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 32,
+        "attack": 32,
+        "defence": 32,
+        "special_attack": 32,
+        "special_defence": 32,
+        "speed": 32
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 6410a87f-5b1f-461c-9c00-e866f2532667 %player% win_dial",
+  "lossCommand": "easy_npc dialog open 6410a87f-5b1f-461c-9c00-e866f2532667 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Hiroshi"
+  ]
+}
