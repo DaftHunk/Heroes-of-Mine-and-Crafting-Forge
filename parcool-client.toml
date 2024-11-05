@@ -5,7 +5,7 @@
 	#Enable custom animation of falling
 	enable_falling_animation = false
 	#Enable first-person-view animations
-	enable_fov_animation = true
+	enable_fov_animation = false
 	#Enable rotation of camera by Dodge
 	enable_camera_rotation_dodge = false
 	#Enable rotation of camera by Backward Wall-Jump
@@ -168,7 +168,7 @@
 ["Possibility_of_Actions(Some_do_not_have_to_work)"]
 	can_BreakfallReady = true
 	can_CatLeap = true
-	can_ChargeJump = true
+	can_ChargeJump = false
 	can_ClimbPoles = true
 	can_ClimbUp = true
 	can_ClingToCliff = true
@@ -179,7 +179,7 @@
 	can_FastSwim = true
 	can_Flipping = true
 	can_HangDown = true
-	can_HorizontalWallRun = true
+	can_HorizontalWallRun = false
 	can_JumpFromBar = true
 	can_QuickTurn = true
 	can_Roll = true
@@ -188,7 +188,7 @@
 	can_Tap = true
 	can_Vault = true
 	can_VerticalWallRun = true
-	can_WallJump = true
+	can_WallJump = false
 	can_WallSlide = true
 
 [Stamina_HUD_Configuration]

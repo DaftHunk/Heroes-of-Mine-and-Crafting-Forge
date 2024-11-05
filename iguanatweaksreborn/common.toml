@@ -47,7 +47,7 @@
 
 		[World.Spawners."Disable spawners"]
 			Enabled = false
-			#The minimum amount of spawnable mobs (when the spawner is basically in the same position as the world spawn. The amount of spawnable mobs before deactivating is equal to the distance divided by 8 (plus this value). E.g. At 160 blocks from spawn the max spawnable mobs will be 160 / 8 + 25 = 20 + 25 = 55
+			#The minimum amount of spawnable mobs (when the spawner is basically in the same position as the world spawn). The amount of spawnable mobs before deactivating is equal to the distance divided by 8 (plus this value). E.g. At 160 blocks from spawn the max spawnable mobs will be 160 / 8 + 25 = 20 + 25 = 55
 			#Range: > 0
 			"Minimum Spawnable Mobs" = 20
 			#This multiplier increases the max mobs spawned.
@@ -83,7 +83,7 @@
 
 	[World.Fluids]
 		#If enabled, water will deal fall damage if too shallow
-		"Water fall damage" = true
+		"Water fall damage" = false
 		#How strong does water push entities. Vanilla is 0.014
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 		"Water push force" = 0.005
@@ -433,10 +433,10 @@
 		"No Zombie Villagers" = false
 		#Allows mobs to spawn in the world spawn (in vanilla mobs can't spawn in a 24 blocks radius from world spawn)
 		"Allow world spawn spawn" = false
-		#Disables insomnia and makes Phantoms spawn naturally in the End
-		"Phantoms in the End" = true
 		#Disables normal skeletons from spawning in Fortresses. Requires a minecraft restart
 		"Remove skeletons from Fortresses" = false
+		#Enables a data pack that makes Guardians spawn in deep oceans. These guardians have half health compared to monument guardians.
+		"Guardians in Deep Oceans" = true
 
 	#Small changes to villagers to make them less OP
 	[Mobs.Villagers]
@@ -472,7 +472,7 @@
 	#Various stuff that doesn't fit in any other Feature.
 	"Enable Tweaks" = false
 	#Various data packs that can be enabled/disabled
-	"Enable Data Packs & Integration" = true
+	"Enable Data Packs & Integration" = false
 	#Beacon Range varying based of blocks of the pyramid and better conduit killing mobs. Blocks list and ranges are controlled via json in this feature's folder
 	"Enable Beacon & Conduit" = false
 	#Various Nerfs
@@ -508,9 +508,9 @@
 		#The strength used to throw splash potions. Vanilla is 0.5
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 		"Splash potions throw strength" = 1.0
-		#If set higher than 0 it will enable damage when colliding with walls at a high speed (e.g. with explosions or knockback). Higher = more damage
-		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-		"Collide with walls damage" = 2.5
+		#If set higher than 0 it will enable damage when colliding with walls at a high speed (e.g. with explosions or knockback). Higher = more damage. Set to 0 to disable
+		#Range: 0.0 ~ 1.7976931348623157E308
+		"Collide with walls damage" = 0.0
 		#The speed modifier when frozen. Vanilla is -0.05
 		#Range: -1.0 ~ 0.0
 		"Frozen Movement Speed modifier" = -0.1
@@ -949,36 +949,36 @@
 
 [Experience]
 	#Changes to some enchantments related stuff.
-	"Enable Enchantments" = true
+	"Enable Enchantments" = false
 	#Various changes to experience. You can also use the iguanatweaks:disableExperience game rule to disable experience drops and experience bar.
-	"Enable Experience" = true
+	"Enable Experience" = false
 	#Better repair, free rename and merge. With this feature enabled, EMI's repairs and enchanting in anvil recipes are removed.
 	"Enable Anvils" = true
 	#Changes the experience lost on death and xp per level required.
-	"Enable Player Experience" = true
+	"Enable Player Experience" = false
 
 	#Changes to some enchantments related stuff.
 	[Experience.Enchantments]
 		#Infinity can go up to level 4. Each level makes an arrow have only 1 in level+1 chance to consume. E.g. with Infinity 4 there's 1 in 5 chance to consume the arrow, and 4 in 5 to not consume it.
-		"Infinity overhaul" = true
+		"Infinity overhaul" = false
 		#Unbreaking max level is now 5 and tool lasts 50% more per level
-		"Less unbreakable unbreaking" = true
+		"Less unbreakable unbreaking" = false
 		#Thorns is no longer compatible with other protections, but deals damage every time (higher levels deal more damage) and no longer damages items.
-		"Small Thorns Overhaul" = true
+		"Small Thorns Overhaul" = false
 		#Mending only makes the tool repair by one durability every 2 xp instead of 2 durability/1 xp.
-		"Mending Nerf" = true
+		"Mending Nerf" = false
 		#Respiration decreases air consumption by 50% per level instead of 100%.
-		"Respiration Nerf" = true
+		"Respiration Nerf" = false
 		#Change the bonus efficiency formula from `lvl*lvl+1` to `tool_efficiency * (0.5*lvl)`
-		"Better Efficiency Formula" = true
+		"Better Efficiency Formula" = false
 		#The ore_drops formula is changed to 20%/50%/85%/125% drop increase from 33%/75%/120%/166%
-		"Nerf fortune" = true
+		"Nerf fortune" = false
 		#Set arrow's damage increase with the Power enchantment (vanilla is 0.5). If set to a value != 0.5 the flat 0.5 bonus is also removed. Set to 0.5 to disable.
 		#Range: 0.0 ~ 2.0
 		"Power Enchantment Damage" = 0.2
 		#If true, the formula for bonus damage for arrows is changed from `'Power Enchantment Damage' + 'Power Enchantment Damage' * lvl` to `base_damage * 'Power Enchantment Damage' * lvl`.
-		"Power Enchantment Multiplier" = true
-		"Prevent farmland trampling with Feather Falling" = true
+		"Power Enchantment Multiplier" = false
+		"Prevent farmland trampling with Feather Falling" = false
 		#If true, vanilla protection enchantments are replaced with mod's ones. To re-enable vanilla enchantments refer to `disabled_enchantments.json`.
 		#Protection has only one level, protects 6% per level and is treasure. Other protections work the same except for projectile that reduces the sight range of mobs by 2% per level. Feather falling protects for 16% per level instead of 12% + 1 per level.
 		"Replace protection enchantments" = false
@@ -992,7 +992,9 @@
 		#If true, vanilla looting, fortune and Luck of the Sea enchantments are replaced with a single one: Luck. To re-enable vanilla enchantments refer to `disabled_enchantments.json`.
 		"Replace looting, fortune and LotS enchantments" = false
 		#If true and shift it pressed, items will show enchantment info below the enchantments
-		"Enchantments info" = true
+		"Enchantments info" = false
+		#If true, vanilla fire aspect and knockback are replaced with mod's ones. To re-enable vanilla enchantments refer to `disabled_enchantments.json`.
+		"Replace other enchantments" = false
 
 	#Various changes to experience. You can also use the iguanatweaks:disableExperience game rule to disable experience drops and experience bar.
 	[Experience.Experience]
@@ -1219,8 +1221,8 @@
 
 	#Players be left with half a heart when too much damage that would kill them is dealt (only works for damage taken from mobs)
 	[Combat."Unfair one-shots"]
-		#If true, a resistance effect is given to players on activation
-		Resistance = true
 		#If true, an animation is played on activation
 		Animation = true
+		#A list of effects to give when Unfair One Shot triggers, separated by semi-colons
+		Effects = "minecraft:resistance,50,4;minecraft:resistance,100,3;minecraft:resistance,150,1"
 
