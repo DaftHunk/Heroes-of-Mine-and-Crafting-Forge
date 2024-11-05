@@ -11,7 +11,7 @@
 #Config specific to the discord bot
 [botConfig]
 	#The token of the Discord Bot to use. This will be encrypted on first load. See https://sdlink.fdd-docs.com/initial-setup/ to find this
-	botToken = "sZAuN68p3T36xahbkhbBhhRW2PbP01OaDA4zwHoCoM9HDzIK0R6d8NCOpqAMv9M/XJhKIaQYPpT29a118nSV6/u3zKe0noxePoudysY9F6+gILH7H7ZkrPYtcXsTEHF8gm1Anc/E9jg4/0sgUg2NC5U0EZzcKwJNAhSlGryqL0OlxHxI8RGI0A=="
+	botToken = "hBdZqci1q93LRwrxE9n8+/bvXG6x65ejhapL8+mutZHmHZHOAkpFUeLApbHzkt0kL/Xa+GPiPRPAMHINt0srf6piz5A6DaMlLD/+VKX5YNOb8Kc1PNGo/Q=="
 	#Print the bot invite link to the console on startup
 	printInviteLink = true
 	#Use silent replies when Slash Commands are used
