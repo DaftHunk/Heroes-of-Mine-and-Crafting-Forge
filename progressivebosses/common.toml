@@ -66,9 +66,9 @@
 		"Max Difficulty" = 8
 		#How much difficulty will players start with when joining a world? Note that this will apply when the player joins the world if the current player difficulty is below this value.
 		#Range: > 0
-		"Starting Difficulty" = 0
+		"Starting Difficulty" = 1
 		#If false and there's more than 1 player around the Dragon, difficulty will be the average of all the players' difficulty instead of summing them.
-		"Sum Killed Dragons Difficulty" = false
+		"Sum Killed Dragons Difficulty" = true
 		#Percentage bonus difficulty added to the Dragon when more than one player is present. Each player past the first one will add this percentage to the difficulty.
 		#Range: 0.0 ~ 1.7976931348623157E308
 		"Bonus Difficulty per Player" = 0.25
@@ -147,7 +147,7 @@
 	["Ender Dragon".Health]
 		#Ender Dragon health will be increased by this value at max difficulty (scaling accordingly at lower difficulties)
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Health Bonus at Max Difficulty" = 200.0
+		"Health Bonus at Max Difficulty" = 10000.0
 		#How much health will the Ender Dragon regen at max difficulty (scaling accordingly at lower difficulties). This doesn't affect the health regen given by crystals.
 		#Range: 0.0 ~ 1.7976931348623157E308
 		"Bonus Regeneration" = 1.0
@@ -156,7 +156,7 @@
 		"Maximum Bonus Regeneration" = 1.0
 		#How much health (when missing 100% health) will the Ender Dragon regen at max difficulty each second whenever she's attached to a Crystal. So if she's missing 30% health, this will be 30% effective. This is added to the normal Crystal regen.
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Bonus Crystal Regeneration" = 0.0
+		"Bonus Crystal Regeneration" = 100.0
 		#Bonus regeneration (also bonus crystal regen) will be multiplied by this ratio when the Dragon has been hit in the last 'Bonus Regeneration When Hit Duration' ticks.
 		#Range: 0.0 ~ 4.0
 		"Bonus Regeneration Ratio When Hit" = 0.4

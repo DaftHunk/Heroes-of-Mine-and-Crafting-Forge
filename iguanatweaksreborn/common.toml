@@ -1,11 +1,11 @@
-"Enable Combat" = true
+"Enable Combat" = false
 "Enable Experience" = true
 "Enable Farming" = false
 "Enable Hunger & Health" = false
 "Enable Items" = false
 "Enable Mining" = false
 "Enable Miscellaneous" = false
-"Enable Mobs" = true
+"Enable Mobs" = false
 "Enable Movement" = false
 "Enable Sleep & Respawn" = false
 "Enable World" = true
@@ -421,7 +421,7 @@
 
 [Mobs]
 	#Add a brand new Echo Torch and some changes to mob spawn
-	"Enable Spawning" = true
+	"Enable Spawning" = false
 	#Small changes to villagers to make them less OP
 	"Enable Villagers" = false
 	#Changes to mobs equipment

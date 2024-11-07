@@ -23,10 +23,10 @@
 		manaBarDisplay = "Contextual"
 		#Used to adjust mana bar's position (11 is one full hunger bar up).
 		manaBarXOffset = 0
-		manaBarYOffset = 0
+		manaBarYOffset = 10
 		manaBarTextVisible = true
 		#Allowed Values: Hunger, XP, Center, TopLeft, TopRight, BottomLeft, BottomRight
-		manaBarAnchor = "BottomRight"
+		manaBarAnchor = "BottomLeft"
 		manaTextXOffset = 0
 		manaTextYOffset = 0
 
@@ -35,8 +35,8 @@
 		#Allowed Values: Never, Always, Contextual
 		spellBarDisplay = "Always"
 		#Used to adjust spell bar's position.
-		spellBarXOffset = 0
-		spellBarYOffset = 0
+		spellBarXOffset = -50
+		spellBarYOffset = 35
 		#Allowed Values: Hotbar, TopLeft, TopRight, BottomLeft, BottomRight
 		spellBarAnchor = "Hotbar"
 
