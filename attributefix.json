@@ -319,6 +319,17 @@
         "value": 1
       }
     },
+    "reach-entity-attributes:reach": {
+      "enabled": false,
+      "min": {
+        "default": -1024,
+        "value": -1024
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
     "protection_pixel:floatshieldattribute": {
       "enabled": false,
       "min": {
@@ -878,6 +889,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "reach-entity-attributes:attack_range": {
+      "enabled": false,
+      "min": {
+        "default": -1024,
+        "value": -1024
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
       }
     },
     "tetra:ability_cooldown": {
