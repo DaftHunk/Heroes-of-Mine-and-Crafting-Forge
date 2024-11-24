@@ -187,6 +187,17 @@
         "value": 1024
       }
     },
+    "scguns:additional_bullet_damage": {
+      "enabled": false,
+      "min": {
+        "default": -1000,
+        "value": -1000
+      },
+      "max": {
+        "default": 10000,
+        "value": 10000
+      }
+    },
     "irons_spellbooks:cast_time_reduction": {
       "enabled": false,
       "min": {
@@ -394,6 +405,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "scguns:bullet_damage_multiplier": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
       }
     },
     "irons_spellbooks:evocation_spell_power": {
@@ -605,6 +627,17 @@
         "value": 1
       }
     },
+    "scguns:spread_multiplier": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
+      }
+    },
     "obscure_api:resilience": {
       "enabled": false,
       "min": {
@@ -643,6 +676,17 @@
       "min": {
         "default": -100,
         "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "scguns:projectile_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
         "default": 100,
@@ -966,6 +1010,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "scguns:reload_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
       }
     },
     "obscure_api:parry": {

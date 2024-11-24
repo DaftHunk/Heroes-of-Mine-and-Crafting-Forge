@@ -13,11 +13,19 @@
     "singleplayer": {
       "0": "more_cobblemon_tweaks:textures/gui/pc/wallpapers/purple_wallpaper.png",
       "13": "more_cobblemon_tweaks:textures/gui/pc/wallpapers/red_wallpaper.png"
+    },
+    "149.202.65.187:25565": {
+      "48": "more_cobblemon_tweaks:textures/gui/pc/wallpapers/dark_blue_wallpaper.png",
+      "49": "more_cobblemon_tweaks:textures/gui/pc/wallpapers/black_wallpaper.png"
     }
   },
   "pc_box_names": {
     "singleplayer": {
       "0": "ffff"
+    },
+    "149.202.65.187:25565": {
+      "48": "Shiny",
+      "49": "La team"
     }
   }
 }
