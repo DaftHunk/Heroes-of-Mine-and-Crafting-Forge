@@ -45,3 +45,4 @@
 *.csh filter=lfs diff=lfs merge=lfs -text
 *.js filter=lfs diff=lfs merge=lfs -text
 *.map filter=lfs diff=lfs merge=lfs -text
+*.unpack_finished filter=lfs diff=lfs merge=lfs -text
