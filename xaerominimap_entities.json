@@ -22,8 +22,8 @@
     "startFadingAt": 0.0,
     "renderOverMinimapFrame": 1.0,
     "icons": 1.0,
-    "names": 1.0,
     "heightLimit": 40.0,
+    "names": 1.0,
     "iconScale": 1.0
   },
   "subCategories": [
@@ -64,6 +64,24 @@
         {
           "hardInclude": "nothing",
           "includeList": [
+            "minecolonies:citizen"
+          ],
+          "includeListInSuperCategory": true,
+          "excludeMode": "ONLY",
+          "excludeList": [],
+          "name": "colonist",
+          "protection": false,
+          "settingOverrides": {
+            "displayed": true,
+            "names": 2.0,
+            "color": 15.0,
+            "icons": 0.0
+          },
+          "subCategories": []
+        },
+        {
+          "hardInclude": "nothing",
+          "includeList": [
             "minecolonies:visitor"
           ],
           "includeListInSuperCategory": true,
@@ -74,25 +92,7 @@
           "settingOverrides": {
             "displayed": true,
             "names": 0.0,
-            "color": 5.0,
-            "icons": 0.0
-          },
-          "subCategories": []
-        },
-        {
-          "hardInclude": "nothing",
-          "includeList": [
-            "minecolonies:citizen"
-          ],
-          "includeListInSuperCategory": true,
-          "excludeMode": "ONLY",
-          "excludeList": [],
-          "name": "colonist",
-          "protection": false,
-          "settingOverrides": {
-            "displayed": true,
-            "names": 0.0,
-            "color": 15.0,
+            "color": 2.0,
             "icons": 0.0
           },
           "subCategories": []
