@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16189388751d330b0ff6d65a9022d9181a3d1acff68bc1249ccb7005ad67b26e
-size 172
+#List of slots to create or modify.
+#See documentation for syntax: https://docs.illusivesoulworks.com/curios/configuration#slot-configuration
+#
+slots = ["id=back;size=2"]
+

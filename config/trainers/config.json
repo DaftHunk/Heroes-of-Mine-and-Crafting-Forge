@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f8e371d1cf9dbbe625a4fe7018b6a7b0edfe4ee7b7bbbd397dab28db6e0c5781
-size 78
+{
+  "xpEnabled": true,
+  "commandExecutor": "CONSOLE",
+  "strongAILevel": -1
+}

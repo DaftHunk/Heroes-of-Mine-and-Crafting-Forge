@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e29d6408b3904b199b9041853758edc643d813c26d4a25f827280eccbc6a1b1
-size 335
+
+[general]
+	#Modify the rate of smoke produced by a tug. Min 0, Max 1, Default 0.4
+	#Range: 0.0 ~ 1.0
+	tugSmoke = 0.4
+	#Modify the rate of smoke produced by a locomotive. Min 0, Max 1, Default 0.2
+	#Range: 0.0 ~ 1.0
+	locomotiveSmoke = 0.2
+	#Disable indicator beacons for tug route item. Default false.
+	disableTugRouteBeacons = false
+

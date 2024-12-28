@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eedb4c98e3a88cfba6bba41c35937d6b2d81d9f18942402393cd61f2f87f288c
-size 238
+
+["Client Configs"]
+	#Fuel type tooltip on Buckets
+	"Fuel tooltips" = true
+	#Whenever Diesel Engines display in JEI
+	"Diesel Engine JEI Config" = true
+	#Diesel Engines emit sounds on trains
+	"Diesel Engines emit sounds on trains" = true
+

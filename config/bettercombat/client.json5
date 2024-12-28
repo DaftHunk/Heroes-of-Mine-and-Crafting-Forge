@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5e32d0b6d9afbe9e4a4987ad49371e2fd7313af3aac70cd8eff6cb56ebb0dc2
-size 538
+{
+	"isHoldToAttackEnabled": true,
+	"isMiningWithWeaponsEnabled": true,
+	"isSwingThruGrassEnabled": true,
+	"isAttackInsteadOfMineWhenEnemiesCloseEnabled": true,
+	"isHighlightCrosshairEnabled": true,
+	"hudHighlightColor": 16711680,
+	"isShowingArmsInFirstPerson": true,
+	"isShowingOtherHandFirstPerson": true,
+	"isSweepingParticleEnabled": true,
+	"isTooltipAttackRangeEnabled": true,
+	"weaponSwingSoundVolume": 100,
+	"isDebugOBBEnabled": true,
+	"swingThruGrassBlacklist": "[ \"farmersdelight\", \"tetra\" ]",
+	"mineWithWeaponBlacklist": ""
+}

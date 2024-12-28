@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5fb6e7870d892151e133cc6facf3dc7047a6808262968f1c15674cdc653d0883
-size 270
+{
+  "variables": {
+    "fire_power": {
+      "type": "gimm1q:attribute",
+      "attribute": "spell_power:fire"
+    }
+  },
+  "equations": {
+    "damage": 8.0,
+    "speed": 1.0,
+    "ability_damage": 8.0,
+    "ability_cooldown": 5.0,
+    "extra_damage": "fire_power"
+  }
+}

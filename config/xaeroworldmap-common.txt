@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff010a44db192dea4aaf37e699d7f9f2ad1578e0876b8f6e98a26ca77e241224
-size 118
+allowCaveModeOnServer:false
+allowNetherCaveModeOnServer:false
+registerStatusEffects:true
+everyoneTracksEveryone:false

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c54c58574db193ab1cd445fba3b0673c9cbe67f8de1fe37e1308e951d2e7a4cb
-size 361
+
+#Client settings
+[client]
+	#Should the hunger bar have a gilded overlay when the player has the Nourishment effect?
+	nourishmentHungerOverlay = false
+	#Should the health bar have a silver sheen when the player has the Comfort effect?
+	comfortHealthOverlay = false
+	#Should meal and drink tooltips display which effects they provide?
+	foodEffectTooltip = true
+

@@ -1,3 +1,198 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1062ebe6b82c3b9480c403f4c907cbce62622f45cd10f77db5fda0f55ea3e0e
-size 4187
+{
+  "team": [
+    {
+      "species": "cobblemon:magmar",
+      "gender": "MALE",
+      "level": 35,
+      "nature": "cobblemon:rash",
+      "ability": "flamebody",
+      "moveset": [
+        "firepunch",
+        "clearsmog",
+        "lavaplume",
+        "confuseray"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "attack": 130,
+        "special_attack": 230,
+        "speed": 130
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:incineroar",
+      "gender": "FEMALE",
+      "level": 35,
+      "nature": "cobblemon:naughty",
+      "ability": "blaze",
+      "moveset": [
+        "crosschop",
+        "firefang",
+        "doublekick",
+        "bite"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 130,
+        "attack": 230,
+        "defence": 130
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "female"
+      ]
+    },
+    {
+      "species": "cobblemon:magcargo",
+      "gender": "MALE",
+      "level": 35,
+      "nature": "cobblemon:gentle",
+      "ability": "magmaarmor",
+      "moveset": [
+        "rockslide",
+        "flameburst",
+        "ancientpower",
+        "overheat"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "defence": 230,
+        "special_attack": 130,
+        "special_defence": 130
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:volcarona",
+      "gender": "MALE",
+      "level": 35,
+      "nature": "cobblemon:mild",
+      "ability": "flamebody",
+      "moveset": [
+        "leechlife",
+        "bugbite",
+        "flamewheel",
+        "flareblitz"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "special_attack": 230,
+        "special_defence": 130,
+        "speed": 130
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:armarouge",
+      "gender": "MALE",
+      "level": 35,
+      "nature": "cobblemon:modest",
+      "ability": "flashfire",
+      "moveset": [
+        "incinerate",
+        "flamecharge",
+        "nightshade",
+        "willowisp"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 130,
+        "defence": 130,
+        "special_attack": 230
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:ceruledge",
+      "gender": "MALE",
+      "level": 35,
+      "nature": "cobblemon:careful",
+      "ability": "flashfire",
+      "moveset": [
+        "incinerate",
+        "flamecharge",
+        "nightshade",
+        "willowisp"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "attack": 230,
+        "special_defence": 130,
+        "speed": 130
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 8abb1002-1891-452f-b3b6-7b7523569e1a %player% victory_dial",
+  "lossCommand": "easy_npc dialog open 8abb1002-1891-452f-b3b6-7b7523569e1a %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 300,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Will"
+  ]
+}

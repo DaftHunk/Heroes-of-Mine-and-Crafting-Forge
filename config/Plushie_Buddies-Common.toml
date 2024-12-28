@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27faaa8acfe4d080b1bd7c199a8b75734ee41dd9b79fb6c765e6b1827cad9030
-size 263
+
+["Configs for Plushie Buddies Mod"]
+	#How many emeralds do plushies cost
+	#Range: 1 ~ 128
+	"Emerald count" = 10
+	#What trader level sells plushies
+	#Range: 1 ~ 5
+	"Trader level" = 5
+	#'true' or 'false' for plushies being sold by traders
+	"If enableded" = false
+

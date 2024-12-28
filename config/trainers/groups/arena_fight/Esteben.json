@@ -1,3 +1,80 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a571308cdf63ef340a4f9df5ce159c74748f2c31e0d2ad5b53e32df37a78445d
-size 1739
+{
+  "team": [
+    {
+      "species": "cobblemon:tauros",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:quiet",
+      "ability": "angerpoint",
+      "moveset": [
+        "endure",
+        "closecombat",
+        "rest",
+        "takedown"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:sirfetchd",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:timid",
+      "ability": "steadfast",
+      "moveset": [
+        "slam",
+        "swordsdance",
+        "brickbreak",
+        "bravebird"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 7cb766ad-616b-46a9-bb6d-bc6b1c89d16d %player% win_dial",
+  "lossCommand": "easy_npc dialog open 7cb766ad-616b-46a9-bb6d-bc6b1c89d16d %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Erika"
+  ]
+}

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:627a9665891cf168ccc25cde892320c98d56c9b01612ba8cb9433a8bd803d2af
-size 1044
+
+[logbegone]
+	phrases = ["Disconnecting VANILLA connection attempt", "Channels ", "Easy NPC", "OpenGL debug message", "mobGriefing.", "worlds_together", "Unable to decode loot conditions", "java.lang.Exception: Collision box is too big! AABB", "Caught exception trying to resolve the move", "Radium Class Analysis Error:", "DataFixerAPI", "Skipping loading recipe", "Couldn't parse element loot_tables:", "Radium Class Analysis Error:", "Too many physics frames in the physics frame queue.", "for invalid dist DEDICATED_SERVER"]
+	regex = ["Disconnecting VANILLA connection attempt", "Channels ", "Easy NPC", "OpenGL debug message", "mobGriefing.", "worlds_together", "Unable to decode loot conditions", "java.lang.Exception: Collision box is too big! AABB", "Caught exception trying to resolve the move", "Radium Class Analysis Error:", "DataFixerAPI", "Skipping loading recipe", "Couldn't parse element loot_tables:", "Radium Class Analysis Error:", "Too many physics frames in the physics frame queue.", "for invalid dist DEDICATED_SERVER"]
+

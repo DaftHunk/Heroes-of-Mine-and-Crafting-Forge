@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dad85950c8dc984e9bf472f4cda0d7e2f332140e7746c66439356df4c0854c4f
-size 404
+
+[air]
+	#Range: > 1
+	uses_per_tank = 2048
+	#Range: > 1
+	uses_per_tank_hover = 20480
+
+[speed]
+	#Range: 0.01 ~ 100.0
+	horizontal = 0.02
+	#Range: 0.01 ~ 100.0
+	vertical = 0.4
+	#Range: 0.01 ~ 100.0
+	acceleration = 0.6
+	#Range: -100.0 ~ 0.0
+	hover_descend = -0.03
+	#Range: 0.0 ~ 100.0
+	swim_modifier = 1.8
+
+[features]
+	#Range: 1.0 ~ 100.0
+	elytra_boost = 1.25
+
+[enchantments]
+	list = []
+	is_blacklist = true
+

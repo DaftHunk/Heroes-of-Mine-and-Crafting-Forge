@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36c540187a411c120c37336dc78f58ab76c528c853c89ec7f8901aeb6f66e7ee
-size 116
+
+["Client Configs for Curious Lanterns"]
+	#Should the lantern swing or not.
+	#Default: true
+	"Should Swing" = true
+

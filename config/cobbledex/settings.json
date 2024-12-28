@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b12814ab221fe24cd5fee89c912e679dab0c90beeec9e01c615adff53309b29
-size 531
+{
+  "CoopMode": false,
+  "GiveCobbledexItemOnStarterChosen": true,
+  "HowToFind_IsEnabled": true,
+  "HowToFind_NeedSeen": false,
+  "HowToFind_NeedCatch": false,
+  "ShowEvolutions_IsEnabled": true,
+  "ShowEvolutions_NeedSeen": false,
+  "ShowEvolutions_NeedCatch": false,
+  "ItemDrops_IsEnabled": true,
+  "ItemDrops_NeedSeen": false,
+  "ItemDrops_NeedCatch": false,
+  "Collection_NeedSeen": false,
+  "Collection_NeedCatch": false,
+  "Collection_DisableBlackSilhouette": false,
+  "CaughtRewards": true,
+  "lastSavedVersion": "1.1.0"
+}

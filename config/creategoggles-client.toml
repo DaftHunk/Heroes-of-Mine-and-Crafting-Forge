@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26adedb8b5eb89f116ffed93b40513fc5050d821606b5dda79ed57a146f1d03c
-size 220
+
+#Client configuration settings
+[general]
+	#Display the goggles before the eyes and not on the forehead
+	moveGoggleToEyes = false
+	#Enables the goggles in creative mode without goggles
+	enableCreativeModeGoggles = true
+

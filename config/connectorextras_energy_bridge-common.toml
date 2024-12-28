@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4d9eeb8806752eadbaf17d3072d1be28c508943814c5c14e2b85f936406758d
-size 336
+
+[general]
+	#The amount of FE (Forge Energy) converted from 1 E (Team Reborn Energy). Setting the value to 0 disables this conversion.
+	#Range: > 0
+	fabricToForgeEnergy = 10
+	#The amount of FE (Forge Energy) required for 1 E (Team Reborn Energy). Setting the value to 0 disables this conversion.
+	#Range: > 0
+	forgeToFabricEnergy = 10
+

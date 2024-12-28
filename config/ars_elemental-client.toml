@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ae5daef46d37499e15902fb416da5acfb396111ca96aa6e5a5ff50eb0df446c
-size 208
+
+["Visual Configs"]
+	#Enables the rendering of the spell focus while equipped
+	"Enable SpellFocusRender" = true
+	#Enables the black texture of the spell book while upgraded
+	"Enable BlackBookTexture" = true
+

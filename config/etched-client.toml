@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba628db88f7a3fcfa91d37552cc15e3b37f5c3574e736cb54a1f018e3bfeaa7a
-size 200
+
+["Game Feel"]
+	#Displays note particles appear above jukeboxes while a record is playing.
+	"Display Note Particles" = true
+	#Always plays tracks in stereo even when in-world
+	"Force Stereo" = false
+

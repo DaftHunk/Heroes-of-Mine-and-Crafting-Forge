@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce79d73c537f5069efa067e1e6530da7dfabfff6deadea5659dabae91cd3fd57
-size 64
+{
+  "signingModes": {
+    "149.202.65.187:25565": "ALWAYS"
+  }
+}

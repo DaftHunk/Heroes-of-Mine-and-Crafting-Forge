@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bca357d99bfe1764d6586f3b685132b2f2be5c549a214830a5ebdc3cce30a423
-size 567
+{
+  "defaultSigningMode": "PROMPT",
+  "enableMod": true,
+  "showNCRButton": false,
+  "showReloadButton": false,
+  "verifiedIconEnabled": false,
+  "showServerSafety": false,
+  "hideInsecureMessageIndicators": true,
+  "hideModifiedMessageIndicators": true,
+  "hideSystemMessageIndicators": true,
+  "hideWarningToast": true,
+  "hideSigningRequestMessage": true,
+  "alwaysHideReportButton": true,
+  "skipRealmsWarning": false,
+  "disableTelemetry": true,
+  "removeTelemetryButton": true,
+  "demandOnServer": false,
+  "verifiedIconOffsetX": 0,
+  "verifiedIconOffsetY": 0
+}

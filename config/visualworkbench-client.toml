@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:090cf77a65d58c12bc3e95d79f04a1f81f8859dd46cc66b82e92fcf2e2a995f1
-size 308
+#Rotate crafting table contents so they always face the closest player.
+rotate_ingredients = true
+#Makes crafting table contents lay flat on the table instead of floating above.
+flat_rendering = false
+#Render the result of the crafting operation in addition to crafting table contents.
+render_result = true
+

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cf655bd4c1d16abd9645a5dbd0f9f8b34daa4587f89f0d218086f4d82ad5a88
-size 158
+
+#Game settings
+[settings]
+	#Are tea bushes bonemealable?
+	enableBoneMealTeaBush = false
+	#Are coffee bushes bonemealable?
+	enableBoneMealCoffeeBush = false
+

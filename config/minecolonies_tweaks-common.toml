@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ce0bcf508bd127ca9ac2f14aee9c4b5f53d884ffe399b2d0c577b02228aab97
-size 111
+
+[buildings]
+	customCraftingModules = []
+
+[worldGens]
+	#Range: 0.0 ~ 1.0
+	emptyColoniesGenerationChance = 1.0
+

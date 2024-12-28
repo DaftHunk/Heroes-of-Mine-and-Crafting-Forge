@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bca673e422678148059611b32be1a0e57c38d90cbb92c8cf276c691a2e46baa4
-size 1266
+
+#Advancements Tracker (Client configuration)
+[general]
+	#List of default tracked advancements, mostly used by mod packs.
+	trackedAdvancements = [""]
+
+["Advancements Tracker: Overview"]
+	#Enable/Disable the advancements overview screen.
+	overviewEnabled = true
+
+["Advancements Tracker: Widget"]
+	#Enable/Disable the advancements tracker widget.
+	widgetEnabled = true
+	#Shows the widget automatically. If this is set to false the widget will be only visible after pressing the defined hot-keys.
+	widgetVisible = false
+	#Defines the base position of the widget, default is MIDDLE_RIGHT
+	#Allowed Values: BOTTOM_LEFT, BOTTOM_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, TOP_LEFT, TOP_RIGHT
+	widgetPosition = "MIDDLE_RIGHT"
+	#Defines the max. height of the widget. Default is 0 which mean use the max. available height.
+	#Range: 0 ~ 600
+	widgetHeight = 0
+	#Defines the max.width of the widget.
+	#Range: 120 ~ 600
+	widgetWidth = 135
+	#Defines the top position relative to the widget position.
+	#Range: -400 ~ 400
+	widgetTop = 0
+	#Defines the left position relative to the widget position.
+	#Range: -400 ~ 400
+	widgetLeft = 0
+
+[Debug]
+	#Changed the default log level to get more output.
+	logLevel = "info"
+
+[cache]
+	trackedAdvancementsRemote = [""]
+	trackedAdvancementsLocal = [""]
+

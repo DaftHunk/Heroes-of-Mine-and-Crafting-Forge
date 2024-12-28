@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0813a37c333b5eeee253735f382e0a957d0349f6969b864202d0b995f7624a7a
-size 276
+{
+	"enableHeaterShield": true,
+	"enableTarget": true,
+	"enableBuckler": true,
+	"enableRondache": true,
+	"enableTartsche": true,
+	"enableEllipticalShield": true,
+	"enableRoundShield": true,
+	"enablePavese": true,
+	"enableKiteShield": true,
+	"enableCorruptedRoundShield": true
+}

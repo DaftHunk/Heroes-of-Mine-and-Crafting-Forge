@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62cd1ca516e409a29de0a66158e4bfdcec1cb87841d5eda04df7bf54aa3f218e
-size 29
+
+[effects]
+	seasonal = true
+

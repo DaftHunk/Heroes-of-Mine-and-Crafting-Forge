@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf50c149e60afd9a548d79f5c238fef9760216c973819876c31ca2f1e4812370
-size 115
+{
+  "variables": {},
+  "equations": {
+    "global_damage_multiplier": 1.0,
+    "global_speed_multiplier": 1.0
+  }
+}

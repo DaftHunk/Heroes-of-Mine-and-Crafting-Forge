@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e7985e1859e378a2ca51b0a732f52acdaf709cb6d5589dce8e4872e3f602710
-size 571
+
+["Configs for Bigger Better End Cities Mod"]
+	#Maximum number of generational steps. Recommended: 16
+	#Range: 1 ~ 1000
+	"Max Depth" = 8
+	#How many ships can spawn in a single city. Recommended: 10
+	#Range: 1 ~ 1000
+	"Max Ships" = 1
+	#How many Fat towers can generate per tower. Recommended: 6
+	#Range: 1 ~ 1000
+	"Max Fat Towers" = 2
+	#How long the average bridge will be. Must be: short, medium, or long. Recommended: medium
+	"Bridge Length" = "short"
+	#How long the average bridge will be. Must be: short, medium, or long. Recommended: true
+	"More Loot Rooms" = false
+

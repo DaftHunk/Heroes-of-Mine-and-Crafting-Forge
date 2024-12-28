@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f979d7ec57b4ed9bd6a8671abd19b687ebb94bf01065db5f36b1dc8eb987cf4
-size 727
+
+[general]
+	#If set to FALSE, support for sewing recipes will not be enabled regardless of the mod's presence.
+	enableSewingKitSupport = true
+	#If AUTO, the crafting and upgrade recipes will use the Sewing mechanics if the Sewing Kit mod is present. Off disables anvil upgrading regardless.
+	#Allowed Values: OFF, AUTO, ON
+	anvilUpgrading = "AUTO"
+	#If AUTO, the belt and pouch crafting recipes will be disabled if the Sewing Kit mod is present, sewing recipes will be used instead.
+	#Allowed Values: OFF, AUTO, ON
+	enableGridCraftingRecipes = "AUTO"
+	#If AUTO, the belt slot will be disabled if Curios is present. If OFF, the belt slot will be disabled permanently.
+	#Allowed Values: OFF, AUTO, ON
+	customBeltSlotMode = "ON"
+

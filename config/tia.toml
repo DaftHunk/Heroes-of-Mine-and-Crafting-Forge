@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9083e6eca881d206e553e4df9df423e9455e4474c47d2cedc4db205c84571827
-size 252
+
+#Configuration settings for Tia
+["General options"]
+	#The speed at which item pickup / insert animations play
+	#Range: 0.01 ~ 10.0
+	animation_speed = 0.5
+	#The scale at which items are rendered when picked up
+	#Range: 0.01 ~ 10.0
+	pickup_scale = 1.4
+

@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e0a9e1cc3c42dc2101daa957523786fc88f1aec42a09c98bfedbbc795c8f885
-size 657
+{
+  "team": [
+    {
+      "species": "cobblemon:abra",
+      "gender": "MALE",
+      "level": 1,
+      "nature": "cobblemon:timid",
+      "ability": "innerfocus",
+      "moveset": [
+        "teleport"
+      ],
+      "ivs": {
+        "hp": 25,
+        "attack": 4,
+        "defence": 8,
+        "special_attack": 28,
+        "special_defence": 18,
+        "speed": 25
+      },
+      "evs": {},
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "",
+  "lossCommand": "",
+  "canOnlyBeatOnce": false,
+  "cooldownSeconds": 10,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": []
+}

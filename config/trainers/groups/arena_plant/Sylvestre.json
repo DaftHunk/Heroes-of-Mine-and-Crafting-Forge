@@ -1,3 +1,80 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34785dc5e2e88e95fefa950b3a26a272e2cb7f531b693e7e6c577a8acacdce77
-size 1738
+{
+  "team": [
+    {
+      "species": "cobblemon:sceptile",
+      "gender": "MALE",
+      "level": 40,
+      "nature": "cobblemon:quirky",
+      "ability": "overgrow",
+      "moveset": [
+        "frenzyplant",
+        "slam",
+        "dig",
+        "gigadrain"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:decidueye",
+      "gender": "MALE",
+      "level": 40,
+      "nature": "cobblemon:lonely",
+      "ability": "overgrow",
+      "moveset": [
+        "suckerpunch",
+        "energyball",
+        "hex",
+        "airslash"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 6410a87f-5b1f-461c-9c00-e866f2532667 %player% win_dial",
+  "lossCommand": "easy_npc dialog open 6410a87f-5b1f-461c-9c00-e866f2532667 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Hiroshi"
+  ]
+}

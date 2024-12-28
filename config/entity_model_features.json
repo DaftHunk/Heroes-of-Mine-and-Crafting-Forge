@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8bfb3de8fe0a8eb653ff7329f76f887098ec00f3a847bb0e4530fb0a04aabe41
-size 1115
+{
+  "logModelCreationData": false,
+  "debugOnRightClick": false,
+  "renderModeChoice": "NORMAL",
+  "vanillaModelHologramRenderMode_2": "OFF",
+  "modelExportMode": "NONE",
+  "attemptPhysicsModPatch_2": "CUSTOM",
+  "modelUpdateFrequency": "Average",
+  "entityRenderModeOverrides": {},
+  "entityPhysicsModPatchOverrides": {},
+  "entityVanillaHologramOverrides": {},
+  "modelsNamesDisabled": [],
+  "allowEBEModConfigModify": true,
+  "animationLODDistance": 10,
+  "retainDetailOnLowFps": true,
+  "retainDetailOnLargerMobs": true,
+  "animationFrameSkipDuringIrisShadowPass": true,
+  "preventFirstPersonHandAnimating": false,
+  "onlyClientPlayerModel": false,
+  "doubleChestAnimFix": true,
+  "enforceOptifineVariationRequiresDefaultModel": false,
+  "enforceOptifineVariationRequiresDefaultModel_v2": false,
+  "resetPlayerModelEachRender": true,
+  "resetPlayerModelEachRender_v2": true,
+  "onlyDebugRenderOnHover": false,
+  "enforceOptifineSubFoldersVariantOnly": true,
+  "enforceOptiFineAnimSyntaxLimits": true,
+  "allowOptifineFallbackProperties": true,
+  "enforceOptiFineFloorUVs": true,
+  "showReloadErrorToast": true
+}

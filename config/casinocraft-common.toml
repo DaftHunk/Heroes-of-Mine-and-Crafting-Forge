@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fcbbf5a78e24fac06cfafe4ec27dfc122dd0ce402d7630c2a0ec57f782fca13f
-size 377
+
+["CASINO CONFIG"]
+	#Allows Betting Inventory to be set to INFINITE
+	config_creative_token = true
+	#Allows Reward Inventory to be set to INFINITE
+	config_creative_reward = true
+	#Only Operators on a Server or Singleplayer with Cheats enabled can set INFINITE
+	config_creative_oponly = true
+	#How long until a player receives a timeout
+	#Range: 1 ~ 10000
+	config_timeout = 300
+

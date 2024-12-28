@@ -1,3 +1,114 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66b270f1ea7f377c984ceb94fc07164536e1294a4f1a64ceaa9bdb51504a09e9
-size 2459
+{
+  "team": [
+    {
+      "species": "cobblemon:venusaur",
+      "gender": "MALE",
+      "level": 40,
+      "nature": "cobblemon:bold",
+      "ability": "thickfat",
+      "moveset": [
+        "synthesis",
+        "poisonpowder",
+        "energyball",
+        "seedbomb"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:tangrowth",
+      "gender": "FEMALE",
+      "level": 40,
+      "nature": "cobblemon:mild",
+      "ability": "leafguard",
+      "moveset": [
+        "slam",
+        "naturalgift",
+        "gigadrain",
+        "knockoff"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "female"
+      ]
+    },
+    {
+      "species": "cobblemon:carnivine",
+      "gender": "FEMALE",
+      "level": 40,
+      "nature": "cobblemon:careful",
+      "ability": "levitate",
+      "moveset": [
+        "crunch",
+        "swallow",
+        "stockpile",
+        "spitup"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "female"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open db7168be-f89e-43da-bf07-1817386ea01c %player% victory_dial",
+  "lossCommand": "easy_npc dialog open db7168be-f89e-43da-bf07-1817386ea01c %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Rosalie"
+  ]
+}

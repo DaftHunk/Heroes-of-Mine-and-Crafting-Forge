@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e31bd569552eb9da2acdfc68e4c2668655391ffc5f9b4970566a3a7fb4a376cf
-size 267
+
+[Client]
+	#Y Offset for hats to match skin's features if desired.
+	#Range: -1.0 ~ 1.0
+	hatYOffset = 0.0
+	#Force hats to not render on self when in first person. (For compatability with First-Person-Model mods, normally not needed)
+	forceFirstPersonNoRender = false
+

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:323737c2bd12d1f45b3f7f110960d13c89a7048a58176d36f144948df340b02b
-size 145
+
+#General mod settings
+[general]
+	#-
+	announceIdleStatesInChat = false
+	#Default 5 minutes
+	#Range: > -2147483648
+	ticksToMarkPlayerIdle = 6000
+

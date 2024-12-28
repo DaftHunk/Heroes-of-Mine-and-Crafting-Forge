@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba514eb014e3b69d4815804feeb7973871cce551dd467078177165958e30b634
-size 127
+
+[general]
+	#Makes paintings always drop with their NBT
+	#Allowed Values: OFF, ALWAYS, WHEN_PLACED_WITH_NBT
+	nbt_drop = "OFF"
+

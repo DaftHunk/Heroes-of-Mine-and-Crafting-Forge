@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a21218da9e869255a27401136e3ccd286cf38897dc0fa50dbc8b673d10911675
-size 362
+{
+  "note": "Safe values for settings are 0 - 1 (inclusive). 0 means animation off (infinite speed) and bigger values mean slower speed (up to 1). Press F3+T in a world to update config.",
+  "hotbarSpeed": 0.2,
+  "chatSpeed": 0.5,
+  "chatOpeningSpeed": 0.5,
+  "creativeScreenSpeed": 0.5,
+  "entryListSpeed": 0.5,
+  "enableMaskDebug": false,
+  "cfgVersion": 2.1
+}

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dfea0f45b96743b99599d71d456f5931fed2599b961e1d674841578bf9cbb59e
-size 337
+
+[General]
+	#Allowed Values: DISPLAY_ALL, DISPLAY_MY, DISPLAY_OTHERS, HIDE
+	"Pet Mode" = "HIDE"
+	#Range: -1024 ~ 1024
+	"Mods Button Offset X" = 0
+	#Range: -1024 ~ 1024
+	"Mods Button Offset Y" = 0
+
+[Tooltips]
+	#Display food properties in tooltips
+	"Food Icons" = true
+	#Display equipment attributes in tooltips
+	"Equipment Icons" = true
+

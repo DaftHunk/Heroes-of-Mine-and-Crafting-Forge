@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e953737dcb4ed50db8605db74df14983300f79f38b6f954ec0a0686ba2d82ea
-size 577
+{
+	"enableEcho": true,
+	"enableBerserk": true,
+	"enableRadiance": true,
+	"enableOnslaught": true,
+	"enableNullification": true,
+	"enablePrecise": true,
+	"preciseChance": 30,
+	"enableMighty": true,
+	"mightyChance": 30,
+	"enableStealthy": true,
+	"stealthyChance": 30,
+	"enableRenewed": true,
+	"renewedChance": 30,
+	"enableAccelerant": true,
+	"enableLeaping": true,
+	"leapingChance": 65,
+	"enableSpellshield": true,
+	"spellshieldChance": 15,
+	"enableSpellforged": true,
+	"enableSoulshock": true,
+	"enableSpellStandard": true,
+	"enableWarStandard": true,
+	"enableDeception": true
+}

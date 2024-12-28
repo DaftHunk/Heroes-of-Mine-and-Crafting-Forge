@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f06f7488b7856826d9e67883934c0076563dd31bb2ee134b880bf2f8dca8597d
-size 638
+# Client-specific configuration for FTB Library
+
+{
+	colorselector: {
+		# Colors recently selected in the color selector
+		# Default: []
+		recents: [I; ]
+	}
+	tooltips: {
+		# Add the name of the mod that fluids belong to in the fluid selection GUI.
+		# Default: true
+		fluid_modname: true
+		
+		# Add the name of the mod that images belong to in the image selection GUI.
+		# Default: true
+		image_modname: true
+		
+		# Add the name of the mod that items belong to in the item selection GUI.
+		# Note that several common mods also do this (modnametooltip,WTHIT,EMI...) so this is false by default
+		# Default: false
+		item_modname: false
+	}
+}

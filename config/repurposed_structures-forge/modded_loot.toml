@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c21921f03014bdd061fc83803277218093d6b7c0a6175dd931d2d46045701a5f
-size 546
+#Adds modded loot from vanilla structure's loot tables and injects them into Repurposed Structure's loot tables.
+#Example: Snowy Pyramid gets all modded items that vanilla Desert Temple can have.
+importModdedItems = true
+#Add the identifiers for Repurposed Structures's loottable you want to turn off the automatic modded item importing code for.
+#Separate multiple entries with a comma.
+#Example: "repurposed_structures:chests/mansions/birch, repurposed_structures:chests/mineshafts/jungle"
+blacklistedRSLoottablesFromImportingModdedItems = ""
+

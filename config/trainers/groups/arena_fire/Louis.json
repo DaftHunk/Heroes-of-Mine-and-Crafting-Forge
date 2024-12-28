@@ -1,3 +1,112 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0111d5ab677a95f4980a59e34d5766f293307b6ef7150d9e453d5ca1301c8b7
-size 2420
+{
+  "team": [
+    {
+      "species": "cobblemon:growlithe",
+      "gender": "MALE",
+      "level": 30,
+      "nature": "cobblemon:rash",
+      "ability": "intimidate",
+      "moveset": [
+        "leer",
+        "ember",
+        "bite",
+        "flamecharge"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 32,
+        "attack": 32,
+        "defence": 32,
+        "special_attack": 32,
+        "special_defence": 32,
+        "speed": 32
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:pignite",
+      "gender": "MALE",
+      "level": 30,
+      "nature": "cobblemon:relaxed",
+      "ability": "blaze",
+      "moveset": [
+        "flamecharge",
+        "tackle",
+        "smog",
+        "ember"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 32,
+        "attack": 32,
+        "defence": 32,
+        "special_attack": 32,
+        "special_defence": 32,
+        "speed": 32
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:fletchinder",
+      "gender": "MALE",
+      "level": 30,
+      "nature": "cobblemon:naive",
+      "ability": "flamebody",
+      "moveset": [
+        "tackle",
+        "quickattack",
+        "acrobatics",
+        "ember"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 32,
+        "attack": 32,
+        "defence": 32,
+        "special_attack": 32,
+        "special_defence": 32,
+        "speed": 32
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open adc83a0d-8f9a-4b49-bdfb-61dedc40b831 %player% victory_dial",
+  "lossCommand": "easy_npc dialog open adc83a0d-8f9a-4b49-bdfb-61dedc40b831 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 120,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": []
+}

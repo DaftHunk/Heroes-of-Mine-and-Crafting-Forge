@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76d685e75d70095c7563cf8e63992eaa3272eef7570f9510eaed6d8d50626199
-size 307
+
+#General settings
+[general]
+	#Is Enabled?
+	enabled = true
+	#Cost
+	#Range: > -2147483648
+	cost = 40
+	#Is Starter Glyph?
+	starter = false
+	#The maximum number of times this glyph may appear in a single spell
+	#Range: > 1
+	per_spell_limit = 2147483647
+	#The tier of the glyph
+	#Range: 1 ~ 99
+	glyph_tier = 2
+

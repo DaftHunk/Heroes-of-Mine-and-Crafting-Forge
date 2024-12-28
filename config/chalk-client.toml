@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d4881597929609e6264de0561cab4264efb18efd3e466843af5a30d3b64f5d2
-size 429
+
+#Rotation offsets (in degrees) for each mark.
+[SymbolOffsets]
+	#Range: -360 ~ 360
+	CenterRotationOffset = 0
+	#Range: -360 ~ 360
+	ArrowRotationOffset = 0
+	#Range: -360 ~ 360
+	CrossRotationOffset = 45
+	#Range: -360 ~ 360
+	CheckRotationOffset = 45
+	#Range: -360 ~ 360
+	SkullRotationOffset = 0
+	#Range: -360 ~ 360
+	HouseRotationOffset = 0
+	#Range: -360 ~ 360
+	HeartRotationOffset = 0
+	#Range: -360 ~ 360
+	PickaxeRotationOffset = 0
+

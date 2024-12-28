@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98c58e049dfd52058d8e618c5c4f375dfad3d29c387e26bcd736980aedc97281
-size 435
+{
+  "screenScale": 1.0,
+  "pokenavFinderType": "BEST",
+  "pokefinderFinderType": "BEST",
+  "mainScreenWidget": "PARTY",
+  "percentageDisplayType": "PERCENT_ONLY",
+  "bucketWisePercentageCalculation": false,
+  "reverseSortingButtonCooldown": 100,
+  "actionButtonAreaExpansion": 20,
+  "scrollSize": 20,
+  "showButtonTooltips": false,
+  "notifyIfPokemonIsNotFound": true,
+  "trackArrowVerticalOffset": 70,
+  "partyWidgetAdjustments": {}
+}

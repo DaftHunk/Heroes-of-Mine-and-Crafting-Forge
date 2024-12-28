@@ -1,3 +1,115 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:876a21cf4fb0b4b0fe0e4f812efa5a6563358cbfbe2c0a7fba992846e6e24e40
-size 2486
+{
+  "team": [
+    {
+      "species": "cobblemon:lilligant",
+      "gender": "FEMALE",
+      "level": 50,
+      "nature": "cobblemon:careful",
+      "ability": "chlorophyll",
+      "moveset": [
+        "axekick",
+        "brickbreak",
+        "synthesis",
+        "sunnyday"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "hisuian",
+        "female"
+      ]
+    },
+    {
+      "species": "cobblemon:heracross",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:relaxed",
+      "ability": "guts",
+      "moveset": [
+        "bugbite",
+        "aerialace",
+        "brickbreak",
+        "throatchop"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:breloom",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:brave",
+      "ability": "effectspore",
+      "moveset": [
+        "dynamicpunch",
+        "seedbomb",
+        "skyuppercut",
+        "brickbreak"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open c5b024ca-f0b8-464c-a270-00a4c44e4680 %player% win_dial",
+  "lossCommand": "easy_npc dialog open c5b024ca-f0b8-464c-a270-00a4c44e4680 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Oihana2"
+  ]
+}

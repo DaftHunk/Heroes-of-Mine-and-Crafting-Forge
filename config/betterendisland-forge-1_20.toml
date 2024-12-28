@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce07dcc8f1e6d751f1c79f03ea7132ad06cac0d21e2a5cfd01eb3a7dc265cb80
-size 320
+
+["YUNG's Better End Island"]
+	# Whether the Ender Dragon drops an egg when every time it's defeated.
+	# Default: false
+	"Resummoned Dragon Drops Egg" = false
+	# Whether the vanilla obsidian platform should spawn in the End instead of the revamped platform.
+	# Default: false
+	"Spawn Vanilla Obsidian Platform" = false
+

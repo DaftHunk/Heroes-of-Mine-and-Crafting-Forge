@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c182915306bbd932c7d090f0d29f3026a054cbfd62e1657099be241cd22d631
-size 744
+# Use Cloth Config mod for the descriptions.
+---
+snowGravity: true
+snowMakingIce: true
+snowAlwaysReplaceable: true
+thinnerBoundingBox: true
+snowNeverMelt: false
+snowReduceFallDamage: true
+sustainGrassIfLayerMoreThanOne: true
+sneakSnowball: true
+fancySnowOnUpperSlab: true
+mobSpawningMaxLayers: 8
+snow-cover:
+  replaceWorldgenFeature: true
+  placeSnowOnBlock: true
+  retainOriginalBlocks: false
+  placeNaturally: true
+accumulation:
+  naturalMelting: true
+  snowAndIceMeltInWarmBiomes: true
+  maxLayers: 1
+  accumulatesDuringSnowstorm: false
+  accumulatesDuringSnowfall: false
+integration:
+  accumulationWinterOnly: false
+debug:
+  weatherTickSlowness: 16
+  preventWorldgenLogSpam: true
+  mobSpawningCommand: false
+  skipSnowLoggingMushroom: true

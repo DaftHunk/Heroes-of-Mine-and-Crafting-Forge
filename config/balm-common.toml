@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f24f7cede066400c657af13b1aff84e4920ac531bf24ab18cff1ef32fff72835
-size 534
+#This is an example boolean property
+exampleBoolean = true
+#Range: > -2147483648
+exampleInt = 42
+exampleString = "Hello World"
+exampleMultilineString = "Hello World"
+#Allowed Values: Hello, World
+exampleEnum = "Hello"
+exampleStringList = ["Hello", "World"]
+exampleIntList = [12, 24]
+exampleEnumList = ["Hello", "World"]
+
+[exampleCategory]
+	#This is an example category
+	#This is an example string inside a category
+	innerField = "I am inside"
+	#Range: -3.4028234663852886E38 ~ 3.4028234663852886E38
+	exampleFloat = 42.84000015258789
+

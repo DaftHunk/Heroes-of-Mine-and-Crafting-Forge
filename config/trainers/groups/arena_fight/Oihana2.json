@@ -1,3 +1,80 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74b45baeeb1d75884ff39f217088270f6049786f9b78a5b2d34192de68d4c38a
-size 1745
+{
+  "team": [
+    {
+      "species": "cobblemon:sneasler",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:relaxed",
+      "ability": "unburden",
+      "moveset": [
+        "agility",
+        "slash",
+        "acidspray",
+        "brickbreak"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:gallade",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:mild",
+      "ability": "steadfast",
+      "moveset": [
+        "psychocut",
+        "protect",
+        "swordsdance",
+        "brickbreak"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 6b6f63ef-e274-420b-b222-4397d1fd7bc8 %player% win_dial",
+  "lossCommand": "easy_npc dialog open 6b6f63ef-e274-420b-b222-4397d1fd7bc8 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Esteben"
+  ]
+}

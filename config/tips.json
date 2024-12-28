@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af85f2909fde8c0dbea201fb6fb4afc5070be875c24266b47887f33f03c19321
-size 274
+{
+  "defaultCycleTime": 5000,
+  "ignoredNamespaces": [],
+  "ignoredTips": [],
+  "hideUnlocalizedTips": false,
+  "tipRenderWidthPercent": 0.35,
+  "defaultTitle": {
+    "bold": true,
+    "underlined": true,
+    "color": "yellow",
+    "translate": "tipsmod.title.default"
+  }
+}

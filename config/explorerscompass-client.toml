@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8bcb1e2cf784ee67e9ea3ebf376d7406361e8f97a0abf7d458cd82ddcad2eb7b
-size 490
+
+[Client]
+	#Displays Explorer's Compass information on the HUD even while chat is open.
+	displayWithChatOpen = true
+	#Attempts to translate structure names before fixing the unlocalized names. Translations may not be available for all structures.
+	translateStructureNames = true
+	#The line offset for information rendered on the HUD.
+	#Range: 0 ~ 50
+	overlayLineOffset = 1
+	#The side for information rendered on the HUD. Ex: LEFT, RIGHT
+	#Allowed Values: LEFT, RIGHT
+	overlaySide = "LEFT"
+

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c26922da1623b762e23a9e2234c24b44c7dedd73fe10797e26f6106d2248b70a
-size 68
+
+[tlc]
+	#Disable/Enable the stronghold
+	generate_stronghold = true
+

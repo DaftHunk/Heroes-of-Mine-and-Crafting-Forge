@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dca55a2792451b31424cd5c24037141ec57cdca51955d062dd908fa9ca6a3e9c
-size 322
+general.width = Largura
+general.height = Altura
+general.on = Ligado
+general.off = Desligado
+
+popup.done = Pronto
+
+popup.yesno.confirm = Confirmar
+popup.yesno.cancel = Cancelar
+
+popup.notification.accept = Aceitar
+
+popup.choosefile.back = VOLTAR
+popup.choosefile.title = Escolher arquivo
+popup.choosefile.choose = Escolher

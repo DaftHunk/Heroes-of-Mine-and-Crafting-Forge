@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5459a795c5f7288077022b4794ac34e5b2836a7bc096816fb8a7a322390fa07c
-size 339
+
+[General]
+	#Keep equipped hat on death.
+	keepHatOnDeath = false
+	#Chance for a seasonal bag to drop when using a bag during a seasonal event. (0 effectively disables seasons)
+	#Range: 0.0 ~ 1.0
+	seasonalBagChance = 0
+	#Allow equipping hat in helmet slot for compatibility with non-player entities/displays.
+	allowHatInHelmetSlot = false
+

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8be9a9faa48120a89b86cab41999b38916a691b4d46a79954f61eb0d05fd1b70
-size 318
+{
+  "variables": {
+    "quick_charge_enchant": {
+      "type": "gimm1q:enchantment",
+      "enchantment": "minecraft:quick_charge"
+    }
+  },
+  "equations": {
+    "damage": 5.0,
+    "crit_damage": 0.0,
+    "draw_time": "1.6 - 0.2 * quick_charge_enchant",
+    "speed": 0.6,
+    "spread": 45.0,
+    "cooldown": 0.0
+  }
+}

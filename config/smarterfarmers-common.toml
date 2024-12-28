@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5236a63d3f2dbe7a514fdb86ea19b46571fc2feb899984e148bece8398a30b69
-size 502
+
+[general]
+	#If true, villagers will pick up food items from the regardless of mob griefing gamerule. Needed since with mob griefing on they wont be able to breed.
+	pickup_food_override = true
+	#If true, villagers will eat food items they pick up. Eating food will heal them
+	eat_food = true
+	#Time for a farmer to harvest a crop once it reached its destination
+	#Range: 1 ~ 1000
+	time_to_harvest = 40
+	#If true, will render debug info for farmers. Only works in single player
+	debug_renderer = false
+

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b4d71c22f0774a3f6f460ddeeebc8b619741f944c8deee497981d147b14aa5d
-size 319
+# Use Cloth Config mod for the descriptions.
+---
+contributorCosmetic: ''
+cosmeticScreenKeybind: true
+globalTooltip: false
+noMicrosoftTelemetry: true
+debug:
+  tagsTooltip: false
+  debugTooltipMsg: false
+  tagsTooltipAppendKeybindHint: true
+  tagsPerPage: 6
+  NBTTooltip: false
+suppressExperimentalSettingsWarning: false

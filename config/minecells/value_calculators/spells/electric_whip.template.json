@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8cac48e631b9730096d1a70707ee3ef11e08f95dcd0cdea4a0c45fd9dc036d7
-size 82
+{
+  "variables": {},
+  "equations": {
+    "damage": 7.0,
+    "cooldown": 0.8
+  }
+}

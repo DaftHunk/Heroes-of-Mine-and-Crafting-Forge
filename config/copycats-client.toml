@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a5167976d505c6c407952db8b493c2ee0b0ffa216298f9b1c724fea2afcda4e
-size 332
+#.
+#Use more complex copycat models to improve appearance with certain materials.
+useEnhancedModels = false
+#.
+#Disable warnings about graphics settings that may cause issues with the mod.
+disableGraphicsWarnings = true
+#.
+#Colorize different parts of multi-state copycats to distinguish them visually.
+colorizeMultiStates = false
+

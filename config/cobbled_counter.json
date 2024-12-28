@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f824726d1c14f85fed963fa4e02d2aa163e8c02e3e4865a974ebd78eae130d0
-size 131
+{
+  "debug": false,
+  "broadcastKosToPlayer": false,
+  "broadcastCapturesToPlayer": false,
+  "broadcastEncountersToPlayer": false
+}

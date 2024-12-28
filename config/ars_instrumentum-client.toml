@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6959fdc28e3976a5d499f2fa78288b67dc54c4a1b861a564020f6a8e0749d22d
-size 158
+
+["Display mana amount numerical"]
+	#Display numbers
+	showNumericalManaBar = false
+	#Display numbers above the bar instead of on it
+	displayAboveBar = false
+

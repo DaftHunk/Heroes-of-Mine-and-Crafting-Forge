@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce10a37107fb72861ffd7d55e52a5f563674ddc62d7784adae15b4c91cf457e9
-size 242
+{"eggCheckTicks":12000,"eggCheckChance":0.5,"eggHatchMultiplier":1.0,"shinyMethod":"masuda","shinyMultiplier":4.0,"hiddenAbilitiesEnabled":true,"forcedAbilitiesEnabled":false,"dittoAndDittoRandomEgg":false,"dittoAndDittoAllowLegendary":false}

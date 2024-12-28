@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14d0afeabbe0d77ac5cb96b9d2a373cf037658c8bbaa2750b3934fbf1c49f021
-size 289
+
+#General settings
+[General]
+	#Show the Armor Stand configuration GUI on shift right click
+	enableConfigGui = false
+	#Allow Armor Stand to be renamed using name tags
+	enableNameTags = true
+	#Allow scrolling to increase / decrease an angle value in the posing screen
+	allowScrolling = true
+

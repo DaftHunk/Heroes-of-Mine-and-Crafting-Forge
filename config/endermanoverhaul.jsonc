@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d33a273a2aaa0fb617a8a61fe17e67d6e4cbbe1a731cf1036f51d3d64388c19
-size 932
+{
+    "allowPickingUpBlocks": false,
+    "friendlyEndermanTeleport": true,
+    "friendlyEndermanDespawn": true,
+    "allowSpawning": true,
+    "spawnBadlandsEnderman": true,
+    "spawnCaveEnderman": true,
+    "spawnCrimsonForestEnderman": true,
+    "spawnDarkOakEnderman": false,
+    "spawnDesertEnderman": true,
+    "spawnEndEnderman": true,
+    "spawnEndIslandsEnderman": true,
+    "spawnFlowerFieldsEnderman": true,
+    "spawnIceSpikesEnderman": true,
+    "spawnMushroomFieldsEnderman": true,
+    "spawnNetherWastesEnderman": true,
+    "spawnCoralEnderman": true,
+    "spawnSavannaEnderman": true,
+    "spawnSnowyEnderman": true,
+    "spawnSoulsandValleyEnderman": true,
+    "spawnSwampEnderman": true,
+    "spawnWarpedForestEnderman": true,
+    "spawnWindsweptHillsEnderman": true,
+    /*
+     * The chance that an End Enderman will teleport you when it hits you
+     * Type: Float
+     */
+    "endEndermanTeleportChance": 0.5
+}

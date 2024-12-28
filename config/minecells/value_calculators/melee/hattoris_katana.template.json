@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:181f3bca17475018b85d260fe694a3a12b96d2e3d097c3343e7d72cb335efa0f
-size 299
+{
+  "description": [
+    "TEST"
+  ],
+  "variables": {
+    "sharpness": {
+      "type": "gimm1q:enchantment",
+      "enchantment": "minecraft:sharpness"
+    }
+  },
+  "equations": {
+    "damage": 7.0,
+    "speed": 1.8,
+    "ability_damage": "20.0 + sharpness * 2.0",
+    "ability_cooldown": 10.0
+  }
+}

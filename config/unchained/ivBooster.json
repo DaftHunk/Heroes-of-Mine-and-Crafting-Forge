@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ffb96a47d049608ef94f597911bd6d85b9ed7178529559d90b0dcea43eccd06
-size 231
+{
+  "koStreakPoints": 0,
+  "koCountPoints": 0,
+  "captureStreakPoints": 1,
+  "captureCountPoints": 0,
+  "thresholds": {
+    "5": 1,
+    "10": 2,
+    "20": 3,
+    "30": 4
+  },
+  "debug": false,
+  "blacklist": [],
+  "whitelist": []
+}

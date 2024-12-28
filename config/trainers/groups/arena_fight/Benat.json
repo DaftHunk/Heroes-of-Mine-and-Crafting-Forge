@@ -1,3 +1,114 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0e01b581526259db40b8b5e2419f0849dc99fd93bcffe98805a54e283a0470f
-size 2464
+{
+  "team": [
+    {
+      "species": "cobblemon:poliwrath",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:jolly",
+      "ability": "hydration",
+      "moveset": [
+        "bubblebeam",
+        "submission",
+        "raindance",
+        "closecombat"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:hitmonlee",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:calm",
+      "ability": "vitalspirit",
+      "moveset": [
+        "highjumpkick",
+        "reversal",
+        "foresight",
+        "doublekick"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    },
+    {
+      "species": "cobblemon:hitmonchan",
+      "gender": "MALE",
+      "level": 50,
+      "nature": "cobblemon:hasty",
+      "ability": "justified",
+      "moveset": [
+        "focuspunch",
+        "skyuppercut",
+        "counter",
+        "detect"
+      ],
+      "ivs": {
+        "hp": 31,
+        "attack": 31,
+        "defence": 31,
+        "special_attack": 31,
+        "special_defence": 31,
+        "speed": 31
+      },
+      "evs": {
+        "hp": 52,
+        "attack": 52,
+        "defence": 52,
+        "special_attack": 52,
+        "special_defence": 52,
+        "speed": 52
+      },
+      "shiny": false,
+      "heldItem": "minecraft:air",
+      "aspects": [
+        "male"
+      ]
+    }
+  ],
+  "winCommand": "easy_npc dialog open 935b169b-296b-416c-ad1a-8cfc65763556 %player% win_dial",
+  "lossCommand": "easy_npc dialog open 935b169b-296b-416c-ad1a-8cfc65763556 %player% loss_dial",
+  "canOnlyBeatOnce": true,
+  "cooldownSeconds": 0,
+  "partyMaximumLevel": 100,
+  "defeatRequiredTrainers": [
+    "Maite"
+  ]
+}
