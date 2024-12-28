@@ -1,3 +1,4 @@
+*.jar filter=lfs diff=lfs merge=lfs -text
 *.md filter=lfs diff=lfs merge=lfs -text
 *.toml filter=lfs diff=lfs merge=lfs -text
 *.txt filter=lfs diff=lfs merge=lfs -text
@@ -29,7 +30,6 @@
 *.dll filter=lfs diff=lfs merge=lfs -text
 *.log filter=lfs diff=lfs merge=lfs -text
 *.fmdata filter=lfs diff=lfs merge=lfs -text
-*.jar filter=lfs diff=lfs merge=lfs -text
 *.input filter=lfs diff=lfs merge=lfs -text
 *.disabled filter=lfs diff=lfs merge=lfs -text
 /music_sheets/.cache/1ab7b00e-e6bf-4298-bfa0-c0e3a849668a filter=lfs diff=lfs merge=lfs -text
@@ -45,3 +45,6 @@
 *.csh filter=lfs diff=lfs merge=lfs -text
 *.js filter=lfs diff=lfs merge=lfs -text
 *.map filter=lfs diff=lfs merge=lfs -text
+*.unpack_finished filter=lfs diff=lfs merge=lfs -text
+*.jem filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
