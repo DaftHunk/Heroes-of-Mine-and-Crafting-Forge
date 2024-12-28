@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f231ef4715590d05ae3a2030cec9d31391c2507ed8258203eb5def37202e595b
-size 329
+
+.physics_mod_cache/
+
+bluemap/
+
+backups/
+
+XaeroWaypoints_BACKUP240807/
+
+saves/
+
+crash-reports/
+
+data/
+
+modernfix/
+
+logs/
+
+cloth_local/
+
+screenshots/
+
+xaero/
+
+mods/.connector/
+
+mods/.index/
+
+immersive_paintings_cache/
+
+etched-sounds/cache.json
+
+emi.json
+
+fancymenu_data/last_world.fmdata
+
+config/fabric/indigo-renderer.properties
+
+Distant_Horizons_server_data/
+
+showdown/
