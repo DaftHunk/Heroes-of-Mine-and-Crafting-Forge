@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f55e446fb44a279c5d09c1291add97d64e3da53afa388a71a1e64500633b28f
-size 853
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "crer_une_faction"
+	group: "447227F2EC4DD09E"
+	icon: "minecraft:white_banner"
+	id: "7BBA9167AE26B9B5"
+	order_index: 2
+	quest_links: [ ]
+	quests: [{
+		description: ["En ouvrant votre inventaire, vous trouverez un icone en haut à gauche vous permettant d'offre le menu des factions."]
+		icon: "minecraft:white_banner"
+		id: "17729AD2411DF26A"
+		rewards: [{
+			id: "7BB03FB943333C3E"
+			item: "minecraft:white_banner"
+			type: "item"
+		}]
+		subtitle: "Que vous vouliez être seul ou rejoindre un groupe, la collaboration est la clé. Créez ou rejoignez une faction participer au commerce et à la vie du serveur."
+		tasks: [{
+			id: "79DE1A4CF084EED0"
+			title: "Créer ou rejoindre une faction"
+			type: "checkmark"
+		}]
+		x: -1.5d
+		y: 0.0d
+	}]
+	title: "Créer une faction"
+}

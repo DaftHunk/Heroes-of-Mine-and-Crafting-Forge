@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37f3bbf0adb04001cfb813938d4ace3c4d8f62021dbffecc562f2c1ebcfae56c
-size 362
+{
+	/* This has 2 acceptable values: [CHAT, WIDGET]
+	   * CHAT - Will post a message within 5 minutes to a user's chat once they've been in game for 5 minutes. Will no longer show after the user presses dismiss.
+	   * WIDGET - Displays a widget on screen with the announcement on all screens until the widget is dismissed.
+	*/
+	"announcement_delivery": "WIDGET"
+}

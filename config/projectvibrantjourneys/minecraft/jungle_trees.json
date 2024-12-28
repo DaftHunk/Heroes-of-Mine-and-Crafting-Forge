@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d54674b39cc0b063e0151b3cf1e33357a2ddf9eae126d4bbf7210f8b39362a0f
-size 205
+[
+  {
+    "biomeName": "minecraft:jungle",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:sparse_jungle",
+    "chance": 25
+  },
+  {
+    "biomeName": "minecraft:bamboo_jungle",
+    "chance": 20
+  }
+]

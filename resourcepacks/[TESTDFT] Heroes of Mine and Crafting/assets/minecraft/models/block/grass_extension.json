@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c132780f55eeda24f0f4793aa6428b8aa8ab2889671a24b835c04a2b1891652b
-size 79
+{
+	"parent": "block/tinted_extension",
+	"textures": {
+		"0": "block/grass"
+	}
+}

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:060e296a5fddce603e50034e3cdb6059c3a0e122d0aae3d85a0523341c82ea22
-size 144
+{
+  "version": 1,
+  "hiddenMods": [],
+  "globalModAliases": {
+    "cloth_config": "cloth-config2",
+    "playeranimator": "player-animator"
+  }
+}

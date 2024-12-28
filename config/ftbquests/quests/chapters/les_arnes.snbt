@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9ea95a760515350cef4a93af64275750d1182947a82889be6724b5d40833680
-size 664
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_arnes"
+	group: "5DF761E30124DB34"
+	icon: {
+		Count: 1
+		ForgeCaps: {
+			Parent: {
+				Items: [ ]
+				Size: 9
+			}
+		}
+		id: "eclipses_cobblebadges:badgeboxitem"
+		tag: {
+			Inventory: {
+				Items: [ ]
+				Size: 9
+			}
+		}
+	}
+	id: "523C76327AB06FEE"
+	order_index: 1
+	quest_links: [ ]
+	quests: [{
+		id: "7EE56171C1D07E81"
+		tasks: [{
+			id: "5C441FA0CA420E92"
+			item: {
+				Count: 1
+				ForgeCaps: {
+					Parent: {
+						Items: [ ]
+						Size: 9
+					}
+				}
+				id: "eclipses_cobblebadges:badgeboxitem"
+			}
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Régis est un con"
+}

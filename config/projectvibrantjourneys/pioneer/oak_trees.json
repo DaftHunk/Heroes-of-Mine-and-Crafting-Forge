@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0d17ffa255457276240a747075edf1346588f4d5f69f96824e2947eb8ad1db4
-size 412
+[
+  {
+    "biomeName": "pioneer:pine_meadows",
+    "chance": 10
+  },
+  {
+    "biomeName": "pioneer:aspen_grove",
+    "chance": 10
+  },
+  {
+    "biomeName": "pioneer:windswept_cliffs",
+    "chance": 5
+  },
+  {
+    "biomeName": "pioneer:overgrown_spires",
+    "chance": 10
+  },
+  {
+    "biomeName": "pioneer:flooded_forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "pioneer:verdant_sands",
+    "chance": 5
+  }
+]

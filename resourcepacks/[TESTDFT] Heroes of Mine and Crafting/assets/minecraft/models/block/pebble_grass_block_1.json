@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7663aa69ac298ad4064ffb750be8fb5c98260a5fb48081f3311384c8c135253a
-size 1163
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/stone",
+		"particle": "block/stone"
+	},
+	"elements": [
+		{
+			"from": [3, 16, 9],
+			"to": [6, 18, 13],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [11, 12, 14, 13], "texture": "#0", "cullface": "up"},
+				"east": {"uv": [7, 12, 11, 13], "texture": "#0", "cullface": "up"},
+				"south": {"uv": [4, 12, 7, 13], "texture": "#0", "cullface": "up"},
+				"west": {"uv": [0, 12, 4, 13], "texture": "#0", "cullface": "up"},
+				"up": {"uv": [8, 9, 12, 12], "rotation": 90, "texture": "#0", "cullface": "up"}
+			}
+		},
+		{
+			"from": [1, 16, 9],
+			"to": [3, 17, 12],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [3, 0, 5, 1], "texture": "#0", "cullface": "up"},
+				"east": {"uv": [0, 0, 3, 1], "texture": "#0", "cullface": "up"},
+				"south": {"uv": [8, 0, 10, 1], "texture": "#0", "cullface": "up"},
+				"west": {"uv": [5, 0, 8, 1], "texture": "#0", "cullface": "up"},
+				"up": {"uv": [1, 1, 4, 3], "rotation": 270, "texture": "#0", "cullface": "up"}
+			}
+		}
+	]
+}

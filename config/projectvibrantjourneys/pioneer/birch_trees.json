@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb6b7b1feab2bb1df5f449f8a9ff0b068e8e7e279c6e8192c68c1daff349a3de
-size 71
+[
+  {
+    "biomeName": "pioneer:flooded_forest",
+    "chance": 10
+  }
+]

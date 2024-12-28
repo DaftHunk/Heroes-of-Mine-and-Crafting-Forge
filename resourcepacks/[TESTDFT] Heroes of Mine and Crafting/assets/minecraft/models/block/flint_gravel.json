@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7ce226e7376e4a0af663ab42f020570fbfd3084a4d7a9df5c065672b5981b2b
-size 693
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/coal_block",
+		"particle": "block/coal_block"
+	},
+	"elements": [
+		{
+			"from": [-1, 16, 10],
+			"to": [2, 16.8, 13],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [8, 7, 10, 7.8], "texture": "#0", "cullface": "up"},
+				"east": {"uv": [9.2, 7, 10, 9], "rotation": 90, "texture": "#0", "cullface": "up"},
+				"south": {"uv": [8, 8.2, 10, 9], "texture": "#0", "cullface": "up"},
+				"west": {"uv": [8, 7, 8.8, 9], "rotation": 90, "texture": "#0", "cullface": "up"},
+				"up": {"uv": [8, 7, 10, 9], "texture": "#0", "cullface": "up"}
+			}
+		}
+	]
+}

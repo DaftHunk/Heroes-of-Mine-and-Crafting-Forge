@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03b8de3f8b6a7dd674dc42ce09d15e314a1eb9ae63fa9cf9400df3d6f7f9a4ef
-size 82
+{
+	"parent": "block/kelp_extension",
+	"textures": {
+		"0": "block/kelp_plant"
+	}
+}

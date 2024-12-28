@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e326927e0b0553f42e25925a99746fe0f9205a237b77e2dcfdd7b97c8e973316
-size 212
+{
+  "eggMovesLearnable": false,
+  "tutorMovesLearnable": false,
+  "anyMoveAnyPokemon": false,
+  "imprintableBlankTMs": true,
+  "tmCooldownTicks": 100,
+  "trDropPercentChance": 5.0,
+  "tmDropPercentChance": 0.01
+}

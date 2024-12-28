@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e445346633cf5b7f93ff3d4c5c278b459050929215b87ef0e4c386af690ade4c
-size 347
+{
+	"multipart": [
+		{"when": {"half": "lower"}, "apply": {"model": "block/tall_grass_bottom"}},
+		{"when": {"half": "lower"}, "apply": {"model": "block/tall_grass_bottom_extension"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/tall_grass_top"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/tall_grass_top_extension"}}
+	]
+}

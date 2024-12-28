@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:520acad0274e9dca7e2f242276257a27f356f513a9f4ad05c5302df7effb7810
-size 301
+[00:28:34] [WARN] [FabricLoader/Resolution]: Warnings were found!
+ - §Emod 'LambDynamicLights' (lambdynlights)§r 2.3.2+1.20.1 recommends version 0.19.1 or later of §6quilt_loader§r, which is missing!
+	 - You should install version 0.19.1 or later of §6quilt_loader§r for the optimal experience.

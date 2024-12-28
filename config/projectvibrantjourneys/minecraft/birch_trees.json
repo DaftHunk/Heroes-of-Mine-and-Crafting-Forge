@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:936c66e420761c81141f782b1b2111103b277ff10900428d25fc1d75b45a9da4
-size 413
+[
+  {
+    "biomeName": "minecraft:dark_forest",
+    "chance": 2
+  },
+  {
+    "biomeName": "minecraft:flower_forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:birch_forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:meadow",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:old_growth_birch_forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:forest",
+    "chance": 10
+  }
+]

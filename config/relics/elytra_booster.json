@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e474856b7df16ae24f77af8838e8f42fd06e61212e0cbf48996016886fbd3e48
-size 950
+{
+  "ability": {
+    "abilities": {
+      "boost": {
+        "requiredPoints": 1,
+        "requiredLevel": 0,
+        "maxLevel": 10,
+        "stats": {
+          "speed": {
+            "minInitialValue": 1.1,
+            "maxInitialValue": 1.5,
+            "minThresholdValue": 4.9E-324,
+            "maxThresholdValue": 1.7976931348623157E308,
+            "upgradeOperation": "MULTIPLY_BASE",
+            "upgradeModifier": 0.1
+          },
+          "capacity": {
+            "minInitialValue": 50.0,
+            "maxInitialValue": 100.0,
+            "minThresholdValue": 4.9E-324,
+            "maxThresholdValue": 1.7976931348623157E308,
+            "upgradeOperation": "MULTIPLY_BASE",
+            "upgradeModifier": 0.25
+          }
+        }
+      }
+    }
+  },
+  "leveling": {
+    "initialCost": 100,
+    "maxLevel": 10,
+    "step": 100
+  },
+  "loot": {
+    "entries": {
+      "[\\w]+:chests\\/[\\w_\\/]*(end|warp)[\\w_\\/]*": 0.01
+    }
+  }
+}

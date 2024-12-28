@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9034b3b807e7e67312cc83cc3d1be5e28a2d905106faa771eb647d4b78d07d72
-size 73
+[
+  {
+    "biomeName": "byg:temperate_rainforest",
+    "chance": 10
+  }
+]

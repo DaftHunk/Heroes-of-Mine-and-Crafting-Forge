@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:127629643e3768c14ae6942d699a6a6b17f34985b9a8719f05b8841db17573f8
-size 943
+{
+  "ability": {
+    "abilities": {
+      "blink": {
+        "requiredPoints": 1,
+        "requiredLevel": 0,
+        "maxLevel": 10,
+        "stats": {
+          "distance": {
+            "minInitialValue": 16.0,
+            "maxInitialValue": 32.0,
+            "minThresholdValue": 4.9E-324,
+            "maxThresholdValue": 1.7976931348623157E308,
+            "upgradeOperation": "MULTIPLY_BASE",
+            "upgradeModifier": 0.2
+          },
+          "cooldown": {
+            "minInitialValue": 5.0,
+            "maxInitialValue": 10.0,
+            "minThresholdValue": 4.9E-324,
+            "maxThresholdValue": 1.7976931348623157E308,
+            "upgradeOperation": "ADD",
+            "upgradeModifier": -0.5
+          }
+        }
+      }
+    }
+  },
+  "leveling": {
+    "initialCost": 100,
+    "maxLevel": 10,
+    "step": 100
+  },
+  "loot": {
+    "entries": {
+      "[\\w]+:chests\\/[\\w_\\/]*(end|warp)[\\w_\\/]*": 0.01
+    }
+  }
+}

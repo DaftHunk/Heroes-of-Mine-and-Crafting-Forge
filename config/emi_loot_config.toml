@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bef451c0079e1ea83b36b1e8f6e2332849a19cdfb71bf5367a6ac4c55c746520
-size 781
+# Don't change this! Version used to track needed updates.
+version = 1
+debugMode = false
+parseChestLoot = true
+parseBlockLoot = true
+parseMobLoot = true
+parseGameplayLoot = true
+parseArchaeologyLoot = true
+skippedKeys = [
+    "emi_loot.function.set_count_add",
+    "emi_loot.function.limit_count",
+    "emi_loot.no_conditions",
+    "emi_loot.function.set_count_set",
+    "emi_loot.function.fill_player_head"
+]
+chestLootAlwaysStackSame = false
+mobLootIncludeDirectDrops = true
+chanceDecimalPlaces = 1
+conditionStyle = "default"
+
+[debugModes]
+block = false
+chest = false
+mob = false
+gameplay = false
+archaeology = false
+
+[compactLoot]
+block = true
+chest = true
+mob = true
+gameplay = true
+archaeology = true
+
+[logUnstranslatedTables]
+chest = false
+gameplay = false
+archaeology = false

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:494005f01776b9714c7d90c476dabddbc18fbe84be65ab1083789007783e8c19
-size 357
+{
+  "enableShaderUniformCaching": true,
+  "enableShaderICaching": true,
+  "enableShaderLogInfoCaching": true,
+  "enableResourceKeyDedup": true,
+  "enableQuadsDedup": true,
+  "enableComposterFix": true,
+  "disableDataFixes": false,
+  "lightweightWolfAndCatAttackAi": true,
+  "lightweightWolfAndRabbitFleeAi": true,
+  "resourceLocationDeduplication": "ALL"
+}

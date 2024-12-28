@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73ac5523a815be29478f31b81c742676cf1a8283731b751feeb0e4fac2355c94
-size 489
+#ifndef INCLUDE_WATER_FOG
+    #define INCLUDE_WATER_FOG
+    
+    float GetWaterFog(float lViewPos) {
+        #if WATER_FOG_MULT != 100
+            #define WATER_FOG_MULT_M WATER_FOG_MULT * 0.01;
+            lViewPos *= WATER_FOG_MULT_M;
+        #endif
+
+        #if LIGHTSHAFT_QUALI > 0 && SHADOW_QUALITY > -1
+            float fog = lViewPos / 48.0;
+            fog *= fog;
+        #else
+            float fog = lViewPos / 32.0;
+        #endif
+
+        return 1.0 - exp(-fog);
+    }
+#endif

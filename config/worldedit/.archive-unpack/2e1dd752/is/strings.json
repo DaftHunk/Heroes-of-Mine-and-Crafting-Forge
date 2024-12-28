@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57cfc41f9f82b595a9a4cf77369a6503d3c354f0bfe8cb58e66382fa9836c6a2
-size 279
+{
+    "worldedit.expand.description.vert": "Framlengja valið svæði lóðrétt að heimsmörkum.",
+    "worldedit.expand.expanded": "Valið svæði framlengt um {0} kubba",
+    "worldedit.expand.expanded.vert": "Valið svæði framlengt um {0} kubba (frá botni til topps)."
+}

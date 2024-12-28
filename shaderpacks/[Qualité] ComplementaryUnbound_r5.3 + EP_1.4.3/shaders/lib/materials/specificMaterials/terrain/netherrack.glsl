@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03a44822bdc983f0c9d0207c0da0762c7a88653db4732be61d3339eabbdbb06a
-size 178
+#if MC_VERSION >= 11300
+    smoothnessG = pow2(color.r) * 1.5;
+    smoothnessG = min1(smoothnessG);
+#else
+    smoothnessG = color.r * 0.4 + 0.2;
+#endif
+smoothnessD = smoothnessG;

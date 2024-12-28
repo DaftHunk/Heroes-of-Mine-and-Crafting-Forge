@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15bde66426ba29c0d149327038400dafd52a262ce472160022ccc3809d2fa281
-size 532
+[
+  {
+    "biomeName": "minecraft:swamp",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:flower_forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:plains",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:dark_forest",
+    "chance": 2
+  },
+  {
+    "biomeName": "minecraft:forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:windswept_forest",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:sunflower_plains",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:meadow",
+    "chance": 5
+  }
+]

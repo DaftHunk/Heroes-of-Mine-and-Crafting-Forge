@@ -1,3 +1,70 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:263d457f1cf852e0b9fed54aa9d9be2c1b13df701f89e9790e586bd32d159c54
-size 1548
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lquipement"
+	group: "20D56E89F2CC58DE"
+	icon: "sophisticatedbackpacks:copper_backpack"
+	id: "3924DEBE438449A6"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "2B84DEDAE97D141A"
+			rewards: [{
+				id: "0D0179A954E2407B"
+				item: "sophisticatedbackpacks:upgrade_base"
+				type: "item"
+			}]
+			tasks: [{
+				id: "146D6A31DFE91063"
+				item: "sophisticatedbackpacks:backpack"
+				title: "Un bon sac à dos"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "539D741F043DBF62"
+			rewards: [{
+				count: 5
+				id: "5BB79352806A8ADB"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			subtitle: "Un bon sac de couchage vous permettra de dormir loin de chez vous sans casser votre point de réapparition"
+			tasks: [{
+				id: "6432C5CFB9109E1F"
+				item: "comforts:sleeping_bag_white"
+				type: "item"
+			}]
+			title: "Sac de couchage"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			description: ["La &6nature's compass&r est vraiment utile, car elle vous permet de localiser n'importe quelle biome du monde, dans n'importe quelle dimension."]
+			id: "19B21BCDEC611C29"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "0AF218098B83D557"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Le meilleur moyen de trouver des biomes"
+			tasks: [{
+				id: "5961BA3997E85000"
+				item: {
+					Count: 1
+					id: "naturescompass:naturescompass"
+					tag: { }
+				}
+				only_from_crafting: false
+				type: "item"
+			}]
+			x: 1.5d
+			y: -1.5d
+		}
+	]
+	title: "Bien s'équiper"
+}

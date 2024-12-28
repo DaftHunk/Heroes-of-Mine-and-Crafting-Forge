@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2cd695750b565028bb66b51525dba82af9867e40afcf3144ff5de0369ffdf100
-size 507
+{
+	"multipart": [
+		{"apply": {"model": "block/allium"}},
+		{"apply": {"model": "block/allium_exts"}},
+		{"apply": [
+			{"model": "block/sub_allium"},
+			{"model": "block/air", "weight": 2}]
+		},
+		{"apply": [
+			{"model": "block/sub_allium", "y": 90},
+			{"model": "block/air", "weight": 3}]
+		},
+		{"apply": [
+			{"model": "block/sub_allium", "y": 180},
+			{"model": "block/air", "weight": 4}]
+		},
+		{"apply": [
+			{"model": "block/sub_allium", "y": 270},
+			{"model": "block/air", "weight": 5}]
+		}
+	]
+}

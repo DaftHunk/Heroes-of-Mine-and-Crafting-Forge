@@ -1,3 +1,72 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:715e9a9b564f161a0a245edd3fb71127a8c458653630eb480ac03bd935840f4b
-size 2395
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "block/grass",
+		"particle": "block/stone"
+	},
+	"elements": [
+		{
+			"from": [16, 16, -4.75],
+			"to": [16, 24, 0.25],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [4, 1, 9, 10], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [4, 1, 9, 10], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [14.25, 16, -0.25],
+			"to": [14.25, 21, 6.25],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [4, 1, 10, 10], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [7, 1, 15, 7], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [2, 16, 5.75],
+			"to": [2, 24, 10.25],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [5, 1, 10, 10], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [5, 1, 10, 10], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [17, 12.25, 4.25],
+			"to": [17, 19.25, 8.25],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [11, 1, 15, 8], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [11, 1, 15, 8], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [9.25, 11.25, 11],
+			"to": [12.25, 16.25, 11],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [4, 0, -4]},
+			"faces": {
+				"north": {"uv": [5, 2, 8, 7], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"south": {"uv": [5, 2, 8, 7], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [1, 16, 9],
+			"to": [3, 17, 12],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [3, 0, 5, 1], "texture": "#particle", "cullface": "up"},
+				"east": {"uv": [0, 0, 3, 1], "texture": "#particle", "cullface": "up"},
+				"south": {"uv": [8, 0, 11, 1], "texture": "#particle", "cullface": "up"},
+				"west": {"uv": [5, 0, 8, 1], "texture": "#particle", "cullface": "up"},
+				"up": {"uv": [1, 1, 4, 3], "rotation": 270, "texture": "#particle", "cullface": "up"}
+			}
+		}
+	]
+}

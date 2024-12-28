@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f510bf0747fe75033cf628a765cbb86db383ba7bbd036c0f001a1c367dcbfa4
-size 733
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/dead_bush",
+		"particle": "block/dead_bush"
+	},
+	"elements": [
+		{
+			"from": [8, 8, 0],
+			"to": [16, 8, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"up": {"uv": [16, 8, 0, 0], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 8, 16, 0], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 8, 0],
+			"to": [8, 8, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 8, 16, 0], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [16, 8, 0, 0], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

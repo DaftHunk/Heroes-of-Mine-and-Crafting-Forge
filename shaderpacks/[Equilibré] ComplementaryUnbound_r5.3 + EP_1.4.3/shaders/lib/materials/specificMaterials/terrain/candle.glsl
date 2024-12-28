@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:08287866bfb0f78a9d03513c459a384491a2db663def209d1f5fee29b4cbceca
-size 179
+noSmoothLighting = true;
+
+color.rgb *= 1.0 + pow2(max(-signMidCoordPos.y, float(NdotU > 0.9) * 1.2));
+
+#ifdef SNOWY_WORLD
+    snowFactor = 0.0;
+#endif
+overlayNoiseIntensity = 0.3;

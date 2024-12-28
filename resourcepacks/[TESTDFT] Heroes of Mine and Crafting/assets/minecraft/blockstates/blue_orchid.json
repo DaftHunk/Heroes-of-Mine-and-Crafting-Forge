@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e6108837b8c543d8bffd5f0031c6140ca0d091461e44a5337441c203a0f5db4
-size 66
+{
+	"multipart": [
+		{"apply": {"model": "block/blue_orchid"}}
+	]
+}

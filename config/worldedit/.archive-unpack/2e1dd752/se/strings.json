@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ccbfc481e804dfb61768a8ea30f4c857124b1c6fbfc32e254266e9ffa1d9a6cc
-size 826
+{
+    "worldedit.restore.block-place-error": "Maŋimus meattáhus: {0}",
+    "worldedit.ceil.moved": "Woosh!",
+    "worldedit.thru.moved": "Woosh!",
+    "worldedit.jumpto.moved": "Puf!",
+    "worldedit.up.moved": "Woosh!",
+    "worldedit.timezone.invalid": "Boasttu áigiavádat",
+    "worldedit.tool.info.internalid.hover": "Siskkáldas ID",
+    "worldedit.error.incorrect-usage": "Geavaheapmi: {0}",
+    "worldedit.selection.convex.info.triangles": "Golbmačiehka: {0}",
+    "worldedit.selection.cuboid.info.pos1": "Sajus 1: {0}",
+    "worldedit.selection.cuboid.info.pos2": "Sajus 2: {0}",
+    "worldedit.selection.ellipsoid.info.center": "Guovddáš: {0}",
+    "worldedit.selection.cylinder.info.center": "Guovddáš: {0}",
+    "worldedit.sideeffect.state.on": "Oaivi",
+    "worldedit.sideeffect.state.off": "Eret alde"
+}

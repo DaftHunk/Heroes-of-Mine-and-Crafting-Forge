@@ -1,3 +1,698 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0543b1a5e5b87a66feb9d52d26e51fb76f92c50bb4e6f6a0a63007ca7ba1889
-size 19238
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "fonder_une_colonie"
+	group: "447227F2EC4DD09E"
+	icon: "minecolonies:supplycampdeployer"
+	id: "1EED6DBDEF58FD5E"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Etape 1 : Camp de ravitaillement/Navire de ravitaillement"
+				""
+				"Après avoir choisi un emplacement pour votre colonie, il vous faudra placer un Navire de ravitaillement ou un Camp de ravitaillement. Vous ne pouvez en placer qu'un par monde. Le Camp/Navire de ravitaillement vous donnera le bloc d'Hôtel de Ville dont vous aurez besoin pour le lancement officiel de votre colonie. Il possède également des ressources dont vous pourriez avoir besoin pour construire votre colonie. Une fois que vous aurez récupéré le block d'Hôtel de Ville et l'outil de construction, vous pourrez laisser le reste du camp/navire en l'état ou le détruire."
+				""
+				"Pour placer le Navire de ravitaillement, il vous faudra un plan d'eau assez grand (au moins 32 x 20). To place the Supply Ship, you need to have a large enough body of water (at least 32 x 20). "
+				""
+				"Quand vous placerez le Navire de Ravitaillement, il fera apparaître un coffre contenant le bloc d'Hôtel de Ville et l'outil de construction. Une fois que le Navire de ravitaillement est placé, vous ne pouvez plus en placer un autre dans le monde."
+				""
+				"Placez le Navire de ravitaillement en faisant un clic droit directement sur l'eau ou le sol, avec l'objet en main. -Si vous avez déjà obtenu un outil de construction, ne l'utilisez pas pour cela, car vous êtes censé le récupérer dans le camp que vous allez placer !"
+				""
+				"Astuce : Si vous n'arrivez pas à placer le Navire de ravitaillement, essayez de le décaler bloc par bloc. Sur la droite, gauche, en avant, en arrière. Le terrain sur lequel vous le placez ne doit pas contenir de trous ni d'herbes, de plantes, coraux, fleurs, etc..."
+			]
+			id: "774420C19F369850"
+			tasks: [{
+				id: "214284AB9A4DE993"
+				item: "minecolonies:supplychestdeployer"
+				type: "item"
+			}]
+			title: "Navire de ravitaillement"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Etape 1 : Camp de ravitaillement/Navire de ravitaillement"
+				""
+				"Après avoir choisi un emplacement pour votre colonie, il vous faudra placer un Navire de ravitaillement ou un Camp de ravitaillement. Vous ne pouvez en placer qu'un par monde. Le Camp/Navire de ravitaillement vous donnera le bloc d'Hôtel de Ville dont vous aurez besoin pour le lancement officiel de votre colonie. Il possède également des ressources dont vous pourriez avoir besoin pour construire votre colonie. Une fois que vous aurez récupéré le block d'Hôtel de Ville et l'outil de construction, vous pourrez laisser le reste du camp/navire en l'état ou le détruire."
+				""
+				"Pour placer le Camp de Ravitaillement, vous devrez trouver un morceau de terrain plat, vide, et assez grand (au moins 16x17 blocs)."
+				""
+				"Quand vous placerez le Camp de Ravitaillement, il fera apparaître un coffre contenant le bloc d'Hôtel de Ville et l'outil de construction. Une fois que le Camp de ravitaillement est placé, vous ne pouvez plus en placer un autre dans le monde."
+				""
+				"Placez le Camp de ravitaillement en faisant un clic droit directement sur l'eau ou le sol, avec l'objet en main. -Si vous avez déjà obtenu un outil de construction, ne l'utilisez pas pour cela, car vous êtes censé le récupérer dans le camp que vous allez placer !"
+				""
+				"Astuce : Si vous n'arrivez pas à placer le Camp de ravitaillement, essayez de le décaler bloc par bloc. Sur la droite, gauche, en avant, en arrière. Le terrain sur lequel vous le placez ne doit pas contenir de trous ni d'herbes, de plantes, coraux, fleurs, etc..."
+			]
+			id: "19D85E1B63ADFF34"
+			tasks: [{
+				id: "35B7EF70BDB7431F"
+				item: "minecolonies:supplycampdeployer"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"19D85E1B63ADFF34"
+				"774420C19F369850"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"Etape 2 : L'Hôtel de Ville"
+				""
+				"L'Hôtel de Ville est le bloc qui crée réellement la colonie. Il marque également le centre de celle-ci. C'est ici que vous commencerez à utiliser l'outil de construction pour placer des bâtiments. Utiliser l'outil de construciton vous assure de voir exactement l'emplacement du futur bâtiment, la direction dans laquelle il sera posé, et si il est au bon niveau Y (vertical). Certains bâtiments devront être relevés pour être au bon niveau Y."
+				""
+				"Une fois que l'Hôtel de Ville est placé, vous commencez à recevoir vos 4 premiers citoyens."
+				""
+				"La zone protégée de votre colonie (une fois l'Hôtel de Ville placé) sera un carré de 4 chunks de rayon, mesuré depuis le chunk où vous avez placé votre bloc d'Hôtel de Ville pour la première fois (avec la config par défaut). De ce fait, prévoyez bien à l'avance l'endroit où vous désirez placer votre Hôtel de Ville. Votre zone protégée sera de 64 blocs (4 chunks x 4 chunks) dans toutes les directions depuis le chunk initial, et incluera les montagnes, colines, lacs, océans, grottes, etc... depuis la bedrock jusqu'à la limite de hauteur maximale."
+				""
+				"Astuce : L'outil le plus important de tout le mod est l'outil de construction (voir la page dédiée). Obtenez le depuis le Camp/Navire de ravitaillement ou craftez en un pour pouvoir placer toutes les huttes (Hôtel de Ville inclus) à l'endroit parfait."
+				""
+				"En raison de la zone de protection de chaque colonie, il vous faudra faire une reconnaissance des environs pour vérifier que vous n'allez pas être bloqué par une autre colonie. Si il existe une autre colonie trop proche de vous, vous ne pourrez pas placer votre Hôtel de Ville."
+				""
+				"L'emplacement de la colonie la plus proche peut se trouver dans l'écran de debug (affiché en appuyant sur F3). Si il existe une colonie proche de votre position, l'écran vous montrera la distance à parcourir pour pouvoir placer votre Hôtel de Ville."
+			]
+			id: "70F342782B5E0997"
+			tasks: [{
+				id: "4AA92CA6E8E1E1FE"
+				item: "minecolonies:blockhuttownhall"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["70F342782B5E0997"]
+			description: [
+				"Etape 3 : Bâtisseur"
+				""
+				"Avant de pouvoir construire que que ce soit, il vous faut un Bâtisseur. Le Bâtisseur doit construire sa propre Hutte du Bâtisseur avant de constuire quoi que ce soit d'autre, et ils ne peuvent pas améliorer les bâtiments à un niveau supérieur à leur propre hutte."
+				""
+				"Astuce : Récoltez autant de matériaux que possible pour les donner à votre Bâtisseur quand il commence à construire. Il vous demandera toutes sortes de matériaux pour chaque bâtiment ou amélioration, en fonction du style que vous avez choisi. Les matériaux requis pour la plupart des styles seront surtout du bois, de la pierre, et des torches, au plus bas niveau. Les améliorations suivantes demanderont des matériaux plus rares. "
+				""
+				"Astuce : Envisagez d'améliorer la Hutte de Bâtisseur au niveau 2 aussi tôt que possible pour pouvoir améliorer les autres bâtiments."
+				""
+				"Astuce : Améliorez vos bâtiments au niveau le plus haut (niveau 5 pour tous sauf la Taverne) pour obtenir des succès (et améliorer la vitesse à laquelle les travailleurs montent de niveau)."
+			]
+			id: "0B51F404F1E84C17"
+			tasks: [{
+				id: "36987ACAD1E002AA"
+				item: "minecolonies:blockhutbuilder"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0B51F404F1E84C17"]
+			description: [
+				"Etape 4 : Taverne"
+				""
+				"Vos colons auront besoin d'un endroit pour dormir et d'un abri, il est donc recommandé de construire une Taverne ensuite. La Taverne permet également à votre colonie de recevoir des visiteurs, que vous pourrez recruter en tant que citoyens."
+			]
+			id: "05839D9537FA2FDD"
+			tasks: [{
+				id: "0E3B9CE22FD340EF"
+				item: "minecolonies:blockhuttavern"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["05839D9537FA2FDD"]
+			description: [
+				"Etape 5 : Nourriture"
+				""
+				"Le prochain élément majeur dont votre colonie a besoin est la nourriture. Le moyen le plus rapide d'en obtenir est de construire une Hutte du Pêcheur. Vous pourriez également construire une Hutte du Fermier ou un des éleveurs d'animaux, mais un Pêcheur est plus rapide. Constuire un Restaurant peut également être utile si vous ne voulez pas nourrir vos colons (ou cuisiner leur nourriture) à la main."
+			]
+			id: "768C7CE1F3C4331F"
+			tasks: [{
+				id: "52EF5F4A96786697"
+				item: "minecolonies:blockhutfisherman"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["05839D9537FA2FDD"]
+			description: [""]
+			id: "6148DA91475AF128"
+			tasks: [{
+				id: "5170D7BED814995D"
+				item: "minecolonies:blockhutchickenherder"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["05839D9537FA2FDD"]
+			id: "102F1AB2ABDFA9DA"
+			tasks: [{
+				id: "556CEFB9AF9DFDBF"
+				item: "minecolonies:blockhutcowboy"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["05839D9537FA2FDD"]
+			id: "4FD090C52AB45E98"
+			tasks: [{
+				id: "7C4F5CE53EEBEC2E"
+				item: "minecolonies:blockhutshepherd"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["05839D9537FA2FDD"]
+			id: "74C302A150EEA26E"
+			tasks: [{
+				id: "22B99720B234B328"
+				item: "minecolonies:blockhutswineherder"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"102F1AB2ABDFA9DA"
+				"6148DA91475AF128"
+				"74C302A150EEA26E"
+				"4FD090C52AB45E98"
+				"768C7CE1F3C4331F"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"Etape 6 : Bûcheron"
+				""
+				"Si votre style est le bois, il est recommandé de construire une Hutte du Bûcheron. De cette façon, votre Bûcheron peut commencer à récolter du bois pour vos prochaines constructions, vos outils, et d'autres objets."
+			]
+			id: "6B3B0F9EE26ABAD3"
+			tasks: [{
+				id: "40FE0DBF81EEF2C1"
+				item: "minecolonies:blockhutlumberjack"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6B3B0F9EE26ABAD3"]
+			description: [
+				"Etape 7 : Mineur"
+				""
+				"La pierre et les minerais sont un autre besoin majeur pour la colonie, une Mine est donc la prochaine étape logique."
+			]
+			id: "32DB907C440E77A0"
+			tasks: [{
+				id: "1817D329F309582F"
+				item: "minecolonies:blockhutminer"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			hide_dependency_lines: true
+			id: "6D56E9CFE2E189E3"
+			size: 0.8d
+			tasks: [{
+				id: "16D9FF17FFD16309"
+				item: "minecolonies:blockhutbaker"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["32DB907C440E77A0"]
+			description: [
+				"Etape 8 : Entrepôt et Livreur"
+				""
+				"Arrivé à ce point, vous en avez probablement marre d'emmener vous-mêmes toutes les ressources au Bâtisseur, de récupérer celles du Pêcheur, Bûcheron, Mineur, etc... Il est également probable que vous souhaitiez stocker vos objets au même endroit. De ce fait, l'Entrepôt et la Hutte du Livreur sont la solution pour vous ! Le Livreur transporte les objets entre les Entrepôts et tous les lieux de travail. Le Presse-Papiers et le Parchemin de Ressources vous seront utiles !"
+			]
+			id: "79AF484CC3F00727"
+			tasks: [
+				{
+					id: "61192C13A57909DF"
+					item: "minecolonies:blockhutwarehouse"
+					type: "item"
+				}
+				{
+					id: "3C7F0344835BADFF"
+					item: "minecolonies:blockhutdeliveryman"
+					type: "item"
+				}
+			]
+			x: 0.5d
+			y: 7.0d
+		}
+		{
+			hide_dependency_lines: true
+			id: "7D6B05DCFBCBF009"
+			size: 0.8d
+			tasks: [{
+				id: "5A4D13FCA2ED320F"
+				item: "minecolonies:blockhutnetherworker"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.5d
+		}
+		{
+			hide_dependency_lines: true
+			id: "6F15D249339BDA18"
+			size: 0.8d
+			tasks: [{
+				id: "38277C5DA815744E"
+				item: "minecolonies:blockhutcitizen"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			hide_dependency_lines: true
+			id: "69943243B0F17E56"
+			size: 0.8d
+			tasks: [{
+				id: "5E77F00DCCE185E6"
+				item: "minecolonies:blockhutstonesmeltery"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			hide_dependency_lines: true
+			id: "2FF0BC6441FD51AD"
+			size: 0.8d
+			tasks: [{
+				id: "274262BC6BE0947A"
+				item: "minecolonies:blockhutguardtower"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 2.5d
+		}
+		{
+			id: "3644A6F2B7137227"
+			size: 0.8d
+			tasks: [{
+				id: "18D4A831574641E6"
+				item: "minecolonies:blockhutbarrackstower"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			id: "2B02FB684AB31BA1"
+			size: 0.8d
+			tasks: [{
+				id: "04B5E8523FF35954"
+				item: "minecolonies:blockhutblacksmith"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 1.5d
+		}
+		{
+			id: "411E0B960C38E197"
+			size: 0.8d
+			tasks: [{
+				id: "338A5C955DB24282"
+				item: "minecolonies:blockhutcomposter"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.5d
+		}
+		{
+			id: "527B3E2866268291"
+			size: 0.8d
+			tasks: [{
+				id: "51D9B1DC5C80E208"
+				item: "minecolonies:blockhutcook"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 2.5d
+		}
+		{
+			id: "662AA2CE35D84A62"
+			size: 0.8d
+			tasks: [{
+				id: "34D31D6140EDF83D"
+				item: "minecolonies:blockhutfarmer"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.5d
+		}
+		{
+			id: "32F6B7B5660B6151"
+			size: 0.8d
+			tasks: [{
+				id: "481E38FC7E0D688B"
+				item: "minecolonies:blockhutlibrary"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 3.5d
+		}
+		{
+			id: "77891E6E9146887D"
+			size: 0.8d
+			tasks: [{
+				id: "2CB25C5355A2D8EF"
+				item: "minecolonies:blockhutsifter"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			id: "7C2B0ACE670A2DAF"
+			size: 0.8d
+			tasks: [{
+				id: "186B9FD20A6015D9"
+				item: "minecolonies:blockhutsmeltery"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.5d
+		}
+		{
+			id: "3B0A0DBBA075AEA7"
+			size: 0.8d
+			tasks: [{
+				id: "6912F3428E3F3ADE"
+				item: "minecolonies:blockhutuniversity"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			id: "54CB09D2C4F2BBFD"
+			size: 0.8d
+			tasks: [{
+				id: "597B33EDA3DF525D"
+				item: "minecolonies:blockhutschool"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			id: "347DBF687F58C09F"
+			size: 0.8d
+			tasks: [{
+				id: "383E61A456C6DE09"
+				item: "minecolonies:blockhutenchanter"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 2.5d
+		}
+		{
+			id: "372F2082B6A644BE"
+			size: 0.8d
+			tasks: [{
+				id: "3263D57ECCC1C86B"
+				item: "minecolonies:blockhutglassblower"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.5d
+		}
+		{
+			id: "07B63521BD64F7E9"
+			size: 0.8d
+			tasks: [{
+				id: "3489156A2033082B"
+				item: "minecolonies:blockhutdyer"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 2.5d
+		}
+		{
+			id: "76A24C90EBF5026B"
+			size: 0.8d
+			tasks: [{
+				id: "59F47B5EB2D8BDB7"
+				item: "minecolonies:blockhutfletcher"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			id: "5730F8B796C37A0C"
+			size: 0.8d
+			tasks: [{
+				id: "14258DBE993AC5E9"
+				item: "minecolonies:blockhutmechanic"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 3.5d
+		}
+		{
+			id: "5A9397B9392353DC"
+			size: 0.8d
+			tasks: [{
+				id: "0405B6C9634B2A67"
+				item: "minecolonies:blockhutcrusher"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 4.5d
+		}
+		{
+			id: "2DCAE3A6348C2A0A"
+			size: 0.8d
+			tasks: [{
+				id: "079BE4AAA20A44C9"
+				item: "minecolonies:blockhutsawmill"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			id: "1FBC003B3BE05843"
+			size: 0.8d
+			tasks: [{
+				id: "201611CD038BD900"
+				item: "minecolonies:blockhutcombatacademy"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.5d
+		}
+		{
+			id: "47762964443BB3B8"
+			size: 0.8d
+			tasks: [{
+				id: "5EB9CB829B1D1524"
+				item: "minecolonies:blockhutplantation"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 4.5d
+		}
+		{
+			id: "6CA4428EA2A247DC"
+			size: 0.8d
+			tasks: [{
+				id: "6872141F46A1D549"
+				item: "minecolonies:blockhutrabbithutch"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 5.5d
+		}
+		{
+			id: "4C9281FA6C0DB9A6"
+			size: 0.8d
+			tasks: [{
+				id: "7FEEB8F1C0F9DAA6"
+				item: "minecolonies:blockhutconcretemixer"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 5.5d
+		}
+		{
+			id: "4E3385FB6167E47C"
+			size: 0.8d
+			tasks: [{
+				id: "5A357A69C1512427"
+				item: "minecolonies:blockhutbeekeeper"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 5.5d
+		}
+		{
+			id: "073313700CC3E6DB"
+			size: 0.8d
+			tasks: [{
+				id: "39D7F13E3D2A9BF6"
+				item: "minecolonies:blockhutmysticalsite"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 5.5d
+		}
+		{
+			id: "7FC5F7DCF639BAD5"
+			size: 0.8d
+			tasks: [{
+				id: "5324662A89104F1E"
+				item: "minecolonies:blockhutflorist"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.5d
+		}
+		{
+			id: "6AD7A80B353FBBEB"
+			size: 0.8d
+			tasks: [{
+				id: "67D0CD674F67DAE2"
+				item: "minecolonies:blockpostbox"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.5d
+		}
+		{
+			id: "29ECC633EFD41FCA"
+			size: 0.8d
+			tasks: [{
+				id: "505D3A3F98783E92"
+				item: "minecolonies:blockstash"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 6.5d
+		}
+		{
+			id: "3CAE79CAFD5B3475"
+			size: 0.8d
+			tasks: [{
+				id: "023485ADBFCED6B5"
+				item: "minecolonies:blockhutgraveyard"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 6.5d
+		}
+		{
+			id: "750C1210C9DF635D"
+			size: 0.8d
+			tasks: [{
+				id: "04BA1146DB8F97A7"
+				item: "minecolonies:blockhutalchemist"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 5.5d
+		}
+		{
+			id: "76901E5C935B8CB5"
+			size: 0.8d
+			tasks: [{
+				id: "0D7840AE4FAC6DB1"
+				item: "minecolonies:simplequarry"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 6.5d
+		}
+		{
+			id: "1F3E406E2A1796AF"
+			size: 0.8d
+			tasks: [{
+				id: "74D240717F47737F"
+				item: "minecolonies:mediumquarry"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 5.5d
+		}
+		{
+			id: "56CBEE5CCB8B5ACF"
+			size: 0.8d
+			tasks: [{
+				id: "1B08EF7193AB4956"
+				item: "minecolonies:blockhutfield"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			id: "7CBCE08376E2AFA5"
+			size: 0.8d
+			tasks: [{
+				id: "386D8360DD1355F2"
+				item: "minecolonies:blockhutplantationfield"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.5d
+		}
+		{
+			id: "1293C3CF88E1A701"
+			size: 0.8d
+			tasks: [{
+				id: "441812D3471139B9"
+				item: "minecolonies:blockminecoloniesrack"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.5d
+		}
+		{
+			description: ["Cliquer pour obtenir un lien menant au wiki de Minecolonies. La quête ne fonctionne qu'une seule fois alors sauvegardez le lien ou utilisez Google, en cas de besoin."]
+			icon: "minecraft:book"
+			id: "7617AC4CACC5045C"
+			rewards: [{
+				auto: "no_toast"
+				command: "/tellraw @p {\"text\":\"https://wiki.minecolonies.com/source/tutorials/getting-started\",\"color\":\"blue\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://wiki.minecolonies.com/source/tutorials/getting-started\"}}"
+				elevate_perms: true
+				exclude_from_claim_all: true
+				id: "50AAADA56BE7ADB0"
+				silent: true
+				team_reward: false
+				type: "command"
+			}]
+			tasks: [{
+				disable_toast: true
+				id: "4DE08737E4AB6BFF"
+				title: "Wiki link"
+				type: "checkmark"
+			}]
+			title: "Lien du Wiki"
+			x: 0.5d
+			y: -1.0d
+		}
+	]
+	title: "Le colonialisme pour les nuls"
+}

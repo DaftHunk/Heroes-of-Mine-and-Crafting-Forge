@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5897b54f0a68a118105dea024e93dd9854878368eea249f7a3087ddd7b6a0bbf
-size 85
+{
+	"parent": "block/flower_extension",
+	"textures": {
+		"0": "block/oxeye_daisy"
+	}
+}

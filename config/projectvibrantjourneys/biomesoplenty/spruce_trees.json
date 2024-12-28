@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3e1e31056ffa1f4721461b11ede07641d6eb5c2e4ae7220c0e1f21176531ec5
-size 448
+[
+  {
+    "biomeName": "biomesoplenty:forested_field",
+    "chance": 10
+  },
+  {
+    "biomeName": "biomesoplenty:dead_forest",
+    "chance": 2
+  },
+  {
+    "biomeName": "biomesoplenty:mediterranean_forest",
+    "chance": 5
+  },
+  {
+    "biomeName": "biomesoplenty:jade_cliffs",
+    "chance": 5
+  },
+  {
+    "biomeName": "biomesoplenty:wetland",
+    "chance": 5
+  },
+  {
+    "biomeName": "biomesoplenty:old_growth_dead_forest",
+    "chance": 2
+  }
+]

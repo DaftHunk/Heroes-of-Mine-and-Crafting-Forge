@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a93b6355255a3f3604582852596daebd8231ba647923021a0eb05c6a269cb91
-size 83
+{
+	"parent": "block/flower_extension",
+	"textures": {
+		"0": "block/peony_top"
+	}
+}

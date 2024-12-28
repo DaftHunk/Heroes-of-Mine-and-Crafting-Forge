@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:054fdaca65c2124124209900b6061e823fc22447677f73c71947d2d2f3bed4c4
-size 240
+{
+  "bookGuiScale": 0,
+  "clickedVisualize": false,
+  "bookData": {
+    "cobblepedia:cobblepedia": {
+      "viewedEntries": [
+        "cobblepedia:dawn_stone_ore"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    }
+  }
+}

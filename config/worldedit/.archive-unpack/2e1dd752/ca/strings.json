@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6864f83a4a35f39b5d8b4559fc911236815f6eadf80aefae58e8ac626e171129
-size 554
+{
+    "worldedit.expand.description.vert": "Amplia la selecció verticalment fins als límits del món.",
+    "worldedit.expand.expanded": "Regió ampliada {0} blocs",
+    "worldedit.expand.expanded.vert": "Regió ampliada {0} blocs (de dalt a baix).",
+    "worldedit.brush.apply.radius": "La mida del pinzell",
+    "worldedit.brush.apply.shape": "La forma de la regió",
+    "worldedit.brush.paint.size": "La mida del pinzell",
+    "worldedit.brush.paint.shape": "La forma de la regió",
+    "worldedit.brush.paint.density": "La densitat del pinzell"
+}

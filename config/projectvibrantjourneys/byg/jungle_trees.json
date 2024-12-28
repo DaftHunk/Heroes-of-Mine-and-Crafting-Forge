@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e8db1a77d727fad1392d1d6674df67240e9eb45bc2040b669a408138dde1976
-size 65
+[
+  {
+    "biomeName": "byg:crag_gardens",
+    "chance": 10
+  }
+]

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da758d73017e2229016953c06e81e3055f2cbd9bbfd82ce5b3a0513f1cc271e9
-size 73
+[
+  {
+    "biomeName": "pioneer:overgrown_spires",
+    "chance": 10
+  }
+]

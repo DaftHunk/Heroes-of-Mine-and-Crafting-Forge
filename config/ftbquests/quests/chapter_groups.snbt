@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1378ef3ce973a839be70f115034f5d7468abfb43d5dd68df271caa95cd093c5c
-size 341
+{
+	chapter_groups: [
+		{ id: "447227F2EC4DD09E", title: "Village" }
+		{ id: "5DF761E30124DB34", title: "Cobblemon" }
+		{ id: "20D56E89F2CC58DE", title: "Exploration" }
+		{ id: "66973B46BDC2E762", title: "Age du fer" }
+		{ id: "2F761DF4E5B82AD6", title: "Age de la vapeur" }
+		{ id: "6A4CFCAED0D5F76A", title: "Age de l'électricité" }
+	]
+}

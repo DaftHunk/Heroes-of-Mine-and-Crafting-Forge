@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d2a46b9666cc71e1bcc2644d4bcc14be85cf31fceef2625651b05d9a8ffcf0a
-size 492
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "le_commerce"
+	group: "447227F2EC4DD09E"
+	icon: "minecraft:emerald"
+	id: "428F0003AABA0292"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "63822889AF544A86"
+		tasks: [{
+			advancement: "morevillagers:first_village"
+			criterion: ""
+			icon: "minecraft:compass"
+			id: "1BDB0BDFCFB1EC4C"
+			title: "Trouver un village"
+			type: "advancement"
+		}]
+		x: -3.5d
+		y: -1.5d
+	}]
+	title: "Le commerce en 10 leçons"
+}

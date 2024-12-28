@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4ff0cbdc91df66b02501172c98366c72f26ac52db6e6028b5760a2dfbc9f966
-size 112
+smoothnessG = color.g;
+smoothnessD = color.g;
+
+emission = min(max0(dot(color.rgb, color.rgb) - 1.0) * 6.0, 1.0);

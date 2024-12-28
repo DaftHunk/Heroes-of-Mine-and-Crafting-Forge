@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86b812e90a565cc9eb97be8ea09b9a2f4e2419d3bcc25d542ae788648091adca
-size 731
+{
+  "ability": {
+    "abilities": {
+      "walking": {
+        "requiredPoints": 1,
+        "requiredLevel": 0,
+        "maxLevel": 10,
+        "stats": {
+          "time": {
+            "minInitialValue": 30.0,
+            "maxInitialValue": 60.0,
+            "minThresholdValue": 4.9E-324,
+            "maxThresholdValue": 1.7976931348623157E308,
+            "upgradeOperation": "MULTIPLY_BASE",
+            "upgradeModifier": 0.1
+          }
+        }
+      }
+    }
+  },
+  "leveling": {
+    "initialCost": 100,
+    "maxLevel": 10,
+    "step": 100
+  },
+  "loot": {
+    "entries": {
+      "[\\w]+:chests\\/[\\w_\\/]*(water|ocean|river|(?<!air)ship|aqua)[\\w_\\/]*": 0.01,
+      "minecraft:chests/buried_treasure": 0.01
+    }
+  }
+}

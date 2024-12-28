@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f97fc5ae7dd7d312e86ecddf2e4491fee3e3a16b7a26cbb3aa078fdd3255c4df
-size 266
+{
+  // This is used to debug stuff
+  "debug": false,
+  // A test boolean
+  "test": false,
+  // A list!
+  // Supports multiple values using List.of()
+  "list": [
+    "test",
+    "test2"
+  ],
+  "exampleColors": {
+    "red": 255,
+    "green": 255,
+    "blue": 255
+  }
+}

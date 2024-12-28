@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:97ce2c03ef6086e624eff7471ecfdb2da091be703debc0b34c5b9402bd375cf2
-size 234
+# If enabled, hides the config button from the backpack screen
+# Valid values: true, false
+hideConfigButton = false
+# The alignment of the buttons in the backpack inventory screen
+# Valid values: LEFT, RIGHT
+buttonAlignment = "LEFT"
+

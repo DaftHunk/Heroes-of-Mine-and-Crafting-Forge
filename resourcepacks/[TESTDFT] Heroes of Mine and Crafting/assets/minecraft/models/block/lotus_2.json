@@ -1,3 +1,66 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e766a421db3634de79b95f0fb3f9da4f29869cfd082a7af3f3b47563c8674b3
-size 2558
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/spore_blossom",
+		"particle": "block/spore_blossom"
+	},
+	"elements": [
+		{
+			"from": [8, 0.25, 3.5],
+			"to": [18, 0.25, 12.5],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 0.25, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "rotation": 270, "texture": "#missing"},
+				"east": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"south": {"uv": [0, 0, 0, 16], "rotation": 90, "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"up": {"uv": [14, 0, 2, 16], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [2, 0, 14, 16], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [-2, 0.25, 3.5],
+			"to": [8, 0.25, 12.5],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 0.25, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "rotation": 90, "texture": "#missing"},
+				"east": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"south": {"uv": [0, 0, 0, 16], "rotation": 270, "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"up": {"uv": [14, 0, 2, 16], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [2, 0, 14, 16], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [3.5, 0.25, 8],
+			"to": [12.5, 0.25, 18],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0.25, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"east": {"uv": [0, 0, 0, 16], "rotation": 270, "texture": "#missing"},
+				"south": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "rotation": 90, "texture": "#missing"},
+				"up": {"uv": [14, 0, 2, 16], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [2, 0, 14, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3.5, 0.25, -2],
+			"to": [12.5, 0.25, 8],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 0.25, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"east": {"uv": [0, 0, 0, 16], "rotation": 90, "texture": "#missing"},
+				"south": {"uv": [0, 0, 0, 12], "rotation": 90, "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "rotation": 270, "texture": "#missing"},
+				"up": {"uv": [14, 0, 2, 16], "texture": "#0"},
+				"down": {"uv": [2, 0, 14, 16], "rotation": 180, "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24569810b9503b262c05b10c9ecd39955d67646695f77aca9459fb54b025380f
-size 333
+{
+	"multipart": [
+		{"when": {"half": "lower"}, "apply": {"model": "block/sunflower_bottom"}},
+		{"when": {"half": "lower"}, "apply": {"model": "block/sunflower_bottom_exts"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/sunflower_top"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/sunflower_top_exts"}}
+	]
+}

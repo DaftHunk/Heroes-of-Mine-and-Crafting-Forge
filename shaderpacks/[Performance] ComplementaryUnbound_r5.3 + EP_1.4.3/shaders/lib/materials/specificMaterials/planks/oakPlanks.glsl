@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0744af0c584208e5975745eabe0fd1230cc5bf643104f6980464240e066a3467
-size 162
+smoothnessG = pow2(pow2(pow2(color.g))) * 12.0;
+smoothnessG = min1(smoothnessG);
+smoothnessD = smoothnessG;
+
+#ifdef COATED_TEXTURES
+    noiseFactor = 0.77;
+#endif

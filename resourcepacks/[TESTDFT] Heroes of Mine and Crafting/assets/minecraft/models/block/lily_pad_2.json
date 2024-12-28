@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:425b07272482d8630a2e8cdc345f67fd96e69697ee1aa5f7836a93c73b17894c
-size 440
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/lily_pad",
+		"particle": "block/lily_pad"
+	},
+	"elements": [
+		{
+			"from": [0, 0.25, 0],
+			"to": [16, 0.25, 16],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 0.25, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#0", "tintindex": 0}
+			}
+		}
+	]
+}

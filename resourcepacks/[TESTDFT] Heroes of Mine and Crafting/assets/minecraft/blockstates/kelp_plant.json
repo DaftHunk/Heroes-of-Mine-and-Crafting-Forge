@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e250c475d835e4ee9a2dc347d442fc7c475da462e94834cbdb48b6eadee0d4be
-size 181
+{
+	"multipart": [
+		{"apply": {"model": "block/kelp_plant"}},
+		{"apply": [
+			{"model": "block/kelp_plant_extension"},
+			{"model": "block/kelp_plant_extension", "y": 90}]
+		}
+	]
+}

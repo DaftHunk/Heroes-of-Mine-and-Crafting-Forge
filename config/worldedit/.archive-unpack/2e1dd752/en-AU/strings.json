@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3171f7b41372ca9d2a8e7f6ac5a79e8418e8994b3364de54b76133b1c46da8c6
-size 642
+{
+    "worldedit.expand.description.vert": "Vertically expand the selection to world limits.",
+    "worldedit.expand.expanded": "Region expanded {0} blocks",
+    "worldedit.selection.ellipsoid.info.center": "Centre: {0}",
+    "worldedit.selection.ellipsoid.explain.primary": "Centre position set to {0}.",
+    "worldedit.selection.ellipsoid.explain.primary-area": "Centre position set to {0} ({1}).",
+    "worldedit.selection.cylinder.info.center": "Centre: {0}",
+    "worldedit.selection.cylinder.explain.secondary-missing": "You must select the centre point before setting the radius.",
+    "worldedit.sideeffect.neighbors": "Neighbours"
+}

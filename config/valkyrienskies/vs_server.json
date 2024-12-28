@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c17c70683f44cb8445d6a12a1af48b4d6af7615f356fa28cdbbdb2fbcf0132f
-size 498
+{
+  "FTBChunks" : {
+    "shipsProtectedByClaims" : true,
+    "shipsProtectionOutOfBuildHeight" : false
+  },
+  "ComputerCraft" : {
+    "canTurtlesLeaveScaledShips" : false
+  },
+  "enableInteractDistanceChecks" : true,
+  "transformTeleports" : true,
+  "enableMovementChecks" : false,
+  "preventFluidEscapingShip" : true,
+  "explosionBlastForce" : 500000.0,
+  "allowMobSpawns" : true,
+  "aiOnShips" : true,
+  "miniShipSize" : 0.5,
+  "minScaling" : 0.25,
+  "$schema" : "schemas/vs_server.schema.json"
+}

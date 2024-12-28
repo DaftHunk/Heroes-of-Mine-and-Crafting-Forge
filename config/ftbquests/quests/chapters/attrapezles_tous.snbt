@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:750ad48531586e44e4b9fa0f652bb221dafa8ad06dff9ca4921ab158fc1ac00e
-size 966
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "attrapezles_tous"
+	group: "5DF761E30124DB34"
+	icon: "cobblemon:poke_ball"
+	id: "3DF360E492898A0E"
+	order_index: 2
+	quest_links: [ ]
+	quests: [{
+		description: ["Vous pouvez attraper des cobblemons en combat ou même hors combat en leur lançant directement une pokéball avec un taux de capture plus faible. Attention cependant, ils peuvent ne pas apprécier !"]
+		id: "421C1A8806B61638"
+		rewards: [{
+			count: 5
+			id: "22132CC0623C39B6"
+			item: "cobblemon:potion"
+			type: "item"
+		}]
+		tasks: [{
+			action: "catch"
+			entity: "cobblemon_quests:choice_any"
+			form: "choice_any"
+			gender: "choice_any"
+			icon: "cobblemon:poke_ball"
+			id: "6175E3DE9B0437A9"
+			pokemon_type: "choice_any"
+			region: "choice_any"
+			shiny: false
+			title: "Le début d'un long voyage"
+			type: "cobblemon_tasks:cobblemon_task"
+			value: 1L
+		}]
+		x: 2.0d
+		y: 1.0d
+	}]
+	title: "Attrapez-les tous !"
+}

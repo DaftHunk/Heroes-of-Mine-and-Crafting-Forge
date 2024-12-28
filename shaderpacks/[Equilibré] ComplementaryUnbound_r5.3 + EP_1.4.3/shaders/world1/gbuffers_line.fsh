@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1aff8003bb3faa95a4b066d226b604e348a23d5596e3c2316506da4c50368d4a
-size 135
+#version 130
+
+#define FRAGMENT_SHADER
+#define END
+#define GBUFFERS_BASIC
+#define GBUFFERS_LINE
+
+#include "/program/gbuffers_basic.glsl"

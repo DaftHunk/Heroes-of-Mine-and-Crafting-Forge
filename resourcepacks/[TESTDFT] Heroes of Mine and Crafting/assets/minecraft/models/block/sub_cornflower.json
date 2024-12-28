@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59710bc02d407c3d144745e203334a21de2ffaec484ac5e044f757bba3b691e2
-size 78
+{
+	"parent": "block/sub_flower",
+	"textures": {
+		"0": "block/cornflower"
+	}
+}

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5091e1a2d5a2927fe1d8f6a6a233ace60f2407be05384f3140b839e9ad3a041a
-size 52
+There's no need to punch a tree, use an axe instead!

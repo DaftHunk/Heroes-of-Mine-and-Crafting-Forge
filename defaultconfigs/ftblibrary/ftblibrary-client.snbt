@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9370c264daed232a167d23424db1d1ae8c01ac00377700fdd345a8a1b7afd75
-size 153
+# Default config file that will be copied to local\ftblibrary-client.snbt if it doesn't exist!
+# Just copy any values you wish to override in here!
+
+{ }

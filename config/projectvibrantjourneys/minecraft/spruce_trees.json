@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90aaef4eb7743d4ec1f014cec026d5f6a84aef4123701f715a56e73fa7952e4a
-size 355
+[
+  {
+    "biomeName": "minecraft:windswept_forest",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:old_growth_pine_taiga",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:grove",
+    "chance": 5
+  },
+  {
+    "biomeName": "minecraft:old_growth_spruce_taiga",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:taiga",
+    "chance": 20
+  }
+]

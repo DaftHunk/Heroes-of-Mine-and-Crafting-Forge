@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dce614d05930f5496c454ba8ff7e7c6eb4e9e864f54b12de2646fe3c6503431d
-size 263
+{
+	"item.numismatics.spur": "Cran de cuivre",
+	"item.numismatics.bevel": "Cran de zinc",
+	"item.numismatics.sprocket": "Cran de fer",
+	"item.numismatics.cog": "Cran de laiton",
+	"item.numismatics.crown": "Cran d'or",
+	"item.numismatics.sun": "Cran de netherite"
+}

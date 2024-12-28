@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69bc88f6cb45b22ea2397c71ab7ae58ddae78010e063f7320e8cc724e4c9120e
-size 272
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_moyens_de_transport"
+	group: "2F761DF4E5B82AD6"
+	icon: "immersive_aircraft:biplane"
+	id: "782E41CEB395DF56"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+	title: "Les moyens de transport"
+}

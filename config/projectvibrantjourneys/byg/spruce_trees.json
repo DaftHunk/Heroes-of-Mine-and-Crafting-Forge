@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86edcbd513da71c370f3a720e8f2d8a414f0bfa2d624571d28d3554a3f31a24a
-size 581
+[
+  {
+    "biomeName": "byg:howling_peaks",
+    "chance": 5
+  },
+  {
+    "biomeName": "byg:frosted_taiga",
+    "chance": 15
+  },
+  {
+    "biomeName": "byg:weeping_witch_forest",
+    "chance": 5
+  },
+  {
+    "biomeName": "byg:autumnal_taiga",
+    "chance": 20
+  },
+  {
+    "biomeName": "byg:maple_taiga",
+    "chance": 5
+  },
+  {
+    "biomeName": "byg:canadian_shield",
+    "chance": 15
+  },
+  {
+    "biomeName": "byg:borealis_grove",
+    "chance": 10
+  },
+  {
+    "biomeName": "byg:dacite_ridges",
+    "chance": 10
+  },
+  {
+    "biomeName": "byg:rose_fields",
+    "chance": 5
+  }
+]

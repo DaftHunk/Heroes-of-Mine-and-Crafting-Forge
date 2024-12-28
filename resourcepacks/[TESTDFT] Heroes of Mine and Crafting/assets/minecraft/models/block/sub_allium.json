@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5a306a408fe265167cadfb775f93ab8371093a6a9322066f4991aef606f6d0f3
-size 74
+{
+	"parent": "block/sub_flower",
+	"textures": {
+		"0": "block/allium"
+	}
+}

@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66f69a0fc50e6bd278352e40084ca6c585b52cf4ce704341aab363630518f890
-size 615
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_dcouvertes"
+	group: "20D56E89F2CC58DE"
+	icon: {
+		Count: 1
+		id: "minecraft:brush"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "0C1AE7072CCF5A36"
+	order_index: 5
+	quest_links: [ ]
+	quests: [{
+		dependencies: ["19B21BCDEC611C29"]
+		id: "331CA30DFDF11D96"
+		progression_mode: "flexible"
+		tasks: [{
+			advancement: "minecraft:adventure/adventuring_time"
+			criterion: ""
+			id: "13402637638CEF44"
+			title: "Explore Every Biome"
+			type: "advancement"
+		}]
+		title: "Explorer tous les biomes"
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Les découvertes"
+}

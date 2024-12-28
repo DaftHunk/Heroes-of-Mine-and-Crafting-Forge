@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:518b8d229c818b60b3750897f9ada4a7c6c0053727bff32eeda6778e13dd66d1
-size 824
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "apprentissage"
+	group: "5DF761E30124DB34"
+	icon: {
+		Count: 1
+		id: "patchouli:guide_book"
+		tag: {
+			"patchouli:book": "cobblepedia:cobblepedia"
+		}
+	}
+	id: "69B8825E204032EE"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		description: ["Le poképédia contient toutes les infos dont vous aurez besoin pour démarrer vos aventures dans le monde de cobblemon !"]
+		id: "255209775CB6CD0F"
+		rewards: [{
+			count: 10
+			id: "5A5415BDD29A8AC2"
+			item: "cobblemon:poke_ball"
+			type: "item"
+		}]
+		tasks: [{
+			id: "019CBD03B6D3FD4F"
+			item: {
+				Count: 1
+				id: "patchouli:guide_book"
+				tag: {
+					"patchouli:book": "cobblepedia:cobblepedia"
+				}
+			}
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Les infos du professeur chiant"
+}

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a5929cfa7c9ad1b2842fd5ea9aa0d107785a1d4b9e92ba62ffac9e3f7245947
-size 498
+{
+  "chunkunloadnoplayer": {
+    "desc:": "How many minutes chunkloaded chunks stay active after player logging out. default:10, min 0, max 2000",
+    "chunkunloadnoplayer": 10
+  },
+  "debugLog": {
+    "desc:": "Print log messages for which chunk tickets are unloaded where. Default: false",
+    "debugLog": false
+  },
+  "excludedtickets": {
+    "desc:": "List of excluded ticket/chunkload types, these are mod-specific. : e.g. format :  [\"mekanism\", \"player\"]",
+    "excludedtickets": []
+  }
+}

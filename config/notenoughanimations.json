@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3de6c3387be38749ae1a84d866558f829db61f59a6a343dbc14fcdb0c18b1ebe
-size 1388
+{
+  "configVersion": 11,
+  "animationSmoothingSpeed": 0.2,
+  "holdingItems": [
+    "minecraft:clock",
+    "minecraft:recovery_compass",
+    "minecraft:soul_lantern",
+    "minecraft:compass",
+    "minecraft:torch",
+    "minecraft:lantern",
+    "minecraft:soul_torch"
+  ],
+  "enableAnimationSmoothing": true,
+  "enableInWorldMapRendering": true,
+  "enableOffhandHiding": true,
+  "enableRotationLocking": true,
+  "enableLadderAnimation": true,
+  "ladderAnimationAmplifier": 0.35,
+  "ladderAnimationArmHeight": 1.7,
+  "ladderAnimationArmSpeed": 2.0,
+  "enableRotateToLadder": true,
+  "enableEatDrinkAnimation": true,
+  "enableRowBoatAnimation": true,
+  "enableHorseAnimation": true,
+  "dontHoldItemsInBed": true,
+  "freezeArmsInBed": true,
+  "rotationLock": "NONE",
+  "showLastUsedSword": false,
+  "sheathSwords": [
+    "minecraft:golden_sword",
+    "minecraft:iron_sword",
+    "minecraft:wooden_sword",
+    "minecraft:stone_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword"
+  ],
+  "enableCrawlingAnimation": true,
+  "holdUpItemsMode": "CONFIG",
+  "holdUpItemOffset": 0.0,
+  "itemSwapAnimation": true,
+  "tweakElytraAnimation": false,
+  "petAnimation": true,
+  "fallingAnimation": false,
+  "freezingAnimation": true,
+  "huggingAnimation": false,
+  "narutoRunning": false,
+  "enableInWorldBookRendering": false,
+  "disableLegSmoothing": true,
+  "bowAnimation": "VANILLA"
+}

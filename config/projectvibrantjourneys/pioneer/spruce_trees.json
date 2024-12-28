@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11cba94cad02024243b7de90eef76b430e9762f708cbdd0b4b0e4fa9f4c1d351
-size 148
+[
+  {
+    "biomeName": "pioneer:pine_meadows",
+    "chance": 3
+  },
+  {
+    "biomeName": "pioneer:autumnal_coniferous_forest",
+    "chance": 3
+  }
+]

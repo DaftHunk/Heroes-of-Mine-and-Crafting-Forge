@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40f6669d26ec6101679a6b07607b3153f9bc53fbcf5f3ad73cc492e774bf3df8
-size 73
+[
+  {
+    "biomeName": "biomesoplenty:lush_desert",
+    "chance": 5
+  }
+]

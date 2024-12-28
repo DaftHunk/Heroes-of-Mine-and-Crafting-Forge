@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa90d43bdcb7405084f5d00586f445aa5d7fc4bd774d5e137c82ebb0ba50e2a9
-size 226
+[
+  {
+    "biomeName": "biomesoplenty:seasonal_forest",
+    "chance": 10
+  },
+  {
+    "biomeName": "biomesoplenty:boreal_forest",
+    "chance": 20
+  },
+  {
+    "biomeName": "biomesoplenty:rainbow_hills",
+    "chance": 10
+  }
+]

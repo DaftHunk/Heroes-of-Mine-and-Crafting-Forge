@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6af4e3cec31f9b370a3b66cbd739943b9b2b1ef889abb7c8100c41eb7a2fc89e
-size 537
+{
+	"multipart": [
+		{"apply": {"model": "block/oxeye_daisy"}},
+		{"apply": {"model": "block/oxeye_daisy_exts"}},
+		{"apply": [
+			{"model": "block/sub_oxeye_daisy"},
+			{"model": "block/air", "weight": 2}]
+		},
+		{"apply": [
+			{"model": "block/sub_oxeye_daisy", "y": 90},
+			{"model": "block/air", "weight": 3}]
+		},
+		{"apply": [
+			{"model": "block/sub_oxeye_daisy", "y": 180},
+			{"model": "block/air", "weight": 4}]
+		},
+		{"apply": [
+			{"model": "block/sub_oxeye_daisy", "y": 270},
+			{"model": "block/air", "weight": 5}]
+		}
+	]
+}

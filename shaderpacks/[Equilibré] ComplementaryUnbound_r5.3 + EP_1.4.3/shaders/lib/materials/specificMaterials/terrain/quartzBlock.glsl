@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ab4d1c913d4bc0cc075cdad8c9ffb4900012549a5f5ee4fee68b9c18265a11a
-size 407
+materialMask = OSIEBCA; // Intense Fresnel
+
+float factor = color.g;
+float factor2 = pow2(factor);
+float factor4 = pow2(factor2);
+float factor8 = pow2(factor4);
+
+smoothnessG = factor - factor8 * 0.5;
+highlightMult = 3.5 * factor8;
+
+smoothnessD = factor8;
+
+#ifdef GBUFFERS_TERRAIN
+    DoBrightBlockTweaks(color.rgb, 0.5, shadowMult, highlightMult);
+#endif
+
+#ifdef COATED_TEXTURES
+    noiseFactor = 0.5;
+#endif

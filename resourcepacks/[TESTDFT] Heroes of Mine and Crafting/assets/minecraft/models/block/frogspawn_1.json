@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3b8980290c18b14471ed64ee324951d81e7cb22e736fd6a425a7cd4d396e106
-size 443
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/frogspawn",
+		"particle": "block/frogspawn"
+	},
+	"elements": [
+		{
+			"from": [0, 0.25, 0],
+			"to": [16, 0.25, 16],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 0.25, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#0", "tintindex": 0}
+			}
+		}
+	]
+}

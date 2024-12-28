@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6924e9bb9cdd90869f92c573a69351c837adcf0c3be256da14e52161d52a743a
-size 296
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "des_gros_canons"
+	group: "6A4CFCAED0D5F76A"
+	icon: {
+		Count: 1
+		id: "cgm:mini_gun"
+		tag: {
+			AmmoCount: 32
+		}
+	}
+	id: "7B5D4AF10575AA5B"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+	title: "Des gros canons !"
+}

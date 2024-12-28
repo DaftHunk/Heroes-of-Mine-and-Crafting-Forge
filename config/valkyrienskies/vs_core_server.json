@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56bd9d1f49aa1278f7244355b6543afe51d76f2e0ba4d5456931ade110fc2557
-size 569
+{
+  "pt" : {
+    "synchronizePhysics" : false,
+    "physicsTicksPerGameTick" : 3,
+    "terrainBakingThreads" : 6,
+    "terrainBakingThreadPriority" : 5,
+    "terrainDeletionThreads" : 1,
+    "terrainDeletionThreadPriority" : 4
+  },
+  "udpPort" : 25565,
+  "enableUdp" : false,
+  "shipLoadDistance" : 128.0,
+  "shipUnloadDistance" : 196.0,
+  "physics" : {
+    "lodDetail" : 512,
+    "subSteps" : 20,
+    "iterations" : 5,
+    "solver" : "GAUSS_SEIDEL",
+    "maxDePenetrationSpeed" : 10.0,
+    "physicsSpeed" : 1.0
+  },
+  "$schema" : "schemas/vs_core_server.schema.json"
+}

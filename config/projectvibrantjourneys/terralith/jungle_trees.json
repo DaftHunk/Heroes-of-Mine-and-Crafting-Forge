@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c4e80c3980abdfe2ae4117f85156b4e3ad139c7066d0dc73cb3968bc2fa4960
-size 422
+[
+  {
+    "biomeName": "terralith:jungle_mountains",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:red_oasis",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:rocky_jungle",
+    "chance": 15
+  },
+  {
+    "biomeName": "terralith:skylands_summer",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:tropical_jungle",
+    "chance": 15
+  },
+  {
+    "biomeName": "terralith:desert_oasis",
+    "chance": 5
+  }
+]

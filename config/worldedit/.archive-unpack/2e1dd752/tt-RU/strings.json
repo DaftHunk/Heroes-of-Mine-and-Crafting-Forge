@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbe2ff6a09104fa0b971554df4324fa84ba3b677a861a7f47e1161930ba333a9
-size 106
+{
+    "worldedit.size.size": "Зурлык: {0}",
+    "worldedit.chunkinfo.chunk": "Чанк: {0}, {1}"
+}

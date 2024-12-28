@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:611f43a6b6a0a7cffa201d72640b01d52c1ef15d897707349de7a2f0a217e686
-size 872
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "block/stone",
+		"particle": "block/stone"
+	},
+	"elements": [
+		{
+			"from": [11, 15, 4],
+			"to": [15, 15.85, 7],
+			"faces": {
+				"north": {"uv": [11, 4, 15, 5], "texture": "#0"},
+				"east": {"uv": [14, 4, 15, 7], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [11, 6, 15, 7], "texture": "#0"},
+				"west": {"uv": [11, 4, 12, 7], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [11, 4, 15, 7], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3, 15, 12],
+			"to": [5, 15.85, 15],
+			"faces": {
+				"north": {"uv": [3, 12, 5, 13], "texture": "#0"},
+				"east": {"uv": [4, 12, 5, 15], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [3, 13, 5, 14], "texture": "#0"},
+				"west": {"uv": [3, 12, 4, 15], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [3, 12, 5, 15], "texture": "#0"}
+			}
+		}
+	]
+}

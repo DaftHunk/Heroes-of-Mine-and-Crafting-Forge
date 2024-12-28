@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98cdd3ed618befb2b2cc2ca37961301b253e44357949813b2b9fc908649590b6
-size 87
+{
+	"parent": "block/flower_extension",
+	"textures": {
+		"0": "block/rose_bush_top"
+	}
+}

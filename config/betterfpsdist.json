@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e3a1894308385a703a228988facbc2ecf77da903866b362f7b58f972635ad59
-size 168
+{
+  "stretch": {
+    "desc:": "The amount by which the chunk render distance sphere is stretched in Y direction. default:2.0, min 0.5, max 10",
+    "stretch": 0.5
+  }
+}

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:febd2959e33b9b83a405cbca8b81aee2412af95d31e5736c90fb9ee1f87c9c18
-size 526
+{
+	"multipart": [
+		{"apply": {"model": "block/dandelion"}},
+		{"apply": {"model": "block/dandelion_exts"}},
+		{"apply": [
+			{"model": "block/sub_dandelion"},
+			{"model": "block/air", "weight": 2}]
+		},
+		{"apply": [
+			{"model": "block/sub_dandelion", "y": 90},
+			{"model": "block/air", "weight": 3}]
+		},
+		{"apply": [
+			{"model": "block/sub_dandelion", "y": 180},
+			{"model": "block/air", "weight": 4}]
+		},
+		{"apply": [
+			{"model": "block/sub_dandelion", "y": 270},
+			{"model": "block/air", "weight": 10}]
+		}
+	]
+}

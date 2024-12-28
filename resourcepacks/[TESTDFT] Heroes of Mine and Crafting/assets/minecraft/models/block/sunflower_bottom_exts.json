@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c2a4c59d495435620d1cf01c17454cb9c24b48f2ee593e0f82b1292a0d35840
-size 90
+{
+	"parent": "block/flower_extension",
+	"textures": {
+		"0": "block/sunflower_bottom"
+	}
+}

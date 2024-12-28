@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4dcef8830eb57bfdb03bc8040cf605670384532802e89e203d8092fac54d37af
-size 80
+{
+  "debug_logs_enabled": false,
+  "send_new_available_updates_message": false
+}

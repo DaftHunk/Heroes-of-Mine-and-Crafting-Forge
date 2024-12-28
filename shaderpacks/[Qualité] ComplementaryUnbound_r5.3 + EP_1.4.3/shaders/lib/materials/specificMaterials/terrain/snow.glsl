@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75efb562e47436d4ddeafaa0f22ca023d31977c4500403dac19d9dd80148c96a
-size 292
+smoothnessG = (1.0 - pow(color.g, 64.0) * 0.3) * 0.4;
+highlightMult = 2.0;
+
+smoothnessD = smoothnessG;
+
+#ifdef GBUFFERS_TERRAIN
+    DoBrightBlockTweaks(color.rgb, 0.5, shadowMult, highlightMult);
+#endif
+
+#if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+    noPuddles = 1.0;
+#endif

@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffbfb37bf9729ecebc57f7e6b66def02f193ebdb365cc0aa1374dbe85ce70489
-size 683
+{
+  "permissionlevels": {
+    "command.poketrade": 2,
+    "command.pokesee": 2,
+    "command.pokeseeother": 2,
+    "command.pc": 2,
+    "command.pokeshout": 2,
+    "command.itemshout": 2,
+    "command.compsee": 2,
+    "command.compseeother": 2,
+    "command.pokebattle": 3,
+    "command.battle": 2,
+    "command.comptake": 2,
+    "command.pokeivs": 2,
+    "command.emptybox": 2,
+    "command.pokeshoutall": 2,
+    "command.pokeodds": 3,
+    "command.pokekill": 3
+  },
+  "showcase": {
+    "isShowcaseEnabled": false,
+    "apiSecret": "To start using showcase, please goto https://cobblemonextras.com/showcase",
+    "syncIntervalMinutes": 5,
+    "debug": false,
+    "async": true
+  }
+}

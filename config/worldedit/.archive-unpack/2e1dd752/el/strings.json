@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2fb424866a5e5fb34b3bf78d764ab8a728facc745fac0a423e9ea1c22886e550
-size 399
+{
+    "worldedit.expand.expanded": "Η περιοχή επεκτάθηκε κατά {0} blocks",
+    "worldedit.expand.expanded.vert": "Η περιοχή επεκτάθηκε κατά {0} blocks (από πάνω προς τα κάτω).",
+    "worldedit.biomeinfo.position": "Biomes στην θέση σας: {0}",
+    "worldedit.biomeinfo.selection": "Biomes στην επιλογή σας: {0}"
+}

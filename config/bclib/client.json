@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af88d655b89a074005fc194ddbd9f04fbb57b9dccac34e994b94eb051f0586cb
-size 864
+{
+  "version": {
+    "didShowWelcome [default: false]": true,
+    "check [default: true]": false
+  },
+  "ui": {
+    "showUpdateInfo [default: true]": false,
+    "useModrinthForUpdates [default: false]": false,
+    "forceBetterXPreset [default: true]": true,
+    "suppressExperimentalDialogOnLoad [default: false]": true,
+    "notTheDonorType [default: true]": true
+  },
+  "auto_sync": {
+    "enabled [default: true]": false,
+    "acceptConfigs [default: true]": false,
+    "acceptFiles [default: true]": false,
+    "acceptMods [default: true]": false,
+    "displayModInfo [default: true]": false,
+    "debugHashes [default: false]": false
+  },
+  "rendering": {
+    "customFogRendering [default: true]": true,
+    "netherThickFog [default: true]": true,
+    "FogDensity [default: 1.0]": 0.5833333
+  },
+  "infos": {
+    "survives_on_hint [default: true]": true
+  }
+}

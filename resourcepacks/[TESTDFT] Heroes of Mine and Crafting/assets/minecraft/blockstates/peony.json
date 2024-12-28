@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d041b3182bde2c8f6adaa112640afeaab7257e2c02ac752cc136eb247769808b
-size 317
+{
+	"multipart": [
+		{"when": {"half": "lower"}, "apply": {"model": "block/peony_bottom"}},
+		{"when": {"half": "lower"}, "apply": {"model": "block/peony_bottom_exts"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/peony_top"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/peony_top_exts"}}
+	]
+}

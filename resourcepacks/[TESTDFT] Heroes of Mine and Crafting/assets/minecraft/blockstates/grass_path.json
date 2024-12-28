@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2b1cb1fb160d13110340b1aa4b0bee1017a4cd705529d6ccea12e6bcacfc525
-size 711
+{
+	"multipart": [
+		{"apply": [
+			{"model": "block/grass_path"},
+			{"model": "block/grass_path", "y": 90},
+			{"model": "block/grass_path", "y": 180},
+			{"model": "block/grass_path", "y": 270}]
+		},
+		{"apply": [
+			{"model": "block/air", "weight": 45},
+			{"model": "block/pebble_dirt_path"},
+			{"model": "block/pebble_dirt_path", "y": 90},
+			{"model": "block/pebble_dirt_path", "y": 180},
+			{"model": "block/pebble_dirt_path", "y": 270}]
+		},
+		{"apply": [
+			{"model": "block/air", "weight": 65},
+			{"model": "block/pebble_dirt_path_1"},
+			{"model": "block/pebble_dirt_path_1", "y": 90},
+			{"model": "block/pebble_dirt_path_1", "y": 180},
+			{"model": "block/pebble_dirt_path_1", "y": 270}]
+		}
+	]
+}

@@ -1,3 +1,249 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:552ade1b97f017e1f23d4eb5cba461e2f88ccee08049c6c74ac738c4000a032d
-size 4305
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "a_la_conqute_des_ocans"
+	group: "20D56E89F2CC58DE"
+	icon: "smallships:spruce_brigg"
+	id: "3F0733040A8F9C04"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "61ADF8A296BCE10F"
+			tasks: [{
+				id: "3C190A740B45F67B"
+				item: "minecraft:spruce_boat"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -3.5d
+		}
+		{
+			id: "71BCDEEE1468CE6F"
+			tasks: [{
+				id: "44B73A3A106B3789"
+				item: "smallships:oak_cog"
+				type: "item"
+			}]
+			x: -7.0d
+			y: -2.0d
+		}
+		{
+			id: "4C216F2FA728F3C0"
+			tasks: [{
+				id: "053C25D084A34860"
+				item: "smallships:oak_brigg"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -2.0d
+		}
+		{
+			id: "1C02BC6936D0BFA3"
+			tasks: [{
+				id: "4993ADD55863EC51"
+				item: "smallships:oak_galley"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -5.0d
+		}
+		{
+			id: "348768542BD9C7C5"
+			tasks: [{
+				id: "706DBAE93677096B"
+				item: "smallships:oak_drakkar"
+				type: "item"
+			}]
+			x: -7.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["7D2267B3FF076758"]
+			hide_dependency_lines: false
+			id: "701490109012CC2A"
+			tasks: [{
+				id: "37EAB0B7FA44E274"
+				structure: "aquamirae:ship"
+				type: "structure"
+			}]
+			x: 3.5d
+			y: -4.5d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "7D2267B3FF076758"
+			tasks: [{
+				biome: "minecraft:deep_frozen_ocean"
+				id: "5EED9F10A1384E3D"
+				type: "biome"
+			}]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["7D2267B3FF076758"]
+			hide_dependency_lines: false
+			icon: "aquamirae:shell_horn"
+			id: "180DD5674965B001"
+			tasks: [{
+				entity: "aquamirae:captain_cornelia"
+				id: "0D5B414A9DE0A4A6"
+				type: "kill"
+				value: 1L
+			}]
+			x: 3.5d
+			y: -2.5d
+		}
+		{
+			id: "4B20A9756C1E5330"
+			tasks: [{
+				id: "0A5E1553D208FB9B"
+				item: "vs_eureka:oak_ship_helm"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -3.5d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "1F67A82F8193D0CD"
+			tasks: [{
+				biome: "minecraft:cold_ocean"
+				id: "1ECCC009BB99A3AC"
+				type: "biome"
+			}]
+			x: -1.5d
+			y: -2.0d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "3F3AF57546F7F52A"
+			tasks: [{
+				biome: "minecraft:deep_cold_ocean"
+				id: "1FC36224B4562524"
+				type: "biome"
+			}]
+			x: -2.0d
+			y: -3.5d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "7FBB743E6A128AE4"
+			tasks: [{
+				biome: "minecraft:deep_lukewarm_ocean"
+				id: "1C82D75379D57A5A"
+				type: "biome"
+			}]
+			x: -1.5d
+			y: -5.0d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "5CF7EE70FDF0B989"
+			tasks: [{
+				biome: "minecraft:deep_ocean"
+				id: "271DBC5B9AECE4BA"
+				type: "biome"
+			}]
+			x: 0.0d
+			y: -5.5d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "0906BC4E1819A84A"
+			tasks: [{
+				biome: "minecraft:frozen_ocean"
+				id: "247E6CD8483351AA"
+				type: "biome"
+			}]
+			x: 1.5d
+			y: -5.0d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "1DEA9249D245424E"
+			tasks: [{
+				biome: "minecraft:ocean"
+				id: "48B1CFD574C97282"
+				type: "biome"
+			}]
+			x: 0.0d
+			y: -1.5d
+		}
+		{
+			icon: "minecraft:compass"
+			id: "12BA60F205D880CE"
+			tasks: [{
+				biome: "minecraft:warm_ocean"
+				id: "62F271ADC465B69D"
+				type: "biome"
+			}]
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			id: "50C3EBE059C86B70"
+			tasks: [{
+				id: "4DEB03B169FA51FF"
+				structure: "betteroceanmonuments:ocean_monument"
+				type: "structure"
+			}]
+			x: -1.0d
+			y: -6.5d
+		}
+		{
+			id: "57961E3DEFB7A2C0"
+			tasks: [{
+				id: "39D8E52B37CB2E4C"
+				structure: "repurposed_structures:ancient_city_ocean"
+				type: "structure"
+			}]
+			x: 1.0d
+			y: -6.5d
+		}
+		{
+			id: "5E7CA54FBA8F8CE2"
+			tasks: [{
+				id: "76371D1F04012D9E"
+				structure: "#minecraft:ocean_ruin"
+				type: "structure"
+			}]
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			id: "617D0B4F4F0B2828"
+			tasks: [{
+				id: "0F701660B8A0B66F"
+				structure: "#minecraft:shipwreck"
+				type: "structure"
+			}]
+			x: 1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"1ECCC009BB99A3AC"
+				"3F3AF57546F7F52A"
+				"7D2267B3FF076758"
+				"7FBB743E6A128AE4"
+				"5CF7EE70FDF0B989"
+				"0906BC4E1819A84A"
+				"1DEA9249D245424E"
+				"12BA60F205D880CE"
+				"1F67A82F8193D0CD"
+			]
+			id: "1D8B640CFB1E91BD"
+			tasks: [{
+				icon: "minecraft:spyglass"
+				id: "3B66D9F3A84EFCE6"
+				title: "Dompter les océans"
+				type: "custom"
+			}]
+			x: 0.0d
+			y: -3.5d
+		}
+	]
+	title: "A la conquête des océans"
+}

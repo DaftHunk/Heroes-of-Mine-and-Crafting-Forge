@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02580fe37c9ae749dc23da961280ac3ad31021d586c93e410f1592e6e038ed7c
-size 278
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_transports_avancs"
+	group: "6A4CFCAED0D5F76A"
+	icon: "man_of_many_planes:scarlet_biplane"
+	id: "11BE32BB82FB511B"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+	title: "Les transports avancés"
+}

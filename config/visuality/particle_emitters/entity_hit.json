@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db1fe2d772c0ed136c2d1da0c315bc50ba9760032a60253be6f37ce1d7e38ead
-size 683
+{
+  "enabled": true,
+  "min_amount": 1,
+  "max_amount": 20,
+  "entries": [
+    {
+      "entity": [
+        "minecraft:skeleton",
+        "minecraft:skeleton_horse",
+        "minecraft:stray"
+      ],
+      "particle": {
+        "type": "visuality:bone"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "particle": {
+        "type": "visuality:wither_bone"
+      }
+    },
+    {
+      "entity": "minecraft:chicken",
+      "particle": {
+        "type": "visuality:feather"
+      }
+    },
+    {
+      "entity": [
+        "minecraft:villager",
+        "minecraft:wandering_trader"
+      ],
+      "particle": {
+        "type": "visuality:emerald"
+      }
+    }
+  ]
+}

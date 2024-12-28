@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db366a3f363df333929955aae44e290108668e1fc7c106232124bf660fa3c0b2
-size 67
+
+[Settings]
+	displayArmorModels = true
+	displayToolsModels = true
+

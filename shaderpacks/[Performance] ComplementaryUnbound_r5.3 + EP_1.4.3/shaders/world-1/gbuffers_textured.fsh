@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4834debabe6c73c3a985e9ebdde4da497b627659942624cd42b47e2f67657694
-size 122
+#version 130
+
+#define FRAGMENT_SHADER
+#define NETHER
+#define GBUFFERS_TEXTURED
+
+#include "/program/gbuffers_textured.glsl"

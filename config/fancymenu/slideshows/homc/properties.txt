@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b55d6b320fc7bdaf6713309ba4b7acaaf6c6b290fa0cf51f343c83db746d899
-size 161
+type = slideshow
+
+slideshow-meta {
+   name = homc
+   width = 1920
+   height = 1080
+   x = 0
+   y = 0
+   duration = 10.0
+   fadespeed = 20.0
+   randomize = true
+}

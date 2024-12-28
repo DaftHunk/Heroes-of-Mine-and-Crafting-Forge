@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46cac52e171225266693e446751c27ca341f793291643d31400d65867d26f385
-size 317
+{
+	"multipart": [
+		{"when": {"half": "lower"}, "apply": {"model": "block/lilac_bottom"}},
+		{"when": {"half": "lower"}, "apply": {"model": "block/lilac_bottom_exts"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/lilac_top"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/lilac_top_exts"}}
+	]
+}

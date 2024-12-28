@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c88c23c520341d800c6403788d500a2c8db1eebf1cb3920f9809b31f00e6558b
-size 225
+{
+  "dragonfly [default: true]": true,
+  "end_slime [default: true]": true,
+  "end_fish [default: true]": true,
+  "shadow_walker [default: true]": true,
+  "cubozoa [default: true]": true,
+  "silk_moth [default: true]": true
+}

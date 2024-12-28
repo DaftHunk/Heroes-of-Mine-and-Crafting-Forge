@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:051d700ea7ff1bd626063d60f9a9cd65a0af1fed5903706d1e70fce20bcb2495
-size 197
+type = layout_editor_widget_settings
+
+settings {
+  offset_x = -212.0
+  offset_y = 0.0
+  inner_width = 200.0
+  inner_height = 300.0
+  snapping_side = top-right
+  expanded = true
+  visible = true
+}
+

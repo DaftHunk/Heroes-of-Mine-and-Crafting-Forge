@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1fc631c1422432d8153f9e11746cf8cb71be2ed79a349714c0008056d1371100
-size 537
+{
+	"multipart": [
+		{"apply": {"model": "block/wither_rose"}},
+		{"apply": {"model": "block/wither_rose_exts"}},
+		{"apply": [
+			{"model": "block/sub_wither_rose"},
+			{"model": "block/air", "weight": 2}]
+		},
+		{"apply": [
+			{"model": "block/sub_wither_rose", "y": 90},
+			{"model": "block/air", "weight": 3}]
+		},
+		{"apply": [
+			{"model": "block/sub_wither_rose", "y": 180},
+			{"model": "block/air", "weight": 4}]
+		},
+		{"apply": [
+			{"model": "block/sub_wither_rose", "y": 270},
+			{"model": "block/air", "weight": 5}]
+		}
+	]
+}

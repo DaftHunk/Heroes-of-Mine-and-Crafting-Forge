@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:402b5180a4542d1bd327963cec3c6ff6778751488da8fc56246685df235e1936
-size 274
+{
+  "color": "#000000",
+  "title": null,
+  "url": null,
+  "author": {
+    "name": "%author%",
+    "icon_url": "%avatar%",
+    "url": null
+  },
+  "description": "%message_contents%",
+  "thumbnail": null,
+  "fields": null,
+  "image": null,
+  "timestamp": 0,
+  "footer": null
+}

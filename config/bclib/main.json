@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c374c2361f59dbbace6322200613773ec01d5fb6e8fb70ac5d89463e3631f05
-size 167
+{
+  "patches": {
+    "applyPatches [default: true]": true,
+    "repairBiomesOnLoad [default: false]": false
+  },
+  "infos": {
+    "verbose [default: true]": true
+  }
+}

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d27b87eb6d180010e18e2cbb73d074d23a0214a183e4df445c49edbad4c9161
-size 111
+{
+  "filters": [
+    "/simpletms:/",
+	"/quark:seed_pouch/",
+	"/_spawn_egg/",
+	"/irons_spellbooks:scroll/"
+  ]
+}

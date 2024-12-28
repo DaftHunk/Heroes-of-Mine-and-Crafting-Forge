@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:880a9f063f1c0c3131ec05fcc8e1bde827f004f6bb58caea4ec76ea722b368dc
-size 112
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "minecraft:block/lantern"
+  }
+}

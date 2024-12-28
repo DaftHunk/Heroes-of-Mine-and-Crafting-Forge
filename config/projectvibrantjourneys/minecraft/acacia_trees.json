@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f3e8c7116afd0fdf782da2c124ba662bd6e7ba4ef89d3f3c2b9d96c60c5f312
-size 212
+[
+  {
+    "biomeName": "minecraft:savanna",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:savanna_plateau",
+    "chance": 20
+  },
+  {
+    "biomeName": "minecraft:windswept_savanna",
+    "chance": 20
+  }
+]

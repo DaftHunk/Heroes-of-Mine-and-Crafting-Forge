@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b882485f06e840273d3d289b6040442b9a93f0c3a7ea01d730e0fea76d246c22
-size 159
+# Default config file that will be copied to local\ftbquests\client-config.snbt if it doesn't exist!
+# Just copy any values you wish to override in here!
+
+{ }

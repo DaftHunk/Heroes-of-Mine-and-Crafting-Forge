@@ -1,3 +1,77 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65563a1fd0625a833942c92a442d78c34be33f037b8bf698f76584208a26389e
-size 3079
+{
+  // -----------------------------------------------------------
+  //              Item Obliterator by ElocinDev
+  // -----------------------------------------------------------
+  //  
+  // How to add items?
+  //   - They are json strings, so you need to separate each
+  //     entry with a comma, except the last
+  //   - If you start an entry with !, it will be treated as a regular expression
+  //     Example: "!minecraft:.*_sword" to disable all swords
+  //  
+  // -----------------------------------------------------------
+  // Do not touch this
+  "configVersion": 2,
+  // -----------------------------------------------------------
+  // Items here will be unusable completely
+  //    Example: minecraft:diamond
+  "blacklisted_items": [
+	"scguns:cyclone",
+	"scguns:raygun",
+	"cobgyms:gym_key",
+    "cobgyms:ancient_relic",
+    "cobgyms:deepslate_ancient_relic",
+    "cobgyms:nether_ancient_relic",
+    "cobgyms:end_ancient_relic",
+	"deeperdarker:sculk_transmitter",
+	"sophisticatedbackpacks:inception_upgrade",
+	"ars_nouveau:ritual_disintegration"
+  ],
+  // -----------------------------------------------------------
+  // Removes an item if it contains certain nbt tag. If the whole entry (or expression) is present, the item gets removed.
+  // Use with caution! This is a very expensive operation and can cause lag if you have a lot of items blacklisted.
+  // 	
+  // 	 Example to disable a regeneration potion: Potion:"minecraft:regeneration"
+  // 	
+  // 	 You can also use regular expressions by starting the value with !
+  "blacklisted_nbt": [],
+  // -----------------------------------------------------------
+  // Items here will not be able to be right-clicked (Interact)
+  //    Example: minecraft:apple
+  "only_disable_interactions": [
+    "examplemod:example_item"
+  ],
+  // -----------------------------------------------------------
+  // Items here will not be able to be used to attack
+  //    Example: minecraft:diamond_sword
+  "only_disable_attacks": [
+    "examplemod:example_item"
+  ],
+  // -----------------------------------------------------------
+  // Items here will get their recipes disabled
+  // Keep in mind this already is applied to blacklisted items
+  "only_disable_recipes": [
+    "furniture:telescope",
+	"furniture:gramophone",
+	"furniture:cash_register",
+	"furniture:coffer",
+	"furniture:tool_box",
+	"furniture:sewing_kit",
+	"furniture:explorers_box",
+	"furniture:blueprints",
+	"furniture:pells",
+	"furniture:boat_in_a_jar",
+	"furniture:copper_fish_tank",
+	"furniture:iron_fish_tank",
+	"furniture:terrarium",
+	"furniture:display"
+  ],
+  // -----------------------------------------------------------
+  // If true, the mod will use a hashset to handle the blacklisted items
+  // This is a more optimized approach only if you have a lot of items blacklisted (20 or more is recommended)
+  // If you just have a small amount of items blacklisted, keep this false
+  //  
+  // [!] Enabling this will disable all regular expressions
+  // [!] Does not apply to NBT, only item blacklist / interaction / attack
+  "use_hashmap_optimizations": true
+}

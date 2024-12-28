@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2c4e7362a7af6dffb739e4cac7c673df7a6cf51df8d93768a6235d50d6c346e
-size 91
+enabled = true
+developers = ["ac7e2b04-2ea3-40c7-b02d-5c02fa672105"]
+broadcastLogs = true
+

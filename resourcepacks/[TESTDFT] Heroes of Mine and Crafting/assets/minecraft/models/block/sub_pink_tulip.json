@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75ed111cce3ff747e7d1967c0f9e131e17ed37e9fcc66ceaacf5cf03c83af532
-size 78
+{
+	"parent": "block/sub_flower",
+	"textures": {
+		"0": "block/pink_tulip"
+	}
+}

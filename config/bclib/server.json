@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b25d6ffb43ee1f8b7ec091431380ff2289f3ce794bdb7a5058d5e5cb34aa58f
-size 372
+{
+  "auto_sync": {
+    "enabled [default: true]": false,
+    "offerConfigs [default: true]": false,
+    "offerFiles [default: true]": false,
+    "offerMods [default: true]": false,
+    "offerAllMods [default: false]": false,
+    "sendAllModInfo [default: false]": false,
+    "additionalMods": [],
+    "excludeMods": [],
+    "forceBetterXPreset [default: true]": true
+  }
+}

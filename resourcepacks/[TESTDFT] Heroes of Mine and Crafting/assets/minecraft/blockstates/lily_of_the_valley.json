@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7c3be928e6a0f6a7481ece4423feb2e7394b19aca6a918deed8fe6437dc72fb
-size 73
+{
+	"multipart": [
+		{"apply": {"model": "block/lily_of_the_valley"}}
+	]
+}

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a74754c00aadeac34c69390247b0283b002b44da1d56ae6888c89e1ef35843c
-size 220
+materialMask = OSIEBCA * 5.0; // Redstone Fresnel
+
+float factor = pow2(color.r);
+smoothnessG = 0.4;
+highlightMult = factor + 0.2;
+
+smoothnessD = factor * 0.5 + 0.1;
+
+#ifdef COATED_TEXTURES
+    noiseFactor = 0.77;
+#endif

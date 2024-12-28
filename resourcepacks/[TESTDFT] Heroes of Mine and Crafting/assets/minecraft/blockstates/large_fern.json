@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e317606d7f4908ee09ece308d1cc55a70db277a00d5091e5824a4292d5d32fe3
-size 347
+{
+	"multipart": [
+		{"when": {"half": "lower"}, "apply": {"model": "block/large_fern_bottom"}},
+		{"when": {"half": "lower"}, "apply": {"model": "block/large_fern_bottom_extension"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/large_fern_top"}},
+		{"when": {"half": "upper"}, "apply": {"model": "block/large_fern_top_extension"}}
+	]
+}

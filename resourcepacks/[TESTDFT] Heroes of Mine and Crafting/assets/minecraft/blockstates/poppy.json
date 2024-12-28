@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec248cdef64358dadad647ed32e951aa3ce7e3409d116b9114868ed55892bc08
-size 502
+{
+	"multipart": [
+		{"apply": {"model": "block/poppy"}},
+		{"apply": {"model": "block/poppy_exts"}},
+		{"apply": [
+			{"model": "block/sub_poppy"},
+			{"model": "block/air", "weight": 2}]
+		},
+		{"apply": [
+			{"model": "block/sub_poppy", "y": 90},
+			{"model": "block/air", "weight": 3}]
+		},
+		{"apply": [
+			{"model": "block/sub_poppy", "y": 180},
+			{"model": "block/air", "weight": 4}]
+		},
+		{"apply": [
+			{"model": "block/sub_poppy", "y": 270},
+			{"model": "block/air", "weight": 10}]
+		}
+	]
+}

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ce59f333ede885d055ee3fb3164f38cb609843ce279d00b4bba0d2a73347a5a
-size 544
+{
+  "mobs": {
+    "spawn_egg_firefly [default: true]": true,
+    "spawn_egg_hydrogen_jellyfish [default: true]": true,
+    "spawn_egg_naga [default: true]": true,
+    "spawn_egg_flying_pig [default: true]": true,
+    "spawn_egg_jungle_skeleton [default: true]": true,
+    "spawn_egg_skull [default: true]": true
+  },
+  "firefly [default: true]": true,
+  "hydrogen_jellyfish [default: true]": true,
+  "naga [default: true]": true,
+  "flying_pig [default: true]": true,
+  "jungle_skeleton [default: true]": true,
+  "skull [default: true]": true
+}

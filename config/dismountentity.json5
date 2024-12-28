@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd79d2b2a8ecb73f72640fe0ea42b93cb85b618d58177160ba6de1b9b5a0d42e
-size 109
+{
+	// Whether players can dismount other players from their vehicle.
+	"beAbleToDismountOtherPlayers": false
+}

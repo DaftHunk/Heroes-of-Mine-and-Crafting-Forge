@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f09dfbef94dd8f4b69fb2c8b5029fa3c9c2febcd9b8be7ec0dd1ecf208c5d175
-size 384
+{
+    "boardUpdateFrequency": 45,
+    "boardGenFrequency": 1,
+    "flatBonusTimePerBounty": 0,
+    "shouldBountiesHaveTimersAndExpire": true,
+    "dataPackExclusions": [
+        "bounty_pools/bountiful/example_pool",
+        "bounty_pools/*/another_example",
+        "bounty_decrees/other/*"
+    ],
+    "objectiveModifier": 0,
+    "maxNumRewards": 2,
+    "showCompletionToast": true
+}

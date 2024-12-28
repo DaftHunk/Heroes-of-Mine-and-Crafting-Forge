@@ -1,3 +1,321 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f608354a1afc26b671c843dd43d61cb15a4734dc82328772fa169cb090807c6
-size 8822
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "la_logistique"
+	group: "2F761DF4E5B82AD6"
+	icon: "littlelogistics:steam_locomotive"
+	id: "5F1E70EF5629F68D"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["18736449E1AADBCD"]
+			description: ["La &6plaque robuste&r marque le départ de l'âge des trains. Il vaut mieux avoir les moyens de produire de l'obsidienne de façon industrielle, si vous prévoyez de créer de longs chemins de fer à travers le monde."]
+			id: "4A9D0D014C61CB7B"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "14B31A1DAB4E9B2F"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "54CCAA81D14B0965"
+					item: "create:sturdy_sheet"
+					type: "item"
+				}
+			]
+			subtitle: "Le début de grand chemins de fer"
+			tasks: [{
+				id: "1A117124D1443A87"
+				item: "create:sturdy_sheet"
+				only_from_crafting: false
+				type: "item"
+			}]
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4A9D0D014C61CB7B"]
+			description: ["Le &6revêtement de train&r est le bloc principal utilisé pour créer tout ce qui touche aux trains."]
+			id: "4CCDD0283D36BD8A"
+			progression_mode: "flexible"
+			rewards: [{
+				count: 5
+				id: "2CFDB3C8D1CCB841"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Presque prêt pour l'assemblage"
+			tasks: [{
+				id: "4EA6C47E61AF31B8"
+				item: "create:railway_casing"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["18736449E1AADBCD"]
+			description: ["Le &6rail de train&r est l'élément sur lequel le train doit être assemblé et roulera. Il est nécessaire pour qu'un système ferroviaire fonctionne."]
+			id: "029007D8E8446038"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "56F2340474F71E25"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "1446707B35B2F2B3"
+					item: "create:track"
+					type: "item"
+				}
+			]
+			subtitle: "La clef du voyage ferroviaire"
+			tasks: [{
+				id: "1D1D77B5DD53DA06"
+				item: "create:track"
+				only_from_crafting: false
+				type: "item"
+			}]
+			x: 1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: ["La &6station de train&r est l'élément qui permet de faire fonctionner les trains. Vous pouvez créer un train depuis l'interface de la station de train. Son autre rôle est de marquer l'endroit où va s'arrêter le train sur une route. C'est l'élément que vous indiquez comme arrêt dans le &eplanning de train&r."]
+			id: "2DCF9C41FA7D28E4"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "358C029FAB439DA2"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "04780649563F3752"
+					item: "create:track_station"
+					type: "item"
+				}
+			]
+			subtitle: "Point de passage pour train"
+			tasks: [{
+				id: "702ED242796030C8"
+				item: "create:track_station"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: [
+				"Le &6signal de train&r empêche les trains d'aller dans la mauvaise direction, dans la mesure où un train ne passera pas sur un &6signal de train&r si il n'est pas tourné dans la bonne direction."
+				""
+				"Le &6signal&r peut être un &6signal&r bi-directionnel si placé des deux côtés de la voie. Un &6signal&r bi-directionnel fera en sorte qu'un train puisse passer si la station programmée et de l'autre côté."
+			]
+			id: "3BF442790F0F281C"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "5C5CED0BCAD0C47D"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1820FEF7991FCACF"
+					item: "create:track_signal"
+					type: "item"
+				}
+			]
+			subtitle: "Aide à réguler le trafic"
+			tasks: [{
+				id: "212E4DD4A0063AD0"
+				item: "create:track_signal"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: [
+				"L'&6observateur de train&r surveille une partie spécifique de la voie ferrée et détecte la traversée de cette partie par un train. Il envoie alors un signal de redstone."
+				""
+				"L'&6observateur de train&r peut également détecter un cargo spécifique contenu dans le train et envoyer un signal en ce cas."
+			]
+			id: "049BDED68524411F"
+			progression_mode: "flexible"
+			rewards: [{
+				count: 5
+				id: "244F374FEAF803EE"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Surveille l'arrivée des trains"
+			tasks: [{
+				id: "67E2B2B90385109F"
+				item: "create:track_observer"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: ["Les côntroles de train sont le bloc qui permet au train de se déplacer une fois assemblé. Si vous placez deux &6contrôles de train&r dans un seul train, celui-ci pourra rouler dans les deux directions."]
+			id: "187518D514B536F4"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "2F8C23C1739B9BBF"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "3C4F390A5388FBF3"
+					item: "create:controls"
+					type: "item"
+				}
+			]
+			subtitle: "Faites rouler un train"
+			tasks: [{
+				id: "52DFAB64340F5178"
+				item: "create:controls"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: [
+				"La &6porte de train&r possède 3 modes qui détermineront les interactions avec la porte."
+				""
+				"Le mod normal permet au joueur d'interragir avec la porte, mais ouvrira et fermera également la porte de façon automatique en fonction du mouvement du train."
+				""
+				"Le mode manuel permet au joueur d'interragir avec la porte comme avec une porte normale."
+				""
+				"Le mode spécial ne laisse pas le joueur interragir avec la porte, et ne l'ouvrira ou ne la fermera que lorsque le train roule, ou lorsque un signal de redstone est envoyé (shift + clic droit outrepasse le mode spécial)."
+			]
+			id: "457F1F059FD8B0CE"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "2146028C6749FDD8"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "1FCBDE88EBD23A35"
+					item: "create:railway_casing"
+					type: "item"
+				}
+			]
+			subtitle: "Une porte classieuse"
+			tasks: [{
+				id: "14E3604550DE3F8C"
+				item: "create:train_door"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: [""]
+			id: "3E10D349E202CC89"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "4FFFD416CF74B9DF"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "7D49B26300A1FD25"
+					item: "create:railway_casing"
+					type: "item"
+				}
+			]
+			subtitle: "Une trappe esthétique"
+			tasks: [{
+				id: "369CF9C3B545DDFC"
+				item: "create:train_trapdoor"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: ["Le &6siège rouge&r est pratique à avoir dans votre train, en particulier si il est placé à proximité des contrôles du train, car il vous permettra d'y asseoir un mob qui pourra ensuite contrôler les mouvements du train."]
+			id: "27FE80664E75A40D"
+			progression_mode: "flexible"
+			rewards: [{
+				count: 5
+				id: "59B5189ADEB7FE0B"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Un siège, pour vous asseoir, dans un train où on s'asseoit."
+			tasks: [{
+				icon: "create:red_seat"
+				id: "333CE6EF38272291"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(create:seats)"
+					}
+				}
+				title: "Any #create:seats"
+				type: "item"
+			}]
+			title: "Siège"
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4CCDD0283D36BD8A"]
+			description: [
+				"Le &6planning de train&r est très utile pour décider de l'ordre dans lequel les trains vont de station en station, et combien de temps un train reste dans une station avant de partir pour la suivante."
+				""
+				"Vous pouvez effectuer un clic droit sur un mob dans un &esiège rouge&r situé à côté des contrôles du train pour désigner ce mob comme conducteur du train, qui suivra le planning de train."
+			]
+			id: "34C409E6FF596E2A"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					count: 5
+					id: "47B7D21DD1A19699"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					id: "593CCB6884E593A5"
+					item: "create:sturdy_sheet"
+					type: "item"
+				}
+			]
+			subtitle: "Décide des périodes de mouvement des trains"
+			tasks: [{
+				id: "13615DD669E0CB81"
+				item: "create:schedule"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -2.0d
+		}
+	]
+	title: "La logistique"
+}

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a67dd8c8d69c5d4ac5421de82ede7cfc5622d0345043000c894e5adb0e25a65
-size 531
+{
+	"multipart": [
+		{"apply": {"model": "block/pink_tulip"}},
+		{"apply": {"model": "block/pink_tulip_exts"}},
+		{"apply": [
+			{"model": "block/sub_pink_tulip"},
+			{"model": "block/air", "weight": 2}]
+		},
+		{"apply": [
+			{"model": "block/sub_pink_tulip", "y": 90},
+			{"model": "block/air", "weight": 3}]
+		},
+		{"apply": [
+			{"model": "block/sub_pink_tulip", "y": 180},
+			{"model": "block/air", "weight": 4}]
+		},
+		{"apply": [
+			{"model": "block/sub_pink_tulip", "y": 270},
+			{"model": "block/air", "weight": 5}]
+		}
+	]
+}

@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c4934e5b2ea18a0f140e625f5bdc9563c6f7b01348295e53c08d03e9fdf9603
-size 1861
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "block/grass",
+		"particle": "block/grass"
+	},
+	"elements": [
+		{
+			"from": [16, 16, -4.75],
+			"to": [16, 24, 0.25],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [4, 1, 9, 10], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [4, 1, 9, 10], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [14.25, 16, -0.25],
+			"to": [14.25, 21, 6.25],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [4, 1, 10, 10], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [7, 1, 15, 7], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [2, 16, 5.75],
+			"to": [2, 24, 10.25],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [5, 1, 10, 10], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [5, 1, 10, 10], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [17, 12.25, 4.25],
+			"to": [17, 19.25, 8.25],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [4, 0, -4]},
+			"faces": {
+				"east": {"uv": [11, 1, 15, 8], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [11, 1, 15, 8], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [9.25, 11.25, 11],
+			"to": [12.25, 16.25, 11],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [4, 0, -4]},
+			"faces": {
+				"north": {"uv": [5, 2, 8, 7], "texture": "#1", "cullface": "up", "tintindex": 0},
+				"south": {"uv": [5, 2, 8, 7], "texture": "#1", "cullface": "up", "tintindex": 0}
+			}
+		}
+	]
+}

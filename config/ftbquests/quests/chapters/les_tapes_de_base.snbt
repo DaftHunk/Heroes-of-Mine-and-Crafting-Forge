@@ -1,3 +1,619 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80162659939ce6f35603502d15155493ecbc6d45a0d2837fd064f00584161432
-size 11333
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "les_tapes_de_base"
+	group: "66973B46BDC2E762"
+	icon: {
+		Count: 1
+		id: "minecraft:diamond_pickaxe"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "2EBABB6C2731356E"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "05DE72DD68A60883"
+			rewards: [{
+				id: "25A94A24ECC03E8D"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				icon: "minecraft:oak_log"
+				id: "379771FBCB314F82"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:logs)"
+					}
+				}
+				type: "item"
+			}]
+			title: "Tabasser un arbre"
+			x: -28.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["05DE72DD68A60883"]
+			id: "226171470A06E7E8"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "6A17758B64BB063B"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Get 4 planks"
+			tasks: [{
+				icon: "minecraft:oak_planks"
+				id: "352267CCE508BB36"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:planks)"
+					}
+				}
+				title: "Any #minecraft:planks"
+				type: "item"
+			}]
+			title: "Du bois, merci"
+			x: -26.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["226171470A06E7E8"]
+			id: "3686BAC07C9F5E22"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "63E1B5F87BD80028"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "La base de la fabrication"
+			tasks: [{
+				id: "22F1A01EC9E360BD"
+				item: "minecraft:crafting_table"
+				type: "item"
+			}]
+			title: "Bastissor"
+			x: -24.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3686BAC07C9F5E22"]
+			id: "6FE386C83D27FF6F"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "2085431F0C99A074"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "gear"
+			subtitle: "Fabriquez-vous une pioche"
+			tasks: [{
+				id: "581D21B80F5799D1"
+				item: {
+					Count: 1
+					id: "minecraft:wooden_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				only_from_crafting: false
+				title: "Any #minecraft:pickaxes"
+				type: "item"
+			}]
+			title: "SALUT A TOUS C'EST FANTA"
+			x: -22.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3686BAC07C9F5E22"]
+			id: "13E39EE147F3A618"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "773F31F994ED6F42"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "gear"
+			subtitle: "Fabriquez-vous une arme"
+			tasks: [{
+				id: "39F7A92EB0D64B21"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:swords)"
+					}
+				}
+				only_from_crafting: false
+				title: "Any #minecraft:swords"
+				type: "item"
+			}]
+			title: "Poliré !"
+			x: -24.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["3686BAC07C9F5E22"]
+			dependency_requirement: "one_started"
+			id: "0228747D6C21928F"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "4CE6FB6CA3ECC909"
+				type: "xp"
+				xp: 10
+			}]
+			shape: "gear"
+			subtitle: "Fabriquer une houe"
+			tasks: [{
+				id: "43A5D3C85DF20B1B"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:hoes)"
+					}
+				}
+				only_from_crafting: false
+				title: "Any #minecraft:hoes"
+				type: "item"
+			}]
+			title: "De la nourriture, merci"
+			x: -24.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3686BAC07C9F5E22"]
+			dependency_requirement: "one_started"
+			id: "5A7B1CB5FB1E7D0C"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "5EDF81296762170A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Fabriquer une pelle"
+			tasks: [{
+				id: "6A58A421C46D6FA4"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:shovels)"
+					}
+				}
+				only_from_crafting: false
+				title: "Any #minecraft:shovels"
+				type: "item"
+			}]
+			title: "La pelle de la nature"
+			x: -22.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3686BAC07C9F5E22"]
+			id: "609FC1AA946FCE5A"
+			progression_mode: "flexible"
+			rewards: [{
+				id: "022A6D9ECCC3EEDC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Fabriquez-vous une hache"
+			tasks: [{
+				id: "31F05EBFED2FD49E"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:axes)"
+					}
+				}
+				only_from_crafting: false
+				title: "Any #minecraft:axes"
+				type: "item"
+			}]
+			title: "Bucheron"
+			x: -22.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["6FE386C83D27FF6F"]
+			id: "3E0023FCFC9162CF"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "6FC1FE08FD162187"
+					type: "xp"
+					xp: 10
+				}
+				{
+					count: 5
+					id: "5E08BBBEDD17EA89"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "23E01EC881D10FDF"
+				item: "minecraft:cobblestone"
+				type: "item"
+			}]
+			title: "De la pierre, merci"
+			x: -20.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3E0023FCFC9162CF"]
+			id: "3F85C2E198ACEE74"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "1962F0DAD8534362"
+					type: "xp"
+					xp: 10
+				}
+				{
+					count: 3
+					id: "45DD0C2DD4FA426D"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+			]
+			shape: "gear"
+			tasks: [{
+				id: "413A1A62A9E81ADF"
+				item: {
+					Count: 1
+					id: "minecraft:stone_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				only_from_crafting: false
+				type: "item"
+			}]
+			title: "Upgrading your pickaxe"
+			x: -18.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3F85C2E198ACEE74"]
+			id: "30C7553B5832D22A"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "530F8002F2A7EEFD"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "2D08F7A909C0E981"
+					item: "minecraft:raw_iron"
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{
+				id: "328D8E0A90D31551"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			x: -16.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3F85C2E198ACEE74"]
+			id: "2560482C4FC1C520"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "321D1C527004BF33"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "1F26D9CDC0A045AD"
+					item: "minecraft:coal"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "4E04A28F950BB8B7"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			x: -16.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["30C7553B5832D22A"]
+			id: "5B6E561419BDF3CC"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "5B41AE1807112713"
+					type: "xp"
+					xp: 10
+				}
+				{
+					count: 3
+					id: "72E3E2C58AACB43D"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+			]
+			shape: "gear"
+			tasks: [{
+				id: "0CF38D754090FD16"
+				item: {
+					Count: 1
+					id: "minecraft:iron_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				only_from_crafting: false
+				type: "item"
+			}]
+			x: -14.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5B6E561419BDF3CC"]
+			id: "027D3A7B29D03ACD"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "5DE6DC4C8BAE9004"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "47EE94F8DFC90DDB"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{
+				id: "60A54513C8F855C3"
+				item: "minecraft:diamond"
+				type: "item"
+			}]
+			x: -12.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["027D3A7B29D03ACD"]
+			id: "6295D617E39FA523"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "5C589AC623124FA5"
+					type: "xp"
+					xp: 10
+				}
+				{
+					count: 3
+					id: "3F98349AD95573D7"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+			]
+			shape: "gear"
+			tasks: [{
+				id: "77E43BEAA7D616CC"
+				item: {
+					Count: 1
+					id: "minecraft:diamond_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				only_from_crafting: false
+				type: "item"
+			}]
+			x: -10.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5B6E561419BDF3CC"]
+			id: "2926EB509D9ECBA9"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "52018BF4303397FA"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "3E30B0C263BEB83B"
+					item: "minecraft:raw_gold"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "29CACEEA250B9F1E"
+				item: "minecraft:raw_gold"
+				type: "item"
+			}]
+			title: "Tout ce qui blille n'est pas d'ol, mais tout ce qui est d'ol brille assullemment"
+			x: -12.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["3F85C2E198ACEE74"]
+			id: "54472A6258D18C8F"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "2740CEAF782371EC"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "794CA9A2B5DB2DAF"
+					item: "minecraft:raw_copper"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "66481AABB8C0A320"
+				item: "minecraft:raw_copper"
+				type: "item"
+			}]
+			x: -16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5B6E561419BDF3CC"]
+			id: "36C80050F1FAC737"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "1B0FDC6ED45C715C"
+					type: "xp"
+					xp: 10
+				}
+				{
+					count: 5
+					id: "0FEBAF38A9714E48"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "1B3F01C0F8F402FC"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5B6E561419BDF3CC"]
+			id: "572E041C07BEF5F3"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "5E68423EF3A4164D"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "61884C70D39A42C9"
+					item: "minecraft:emerald"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "61DB3BF318D3DCD1"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			x: -12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3F85C2E198ACEE74"]
+			id: "6336BE57A505F267"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "3DABBA274B9A34A1"
+					type: "xp"
+					xp: 10
+				}
+				{
+					count: 5
+					id: "0D37F144B59ADD26"
+					item: "minecraft:lapis_lazuli"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "3857A939285697D7"
+				item: "minecraft:lapis_lazuli"
+				type: "item"
+			}]
+			x: -16.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5B6E561419BDF3CC"]
+			id: "5BDE77E08B32D92F"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "344B991DBBFBCC2D"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "1454ADF3F886B2C7"
+					item: "create:raw_zinc"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "15D3D3FF2B093983"
+				item: "create:raw_zinc"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13E39EE147F3A618"]
+			dependency_requirement: "all_started"
+			id: "3ACBE9B17453B4B5"
+			progression_mode: "flexible"
+			rewards: [
+				{
+					id: "03969C1635410C31"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "3F008A1F3EAD1E3D"
+					item: "minecraft:white_wool"
+					type: "item"
+				}
+			]
+			subtitle: "Dormir dans un lit pour changer votre point d'apparition en cas de mort par décès"
+			tasks: [{
+				id: "454E8B6E41EC258C"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:beds)"
+					}
+				}
+				only_from_crafting: false
+				title: "Any #minecraft:beds"
+				type: "item"
+			}]
+			title: "Bonne nuit les petits"
+			x: -24.0d
+			y: -4.5d
+		}
+	]
+	title: "Les étapes de base"
+}

@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bcc74553e9a5e97fdd6c1205d5d89f79729e2c40223556a74bfc8d4d6699d6f6
-size 788
+[
+  {
+    "biomeName": "terralith:skylands_winter",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:siberian_taiga",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:sakura_grove",
+    "chance": 15
+  },
+  {
+    "biomeName": "terralith:skylands_spring",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:forested_highlands",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:lavender_valley",
+    "chance": 15
+  },
+  {
+    "biomeName": "terralith:sakura_valley",
+    "chance": 10
+  },
+  {
+    "biomeName": "terralith:skylands_autumn",
+    "chance": 3
+  },
+  {
+    "biomeName": "terralith:snowy_maple_forest",
+    "chance": 5
+  },
+  {
+    "biomeName": "terralith:lavender_forest",
+    "chance": 15
+  },
+  {
+    "biomeName": "terralith:mirage_isles",
+    "chance": 3
+  }
+]

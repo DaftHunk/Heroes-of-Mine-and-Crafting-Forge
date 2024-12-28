@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec1a9e835b75774dcaf2975096e2ae38ad27c6a93b0606c4b0a2dc93b1a7fc38
-size 71
+{
+  "regen_simplyswords_config_file": false,
+  "config_version": 1.56
+}

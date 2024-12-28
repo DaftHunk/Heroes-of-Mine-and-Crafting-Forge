@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bc2143a1fe8d37e496c0b53ce9e50df87655f66225817999638e72c993c0e6a
-size 614
+{
+  "armouryItems": {
+    "entries": {
+      "golden_sword": 0.1,
+      "arrow": 0.05,
+      "stone_sword": 0.05,
+      "golden_axe": 0.1,
+      "bow": 0.1,
+      "shield": 0.1,
+      "name_tag": 0.05,
+      "stone_axe": 0.05
+    },
+    "defaultItem": "air"
+  },
+  "storageItems": {
+    "entries": {
+      "cookie": 0.1,
+      "cake": 0.1,
+      "bread": 0.2,
+      "melon_seeds": 0.025,
+      "pumpkin_seeds": 0.025,
+      "beetroot_seeds": 0.025,
+      "wheat_seeds": 0.025,
+      "rabbit_foot": 0.01,
+      "potato": 0.2,
+      "honey_bottle": 0.1,
+      "slime_ball": 0.05
+    },
+    "defaultItem": "air"
+  }
+}

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49170a31103b8442945556b4503115b4a8ed4b8d3f0e48408e7d111bd27591bc
-size 313
+materialMask = OSIEBCA; // Intense Fresnel
+
+float factor = pow2(sqrt2(GetLuminance(color.rgb)));
+float factor2 = pow2(factor);
+float factor4 = pow2(factor2);
+
+smoothnessG = factor - factor4 * 0.4;
+highlightMult = 3.0 * factor4;
+
+smoothnessD = factor4 * 0.75;
+
+#ifdef COATED_TEXTURES
+    noiseFactor = 0.5;
+#endif

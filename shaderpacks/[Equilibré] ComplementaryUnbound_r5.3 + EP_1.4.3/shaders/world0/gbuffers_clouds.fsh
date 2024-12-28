@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a0a5cc6e9b58088696dbf713d05180225f9d795f68cd663ad6f06eee906cdc0
-size 121
+#version 130
+
+#define FRAGMENT_SHADER
+#define OVERWORLD
+#define GBUFFERS_CLOUDS
+
+#include "/program/gbuffers_clouds.glsl"
