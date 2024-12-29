@@ -1,0 +1,14 @@
+{
+  "icon": "keep.png",
+  "name": "keep",
+  "authors": [
+    "Thaylar"
+  ],
+  "desc": "keep alpha test",
+  "mods": [
+  "structurize",
+  "minecolonies"
+  ],
+  "version": "1",
+  "pack-format": "1"
+}
