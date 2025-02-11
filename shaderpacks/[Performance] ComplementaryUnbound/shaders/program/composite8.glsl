@@ -36,31 +36,33 @@ void drawKnife(inout vec3 color, vec2 uv, vec2 pos, vec2 dir, float scale) {
 }
 
 void main() {
-    vec4 cutData = texelFetch(colortex1, texelCoord, 0);
-    vec4 color = texelFetch(colortex3, texelCoord, 0);
-    vec2 relPos = texelPos - knifePos;
-    float projW = dot(relPos, knifeDir);
-    float error = length(relPos - projW * knifeDir);
-    if (isKnifeDown > 0.5 && error < 0.01 * (0.6 - 70.0 *  projW * projW)) {
-        cutData.g = 1.0;
-    } else if (healing > 0.5) {
-        float aroundHealthy = 0;
-        for (int k = 0; k < 4; k++) {
-            ivec2 offset = (k/2*2-1) * ivec2(k%2, (k+1)%2);
-            aroundHealthy += texelFetch(colortex1, texelCoord + offset, 0).g;
+    #ifdef RENKO_CUT
+        vec4 cutData = texelFetch(colortex1, texelCoord, 0);
+        vec4 color = texelFetch(colortex3, texelCoord, 0);
+        vec2 relPos = texelPos - knifePos;
+        float projW = dot(relPos, knifeDir);
+        float error = length(relPos - projW * knifeDir);
+        if (isKnifeDown > 0.5 && error < 0.01 * (0.6 - 70.0 *  projW * projW)) {
+            cutData.g = 1.0;
+        } else if (healing > 0.5) {
+            float aroundHealthy = 0;
+            for (int k = 0; k < 4; k++) {
+                ivec2 offset = (k/2*2-1) * ivec2(k%2, (k+1)%2);
+                aroundHealthy += texelFetch(colortex1, texelCoord + offset, 0).g;
+            }
+            if (aroundHealthy < 3.5) cutData.g = 0.0;
         }
-        if (aroundHealthy < 3.5) cutData.g = 0.0;
-    }
-    if (cutData.g > 0.5) {
-        color = vec4(0, 0, 0, 1);
-    }
-    drawKnife(color.rgb, texelPos, knifePos, -knifeDir, 0.2);
-    if (frameCounter < 10) {
-        cutData.g = 0.0;
-    }
-    /* RENDERTARGETS: 3,1 */
-    gl_FragData[0] = color;
-    gl_FragData[1] = cutData;
+        if (cutData.g > 0.5) {
+            color = vec4(0, 0, 0, 1);
+        }
+        drawKnife(color.rgb, texelPos, knifePos, -knifeDir, 0.2);
+        if (frameCounter < 10) {
+            cutData.g = 0.0;
+        }
+        /* DRAWBUFFERS:31 */
+        gl_FragData[0] = color;
+        gl_FragData[1] = cutData;
+    #endif
 }
 #endif
 #ifdef VERTEX_SHADER
@@ -158,6 +160,7 @@ vec3 knifePosList[84] = vec3[84](
 );
 
 void main() {
+    #ifdef RENKO_CUT
     gl_Position = ftransform();
     texelPos = 0.5 * gl_Position.xy + 0.5;
     texelPos.x *= aspectRatio;
@@ -171,5 +174,6 @@ void main() {
         mod(cutProgress, float(knifePosList.length())) - thisIndex);
     knifeDir = normalize(knifePosList[nextIndex].xy - knifePosList[thisIndex].xy);
     isKnifeDown = knifePosList[thisIndex].z;
+    #endif
 }
 #endif

@@ -107,6 +107,7 @@ float skyLightCheck = 0.0;
 void main() {
     skyLightCheck = pow2(1.0 - min1(lmCoord.y * 2.9 * sunVisibility));
     vec4 color = texture2D(tex, texCoord);
+    float purkinjeOverwrite = 0.0, emission = 0.0;
 
     float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
     vec3 normalM = normal;
@@ -130,7 +131,7 @@ void main() {
         if (color.a < 0.75) materialMask = 0.0;
 
         bool noSmoothLighting = true, noGeneratedNormals = false;
-        float smoothnessG = 0.0, highlightMult = 1.0, emission = 0.0, noiseFactor = 0.6;
+        float smoothnessG = 0.0, highlightMult = 1.0, noiseFactor = 0.6;
         vec2 lmCoordM = lmCoord;
         vec3 geoNormal = normalM;
         vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
@@ -149,7 +150,6 @@ void main() {
                 #include "/lib/materials/materialHandling/irisMaterials.glsl"
 
                 if (materialMask != OSIEBCA * 254.0) materialMask += OSIEBCA * 100.0; // Entity Reflection Handling
-                else if (smoothnessD > 0.2) materialMask = 100.0;
             #endif
 
             #ifdef GENERATED_NORMALS
@@ -203,7 +203,7 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, 0.0, geoNormal, normalM,
                    worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
-                   false, 0, smoothnessG, highlightMult, emission);
+                   false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
         #ifdef SS_BLOCKLIGHT
             lightAlbedo = normalize(color.rgb) * min1(emission);
@@ -215,7 +215,7 @@ void main() {
 
         #if (defined CUSTOM_PBR || defined IPBR && defined IS_IRIS) && defined PBR_REFLECTIONS
             #ifdef OVERWORLD
-                skyLightFactor = pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333);
+                skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
             #else
                 skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
             #endif
@@ -228,7 +228,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, 1.0);
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && (RP_MODE >= 2 || defined IS_IRIS)
         /* DRAWBUFFERS:065 */

@@ -5,7 +5,7 @@ const int colortex2Format = RGB16F;         //taa
 const int colortex3Format = RGBA8;          //(cloud/water map on deferred/gbuffer) | translucentMult & bloom & final color
 const int colortex4Format = R8;             //volumetric cloud linear depth & volumetric light factor
 const int colortex5Format = RGBA8_SNORM;    //normalM & scene image for water reflections
-const int colortex6Format = RGBA8;          //smoothnessD & materialMask & skyLightFactor
+const int colortex6Format = RGBA8;          //smoothnessD & materialMask & skyLightFactor & lmCoord.x at (0.0-0.5)
 const int colortex7Format = RGBA16F;        //(cloud/water map on gbuffer) | temporal filter
 #ifdef SS_BLOCKLIGHT
 const int colortex8Format = RGB8;           //colored light

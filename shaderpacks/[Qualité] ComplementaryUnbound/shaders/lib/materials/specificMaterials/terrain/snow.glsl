@@ -10,3 +10,7 @@ smoothnessD = smoothnessG;
 #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
     noPuddles = 1.0;
 #endif
+
+#ifdef SSS_SNOW_ICE
+    subsurfaceMode = 3, noSmoothLighting = true, noDirectionalShading = true;
+#endif

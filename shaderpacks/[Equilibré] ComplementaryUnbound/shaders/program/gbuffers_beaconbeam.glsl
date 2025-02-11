@@ -42,6 +42,19 @@ void main() {
     #else
         vec3 viewPos = ScreenToView(screenPos);
     #endif
+
+    #ifdef DISTANT_HORIZONS
+        vec3 screenPosDH = vec3(screenPos.xy, texture2D(dhDepthTex, screenPos.xy).r);
+        #ifdef TAA
+            vec3 viewPosDH = ScreenToViewDH(vec3(TAAJitter(screenPosDH.xy, -0.5), screenPosDH.z));
+        #else
+            vec3 viewPosDH = ScreenToViewDH(screenPosDH);
+        #endif
+
+        if (viewPos.z < viewPosDH.z)
+            discard;
+    #endif
+
     float lViewPos = length(viewPos);
 
     #ifdef IPBR
@@ -60,7 +73,7 @@ void main() {
         color.rgb *= color.rgb * 4.0 * BEACON_BEAM_EMISSION;
     #endif
 
-    color.rgb *= 0.5 + 0.5 * exp(- lViewPos * 0.04);
+    color.rgb *= 0.5 + 0.5 * exp(-lViewPos * 0.04);
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, -1);

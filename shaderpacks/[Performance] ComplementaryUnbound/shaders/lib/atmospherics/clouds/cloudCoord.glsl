@@ -20,14 +20,14 @@
             float wind = frameTimeCounter * CLOUD_SPEED_MULT_M;
         #endif
 
-        #if CLOUD_DIRECTION == 2
-            tracePos.xz = tracePos.zx;
-        #endif
-
         #if INCREASED_RAIN_STRENGTH > 0
             if (rainFactor > 0.01) wind *= 2.5;
         #endif
-        tracePos.x += wind;
+        #if CLOUD_DIRECTION == 1
+            tracePos.x += wind;
+        #else
+            tracePos.z += wind;
+        #endif
 
         tracePos.z += cloudAltitude * 64.0;
         tracePos.xz *= CLOUD_NARROWNESS;

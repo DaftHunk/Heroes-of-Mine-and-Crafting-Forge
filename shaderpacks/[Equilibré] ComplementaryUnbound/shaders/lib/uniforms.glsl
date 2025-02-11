@@ -60,6 +60,7 @@ uniform float playerMood;
 
 uniform ivec2 atlasSize;
 uniform ivec2 eyeBrightness;
+uniform ivec2 eyeBrightnessSmooth;
 
 uniform vec3 cameraPosition;
 uniform vec3 fogColor;
@@ -166,15 +167,16 @@ uniform float frameTimeSmooth;
 uniform float eyeBrightnessM;
 uniform float eyeBrightnessM2;
 uniform float rainFactor;
-uniform float inBasaltDeltas;
-uniform float inCrimsonForest;
-uniform float inNetherWastes;
-uniform float inSoulValley;
-uniform float inWarpedForest;
+uniform float inBasaltDeltas = 0.0;
+uniform float inCrimsonForest = 0.0;
+uniform float inNetherWastes = 1.0;
+uniform float inSoulValley = 0.0;
+uniform float inWarpedForest = 0.0;
+uniform float inPaleGarden = 0.0;
 uniform float isSneaking = 1.0;
 uniform float isSprinting = 0.0;
-uniform float inLushCave;
-uniform float inSand;
+uniform float inLushCave = 0.0;
+uniform float inSand = 0.0;
 uniform float inRedSand;
 uniform float lightningFlashOptifine;
 uniform float inForest;
@@ -182,8 +184,9 @@ uniform float shaderStart;
 uniform float shaderStartSmooth;
 uniform float inVanillaEnd = 1.0;
 uniform float isShockwave = 1.0;
+uniform float eyeBrightnessXM;
+uniform float eyeBrightnessXM2;
+uniform float waterAltitude = 61.9;
 
 uniform vec2 viewSize;
 uniform vec2 texelSize;
-
-uniform vec3 skyColorSmooth;

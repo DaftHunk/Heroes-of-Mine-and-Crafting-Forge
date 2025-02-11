@@ -15,25 +15,6 @@ noperspective in vec2 texCoord;
 #include "/lib/pipelineSettings.glsl"
 
 //Common Variables//
-#if defined MC_ANISOTROPIC_FILTERING || COLORED_LIGHTING_INTERNAL > 0 && !defined IS_IRIS || defined MULTICOLORED_BLOCKLIGHT || COLORED_LIGHTING > 0 && defined MC_OS_MAC
-    #define ANY_ERROR_MESSAGE
-#endif
-
-#ifdef MULTICOLORED_BLOCKLIGHT
-    #define OLD_SSBL_ERROR
-#endif
-
-#ifdef MC_ANISOTROPIC_FILTERING
-    #define OPTIFINE_AF_ERROR
-#endif
-
-#if COLORED_LIGHTING_INTERNAL > 0 && !defined IS_IRIS
-    #define OPTIFINE_ACL_ERROR
-#endif
-
-#if COLORED_LIGHTING > 0 && defined MC_OS_MAC
-    #define APPLE_ACL_ERROR
-#endif
 
 //Common Functions//
 #if IMAGE_SHARPENING > 0
@@ -65,16 +46,17 @@ float retroNoise (vec2 noise) {
     return fract(sin(dot(noise.xy,vec2(10.998,98.233)))*12433.14159265359);
 }
 
-vec2 curveDisplay(vec2 texCoord) {
+vec2 curveDisplay(vec2 texCoord, float curvatureAmount, int screenRoundness) {
     texCoord = texCoord * 2.0 - 1.0;
-    vec2 offset = abs(texCoord.yx) * CURVATURE_AMOUNT * 0.5;
-    #if SCREEN_ROUNDNESS == 1
+    vec2 offset = abs(texCoord.yx) * curvatureAmount * 0.5;
+
+    if (screenRoundness == 1) {
         offset *= offset;
-    #elif SCREEN_ROUNDNESS == 2
+    } else if (screenRoundness == 2) {
         offset *= pow2(offset);
-    #elif SCREEN_ROUNDNESS == 3
+    } else if (screenRoundness == 3) {
         offset *= pow3(offset);
-    #endif
+    }
     texCoord += texCoord * offset;
     return texCoord * 0.5 + 0.5;
 }
@@ -85,25 +67,27 @@ vec2 border(vec2 texCoord) {
     return texCoord * 0.5 + 0.5;
 }
 
-vec3 scanline(vec2 texCoord, vec3 color) {
-    const float frequency = SCANLINE_FREQUENCY;
-    const float intensity = SCANLINE * 0.1;
-    const float speed = SCANLINE_SPEED;
-    const float amount = SCANLINE_AMOUNT;
-    #if SCANLINE_DIRECTION == 1
+vec3 scanline(vec2 texCoord, vec3 color, float frequency, float intensity, float speed, float amount, vec3 scanlineRGB, bool monochrome, bool flipDirection) {
+    if (flipDirection) {
         texCoord = texCoord.yx;
-    #endif
+    }
 
     float count = viewHeight * amount;
-    vec2 scanlineColor = vec2(sin(mod(texCoord.y + frameTimeCounter * 0.2 * speed, frequency) * count), cos(mod(texCoord.y + frameTimeCounter * 0.5 * speed, 0.7 * frequency) * count));
-    #ifdef SCANLINE_MONOCHROME
-        vec3 scanlines = vec3(scanlineColor.y + scanlineColor.x * 0.2);
-    #else
-        vec3 scanlines = vec3(scanlineColor.x * SCANLINE_R, scanlineColor.y * SCANLINE_G, scanlineColor.x * SCANLINE_B);
-    #endif
+    vec2 scanlineColor = vec2(
+        sin(mod(texCoord.y + frameTimeCounter * 0.2 * speed, frequency) * count),
+        cos(mod(texCoord.y + frameTimeCounter * 0.5 * speed, 0.7 * frequency) * count)
+    );
 
-    return color += color * scanlines * intensity;
+    vec3 scanlines;
+    if (monochrome) {
+        scanlines = vec3(scanlineColor.y + scanlineColor.x * 0.2);
+    } else {
+        scanlines = vec3(scanlineColor.x * scanlineRGB.r, scanlineColor.y * scanlineRGB.g, scanlineColor.x * scanlineRGB.b);
+    }
+
+    return color += color * scanlines * intensity * 0.1;
 }
+
 
 vec4 samplePixelatedBuffer(sampler2D tex, vec2 coords, int size) { // thanks to belmu for the code (mine had edge artifacts) https://github.com/BelmuTM/Noble/tree/master
     vec2 aspectCorrectedSize = size * vec2(aspectRatio, 1.0);
@@ -144,29 +128,71 @@ float grid(float uv) {
       return mainLine + subLine;
 }
 
-#if WATERMARK > 0
-    vec4 waterMarkFunction(float watermarkAspectRatio, vec2 textCoord, vec2 screenUV){
-        float watermarkSize = 1 / WATERMARK_SIZE;
-        if (aspectRatio < 3) textCoord += vec2(3 * screenUV.x * watermarkSize * 1.5 - 3 * watermarkSize * 1.5, 1.0 - 3 * watermarkAspectRatio * screenUV.y * watermarkSize * 1.5 / aspectRatio);
-        else                 textCoord += vec2(screenUV.x * aspectRatio - aspectRatio, 1.0 - watermarkAspectRatio * screenUV.y);
+// Function to apply horizontal noise
+vec2 applyHorizontalNoise(vec2 texCoordM, float resolution, float intensity, float speed) {
+    float horizontalNoiseResolution = resolution * 100.0;
+    float horizontalNoiseIntensity = intensity * 0.002;
+    float horizontalNoiseSpeed = speed * 0.0001;
 
-        vec4 EuphoriaPatchesText = texture2D(depthtex2, textCoord);
+    texCoordM.y *= horizontalNoiseResolution;
+    texCoordM.y = float(int(texCoordM.y)) * (1.0 / horizontalNoiseResolution);
+    float noise = retroNoise(vec2(frameTimeCounter * horizontalNoiseSpeed, texCoordM.y));
+    texCoordM.x += noise * horizontalNoiseIntensity;
+    return texCoordM;
+}
+
+// Function to apply vertical screen displacement
+void applyVerticalScreenDisplacement(inout vec2 texCoordM, inout float verticalOffset, float verticalScrollSpeed, float verticalStutterSpeed, float verticalEdgeGlitch, bool isVertical) {
+    float displaceEffectOn = 1.0;
+    #if defined SPOOKY && (!defined RETRO_ON || !defined VERTICAL_SCREEN_DISPLACEMENT)
+        float randomShutterTime = 24000.0 * hash1(worldDay * 5);
+        int displaceEffect = int(hash1(worldDay / 2)) % (2 * 24000) + int(randomShutterTime);
+        displaceEffectOn = 0.0;
+        if (worldTime > displaceEffect && worldTime < displaceEffect + 100.0) {
+            displaceEffectOn = 1.0;
+        }
+    #endif
+
+    float scrollSpeed = verticalScrollSpeed * 2.0;
+    float stutterSpeed = verticalStutterSpeed * 0.2;
+    float scroll = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00002, 8.0)), 0.9 * (1.0 - VERTICAL_SCROLL_FREQUENCY * 0.3))) * scrollSpeed;
+    float stutter = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00005, 9.0)), 0.8 * (1.0 - VERTICAL_STUTTER_FREQUENCY * 0.3))) * stutterSpeed;
+    float stutter2 = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00003, 5.0)), 0.7 * (1.0 - VERTICAL_STUTTER_FREQUENCY * 0.3))) * stutterSpeed;
+    verticalOffset = sin(frameTimeCounter) * scroll + stutter * stutter2;
+    if(isVertical) texCoordM.y = mix(texCoordM.y, mod(texCoordM.y + verticalOffset, verticalEdgeGlitch), displaceEffectOn);
+    else texCoordM.x = mix(texCoordM.x, mod(texCoordM.x + verticalOffset, verticalEdgeGlitch), displaceEffectOn);
+}
+
+vec4 waterMarkFunction(ivec2 pixelSize, vec2 textCoord, vec2 screenUV, float watermarkSizeMult, bool hideWatermark){
+    float watermarkAspectRatio = float(pixelSize.x) / pixelSize.y;
+    float watermarkSize = 1 / watermarkSizeMult;
+
+    if (aspectRatio < 3) textCoord += vec2(3 * screenUV.x * watermarkSize * 1.5 - 3 * watermarkSize * 1.5, 1.0 - 3 * watermarkAspectRatio * screenUV.y * watermarkSize * 1.5 / aspectRatio);
+    else                 textCoord += vec2(screenUV.x * aspectRatio - aspectRatio, 1.0 - watermarkAspectRatio * screenUV.y);
+
+    // Only sample texture if we're in the valid range
+    if (textCoord.x > -1 && textCoord.x < 0 && textCoord.y > 0 && textCoord.y < 1) {
+        vec2 texCoordMapped = fract(textCoord);
+        ivec2 fetchCoord = ivec2(texCoordMapped * pixelSize);
+        vec4 EuphoriaPatchesText = texelFetch(depthtex2, fetchCoord, 0);
+        
         float guiIsNotHidden = 1.0;
-        if (textCoord.x > -1 && textCoord.x < 0 && textCoord.y > 0 && textCoord.y < 1) {
+        if (hideWatermark) {
             #if WATERMARK == 2
                 if (hideGUI == 0) guiIsNotHidden = 0.0;
             #elif WATERMARK == 3
                 if (hideGUI == 0 || heldItemId != 40000 && heldItemId2 != 40000) guiIsNotHidden = 0.0;
             #endif
-            return vec4(EuphoriaPatchesText.rgb, EuphoriaPatchesText.a * guiIsNotHidden); 
         }
+        return vec4(EuphoriaPatchesText.rgb, EuphoriaPatchesText.a * guiIsNotHidden);
     }
-#endif
+    return vec4(0.0); // Transparent
+}
 
-vec3 staticColor(vec3 color, float staticIntensity) { // credit to arananderson https://www.shadertoy.com/view/tsX3RN
-    float maxStrength = max(MIN_STATIC_STRENGTH, MAX_STATIC_STRENGTH);
-    float minStrength = min(MIN_STATIC_STRENGTH, MAX_STATIC_STRENGTH);
-    const float speed = STATIC_SPEED * 10.0;
+vec3 staticColor(vec3 color, float staticIntensity, float minStaticStrength, float maxStaticStrength, float staticSpeed) { // credit to arananderson https://www.shadertoy.com/view/tsX3RN
+    float maxStrength = max(minStaticStrength, maxStaticStrength);
+    float minStrength = min(minStaticStrength, maxStaticStrength);
+    float speed = staticSpeed * 10.0;
 
     vec2 fractCoord = fract(texCoord * fract(sin(frameTimeCounter * speed)));
 
@@ -174,16 +200,6 @@ vec3 staticColor(vec3 color, float staticIntensity) { // credit to arananderson 
 
     vec3 staticColor = vec3(retroNoise(fractCoord)) * maxStrength;
     return mix(vec3(1.0), color - staticColor, staticIntensity);
-}
-
-vec3 getPotatoColor(vec2 texCoord) {
-    return texture2D(colortex5, texCoord).rgb;
-}
-
-bool checkPotatoPixel(vec2 pixelToCheck, vec3 targetColor, float threshold) {
-    vec2 normalizedCoord = vec2(pixelToCheck.x / 128.0, pixelToCheck.y / 93.0);
-    vec3 sampledColor = getPotatoColor(normalizedCoord);
-    return distance(sampledColor, targetColor) < threshold;
 }
 
 #include "/lib/textRendering/textRenderer.glsl"
@@ -194,46 +210,7 @@ void beginTextM(int textSize, vec2 offset) {
     text.bgCol = vec4(0.0);
 }
 
-uint randomLetter(float offset) {
-    uint letters[36] = uint[](
-        _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z,
-        _0, _1, _2, _3, _4, _5, _6, _7, _8, _9
-    );
-    float animation = min(shaderStartSmooth * 0.3 - offset * 0.3, 0.1) * 10.0;
-    if (animation < 0.9) {
-        int randomIndex = int(hash11(frameTimeCounter * 0.1 + offset) * 36);
-        return letters[randomIndex];
-    } else {
-        if (offset == 0.0) return _P;
-        else if (offset == 0.1) return _O;
-        else if (offset == 0.2) return _T;
-        else if (offset == 0.3) return _A;
-        else if (offset == 0.4) return _T;
-        else if (offset == 0.5) return _O;
-    }
-}
-
 #include "/lib/misc/potato.glsl"
-
-vec3 potatoError(){
-    vec3 color = vec3(0.6);
-    beginTextM(10, vec2(6, 10));text.fgCol = vec4(1.0, 0.0, 0.0, 0.85);
-        printString((_Y, _o, _u, _r, _space, _A, _c, _t, _i, _o, _n, _s, _space, _h, _a, _v, _e));printLine();
-        printString((_C, _o, _n, _s, _e, _q, _u, _e, _n, _c, _e, _s, _exclm));printLine();printLine();printLine();
-    endText(color);
-    beginTextM(20, vec2(3, 20));text.fgCol = vec4(1.0, 0.0, 0.0, 0.85);
-        printString((randomLetter(0.0), randomLetter(0.1), randomLetter(0.2), randomLetter(0.3), randomLetter(0.4), randomLetter(0.5)));
-    endText(color);
-
-    float pixelPotatoSize = 0.15;
-    vec2 transformedCoords = (texCoord - vec2(0.8, 0.6)) / pixelPotatoSize;
-    vec2 potatoSize = vec2(14.0, 9.0);
-    vec2 pixelCoords = (vec2(transformedCoords.x, transformedCoords.y * -1) + 1.0) * potatoSize * 0.5;
-    color.rgb = getPixelPotato(floor(pixelCoords), color, potatoSize);
-
-    color *= staticColor(color, 1);
-    return color;
-}
 
 //Program//
 void main() {
@@ -248,7 +225,7 @@ void main() {
     #endif
 
     #ifdef CURVE_DISPLAY
-        texCoordM = curveDisplay(texCoordM);
+        texCoordM = curveDisplay(texCoordM, CURVATURE_AMOUNT, SCREEN_ROUNDNESS);
     #endif
 
     vec2 texCoordBorder = texCoordM;
@@ -258,36 +235,16 @@ void main() {
     #endif
 
     #if HORIZONTAL_NOISE > 0 && defined RETRO_ON
-        float horizontalNoiseResolution = HORIZONTAL_NOISE * 100.0;
-        float horizontalNoiseIntensity = HORIZONTAL_NOISE_INTENSITY * 0.002;
-        float horizontalNoiseSpeed = HORIZONTAL_NOISE_SPEED * 0.0001;
-        texCoordM.y *= horizontalNoiseResolution;
-        texCoordM.y = int(texCoordM.y) * (1.0 / horizontalNoiseResolution);
-        float noise = retroNoise(vec2(frameTimeCounter * horizontalNoiseSpeed, texCoordM.y));
-        texCoordM.x += noise * horizontalNoiseIntensity;
+        texCoordM = applyHorizontalNoise(texCoordM, HORIZONTAL_NOISE, HORIZONTAL_NOISE_INTENSITY, HORIZONTAL_NOISE_SPEED);
     #endif
 
     #if (defined VERTICAL_SCREEN_DISPLACEMENT && defined RETRO_ON) || defined SPOOKY
-        float displaceEffectOn = 1.0;
-        #if defined SPOOKY && (!defined RETRO_ON || !defined VERTICAL_SCREEN_DISPLACEMENT)
-            float randomShutterTime = 24000 * hash1(worldDay * 5); // Effect happens randomly throughout the day
-            int displaceEffect = (int(hash1(worldDay / 2)) % (2 * 24000)) + int(randomShutterTime);
-            displaceEffectOn = 0.0;
-            if (worldTime > displaceEffect && worldTime < displaceEffect + 100) { // 100 in ticks - 5s, how long the effect will be on
-                displaceEffectOn = 1.0;
-            }
-        #endif
-        float scrollSpeed = VERTICAL_SCROLL_SPEED * 2.0;
-        float stutterSpeed = VERTICAL_STUTTER_SPEED * 0.2;
-        float scroll   = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00002, 8.0)), 0.9 * (1.0 - VERTICAL_SCROLL_FREQUENCY * 0.3))) * scrollSpeed;
-        float stutter  = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00005, 9.0)), 0.8 * (1.0 - VERTICAL_STUTTER_FREQUENCY * 0.3))) * stutterSpeed;
-        float stutter2 = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00003, 5.0)), 0.7 * (1.0 - VERTICAL_STUTTER_FREQUENCY * 0.3))) * stutterSpeed;
-        float verticalOffset = sin(frameTimeCounter) * scroll + stutter * stutter2;
-        texCoordM.y = mix(texCoordM.y, mod(texCoordM.y + verticalOffset, VERTICAL_EDGE_GLITCH), displaceEffectOn);
+    float verticalOffset = 0.0;
+        applyVerticalScreenDisplacement(texCoordM, verticalOffset, VERTICAL_SCROLL_SPEED, VERTICAL_STUTTER_SPEED, VERTICAL_EDGE_GLITCH, true);
     #endif
 
     #if WATERMARK > 0
-        vec4 watermarkColor = waterMarkFunction(100.0 / 29.0, vec2(0.05), texCoordM.xy);
+        vec4 watermarkColor = waterMarkFunction(ivec2(100, 29), vec2(0.05), texCoordM.xy, WATERMARK_SIZE, true);
     #endif
 
     #ifdef UNDERWATER_DISTORTION
@@ -349,6 +306,18 @@ void main() {
     #ifdef BAD_APPLE
         color = vec3((int(texelFetch(colortex6, texelCoord, 0).g * 255.1) != 254) ? 0.0 : 1.0);
     #endif
+    
+    #if DELTARUNE_BATTLE_BACKGROUND > 0
+            vec3 deltaruneColor = movingCheckerboard(texCoord, 100.0, 1.0, vec2(0.05, -0.05), vec3(1.0, 0.0, 1.0));
+            deltaruneColor += movingCheckerboard(texCoord, 100.0, 1.0, vec2(-0.025, 0.025), vec3(1.0, 0.0, 1.0) * 0.5);
+        #if DELTARUNE_BATTLE_BACKGROUND == 1
+            if (texture2D(depthtex0, texCoord).r == 1.0) color = deltaruneColor;
+        #elif DELTARUNE_BATTLE_BACKGROUND == 2
+            if ((int(texelFetch(colortex6, texelCoord, 0).g * 255.1) != 254)) {
+                color = deltaruneColor;
+            }
+        #endif
+    #endif
 
     #if IMAGE_SHARPENING > 0
         #if LONG_EXPOSURE > 0
@@ -390,11 +359,11 @@ void main() {
         #else
             staticIntensity = STATIC_NOISE * 0.1;
         #endif
-        color *= staticColor(color, staticIntensity);
+        color *= staticColor(color, staticIntensity, MIN_STATIC_STRENGTH, MAX_STATIC_STRENGTH, STATIC_SPEED); 
     #endif
 
     #if SCANLINE > 0 && defined RETRO_ON
-        color = scanline(texCoord, color);
+        color = scanline(texCoord, color, SCANLINE_FREQUENCY, SCANLINE, SCANLINE_SPEED, SCANLINE_AMOUNT, vec3(SCANLINE_R, SCANLINE_G, SCANLINE_B), SCANLINE_NEW_MONOCHROME, SCANLINE_NEW_DIRECTION);
     #endif
 
     #ifdef HALFTONE
@@ -441,27 +410,14 @@ void main() {
         if (texCoordBorder.y < 0.0 || texCoordBorder.y > 1.0) color = vec3(0.0);
     #endif
 
-    vec2 pixelToCheck = vec2(42.0, 30.0);
-    // vec3 colorAtPixel = getPotatoColor(pixelToCheck / vec2(viewWidth, viewHeight));
-    // beginTextM(8, vec2(6, 10));
-    // printVec3(colorAtPixel);
-    // endText(color.rgb);
-    bool isPotato = checkPotatoPixel(pixelToCheck, vec3(0.92, 0.74, 0.45), 0.05);
+    ivec2 pixelToCheck = ivec2(42, 30);
+    vec3 potatoColor = vec3(0.0);
+    // beginTextM(8, vec2(6, 10)); printVec3(vec3(getPotatoColorInt(pixelToCheck))); endText(color.rgb);
+    bool isPotato = checkPotatoPixel(pixelToCheck, ivec3(235, 191, 121), 0.1, potatoColor);
     if(!isPotato) color.rgb = potatoError();
+    // color.rgb = potatoColor;
 
-    #if defined ANY_ERROR_MESSAGE && !defined OLD_SSBL_ERROR
-        color.rgb = mix(color.rgb, vec3(0.0), 0.65);
-    #endif
-
-    #ifdef OLD_SSBL_ERROR
-        #include "/lib/textRendering/old_ssbl_error.glsl"
-    #elif defined OPTIFINE_AF_ERROR
-        #include "/lib/textRendering/error_optifine_af.glsl"
-    #elif defined APPLE_ACL_ERROR
-        #include "/lib/textRendering/error_apple_acl.glsl"
-    #elif defined OPTIFINE_ACL_ERROR
-        #include "/lib/textRendering/error_optifine_acl.glsl"
-    #endif
+    #include "/lib/textRendering/all_error_messages.glsl"
 
     /* DRAWBUFFERS:0 */
     gl_FragData[0] = vec4(color, 1.0);

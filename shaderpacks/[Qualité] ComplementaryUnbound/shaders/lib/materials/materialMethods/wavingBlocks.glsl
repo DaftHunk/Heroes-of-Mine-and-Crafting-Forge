@@ -120,7 +120,7 @@ void DoWave(inout vec3 playerPos, int mat) {
         #ifdef WAVING_LEAVES_ENABLED
             if (mat == 10007 || mat == 10009 || mat == 10011) { // Leaves
                 DoWave_Leaves(playerPos.xyz, worldPos, 1.0);
-            } else if (mat == 10013) { // Vine
+            } else if (mat == 10013 || mat == 10923) { // Vine
                 // Reduced waving on vines to prevent clipping through blocks
                 DoWave_Leaves(playerPos.xyz, worldPos, 0.75);
             }
@@ -200,7 +200,11 @@ void DoWave(inout vec3 playerPos, int mat) {
     #endif
 }
 void DoInteractiveWave(inout vec3 playerPos, int mat) {
-    if (length(playerPos) < 2.0) playerPos.xz += playerPos.xz * max(5.0 / max(length(playerPos * vec3(8.0, 2.0, 8.0) - vec3(0.0, 2.0, 0.0)), 2.0) -0.625, 0.0) * clamp(2.0 / length(playerPos) - 1.0, 0.0, 1.0) * 2.0; // Emin's code from v4 + smooth transition by me
+    float strength = 2.0;
+    if (mat == 10003 || mat == 10023 || mat == 10015) { // Flowers
+        strength = 1.0;
+    }
+    if (length(playerPos) < 2.0) playerPos.xz += playerPos.xz * max(5.0 / max(length(playerPos * vec3(8.0, 2.0, 8.0) - vec3(0.0, 2.0, 0.0)), 2.0) -0.625, 0.0) * clamp(2.0 / length(playerPos) - 1.0, 0.0, 1.0) * strength; // Emin's code from v4 + smooth transition by me
 }
 
 void DoWaveEverything(inout vec3 playerPos) {

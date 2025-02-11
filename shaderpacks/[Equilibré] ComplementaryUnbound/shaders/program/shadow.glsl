@@ -62,9 +62,17 @@ void main() {
                 #ifdef CONNECTED_GLASS_EFFECT
                     if (mat == 30008) { // Tinted Glass
                         DoSimpleConnectedGlass(color1);
+                        
+                        #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
+                            positionYM = 0.0; // 86AHGA: For scene-aware light shafts to be less prone to get extreme under large glass planes
+                        #endif
                     }
                     if (mat >= 31000) { // Stained Glass, Stained Glass Pane
                         DoSimpleConnectedGlass(color1);
+
+                        #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
+                            positionYM = 0.0; // 86AHGA
+                        #endif
                     }
                 #endif
                 DoNaturalShadowCalculation(color1, color2);
@@ -179,6 +187,10 @@ void main() {
                 if (color1.a > 0.5) color1 = vec4(0.0, 0.0, 0.0, 1.0);
                 else color1 = vec4(vec3(0.2 * (1.0 - GLASS_OPACITY)), 1.0);
                 color2.rgb = vec3(0.3);
+
+                #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
+                    positionYM = 0.0; // 86AHGA
+                #endif
             } else {
                 DoNaturalShadowCalculation(color1, color2);
             }
@@ -229,7 +241,7 @@ flat out vec4 glColor;
 #endif
 
 //Pipeline Constants//
-#if COLORED_LIGHTING_INTERNAL > 0 || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+#if COLORED_LIGHTING_INTERNAL > 0 || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     #extension GL_ARB_shader_image_load_store : enable
 #endif
 
@@ -276,7 +288,7 @@ vec2 lmCoord;
     #include "/lib/misc/distortWorld.glsl"
 #endif
 
-#if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+#if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     #include "/lib/misc/endCrystalVoxelization.glsl"
 #endif
 
@@ -355,7 +367,7 @@ void main() {
             #ifdef PUDDLE_VOXELIZATION
                 UpdatePuddleVoxelMap(mat);
             #endif
-            #ifdef END_PORTAL_BEAM
+            #ifdef END_PORTAL_BEAM_INTERNAL
                 if (mat == 10556 && normal.y > 0.99 && length(position.xyz) < 32) SetEndPortalLoc(position.xyz);
             #endif
         }

@@ -116,6 +116,7 @@ void main() {
     vec3 nViewPos = normalize(viewPos);
     vec3 playerPos = ViewToPlayer(viewPos);
     float lViewPos = length(viewPos);
+    float purkinjeOverwrite = 0.0, emission = 0.0;
 
     if (glColor.a < 0.0) discard;
     skyLightCheck = pow2(1.0 - min1(lmCoord.y * 2.9 * sunVisibility));
@@ -162,7 +163,7 @@ void main() {
 
         bool noSmoothLighting = atlasSize.x < 600.0; // To fix fire looking too dim
         bool noGeneratedNormals = false;
-        float smoothnessG = 0.0, highlightMult = 0.0, emission = 0.0, noiseFactor = 0.75;
+        float smoothnessG = 0.0, highlightMult = 0.0, noiseFactor = 0.75;
         vec2 lmCoordM = lmCoord;
         vec3 shadowMult = vec3(1.0);
         #ifdef IPBR
@@ -174,7 +175,6 @@ void main() {
             #endif
 
             if (materialMask != OSIEBCA * 254.0) materialMask += OSIEBCA * 100.0; // Entity Reflection Handling
-            else if (smoothnessD > 0.2) materialMask = 100.0;
 
             #ifdef GENERATED_NORMALS
                 if (!noGeneratedNormals) GenerateNormals(normalM, colorP);
@@ -196,6 +196,8 @@ void main() {
                 #include "/lib/materials/specificMaterials/entities/lightningBolt.glsl"
             } else if (entityId == 50008) { // Item Frame, Glow Item Frame
                 noSmoothLighting = true;
+            } else if (entityId == 50076) { // Boats
+                playerPos.y += 0.38; // to avoid water shadow and the black inner shadow bug
             }
             #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
                 if (entityId == 50020) { // blaze
@@ -209,6 +211,8 @@ void main() {
                 }
             #endif
         #endif
+    
+        color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 
         normalM = gl_FrontFacing ? normalM : -normalM; // Inverted Normal Workaround
         vec3 geoNormal = normalM;
@@ -230,7 +234,7 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                    worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
-                   true, 0, smoothnessG, highlightMult, emission);
+                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
         #if defined IPBR && defined IS_IRIS
             color.rgb += maRecolor;
@@ -238,7 +242,7 @@ void main() {
 
         #ifdef PBR_REFLECTIONS
             #ifdef OVERWORLD
-                skyLightFactor = pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333);
+                skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
             #else
                 skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
             #endif
@@ -251,7 +255,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, 1.0);
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
         /* DRAWBUFFERS:065 */

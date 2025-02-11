@@ -1,6 +1,7 @@
+vec3 glColorM = vec3(0.43, 0.6, 0.8);
 #if MC_VERSION >= 11300
     #if WATERCOLOR_MODE >= 2
-        vec3 glColorM = glColor.rgb;
+        glColorM = glColor.rgb;
 
         #if WATERCOLOR_MODE >= 3
             glColorM.g = max(glColorM.g, 0.39);
@@ -14,8 +15,6 @@
         #ifdef COMP_WATER_TWEAKS
             glColorM = sqrt1(glColorM) * vec3(1.0, 0.85, 0.8);
         #endif
-    #else
-        vec3 glColorM = vec3(0.43, 0.6, 0.8);
     #endif
 #endif
 

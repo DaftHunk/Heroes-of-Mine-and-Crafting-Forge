@@ -68,6 +68,7 @@ void main() {
     float materialMask = 0.0;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
+    float purkinjeOverwrite = 0.0, emission = 0.0;
 
     #ifndef GBUFFERS_LINE
         #ifdef SS_BLOCKLIGHT
@@ -76,7 +77,7 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                    worldGeoNormal, lmCoord, false, false, false,
-                   false, 0, 0.0, 0.0, 0.0);
+                   false, 0, 0.0, 0.0, 0.0, purkinjeOverwrite);
     #endif
 
     #if SELECT_OUTLINE != 1 || defined SELECT_OUTLINE_AUTO_HIDE
@@ -91,8 +92,8 @@ void main() {
             color.rgb = vec3(SELECT_OUTLINE_R, SELECT_OUTLINE_G, SELECT_OUTLINE_B) * SELECT_OUTLINE_I;
         #elif SELECT_OUTLINE == 4 // Versatile
             color.a = 0.1;
-            materialMask = OSIEBCA * 252.0; // Versatile Selection Outline
         #endif
+        materialMask = OSIEBCA * 252.0; // Selection Outline
 
         #ifdef SELECT_OUTLINE_AUTO_HIDE
             if (heldItemId == 40008 && (
@@ -125,7 +126,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(0.0, materialMask, 0.0, 1.0);
+    gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
     #ifdef SS_BLOCKLIGHT
         /* DRAWBUFFERS:068 */

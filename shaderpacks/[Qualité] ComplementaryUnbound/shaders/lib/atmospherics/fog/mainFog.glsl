@@ -12,9 +12,9 @@
         #include "/lib/colors/skyColors.glsl"
     #endif
 
-    void DoBorderFog(inout vec3 color, inout float skyFade, float lPos, float VdotU, float VdotS, float dither) {
+    void DoBorderFog(inout vec3 color, inout float skyFade, float lPos, float VdotU, float VdotS, float dither, inout float fog) {
         #ifdef OVERWORLD
-            float fog = lPos / renderDistance;
+            fog = lPos / renderDistance;
             #ifdef SPOOKY
                 fog = pow2(fog);
             #else
@@ -27,11 +27,11 @@
         #endif
         #ifdef NETHER
             float farM = min(renderDistance, NETHER_VIEW_LIMIT); // consistency9023HFUE85JG
-            float fog = lPos / farM;
+            fog = lPos / farM;
             fog = fog * 0.3 + 0.7 * pow(fog * BORDER_FOG_DISTANCE_NETHER / 3, 256.0 / max(farM, 256.0));
         #endif
         #ifdef END
-            float fog = lPos / renderDistance;
+            fog = lPos / renderDistance;
             fog = pow2(pow2(fog));
             fog = 1.0 - exp(-BORDER_FOG_DISTANCE_END * fog);
         #endif
@@ -76,8 +76,8 @@
 #ifdef CAVE_FOG
     #include "/lib/atmospherics/fog/caveFactor.glsl"
 
-    void DoCaveFog(inout vec3 color, float lViewPos) {
-        float fog = GetCaveFactor() * (0.9 - 0.9 * exp(- lViewPos * 0.015 * CAVE_FOG_DENSITY));
+    void DoCaveFog(inout vec3 color, float lViewPos, inout float fog) {
+        fog = GetCaveFactor() * (0.9 - 0.9 * exp(- lViewPos * 0.015 * CAVE_FOG_DENSITY));
 
         color = mix(color, caveFogColor, fog);
     }
@@ -127,7 +127,7 @@
         return altitudeFactor;
     }
 
-    void DoAtmosphericFog(inout vec3 color, vec3 playerPos, float lViewPos, float VdotS) {
+    void DoAtmosphericFog(inout vec3 color, vec3 playerPos, float lViewPos, float VdotS, inout float fog) {
         #ifndef DISTANT_HORIZONS
             float renDisFactor = min1(192.0 / renderDistance);
 
@@ -140,9 +140,9 @@
                 renDisFactor *= 100.0;
             #endif
 
-            float fog = 1.0 - exp(-pow(lViewPos * (0.001 - 0.0007 * rainFactor), 2.0 - rainFactor2) * lViewPos * renDisFactor);
+            fog = 1.0 - exp(-pow(lViewPos * (0.001 - 0.0007 * rainFactor), 2.0 - rainFactor2) * lViewPos * renDisFactor);
         #else
-            float fog = pow2(1.0 - exp(-max0(lViewPos - 40.0) * (0.7 + 0.7 * rainFactor) / ATM_FOG_DISTANCE));
+            fog = pow2(1.0 - exp(-max0(lViewPos - 40.0) * (0.7 + 0.7 * rainFactor) / ATM_FOG_DISTANCE));
         #endif
 
         float atmFogA = 1.0;
@@ -272,15 +272,20 @@ void DoDarknessFog(inout vec3 color, float lViewPos) {
 }
 
 void DoFog(inout vec3 color, inout float skyFade, float lViewPos, vec3 playerPos, float VdotU, float VdotS, float dither) {
+    float caveFogAdd = 0.0;
+    float atmosphericFogAdd = 0.0;
+    float borderFogAdd = 0.0;
     #ifdef CAVE_FOG
-        DoCaveFog(color, lViewPos);
+        DoCaveFog(color, lViewPos, caveFogAdd);
     #endif
     #ifdef ATMOSPHERIC_FOG
-        DoAtmosphericFog(color, playerPos, lViewPos, VdotS);
+        DoAtmosphericFog(color, playerPos, lViewPos, VdotS, atmosphericFogAdd);
     #endif
     #ifdef BORDER_FOG
-        DoBorderFog(color, skyFade, max(length(playerPos.xz), abs(playerPos.y)), VdotU, VdotS, dither);
+        DoBorderFog(color, skyFade, max(length(playerPos.xz), abs(playerPos.y)), VdotU, VdotS, dither, borderFogAdd);
     #endif
+
+    float fogAddition = max(max(caveFogAdd, atmosphericFogAdd), borderFogAdd);
 
     if (isEyeInWater == 1) DoWaterFog(color, lViewPos);
     else if (isEyeInWater == 2) DoLavaFog(color, lViewPos);

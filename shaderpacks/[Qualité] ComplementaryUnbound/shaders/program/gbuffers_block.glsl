@@ -167,6 +167,7 @@ void main() {
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
+    float purkinjeOverwrite = 0.0;
 
     if (lmCoord.x > 0.99) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources
         if (blockEntityId == 0) {
@@ -250,7 +251,7 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
-               false, 0, smoothnessG, highlightMult, emission);
+               false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
@@ -261,7 +262,7 @@ void main() {
 
     #ifdef PBR_REFLECTIONS
         #ifdef OVERWORLD
-            skyLightFactor = pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333);
+            skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
         #else
             skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
         #endif
@@ -273,7 +274,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, 1.0);
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
         /* DRAWBUFFERS:065 */
@@ -293,7 +294,7 @@ void main() {
 
 //////////Vertex Shader//////////Vertex Shader//////////Vertex Shader//////////
 #ifdef VERTEX_SHADER
-#ifdef END_PORTAL_BEAM
+#ifdef END_PORTAL_BEAM_INTERNAL
     #extension GL_ARB_shader_image_load_store : enable
     layout(r32i) uniform iimage2D endcrystal_img;
 #endif
@@ -385,7 +386,7 @@ void main() {
 
     if (normal != normal) normal = -upVec; // Mod Fix: Fixes Better Nether Fireflies
 
-    #ifdef END_PORTAL_BEAM
+    #ifdef END_PORTAL_BEAM_INTERNAL
         if (blockEntityId == 60025 && length((gl_ModelViewMatrix * gl_Vertex).xyz) < 28) // end portal
         imageStore(endcrystal_img, ivec2(35, 4), ivec4(1));
     #endif

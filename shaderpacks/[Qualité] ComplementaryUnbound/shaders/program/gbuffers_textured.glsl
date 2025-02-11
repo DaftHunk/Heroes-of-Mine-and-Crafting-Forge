@@ -106,6 +106,7 @@ void main() {
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
+    float purkinjeOverwrite = 0.0;
     #if defined IPBR && defined IPBR_PARTICLE_FEATURES
         // We don't want to detect particles from the block atlas
         #if MC_VERSION >= 12000
@@ -139,16 +140,14 @@ void main() {
             color.a *= snowTexOpacity;
             color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + lmCoord.y * (0.7 + 0.35 * sunFactor) + ambientColor * 0.2);
         #endif
-        #if defined SOUL_SAND_VALLEY_OVERHAUL_INTERNAL || defined PURPLE_END_FIRE_INTERNAL
         } else if (color.r == 1.0 && color.b < 0.778 && color.g < 0.97) { // Fire Particle
-            #ifdef NETHER
+            #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
                 color.rgb = changeColorFunction(color.rgb, 3.0, colorSoul, inSoulValley);
             #endif
-            #ifdef END
+            #ifdef PURPLE_END_FIRE_INTERNAL
                 color.rgb = changeColorFunction(color.rgb, 3.0, colorEndBreath, 1.0);
             #endif
             emission = 2.0;
-        #endif
         } else if (color.r == color.g && color.r - 0.5 * color.b < 0.06) { // Underwater Particle
             if (isEyeInWater == 1) {
                 color.rgb = sqrt2(color.rgb) * 0.35;
@@ -211,17 +210,15 @@ void main() {
                     color.rgb *= vec3(WEATHER_TEX_R, WEATHER_TEX_G, WEATHER_TEX_B);
                 }
                 #endif
-                #if defined SOUL_SAND_VALLEY_OVERHAUL_INTERNAL || defined PURPLE_END_FIRE_INTERNAL
                 if (color.r == 1.0 && color.b < 0.778 && color.g < 0.97) { // Fire Particle
-                    #ifdef NETHER
+                    #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
                         color.rgb = changeColorFunction(color.rgb, 3.0, colorSoul, inSoulValley);
                     #endif
-                    #ifdef END
+                    #ifdef PURPLE_END_FIRE_INTERNAL
                         color.rgb = changeColorFunction(color.rgb, 3.0, colorEndBreath, 1.0);
                     #endif
                     emission = 2.0;
                 }
-                #endif
                 if (max(abs(colorP.r - colorP.b), abs(colorP.b - colorP.g)) < 0.001) {
                     if (dot(color.rgb, color.rgb) > 0.25 && color.g < 0.5 && (color.b > color.r * 1.1 && color.r > 0.3 || color.r > (color.g + color.b) * 3.0)) {
                         #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS
@@ -283,7 +280,7 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                worldGeoNormal, lmCoordM, noSmoothLighting, false, true,
-               false, 0, 0.0, 1.0, emission);
+               false, 0, 0.0, 1.0, emission, purkinjeOverwrite);
 
     #if MC_VERSION >= 11500
         vec3 nViewPos = normalize(viewPos);
@@ -303,7 +300,7 @@ void main() {
 
     /* DRAWBUFFERS:063 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(0.0, materialMask, 0.0, 1.0);
+    gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + purkinjeOverwrite + clamp01(emission));
     gl_FragData[2] = vec4(1.0 - translucentMult, 1.0);
 
     #ifdef SS_BLOCKLIGHT

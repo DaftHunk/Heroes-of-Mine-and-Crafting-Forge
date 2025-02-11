@@ -97,7 +97,7 @@
                 float coc = clamp(abs(lViewPos0 * 0.005 - pow2(vsBrightness) + tiltOffset + shiftOffset), 0.0, 0.1) * WB_DOF_I * 0.03;
             #endif
         #endif
-        #ifdef DOF_VIEW_FOCUS
+        #ifdef DOF_VIEW_FOCUS_NEW
             float cocView = float(coc < 0.005 + 0.001 * abs(max(float(TILT_SHIFT), float(TILT_SHIFT2))) && coc > 0 && hideGUI == 0);
         #endif
         #if TILT_SHIFT == 0 && TILT_SHIFT2 == 0
@@ -138,7 +138,7 @@
                 color = dof;
             #endif
         }
-        #ifdef DOF_VIEW_FOCUS
+        #ifdef DOF_VIEW_FOCUS_NEW
             #ifdef WORLD_BLUR_SNEAK
                 color = mix(color, cocColor, cocView * isSneaking);
             #else

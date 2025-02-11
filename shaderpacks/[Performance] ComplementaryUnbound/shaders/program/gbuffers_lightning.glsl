@@ -88,6 +88,7 @@ void main() {
 
     float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
     vec3 normalM = normal;
+    float purkinjeOverwrite = 0.0, emission = 0.0;
 
     float luminance = GetLuminance(color.rgb);
 
@@ -121,7 +122,7 @@ void main() {
 
         bool noSmoothLighting = atlasSize.x < 600.0; // To fix fire looking too dim
         bool noGeneratedNormals = false;
-        float smoothnessG = 0.0, highlightMult = 0.0, emission = 0.0, noiseFactor = 0.75;
+        float smoothnessG = 0.0, highlightMult = 0.0, noiseFactor = 0.75;
         vec2 lmCoordM = lmCoord;
         vec3 shadowMult = vec3(1.0);
 
@@ -141,11 +142,11 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                    worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
-                   true, 0, smoothnessG, highlightMult, emission);
+                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
         #ifdef PBR_REFLECTIONS
             #ifdef OVERWORLD
-                skyLightFactor = pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333);
+                skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
             #else
                 skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
             #endif
@@ -158,7 +159,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, 1.0);
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
         /* DRAWBUFFERS:065 */

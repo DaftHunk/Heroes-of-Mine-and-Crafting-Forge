@@ -3,7 +3,7 @@
     #ifdef OVERWORLD_BEAMS
         #include "/lib/atmospherics/overworldBeams.glsl"
     #endif
-    #ifdef END_PORTAL_BEAM
+    #ifdef END_PORTAL_BEAM_INTERNAL
         #include "/lib/atmospherics/endPortalBeam.glsl"
     #endif
 #endif
@@ -53,46 +53,88 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
     // Step 2: Calculate Terrain Reflection and Alpha
     vec4 reflection = vec4(0.0);
     #if defined DEFERRED1 || WATER_REFLECT_QUALITY >= 1
-        #if defined DEFERRED1 || WATER_REFLECT_QUALITY >= 2 && !defined DH_WATER
+        #if (defined DEFERRED1 || WATER_REFLECT_QUALITY >= 2) && (!defined DH_WATER || DETAIL_QUALITY >= 3)
             // Method 1: Ray Marched Reflection //
 
             // Ray Marching
             vec3 start = viewPos + normalMR * (lViewPos * 0.025 * (1.0 - fresnel) + 0.05);
             #if defined GBUFFERS_WATER && WATER_STYLE >= 2
-                vec3 vector = reflect(nViewPos, normalize(normalMR)); // Not using nViewPosR because normalMR changed
+                vec3 vectorBase = reflect(nViewPos, normalize(normalMR)); // Not using nViewPosR because normalMR changed
             #else
-                vec3 vector = nViewPosR;
+                vec3 vectorBase = nViewPosR;
             #endif
             //vector = normalize(vector - 0.5 * (1.0 - smoothness) * (1.0 - fresnel) * normalMR); // reflection anisotropy test
             //vector = normalize(vector - 0.075 * dither * (1.0 - pow2(pow2(fresnel))) * normalMR);
-            vector *= 0.5;
-            vec3 viewPosRT = viewPos + vector;
-            vec3 tvector = vector;
+            vectorBase *= 0.5;
+            vec3 viewPosRTBase = viewPos + vectorBase;
 
-            int sr = 0;
+            vec3 vector = vec3(0.0);
+            vec3 viewPosRT = vec3(0.0);
+
             float dist = 0.0;
             vec3 rfragpos = vec3(0.0);
-            for (int i = 0; i < 30; i++) {
-                refPos = nvec3(gbufferProjection * vec4(viewPosRT, 1.0)) * 0.5 + 0.5;
-                if (abs(refPos.x - 0.5) > rEdge.x || abs(refPos.y - 0.5) > rEdge.y) break;
 
-                rfragpos = vec3(refPos.xy, texture2D(depthtex, refPos.xy).r);
-                rfragpos = nvec3(gbufferProjectionInverse * vec4(rfragpos * 2.0 - 1.0, 1.0));
-                dist = length(start - rfragpos);
+            // Normal pass
+            {
+                vector = vectorBase;
+                viewPosRT = viewPosRTBase;
 
-                float err = length(viewPosRT - rfragpos);
+                vec3 tvector = vector;
+                int sr = 0;
+                for (int i = 0; i < 30; i++) {
+                    refPos = nvec3(gbufferProjection * vec4(viewPosRT, 1.0)) * 0.5 + 0.5;
+                    if (abs(refPos.x - 0.5) > rEdge.x || abs(refPos.y - 0.5) > rEdge.y) break;
 
-                if (err < length(vector) * 3.0) {
-                    sr++;
-                    if (sr >= 6) break;
-                    tvector -= vector;
-                    vector *= 0.1;
+                    rfragpos = vec3(refPos.xy, texture2D(depthtex, refPos.xy).r);
+                    rfragpos = nvec3(gbufferProjectionInverse * vec4(rfragpos * 2.0 - 1.0, 1.0));
+                    dist = length(start - rfragpos);
+
+                    float err = length(viewPosRT - rfragpos);
+
+                    if (err < length(vector) * 3.0) {
+                        sr++;
+                        if (sr >= 6) break;
+                        tvector -= vector;
+                        vector *= 0.1;
+                    }
+                    vector *= 2.0;
+                    tvector += vector * (0.95 + 0.1 * dither);
+                    viewPosRT = start + tvector;
                 }
-                vector *= 2.0;
-                tvector += vector * (0.95 + 0.1 * dither);
-                viewPosRT = start + tvector;
             }
-            worldRefDir = mat3(gbufferModelViewInverse) * tvector;
+            
+            // DH pass on non-DH (if there is nothing blocking)
+            #if defined DISTANT_HORIZONS && !defined DH_WATER && DETAIL_QUALITY >= 3
+                if (refPos.z > 0.99997) {
+                    vector = vectorBase;
+                    viewPosRT = viewPosRTBase;
+                    
+                    vec3 tvector = vector;
+                    int sr = 0;
+                    for (int i = 0; i < 30; i++) {
+                        refPos = nvec3(dhProjection * vec4(viewPosRT, 1.0)) * 0.5 + 0.5;
+                        if (abs(refPos.x - 0.5) > rEdge.x || abs(refPos.y - 0.5) > rEdge.y) break;
+
+                        rfragpos = vec3(refPos.xy, texture2D(dhDepthTex1, refPos.xy).r);
+                        rfragpos = nvec3(dhProjectionInverse * vec4(rfragpos * 2.0 - 1.0, 1.0));
+                        dist = length(start - rfragpos);
+
+                        float err = length(viewPosRT - rfragpos);
+
+                        if (err < length(vector) * 3.0) {
+                            sr++;
+                            if (sr >= 6) break;
+                            tvector -= vector;
+                            vector *= 0.1;
+                        }
+                        vector *= 2.0;
+                        tvector += vector * (0.95 + 0.1 * dither);
+                        viewPosRT = start + tvector;
+                    }
+                    
+                    if (texture2D(depthtex, refPos.xy).r < 0.99997) refPos.z = 1.0;
+                }
+            #endif
 
             // Finalizing Terrain Reflection and Alpha 
             if (refPos.z < 0.99997) {
@@ -111,9 +153,7 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
                         float smoothnessDM = pow2(smoothness);
                         float lodFactor = 1.0 - exp(-0.125 * (1.0 - smoothnessDM) * dist);
                         float lod = log2(viewHeight / 8.0 * (1.0 - smoothnessDM) * lodFactor) * 0.45;
-                        #ifdef CUSTOM_PBR
-                            if (z0 <= 0.56) lod *= 2.22;
-                        #endif
+                        if (z0 <= 0.56) lod *= 2.22; // Using more lod to compensate for less roughness noise on held items
                         lod = max(lod - 1.0, 0.0);
 
                         reflection.rgb = texture2DLod(colortex0, refPos.xy, lod).rgb;
@@ -136,11 +176,11 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
             #if defined DEFERRED1 && defined TEMPORAL_FILTER
                 else refPos.z = 1.0;
             #endif
-            #if !defined DEFERRED1 && defined DISTANT_HORIZONS
+            #if !defined DEFERRED1 && defined DISTANT_HORIZONS && DETAIL_QUALITY < 3
                 else
             #endif
         #endif
-        #if !defined DEFERRED1 && (WATER_REFLECT_QUALITY < 2 || defined DISTANT_HORIZONS) || defined DH_WATER
+        #if !defined DEFERRED1 && (WATER_REFLECT_QUALITY < 2 || (defined DISTANT_HORIZONS && DETAIL_QUALITY < 3))
         {   // Method 2: Mirorred Image Reflection //
 
             #if WATER_REFLECT_QUALITY < 2
@@ -288,7 +328,7 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
         #if (defined DEFERRED1 || (WATER_REFLECT_QUALITY >= 2 && defined SKY_EFFECT_REFLECTION)) && (END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0)
             reflection.rgb += EndCrystalVortices(playerPos, worldRefDir, dither).rgb;
         #endif
-        #if (defined DEFERRED1 || (WATER_REFLECT_QUALITY >= 2 && defined SKY_EFFECT_REFLECTION)) && defined END_PORTAL_BEAM
+        #if (defined DEFERRED1 || (WATER_REFLECT_QUALITY >= 2 && defined SKY_EFFECT_REFLECTION)) && defined END_PORTAL_BEAM_INTERNAL
             vec4 refPosPlayer = gbufferModelViewInverse * (gbufferProjectionInverse * vec4(refPos * 2.0 - 1.0, 1.0));
             refPosPlayer /= refPosPlayer.w;
             reflection.rgb += sqrt(GetEndPortalBeam(playerPos, refPosPlayer.xyz * reflection.a - playerPos).rgb);

@@ -48,7 +48,7 @@
     #if SEASONS == 1 || SEASONS == 3
         vec3 autumnColor = vec3(0);
 
-        if (autumnTime > 0) {
+        if (autumnTime > 0 && inPaleGarden < 0.5) {
             autumnColor = mix(color.rgb, desaturatedColor, 0.65 * autumnOnlyForests);
 
             #if defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined DH_TERRAIN
@@ -272,7 +272,7 @@
 
     #if SEASONS == 1 || SEASONS == 5
         vec3 springColor = color.rgb;
-        if (springTime > 0) {
+        if (springTime > 0 && inPaleGarden < 0.5) {
             #ifdef GBUFFERS_TERRAIN
                 if (isFoliage && dhLeaves || mat == 10132 && glColor.b < 0.999
                 #ifdef DH_TERRAIN

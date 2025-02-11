@@ -253,6 +253,8 @@ void main() {
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     vec3 dhColor = vec3(1.0);
+    float purkinjeOverwrite = 0.0;
+
 
     if (lmCoord.x > 0.99 || blockLightEmission > 0) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources
         if (mat == 0) {
@@ -302,6 +304,9 @@ void main() {
             smoothnessG = 1.0;
         #endif
 
+        //int blockEntityId = mat;
+        //#include "/lib/materials/materialHandling/blockEntityMaterials.glsl"
+
         #ifdef GENERATED_NORMALS
             if (!noGeneratedNormals) GenerateNormals(normalM, colorP);
         #endif
@@ -326,7 +331,7 @@ void main() {
             sandNoiseIntensity = 0.3, mossNoiseIntensity = 0.0;
         } else if (mat == 10007 || mat == 10009 || mat == 10011) { // Leaves
             #include "/lib/materials/specificMaterials/terrain/leaves.glsl"
-        } else if (mat == 10013) { // Vine
+        } else if (mat == 10013 || mat == 10923) { // Vine
             subsurfaceMode = 3, centerShadowBias = true; noSmoothLighting = true, isFoliage = true;
             sandNoiseIntensity = 0.3, mossNoiseIntensity = 0.0;
         } else if (mat == 10015 || mat == 10017 || mat == 10019) { // Non-waving Foliage
@@ -501,7 +506,7 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
@@ -527,7 +532,7 @@ void main() {
 
     #ifdef PBR_REFLECTIONS
         #ifdef OVERWORLD
-            skyLightFactor = pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333);
+            skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
         #else
             skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
         #endif
@@ -549,7 +554,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, 1.0);
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
         /* DRAWBUFFERS:065 */
@@ -685,8 +690,7 @@ void main() {
             DoWave(position.xyz, mat);
         #endif
         #ifdef INTERACTIVE_FOLIAGE
-            vec3 normalPlants = mat3(gbufferModelViewInverse) * gl_NormalMatrix * gl_Normal;
-            if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10021 || mat == 10029 || mat == 10023 || mat == 10629 || mat == 10632 || mat == 10777 || mat == 10025 || mat == 10027 || (length(abs(normalPlants.xz) - vec2(sqrt(0.5))) < 0.01 && mat == 0)) {
+            if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10021 || mat == 10029 || mat == 10023 || mat == 10629 || mat == 10632 || mat == 10777 || mat == 10025 || mat == 10027 || mat == 10923) {
                 vec3 playerPosM = position.xyz + relativeEyePosition;
                 DoInteractiveWave(playerPosM, mat);
                 position.xyz = playerPosM - relativeEyePosition;

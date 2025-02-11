@@ -1,5 +1,10 @@
 #if SEASONS == 1
-    int seasonLength = SEASON_LENGTH;
+    #if SEASON_LENGTH >= 24000
+        int seasonLength = SEASON_LENGTH;
+    #else
+        int seasonLength = SEASON_LENGTH * 24000;
+    #endif
+
     float YearLoop = (worldDay * 24000 + worldTime + SEASON_START * seasonLength) % (seasonLength * 4);
 
     float summer = max(0.0, (1.0 + SEASON_TRANSITION_START)       * (clamp(YearLoop - seasonLength * 0, 0, seasonLength) / seasonLength) - SEASON_TRANSITION_START);

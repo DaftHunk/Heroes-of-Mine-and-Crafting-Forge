@@ -28,12 +28,12 @@ void main() {
 #ifdef VERTEX_SHADER
 
 //Pipeline Constants//
-#if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+#if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     #extension GL_ARB_shader_image_load_store : enable
 #endif
 
 //Uniforms//
-#if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+#if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     layout(r32i) uniform iimage2D endcrystal_img;
 #endif
 //Attributes//
@@ -46,7 +46,7 @@ void main() {
 
 //Program//
 void main() {
-    #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+    #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
         vec4 position0 = ftransform();
         if (position0.x < 0.0 && position0.y > 0.0) {
             #if END_CRYSTAL_VORTEX_INTERNAL % 2 == 1
@@ -160,7 +160,7 @@ void main() {
                 }
                 #endif
             
-            #ifdef END_PORTAL_BEAM
+            #ifdef END_PORTAL_BEAM_INTERNAL
                 for (int k = 0; k < 4; k++) {
                     imageStore(
                         endcrystal_img,

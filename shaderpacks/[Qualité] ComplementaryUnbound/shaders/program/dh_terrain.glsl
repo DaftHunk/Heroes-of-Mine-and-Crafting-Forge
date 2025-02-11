@@ -108,6 +108,7 @@ void main() {
     float IPBRMult = 1.0;
     bool isFoliage = false;
     vec3 dhColor = color.rgb;
+    float purkinjeOverwrite = 0.0;
 
     float lavaNoiseIntensity = LAVA_NOISE_INTENSITY;
 
@@ -210,7 +211,7 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
     /* DRAWBUFFERS:0 */
     gl_FragData[0] = color;
 }
@@ -240,6 +241,9 @@ out vec4 glColor;
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
 #endif
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //Program//
 void main() {
@@ -261,6 +265,20 @@ void main() {
     playerPos = (gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex).xyz;
 
     glColor = gl_Color;
+
+    #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVE_EVERYTHING
+        vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
+        #ifdef MIRROR_DIMENSION
+            doMirrorDimension(position);
+        #endif
+        #ifdef WORLD_CURVATURE
+            position.y += doWorldCurvature(position.xz);
+        #endif
+        #ifdef WAVE_EVERYTHING
+            DoWaveEverything(position.xyz);
+        #endif
+        gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
+    #endif
 }
 
 #endif

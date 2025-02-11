@@ -215,14 +215,8 @@ void main() {
     vec3 waterRefColor = vec3(0.0);
     vec3 auroraBorealis = vec3(0.0);
     vec3 nightNebula = vec3(0.0);
-
-    #ifdef NETHER_NOISE
-        vec3 netherNoise = vec3(0.0);
-    #endif
-
-    #ifdef BEDROCK_NOISE
-        vec3 bedrockNoise = vec3(0.0);
-    #endif
+    vec3 netherNoise = vec3(0.0);
+    vec3 bedrockNoise = vec3(0.0);
 
     vec4 refToWrite = vec4(0.0);
 
@@ -234,7 +228,7 @@ void main() {
             dlbColor += texelFetch(colortex0, texelCoord + ivec2( 0,-dlbo), 0).rgb;
             dlbColor += texelFetch(colortex0, texelCoord + ivec2( dlbo, 0), 0).rgb;
             dlbColor += texelFetch(colortex0, texelCoord + ivec2(-dlbo, 0), 0).rgb;
-            dlbColor *= 0.2;
+            dlbColor = max(color, dlbColor * 0.2);
             float dlbMix = GetDistantLightBokehMix(lViewPos);
             color = mix(color, dlbColor, dlbMix);
         #endif
@@ -248,10 +242,9 @@ void main() {
         #else
             float ssao = 1.0;
         #endif
-
-        vec3 texture6 = texelFetch(colortex6, texelCoord, 0).rgb;
-        bool entityOrHand = z0 < 0.56;
+        vec4 texture6 = texelFetch(colortex6, texelCoord, 0).rgba;
         int materialMaskInt = int(texture6.g * 255.1);
+        bool entityOrHand = z0 < 0.56;
         float intenseFresnel = 0.0;
         float smoothnessD = texture6.r;
         vec3 reflectColor = vec3(1.0);
@@ -400,11 +393,14 @@ void main() {
 
                 color = max(colorP * max(intenseFresnel, 1.0 - pow2(smoothnessD)) * 0.9, color);
 
-                //if (gl_FragCoord.x > 960) color = vec3(5.25,0,5.25);
+                // if (gl_FragCoord.x > 960) color = vec3(5.25,0,5.25);
             }
         #endif
 
         #if defined WORLD_OUTLINE || RETRO_LOOK == 1 || RETRO_LOOK == 2
+            #ifndef WORLD_OUTLINE_ON_ENTITIES
+                if (!entityOrHand)
+            #endif
             DoWorldOutline(color, linearZ0);
         #endif
 
@@ -415,6 +411,7 @@ void main() {
         #endif
 
         DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither);
+
     } else { // Sky
         #ifdef DISTANT_HORIZONS
             float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
@@ -547,16 +544,15 @@ void main() {
         if (clouds.a < 0.5) DoDarkOutline(color, skyFade, z0, dither);
     #endif
 
-    /*DRAWBUFFERS:054*/
-    gl_FragData[0] = vec4(color, 1.0);
-    gl_FragData[1] = vec4(waterRefColor, 1.0 - skyFade);
-    gl_FragData[2] = vec4(cloudLinearDepth, 0.0, 0.0, 1.0);
-
     #if LONG_EXPOSURE > 0
         if (hideGUI == 1 && !isViewMoving()) { // GUI not visible AND not moving
             refToWrite = texture2D(colortex7, texCoord);
         }
     #endif
+    /*DRAWBUFFERS:054*/
+    gl_FragData[0] = vec4(color, 1.0);
+    gl_FragData[1] = vec4(waterRefColor, 1.0 - skyFade);
+    gl_FragData[2] = vec4(cloudLinearDepth, 0.0, 0.0, 1.0);
     #ifdef TEMPORAL_FILTER
         /*DRAWBUFFERS:0547*/
         gl_FragData[3] = refToWrite;

@@ -465,6 +465,103 @@ void DoBSLColorSaturation(inout vec3 color) {
     }
 #endif
 
+#include "/lib/util/colorConversion.glsl"
+
+#if COLORED_LIGHTING_INTERNAL > 0
+    #include "/lib/misc/voxelization.glsl"
+#endif
+
+// http://www.diva-portal.org/smash/get/diva2:24136/FULLTEXT01.pdf
+// The MIT License
+// Copyright © 2024 Benjamin Stott "sixthsurge"
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, float purkinjeOverwrite) {
+    #ifdef NETHER
+        #define PURKINKE_INTENSITY NIGHT_DESATURATION_NETHER
+    #elif defined END
+        #define PURKINKE_INTENSITY NIGHT_DESATURATION_END
+        nightFactor = 1.0;
+    #else
+        #define PURKINKE_INTENSITY NIGHT_DESATURATION_OW
+    #endif
+
+    float renderDistanceFade = mix(0, lViewPos * 2.5 / renderDistance, PURKINJE_RENDER_DISTANCE_FADE);
+    float nightCaveDesaturation = NIGHT_CAVE_DESATURATION * 0.1;
+    
+    float interiorFactor = isEyeInWater == 1 ? 0.0 : pow2(1.0 - texture6.b);
+    interiorFactor =  mix(interiorFactor, 0, renderDistanceFade);
+    interiorFactor -= sqrt2(eyeBrightnessM) * 0.66;
+    interiorFactor = smoothstep(0.0, 1.0, interiorFactor);
+
+    // return vec3(interiorFactor);
+
+    float lightSourceFactor = 1.0;
+    #ifdef NIGHT_DESATURATION_REMOVE_NEAR_LIGHTS
+        lightSourceFactor = pow3(1.0 - texture6.a);
+
+        #if COLORED_LIGHTING_INTERNAL > 0
+            vec3 voxelPos = SceneToVoxel(playerPos);
+
+            vec4 lightVolume = vec4(0.0);
+            if (CheckInsideVoxelVolume(voxelPos)) {
+                vec3 voxelPosM = clamp01(voxelPos / vec3(voxelVolumeSize));
+                lightVolume = GetLightVolume(voxelPosM);
+                lightVolume = sqrt(lightVolume);
+            }
+            lightSourceFactor *= pow6(1.0 - lightVolume.a * 3); // Remove purkinje shift in ACL light
+        #endif
+        lightSourceFactor += renderDistanceFade;
+        lightSourceFactor = clamp01(lightSourceFactor);
+    #endif
+
+    float heldLight = 1.0;
+    #ifdef NIGHT_DESATURATION_REMOVE_LIGHTS_IN_HAND
+        heldLight = max(heldBlockLightValue, heldBlockLightValue2);
+        if (heldLight > 0){
+            if (heldItemId == 45032 || heldItemId2 == 45032) heldLight = 15; // Lava Bucket
+            heldLight = clamp(heldLight, 0.0, 15.0);
+            heldLight = sqrt2(heldLight / 15.0) * -1.0 + 1.0; // Normalize and invert
+            heldLight = mix(heldLight, 1.0, clamp01(lViewPos * 15 / renderDistance)); // Only do it around the player
+        } else {
+            heldLight = 1.0;
+        }
+    #endif
+
+    float nightVisionFactor = 1.0;
+    #ifdef NIGHT_DESATURATION_REMOVE_NIGHT_VISION
+        nightVisionFactor = nightVision * -1.0 + 1.0;
+    #endif
+
+    float purkinjeIntensity = 0.004 * purkinjeOverwrite * PURKINKE_INTENSITY;
+    purkinjeIntensity  = purkinjeIntensity * fuzzyOr(interiorFactor, sqrt2(nightFactor)); // No purkinje shift in daylight
+    purkinjeIntensity *= lightSourceFactor; // Reduce purkinje intensity in blocklight
+    purkinjeIntensity *= clamp01(nightCaveDesaturation + (1.0 - nightCaveDesaturation) * pow3(1.0 - interiorFactor)); // Reduce purkinje intensity underground
+    purkinjeIntensity *= clamp01(heldLight); // Reduce purkinje intensity when holding light sources
+    purkinjeIntensity *= nightVisionFactor * (1.0 - isLightningActive()); // Reduce purkinje intensity when using night vision or during lightning
+    purkinjeIntensity = clamp(purkinjeIntensity, 0.01, 1.0); // prevent it going to 0 to avoid NaNs
+    
+    #if PURKINKE_INTENSITY < 300
+        const vec3 purkinjeTint = vec3(0.5, 0.7, 1.0) * rec709ToRec2020;
+        const vec3 rodResponse = vec3(7.15e-5, 4.81e-1, 3.28e-1) * rec709ToRec2020;
+
+        vec3 xyz = rgb * rec2020ToXyz;
+
+        vec3 scotopicLuminance = xyz * (1.33 * (1.0 + (xyz.y + xyz.z) / xyz.x) - 0.5);
+
+        float purkinje = dot(rodResponse, scotopicLuminance * xyzToRec2020) * 0.45;
+
+        rgb = mix(rgb, purkinje * purkinjeTint, exp2(-rcp(purkinjeIntensity) * purkinje));
+    #else
+        rgb = mix(rgb, vec3(GetLuminance(rgb) * 0.9), clamp01(purkinjeIntensity));
+    #endif
+
+    // return vec3(purkinjeIntensity);
+
+    return max0(rgb);
+}
+
 //Includes//
 #ifdef BLOOM_FOG
     #include "/lib/atmospherics/fog/bloomFog.glsl"
@@ -478,17 +575,21 @@ void DoBSLColorSaturation(inout vec3 color) {
     #include "/lib/misc/lensFlare.glsl"
 #endif
 
+#include "/lib/util/spaceConversion.glsl"
+
 //Program//
 void main() {
     vec3 color = texture2D(colortex0, texCoord).rgb;
 
-    #if defined BLOOM_FOG || LENSFLARE_MODE > 0 && defined OVERWORLD
+    #if defined BLOOM_FOG || LENSFLARE_MODE > 0 && defined OVERWORLD || defined NIGHT_DESATURATION
         float z0 = texture2D(depthtex0, texCoord).r;
 
         vec4 screenPos = vec4(texCoord, z0, 1.0);
         vec4 viewPos = gbufferProjectionInverse * (screenPos * 2.0 - 1.0);
         viewPos /= viewPos.w;
         float lViewPos = length(viewPos.xyz);
+
+        vec3 playerPos = ViewToPlayer(viewPos.xyz);
 
         #if defined DISTANT_HORIZONS && defined NETHER
             float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
@@ -533,26 +634,33 @@ void main() {
     #endif
     color = clamp01(color);
 
-    #if defined GREEN_SCREEN_LIME || defined BLUE_SCREEN || SELECT_OUTLINE == 4
-        int materialMaskInt = int(texelFetch(colortex6, texelCoord, 0).g * 255.1);
+    #if defined GREEN_SCREEN_LIME || defined BLUE_SCREEN || SELECT_OUTLINE == 4 || defined NIGHT_DESATURATION
+        vec4 texture6 = texelFetch(colortex6, texelCoord, 0);
+        int materialMaskInt = int(texture6.g * 255.1);
     #endif
+    float purkinjeOverwrite = 1.0;
 
     #ifdef GREEN_SCREEN_LIME
         if (materialMaskInt == 240) { // Green Screen Lime Blocks
             color = vec3(0.0, 1.0, 0.0);
+            purkinjeOverwrite = 0.0;
         }
     #endif
     #ifdef BLUE_SCREEN
         if (materialMaskInt == 239) { // Blue Screen Blue Blocks
             color = vec3(0.0, 0.0, 1.0);
+            purkinjeOverwrite = 0.0;
         }
     #endif
 
-    #if SELECT_OUTLINE == 4
-        if (materialMaskInt == 252) { // Versatile Selection Outline
-            float colorMF = 1.0 - dot(color, vec3(0.25, 0.45, 0.1));
-            colorMF = smoothstep1(smoothstep1(smoothstep1(smoothstep1(smoothstep1(colorMF)))));
-            color = mix(color, 3.0 * (color + 0.2) * vec3(colorMF * SELECT_OUTLINE_I), 0.3);
+    #if SELECT_OUTLINE == 4 || defined NIGHT_DESATURATION
+        if (materialMaskInt == 252) { // Selection Outline
+            #if SELECT_OUTLINE == 4 // Versatile Selection Outline
+                float colorMF = 1.0 - dot(color, vec3(0.25, 0.45, 0.1));
+                colorMF = smoothstep1(smoothstep1(smoothstep1(smoothstep1(smoothstep1(colorMF)))));
+                color = mix(color, 3.0 * (color + 0.2) * vec3(colorMF * SELECT_OUTLINE_I), 0.3);
+            #endif
+            purkinjeOverwrite = 0.0;
         }
     #endif
 
@@ -570,6 +678,15 @@ void main() {
 
     float filmGrain = dither;
     color += vec3((filmGrain - 0.25) / 128.0);
+
+    #ifdef NIGHT_DESATURATION
+        color.rgb = purkinjeShift(color.rgb, texture6, playerPos, lViewPos, purkinjeOverwrite);
+    #endif
+
+    // vec4 texture6 = texelFetch(colortex6, texelCoord, 0).rgba;
+    // float interiorFactor = texture6.b;
+
+    // color = vec3(interiorFactor);
 
     /* DRAWBUFFERS:3 */
     gl_FragData[0] = vec4(color, 1.0);

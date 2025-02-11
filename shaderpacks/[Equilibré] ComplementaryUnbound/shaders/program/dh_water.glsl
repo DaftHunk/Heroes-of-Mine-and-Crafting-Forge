@@ -139,6 +139,7 @@ void main() {
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     float fresnel = clamp(1.0 + dot(normalM, nViewPos), 0.0, 1.0);
+    float purkinjeOverwrite = 0.0;
 
     if (mat == DH_BLOCK_WATER) {
         #include "/lib/materials/specificMaterials/translucents/water.glsl"
@@ -167,7 +168,7 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
     // Reflections
     #if WATER_REFLECT_QUALITY >= 0
@@ -186,7 +187,7 @@ void main() {
         #endif
 
         vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
-                                        depthtex1, dither, skyLightFactor, fresnel,
+                                        dhDepthTex1, dither, skyLightFactor, fresnel,
                                         smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult);
 
         color.rgb = mix(color.rgb, reflection.rgb, fresnelM);
@@ -228,6 +229,9 @@ attribute vec4 at_tangent;
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
 #endif
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //Program//
 void main() {
@@ -257,6 +261,20 @@ void main() {
     viewVector = tbnMatrix * (gl_ModelViewMatrix * gl_Vertex).xyz;
 
     glColor = gl_Color;
+
+    #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVE_EVERYTHING
+        vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
+        #ifdef MIRROR_DIMENSION
+            doMirrorDimension(position);
+        #endif
+        #ifdef WORLD_CURVATURE
+            position.y += doWorldCurvature(position.xz);
+        #endif
+        #ifdef WAVE_EVERYTHING
+            DoWaveEverything(position.xyz);
+        #endif
+        gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
+    #endif
 }
 
 #endif

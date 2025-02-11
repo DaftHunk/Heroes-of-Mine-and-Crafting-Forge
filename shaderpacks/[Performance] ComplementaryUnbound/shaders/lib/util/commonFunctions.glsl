@@ -30,6 +30,15 @@ int max0(int x) {
 float max0(float x) {
     return max(x, 0.0);
 }
+vec2 max0(vec2 x) {
+    return max(x, vec2(0.0));
+}
+vec3 max0(vec3 x) {
+    return max(x, vec3(0.0));
+}
+vec4 max0(vec4 x) {
+    return max(x, vec4(0.0));
+}
 int clamp01(int x) {
     return clamp(x, 0, 1);
 }
@@ -249,6 +258,35 @@ vec4 smoothstep1(vec4 x) {
     return x * x * (3.0 - 2.0 * x);
 }
 
+#define rcp(x) (1.0 / (x))
+
+float maxOf(vec2 v) { return max(v.x, v.y); }
+float maxOf(vec3 v) { return max(v.x, max(v.y, v.z)); }
+float maxOf(vec4 v) { return max(v.x, max(v.y, max(v.z, v.w))); }
+float minOf(vec2 v) { return min(v.x, v.y); }
+float minOf(vec3 v) { return min(v.x, min(v.y, v.z)); }
+float minOf(vec4 v) { return min(v.x, min(v.y, min(v.z, v.w))); }
+
+// Smoothing function used by smoothstep
+// Zero derivative at zero and one
+float cubic_smooth(float x) {
+	return pow2(x) * (3.0 - 2.0 * x);
+}
+
+// Remaps center +/- 0.5 * width to zero and center to 1, with the same smoothing function as
+// smoothstep
+float pulse(float x, float center, float width) {
+    x = abs(x - center) / width;
+    return x > 1.0 ? 0.0 : 1.0 - cubic_smooth(x);
+}
+
+float pulse(float x, float center, float width, const float period) {
+	x = (x - center + 0.5 * period) / period;
+	x = fract(x) * period - (0.5 * period);
+
+	return pulse(x, 0.0, width);
+}
+
 float GetLuminance(vec3 color) {
     return dot(color, vec3(0.299, 0.587, 0.114));
 }
@@ -323,6 +361,10 @@ float Noise3D(vec3 p) {
     return mix(a, b, fz);
 }
 
+float fuzzyOr(float a, float b) {
+    return clamp01(a + b - (a * b));
+}
+
 // Previous frame reprojection from Chocapic13
 vec2 Reprojection(vec3 pos, vec3 cameraOffset) {
     pos = pos * 2.0 - 1.0;
@@ -382,15 +424,16 @@ vec2 lightningFlashEffect(vec3 lightningPos, vec3 normal, float lightDistance, f
     float lightningLight = max(1.0 - length(lightningPos) / lightDistance, 0.0);
 
     // the light above ^^^ is a linear curve. me no likey. here's an exponential one instead.
-    lightningLight = exp((1.0 - lightningLight) * -15.0);
-    if (subsurfaceMode == 1) lightningLight *= exp((1.0 - lightningLight) * -1.0) * 0.75; // make grass and others not as intense
+    float lightningLightX = exp((1.0 - lightningLight) * -15.0);
+    float lightningLightY = lightningLightX;
+    if (subsurfaceMode == 1) lightningLightX *= exp((1.0 - lightningLightX) * -1.0) * 0.75; // make grass and others not as intense
 
     // good old NdotL
     // float NdotL = clamp(dot(lightningPos, -normal), 0.0, 1.0);
     float NdotL = clamp01(dot(normalize(lightningPos), normal));
     if (gradient > 0.0) NdotL = (NdotL * (1.0 - gradient)) + gradient;
 
-    return vec2(lightningLight * NdotL, lightningLight);
+    return vec2(lightningLightX * NdotL, lightningLightY);
 }
 
 float getBloodMoon(int moonPhase, float sunVisibility) {
@@ -442,6 +485,16 @@ vec3 GetStarColor(vec2 starCoord, vec3 baseColor, vec3 starColor1, vec3 starColo
         baseColor = mix(chosenColor, vec3(GetStarNoise(starCoord)), (1.0 - starColorVariation) * 0.5);
     }    
     return baseColor;
+}
+
+vec3 movingCheckerboard(vec2 texCoord, float gridSize, float lineWidth, vec2 moveSpeed, vec3 lineColor) {
+    vec2 checkerPixel = fract((texCoord + frameTimeCounter * moveSpeed) * viewSize / gridSize);
+
+    vec2 lineThreshold = vec2(lineWidth / gridSize);
+    if (any(lessThan(checkerPixel, lineThreshold)) || any(greaterThan(checkerPixel, 1.0 - lineThreshold))) {
+        return lineColor;
+    }
+    return vec3(0.0);
 }
 
 vec3 rgb2hsv(vec3 c)

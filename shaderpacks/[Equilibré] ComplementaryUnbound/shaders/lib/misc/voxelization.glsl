@@ -1,7 +1,12 @@
 #ifndef INCLUDE_VOXELIZATION
     #define INCLUDE_VOXELIZATION
 
-    const ivec3 voxelVolumeSize = ivec3(COLORED_LIGHTING_INTERNAL, COLORED_LIGHTING_INTERNAL * 0.5, COLORED_LIGHTING_INTERNAL);
+    #if COLORED_LIGHTING_INTERNAL <= 512
+        const ivec3 voxelVolumeSize = ivec3(COLORED_LIGHTING_INTERNAL, COLORED_LIGHTING_INTERNAL * 0.5, COLORED_LIGHTING_INTERNAL);
+    #else
+        const ivec3 voxelVolumeSize = ivec3(COLORED_LIGHTING_INTERNAL, 512 * 0.5, COLORED_LIGHTING_INTERNAL);
+    #endif
+
     float effectiveACLdistance = min(float(COLORED_LIGHTING_INTERNAL), shadowDistance * 2.0);
 
     vec3 transform(mat4 m, vec3 pos) {
@@ -9,7 +14,7 @@
     }
 
     vec3 SceneToVoxel(vec3 scenePos) {
-        return scenePos + fract(cameraPosition) + (0.5 * vec3(voxelVolumeSize));
+        return scenePos + cameraPositionBestFract + (0.5 * vec3(voxelVolumeSize));
     }
 
     bool CheckInsideVoxelVolume(vec3 voxelPos) {
@@ -286,20 +291,22 @@
                             if (mat == 10920) return  79; // Magenta Candles:Lit
                             if (mat == 10922) return  80; // Pink Candles:Lit
                             #endif
+                            if (mat == 10924) return  81; // Open Eyeblossom
+                            if (mat == 10948) return  82; // Creaking Heart: Active
                         } else {
-                            if (mat == 21000) return 97; // White Modded Blocks - Also used For Black / Gray
-                            if (mat == 21002) return 43; // Brown Modded Blocks
-                            if (mat == 21004) return 70; // Red Modded Blocks
-                            if (mat == 21006) return 71; // Orange Modded Blocks
-                            if (mat == 21008) return 72; // Yellow Modded Blocks
-                            if (mat == 21010) return 73; // Lime Modded Blocks
-                            if (mat == 21012) return 74; // Green Modded Blocks
-                            if (mat == 21014) return 75; // Cyan Modded Blocks
-                            if (mat == 21016) return 76; // Light Blue Modded Blocks
-                            if (mat == 21018) return 77; // Blue Modded Blocks
-                            if (mat == 21020) return 78; // Purple Modded Blocks
-                            if (mat == 21022) return 79; // Magenta Modded Blocks
-                            if (mat == 21024) return 80; // Pink Modded Blocks
+                            if (mat == 21000) return  97; // White Modded Blocks - Also used For Black / Gray
+                            if (mat == 21002) return  43; // Brown Modded Blocks
+                            if (mat == 21004) return  70; // Red Modded Blocks
+                            if (mat == 21006) return  71; // Orange Modded Blocks
+                            if (mat == 21008) return  72; // Yellow Modded Blocks
+                            if (mat == 21010) return  73; // Lime Modded Blocks
+                            if (mat == 21012) return  74; // Green Modded Blocks
+                            if (mat == 21014) return  75; // Cyan Modded Blocks
+                            if (mat == 21016) return  76; // Light Blue Modded Blocks
+                            if (mat == 21018) return  77; // Blue Modded Blocks
+                            if (mat == 21020) return  78; // Purple Modded Blocks
+                            if (mat == 21022) return  79; // Magenta Modded Blocks
+                            if (mat == 21024) return  80; // Pink Modded Blocks
                             if (mat == 30008) return 254; // Tinted Glass
                             if (mat == 30012) return 213; // Slime Block
                             if (mat == 30016) return 201; // Honey Block

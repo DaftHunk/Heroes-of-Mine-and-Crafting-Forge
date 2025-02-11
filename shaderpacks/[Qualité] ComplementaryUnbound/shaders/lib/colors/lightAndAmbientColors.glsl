@@ -90,7 +90,7 @@
         #endif
     #elif defined END
         float fogLuminance = dot(fogColor, vec3(0.299, 0.587, 0.114));
-        vec3 endLightColor = mix(fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - fogLuminance), vec3(0.68, 0.51, 1.07), inVanillaEnd);
+        vec3 endLightColor = clamp01(mix(fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - fogLuminance), vec3(0.68, 0.51, 1.07), inVanillaEnd));
         float endLightBalancer = 0.2 * vsBrightness;
         #ifdef SPOOKY
             vec3 lightColor   = endLightColor * (0.35 - endLightBalancer) * 0.4;

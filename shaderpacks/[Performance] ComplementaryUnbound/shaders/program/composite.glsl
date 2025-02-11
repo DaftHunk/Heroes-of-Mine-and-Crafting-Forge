@@ -127,7 +127,7 @@ vec2 view = vec2(viewWidth, viewHeight);
     #include "/lib/atmospherics/volumetricLight.glsl"
 #endif
 
-#if WATER_MAT_QUALITY >= 3 || defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+#if WATER_MAT_QUALITY >= 3 || defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     #include "/lib/util/spaceConversion.glsl"
 #endif
 
@@ -156,7 +156,7 @@ vec2 view = vec2(viewWidth, viewHeight);
     #include "/lib/atmospherics/endCrystalVortex.glsl"
 #endif
 
-#ifdef END_PORTAL_BEAM
+#ifdef END_PORTAL_BEAM_INTERNAL
     #include "/lib/atmospherics/endPortalBeam.glsl"
 #endif
 
@@ -216,7 +216,7 @@ void main() {
         float VdotL = dot(nViewPos, lightVec);
     #endif
 
-    #if defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM
+    #if defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
         vec3 playerPos = ViewToPlayer(viewPos1.xyz);
         vec3 nPlayerPos = normalize(playerPos);
     #endif
@@ -247,7 +247,7 @@ void main() {
         volumetricEffect.rgb *= moonPhaseInfluence;
     #endif
 
-    #ifdef END_PORTAL_BEAM
+    #ifdef END_PORTAL_BEAM_INTERNAL
         volumetricEffect = sqrt(pow2(volumetricEffect) + pow2(GetEndPortalBeam(vec3(0.0), playerPos)));
     #endif
 
@@ -255,6 +255,7 @@ void main() {
         color = mix(color, volumetricEffect.rgb, volumetricEffect.a);
     #endif
 
+    float lightFogLength = 0.0;
     #ifdef COLORED_LIGHT_FOG
         vec3 lightFog = GetColoredLightFog(nPlayerPos, translucentMult, lViewPos, lViewPos1, dither);
         float lightFogMult = COLORED_LIGHT_FOG_I;
@@ -266,6 +267,8 @@ void main() {
 
         color /= 1.0 + pow2(GetLuminance(lightFog)) * lightFogMult * 2.0;
         color += lightFog * lightFogMult * 0.5;
+        lightFogLength = pow3(length(lightFog));
+        // color = vec3(lightFogLength);
     #endif
 
     if (isEyeInWater == 1) {
@@ -273,10 +276,29 @@ void main() {
 
         vec3 underwaterMult = vec3(0.80, 0.87, 0.97);
         #ifdef DARKER_DEPTH_OCEANS
-            float waterDepthStart = 70.0;
+            float renderDistanceFade = lViewPos * 5.0 / renderDistance;
+            vec4 texture6 = texelFetch(colortex6, texelCoord, 0);
+
+            float lightSourceFactor = pow3(1.0 - texture6.a);
+            lightSourceFactor += renderDistanceFade;
+            lightSourceFactor = clamp01(lightSourceFactor);
+
+            float heldLight = max(heldBlockLightValue, heldBlockLightValue2);
+            if (heldLight > 0){
+                if (heldItemId == 45032 || heldItemId2 == 45032) heldLight = 15; // Lava Bucket
+                heldLight = clamp(heldLight, 0.0, 15.0);
+                heldLight = sqrt2(heldLight / 15.0) * -1.0 + 1.0; // Normalize and invert
+                heldLight = mix(heldLight, 1.0, clamp01((lViewPos) * 35.0 / renderDistance)); // Only do it around the player
+            } else {
+                heldLight = 1.0;
+            }
+            float mixFactor = heldLight * lightSourceFactor * (1.0 - nightVision);
+
+            float waterDepthStart = waterAltitude + 10;
             float depthFactor = clamp01(10.0 / abs(min(cameraPosition.y, waterDepthStart + 0.001) - waterDepthStart));
             float depthDarkness = clamp(abs(1.0 - (1.0 - depthFactor) * (1.0 - depthFactor)), 0.33, 1.0);
-            underwaterMult *= depthDarkness;
+
+            underwaterMult *= mix(1.0, depthDarkness, mixFactor);
         #endif
         color.rgb *= underwaterMult * 0.85;
         volumetricEffect.rgb *= pow2(underwaterMult * 0.71);
@@ -302,7 +324,7 @@ void main() {
     color = pow(color, vec3(2.2));
     // #endif
 
-    #if defined LIGHTSHAFTS_ACTIVE || defined END_PORTAL_BEAM
+    #if defined LIGHTSHAFTS_ACTIVE || defined END_PORTAL_BEAM_INTERNAL
         #ifdef END
             volumetricEffect.rgb *= volumetricEffect.rgb;
         #endif
@@ -325,7 +347,7 @@ void main() {
 
     // supposed to be #if defined LIGHTSHAFTS_ACTIVE && (LIGHTSHAFT_BEHAVIOUR == 1 && SHADOW_QUALITY >= 1 || defined END)
     #if LIGHTSHAFT_QUALI_DEFINE > 0 && LIGHTSHAFT_BEHAVIOUR == 1 && SHADOW_QUALITY >= 1 && defined OVERWORLD || defined END
-        #if LENSFLARE_MODE > 0
+        #if LENSFLARE_MODE > 0 || defined ENTITY_TAA_NOISY_CLOUD_FIX
             if (viewWidth + viewHeight - gl_FragCoord.x - gl_FragCoord.y > 1.5)
                 vlFactorM = texelFetch(colortex4, texelCoord, 0).r;
         #endif

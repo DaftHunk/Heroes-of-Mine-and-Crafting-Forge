@@ -201,6 +201,7 @@ void main() {
     float IPBRMult = 1.0;
     bool isFoliage = false;
     vec3 dhColor = vec3(1.0);
+    float purkinjeOverwrite = 0.0;
 
     #ifdef VL_CLOUDS_ACTIVE
         float cloudLinearDepth = texelFetch(gaux1, texelCoord, 0).r;
@@ -325,7 +326,7 @@ void main() {
     // Lighting
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
-               false, subsurfaceMode, smoothnessG, highlightMult, emission);
+               false, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
 
     #ifdef SS_BLOCKLIGHT
         vec3 normalizedColor = normalize(color.rgb);
@@ -341,6 +342,7 @@ void main() {
         lightAlbedo = mix(opaquelightAlbedo, lightAlbedo, color.a);
     #endif
 
+    float skyLightFactor = pow2(max(lmCoordM.y - 0.7, 0.0) * 3.33333);
     // Reflections
     #if WATER_REFLECT_QUALITY >= 0
         #ifdef LIGHT_COLOR_MULTS
@@ -355,7 +357,6 @@ void main() {
 
         float fresnelM = (pow3(fresnel) * 0.85 + 0.15) * reflectMult;
 
-        float skyLightFactor = pow2(max(lmCoordM.y - 0.7, 0.0) * 3.33333);
         #if SHADOW_QUALITY > -1 && WATER_REFLECT_QUALITY >= 2 && WATER_MAT_QUALITY >= 2
             skyLightFactor = max(skyLightFactor, min1(dot(shadowMult, shadowMult)));
         #endif
@@ -383,7 +384,7 @@ void main() {
     // supposed to be #if WATER_MAT_QUALITY >= 3 but optifine bad
     #if DETAIL_QUALITY >= 3
         /* DRAWBUFFERS:036 */
-        gl_FragData[2] = vec4(0.0, materialMask, 0.0, 1.0);
+        gl_FragData[2] = vec4(0.0, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0368 */
