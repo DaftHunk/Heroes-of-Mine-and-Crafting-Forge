@@ -4,8 +4,6 @@
 	enable_animation = true
 	#Enable custom animation of falling
 	enable_falling_animation = false
-	#Enable first-person-view animations
-	enable_fov_animation = false
 	#Enable rotation of camera by Dodge
 	enable_camera_rotation_dodge = false
 	#Enable rotation of camera by Backward Wall-Jump
@@ -22,6 +20,8 @@
 	enable_camera_animation_hang-down = true
 	#Enable lean animation while FastRun
 	enable_lean_animation_fast_run = true
+	#Enable first-person-view animations
+	enable_fov_animation = false
 
 	[Animations.Animators]
 		enable_BackwardWallJumpAnimator = true

@@ -1,10 +1,10 @@
 
 [tools_and_abilities]
-	#Range: 0.0 ~ 1.7976931348623157E308
-	geomancy_attack_multiplier = 1.0
 	#Cost in minutes of using the supernova ability.
 	#Range: > 0
 	supernova_cost = 60
+	#Range: 0.0 ~ 1.7976931348623157E308
+	geomancy_attack_multiplier = 1.0
 
 	[tools_and_abilities.suns_blessing]
 		#Duration in minutes of the Sun's Blessing effect.

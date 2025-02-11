@@ -181,7 +181,7 @@
 	#Whether or not to replace the default third person perspective.
 	replace_default_perspective = false
 	#Whether or not to skip the third person front perspective.
-	skip_third_person_front_perspective = true
+	skip_third_person_front_perspective = false
 
 [crosshair]
 	#Crosshair type to use for shoulder surfing.

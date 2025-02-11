@@ -35,6 +35,9 @@
 	 * Whether normal search queries should include the stack's tags.
 	 */
 	search-tags-by-default: false;
+
+	/** unparsed */
+	search-sidebar: right;
 }
 
 #ui {
