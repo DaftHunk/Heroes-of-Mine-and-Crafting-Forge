@@ -13,7 +13,7 @@
 	#Allowed Values: TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
 	anchor = "BOTTOM_RIGHT"
 	#Range: 0 ~ 256
-	anchorOffset = 3
+	anchorOffset = 75
 	#Range: 0 ~ 16
 	notificationSeparation = 3
 	#Range: 0 ~ 32

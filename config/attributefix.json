@@ -99,17 +99,6 @@
         "value": 1
       }
     },
-    "obscure_api:regeneration": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100000,
-        "value": 100000
-      }
-    },
     "irons_spellbooks:lightning_magic_resist": {
       "enabled": false,
       "min": {
@@ -119,6 +108,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "obscure_api:regeneration": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100000,
+        "value": 100000
       }
     },
     "protection_pixel:highspeeddamageincrease": {
@@ -187,17 +187,6 @@
         "value": 1
       }
     },
-    "obscure_api:magic_resistance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "forge:entity_reach": {
       "enabled": false,
       "min": {
@@ -207,6 +196,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "obscure_api:magic_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "scguns:additional_bullet_damage": {
@@ -308,17 +308,6 @@
         "value": 1
       }
     },
-    "obscure_api:accuracy": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "ars_nouveau:ars_elemental.perk.summon_power": {
       "enabled": false,
       "min": {
@@ -328,6 +317,17 @@
       "max": {
         "default": 10000,
         "value": 10000
+      }
+    },
+    "obscure_api:accuracy": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "irons_spellbooks:holy_spell_power": {
@@ -506,22 +506,22 @@
         "value": 10000
       }
     },
-    "obscure_api:critical_damage": {
+    "irons_spellbooks:spell_resist": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": -100,
+        "value": -100
       },
       "max": {
         "default": 100,
         "value": 100
       }
     },
-    "irons_spellbooks:spell_resist": {
+    "obscure_api:critical_damage": {
       "enabled": false,
       "min": {
-        "default": -100,
-        "value": -100
+        "default": 0,
+        "value": 0
       },
       "max": {
         "default": 100,
@@ -671,17 +671,6 @@
         "value": 1000
       }
     },
-    "obscure_api:resilience": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "forge:entity_gravity": {
       "enabled": false,
       "min": {
@@ -691,6 +680,17 @@
       "max": {
         "default": 8,
         "value": 8
+      }
+    },
+    "obscure_api:resilience": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "piglinproliferation:turning_speed": {
