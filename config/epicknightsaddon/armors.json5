@@ -346,8 +346,8 @@
 		"toughness": 1.25,
 		"chestplateDurability": 335,
 		"chestplateDefense": 8,
-		"leggingsDurability": 315,
-		"leggingsDefense": 5
+		"bootsDurability": 315,
+		"bootsDefense": 2
 	},
 	"lateSallet": {
 		"enabled": true,
@@ -951,19 +951,27 @@
 	},
 	"goldenNecklace": {
 		"enabled": true,
-		"toughness": 0.0
+		"toughness": 0.0,
+		"chestplateDurability": 0,
+		"chestplateDefense": 0
 	},
 	"silverNecklace": {
 		"enabled": true,
-		"toughness": 0.0
+		"toughness": 0.0,
+		"chestplateDurability": 0,
+		"chestplateDefense": 0
 	},
 	"silverCrossNecklace": {
 		"enabled": true,
-		"toughness": 0.0
+		"toughness": 0.0,
+		"chestplateDurability": 0,
+		"chestplateDefense": 0
 	},
 	"goldenCrossNecklace": {
 		"enabled": true,
-		"toughness": 0.0
+		"toughness": 0.0,
+		"chestplateDurability": 0,
+		"chestplateDefense": 0
 	},
 	"articulated": {
 		"enabled": true,
@@ -996,10 +1004,10 @@
 	"darkbluedGreenwich": {
 		"enabled": true,
 		"toughness": 1.25,
+		"helmetDurability": 0,
+		"helmetDefense": 0,
 		"chestplateDurability": 335,
-		"chestplateDefense": 8,
-		"bootsDurability": 230,
-		"bootsDefense": 2
+		"chestplateDefense": 8
 	},
 	"darkbluedKastenbrust": {
 		"enabled": true,
