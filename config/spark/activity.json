@@ -5,6 +5,19 @@
       "name": "Daft_Hunk",
       "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
     },
+    "time": 1739374662432,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/WgvvELKPhB"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Daft_Hunk",
+      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
+    },
     "time": 1739369536223,
     "type": "Profiler",
     "data": {
