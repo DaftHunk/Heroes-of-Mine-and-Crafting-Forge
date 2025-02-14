@@ -31,7 +31,7 @@
 
 [Debug]
 	#Changed the default log level to get more output.
-	logLevel = "info"
+	logLevel = "none"
 
 [cache]
 	trackedAdvancementsRemote = [""]

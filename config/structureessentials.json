@@ -29,7 +29,7 @@
   },
   "autoBiomeCompat": {
     "desc:": "Automatically analyzes present biomes and adjust structure spawning to include fitting ones. Default: true",
-    "autoBiomeCompat": true
+    "autoBiomeCompat": false
   },
   "autoBiomeCompatLogging": {
     "desc:": "Enables logging for the autoBiomeCompat feature. Default: false",
