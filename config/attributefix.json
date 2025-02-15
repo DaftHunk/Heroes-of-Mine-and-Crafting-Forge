@@ -132,17 +132,6 @@
         "value": 1
       }
     },
-    "iguanatweaksreborn:critical_chance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
     "minecraft:generic.luck": {
       "enabled": true,
       "min": {
@@ -262,17 +251,6 @@
       "max": {
         "default": 1,
         "value": 1
-      }
-    },
-    "iguanatweaksreborn:regenerating_absorption_speed": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 20,
-        "value": 20
       }
     },
     "ars_nouveau:ars_nouveau.perk.wixie": {
@@ -572,17 +550,6 @@
         "value": 100
       }
     },
-    "iguanatweaksreborn:critical_damage": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
-        "value": 179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-      }
-    },
     "minecraft:horse.jump_strength": {
       "enabled": true,
       "min": {
@@ -757,17 +724,6 @@
       "max": {
         "default": 20,
         "value": 20
-      }
-    },
-    "iguanatweaksreborn:piercing_damage": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
       }
     },
     "irons_spellbooks:fire_spell_power": {
@@ -1120,17 +1076,6 @@
       "max": {
         "default": 30,
         "value": 1000000
-      }
-    },
-    "iguanatweaksreborn:regenerating_absorption": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
       }
     },
     "irons_spellbooks:blood_spell_power": {
