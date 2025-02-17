@@ -1,5 +1,5 @@
 #INTERNAL. DO NOT TOUCH
-configVersion = 1
+configVersion = 3
 
 #Disable/Enable basic integrations
 [common]
@@ -7,6 +7,21 @@ configVersion = 1
 	vanish = false
 	#Should SDLink integrate with FTB Essentials
 	ftbessentials = true
+	#Should SDLink integrate with FTB Ranks
+	ftbranks = true
+	#Should SDLink integrate with Luckperms (Group Syncing only)
+	luckperms = true
+
+#Manage Player Revive Mod integration
+[player_revive]
+	#Should integration with Player Revive Mod be enabled
+	enabled = false
+	#Message to be sent to discord, while the player is waiting to be revived
+	reviveWaitingMessage = "%player% is bleeding out and may need your help"
+	#Message to be sent to discord, when the player is revived
+	revivedMessage = "%player% has been revived"
+	#Message to be sent to discord, when the player dies for real
+	playerBledOutMessage = "%player% %message%"
 
 #Manage Maintenance Mode integration
 [maintenance_mode]
@@ -26,4 +41,22 @@ configVersion = 1
 	maintenanceStartMessage = "Maintenance has started"
 	#The message to send to discord when maintenance has ended
 	maintenanceEndMessage = "Maintenance has ended"
+
+#LuckPerms group syncing
+[luckperms]
+	#Sync Groups/Ranks to Minecraft from Discord Roles
+	syncToMinecraft = false
+	#Sync Groups/Ranks to Discord roles from Minecraft
+	syncToDiscord = false
+	#List of Ranks and Roles that will be synced. Check the wiki on how to configure this
+	syncs = []
+
+#FTB Ranks Rank syncing
+[ftbranks]
+	#Sync Groups/Ranks to Minecraft from Discord Roles
+	syncToMinecraft = false
+	#Sync Groups/Ranks to Discord roles from Minecraft
+	syncToDiscord = false
+	#List of Ranks and Roles that will be synced. Check the wiki on how to configure this
+	syncs = []
 
