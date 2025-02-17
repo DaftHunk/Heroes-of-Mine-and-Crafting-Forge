@@ -34,7 +34,7 @@ scroll_list_customization {
 
 element {
   button_element_executable_block_identifier = 0361dfd6-81c3-49b2-a0be-4f8ea71ffee4-1713286968406
-  [executable_action_instance:014f6cc2-f9db-4163-a8be-03746d4512ec-1713287027552][action_type:joinserver] = 149.202.65.187:25565
+  [executable_action_instance:014f6cc2-f9db-4163-a8be-03746d4512ec-1713287027552][action_type:joinserver] = 87.98.174.47
   [executable_block:0361dfd6-81c3-49b2-a0be-4f8ea71ffee4-1713286968406][type:generic] = [executables:014f6cc2-f9db-4163-a8be-03746d4512ec-1713287027552;]
   restartbackgroundanimations = true
   loopbackgroundanimations = true

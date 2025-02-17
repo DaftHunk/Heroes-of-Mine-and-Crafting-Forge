@@ -76,18 +76,5 @@
       "type": "url",
       "value": "https://spark.lucko.me/EZ5J1JuBU6"
     }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "Daft_Hunk",
-      "uniqueId": "ac7e2b04-2ea3-40c7-b02d-5c02fa672105"
-    },
-    "time": 1734559675960,
-    "type": "Profiler",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/aA8cpw5691"
-    }
   }
 ]

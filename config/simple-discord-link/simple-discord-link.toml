@@ -33,7 +33,7 @@
 		#Should the bot update the topic of your chat channel automatically every 6 Minutes
 		doTopicUpdates = true
 		#How often should the bot update the channel topic (IN MINUTES)? CANNOT BE LOWER THAN 6 MINUTES!
-		updateInterval = 5
+		updateInterval = 6
 		#A topic for the Chat Relay channel. You can use %player%, %maxplayers%, %uptime% or just leave it empty.
 		channelTopic = "En ligne : %players%/%maxplayers% | En ligne depuis : %uptime%"
 
@@ -78,7 +78,7 @@
 	#Use linked account names in Discord/Minecraft messages, instead of the default ones
 	useLinkedNames = true
 	#Show the discord name, username and role of the user that sent a message in Minecraft when the message is hovered
-	showDiscordInfo = false
+	showDiscordInfo = true
 	#Convert Discord to MC, and MC to Discord Formatting
 	formatting = true
 	#Should console messages be sent to the Console Channel

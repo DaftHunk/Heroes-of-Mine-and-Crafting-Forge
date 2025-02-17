@@ -1,0 +1,5 @@
+
+[logbegone]
+	phrases = ["Disconnecting VANILLA connection attempt", "Channels ", "Easy NPC", "OpenGL debug message", "mobGriefing.", "worlds_together", "Unable to decode loot conditions", "java.lang.Exception: Collision box is too big! AABB"]
+	regex = ["Disconnecting VANILLA connection attempt", "Channels ", "Easy NPC", "OpenGL debug message", "mobGriefing.", "worlds_together", "Unable to decode loot conditions", "java.lang.Exception: Collision box is too big! AABB"]
+
