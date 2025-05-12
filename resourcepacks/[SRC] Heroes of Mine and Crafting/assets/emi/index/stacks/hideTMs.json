@@ -5,23 +5,6 @@
 	"/_spawn_egg/",
 	"/irons_spellbooks:scroll/",
 	"/displaydelight:/",
-	"/terralith:/",
-	"/butcher:.+corpse/",
-	"/butcher:corpse/",
-	"/butcher:.+head/",
-	"/butcher:head/",
-	"/butcher:.+leg/",
-	"/butcher:leg/",
-	"/butcher:.+raw/",
-	"/butcher:raw/",
-	"/butcher:.+meat/",
-	"/butcher:meat/",
-	"/butcher:.+cooked/",
-	"/butcher:cooked/",
-	"/butcher:.+hanging/",
-	"/butcher:hanging/",
-	"/butcher:.+carcass/",
-	"/butcher:drained/",
-	"/butcher:.+skeleton/"
+	"/terralith:/"
   ]
 }
