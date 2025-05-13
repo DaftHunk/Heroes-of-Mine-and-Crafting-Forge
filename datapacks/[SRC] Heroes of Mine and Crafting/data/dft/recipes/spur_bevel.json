@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        },
+        {
+            "item": "numismatics:spur"
+        }
+    ],
+    "result": {
+        "item": "numismatics:bevel",
+        "count": 1
+    }
+}

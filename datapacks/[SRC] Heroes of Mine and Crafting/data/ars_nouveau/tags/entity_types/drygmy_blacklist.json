@@ -1,0 +1,18 @@
+{
+  "values": [
+    "minecraft:iron_golem",
+	"scguns:blunderer",
+	"minecraft:villager",
+	"minecraft:zombie_villager",
+	"minecraft:wandering_trader",
+	"minecraft:pillager",
+	"minecraft:evoker",
+	"minecraft:vindicator",
+	"aquamirae:pillagers_patrol",
+	"goblintraders:goblin_trader",
+	"hunters_return:hunter",
+	"born_in_chaos_v1:barrel_zombie",
+	"endermanoverhaul:cave_enderman",
+	"endermanoverhaul:desert_enderman"
+  ]
+}

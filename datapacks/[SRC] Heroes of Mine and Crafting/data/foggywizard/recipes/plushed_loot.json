@@ -1,0 +1,529 @@
+{
+  "type": "lootbags:loot",
+  "name": "Peluche surprise",
+  "color": "#5812fa",
+  "rarity": "UNCOMMON",
+  "output": {
+    "entries": [
+      {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_allay",
+          "count": 1
+        }
+      },
+      {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_armadillo",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_axolotl",
+          "count": 1
+        }
+      },
+      {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_bat",
+          "count": 1
+        }
+      },
+      {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_bee",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_blaze",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_breeze",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_camel",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_cat",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_cave_spider",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_chicken",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_cow",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_creeper",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_dolphin",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_donkey",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_drowned",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_elder_guardian",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_enderdragon",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_enderman",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_evoker",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_fox",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_frog",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_ghast",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_glow_squid",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_goat",
+          "count": 1
+        }
+      },
+	  	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_guardian",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_horse",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_hoglin",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_husk",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_magma_cube",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_mooshroom",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_mule",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_panda",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_parrot",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_peter",
+          "count": 1
+        }
+      },
+	  	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_phantom",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_pig",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_piglin",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_piglin_brute",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_polar_bear",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_pufferfish",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_pillager",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_rabbit",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_ravanger",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_sheep",
+          "count": 1
+        }
+      },
+	  	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_shulker",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_skeleton",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_skeleton_horse",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_slime",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_sniffer",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_spider",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_squid",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_stray",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_strider",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_llama",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_turtle",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_trader_lama",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_vex",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_villager",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_vindicator",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_warden",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_wandering_trader",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_witch",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_wither",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_wither_skeleton",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_wolf",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_zoglin",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_zombie",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_zombie_villager",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_zombified_piglin",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "plushie_buddies:plushie_iron_golem",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "plushie_buddies:plushie_dark_father",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "plushie_buddies:plushie_emperor",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "plushie_buddies:plushie_yoga",
+          "count": 1
+        }
+      }
+    ],
+    "rolls": 1
+  }
+}

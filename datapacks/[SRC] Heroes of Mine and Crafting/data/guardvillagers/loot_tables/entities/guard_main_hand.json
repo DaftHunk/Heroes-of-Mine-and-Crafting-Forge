@@ -1,0 +1,86 @@
+{
+  "type": "guardvillagers:slot",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crossbow"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "musketmod:musket_with_bayonet"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "musketmod:pistol"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "musketmod:musket"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "musketmod:blunderbuss"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_shortsword"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_pike"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_ranseur"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_bastardsword"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_claymore"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_zweihander"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_concavehalberd"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_heavymace"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_heavywarhammer"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_lucernhammer"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_morgenstern"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_chainmorgenstern"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magistuarmory:iron_guisarme"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "numismatics:cog"
+        }
+    ],
+    "result": {
+        "item": "numismatics:bevel",
+        "count": 8
+    }
+}

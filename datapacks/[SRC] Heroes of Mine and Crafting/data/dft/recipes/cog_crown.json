@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        },
+        {
+            "item": "numismatics:cog"
+        }
+    ],
+    "result": {
+        "item": "numismatics:crown",
+        "count": 1
+    }
+}

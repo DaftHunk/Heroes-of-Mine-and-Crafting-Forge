@@ -1,0 +1,871 @@
+{
+  "type": "lootbags:loot",
+  "name": "Vinyle surprise",
+  "color": "#5812fa",
+  "rarity": "COMMON",
+  "output": {
+    "entries": [
+      {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_tall",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_omen",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_silence",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_rain",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_activate",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_shroom",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_soul",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_droopylovesjean",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_jungle",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_chorus",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_squiggles",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_clouds",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_shallow",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_aggressionegression",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_nostalg",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_mesa_depth",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_anti",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_chop",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_range",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_aether",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_jungler",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_sand",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_reloaded",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_scopophobia",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_blazetrap",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_witherdance",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_stridehop",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_avian",
+          "count": 1
+        }
+      },      {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_hue",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_before",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_chill",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_disc",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_dive",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_dreams",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_raid",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_sound",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_justyhebeginning",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_ravage",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_seeds",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_tide",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_vengeful",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_warden",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_dear_diary",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_drowned_anthem",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_rainbows",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_left_shift",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_mush_roam",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_spiral",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_victory",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_mangrove_swamp",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_passion",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_void",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_warped_forest",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_flight_of_the_voids_ship",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_potion_of_swiftness",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_submerge",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_scorched",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_lgm",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_retri",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_thelostsoul",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_flyingship",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_thedarkside",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_thebrightside",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_amethyzied",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_intothejungle",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_forest",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_waves",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_technobladeneverdiesatleastinourhearts",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_42",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_planettech",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_desert",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_ancientruins",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_castle",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_alternatedimension",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_sky",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_tearsofjoy",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_enderwalk",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_thesyndicate",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_weepingsouls",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_strikethemdown",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_thespeedrunner",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_theunfinishedsymphony",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_antiremake",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_wardensprize",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_krushearz",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_anchores",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_azometrall",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_becomeadestructor",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_corrupte",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_dropclouds",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_extrauosert",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_extrauoser",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_galacticloose",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_glitshymonum",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_quithere",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_sleepz",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_turfufact",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_ucrism",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_xziniron",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_yarona",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_zayz",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_squidly",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_usbefore",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_wuird",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_ancienttheme",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_krushearzt",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_stowchip",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_axcktale",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_stowchip",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_axcktale",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_deeperhouses",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_phonikpace",
+          "count": 1
+        }
+      },
+	        {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_tragicdecision",
+          "count": 1
+        }
+      },
+	  {
+        "weight":10,
+        "stack":{
+          "id": "morediscs:music_disc_vixized",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:centre_cobblemon",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:arene_cobblemon",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:arene",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:bataille_de_dresseur",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:bataille_de_rivaux",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:bourg_palette",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:casino",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:lavanville",
+          "count": 1
+        }
+      },
+	  {
+        "weight":1,
+        "stack":{
+          "id": "homac:manoir_cobblemon",
+          "count": 1
+        }
+      }
+    ],
+    "rolls": 1
+  }
+}

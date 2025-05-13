@@ -1,0 +1,21 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "missingno-1",
+            "pokemon": "missingno",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "33-52",
+            "weight": 9.0,
+            "condition": {
+				"biomes": [
+					"#minecraft:is_end"
+                ]
+            }
+        }
+    ]
+}

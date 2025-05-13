@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "numismatics:crown"
+        }
+    ],
+    "result": {
+        "item": "numismatics:cog",
+        "count": 8
+    }
+}
