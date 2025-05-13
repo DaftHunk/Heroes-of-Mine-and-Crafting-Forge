@@ -5,9 +5,7 @@
     "primaryType": "flying",
     "secondaryType": "normal",
     "abilities": [
-        "technician"
-        
-        
+        "technician" 
     ],
     "baseStats": {
         "hp": 178,
@@ -43,50 +41,42 @@
     "catchRate": 100,
     "maleRatio": -1,
     "shoulderMountable": false,
-    
     "baseExperienceYield": 200,
     "experienceGroup": "slow",
     "eggCycles": 60,
     "eggGroups": [
         "amorphous"
-        
     ],
-    "drops": {
-        "amount": "1",
-        "entries": [
-        {"item": "minecraft:command_block", "quantityRange": "1-1", "percentage": 1}
-        ]
-    },
     "moves": [
         "1:watergun",
         "1:skyattack",
         "1:payday",
         "1:bind",
-	"tm:megapunch",
-	"tm:razorwind",
-	"tm:swordsdance",
-	"tm:megakick",
-	"tm:toxic",
-	"tm:takedown",
-	"tm:doubleedge",
-	"tm:bubblebeam",
-	"tm:icebeam",
-	"tm:blizzard",
-	"tm:submission",
-	"tm:seismictoss",
-	"tm:rage",
-	"tm:thunder",
-	"tm:earthquake",
-	"tm:fissure",
-	"tm:psychic",
-	"tm:teleport",
-	"tm:skyattack",
-	"tm:rest",
-	"tm:thunderwave",
-	"tm:triattack",
-	"tm:substitute",
-	"tm:cut",
-	"tm:fly"
+		"tm:megapunch",
+		"tm:razorwind",
+		"tm:swordsdance",
+		"tm:megakick",
+		"tm:toxic",
+		"tm:takedown",
+		"tm:doubleedge",
+		"tm:bubblebeam",
+		"tm:icebeam",
+		"tm:blizzard",
+		"tm:submission",
+		"tm:seismictoss",
+		"tm:rage",
+		"tm:thunder",
+		"tm:earthquake",
+		"tm:fissure",
+		"tm:psychic",
+		"tm:teleport",
+		"tm:skyattack",
+		"tm:rest",
+		"tm:thunderwave",
+		"tm:triattack",
+		"tm:substitute",
+		"tm:cut",
+		"tm:fly"
     ],
     "labels": [
         "custom"

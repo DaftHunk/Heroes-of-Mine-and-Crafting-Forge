@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:crabrawler",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "crabbersdelight:crab",
+        "percentage": 50.0
+      }
+    ]
+  }
+}

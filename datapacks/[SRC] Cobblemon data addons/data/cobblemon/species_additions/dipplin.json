@@ -1,0 +1,19 @@
+{
+  "target": "cobblemon:dipplin",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "createfood:caramel_glazed_apple",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "create:honeyed_apple",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:apple"
+      }
+    ]
+  }
+}

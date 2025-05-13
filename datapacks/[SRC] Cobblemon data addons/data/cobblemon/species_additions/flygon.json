@@ -1,0 +1,11 @@
+{
+  "target": "cobblemon:flygon",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "crittersandcompanions:dragonfly_wing"
+      }
+    ]
+  }
+}

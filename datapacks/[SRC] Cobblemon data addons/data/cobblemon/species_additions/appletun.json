@@ -1,0 +1,19 @@
+{
+  "target": "cobblemon:appletun",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "farmersdelight:apple_pie_slice",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
+}

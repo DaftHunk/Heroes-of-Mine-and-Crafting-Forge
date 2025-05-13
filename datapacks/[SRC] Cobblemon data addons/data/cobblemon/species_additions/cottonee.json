@@ -1,0 +1,19 @@
+{
+  "target": "cobblemon:cottonee",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:absorb_bulb",
+        "percentage": 2.5
+      },
+      {
+        "item": "minecraft:white_wool"
+      }
+    ]
+  }
+}
