@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betternether:nether_redstone_ore"
+    ],
+    "append": [
+        "betternether:block/nether_redstone_ore_e"
+    ]
+}

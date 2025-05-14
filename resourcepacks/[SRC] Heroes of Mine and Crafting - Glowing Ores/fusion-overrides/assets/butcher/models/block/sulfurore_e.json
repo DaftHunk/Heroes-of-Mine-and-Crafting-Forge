@@ -1,0 +1,13 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "butcher:block/sulfur_ore_e",
+        "up": "butcher:block/sulfur_ore_e",
+        "north": "butcher:block/sulfur_ore_e",
+        "east": "butcher:block/sulfur_ore_e",
+        "south": "butcher:block/sulfur_ore_e",
+        "west": "butcher:block/sulfur_ore_e"
+    }
+}

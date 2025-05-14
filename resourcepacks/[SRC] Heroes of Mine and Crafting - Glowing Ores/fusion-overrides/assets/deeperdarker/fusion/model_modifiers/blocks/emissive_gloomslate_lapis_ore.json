@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "deeperdarker:gloomslate_lapis_ore"
+    ],
+    "append": [
+        "deeperdarker:block/gloomslate_lapis_ore_e"
+    ]
+}

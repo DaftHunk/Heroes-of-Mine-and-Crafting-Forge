@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "scguns:vehement_coal_ore"
+    ],
+    "append": [
+        "scguns:block/vehement_coal_ore_e"
+    ]
+}

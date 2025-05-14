@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "create:deepslate_zinc_ore"
+    ],
+    "append": [
+        "create:block/deepslate_zinc_ore_e"
+    ]
+}

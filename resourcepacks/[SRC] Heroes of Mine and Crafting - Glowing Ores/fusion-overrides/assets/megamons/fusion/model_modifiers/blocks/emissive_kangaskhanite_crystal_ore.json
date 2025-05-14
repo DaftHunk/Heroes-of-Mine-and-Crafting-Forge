@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:kangaskhanite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/kangaskhanite_crystal_ore_e"
+    ]
+}

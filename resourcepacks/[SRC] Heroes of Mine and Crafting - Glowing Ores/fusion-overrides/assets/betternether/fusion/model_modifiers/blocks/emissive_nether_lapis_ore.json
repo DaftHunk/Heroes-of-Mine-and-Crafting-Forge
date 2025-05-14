@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betternether:nether_lapis_ore"
+    ],
+    "append": [
+        "betternether:block/nether_lapis_ore_e"
+    ]
+}

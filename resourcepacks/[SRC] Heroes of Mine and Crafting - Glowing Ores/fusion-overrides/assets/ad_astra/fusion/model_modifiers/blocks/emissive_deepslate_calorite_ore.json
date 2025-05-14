@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:deepslate_calorite_ore"
+    ],
+    "append": [
+        "ad_astra:block/deepslate_calorite_ore_e"
+    ]
+}

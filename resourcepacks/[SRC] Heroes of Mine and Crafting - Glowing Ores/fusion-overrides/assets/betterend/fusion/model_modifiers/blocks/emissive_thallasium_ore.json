@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betterend:thallasium_ore"
+    ],
+    "append": [
+        "betterend:block/thallasium_ore_e"
+    ]
+}

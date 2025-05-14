@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "betternether:block/nether_ruby_ore_e"
+    }
+}

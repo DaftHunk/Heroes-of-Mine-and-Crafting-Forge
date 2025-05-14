@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:garchompite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/garchompite_crystal_ore_e"
+    ]
+}

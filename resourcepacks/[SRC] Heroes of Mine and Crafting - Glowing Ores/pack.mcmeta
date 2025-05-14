@@ -1,0 +1,9 @@
+{
+  "pack": {
+    "pack_format": 15,
+    "description": "Heroes of Mine and Crafting - Glowing Ores"
+  },
+    "fusion": {
+        "overrides_folder": "fusion-overrides"
+    }
+}

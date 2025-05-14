@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:mercury_iron_ore"
+    ],
+    "append": [
+        "ad_astra:block/mercury_iron_ore_e"
+    ]
+}

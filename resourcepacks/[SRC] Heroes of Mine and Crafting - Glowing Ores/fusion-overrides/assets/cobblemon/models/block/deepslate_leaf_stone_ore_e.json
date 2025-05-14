@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "cobblemon:block/deepslate_leaf_stone_ore_e"
+    }
+}

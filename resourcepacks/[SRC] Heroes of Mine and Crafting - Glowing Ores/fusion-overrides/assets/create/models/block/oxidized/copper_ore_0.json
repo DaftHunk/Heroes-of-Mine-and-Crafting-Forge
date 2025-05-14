@@ -1,0 +1,9 @@
+{
+  "loader": "fusion:model",
+  "type": "base",
+  "parent": "create:block/cube_overlay_all",
+  "textures": {
+    "all": "create:block/oxidized/copper_ore_0",
+    "overlay": "create:block/oxidized/copper_ore_0_e"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:gilded_blackstone"
+    ],
+    "append": [
+        "minecraft:block/gilded_blackstone_e"
+    ]
+}

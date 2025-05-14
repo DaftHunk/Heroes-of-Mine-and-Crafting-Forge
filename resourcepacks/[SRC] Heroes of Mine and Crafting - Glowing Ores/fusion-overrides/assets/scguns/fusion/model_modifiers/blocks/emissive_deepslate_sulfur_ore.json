@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "scguns:deepslate_sulfur_ore"
+    ],
+    "append": [
+        "scguns:block/deepslate_sulfur_ore_e"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "cobblemon:deepslate_thunder_stone_ore"
+    ],
+    "append": [
+        "cobblemon:block/deepslate_thunder_stone_ore_e"
+    ]
+}

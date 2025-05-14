@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:glacio_lapis_ore"
+    ],
+    "append": [
+        "ad_astra:block/glacio_lapis_ore_e"
+    ]
+}

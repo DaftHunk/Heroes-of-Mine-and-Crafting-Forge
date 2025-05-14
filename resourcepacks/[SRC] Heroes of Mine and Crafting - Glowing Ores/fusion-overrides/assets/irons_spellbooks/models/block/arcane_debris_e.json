@@ -1,0 +1,9 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "irons_spellbooks:block/arcane_debris_top_e",
+        "side": "irons_spellbooks:block/arcane_debris_side_e"
+    }
+}

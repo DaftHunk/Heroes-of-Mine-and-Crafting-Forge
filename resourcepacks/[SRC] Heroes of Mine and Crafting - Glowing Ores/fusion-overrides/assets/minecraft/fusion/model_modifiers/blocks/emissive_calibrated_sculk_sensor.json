@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:calibrated_sculk_sensor"
+    ],
+    "append": [
+        "minecraft:block/calibrated_sculk_sensor_e"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "irons_spellbooks:mithril_ore"
+    ],
+    "append": [
+        "irons_spellbooks:block/mithril_ore_e"
+    ]
+}

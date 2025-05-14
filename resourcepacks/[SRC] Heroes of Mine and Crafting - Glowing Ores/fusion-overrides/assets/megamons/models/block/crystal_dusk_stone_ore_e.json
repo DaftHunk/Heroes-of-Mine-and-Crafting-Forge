@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "megamons:block/crystal_dusk_stone_ore_e"
+    }
+}

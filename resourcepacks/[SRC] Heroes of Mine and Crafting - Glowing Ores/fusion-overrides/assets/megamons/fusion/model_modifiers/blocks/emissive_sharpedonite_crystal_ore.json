@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:sharpedonite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/sharpedonite_crystal_ore_e"
+    ]
+}

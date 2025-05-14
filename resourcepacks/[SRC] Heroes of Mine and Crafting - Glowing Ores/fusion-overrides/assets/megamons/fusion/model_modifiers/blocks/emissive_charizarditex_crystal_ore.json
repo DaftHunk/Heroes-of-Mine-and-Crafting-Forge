@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:charizarditex_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/charizarditex_crystal_ore_e"
+    ]
+}

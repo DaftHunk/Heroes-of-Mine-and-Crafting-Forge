@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "cobblemon:block/terracotta_sun_stone_ore_e"
+    }
+}

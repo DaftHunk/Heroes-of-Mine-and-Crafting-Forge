@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:gengarite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/gengarite_crystal_ore_e"
+    ]
+}

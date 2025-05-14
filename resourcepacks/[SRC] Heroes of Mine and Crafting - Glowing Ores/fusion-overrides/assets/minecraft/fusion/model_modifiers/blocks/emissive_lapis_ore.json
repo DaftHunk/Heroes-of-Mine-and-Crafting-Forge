@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:lapis_ore"
+    ],
+    "append": [
+        "minecraft:block/lapis_ore_e"
+    ]
+}

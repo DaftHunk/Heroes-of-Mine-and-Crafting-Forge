@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betternether:cincinnasite_ore"
+    ],
+    "append": [
+        "betternether:block/cincinnasite_ore_e"
+    ]
+}

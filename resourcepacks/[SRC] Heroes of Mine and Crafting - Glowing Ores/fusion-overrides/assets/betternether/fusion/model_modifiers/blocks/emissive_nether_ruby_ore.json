@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betternether:nether_ruby_ore"
+    ],
+    "append": [
+        "betternether:block/nether_ruby_ore_e"
+    ]
+}

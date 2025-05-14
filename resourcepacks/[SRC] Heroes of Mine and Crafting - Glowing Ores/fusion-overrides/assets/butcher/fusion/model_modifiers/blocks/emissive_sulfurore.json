@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "butcher:sulfurore"
+    ],
+    "append": [
+        "butcher:block/sulfurore_e"
+    ]
+}

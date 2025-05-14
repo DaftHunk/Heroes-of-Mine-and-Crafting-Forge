@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "irons_spellbooks:block/deepslate_mithril_ore_e"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "butcher:block/salt_block_e",
+        "up": "butcher:block/salt_block_e",
+        "north": "butcher:block/salt_block_e",
+        "east": "butcher:block/salt_block_e",
+        "south": "butcher:block/salt_block_e",
+        "west": "butcher:block/salt_block_e"
+    }
+}

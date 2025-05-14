@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:deepslate_ice_shard_ore"
+    ],
+    "append": [
+        "ad_astra:block/deepslate_ice_shard_ore_e"
+    ]
+}

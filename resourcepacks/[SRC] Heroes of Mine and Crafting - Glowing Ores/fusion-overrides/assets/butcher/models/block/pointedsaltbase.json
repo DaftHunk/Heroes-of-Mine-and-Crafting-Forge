@@ -1,0 +1,9 @@
+{
+  "loader": "fusion:model",
+  "type": "base",
+  "parent": "block/cross",
+  "textures": {
+    "cross": "butcher:block/pointed_salt_up_base_e",
+    "particle": "butcher:block/pointed_salt_up_base"
+  }
+}

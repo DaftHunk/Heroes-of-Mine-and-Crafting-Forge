@@ -1,0 +1,10 @@
+{
+  "loader": "fusion:model",
+  "type": "base",
+  "parent": "block/cross",
+  "textures": {
+    "cross": "butcher:block/pointed_salt_up_tip_e",
+    "particle": "butcher:block/pointed_salt_up_tip"
+  },
+  "render_type": "cutout"
+}

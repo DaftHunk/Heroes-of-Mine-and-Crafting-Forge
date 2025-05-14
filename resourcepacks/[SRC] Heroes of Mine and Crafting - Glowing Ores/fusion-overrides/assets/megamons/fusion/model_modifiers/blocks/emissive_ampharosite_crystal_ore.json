@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:ampharosite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/ampharosite_crystal_ore_e"
+    ]
+}

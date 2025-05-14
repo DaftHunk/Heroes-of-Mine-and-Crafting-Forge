@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "cobblemon:dawn_stone_ore"
+    ],
+    "append": [
+        "cobblemon:block/dawn_stone_ore_e"
+    ]
+}

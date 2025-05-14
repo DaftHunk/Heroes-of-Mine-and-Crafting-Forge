@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:galladite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/galladite_crystal_ore_e"
+    ]
+}

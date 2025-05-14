@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betterend:amber_ore"
+    ],
+    "append": [
+        "betterend:block/amber_ore_e"
+    ]
+}

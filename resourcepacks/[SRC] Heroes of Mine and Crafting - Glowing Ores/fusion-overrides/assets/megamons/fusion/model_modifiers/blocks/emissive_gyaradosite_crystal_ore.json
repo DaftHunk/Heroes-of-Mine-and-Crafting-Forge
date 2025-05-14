@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:gyaradosite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/gyaradosite_crystal_ore_e"
+    ]
+}

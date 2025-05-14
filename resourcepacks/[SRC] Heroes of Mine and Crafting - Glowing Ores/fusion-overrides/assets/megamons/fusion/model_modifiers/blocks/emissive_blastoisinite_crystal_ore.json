@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:blastoisinite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/blastoisinite_crystal_ore_e"
+    ]
+}

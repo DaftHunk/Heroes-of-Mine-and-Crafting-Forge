@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "scguns:block/deepslate_anthralite_ore_e"
+    }
+}

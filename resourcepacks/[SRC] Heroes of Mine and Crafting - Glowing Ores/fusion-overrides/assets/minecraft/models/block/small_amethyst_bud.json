@@ -1,0 +1,8 @@
+{
+  "loader": "fusion:model",
+  "type": "base",
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "minecraft:block/small_amethyst_bud_e"
+  }
+}

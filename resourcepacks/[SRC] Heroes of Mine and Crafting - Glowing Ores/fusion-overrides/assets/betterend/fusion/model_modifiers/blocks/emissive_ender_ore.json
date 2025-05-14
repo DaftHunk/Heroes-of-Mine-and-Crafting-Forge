@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "betterend:ender_ore"
+    ],
+    "append": [
+        "betterend:block/ender_ore_e"
+    ]
+}

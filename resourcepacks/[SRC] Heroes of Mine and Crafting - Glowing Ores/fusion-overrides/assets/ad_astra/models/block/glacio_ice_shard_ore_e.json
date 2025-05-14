@@ -1,0 +1,8 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "ad_astra:block/glacio_ice_shard_ore_e"
+    }
+}

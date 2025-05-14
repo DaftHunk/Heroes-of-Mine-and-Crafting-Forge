@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:deepslate_gold_ore"
+    ],
+    "append": [
+        "minecraft:block/deepslate_gold_ore_e"
+    ]
+}

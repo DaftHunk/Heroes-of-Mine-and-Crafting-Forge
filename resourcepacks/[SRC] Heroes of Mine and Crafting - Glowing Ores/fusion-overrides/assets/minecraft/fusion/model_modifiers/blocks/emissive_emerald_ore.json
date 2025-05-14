@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:emerald_ore"
+    ],
+    "append": [
+        "minecraft:block/emerald_ore_e"
+    ]
+}

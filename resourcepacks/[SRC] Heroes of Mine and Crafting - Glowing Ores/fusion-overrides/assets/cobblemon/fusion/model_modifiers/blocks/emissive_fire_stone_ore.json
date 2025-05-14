@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "cobblemon:fire_stone_ore"
+    ],
+    "append": [
+        "cobblemon:block/fire_stone_ore_e"
+    ]
+}

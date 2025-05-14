@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "scguns:sulfur_ore"
+    ],
+    "append": [
+        "scguns:block/sulfur_ore_e"
+    ]
+}

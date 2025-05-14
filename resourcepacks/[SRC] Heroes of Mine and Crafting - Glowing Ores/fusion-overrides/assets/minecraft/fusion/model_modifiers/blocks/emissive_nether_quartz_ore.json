@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:nether_quartz_ore"
+    ],
+    "append": [
+        "minecraft:block/nether_quartz_ore_e"
+    ]
+}

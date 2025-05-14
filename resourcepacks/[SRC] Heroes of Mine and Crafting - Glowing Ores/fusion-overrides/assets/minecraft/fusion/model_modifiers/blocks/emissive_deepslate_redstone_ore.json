@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:deepslate_redstone_ore"
+    ],
+    "append": [
+        "minecraft:block/deepslate_redstone_ore_e"
+    ]
+}

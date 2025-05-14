@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:crystal_leaf_stone_ore"
+    ],
+    "append": [
+        "megamons:block/crystal_leaf_stone_ore_e"
+    ]
+}

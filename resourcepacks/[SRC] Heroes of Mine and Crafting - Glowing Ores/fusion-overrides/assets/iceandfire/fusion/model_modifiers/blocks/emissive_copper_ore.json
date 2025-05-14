@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "iceandfire:copper_ore"
+    ],
+    "append": [
+        "iceandfire:block/copper_ore_e"
+    ]
+}

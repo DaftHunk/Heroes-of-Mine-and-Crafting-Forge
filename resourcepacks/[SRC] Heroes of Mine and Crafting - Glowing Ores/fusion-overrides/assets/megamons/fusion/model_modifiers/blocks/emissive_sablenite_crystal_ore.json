@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:sablenite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/sablenite_crystal_ore_e"
+    ]
+}

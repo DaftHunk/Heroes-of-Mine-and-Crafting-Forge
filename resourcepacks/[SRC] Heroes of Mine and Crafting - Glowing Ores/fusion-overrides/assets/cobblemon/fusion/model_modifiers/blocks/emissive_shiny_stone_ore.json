@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "cobblemon:shiny_stone_ore"
+    ],
+    "append": [
+        "cobblemon:block/shiny_stone_ore_e"
+    ]
+}

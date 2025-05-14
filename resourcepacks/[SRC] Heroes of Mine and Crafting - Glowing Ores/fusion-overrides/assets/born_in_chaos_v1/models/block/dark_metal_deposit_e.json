@@ -1,0 +1,13 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "born_in_chaos_v1:block/dark_metal_deposit_e",
+        "up": "born_in_chaos_v1:block/dark_metal_deposit_e",
+        "north": "born_in_chaos_v1:block/dark_metal_deposit_e",
+        "east": "born_in_chaos_v1:block/dark_metal_deposit_e",
+        "south": "born_in_chaos_v1:block/dark_metal_deposit_e",
+        "west": "born_in_chaos_v1:block/dark_metal_deposit_e"
+    }
+}

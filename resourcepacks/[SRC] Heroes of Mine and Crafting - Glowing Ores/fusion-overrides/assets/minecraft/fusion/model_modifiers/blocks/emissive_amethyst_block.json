@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:amethyst_block"
+    ],
+    "append": [
+        "minecraft:block/amethyst_block_e"
+    ]
+}

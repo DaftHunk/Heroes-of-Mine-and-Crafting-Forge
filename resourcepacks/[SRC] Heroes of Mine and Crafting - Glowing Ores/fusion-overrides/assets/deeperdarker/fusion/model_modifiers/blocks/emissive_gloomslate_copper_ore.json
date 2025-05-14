@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "deeperdarker:gloomslate_copper_ore"
+    ],
+    "append": [
+        "deeperdarker:block/gloomslate_copper_ore_e"
+    ]
+}

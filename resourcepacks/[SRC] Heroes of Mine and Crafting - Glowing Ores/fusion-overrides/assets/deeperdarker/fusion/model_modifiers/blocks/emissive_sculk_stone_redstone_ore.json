@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "deeperdarker:sculk_stone_redstone_ore"
+    ],
+    "append": [
+        "deeperdarker:block/sculk_stone_redstone_ore_e"
+    ]
+}

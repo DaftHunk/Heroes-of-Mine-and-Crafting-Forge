@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:glacio_ice_shard_ore"
+    ],
+    "append": [
+        "ad_astra:block/glacio_ice_shard_ore_e"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "loader": "fusion:model",
+    "type": "base",
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "minecraft:block/diamond_ore_e",
+        "up": "minecraft:block/diamond_ore_e",
+        "north": "minecraft:block/diamond_ore_e",
+        "east": "minecraft:block/diamond_ore_e",
+        "south": "minecraft:block/diamond_ore_e",
+        "west": "minecraft:block/diamond_ore_e"
+    }
+}

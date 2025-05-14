@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "scguns:deepslate_anthralite_ore"
+    ],
+    "append": [
+        "scguns:block/deepslate_anthralite_ore_e"
+    ]
+}

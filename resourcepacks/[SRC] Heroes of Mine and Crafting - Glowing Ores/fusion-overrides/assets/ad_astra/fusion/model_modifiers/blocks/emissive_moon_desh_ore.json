@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:moon_desh_ore"
+    ],
+    "append": [
+        "ad_astra:block/moon_desh_ore_e"
+    ]
+}

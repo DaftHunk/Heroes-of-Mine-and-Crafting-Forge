@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:venus_diamond_ore"
+    ],
+    "append": [
+        "ad_astra:block/venus_diamond_ore_e"
+    ]
+}

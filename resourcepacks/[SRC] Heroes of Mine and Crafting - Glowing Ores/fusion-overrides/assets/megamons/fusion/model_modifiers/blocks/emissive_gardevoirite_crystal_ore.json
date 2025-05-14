@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:gardevoirite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/gardevoirite_crystal_ore_e"
+    ]
+}

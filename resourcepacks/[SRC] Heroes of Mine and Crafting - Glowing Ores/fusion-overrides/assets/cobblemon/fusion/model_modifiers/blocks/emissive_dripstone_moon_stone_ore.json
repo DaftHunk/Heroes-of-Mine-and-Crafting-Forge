@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "cobblemon:dripstone_moon_stone_ore"
+    ],
+    "append": [
+        "cobblemon:block/dripstone_moon_stone_ore_e"
+    ]
+}

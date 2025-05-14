@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "minecraft:deepslate_lapis_ore"
+    ],
+    "append": [
+        "minecraft:block/deepslate_lapis_ore_e"
+    ]
+}

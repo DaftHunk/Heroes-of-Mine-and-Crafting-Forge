@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "butcher:block/pointed_salt_up_base",
+    "particle": "butcher:block/pointed_salt_up_base"
+  },
+  "render_type": "cutout"
+}

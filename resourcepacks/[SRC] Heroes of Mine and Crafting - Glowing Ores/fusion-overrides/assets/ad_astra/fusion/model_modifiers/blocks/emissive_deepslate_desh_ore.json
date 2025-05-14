@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ad_astra:deepslate_desh_ore"
+    ],
+    "append": [
+        "ad_astra:block/deepslate_desh_ore_e"
+    ]
+}

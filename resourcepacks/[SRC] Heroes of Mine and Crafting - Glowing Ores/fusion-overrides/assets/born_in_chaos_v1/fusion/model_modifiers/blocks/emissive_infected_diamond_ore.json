@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "born_in_chaos_v1:infected_diamond_ore"
+    ],
+    "append": [
+        "born_in_chaos_v1:block/infected_diamond_ore_e"
+    ]
+}

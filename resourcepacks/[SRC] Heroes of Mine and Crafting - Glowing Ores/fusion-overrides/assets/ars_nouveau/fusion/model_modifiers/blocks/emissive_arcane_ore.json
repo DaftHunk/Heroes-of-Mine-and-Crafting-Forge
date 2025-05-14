@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "ars_nouveau:arcane_ore"
+    ],
+    "append": [
+        "ars_nouveau:block/arcane_ore_e"
+    ]
+}

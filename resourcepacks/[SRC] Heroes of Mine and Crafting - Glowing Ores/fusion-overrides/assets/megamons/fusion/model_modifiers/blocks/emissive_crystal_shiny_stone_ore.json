@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:crystal_shiny_stone_ore"
+    ],
+    "append": [
+        "megamons:block/crystal_shiny_stone_ore_e"
+    ]
+}

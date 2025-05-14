@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "call_of_yucutan:jade_ore"
+    ],
+    "append": [
+        "call_of_yucutan:block/jade_ore_e"
+    ]
+}

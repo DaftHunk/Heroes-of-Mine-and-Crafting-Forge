@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "cobblemon:terracotta_sun_stone_ore"
+    ],
+    "append": [
+        "cobblemon:block/terracotta_sun_stone_ore_e"
+    ]
+}

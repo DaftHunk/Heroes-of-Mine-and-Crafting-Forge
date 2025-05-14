@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "iceandfire:silver_ore"
+    ],
+    "append": [
+        "iceandfire:block/silver_ore_e"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "deeperdarker:gloomslate_diamond_ore"
+    ],
+    "append": [
+        "deeperdarker:block/gloomslate_diamond_ore_e"
+    ]
+}

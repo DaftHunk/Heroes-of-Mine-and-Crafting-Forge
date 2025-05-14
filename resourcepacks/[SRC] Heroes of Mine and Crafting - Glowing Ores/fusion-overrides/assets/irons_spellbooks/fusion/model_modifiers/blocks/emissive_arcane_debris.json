@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "irons_spellbooks:arcane_debris"
+    ],
+    "append": [
+        "irons_spellbooks:block/arcane_debris_e"
+    ]
+}

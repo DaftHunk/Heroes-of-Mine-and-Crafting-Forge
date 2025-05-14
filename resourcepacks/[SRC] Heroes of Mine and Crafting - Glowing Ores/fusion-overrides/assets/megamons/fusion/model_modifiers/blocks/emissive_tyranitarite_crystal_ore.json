@@ -1,0 +1,8 @@
+{
+    "targets": [
+        "megamons:tyranitarite_crystal_ore"
+    ],
+    "append": [
+        "megamons:block/tyranitarite_crystal_ore_e"
+    ]
+}
