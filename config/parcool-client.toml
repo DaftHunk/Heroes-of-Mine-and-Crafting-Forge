@@ -60,7 +60,7 @@
 	#Allowed Values: PressRightAndLeft, TapMovementAndJump, PressFlippingKey
 	flip_control = "PressRightAndLeft"
 	#Enable double-tapping ctrl for Dodge
-	enable_double_tapping_for_dodge = false
+	enable_double_tapping_for_dodge = true
 	#Enable Crawl in air
 	enable_crawl_in_air = true
 	#Enable Vault in air
@@ -112,7 +112,7 @@
 
 [Stamina]
 	#Allowed Values: Default, Hunger, Feathers, Paraglider, EpicFight
-	used_stamina = "Default"
+	used_stamina = "Feathers"
 
 	#Caution : Max stamina and stamina recovery config is removed because they became attributes.
 	[Stamina.Consumption]
