@@ -18,6 +18,11 @@
 	decoupled_camera = true
 	#Whether or not to orient the camera rotation when the player is teleported. This includes passenger (dis-)mounting and traveling through portals.
 	orient_camera_on_teleport = true
+	#Whether or not to apply the FOV override when in shoulder surfing perspective.
+	fov_override_enabled = false
+	#The camera FOV when in shoulder surfing perspective. Depends on config option 'fov_override_enabled'.
+	#Range: 30.0 ~ 110.0
+	fov_override = 70.0
 
 	[camera.offset]
 		#Third person camera x-offset.
@@ -177,7 +182,7 @@
 [perspective]
 	#The default perspective when you load the game.
 	#Allowed Values: FIRST_PERSON, THIRD_PERSON_BACK, THIRD_PERSON_FRONT, SHOULDER_SURFING
-	default_perspective = "FIRST_PERSON"
+	default_perspective = "SHOULDER_SURFING"
 	#Whether or not to remember the last perspective used.
 	remember_last_perspective = true
 	#Whether or not to replace the default third person perspective.
@@ -282,4 +287,10 @@
 		#The vector direction of the raytrace when picking objects. This config option only applies when using the dynamic crosshair.
 		#Allowed Values: PLAYER, CAMERA
 		pick_vector = "CAMERA"
+
+[integrations]
+
+	[integrations.epicfight]
+		#Whether to allow target lock-on when camera is decoupled.
+		decoupled_camera_lock_on = false
 
