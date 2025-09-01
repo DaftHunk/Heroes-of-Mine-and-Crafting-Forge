@@ -1,7 +1,29 @@
 [
   {
-    "mob": ["minecraft:bat", "minecraft:dolphin", "minecraft:glow_squid", "minecraft:goat", "minecraft:ocelot", "minecraft:panda", "minecraft:parrot", "minecraft:polar_bear", "minecraft:squid", "minecraft:tadpole", "minecraft:turtle", "crittersandcompanions:dragonfly", "crittersandcompanions:jumping_spider","crittersandcompanions:leaf_insect", "scguns:cog_minion", "scguns:cog_knight", "scguns:sky_carrier", "scguns:hive", "scguns:supply_scamp", "scguns:dissident", "crabbersdelight:crab", "mowziesmobs:lantern"],
+    "mob": [
+		"minecraft:bat",
+		"minecraft:dolphin", 
+		"minecraft:glow_squid", 
+		"minecraft:ocelot", 
+		"minecraft:polar_bear", 
+		"minecraft:squid", 
+		"crittersandcompanions:dragonfly",
+		"crittersandcompanions:leaf_insect", 
+		"scguns:cog_minion", 
+		"scguns:cog_knight", 
+		"scguns:sky_carrier", 
+		"scguns:hive", 
+		"scguns:supply_scamp", 
+		"scguns:dissident", 
+		"crabbersdelight:crab", 
+		"mowziesmobs:lantern"
+	],
     "when": "onjoin",
+    "result": "deny"
+  },
+  {
+    "mob": "crittersandcompanions:otter",
+    "mincount": 5,
     "result": "deny"
   }
 ]
