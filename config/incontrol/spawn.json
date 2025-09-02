@@ -22,6 +22,14 @@
     "result": "deny"
   },
   {
+    "mob": [
+		"minecraft:enderman"
+	],
+    "when": "onjoin",
+	"dimension": "minecraft:overworld",
+    "result": "deny"
+  },
+  {
     "mob": "crittersandcompanions:otter",
     "mincount": 5,
     "result": "deny"

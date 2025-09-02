@@ -1,28 +1,34 @@
 # Don't change this! Version used to track needed updates.
 version = 0
-enderPearlTrail = true
-snowballTrailDensity = 0.2
+chickenFeathers = true
+parrotFeathers = true
+snowGolemSnowflakes = true
 allayMagicDensity = 0.2
 vexMagicDensity = 0.2
 sheepShearFluff = true
 improvedDragonFireballTrail = true
+dragonsBreathClouds = true
 commandBlockMinecartParticles = "ON"
 endCrystalParticles = true
-minecartLandingSparks = true
+minecartSparksDisplayType = "DEFAULT"
+minecartSparksDensity = 0.5
 slimeTrails = true
 magmaCubeTrails = true
 replaceSlimeSquishParticles = true
+replaceOozingEffectParticles = true
 replaceSpellCasterParticles = true
 ironGolemCrackParticles = true
 spectralArrowParticles = true
 wardenDeathSoulParticles = true
-xpBottleParticlesDisplayType = "DEFAULT"
-xpBottleParticlesDensity = 10
-
-[attacked]
-chickenFeathers = true
-parrotFeathers = true
-snowGolemSnowflakes = true
+freezingSnowFlakes = true
+featherTicklingPandas = true
+improvedPandaSneezes = true
+villagerWorkAtWorkstationParticles = true
+improvedBrownMooshroomFeedingEffects = true
+improvedMooshroomShearingEffects = true
+replaceBlazeSmoke = true
+animalFeedingParticles = true
+animalFeedingSoundVolume = 1.0
 
 [sleeping]
 playerSnoreChance = 1.0
@@ -39,8 +45,13 @@ displaySleepingZsOnlyWhenSnoring = false
 adjustNameTagWhenSleeping = true
 
 [humanoids]
-drowningBubbles = "DEFAULT"
+drowningBubblesDisplayType = "DEFAULT"
 drowningBubblesDensity = 10
+drowningBubbleAlpha = 1.0
+forceDrowningBubblesToColumn = false
+potionRingsDisplayType = "DEFAULT"
+potionRingsParticleType = "BOTH"
+NPCsHavePotionRings = true
 
 [humanoids.frostyBreath]
 displayType = "DEFAULT"
@@ -50,39 +61,37 @@ seasons = "DEFAULT"
 additionalBiomes = [  ]
 
 [humanoids.player]
+enableBreathingEffectsInCreative = true
 stomachGrowlingThreshold = 6
 stomachGrowlingVolume = 1.0
+stomachGrowlingWaitTime = 15
 heartBeatingThreshold = 6
 heartbeatVolume = 1.0
+heartBeatingWaitTime = 3
 
 [dustClouds]
 scale = 2.0
 alpha = 1.0
-playerFell = false
-playerRunning = false
-playerRunningRequiresSpeed = false
-mobFell = false
-mobRunning = false
-landMaceAttack = false
 preventWhenRaining = false
+flyIntoWall = true
+lessViewBlocking = false
+playerFell = false
+mobFell = false
+landMaceAttack = false
+playerRunning = false
+mobRunning = false
+playerRunningRequiresSpeed = false
 
 [burning]
 smoke = "DEFAULT"
 flames = true
 sparks = true
 sounds = true
-
-[itemRarity]
-particlesDisplayType = "OFF"
-particleColor = "NAME_COLOR"
-mixedColorName = true
-particleMaxHeight = 1.0
-particleMaxSpeed = 1.0
-particleDensity = 1.0
+extinguishSteam = true
 
 [explosives]
 tntUpdateSmoke = true
-tntFlames = true
+tntFlamesDensity = 1
 tntSparks = true
 creeperSmoke = "UPDATED"
 creeperSparks = true
