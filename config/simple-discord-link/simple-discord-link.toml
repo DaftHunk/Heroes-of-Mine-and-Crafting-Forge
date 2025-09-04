@@ -89,7 +89,7 @@
 	#Should the entire command executed be relayed to discord, or only the name of the command
 	relayFullCommands = false
 	#Should messages from bots be relayed
-	ignoreBots = true
+	ignoreBots = false
 	#Should SERVER STARTING messages be shown
 	serverStarting = true
 	#Should SERVER STARTED messages be shown
@@ -124,19 +124,19 @@
 #Change the format in which messages are displayed
 [messageFormatting]
 	#Prefix to add to Minecraft when a message is relayed from Discord. Supports MC formatting. Use %user% for the Discord Username
-	mcPrefix = "§e[Discord]§r %user%: "
+	mcPrefix = ""
 	#Server Starting Message
-	serverStarting = "*Le serveur démarre...*"
+	serverStarting = "*Le serveur survie démarre...*"
 	#Server Started Message
-	serverStarted = "*Le serveur est en ligne. Bon jeu !*"
+	serverStarted = "*Le serveur survie est en ligne. Bon jeu !*"
 	#Server Stopping Message
-	serverStopping = "*Le serveur s'arrête...*"
+	serverStopping = "*Le serveur survie s'arrête...*"
 	#Server Stopped Message
-	serverStopped = "*Le serveur est arrêté...*"
+	serverStopped = "*Le serveur survie est arrêté...*"
 	#Player Joined Message. Use %player% to display the player name
-	playerJoined = "*%player% a rejoint le serveur !*"
+	playerJoined = "*%player% a rejoint le serveur survie !*"
 	#Player Left Message. Use %player% to display the player name
-	playerLeft = "*%player% a quitté le serveur.*"
+	playerLeft = "*%player% a quitté le serveur survie.*"
 	#Achievement Messages. Available variables: %player%, %title%, %description%
 	achievements = "*%player% vient de remporter le succès [%title%]: %description%*"
 	#Chat Messages. THIS DOES NOT APPLY TO EMBED OR WEBHOOK MESSAGES. Available variables: %player%, %message%, %mcname%
