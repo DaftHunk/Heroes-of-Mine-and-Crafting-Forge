@@ -76,6 +76,9 @@
     "hide_lantern_buttons": true,
     "hide_torch_buttons": true
   },
+  "balm": {
+    "jade": true
+  },
   "ars_nouveau": {
     "mob_jar": true
   },
