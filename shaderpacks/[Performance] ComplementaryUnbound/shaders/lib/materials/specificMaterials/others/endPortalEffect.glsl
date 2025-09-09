@@ -1,3 +1,4 @@
+#define END_PORTAL_VARIATION 0 // [0 1 3] 2 is removed on purpose
 // End Portal fix by fayer3#2332 (Modified)
 float dither = Bayer64(gl_FragCoord.xy);
 #ifdef TAA

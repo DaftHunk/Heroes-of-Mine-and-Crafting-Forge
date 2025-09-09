@@ -1,3 +1,5 @@
+#include "/lib/shaderSettings/materials.glsl"
+
 #ifndef INCLUDE_VOXELIZATION
     #define INCLUDE_VOXELIZATION
 
@@ -251,7 +253,7 @@
                         if (mat == 10704) return  57; // Sculk Sensor:Lit
                         #ifdef DO_IPBR_LIGHTS
                         if (mat == 10708) return  53; // Spawner
-                        if (mat == 10736) return  64; // Structure Block, Jigsaw Block
+                        if (mat == 10736) return  64; // Structure Block, Jigsaw Block, Test Block, Test Instance Block, Test Block, Test Instance Block
                         if (mat == 10776) return  61; // Warped Fungus, Crimson Fungus
                         #endif
                     } else {
@@ -293,6 +295,7 @@
                             #endif
                             if (mat == 10924) return  81; // Open Eyeblossom
                             if (mat == 10948) return  82; // Creaking Heart: Active
+                            if (mat == 10972) return  83; // Firefly Bush
                         } else {
                             if (mat == 21000) return  97; // White Modded Blocks - Also used For Black / Gray
                             if (mat == 21002) return  43; // Brown Modded Blocks
@@ -328,9 +331,9 @@
 
     #if defined SHADOW && defined VERTEX_SHADER
         void UpdateVoxelMap(int mat, vec3 normal) {
-            if (length(abs(normal.xz) - vec2(sqrt(0.5))) < 0.01 && mat == 0 || // Modded cross model block
-            mat == 32000 || // Water
-                mat < 30000 && mat % 2 == 1 // Non-solid terrain
+            if (mat == 32000 // Water
+                || mat < 30000 && mat % 2 == 1 // Non-solid terrain
+                || mat < 10000 // Block entities or unknown blocks that we treat as non-solid
             ) return;
 
             vec3 modelPos = gl_Vertex.xyz + at_midBlock.xyz / 64.0;

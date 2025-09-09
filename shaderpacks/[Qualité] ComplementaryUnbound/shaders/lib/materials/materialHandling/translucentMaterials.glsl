@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/water.glsl"
 if (mat < 32008) {
     if (mat < 30016) {
         if (mat < 30008) {
@@ -95,22 +96,26 @@ if (mat < 32008) {
 } else {
     if (mat < 32024) {
         if (mat < 32016) {
-            if (mat == 32008) { // Glass
-                #ifdef CONNECTED_GLASS_EFFECT
-                    uint voxelID = uint(217);
-                    bool isPane = false;
-                    DoConnectedGlass(colorP, color, noGeneratedNormals, playerPos, worldGeoNormal, voxelID, isPane);
-                #endif
+            if (mat < 32012) { // Glass
+                if (mat == 32008){
+                    #ifdef CONNECTED_GLASS_EFFECT
+                        uint voxelID = uint(217);
+                        bool isPane = false;
+                        DoConnectedGlass(colorP, color, noGeneratedNormals, playerPos, worldGeoNormal, voxelID, isPane);
+                    #endif
+                }
                 #include "/lib/materials/specificMaterials/translucents/glass.glsl"
                 overlayNoiseAlpha = 0.8;
                 sandNoiseIntensity = 0.8;
                 mossNoiseIntensity = 0.8;
             } else /*if (mat == 32012)*/ { // Glass Pane
-                #ifdef CONNECTED_GLASS_EFFECT
-                    uint voxelID = uint(218);
-                    bool isPane = true;
-                    DoConnectedGlass(colorP, color, noGeneratedNormals, playerPos, worldGeoNormal, voxelID, isPane);
-                #endif
+                if (mat == 32012) {
+                    #ifdef CONNECTED_GLASS_EFFECT
+                        uint voxelID = uint(218);
+                        bool isPane = true;
+                        DoConnectedGlass(colorP, color, noGeneratedNormals, playerPos, worldGeoNormal, voxelID, isPane);
+                    #endif
+                }
                 if (color.a < 0.001 && abs(NdotU) > 0.95) discard; // Fixing artifacts on CTM/Opti connected glass panes
                 #include "/lib/materials/specificMaterials/translucents/glass.glsl"
                 noSmoothLighting = true;

@@ -5,6 +5,10 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/shockwave.glsl"
+#include "/lib/shaderSettings/entities.glsl"
+#include "/lib/shaderSettings/emissionMult.glsl"
+//#define NIGHT_DESATURATION
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -46,6 +50,7 @@ float shadowTimeVar1 = abs(sunVisibility - 0.5) * 2.0;
 float shadowTimeVar2 = shadowTimeVar1 * shadowTimeVar1;
 float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 float skyLightCheck = 0.0;
+float entitySSBLMask = 1.0;
 
 #ifdef OVERWORLD
     vec3 lightVec = sunVec * ((timeAngle < 0.5325 || timeAngle > 0.9675) ? 1.0 : -1.0);
@@ -116,7 +121,7 @@ void main() {
     vec3 nViewPos = normalize(viewPos);
     vec3 playerPos = ViewToPlayer(viewPos);
     float lViewPos = length(viewPos);
-    float purkinjeOverwrite = 0.0, emission = 0.0;
+    float purkinjeOverwrite = 0.0, emission = 0.0, emissionOld = 0.0;
 
     if (glColor.a < 0.0) discard;
     skyLightCheck = pow2(1.0 - min1(lmCoord.y * 2.9 * sunVisibility));
@@ -134,8 +139,15 @@ void main() {
     vec3 normalM = normal;
 
     float luminance = GetLuminance(color.rgb);
+    vec3 lightAlbedo = vec3(0.0);
 
-    if (color.a > 0.001) {
+    float alphaCheck = color.a;
+    #ifdef DO_PIXELATION_EFFECTS
+        // Fixes artifacts on fragment edges with non-nvidia gpus
+        alphaCheck = max(fwidth(color.a), alphaCheck);
+    #endif
+
+    if (alphaCheck > 0.001) {
         float overlayNoiseIntensity = 1.0;
         float snowNoiseIntensity = 1.0;
         float sandNoiseIntensity = 1.0;
@@ -159,11 +171,11 @@ void main() {
             #endif
         #endif
 
-    color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
+        color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 
         bool noSmoothLighting = atlasSize.x < 600.0; // To fix fire looking too dim
-        bool noGeneratedNormals = false;
-        float smoothnessG = 0.0, highlightMult = 0.0, noiseFactor = 0.75;
+        bool noGeneratedNormals = false, noDirectionalShading = false, noVanillaAO = false;
+        float smoothnessG = 0.0, highlightMult = 0.0, emission = 0.0, noiseFactor = 0.75;
         vec2 lmCoordM = lmCoord;
         vec3 shadowMult = vec3(1.0);
         #ifdef IPBR
@@ -196,8 +208,14 @@ void main() {
                 #include "/lib/materials/specificMaterials/entities/lightningBolt.glsl"
             } else if (entityId == 50008) { // Item Frame, Glow Item Frame
                 noSmoothLighting = true;
+            } else if (entityId == 50016 || entityId == 50017) { // Player
+                #if IRIS_VERSION >= 10800
+                    if (entityId == 50017) entitySSBLMask = 0.0;
+                #else
+                    if (length(playerPos) < 4.0) entitySSBLMask = 0.0;
+                #endif
             } else if (entityId == 50076) { // Boats
-                playerPos.y += 0.38; // to avoid water shadow and the black inner shadow bug
+                playerPos.y += 0.38; // consistentBOAT2176
             }
             #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
                 if (entityId == 50020) { // blaze
@@ -219,7 +237,8 @@ void main() {
         vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
 
         #ifdef SS_BLOCKLIGHT
-            blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos);
+            lightAlbedo = normalize(color.rgb) * min1(emission);
+            blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
         #endif
 
         #if defined SPOOKY && BLOOD_MOON > 0
@@ -232,22 +251,29 @@ void main() {
 
         emission *= EMISSION_MULTIPLIER;
 
-        DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
-                   worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
-                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
+        bool isLightSource = lmCoord.x > 0.99;
+
+        DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
+                   worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
+                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
 
         #if defined IPBR && defined IS_IRIS
             color.rgb += maRecolor;
         #endif
 
-        #ifdef PBR_REFLECTIONS
+        #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
             #ifdef OVERWORLD
                 skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
             #else
                 skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
             #endif
         #endif
+        emissionOld = emission;
     }
+
+    #ifdef ENTITIES_ARE_LIGHT
+        entitySSBLMask = 1.0;
+    #endif
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, -1);
@@ -255,7 +281,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emissionOld));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
         /* DRAWBUFFERS:065 */
@@ -263,11 +289,11 @@ void main() {
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0658 */
-            gl_FragData[3] = vec4(0.0, 0.0, 0.0, 1.0);
+            gl_FragData[3] = vec4(lightAlbedo, entitySSBLMask);
         #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:068 */
-        gl_FragData[2] = vec4(0.0, 0.0, 0.0, 1.0);
+        gl_FragData[2] = vec4(lightAlbedo, entitySSBLMask);
     #endif
 }
 

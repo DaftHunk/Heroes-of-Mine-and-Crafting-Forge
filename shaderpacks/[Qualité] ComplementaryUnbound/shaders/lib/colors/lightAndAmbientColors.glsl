@@ -1,6 +1,10 @@
 #ifndef INCLUDE_LIGHT_AND_AMBIENT_COLORS
     #define INCLUDE_LIGHT_AND_AMBIENT_COLORS
 
+    #include "/lib/shaderSettings/endBeams.glsl"
+    #include "/lib/shaderSettings/lightAndAmbientColors.glsl"
+    #include "/lib/shaderSettings/overworldBeams.glsl"
+
     #if defined OVERWORLD
         #ifndef COMPOSITE
             vec3 noonClearLightColor = vec3(0.7, 0.55, 0.4) * 1.9; //ground and cloud color
@@ -77,7 +81,7 @@
 
         #ifdef OVERWORLD_BEAMS
             vec3 ambientColorBeam = mix(clearAmbientColor, rainAmbientColor, rainFactor);
-            vec3 ColorBeam = mix(ambientColorBeam, vec3(OW_BEAM_R, OW_BEAM_G, OW_BEAM_B) / 255, BEAMS_AMBIENT_INFLUENCE);
+            vec3 ColorBeam = mix(clamp(vec3(OW_BEAM_R, OW_BEAM_G, OW_BEAM_B) / 255, 0.01, 1.0), ambientColorBeam, BEAMS_AMBIENT_INFLUENCE);
         #else
             vec3 ColorBeam = vec3(0.0);
         #endif
@@ -90,7 +94,7 @@
         #endif
     #elif defined END
         float fogLuminance = dot(fogColor, vec3(0.299, 0.587, 0.114));
-        vec3 endLightColor = clamp01(mix(fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - fogLuminance), vec3(0.68, 0.51, 1.07), inVanillaEnd));
+        vec3 endLightColor = clamp(mix(fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - fogLuminance), vec3(0.68, 0.51, 1.07), inVanillaEnd * END_SKY_FOG_INFLUENCE), 0.0, 1.0);
         float endLightBalancer = 0.2 * vsBrightness;
         #ifdef SPOOKY
             vec3 lightColor   = endLightColor * (0.35 - endLightBalancer) * 0.4;
@@ -100,7 +104,8 @@
             vec3 ambientCol   = endLightColor * (0.2 + endLightBalancer);
         #endif
         vec3 ambientColor = mix(ambientCol, vec3(END_AMBIENT_R, END_AMBIENT_G, END_AMBIENT_B) / 255 * END_AMBIENT_I, END_AMBIENT_INFLUENCE);
-        vec3 endColorBeam = mix(ambientCol, vec3(E_BEAM_R, E_BEAM_G, E_BEAM_B) / 255, E_BEAMS_AMBIENT_INFLUENCE);
+        vec3 endColorBeam = mix(clamp(vec3(E_BEAM_R, E_BEAM_G, E_BEAM_B) / 255, 0.01, 1.0), ambientCol, E_BEAMS_AMBIENT_INFLUENCE);
+
     #endif
 
 #endif //INCLUDE_LIGHT_AND_AMBIENT_COLORS

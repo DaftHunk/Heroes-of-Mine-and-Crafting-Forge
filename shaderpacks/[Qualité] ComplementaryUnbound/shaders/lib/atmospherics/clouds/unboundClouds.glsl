@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/cloudsAndLighting.glsl"
 #if CLOUD_UNBOUND_SIZE_MULT != 100
     #define CLOUD_UNBOUND_SIZE_MULT_M CLOUD_UNBOUND_SIZE_MULT * 0.01
 #endif
@@ -11,13 +12,28 @@ const float cloudStretchModified = max(0.25, float(CLOUD_STRETCH) * 1.9 - 0.9);
 #elif CLOUD_QUALITY_INTERNAL == 4
     const float cloudStretchRaw = 20.0 * cloudStretchModified;
 #endif
-#if CLOUD_UNBOUND_SIZE_MULT <= 100
-    const float cloudStretch = cloudStretchRaw;
-#else
-    const float cloudStretch = cloudStretchRaw / float(CLOUD_UNBOUND_SIZE_MULT_M);
-#endif
 
-const float cloudHeightShader = cloudStretch * 2.0;
+
+
+#ifdef DOUBLE_UNBOUND_CLOUDS
+    const float L2cloudStretch = cloudStretchRaw * CLOUD_UNBOUND_LAYER2_HEIGHT / CLOUD_STRETCH;
+
+    #if CLOUD_UNBOUND_SIZE_MULT <= 100
+        float cloudStretch = cloudStretchRaw;
+    #else
+        float cloudStretch = cloudStretchRaw / float(CLOUD_UNBOUND_SIZE_MULT_M);
+    #endif
+
+    float cloudHeightShader = cloudStretch * 2.0;
+#else
+    #if CLOUD_UNBOUND_SIZE_MULT <= 100
+        const float cloudStretch = cloudStretchRaw;
+    #else
+        const float cloudStretch = cloudStretchRaw / float(CLOUD_UNBOUND_SIZE_MULT_M);
+    #endif
+    
+    const float cloudHeightShader = cloudStretch * 2.0;
+#endif
 
 float GetCloudNoise(vec3 tracePos, int cloudAltitude, float lTracePosXZ, float cloudPlayerPosY) {
     vec3 tracePosM = tracePos.xyz * 0.00016;
@@ -38,9 +54,17 @@ float GetCloudNoise(vec3 tracePos, int cloudAltitude, float lTracePosXZ, float c
         #define CLOUD_SPEED_MULT_M CLOUD_SPEED_MULT * 0.01
         wind *= frameTimeCounter * CLOUD_SPEED_MULT_M;
     #endif
+
     #if CLOUD_UNBOUND_SIZE_MULT != 100
         tracePosM *= CLOUD_UNBOUND_SIZE_MULT_M;
         wind *= CLOUD_UNBOUND_SIZE_MULT_M;
+    #endif
+
+    #ifdef DOUBLE_UNBOUND_CLOUDS
+        if (cloudAltitude != cloudAlt1i) {
+            tracePosM *= CLOUD_UNBOUND_LAYER2_SIZE * 10.0 / CLOUD_UNBOUND_SIZE_MULT;
+            wind *= CLOUD_UNBOUND_LAYER2_SIZE * 10.0 * CLOUD_LAYER2_SPEED_MULT / CLOUD_UNBOUND_SIZE_MULT;
+        }
     #endif
 
     #if CLOUD_QUALITY_INTERNAL == 1
@@ -84,7 +108,7 @@ float GetCloudNoise(vec3 tracePos, int cloudAltitude, float lTracePosXZ, float c
     }
     noise = pow2(noise / total);
 
-    #ifndef DISTANT_HORIZONS
+    #if !defined DISTANT_HORIZONS || defined DH_CLOUD_TWEAK_OVERRIDE
         #define CLOUD_BASE_ADD 0.65
         #define CLOUD_FAR_ADD 0.01
         #define CLOUD_ABOVE_ADD 0.1
@@ -121,6 +145,12 @@ float GetCloudNoise(vec3 tracePos, int cloudAltitude, float lTracePosXZ, float c
                 + CLOUD_FAR_ADD * sqrt(lTracePosXZ + 10.0) // more/less clouds far away
                 + CLOUD_ABOVE_ADD * clamp01(-cloudPlayerPosY / cloudHeightShader) // more clouds when camera is above them
                 + CLOUD_UNBOUND_RAIN_ADD * rainFactor + spookyCloudAdd + seasonCloudAdd; // more clouds during rain, Spooky and seasons
+    
+    #ifdef DOUBLE_UNBOUND_CLOUDS
+    if (cloudAltitude != cloudAlt1i)
+        noise *= noiseMult * CLOUD_UNBOUND_LAYER2_AMOUNT * nightCloudRemove;
+    else
+    #endif
     noise *= noiseMult * CLOUD_UNBOUND_AMOUNT * nightCloudRemove;
 
     float threshold = clamp(abs(cloudAltitude - tracePos.y) / cloudStretch, 0.001, 0.999);
@@ -130,6 +160,15 @@ float GetCloudNoise(vec3 tracePos, int cloudAltitude, float lTracePosXZ, float c
 
 vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float cloudLinearDepth, float skyFade, float skyMult0, vec3 cameraPos, vec3 nPlayerPos, float lViewPosM, float VdotS, float VdotU, float dither) {
     vec4 volumetricClouds = vec4(0.0);
+    
+    #ifdef DOUBLE_UNBOUND_CLOUDS
+    float L1cloudStretch = cloudStretch;
+
+    if (cloudAltitude != cloudAlt1i) { // second layer
+        cloudStretch = L2cloudStretch;
+        cloudHeightShader = 2.0 * cloudStretch;
+    }
+    #endif
 
     float higherPlaneAltitude = cloudAltitude + cloudStretch;
     float lowerPlaneAltitude  = cloudAltitude - cloudStretch;
@@ -154,8 +193,23 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
         float stepMult = 24.0;
     #endif
 
+    #if defined DOUBLE_UNBOUND_CLOUDS && (CLOUD_UNBOUND_LAYER2_SIZE > 10 || CLOUD_UNBOUND_SIZE_MULT > 100)
+        if (cloudAltitude != cloudAlt1i) {
+        #if CLOUD_UNBOUND_LAYER2_SIZE > 10
+            stepMult = stepMult / sqrt(CLOUD_UNBOUND_LAYER2_SIZE * 0.1);
+        #endif
+        } else {
+        #if CLOUD_UNBOUND_SIZE_MULT > 100
+            stepMult = stepMult / sqrt(float(CLOUD_UNBOUND_SIZE_MULT_M));
+        #endif
+        }
+
+    #else
+
     #if CLOUD_UNBOUND_SIZE_MULT > 100
         stepMult = stepMult / sqrt(float(CLOUD_UNBOUND_SIZE_MULT_M));
+    #endif
+
     #endif
 
     int sampleCount = int(planeDistanceDif / stepMult + dither + 1);
@@ -192,6 +246,23 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
         float cloudNoise = GetCloudNoise(tracePos, cloudAltitude, lTracePosXZ, cloudPlayerPos.y);
 
         if (cloudNoise > 0.00001) {
+            #if defined DOUBLE_UNBOUND_CLOUDS
+            //Fixes overlapping clouds
+
+            if (CLOUD_UNBOUND_LAYER2_HEIGHT > CLOUD_STRETCH){
+                if (cloudAltitude == cloudAlt1i) {
+                    if (abs(tracePos.y - cloudAlt2i) < L2cloudStretch)
+                        continue;
+                }
+            } else {
+                if (cloudAltitude != cloudAlt1i) {
+                    if (abs(tracePos.y - cloudAlt1i) < L1cloudStretch)
+                        continue;
+                }
+            }
+
+            #endif
+
             #if defined CLOUD_CLOSED_AREA_CHECK && SHADOW_QUALITY > -1
                 float shadowLength = min(shadowDistance, far) * 0.9166667; //consistent08JJ622
                 if (shadowLength < lTracePos)
@@ -245,7 +316,10 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
         }
     }
 
-    if (volumetricClouds.a > 0.5) cloudLinearDepth = sqrt(firstHitPos / renderDistance);
+    #ifndef DOUBLE_UNBOUND_CLOUDS
+    if (volumetricClouds.a > 0.5)
+    #endif
+    { cloudLinearDepth = sqrt(firstHitPos / renderDistance); }
 
     return volumetricClouds;
 }

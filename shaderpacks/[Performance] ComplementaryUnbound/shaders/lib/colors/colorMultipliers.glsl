@@ -1,6 +1,8 @@
 #ifndef INCLUDE_LIGHT_AND_AMBIENT_MULTIPLIERS
     #define INCLUDE_LIGHT_AND_AMBIENT_MULTIPLIERS
 
+    #include "/lib/shaderSettings/colorMult.glsl"
+
     vec3 GetLightColorMult() {
         vec3 lightColorMult;
 

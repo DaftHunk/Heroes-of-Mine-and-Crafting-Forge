@@ -5,6 +5,10 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/final.glsl"
+#include "/lib/shaderSettings/activateSettings.glsl"
+#include "/lib/shaderSettings/longExposure.glsl"
+
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -88,10 +92,25 @@ vec3 scanline(vec2 texCoord, vec3 color, float frequency, float intensity, float
     return color += color * scanlines * intensity * 0.1;
 }
 
+vec3 sampleCell(sampler2D tex, vec2 origin, vec2 size, int count) {
+    vec3 sum = vec3(0.0);
+    float fCount = float(count);
+    for (int i = 0; i < count * count; i++) {
+        vec2 offset = vec2(mod(float(i), fCount) + 0.5, floor(float(i) / fCount) + 0.5) / fCount;
+        sum += texture2D(tex, origin + size * offset).rgb;
+    }
+    return sum / (fCount * fCount);
+}
 
-vec4 samplePixelatedBuffer(sampler2D tex, vec2 coords, int size) { // thanks to belmu for the code (mine had edge artifacts) https://github.com/BelmuTM/Noble/tree/master
-    vec2 aspectCorrectedSize = size * vec2(aspectRatio, 1.0);
-    return texelFetch(tex, ivec2((floor(coords * aspectCorrectedSize) / aspectCorrectedSize) * viewSize), 0);
+vec3 createPixelation(sampler2D tex, vec2 uv, float pixelSize, float sampleCount) {
+    vec2 cellSize = vec2(float(int(ceil(256.0 / pixelSize) + 1) & ~1)) / vec2(viewWidth, viewHeight);
+    vec2 cellOrigin = floor(uv / cellSize) * cellSize;
+    sampleCount = max0(sampleCount) + 1.0;     
+    return mix(
+        sampleCell(tex, cellOrigin, cellSize, int(sampleCount)),
+        sampleCell(tex, cellOrigin, cellSize, int(sampleCount) + 1),
+        fract(sampleCount)
+    );
 }
 
 float halftones(vec2 texCoord, float angle, float scale) { // Thanks to https://www.shadertoy.com/view/4sBBDK by starea
@@ -110,12 +129,12 @@ float layeredNoiseSpeedLines(float a, float s) {
     return noiseSpeedLines(a, 20.0, s) + noiseSpeedLines(a * 5.0, 20.0 * 5.0, s);
 }
 
-float speedLines(vec2 uv) { // Thanks to https://www.shadertoy.com/view/NldyDn by HalbFettKaese - modified a bit
+float speedLines(vec2 uv, float speed) { // Thanks to https://www.shadertoy.com/view/NldyDn by HalbFettKaese - modified a bit
     uv = uv * 2.0 - 1.0;
     float a = atan(uv.x, uv.y) / pi;
     float value = layeredNoiseSpeedLines((a * 17 + velocity * 7.0) * SPEED_LINE_THICKNESS * 1.5, (floor(frameTimeCounter * 10.0 * SPEED_LINES_SPEED) / 10.0 + velocity * 0.1) * 2.0);
     value -= 1.0 / length(uv) * 0.9 * (1.0 - clamp(velocity, 0.0, 0.4));
-    return clamp(value, 0.0, 0.1);
+    return clamp(value, 0.0, 0.1 * speed);
 }
 
 float randomNoiseOverlay1(vec2 st) {
@@ -123,9 +142,14 @@ float randomNoiseOverlay1(vec2 st) {
 }
 
 float grid(float uv) {
+    if (hideGUI == 1) return 0.0;
     float mainLine = smoothstep(0.9995 * (1.0 - MAIN_GRID_INTERVAL * 0.00005), 1.0, cos(uv * tau / (1.0 / MAIN_GRID_INTERVAL))) * 0.3;
     float subLine = smoothstep(0.9998 * (1.0 - SUB_GRID_INTERVAL * 0.00075), 1.0, cos(uv * tau * SUB_GRID_INTERVAL / (1.0 / MAIN_GRID_INTERVAL))) * 0.1;
-      return mainLine + subLine;
+    return mainLine + subLine;
+}
+
+float GetLinearDepth(float depth) {
+    return (2.0 * near) / (far + near - depth * (far - near));
 }
 
 // Function to apply horizontal noise
@@ -194,7 +218,7 @@ vec3 staticColor(vec3 color, float staticIntensity, float minStaticStrength, flo
     float minStrength = min(minStaticStrength, maxStaticStrength);
     float speed = staticSpeed * 10.0;
 
-    vec2 fractCoord = fract(texCoord * fract(sin(frameTimeCounter * speed)));
+    vec2 fractCoord = fract(texCoord * fract(sin(frameTimeCounter * speed + 1.0)));
 
     maxStrength = clamp(sin(frameTimeCounter * 0.5), minStrength, maxStrength);
 
@@ -212,11 +236,17 @@ void beginTextM(int textSize, vec2 offset) {
 
 #include "/lib/misc/potato.glsl"
 
+#ifdef ENTITIES_ARE_LIGHT
+    vec2 view = vec2(viewWidth, viewHeight);
+    #include "/lib/misc/worldOutline.glsl"
+#endif
+
 //Program//
 void main() {
     vec3 color = vec3(0.0);
     float viewWidthM = viewWidth;
     float viewHeightM = viewHeight;
+    float animation = 0.0;
 
     #if BORDER_AMOUNT != 0
         vec2 texCoordM = border(texCoord);
@@ -252,26 +282,20 @@ void main() {
             texCoordM += WATER_REFRACTION_INTENSITY * 0.00035 * sin((texCoord.x + texCoord.y) * 25.0 + frameTimeCounter * UNDERWATER_DISTORTION_STRENGTH);
     #endif
 
-    #if defined PIXELATE_SCREEN && defined RETRO_ON
-        #if LONG_EXPOSURE > 0
-        if(hideGUI == 0 || isViewMoving()){ // GUI visible OR moving
-        #endif
-        color = samplePixelatedBuffer(colortex3, texCoordM, PIXEL_SIZE_SCREEN).rgb;
-        #if LONG_EXPOSURE > 0
-        } else {
-        color = samplePixelatedBuffer(colortex7, texCoordM, PIXEL_SIZE_SCREEN).rgb;
-        }
-        #endif
+    #if defined PIXELATE_SCREEN
+        #define textureFinal(tex) createPixelation(tex, texCoord, PIXELATED_SCREEN_SIZE, PIXELATED_SCREEN_SMOOTHNESS).rgb
     #else
-        #if LONG_EXPOSURE > 0
-        if(hideGUI == 0 || isViewMoving()){ // GUI visible OR moving
-        #endif
-            color = texture2D(colortex3, texCoordM).rgb;
-        #if LONG_EXPOSURE > 0
-        } else { // this is the accumulated one
-            color = texture2D(colortex7, texCoordM).rgb;
+        #define textureFinal(tex) texture2D(tex, texCoordM).rgb
+    #endif
+
+    #if LONG_EXPOSURE > 0
+        if (hideGUI == 0 || isViewMoving()) { 
+            color = textureFinal(colortex3);
+        } else {
+            color = textureFinal(colortex7);
         }
-        #endif
+    #else
+        color = textureFinal(colortex3);
     #endif
 
     #if CHROMA_ABERRATION > 0 || defined SPOOKY
@@ -283,6 +307,16 @@ void main() {
         #endif
         vec2 aberration = (texCoordM - 0.5) * (2.0 / vec2(viewWidth, viewHeight)) * scale * aberrationStrength;
         color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
+    #endif
+
+    #if IMAGE_SHARPENING > 0 && !defined PIXELATE_SCREEN
+        #if LONG_EXPOSURE > 0
+        if(hideGUI == 0 || isViewMoving()){ // GUI visible OR moving
+        #endif
+            SharpenImage(color, texCoordM);
+        #if LONG_EXPOSURE > 0
+        }
+        #endif
     #endif
 
     #if LETTERBOXING > 0
@@ -319,16 +353,6 @@ void main() {
         #endif
     #endif
 
-    #if IMAGE_SHARPENING > 0
-        #if LONG_EXPOSURE > 0
-        if(hideGUI == 0 || isViewMoving()){ // GUI visible OR moving
-        #endif
-            SharpenImage(color, texCoordM);
-        #if LONG_EXPOSURE > 0
-        }
-        #endif
-    #endif
-
     /*ivec2 boxOffsets[8] = ivec2[8](
         ivec2( 1, 0),
         ivec2( 0, 1),
@@ -343,6 +367,14 @@ void main() {
     for (int i = 0; i < 8; i++) {
         color = max(color, texelFetch(colortex3, texelCoord + boxOffsets[i], 0).rgb);
     }*/
+
+    #ifdef ENTITIES_ARE_LIGHT
+        vec4 texture9 = texture2D(colortex9, texCoordM);
+        vec4 texture6 = texture2D(colortex6, texCoordM);
+        float z0 = GetLinearDepth(texelFetch(depthtex0, texelCoord, 0).r);
+        color = texture9.a * mix(vec3(1), texture9.rgb, texture6.a);
+        DoWorldOutline(color, z0);
+    #endif
 
     #if WATERMARK > 0
         color.rgb = mix(color.rgb, watermarkColor.rgb, watermarkColor.a);
@@ -383,13 +415,21 @@ void main() {
     #endif
 
     #if SPEED_LINES > 0
-        float speedLines = speedLines(texCoordM);
-        speedLines = mix(0.0, speedLines, SPEED_LINES_TRANSPARENCY);
-        #if SPEED_LINES == 1
-            color += vec3(mix(0.0, speedLines, isSprinting));
-        #else
-            color += vec3(speedLines);
+        #if SPEED_LINES != 3
+            float speed = (length(cameraPosition - previousCameraPosition) / frameTime) * 0.08;
+            float speedThreshold = 3.0;
+            float speedFactor = smoothstep(speedThreshold * 0.45, speedThreshold, speed);
+            float isSprintingM = 0.0;
+            #if SPEED_LINES == 2
+                isSprintingM = isSprinting;
+            #endif
+            speed = max(speedFactor, isSprintingM);
+        #else 
+            float speed = 1.0;
         #endif
+        float speedLines = speedLines(texCoordM, speed);
+        speedLines = mix(0.0, speedLines, SPEED_LINES_TRANSPARENCY);
+        color += vec3(speedLines);
     #endif
 
     #if MAIN_GRID_INTERVAL > 1
@@ -400,9 +440,15 @@ void main() {
             color += mix(0.0, grid, isSneaking);
         #elif GRID_CONDITION == 2
             float isHoldingSpyglass = 0.0;
-            if (heldItemId == 45013 || heldItemId2 == 45013) isHoldingSpyglass = 1.0; //holding spyglass
+            if (heldItemId == 45014 || heldItemId2 == 45014) isHoldingSpyglass = 1.0; //holding spyglass
             color += mix(0.0, grid, isHoldingSpyglass);
         #endif
+    #endif
+
+    #ifdef VIGNETTE_R
+        vec2 texCoordMin = texCoordM.xy - 0.5;
+        float vignette = 1.0 - dot(texCoordMin, texCoordMin) * (1.0 - GetLuminance(color));
+        color *= vignette;
     #endif
 
     #if defined CURVE_DISPLAY || BORDER_AMOUNT != 0
@@ -410,14 +456,16 @@ void main() {
         if (texCoordBorder.y < 0.0 || texCoordBorder.y > 1.0) color = vec3(0.0);
     #endif
 
-    ivec2 pixelToCheck = ivec2(42, 30);
-    vec3 potatoColor = vec3(0.0);
-    // beginTextM(8, vec2(6, 10)); printVec3(vec3(getPotatoColorInt(pixelToCheck))); endText(color.rgb);
-    bool isPotato = checkPotatoPixel(pixelToCheck, ivec3(235, 191, 121), 0.1, potatoColor);
-    if(!isPotato) color.rgb = potatoError();
-    // color.rgb = potatoColor;
+    #ifdef EUPHORIA_PATCHES_POTATO_REMOVED
+        ivec2 pixelToCheck = ivec2(42, 30);
+        vec3 potatoColor = vec3(0.0);
+        // beginTextM(8, vec2(6, 10)); printVec3(vec3(getPotatoColorInt(pixelToCheck))); endText(color.rgb);
+        bool isPotato = checkPotatoPixel(pixelToCheck, ivec3(235, 191, 121), 0.1, potatoColor);
+        if(!isPotato) color.rgb = potatoError();
+        // color.rgb = potatoColor;
+    #endif
 
-    #include "/lib/textRendering/all_error_messages.glsl"
+    #include "/lib/textRendering/all_text_messages.glsl"
 
     /* DRAWBUFFERS:0 */
     gl_FragData[0] = vec4(color, 1.0);

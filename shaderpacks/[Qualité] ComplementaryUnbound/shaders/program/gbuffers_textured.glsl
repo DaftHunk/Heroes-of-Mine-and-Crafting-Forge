@@ -5,6 +5,8 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/raindropColor.glsl"
+//#define GLOWING_COLORED_PARTICLES
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -266,7 +268,7 @@ void main() {
     #endif
 
     #ifdef SS_BLOCKLIGHT
-        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos);
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
     #endif
 
     float auroraSpookyMix = 0.0;
@@ -278,9 +280,11 @@ void main() {
         ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
     #endif
 
-    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+    bool isLightSource = lmCoord.x > 0.99;
+
+    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
                worldGeoNormal, lmCoordM, noSmoothLighting, false, true,
-               false, 0, 0.0, 1.0, emission, purkinjeOverwrite);
+               false, 0, 0.0, 1.0, emission, purkinjeOverwrite, isLightSource);
 
     #if MC_VERSION >= 11500
         vec3 nViewPos = normalize(viewPos);
@@ -294,18 +298,24 @@ void main() {
 
     vec3 translucentMult = mix(vec3(0.666), color.rgb * (1.0 - pow2(pow2(color.a))), color.a);
 
+    float SSBLMask = 0.0;
+    #ifdef ENTITIES_ARE_LIGHT
+        SSBLMask = 1.0;
+    #endif
+
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, -1);
     #endif
 
     /* DRAWBUFFERS:063 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+    gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
     gl_FragData[2] = vec4(1.0 - translucentMult, 1.0);
 
     #ifdef SS_BLOCKLIGHT
-        /* DRAWBUFFERS:0638 */
-        gl_FragData[3] = vec4(0.0, 0.0, 0.0, 1.0);
+        /* DRAWBUFFERS:06389 */
+        gl_FragData[3] = vec4(0.0, 0.0, 0.0, SSBLMask);
+        gl_FragData[4] = vec4(0.0, 0.0, 0.0, SSBLMask);
     #endif
 }
 

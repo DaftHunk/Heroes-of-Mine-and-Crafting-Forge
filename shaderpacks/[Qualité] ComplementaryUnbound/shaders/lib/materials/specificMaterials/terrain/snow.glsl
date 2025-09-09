@@ -13,4 +13,5 @@ smoothnessD = smoothnessG;
 
 #ifdef SSS_SNOW_ICE
     subsurfaceMode = 3, noSmoothLighting = true, noDirectionalShading = true;
+    color.rgb *= mix(vec3(1), vec3(0.76, 0.8, 0.84), sunVisibility);
 #endif

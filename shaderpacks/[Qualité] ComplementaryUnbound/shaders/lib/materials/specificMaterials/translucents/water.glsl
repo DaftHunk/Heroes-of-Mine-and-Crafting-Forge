@@ -1,3 +1,5 @@
+// ============================== Step 1: Color Prep ============================== //
+#include "/lib/shaderSettings/water.glsl"
 vec3 glColorM = vec3(0.43, 0.6, 0.8);
 #if MC_VERSION >= 11300
     #if WATERCOLOR_MODE >= 2
@@ -46,6 +48,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
 #ifdef WATERCOLOR_CHANGED
     color.rgb *= vec3(WATERCOLOR_RM, WATERCOLOR_GM, WATERCOLOR_BM);
 #endif
+// ============================== End of Step 1 ============================== //
 
 #define PHYSICS_OCEAN_INJECTION
 #if defined GENERATED_NORMALS && (WATER_STYLE >= 2 || defined PHYSICS_OCEAN || !defined WATER_GENERATED_NORMALS || PIXEL_WATER == 1) && !defined DH_WATER
@@ -54,8 +57,14 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
 
 #if defined GBUFFERS_WATER || defined DH_WATER
     lmCoordM.y = min(lmCoord.y * 1.07, 1.0); // Iris/Sodium skylight inconsistency workaround
+    
+    float fresnel2 = pow2(fresnel);
+    float fresnel4 = pow2(fresnel2);
 
+    // ============================== Step 2: Water Normals ============================== //
     reflectMult = 1.0;
+
+    float waterBumpNoise = 1.0;
 
     #if WATER_MAT_QUALITY >= 3
         materialMask = OSIEBCA * 241.0; // Water
@@ -72,9 +81,11 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
             waterPos = floor(waterPos * blockRes) / blockRes;
         #endif
         waterPos = 0.032 * (waterPos + worldPos.y * 2.0);
+        #ifdef CLEAR_WATER_SPOTS
+            waterBumpNoise = 1 - clamp01((1 - smoothstep(0, 0.5, texture2D(noisetex, waterPos.x * 0.045 + waterPos * 0.042 + wind * 0.006).g)) * 2) * 0.85;
+        #endif
     #endif
 
-    // Water Normals
     #if WATER_STYLE >= 2 || (RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE) && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2
         vec3 normalMap = vec3(0.0, 0.0, 1.0);
         #if WATER_STYLE >= 2
@@ -114,7 +125,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
                      normalBig += texture2D(gaux4, waterPosM * 0.05 - 0.05 * wind).rg - 0.5;
 
                 normalMap.xy = normalMed * WATER_BUMP_MED + normalSmall * WATER_BUMP_SMALL + normalBig * WATER_BUMP_BIG;
-                normalMap.xy *= 6.0 * (1.0 - 0.7 * fresnel) * WATER_BUMPINESS_M * rainWaterStrength;
+                normalMap.xy *= 6.0 * (1.0 - 0.7 * fresnel) * WATER_BUMPINESS_M * rainWaterStrength * waterBumpNoise;
             #endif
 
             normalMap.xy *= 0.03 * lmCoordM.y + 0.01;
@@ -149,20 +160,19 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
             fresnel = clamp(1.0 + dot(normalM, nViewPos), 0.0, 1.0);
         #endif
     #endif
-    ////
+    // color.rgb = vec3(waterBumpNoise);
+    // ============================== End of Step 2 ============================== //
 
-    float fresnel2 = pow2(fresnel);
-    float fresnel4 = pow2(fresnel2);
-
+    // ============================== Step 3: Water Material Features ============================== //
     #if WATER_MAT_QUALITY >= 2
         if (isEyeInWater != 1) {
-            // Noise Coloring
+            // Noise Coloring //
             float noise = texture2D(noisetex, (waterPos + wind) * 0.25).g;
                   noise = noise - 0.5;
                   noise *= 0.25;
             color.rgb = pow(color.rgb, vec3(1.0 + noise));
 
-            // Water Alpha
+            // Water Alpha //
             #ifdef GBUFFERS_WATER
                 float depthT = texelFetch(depthtex1, texelCoord, 0).r;
             #elif defined DH_WATER
@@ -206,7 +216,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
             #endif
             ////
 
-            // Water Foam
+            // Water Foam //
             #if WATER_FOAM_I > 0 && defined GBUFFERS_WATER && !(defined MIRROR_DIMENSION || defined WORLD_CURVATURE)
                 if (NdotU > 0.99) {
                     vec3 matrixM = vec3(
@@ -273,8 +283,9 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
     #else
         shadowMult = vec3(0.0);
     #endif
+    // ============================== End of Step 3 ============================== //
 
-    // Final Tweaks
+    // ============================== Step 4: Final Tweaks ============================== //
     reflectMult *= 0.5 + 0.5 * NdotUmax0;
 
     color.a = mix(color.a, 1.0, fresnel4);
@@ -284,7 +295,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
             smoothnessG = 1.0;
 
             const float WATER_BUMPINESS_M2 = min(WATER_BUMP_MED * WATER_BUMP_SMALL * WATER_BUMPINESS * 0.65, 1.0);
-            vec2 lightNormalP = WATER_BUMPINESS_M2 * (normalMed + 0.5 * normalSmall);
+            vec2 lightNormalP = WATER_BUMPINESS_M2 * (normalMed + 0.5 * normalSmall) * waterBumpNoise;
             vec3 lightNormal = normalize(vec3(lightNormalP, 1.0) * tbnMatrix);
             highlightMult = dot(lightNormal, lightVec);
             highlightMult = max0(highlightMult) / max(dot(normal, lightVec), 0.17);
@@ -296,4 +307,5 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
             highlightMult *= (16.0 - 15.0 * fresnel2) * (sunVisibility > 0.5 ? 0.85 : 0.425);
         #endif
     #endif
+    // ============================== End of Step 4 ============================== //
 #endif

@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/entityMaterials.glsl"
 if (entityId < 50064) {
     if (entityId < 50032) {
         if (entityId < 50016) {
@@ -9,6 +10,7 @@ if (entityId < 50064) {
                         emission = 12.0 * color.g;
                         color.r *= 1.1;
                     }
+                    emission *= END_CRYSTAL_EMISSION;
                 } else if (entityId == 50004) { // Lightning Bolt
                     #include "/lib/materials/specificMaterials/entities/lightningBolt.glsl"
                 }
@@ -23,7 +25,7 @@ if (entityId < 50064) {
             }
         } else {
             if (entityId < 50024) {
-                if (entityId == 50016) { // Player
+                if (entityId == 50016 || entityId == 50017) { // Player
                     if (entityColor.a < 0.001) {
                         #ifdef COATED_TEXTURES
                             noiseFactor = 0.5;
@@ -37,9 +39,21 @@ if (entityId < 50064) {
                                 }
                             }
                         }
-                    // #ifdef SKIN_SPACEAGLE17
-                    //     if (CheckForColor(color.rgb, vec3(255, 255, 255))) emission = 3.0;
-                    // #endif
+                        bool selfCheck = false;
+                        #if IRIS_VERSION >= 10800
+                            if (entityId == 50017) {
+                                selfCheck = true;
+                                entitySSBLMask = 0.0;
+                            }
+                        #else
+                            if (length(playerPos) < 4.0) {
+                                selfCheck = true;
+                                entitySSBLMask = 0.0;
+                            }
+                        #endif
+                    #ifdef SPACEAGLE17
+                        if (CheckForColor(color.rgb, vec3(255)) && texCoord.y < 0.22 && texCoord.y > 0.18 && selfCheck) emission = 3.0;
+                    #endif
 
                     }
                 } else /*if (entityId == 50020)*/ { // Blaze
@@ -147,7 +161,7 @@ if (entityId < 50064) {
 
                     color.rgb *= color.rgb;
                 } else /*if (entityId == 50076)*/ { // Boats
-                    playerPos.y += 0.38; // to avoid water shadow and the black inner shadow bug
+                    playerPos.y += 0.38; // consistentBOAT2176: to avoid water shadow and the black inner shadow bug
                 }
             }
         } else {
@@ -229,8 +243,13 @@ if (entityId < 50064) {
             }
         } else {
             if (entityId < 50120) {
-                if (entityId == 50112) { //
-
+                if (entityId == 50112) { // Name Tag
+                    noDirectionalShading = true;
+                    color.rgb *= 1.5;
+                    if (color.a < 0.5) {
+                        color.a = 0.12;
+                        color.rgb *= 5.0;
+                    }
                 } else /*if (entityId == 50116)*/ { //
 
                 }

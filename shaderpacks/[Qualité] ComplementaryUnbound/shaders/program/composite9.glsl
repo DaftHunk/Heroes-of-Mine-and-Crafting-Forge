@@ -5,6 +5,7 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/longExposure.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -46,6 +47,9 @@ void main() {
         /* DRAWBUFFERS:71 */
         gl_FragData[0] = color;
         gl_FragData[1] = vec4(texture2D(colortex1, texCoord).r, ivec2(texCoord * vec2(viewWidth, viewHeight)) == ivec2(0) ? counter : texture2D(colortex1, texCoord).g, texture2D(colortex1, texCoord).ba);
+    #else
+        /* DRAWBUFFERS:3 */
+        gl_FragData[0] = texelFetch(colortex3, texelCoord, 0);
     #endif
 }
 

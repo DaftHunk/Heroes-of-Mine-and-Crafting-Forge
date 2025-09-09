@@ -1,5 +1,5 @@
 // Nebula implementation by flytrap https://godotshaders.com/shader/2d-nebula-shader/
-
+#include "/lib/shaderSettings/stars.glsl"
 #ifndef HQ_NIGHT_NEBULA
     const int OCTAVE = 5;
 #else
@@ -63,7 +63,15 @@ float fbmCloud2(vec2 inCoord, float minimum){
 }
 
 vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
-    float nebulaFactor = pow2(max0(VdotU) * min1(nightFactor * 2.0));
+    float VdotUFactor = max0(VdotU);
+    float starsAroundSun = 1.0;
+    #ifdef CELESTIAL_BOTH_HEMISPHERES
+        VdotUFactor = VdotU;
+        #ifdef SUN_MOON_HORIZON
+            starsAroundSun = max0(sign(VdotU));
+        #endif  
+    #endif
+    float nebulaFactor = pow2(VdotUFactor * min1(nightFactor * 2.0));
 
     #if defined CLEAR_SKY_WHEN_RAINING || defined NO_RAIN_ABOVE_CLOUDS
         #ifndef CLEAR_SKY_WHEN_RAINING
@@ -97,7 +105,7 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
     nebulaTexture += fbmCloud(zoomUV2 * 0.9, 0.33 - tide) * CLOUD2_COL;
     nebulaTexture = mix(nebulaTexture, CLOUD3_COL, fbmCloud(vec2(0.9 * zoomUV4.x, 0.9 * zoomUV4.y), 0.25 + tide2));
 
-    nebulaFactor *= 1.0 - pow2(pow2(pow2(abs(VdotS))));
+    nebulaFactor *= 1.0 - pow2(pow2(pow2(abs(VdotS)))) * starsAroundSun;
     nebulaTexture.a *= min1(pow2(pow2(nebulaTexture.a))) * nebulaFactor;
 
     float starFactor = 1024.0;

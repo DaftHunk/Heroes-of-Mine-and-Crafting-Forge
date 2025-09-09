@@ -1,6 +1,8 @@
 #ifndef INCLUDE_CLOUD_COORD
     #define INCLUDE_CLOUD_COORD
 
+    #include "/lib/shaderSettings/clouds.glsl"
+
         // Thanks to SixthSurge
         vec2 GetRoundedCloudCoord(vec2 pos, float cloudRoundness) { // cloudRoundness is meant to be 0.125 for clouds and 0.35 for cloud shadows
             vec2 coord = pos.xy + 0.5;
@@ -19,6 +21,10 @@
             #define CLOUD_SPEED_MULT_M CLOUD_SPEED_MULT * 0.01
             float wind = frameTimeCounter * CLOUD_SPEED_MULT_M;
         #endif
+
+        if (cloudAltitude != cloudAlt1i) {
+            wind *= CLOUD_LAYER2_SPEED_MULT;
+        }
 
         #if INCREASED_RAIN_STRENGTH > 0
             if (rainFactor > 0.01) wind *= 2.5;

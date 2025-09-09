@@ -1,6 +1,9 @@
 #ifndef INCLUDE_SKY
     #define INCLUDE_SKY
 
+    #define SUN_GLARE_AMOUNT 10 // [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30]
+    #define MOON_GLARE_AMOUNT 10 // [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30]
+
     #include "/lib/colors/lightAndAmbientColors.glsl"
     #include "/lib/colors/skyColors.glsl"
 
@@ -61,7 +64,7 @@
             finalSky = mix(finalSky * 3.0, waterFogColor, VdotUmax0M);
 
     // Sun/Moon Glare
-        #if SUN_GLARE_AMOUNT > 0
+        #if SUN_GLARE_AMOUNT > 0 || MOON_GLARE_AMOUNT > 0
         if (doGlare) {
             if (0.0 < VdotSML) {
                 float glareScatter = 4.0 * (2.0 - clamp01(VdotS * 1000.0));
@@ -74,14 +77,14 @@
                 glare *= 1.0 - rainFactor * 0.5;
 
                 float glareWaterFactor = isEyeInWater * sunVisibility;
-                vec3 moonGlareColor = vec3(0.502, 0.3804, 0.3804);
+                vec3 moonGlareColor = vec3(0.38, 0.4, 0.5);
                 #if defined SPOOKY && BLOOD_MOON > 0
                     moonGlareColor = mix(moonGlareColor, vec3(1.0, 0.0, 0.0) * 1.5, getBloodMoon(moonPhase, sunVisibility));
                 #endif
                 vec3 glareColor = mix(moonGlareColor * 0.7, vec3(0.5), sunVisibility);
-                     glareColor = glareColor + glareWaterFactor * vec3(7.0);
+                    glareColor = glareColor + glareWaterFactor * vec3(7.0);
 
-                glare *= SUN_GLARE_AMOUNT * 0.1;
+                glare *= mix(MOON_GLARE_AMOUNT * 0.1, SUN_GLARE_AMOUNT * 0.1, sunVisibility);
 
                 #ifdef SPOOKY
                     glare *= 0.5;

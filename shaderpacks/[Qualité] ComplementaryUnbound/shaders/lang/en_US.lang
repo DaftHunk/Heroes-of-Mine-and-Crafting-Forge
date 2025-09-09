@@ -15,6 +15,9 @@ profile.comment=Shader profiles change performance settings with the most optimi
 screen.INFORMATION=Information
 screen.INFORMATION.comment=This section contains buttons that only exist to provide information.
 
+screen.INFORMATION2=Complementary Information
+screen.INFORMATION2.comment=This section contains buttons that only exist to provide information.
+
 option.info0=§bHover your mouse on a button
 value.info0.0=
 option.info0.comment=This section contains buttons that only exist to provide information.
@@ -29,7 +32,7 @@ option.info2.comment=Best settings are subjective, but using the default setting
 
 option.info3=What is Profile or Visual Style
 value.info3.0=
-option.info3.comment="Profile" setting changes the settings found in the "Performance Settings" menu, while not affecting any preference-based settings. "Visual Style" changes the "Default Style" values that exist on many preference-based settings, but it does not impact performance by an important amount.
+option.info3.comment="Profile" setting changes the settings found in the "Performance Settings" menu, while not affecting any preference-based settings. "Visual Style" changes the "Set by Style" values that exist on many preference-based settings, but it does not impact performance by an important amount.
 
 option.info4=What is RP Support
 value.info4.0=
@@ -77,7 +80,7 @@ option.info14.comment=Join the Euphoria Patches Discord server for question, a f
 
 option.info15=Euphoria Patches Credits
 value.info15.0=
-option.info15.comment=The entire credits can be found at §deuphoriapatches.com/credits§r. isuewo - Former co-developer of Euphoria Patches. EminGT: The main developer of Complementary. Capt Tatsu, gri573, SixthSurge, WoMspace (aka Sasha), Septonious, fayer3, Xonk, Memokii, dragoncat, TheNukeLore, dbrighthd, Surisen (Ruri), Acer (Alex), Folox_, Helgust.
+option.info15.comment=The entire credits can be found at §deuphoriapatches.com/credits§r. isuewo - Former co-developer of Euphoria Patches. EminGT: The main developer of Complementary. Capt Tatsu, gri573, FoZy STYLE, JoKerTech, SixthSurge, WoMspace (aka Sasha), Septonious, fayer3, Xonk, Memokii, dragoncat, TheNukeLore, dbrighthd, Surisen (Ruri), Acer (Alex), Folox_, Helgust.
 
 option.info16=§d§nHow to support Euphoria Patches
 value.info16.0=
@@ -87,7 +90,7 @@ option.info17=Beta Version: SpacEagle17 Patreon
 value.info17.0=
 option.info17.comment=You can support SpacEagle17 on Patreon or Ko-Fi and access exclusive development versions. §d§l§neuphoriapatches.com/support
 
-option.info18=For Complementary r5.4
+option.info18=For Complementary r5.5.1
 value.info18.0=
 option.info18.comment=Thank you for Installing Euphoria Patches :)
 
@@ -102,6 +105,10 @@ option.info20.comment=A new version of the EuphoriaPatcher Mod is available. Dow
 option.info21=Frequently Asked Questions
 value.info21.0=
 option.info21.comment=Check out the FAQ page to find answers to common questions. §d§l§neuphoriapatches.com/faq
+
+option.info22=§dMore Settings via Scrolling
+value.info22.0=
+option.info22.comment=On big GUI sizes it is possible that some settings are hidden, scrolling down will reveal them.
 
 #Style
 option.SHADER_STYLE=Visual Style
@@ -286,7 +293,7 @@ value.ENTITY_SHADOWS_DEFINE.-1=§aOFF
 value.ENTITY_SHADOWS_DEFINE.1=§4§k-§r§4§l§n§oON§r§4§k- §r§c[-]
 
 option.DETAIL_QUALITY=Detail Quality
-option.DETAIL_QUALITY.comment=Adjusts several small things that affect performance. Adjust the quality of: Water material, TAA, lighting tweaks, Night Nebula, Nether Storm, Ender Beams, sky effect reflections, rain puddle accuracy
+option.DETAIL_QUALITY.comment=Adjusts several small things that affect performance. Adjust the quality of: Water material, TAA, lighting tweaks, Night Nebula, Nether Storm, Ender Beams, sky effect reflections, rain puddle accuracy, waving effect
 value.DETAIL_QUALITY.0=§aPotato
 value.DETAIL_QUALITY.2=§eMedium
 value.DETAIL_QUALITY.3=§cHigh
@@ -317,7 +324,7 @@ value.ANISOTROPIC_FILTER.8=§e8x
 value.ANISOTROPIC_FILTER.16=§4§l16x
 
 option.COLORED_LIGHTING=Advanced Colored Lighting §e[*]§r
-option.COLORED_LIGHTING.comment=Uses voxelization and floodfill lighting to add color to blocklight, alongside introducing some new lights. §e[*]§r This feature only works on Iris and supported platforms. §e[*]§r This setting will be disabled if "Real-Time Shadows" is OFF. §a[+]§r This system also enables some other features which you can individually enable/disable in the "Other" -> "ACL Features" menu. §c[-]§r High chunk values for this effect impact performance way more than expected, each increment can cost more than twice the performance of the previous tier.
+option.COLORED_LIGHTING.comment=Complementary Shaders Feature. Uses voxelization and floodfill lighting to add color to blocklight, alongside introducing some new lights. §e[*]§r This feature only works on Iris and supported platforms. §e[*]§r This setting will be disabled if "Real-Time Shadows" is OFF. §a[+]§r This system also enables some other features which you can individually enable/disable in the "Other" -> "ACL Features" menu. §c[-]§r High chunk values for this effect impact performance way more than expected, each increment can cost more than twice the performance of the previous tier.
 value.COLORED_LIGHTING.0=§aOFF
 value.COLORED_LIGHTING.128=§c4 Chunks
 value.COLORED_LIGHTING.192=§c6 Chunks
@@ -372,8 +379,8 @@ option.LIGHTSHAFT_NIGHT_I=Light Shaft Night Multiplier
 option.LIGHTSHAFT_RAIN_I=Light Shaft Rain Multiplier
 
 option.CLOUD_STYLE_DEFINE=Cloud Style
-option.CLOUD_STYLE_DEFINE.comment=Determines the style of clouds. §e[*]§r "Default Style" means that the setting will be automatically determined by the "Visual Style" setting in the main menu of Shader Options. §e[*]§r The "Vanilla" style requires clouds to be enabled in Video Settings.
-value.CLOUD_STYLE_DEFINE.-1=Default Style
+option.CLOUD_STYLE_DEFINE.comment=Determines the style of clouds. §e[*]§r "Set by Style" means that the setting will be automatically determined by the "Visual Style" setting in the main menu of Shader Options. §e[*]§r The "Vanilla" style requires clouds to be enabled in Video Settings.
+value.CLOUD_STYLE_DEFINE.-1=Set by Style
 value.CLOUD_STYLE_DEFINE.0=§cOFF
 value.CLOUD_STYLE_DEFINE.1=Reimagined
 value.CLOUD_STYLE_DEFINE.3=Unbound
@@ -480,8 +487,8 @@ option.GR_BB=Blue to Blue
 option.GR_BC=Blue Curve
 
 option.WATER_STYLE_DEFINE=Water Style
-option.WATER_STYLE_DEFINE.comment=Determines the style of water. §e[*]§r "Default Style" means that the setting will be automatically determined by the "Visual Style" setting in the main menu of Shader Options.
-value.WATER_STYLE_DEFINE.-1=Default Style
+option.WATER_STYLE_DEFINE.comment=Determines the style of water. §e[*]§r "Set by Style" means that the setting will be automatically determined by the "Visual Style" setting in the main menu of Shader Options.
+value.WATER_STYLE_DEFINE.-1=Set by Style
 value.WATER_STYLE_DEFINE.1=Reimagined
 value.WATER_STYLE_DEFINE.2=Reimagined + Waves
 value.WATER_STYLE_DEFINE.3=Unbound
@@ -541,7 +548,7 @@ option.WATER_SIZE_MULT.comment=Adjusts how big the surface-direction waves (norm
 
 option.SUN_ANGLE=Sun/Moon Angle
 option.SUN_ANGLE.comment=Adjusts the angle of sun/moon relative to the world during noon. §a[+]§r Reimagined's lighting model is specially designed to make the "0" sun angle work just as well as others.
-value.SUN_ANGLE.-1=Default Style
+value.SUN_ANGLE.-1=Set by Style
 value.SUN_ANGLE.60=60
 value.SUN_ANGLE.55=55
 value.SUN_ANGLE.50=50
@@ -570,7 +577,7 @@ value.SUN_ANGLE.-60=-60
 
 option.SUN_MOON_STYLE_DEFINE=Sun/Moon Style
 option.SUN_MOON_STYLE_DEFINE.comment=Determines the style of sun/moon. §e[*]§r This setting might interact incorrectly with some resource packs due to the limitations of sun/moon/skybox differentiation.
-value.SUN_MOON_STYLE_DEFINE.-1=Default Style
+value.SUN_MOON_STYLE_DEFINE.-1=Set by Style
 value.SUN_MOON_STYLE_DEFINE.1=Reimagined
 value.SUN_MOON_STYLE_DEFINE.2=Unbound
 value.SUN_MOON_STYLE_DEFINE.3=Unbound - Smaller
@@ -594,13 +601,13 @@ value.RAINBOWS.3=Always
 
 option.AURORA_STYLE_DEFINE=Aurora Borealis Style
 option.AURORA_STYLE_DEFINE.comment=Determines the style of northern lights that appear in the night sky.
-value.AURORA_STYLE_DEFINE.-1=Default Style
+value.AURORA_STYLE_DEFINE.-1=Set by Style
 value.AURORA_STYLE_DEFINE.0=§cOFF
 value.AURORA_STYLE_DEFINE.1=Reimagined
 value.AURORA_STYLE_DEFINE.2=Unbound
 
-option.AURORA_CONDITION=Aurora
-option.AURORA_CONDITION.comment=Determines the condition(s) for the Aurora Borealis to appear. §e[*]§r Aurora Borealis will only appear during night regardless of this setting
+option.AURORA_CONDITION=Aurora C.
+option.AURORA_CONDITION.comment=Aurora Condition setting determines the condition(s) for the Aurora Borealis to appear. §e[*]§r Aurora Borealis will only appear during night regardless of this setting
 value.AURORA_CONDITION.0=Every Night
 value.AURORA_CONDITION.1=Full Moon
 value.AURORA_CONDITION.2=Snowy Biome
@@ -763,6 +770,9 @@ value.IPBR_EMISSIVE_MODE.1=IPBR+ Only
 value.IPBR_EMISSIVE_MODE.3=labPBR > IPBR+
 value.IPBR_EMISSIVE_MODE.2=seuspbr > IPBR+
 
+option.IPBR_COMPATIBILITY_MODE=IPBR+ Compatibility Mode
+option.IPBR_COMPATIBILITY_MODE.comment=Changes how some IPBR+ features are calculated to be less aggressive in order to cause less problems with resource packs, or mods.
+
 option.IPBR_PARTICLE_FEATURES=IPBR+ Particle Features
 option.IPBR_PARTICLE_FEATURES.comment=Enables several features for particles, including things like glowing lava particles and better-colored water particles.
 
@@ -801,15 +811,8 @@ option.COLOR_CODED_PROGRAMS.comment=Shows which shader programs are being used t
 option.GLOWING_COLORED_PARTICLES=Force Glowing Particles §c[-]§r
 option.GLOWING_COLORED_PARTICLES.comment=Makes all particles that are technically "colored" turn emissive. §c[-]§r This option isn't recommended for general gameplay as it makes a lot of particles glow when they are made of materials that shouldn't glow at all.
 
-option.MINIMUM_LIGHT_MODE=Cave Lighting
-option.MINIMUM_LIGHT_MODE.comment=Adds extra lighting to areas that don't have skylight. §a[+]§r "Default" option determines the lighting according to the "Brightness" slider in Video Settings. §c[-]§r Drastically changing this setting can break the lighting balance.
-value.MINIMUM_LIGHT_MODE.0=Very Dark
-value.MINIMUM_LIGHT_MODE.1=Dark
-value.MINIMUM_LIGHT_MODE.2=Default §a[+]
-value.MINIMUM_LIGHT_MODE.3=Bright
-value.MINIMUM_LIGHT_MODE.4=Very Bright
-value.MINIMUM_LIGHT_MODE.5=Ultra Bright §c[-]
-value.MINIMUM_LIGHT_MODE.6=Extreme Bright §c[-]
+option.CAVE_LIGHTING=Cave Lighting Multiplier
+option.CAVE_LIGHTING.comment=Adds extra lighting to areas that don't have skylight. §e[*]§r Cave lighting is also affected by the "Brightness" slider in Video Settings. §c[-]§r Drastically changing this setting can break the lighting balance.
 
 option.AMBIENT_MULT=Shadow Light Multiplier
 option.AMBIENT_MULT.comment=Determines the amount of ambient lighting seen in shadows. §c[-]§r Drastically changing this setting can break the lighting balance.
@@ -831,13 +834,17 @@ option.ENTITY_GN_AND_CT.comment=Decides if Generated Normals and Coated Textures
 option.GENERATED_NORMAL_MULT=Generated Normal Strength
 option.GENERATED_NORMAL_MULT.comment=Adjusts the strength of auto-generated bumpy details on surfaces.
 
+option.GENERATED_NORMAL_ENTITY_MULT=Gen. Normals on Entities
+option.GENERATED_NORMAL_ENTITY_MULT.comment=Adjusts the strength of auto-generated bumpy details on entities.
+value.GENERATED_NORMAL_ENTITY_MULT.0=Default
+
 option.COATED_TEXTURE_MULT=Coated Texture Strength
 option.COATED_TEXTURE_MULT.comment=Adjusts the strength of auto-generated dusty details on textures.
 
 option.GLOWING_ORE_MASTER=§eEnable Glowing Ores
-option.GLOWING_ORE_MASTER.comment=Enables the functionality of glowing ores. §e[*]§r Choosing "Default" will only enable glowing ores if the "Visual Style" is set to "Unbound". §e[*]§r The settings below won't work if this option isn't enabled.
+option.GLOWING_ORE_MASTER.comment=Enables the functionality of glowing ores. §e[*]§r Choosing "Set By Style" will only enable glowing ores if the "Visual Style" is set to "Unbound". §e[*]§r The settings below won't work if this option isn't enabled.
 value.GLOWING_ORE_MASTER.0=§cOFF
-value.GLOWING_ORE_MASTER.1=Default [*]
+value.GLOWING_ORE_MASTER.1=Set By Style
 value.GLOWING_ORE_MASTER.2=§aON
 
 option.GLOWING_ORE_MULT=Ore Glow Strength
@@ -963,7 +970,7 @@ option.WAVING_LAVA.comment=Adds constant movement to lava. §e[*]§r Lava waving
 option.WAVING_LILY_PAD=Waving Lily Pad
 option.WAVING_LILY_PAD.comment=Adds movement to lily pads and frogspawn to simulate impact from water waves.
 
-option.WAVING_WATER_VERTEX=Waving Water Texture
+option.WAVING_WATER_VERTEX=Waving Water Height
 option.WAVING_WATER_VERTEX.comment=Adds movement to water position to simulate wind. §e[*]§r This option is not related to the "Water Wave Strength" setting.
 
 option.WAVING_RAIN=Waving Rain/Snow Texture
@@ -1138,6 +1145,7 @@ screen.ATMOSPHERE.comment=Settings that relate to the atmosphere.
 screen.CLOUDS=Clouds
 screen.CLOUD_REIMAGINED_SETTINGS_EUPHORIA=Reimagined Clouds
 screen.CLOUD_UNBOUND_SETTINGS_EUPHORIA=Unbound Clouds
+screen.DOUBLE_UNBOUND_CLOUDS_SETTINGS=Double Unbound Clouds
 screen.AURORA_SETTINGS=Aurora Borealis
 screen.AURORA_SETTINGS.comment=Settings that relate to the Aurora Borealis.
 screen.AURORA_COLOR_SETTINGS=Aurora Color Settings
@@ -1150,9 +1158,14 @@ screen.END_STAR=End Star Settings
 screen.END_STAR.comment=Settings that relate to the End Stars.
 screen.STAR_COLORS_END=End Star Colors
 screen.STARS_OVERWORLD=Stars
+screen.SHOOTING_STARS_SETTINGS=Shooting Stars
 screen.STAR_COLORS_OW=Star Colors
 screen.RAIN_SETTINGS=Rain Settings
 screen.NIGHT_DESATURATION_SETTINGS=Darkness Desaturation
+screen.MOON_PHASED_DESATURATION_SETTINGS=Moon Phased Night Desaturation
+screen.MOON_PHASED_DESATURATION_SETTINGS.comment=Adjusts the amount of desaturation based on the current phase of the moon.
+screen.NIGHT_NEBULA_SETTINGS=Night Nebula
+screen.NIGHT_NEBULA_COLOR_SETTINGS=Color Settings
 
 screen.WORLD=World
 screen.WORLD.comment=Settings that relate to the world.
@@ -1188,6 +1201,7 @@ screen.BLOCKLIGHT.comment=Settings that relate to blocklight color.
 screen.COLORED_LIGHT=Colored Lighting
 screen.SSBL_SETTINGS=Screenspace Colored Blocklight
 screen.ACL_SETTINGS=Advanced Colored Lighting
+screen.LIGHTMAP_CURVES_SETTINGS=Lightmap Curves
 screen.OVERLAY_NOISE=Overlay Noise
 screen.MOSS_NOISE_SETTINGS=Moss Noise Settings
 screen.SAND_NOISE_SETTINGS=Sand Noise Settings
@@ -1241,11 +1255,13 @@ screen.FUN=Fun
 screen.FUN.comment=Let's have some fun.
 screen.WORLD_CURVATURE_SETTINGS=World Curvature
 screen.WORLD_CURVATURE_SETTINGS.comment=Settings that relate to World Curvature.
+screen.RANDOM_BLOCKLIGHT_SETTINGS=Random Blocklight
+screen.RANDOM_BLOCKLIGHT_SETTINGS.comment=Settings that relate to Random Blocklight.
 
 screen.POPULAR_SETTINGS=§dPopular Settings
 screen.POPULAR_SETTINGS_2=Page 2
 screen.POPULAR_SETTINGS_3=Page 3
-screen.EP_VERSION=Euphoria Patches §d1.5.2
+screen.EP_VERSION=Euphoria Patches §d1.6.6
 screen.EP_VERSION.comment=§bYou can support SpacEagle17 on Patreon or Ko-Fi and get new Exclusive Beta Versions. §r§d§l§neuphoriapatches.com/support
 
 option.DAYLIGHT_CYCLE_COMPAT=World Time Animation
@@ -1352,6 +1368,18 @@ option.NIGHT_CLOUD_UNBOUND_REMOVE.comment=Ammount of clouds which get removed du
 option.HIGH_QUALITY_CLOUDS=Higher Quality Clouds
 option.HIGH_QUALITY_CLOUDS.comment=Increases the quality of Clouds to more than is possible within the normal Complementary Settings. §c[-]§r Turning this setting on can impact performance.
 
+option.CLOUD_LAYER2_SPEED_MULT=Cloud Layer 2 Speed Multiplier
+
+option.DOUBLE_UNBOUND_CLOUDS=Double Unbound Clouds
+option.DOUBLE_UNBOUND_CLOUDS.comment=Enables a second layer of unbound clouds to be rendered. §c[-]§r This setting can impact performance.
+option.CLOUD_UNBOUND_LAYER2_ALTITUDE=Cloud Layer 2 Altitude
+option.CLOUD_UNBOUND_LAYER2_ALTITUDE.comment=Determines the world height which the second layer clouds will appear at.
+option.CLOUD_UNBOUND_LAYER2_HEIGHT=Cloud Layer 2 Height
+option.CLOUD_UNBOUND_LAYER2_SIZE=Cloud Layer 2 Size
+option.CLOUD_UNBOUND_LAYER2_SIZE.comment=Determines the size of the second layer clouds.
+option.CLOUD_UNBOUND_LAYER2_AMOUNT=Cloud Layer 2 Amount
+option.CLOUD_UNBOUND_LAYER2_AMOUNT.comment=Determines the amount of the second layer clouds.
+
 option.END_SMOKE=End Smoke
 option.END_SMOKE.comment=Someone left the fire unattended and now the End has smoke in the upper and lower void.
 option.E_SKY_COLORR=End Sky - Red
@@ -1381,7 +1409,7 @@ value.OVERWORLD_BEAMS_CONDITION.0=Full Moon
 value.OVERWORLD_BEAMS_CONDITION.1=Every Night
 option.OVERWORLD_BEAMS_INTENSITY=Overworld Beams Intensity
 option.BEAMS_AMBIENT_INFLUENCE=Fog Color Influence
-option.BEAMS_AMBIENT_INFLUENCE.comment=The beams will have the Fog Color at 0.00 and the user defined color at 1.00.
+option.BEAMS_AMBIENT_INFLUENCE.comment=The beams will have the Fog Color at 1.00 and the user defined color at 0.00.
 option.OW_BEAM_R=Overworld Beams - Red
 option.OW_BEAM_G=Overworld Beams - Green
 option.OW_BEAM_B=Overworld Beams - Blue
@@ -1397,7 +1425,7 @@ value.END_CRYSTAL_VORTEX.3=Both
 option.DRAGON_DEATH_EFFECT=Dragon Death Effect
 option.DRAGON_DEATH_EFFECT.comment=Setting which replaces the dragon's dying beams with a volumetric effect. §4[***]§r Enables §cEntity Shadows§r. [§e*§r] Only works on Iris. [§e*§r] does not work on MacOS.
 option.E_BEAMS_AMBIENT_INFLUENCE=Ambient Color Influence
-option.E_BEAMS_AMBIENT_INFLUENCE.comment=The beams will have the ambient color at 0.00 and the user defined color at 1.00. Doesn't apply to Dragon Ender Beams.
+option.E_BEAMS_AMBIENT_INFLUENCE.comment=The beams will have the ambient color at 1.00 and the user defined color at 0.00. Doesn't apply to Dragon Ender Beams.
 option.E_BEAM_R=Ender Beams - Red
 option.E_BEAM_G=Ender Beams - Green
 option.E_BEAM_B=Ender Beams - Blue
@@ -1530,7 +1558,9 @@ option.SHADER_WATER.comment=A toggle to turn the shader water on or off.
 option.WATER_GENERATED_NORMALS=Water Generated Normals
 
 option.RANDOM_BLOCKLIGHT=Random Colored Blocklight
+option.RANDOM_BLOCKLIGHT.comment=Randomizes the color of the blocklight depending on world coordinates, purely a fun setting.
 option.RANDOM_BLOCKLIGHT_SIZE=Random Colored Blocklight Size
+option.RANDOM_BLOCKLIGHT_SIZE.comment=Change the color size of the random colored blocklight effect.
 
 option.NORMAL_RES=Normals Resolution
 option.NORMAL_RES.comment=Change the resolution at which the integrated normal maps render. §e[*]§r RP Support option must be set to Integrated PBR+ and Auto Generated Normals have to be turned on
@@ -1540,7 +1570,7 @@ option.COATED_TEXTURE_RES.comment=Change the resolution at which the Noise Coate
 
 option.DIRECTIONAL_LIGHTMAP_NORMALS=Lightmap Normals
 option.DIRECTIONAL_LIGHTMAP_NORMALS.comment=Make the integrated normal maps work with blocklight. §e[*]§r RP Support option must be set to Integrated PBR+ and Auto Generated Normals have to be turned on
-option.DIRECTIONAL_LIGHTMAP_NORMALS_BLOCK_STRENGTH=Block Intensity
+option.DIRECTIONAL_LIGHTMAP_NORMALS_BLOCK_STRENGTH_NEW=Block Intensity
 option.DIRECTIONAL_LIGHTMAP_NORMALS_HANDHELD_STRENGTH=Handheld Intensity
 
 option.CAVE_FOG=Cave Fog
@@ -1668,6 +1698,9 @@ option.LAVA_NOISE_AMOUNT.comment=Change the amount of noise.
 
 option.LAVA_EDGE_EFFECT=Lava Edge Effect
 option.LAVA_EDGE_EFFECT.comment=Adds an edge to lava when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings.
+value.LAVA_EDGE_EFFECT.0=OFF
+value.LAVA_EDGE_EFFECT.1=ON - Bright
+value.LAVA_EDGE_EFFECT.2=ON - Dark
 
 option.NETHER_BRIGHTNESS=Nether Brightness
 option.NETHER_BRIGHTNESS.comment=Change the ambient brightness of the Nether.
@@ -1727,7 +1760,7 @@ value.tonemap.ACESTonemap=ACES
 value.tonemap.ACESRedModified=ACES Red Modified
 value.tonemap.BurgessTonemap=Burgess
 value.tonemap.LottesTonemap=Lottes
-value.tonemap.uncharted2_tonemap_partial=Uncharted 2
+value.tonemap.uncharted2_tonemap_partial=Uncharted 2 - Partial
 value.tonemap.uncharted2_filmic=Uncharted 2 - Filmic
 value.tonemap.reinhard2=Reinhard2
 value.tonemap.filmic=Filmic
@@ -1875,6 +1908,10 @@ option.AUTUMN_NOISE_SIZE=Color Noise Size
 option.AUTUMN_NOISE_SIZE.comment=Size of the noise which produces the leaf color gradient
 
 option.LEAVES_ON_GROUND=Leaves On The Ground
+option.LEAVES_ON_GROUND.comment=Leaves will be on the ground in autumn.
+
+option.EXTRA_FLOOR_LEAVES_IN_FORESTS=Extra Floor Leaves In Forests
+option.EXTRA_FLOOR_LEAVES_IN_FORESTS.comment=More leaves will be on the ground in forests.
 
 option.AUTUMN_STRENGTH=Autumn Strength
 option.AUTUMN_STRENGTH.comment=Change the color overwrite in autumn.
@@ -1884,8 +1921,9 @@ option.FLOWER_SIZE=Flower Resolution
 option.FLOWER_AMOUNT=Flower Amount
 value.FLOWER_AMOUNT.0=OFF
 option.SPRING_GREEN_INTENSITY=Spring Intensity
-option.EMISSIVE_SPRING_FLOWERS=Emissive Flowers
-option.EMISSIVE_SPRING_FLOWERS.comment=Option to turn emission from spring flowers off if using the Emissive Flowers Option found in the Euphoria Material settings page
+option.EMISSIVE_SPRING_FLOWERS=Emissive Spring Flowers
+option.EMISSIVE_SPRING_FLOWERS.comment=Option to turn emission from seasons spring flowers on if using the Emissive Flowers Option found in the Euphoria Material settings page
+option.DISABLE_SPRING_IN_DRY_BIOMES=Disable In Dry Biomes
 
 option.SUMMER_STRENGTH=Summer Strength
 
@@ -1904,11 +1942,14 @@ option.ATLAS_ROTATION.comment=:).
 
 option.NETHER_NOISE=Nether Sky Noise
 option.NETHER_NOISE.comment=Makes the Nether sky above the Nether roof more interesting.
+value.NETHER_NOISE.0=OFF
+value.NETHER_NOISE.1=ON
 
 option.MCBL_MAIN_DEFINE=Euphoria Colored Lighting
-option.MCBL_MAIN_DEFINE.comment=Enables multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above.
+option.MCBL_MAIN_DEFINE.comment=Enables multi-colored blocklight. Set to to ACL + Screen-Space to use the screen-space system alongside Advanced Colored Lighting. §e[*]§rOnly works on 1.16.5 and above or on Angelica.
 value.MCBL_MAIN_DEFINE.0=OFF
 value.MCBL_MAIN_DEFINE.1=Screen-Space
+value.MCBL_MAIN_DEFINE.2=ACL + Screen-Space
 
 option.MCBL_INFLUENCE=Multi-Colored Blocklight Influence
 option.MCBL_INFLUENCE.comment=Controls how much the multi-colored blocklight affects the default blocklight color.
@@ -1928,8 +1969,8 @@ option.PURPLE_END_FIRE.comment=Makes fire related blocks, entities and particles
 option.NO_RAIN_ABOVE_CLOUDS=No Rain Above Clouds
 option.NO_RAIN_ABOVE_CLOUDS.comment=Disables rain above the clouds. Doesn't work well if the vanilla cloud height was changed with the vanilla clouds enabled.
 
-option.WORLD_BLUR_SNEAK=World Blur While Sneaking
-option.WORLD_BLUR_SNEAK.comment=Only activate the world blur option while sneaking
+option.DOF_SNEAKING=DoF Sneaking & Spyglass
+option.DOF_SNEAKING.comment=Only activate the world blur option while sneaking and holding a spyglass.
 
 option.CLEAR_SKY_WHEN_RAINING=Clearer Sky During Rain
 option.CLEAR_SKY_WHEN_RAINING.comment=Make stars and other sky effects slightly visible while raining.
@@ -1975,7 +2016,8 @@ option.VERTICAL_SCROLL_FREQUENCY=Scroll Frequency
 option.VERTICAL_STUTTER_FREQUENCY=Stutter Frequency
 
 option.PIXELATE_SCREEN=Pixelate
-option.PIXEL_SIZE_SCREEN=Pixel Size
+option.PIXELATED_SCREEN_SIZE=Pixel Size
+option.PIXELATED_SCREEN_SMOOTHNESS=Smoothness
 
 option.SCANLINE=Scanline
 value.SCANLINE.0=OFF
@@ -1998,8 +2040,9 @@ option.HALFTONE_ANGLE=Dots Angle
 
 option.SPEED_LINES=Speed Lines
 value.SPEED_LINES.0=OFF
-value.SPEED_LINES.1=ON - While Sprinting
-value.SPEED_LINES.2=ON
+value.SPEED_LINES.1=ON - While Fast
+value.SPEED_LINES.2=ON - While Fast & Sprinting
+value.SPEED_LINES.3=ON
 option.SPEED_LINES_TRANSPARENCY=Speed Lines Transparency
 option.SPEED_LINES_SPEED=Intensity
 option.SPEED_LINE_THICKNESS=Line Size
@@ -2023,8 +2066,8 @@ option.TILT_SHIFT2=Tilt Y
 option.TILT_SHIFT2.comment=Tilt-Shift Effect - Vertical
 value.TILT_SHIFT2.0=OFF
 
-option.DOF_VIEW_FOCUS_NEW=§cDOF Focus Plane (Do Not Use)
-option.DOF_VIEW_FOCUS_NEW.comment=Makes the Focus Plane of DOF visible when the GUI visible
+option.DOF_VIEW_FOCUS_NEW2=§cDOF Focus Plane & Spyglass
+option.DOF_VIEW_FOCUS_NEW2.comment=Makes the Focus Plane of DOF visible when the GUI visible and the player is holding a spyglass.
 
 option.LET_THERE_BE_COLORS=LET THERE BE COLORS
 
@@ -2113,6 +2156,9 @@ value.GLITTER_RAIN.2=ON - Always
 option.HAND_BLOCKLIGHT_FLICKERING=Handheld Blocklight Flickering
 value.HAND_BLOCKLIGHT_FLICKERING.0=OFF
 
+option.PIXELATED_HANDHELD_LIGHT=Pixelated Handheld Light
+option.PIXELATED_HANDHELD_LIGHT.comment=Pixelate the handheld light texture.
+
 option.SSS_STRENGTH=Subsurface Scattering
 value.SSS_STRENGTH.0=OFF
 value.SSS_STRENGTH.1=ON
@@ -2122,6 +2168,9 @@ option.PIXEL_WATER.comment=Generated procedural pixelated water texture.
 value.PIXEL_WATER.0=OFF
 value.PIXEL_WATER.1=ON
 
+option.PIXELATED_WATER_REFLECTIONS=Pixelated Water Reflections
+option.PIXELATED_WATER_REFLECTIONS.comment=Pixelate the water reflections.
+
 option.COMP_WATER_TWEAKS=Complementary Water Tweaks
 option.COMP_WATER_TWEAKS.comment=Color tweaks to water done by the Shaderpack
 
@@ -2130,8 +2179,11 @@ option.CAVE_SMOKE.comment=Adds a smoke effect to the volumetric blocklight fog w
 
 option.WAVING_SUGAR_CANE=Waving Sugar Cane
 
-option.SUN_GLARE_AMOUNT=Sun/Moon Glare Amount
+option.SUN_GLARE_AMOUNT=Sun Glare Amount
 value.SUN_GLARE_AMOUNT.0=OFF
+
+option.MOON_GLARE_AMOUNT=Moon Glare Amount
+value.MOON_GLARE_AMOUNT.0=OFF
 
 option.DAYLIGHT_STARS=Daylight Stars
 option.DAYLIGHT_STARS.comment=Enables Stars during the day
@@ -2153,6 +2205,8 @@ option.BEACON_BEAM_EMISSION.comment=Change the emission strength of the beacon b
 
 option.PINKER_CHERRY_LEAVES=Pinker Cherry Leaves
 
+option.LIGHTMAP_CURVES=Lightmap Curves
+option.LIGHTMAP_CURVES.comment=Change the lightmap curves of the world.
 option.UPPER_LIGHTMAP_CURVE=Upper Lightmap Curve
 option.UPPER_LIGHTMAP_CURVE.comment=Change the Upper Lightmap Curve Intensity
 option.LOWER_LIGHTMAP_CURVE=Lower Lightmap Curve
@@ -2166,6 +2220,7 @@ option.SHOCKWAVE=Shockwave
 value.SHOCKWAVE.0=OFF
 value.SHOCKWAVE.1=Circle
 value.SHOCKWAVE.2=Square
+option.SHOCKWAVE.comment=Crouch and find out!
 
 option.STAR_LAYER_OW=Star Layer
 option.STAR_LAYER_OW.comment=Adds additional stars to the current stars, larger or smaller ones
@@ -2221,6 +2276,22 @@ option.STAR_COLOR_3_END_B=Star 3 - Blue
 option.STAR_COLOR_VARIATION_END=Color Intensity
 value.STAR_COLOR_VARIATION_END.0.0=OFF
 
+option.CELESTIAL_BOTH_HEMISPHERES=Full Sky Celestials
+option.CELESTIAL_BOTH_HEMISPHERES.comment=Renders celestial objects (stars, sun, moon, nebula) across the entire sky rather than just above the horizon, creating a more immersive skybox effect.
+
+option.SHOOTING_STARS=Shooting Stars
+option.SHOOTING_STARS_SIZE=Size
+option.SHOOTING_STARS_SIZE.comment=Change the size of the shooting stars. The bigger the setting the bigger the shooting stars will be.
+option.SHOOTING_STARS_SPEED=Speed
+option.SHOOTING_STARS_CHANCE=Chance
+option.SHOOTING_STARS_CHANCE.comment=Chance of a shooting star spawning - the higher the setting the more frequent shooting stars will appear.
+option.SHOOTING_STARS_COUNT=Amount
+option.SHOOTING_STARS_COUNT.comment=How many shooting stars will appear at once in the sky
+option.SHOOTING_STARS_LINE_THICKNESS=Line Width
+option.SHOOTING_STARS_LINE_THICKNESS.comment=Change the width of the shooting stars line.
+option.SHOOTING_STARS_TRAIL_LENGTH=Line Length
+option.SHOOTING_STARS_TRAIL_LENGTH.comment=Change the length of the shooting stars line.
+
 option.SITUATIONAL_GLOWING_TRIMS=Situational Glowing Trims
 option.SITUATIONAL_GLOWING_TRIMS.comment=Trims will only glow in caves and at night. §e[*]§r Glowing Trims must be enabled for this to work.
 
@@ -2253,8 +2324,89 @@ option.NIGHT_DESATURATION_REMOVE_LIGHTS_IN_HAND.comment=Removes the desaturation
 option.NIGHT_DESATURATION_REMOVE_NIGHT_VISION=Remove With Night Vision
 option.NIGHT_DESATURATION_REMOVE_NIGHT_VISION.comment=Removes the desaturation effect when using night vision.
 option.PURKINJE_RENDER_DISTANCE_FADE=Render Distance Fade
+option.PURKINJE_RENDER_DISTANCE_FADE_NETHER=Nether Render Distance Fade
+option.PURKINJE_RENDER_DISTANCE_FADE_END=End Render Distance Fade
+
+option.MOON_PHASE_INF_PURKINJE=Moon Phased Night Desaturation
+option.MOON_PHASED_DESATURATION_SETTINGS.comment=Adjusts the amount of desaturation based on the current phase of the moon.
+
+option.MOON_PHASE_FULL_PURKINJE=Full Moon
+option.MOON_PHASE_FULL_PURKINJE.comment=Desaturation strength during the Full Moon phase (brightest phase).
+value.MOON_PHASE_FULL_PURKINJE.0=OFF
+value.MOON_PHASE_FULL_PURKINJE.300=Black/White
+
+option.MOON_PHASE_PARTIAL_PURKINJE=Partial Moon
+option.MOON_PHASE_PARTIAL_PURKINJE.comment=Desaturation strength during all moon phases between Full Moon and Dark Moon. This is the phase you will see the most in Minecraft.
+value.MOON_PHASE_PARTIAL_PURKINJE.0=OFF
+value.MOON_PHASE_PARTIAL_PURKINJE.300=Black/White
+
+option.MOON_PHASE_DARK_PURKINJE=Dark Moon
+option.MOON_PHASE_DARK_PURKINJE.comment=Desaturation strength during New Moon (darkest phase).
+value.MOON_PHASE_DARK_PURKINJE.0=OFF
+value.MOON_PHASE_DARK_PURKINJE.300=Black/White
 
 option.DELTARUNE_BATTLE_BACKGROUND=Deltarune Battle Background
 value.DELTARUNE_BATTLE_BACKGROUND.0=OFF
 value.DELTARUNE_BATTLE_BACKGROUND.1=ON - Sky Only
 value.DELTARUNE_BATTLE_BACKGROUND.2=ON - Except Entities
+
+option.END_CRYSTAL_EMISSION=End Crystal Emission
+
+option.CLEAR_WATER_SPOTS=Clear Water Spots
+option.CLEAR_WATER_SPOTS.comment=Adds clear spots to the water to add some variety. §e[*]§r Requires a type of wavy waves, either Unbound or Reimagined + Waves.
+
+option.ACL_ORE_INTENSITY=ACL Ore Intensity
+option.ACL_ORE_INTENSITY.comment=Change the ACL light intensity of ores.
+value.ACL_ORE_INTENSITY.0.0=OFF
+
+option.ENTITIES_ARE_LIGHT=Entities Are Light
+
+option.WATER_CAUSTIC_STRENGTH=Water Caustic Strength
+option.WATER_CAUSTIC_STRENGTH.comment=Change the strength of the caustic effect in water.
+
+option.ROUGHNESS_MULTIPLIER=Roughness Multiplier
+option.ROUGHNESS_MULTIPLIER.comment=Change the roughness of the materials.
+
+option.SHADOW_SATURATION=Shadow Saturation
+option.SHADOW_SATURATION.comment=Change the saturation of the shadows and light shafts. §e[*]§r This setting only works if "Real-Time Shadows" is set to Low or higher.
+
+option.SMOKE_PARTICLE_OPACITY=Smoke Particle Opacity
+
+option.END_SUN_ANGLE=End Sun Angle
+option.END_SUN_ANGLE.comment=Adjusts the angle of sun/moon relative to the world during noon.
+value.END_SUN_ANGLE.60=60
+value.END_SUN_ANGLE.50=50
+value.END_SUN_ANGLE.40=40
+value.END_SUN_ANGLE.30=30
+value.END_SUN_ANGLE.20=20
+value.END_SUN_ANGLE.10=10
+value.END_SUN_ANGLE.0=0 §r(§bDefault§r)
+value.END_SUN_ANGLE.-10=-10
+value.END_SUN_ANGLE.-20=-20
+value.END_SUN_ANGLE.-30=-30
+value.END_SUN_ANGLE.-40=-40
+value.END_SUN_ANGLE.-50=-50
+value.END_SUN_ANGLE.-60=-60
+
+option.PIXELATED_NEBULA=Pixelated Nebula
+value.PIXELATED_NEBULA.0=OFF
+option.NEBULA_ZOOM_LEVEL=Zoom Level
+option.NEBULA_ZOOM_LEVEL.comment=Change how zoomed in the nebula is in the sky.
+option.NEBULA_AMOUNT=Amount
+option.NEBULA_AMOUNT.comment=Change how much the nebulae cover the sky.
+option.NEBULA_PATTERN_WARP=Swirl
+option.NEBULA_PATTERN_WARP.comment=Change how distorted the nebulae are.
+value.NEBULA_PATTERN_WARP.0=OFF
+option.NEBULA_HORIZON_STRENGTH=Horizon Visibility
+option.NEBULA_HORIZON_STRENGTH.comment=Change how much the nebulae are visible at the horizon.
+value.NEBULA_HORIZON_STRENGTH.10=Default
+
+option.NEBULA_R_1=Nebula 1 - Red
+option.NEBULA_G_1=Nebula 1 - Green
+option.NEBULA_B_1=Nebula 1 - Blue
+option.NEBULA_R_2=Nebula 2 - Red
+option.NEBULA_G_2=Nebula 2 - Green
+option.NEBULA_B_2=Nebula 2 - Blue
+option.NEBULA_R_3=Nebula 3 - Red
+option.NEBULA_G_3=Nebula 3 - Green
+option.NEBULA_B_3=Nebula 3 - Blue

@@ -67,12 +67,12 @@ float vlFactor = 0.0;
     #include "/lib/atmospherics/sky.glsl"
 #endif
 
-#if WATER_REFLECT_QUALITY >= 0
-    #if (defined SKY_EFFECT_REFLECTION || defined AURORA_INFLUENCE) && defined OVERWORLD
-        #if AURORA_STYLE > 0 || defined AURORA_INFLUENCE
-            #include "/lib/atmospherics/auroraBorealis.glsl"
-        #endif
+#if (AURORA_STYLE > 0 || defined AURORA_INFLUENCE) && defined OVERWORLD
+    #include "/lib/atmospherics/auroraBorealis.glsl"
+#endif
 
+#if WATER_REFLECT_QUALITY >= 0
+    #if defined SKY_EFFECT_REFLECTION && defined OVERWORLD
         #include "/lib/atmospherics/stars.glsl"
         #ifdef NIGHT_NEBULA
             #include "/lib/atmospherics/nightNebula.glsl"
@@ -166,11 +166,14 @@ void main() {
         #endif
     #endif
 
-    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+    bool isLightSource = lmCoord.x > 0.99;
+
+    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
 
     // Reflections
+    float skyLightFactor = pow2(max(lmCoordM.y - 0.7, 0.0) * 3.33333);
     #if WATER_REFLECT_QUALITY >= 0
         #ifdef LIGHT_COLOR_MULTS
             highlightColor *= lightColorMult;
@@ -181,7 +184,6 @@ void main() {
 
         float fresnelM = (pow3(fresnel) * 0.85 + 0.15) * reflectMult;
 
-        float skyLightFactor = pow2(max(lmCoordM.y - 0.7, 0.0) * 3.33333);
         #if SHADOW_QUALITY > -1 && WATER_REFLECT_QUALITY >= 2 && WATER_MAT_QUALITY >= 2
             skyLightFactor = max(skyLightFactor, min1(dot(shadowMult, shadowMult)));
         #endif
@@ -198,8 +200,9 @@ void main() {
     DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
     color.a *= 1.0 - sky;
 
-    /* DRAWBUFFERS:0 */
+    /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
+    gl_FragData[1] = vec4(smoothnessG, 0.0, skyLightFactor, lmCoordM.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 }
 
 #endif
@@ -231,6 +234,9 @@ attribute vec4 at_tangent;
 #endif
 #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
     #include "/lib/misc/distortWorld.glsl"
+#endif
+#ifdef WAVE_EVERYTHING
+    #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 
 //Program//

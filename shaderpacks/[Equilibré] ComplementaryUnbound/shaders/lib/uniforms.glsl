@@ -138,7 +138,7 @@ uniform vec3 previousCameraPositionFract;
     mat4 gbufferProjectionInverse = dhProjectionInverse;
 #endif
 
-#if COLORED_LIGHTING_INTERNAL > 0
+#if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     uniform usampler3D voxel_sampler;
     uniform sampler3D floodfill_sampler;
     uniform sampler3D floodfill_sampler_copy;
@@ -146,6 +146,10 @@ uniform vec3 previousCameraPositionFract;
 
 #ifdef PUDDLE_VOXELIZATION
     uniform usampler2D puddle_sampler;
+#endif
+
+#ifdef ACL_GROUND_LEAVES_FIX
+    uniform usampler3D leaves_sampler;
 #endif
 
 /*-----------------------------------------------------------------------------
@@ -187,6 +191,7 @@ uniform float isShockwave = 1.0;
 uniform float eyeBrightnessXM;
 uniform float eyeBrightnessXM2;
 uniform float waterAltitude = 61.9;
+uniform float inJungle = 0.0;
 
 uniform vec2 viewSize;
 uniform vec2 texelSize;

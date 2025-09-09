@@ -2,9 +2,17 @@
 // Complementary Shaders by EminGT //
 // With Euphoria Patches by SpacEagle17 //
 /////////////////////////////////////
+#extension GL_ARB_derivative_control : enable
+#ifdef GL_ARB_derivative_controlAdd
+    #define USE_FINE_DERIVATIVES
+#endif
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/water.glsl"
+#include "/lib/shaderSettings/shockwave.glsl"
+#include "/lib/shaderSettings/emissionMult.glsl"
+#define WAVING_WATER_VERTEX
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -22,6 +30,7 @@ in vec3 playerPos;
 in vec3 normal;
 in vec3 viewVector;
 in vec3 atMidBlock;
+in vec3 blockUV;
 
 in vec4 glColor;
 
@@ -303,7 +312,7 @@ void main() {
     translucentMult.rgb = mix(translucentMult.rgb, vec3(1.0), min1(pow2(pow2(lViewPos / far))));
 
     #ifdef SS_BLOCKLIGHT
-        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos);
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
     #endif
 
     #if defined SPOOKY && BLOOD_MOON > 0
@@ -314,19 +323,21 @@ void main() {
         ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
     #endif
 
+    bool isLightSource = false;
     if (lmCoord.x > 0.99 || blockLightEmission > 0) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources and blockID set by user
         if (mat == 0) {
-            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, lmCoord.x, blockLightEmission);
+            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, lmCoord.x, blockLightEmission, 0.0);
         }
+        isLightSource = true;
         overlayNoiseIntensity = 0.0;
     }
 
     emission *= EMISSION_MULTIPLIER;
 
     // Lighting
-    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
-               false, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
+               false, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
 
     #ifdef SS_BLOCKLIGHT
         vec3 normalizedColor = normalize(color.rgb);
@@ -334,7 +345,7 @@ void main() {
         vec3 opaquelightAlbedo = texture2D(colortex8, screenPos.xy).rgb;
         opaquelightAlbedo *= normalizedColor;
 
-        if (mat == 30012 || mat == 30016 || mat >= 31000 && mat < 32000 || mat >= 32004 && mat < 32016 ) // Slime, Honey, Glass, Ice
+        if (mat == 30012 || mat == 30016 || mat >= 31000 && mat < 32000 || mat == 32004 ) // Slime, Honey, Glass, Ice
             opaquelightAlbedo = mix(normalizedColor, opaquelightAlbedo, min1(GetLuminance(opaquelightAlbedo)));
 
         vec3 lightAlbedo = normalizedColor * min1(emission);
@@ -361,9 +372,16 @@ void main() {
             skyLightFactor = max(skyLightFactor, min1(dot(shadowMult, shadowMult)));
         #endif
 
+        #ifdef PIXELATED_WATER_REFLECTIONS
+        vec2 texelOffset = ComputeTexelOffset(tex, texCoord);
+        vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
+                                        depthtex1, dither, skyLightFactor, fresnel,
+                                        smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult, texelOffset);
+        #else
         vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
                                         depthtex1, dither, skyLightFactor, fresnel,
                                         smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult);
+        #endif
 
         color.rgb = mix(color.rgb, reflection.rgb, fresnelM);
     #endif
@@ -377,6 +395,11 @@ void main() {
     DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
     color.a *= 1.0 - sky;
 
+    float waterSSBLAlpha = 1.0;
+    #ifdef ENTITIES_ARE_LIGHT
+        waterSSBLAlpha = 0.0;
+    #endif
+
     /* DRAWBUFFERS:03 */
     gl_FragData[0] = color;
     gl_FragData[1] = vec4(1.0 - translucentMult.rgb, translucentMult.a);
@@ -384,15 +407,15 @@ void main() {
     // supposed to be #if WATER_MAT_QUALITY >= 3 but optifine bad
     #if DETAIL_QUALITY >= 3
         /* DRAWBUFFERS:036 */
-        gl_FragData[2] = vec4(0.0, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+        gl_FragData[2] = vec4(0.0, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0368 */
-            gl_FragData[3] = vec4(lightAlbedo, 1.0);
+            gl_FragData[3] = vec4(lightAlbedo, waterSSBLAlpha);
         #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:038 */
-        gl_FragData[2] = vec4(lightAlbedo, 1.0);
+        gl_FragData[2] = vec4(lightAlbedo, waterSSBLAlpha);
     #endif
 }
 
@@ -414,6 +437,7 @@ out vec3 playerPos;
 out vec3 normal;
 out vec3 viewVector;
 out vec3 atMidBlock;
+out vec3 blockUV;
 
 out vec4 glColor;
 
@@ -480,6 +504,7 @@ void main() {
     northVec = normalize(gbufferModelView[2].xyz);
     sunVec = GetSunVector();
     atMidBlock = at_midBlock.xyz;
+    blockUV = 0.5 - at_midBlock.xyz / 64.0;
 
     binormal = normalize(gl_NormalMatrix * cross(at_tangent.xyz, gl_Normal.xyz) * at_tangent.w);
     tangent  = normalize(gl_NormalMatrix * at_tangent.xyz);

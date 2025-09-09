@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/cloudsAndLighting.glsl"
 #include "/lib/atmospherics/clouds/cloudCoord.glsl"
 
 const float cloudStretch = CLOUD_STRETCH * 5.5;

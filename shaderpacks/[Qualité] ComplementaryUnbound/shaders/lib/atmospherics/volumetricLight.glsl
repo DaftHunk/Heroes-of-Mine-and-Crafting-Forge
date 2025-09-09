@@ -1,6 +1,8 @@
 // Volumetric tracing from Robobo1221, highly modified
-
+#include "/lib/shaderSettings/volumetricLight.glsl"
+#include "/lib/shaderSettings/endBeams.glsl"
 #include "/lib/colors/lightAndAmbientColors.glsl"
+//#define BEDROCK_NOISE
 
 float GetDepth(float depth) {
     return 2.0 * near * far / (far + near - (2.0 * depth - 1.0) * (far - near));

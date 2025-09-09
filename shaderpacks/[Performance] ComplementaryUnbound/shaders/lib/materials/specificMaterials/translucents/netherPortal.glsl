@@ -1,3 +1,4 @@
+#define NETHER_PORTAL_VARIATION 1 //[1 2]
 #if NETHER_PORTAL_VARIATION == 1
     lmCoordM = vec2(0.0);
     color = vec4(0.0);
@@ -62,6 +63,10 @@
 #define PORTAL_REDUCE_CLOSEUP
 #ifdef PORTAL_REDUCE_CLOSEUP
     color.a *= min1(lViewPos - 0.2);
+    if (color.a < 0.101) {
+        if (color.a < 0.101 * dither) discard;
+        else color.a = 0.101;
+    }
 #endif
 
 #ifdef PORTAL_EDGE_EFFECT

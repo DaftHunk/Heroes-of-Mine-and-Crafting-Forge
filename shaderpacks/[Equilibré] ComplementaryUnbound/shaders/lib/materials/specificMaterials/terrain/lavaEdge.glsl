@@ -1,4 +1,4 @@
-#if defined LAVA_EDGE_EFFECT && defined GBUFFERS_TERRAIN && !defined WORLD_CURVATURE
+#if LAVA_EDGE_EFFECT > 0 && defined GBUFFERS_TERRAIN && !defined WORLD_CURVATURE
     if (mat == 10068){
         vec3 voxelPos = SceneToVoxel(playerPos);
 
@@ -26,23 +26,37 @@
                     fract(voxelPos.z + 0.5)),
                 fract(voxelPos.x + 0.5)
             );
+            
+            float easeAmount = 1.5;
+            vec3 edgeColor = maxLavaColor;
+            #if LAVA_EDGE_EFFECT == 2
+                easeAmount = 1.3;
+                edgeColor = minLavaColor;
+            #endif
 
-            edge = 1.0 - cos((edge * pi) / 1.5); // ease in towards the centre of the block to create a better shape
+            edge = 1.0 - cos((edge * pi) / easeAmount); // ease in towards the centre of the block to create a better shape
             edge *= clamp01(blockUV.y - 0.3) * 10/7; // Gradient towards the bottom, so 0.3 is now 0
 
-            vec3 edgeColor = mix(vec3(0.4, 0.2, 0.1), maxLavaColor, 0.9); // make the color vary depending on the lava noise
+            edgeColor = mix(vec3(0.4, 0.2, 0.1), edgeColor, 0.9); // make the color vary depending on the lava noise
             #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
                 edgeColor = changeColorFunction(edgeColor, 3.0, colorSoul, inSoulValley);
             #elif defined PURPLE_END_FIRE_INTERNAL
                 edgeColor = changeColorFunction(sqrt1(edgeColor), 4.0, colorEndBreath, 1.0);
             #endif
 
+            edgeColor *= 3.0;
+            float edgeEmission = 1.3 + emission * 1.1;
+            #if LAVA_EDGE_EFFECT == 2
+                edgeColor *= 0.1;
+                edgeEmission = 0.5;
+            #endif
+
             vec3 absPlayerPos = abs(playerPos);
             float maxPlayerPos = max(absPlayerPos.x, max(absPlayerPos.y * 2.0, absPlayerPos.z));
             float edgeDecider = pow2(min1(maxPlayerPos / min(effectiveACLdistance, far) * 2.0)); // this is to make the effect fade at the edge of ACL range
 
-            color.rgb = mix(color.rgb, edgeColor * 3.0, edge * (1.0 - edgeDecider));
-            emission = min(mix(emission, 1.3 + emission * 1.1, edge * (1.0 - edgeDecider)), 3.5);
+            color.rgb = mix(color.rgb, edgeColor, edge * (1.0 - edgeDecider));
+            emission = min(mix(emission, edgeEmission, edge * (1.0 - edgeDecider)), 3.5);
         }
     }
 #endif

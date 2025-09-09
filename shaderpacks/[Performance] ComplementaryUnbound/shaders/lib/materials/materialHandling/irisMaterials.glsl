@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/entityMaterials.glsl"
 int mat = currentRenderedItemId;
 
 #ifdef GBUFFERS_HAND
@@ -5,7 +6,7 @@ int mat = currentRenderedItemId;
 #endif
 
 int subsurfaceMode;
-bool noDirectionalShading, noVanillaAO, centerShadowBias;
+bool centerShadowBias;
 float noPuddles;
 
 if (currentRenderedItemId < 45000) {
@@ -211,6 +212,7 @@ if (currentRenderedItemId < 45064) {
                         emission = 3.0;
                         color.r *= 1.1;
                     }
+                    emission *= END_CRYSTAL_EMISSION;
                 }
             }
         }
@@ -231,8 +233,8 @@ if (currentRenderedItemId < 45064) {
             }
         } else {
             if (currentRenderedItemId < 45120) {
-                if (currentRenderedItemId == 45112) { // Trial Key
-                    emission = max0(color.r - color.b) * 3.0;
+                if (currentRenderedItemId == 45112) { // Trial Key, Ominous Trial Key
+                    emission = abs(color.r - color.b) * 3.0;
                     color.rgb = pow(color.rgb, vec3(1.0 + 0.5 * sqrt(emission)));
                 } else /*if (currentRenderedItemId == 45116)*/ { //
 

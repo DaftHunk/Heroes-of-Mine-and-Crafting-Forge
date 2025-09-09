@@ -1,3 +1,4 @@
+//#define OBSIDIAN_ENDSTONE
 #ifdef OBSIDIAN_ENDSTONE
     #ifdef GBUFFERS_TERRAIN
         vec3 worldPos = cameraPosition + playerPos;

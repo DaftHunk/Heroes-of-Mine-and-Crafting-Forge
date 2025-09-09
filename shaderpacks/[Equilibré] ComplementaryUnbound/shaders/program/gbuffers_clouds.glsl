@@ -5,6 +5,8 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/clouds.glsl"
+#include "/lib/shaderSettings/cloudsAndLighting.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER

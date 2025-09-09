@@ -5,6 +5,7 @@
 
 //Common//
 #include "/lib/common.glsl"
+//#define RENKO_CUT
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER

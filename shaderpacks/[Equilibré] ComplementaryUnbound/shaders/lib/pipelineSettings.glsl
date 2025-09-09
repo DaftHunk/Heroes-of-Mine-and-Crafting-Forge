@@ -8,8 +8,8 @@ const int colortex5Format = RGBA8_SNORM;    //normalM & scene image for water re
 const int colortex6Format = RGBA8;          //smoothnessD & materialMask & skyLightFactor & lmCoord.x at (0.0-0.5)
 const int colortex7Format = RGBA16F;        //(cloud/water map on gbuffer) | temporal filter
 #ifdef SS_BLOCKLIGHT
-const int colortex8Format = RGB8;           //colored light
-const int colortex9Format = RGB16F;         //colored light
+const int colortex8Format = RGBA8;           //colored light
+const int colortex9Format = RGBA16F;         //colored light
 #endif
 */
 

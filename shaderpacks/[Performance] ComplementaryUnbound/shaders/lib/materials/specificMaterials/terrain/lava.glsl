@@ -1,12 +1,16 @@
-// Tweak to prevent the animation of lava causing brightness pulsing
-vec3 avgColor = vec3(0.0);
-ivec2 itexCoordC = ivec2(midCoord * atlasSize + 0.0001);
-for (int x = -8; x < 8; x += 2) {
-    for (int y = -8; y < 8; y += 2) {
-        avgColor += texelFetch(tex, itexCoordC + ivec2(x, y), 0).rgb;
+#if !defined IPBR_COMPATIBILITY_MODE && !defined DH_TERRAIN
+    // Tweak to prevent the animation of lava causing brightness pulsing
+    vec3 avgColor = vec3(0.0);
+    ivec2 itexCoordC = ivec2(midCoord * atlasSize + 0.0001);
+    for (int x = -8; x < 8; x += 2) {
+        for (int y = -8; y < 8; y += 2) {
+            avgColor += texelFetch(tex, itexCoordC + ivec2(x, y), 0).rgb;
+        }
     }
-}
-color.rgb /= max(GetLuminance(avgColor) * 0.0390625, 0.001);
+    color.rgb /= max(GetLuminance(avgColor) * 0.0390625, 0.001);
+#else
+    color.rgb *= 0.86;
+#endif
 noDirectionalShading = true;
 lmCoordM = vec2(0.0);
 emission = GetLuminance(color.rgb) * 6.5;
@@ -36,7 +40,7 @@ vec3 previousLavaColor = color.rgb;
 vec3 lavaNoiseColor = color.rgb;
 
 #if LAVA_VARIATION > 0
-    if (mat == 10068 || mat == 10070) { // Lava
+    if (BLOCK_LAVA_DEFINE) { // Lava
         #include "/lib/materials/specificMaterials/terrain/lavaNoise.glsl"
         color.rgb = lavaNoiseColor;
     }
@@ -47,6 +51,7 @@ vec3 lavaNoiseColor = color.rgb;
 #endif
 
 vec3 maxLavaColor = max(previousLavaColor, lavaNoiseColor);
+vec3 minLavaColor = min(previousLavaColor, lavaNoiseColor);
 
 #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
     noPuddles = 1.0;

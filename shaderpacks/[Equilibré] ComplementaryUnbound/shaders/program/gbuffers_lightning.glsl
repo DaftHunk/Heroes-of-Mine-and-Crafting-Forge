@@ -5,6 +5,8 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/emissionMult.glsl"
+//#define NIGHT_DESATURATION
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -87,7 +89,7 @@ void main() {
     color *= glColor;
 
     float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
-    vec3 normalM = normal;
+    vec3 normalM = normal, lightAlbedo = vec3(0.0);
     float purkinjeOverwrite = 0.0, emission = 0.0;
 
     float luminance = GetLuminance(color.rgb);
@@ -138,13 +140,19 @@ void main() {
         vec3 geoNormal = normalM;
         vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
 
+        #ifdef SS_BLOCKLIGHT
+            lightAlbedo = normalize(color.rgb) * min1(emission);
+        #endif
+
         emission *= EMISSION_MULTIPLIER;
 
-        DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
-                   worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
-                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
+        bool isLightSource = lmCoord.x > 0.99;
 
-        #ifdef PBR_REFLECTIONS
+        DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
+                   worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
+                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+
+        #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
             #ifdef OVERWORLD
                 skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
             #else
@@ -159,7 +167,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
         /* DRAWBUFFERS:065 */
@@ -167,11 +175,11 @@ void main() {
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0658 */
-            gl_FragData[3] = vec4(0.0, 0.0, 0.0, 1.0);
+            gl_FragData[3] = vec4(lightAlbedo, 1.0);
         #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:068 */
-        gl_FragData[2] = vec4(0.0, 0.0, 0.0, 1.0);
+        gl_FragData[2] = vec4(lightAlbedo, 1.0);
     #endif
 }
 
@@ -286,7 +294,7 @@ void main() {
         gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
     #endif
     #if DRAGON_DEATH_EFFECT_INTERNAL > 0
-        if (entityId == 0 && gl_Color.a < 0.5) { // Only lightning bolts and dragon death effect run in this program, lightning has an entity ID assigned
+        if (entityId == 0 && (gl_Color.a < 0.2 || gl_Color.a == 1.0)) { // Only lightning bolts and dragon death effect run in this program, lightning has an entity ID assigned
             glColor.a = -100000.0;
             SetEndDragonDeath();
         }

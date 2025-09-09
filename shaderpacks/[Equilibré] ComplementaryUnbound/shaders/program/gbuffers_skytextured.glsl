@@ -72,6 +72,8 @@ void main() {
                 discard;
             #endif
 
+            float luminance = GetLuminance(color.rgb);
+
             if (isSun) {
                 float sunBrightness = 3.2;
                 #ifdef SPOOKY
@@ -82,9 +84,14 @@ void main() {
             }
 
             if (isMoon) {
+                // vec3 pixelGlareColor = color.rgb;
+                // pixelGlareColor = mix(pixelGlareColor, pixelGlareColor * vec3(0.9, 0.95, 1.1), 0.5) * 1.3;
                 color.rgb *= smoothstep1(min1(length(color.rgb))) * 1.3;
+                
+                // float pixelGlareFactor = 1 - step(0.09,luminance);
+                // color.rgb = mix(color.rgb, pixelGlareColor, pixelGlareFactor);
                 #ifdef SPOOKY
-                    color.rgb = mix(color.rgb, GetLuminance(color.rgb) * vec3(1.0, 0.0, 0.0) * 1.5, getBloodMoon(moonPhase, sunVisibility));
+                    color.rgb = mix(color.rgb, luminance * vec3(1.0, 0.0, 0.0) * 1.5, getBloodMoon(moonPhase, sunVisibility));
                 #endif
             }
 

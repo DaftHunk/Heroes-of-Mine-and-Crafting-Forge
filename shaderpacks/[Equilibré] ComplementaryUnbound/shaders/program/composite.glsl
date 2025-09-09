@@ -5,6 +5,16 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/composite.glsl"
+#include "/lib/shaderSettings/endBeams.glsl"
+#include "/lib/shaderSettings/overworldBeams.glsl"
+#define NETHER_STORM
+#define NETHER_STORM_LOWER_ALT 28 //[-296 -292 -288 -284 -280 -276 -272 -268 -264 -260 -256 -252 -248 -244 -240 -236 -232 -228 -224 -220 -216 -212 -208 -204 -200 -196 -192 -188 -184 -180 -176 -172 -168 -164 -160 -156 -152 -148 -144 -140 -136 -132 -128 -124 -120 -116 -112 -108 -104 -100 -96 -92 -88 -84 -80 -76 -72 -68 -64 -60 -56 -52 -48 -44 -40 -36 -32 -28 -24 -20 -16 -12 -8 -4 0 4 8 12 16 20 22 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 256 260 264 268 272 276 280 284 288 292 296 300]
+#define NETHER_STORM_HEIGHT 200 //[25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 220 240 260 280 300 325 350 375 400 425 450 475 500 550 600 650 700 750 800 850 900]
+#define NETHER_STORM_I 0.40 //[0.05 0.06 0.07 0.08 0.09 0.10 0.12 0.14 0.16 0.18 0.22 0.26 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50]
+#ifndef NETHER
+    #undef NETHER_STORM
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -46,28 +56,12 @@ vec2 view = vec2(viewWidth, viewHeight);
         return (2.0 * near) / (far + near - depth * (far - near));
     }
 
-    // vec2 Reprojection(vec3 pos) {
-    //     pos = pos * 2.0 - 1.0;
-
-    //     vec4 viewPosPrev = gbufferProjectionInverse * vec4(pos, 1.0);
-    //     viewPosPrev /= viewPosPrev.w;
-    //     viewPosPrev = gbufferModelViewInverse * viewPosPrev;
-
-    //     vec3 cameraOffset = cameraPosition - previousCameraPosition;
-    //     cameraOffset *= float(pos.z > 0.56);
-
-    //     vec4 previousPosition = viewPosPrev + vec4(cameraOffset, 0.0);
-    //     previousPosition = gbufferPreviousModelView * previousPosition;
-    //     previousPosition = gbufferPreviousProjection * previousPosition;
-    //     return previousPosition.xy / previousPosition.w * 0.5 + 0.5;
-    // } // will leave it in here because not 100% sure if float(z * 2.0 - 1.0 > 0.56); is correct or if it doesn't need the * 2.0 - 1.0 conversion
-
     vec2 OffsetDist(float x) {
         float n = fract(x * 16.2) * 2 * pi;
         return vec2(cos(n), sin(n)) * x;
     }
 
-    vec3 GetMultiColoredBlocklight(vec2 coord, float z, float dither) {
+    vec4 GetMultiColoredBlocklight(vec4 lightAlbedo, vec2 coord, float z, float dither) {
         vec3 cameraOffset = cameraPosition - previousCameraPosition;
         cameraOffset *= float(z * 2.0 - 1.0 > 0.56);
 
@@ -78,8 +72,7 @@ vec2 view = vec2(viewWidth, viewHeight);
         float fovScale = gbufferProjection[1][1] / 1.37;
 
         vec2 blurstr = vec2(1.0 / (viewWidth / viewHeight), 1.0) * fovScale / distScale;
-        vec3 lightAlbedo = texture2D(colortex8, coord).rgb;
-        vec3 previousColoredLight = vec3(0.0);
+        vec4 previousColoredLight = vec4(0.0);
 
         float mask = clamp(2.0 - 2.0 * max(abs(prevCoord.x - 0.5), abs(prevCoord.y - 0.5)), 0.0, 1.0);
 
@@ -93,7 +86,7 @@ vec2 view = vec2(viewWidth, viewHeight);
         float sampleWeight = clamp(abs(lz - linearSampleZ) * far / 16.0, 0.0, 1.0);
         sampleWeight = 1.0 - sampleWeight * sampleWeight;
 
-        previousColoredLight += texture2D(colortex9, prevCoord.xy + offset).rgb * sampleWeight;
+        previousColoredLight += texture2D(colortex9, prevCoord.xy + offset) * sampleWeight;
         previousColoredLight *= previousColoredLight * mask;
 
         if (lightAlbedo.g + lightAlbedo.b < 0.05) lightAlbedo.r *= 0.45; // red color reduction to prevent redstone from overpowering everything
@@ -184,9 +177,22 @@ void main() {
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
 
+    vec4 lightAlbedo = texture2D(colortex8, texCoord);
+    float purkinjeOverwrite = 0.0;
+
+    #ifdef ENTITIES_ARE_LIGHT
+        float screenWidth = viewPos.x;
+        int heldBlockLight = 0;
+        heldBlockLight = (viewPos.x > 0.0 ^^ isRightHanded) ? heldBlockLightValue2 : heldBlockLightValue;
+
+        if (heldBlockLight > 0) {
+            lightAlbedo.a *= 30;
+        }
+    #endif
+
     #ifdef SS_BLOCKLIGHT
         float lightZ = z1 >= 1.0 ? z0 : z1;
-        vec3 coloredLight = GetMultiColoredBlocklight(texCoord, lightZ, dither);
+        vec4 coloredLight = GetMultiColoredBlocklight(lightAlbedo, texCoord, lightZ, dither);
     #endif
 
     /* TM5723: The "1.0 - translucentMult" trick is done because of the default color attachment
@@ -233,7 +239,9 @@ void main() {
     #endif
 
     #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0
-        volumetricEffect = sqrt(pow2(volumetricEffect) + pow2(EndCrystalVortices(vec3(0.0), playerPos, dither)));
+        vec4 endCrystalVortex = pow2(EndCrystalVortices(vec3(0.0), playerPos, dither));
+        volumetricEffect = sqrt(pow2(volumetricEffect) + endCrystalVortex);
+        purkinjeOverwrite += maxAll(endCrystalVortex.rgb);
     #endif
 
     #ifdef NETHER_STORM
@@ -248,7 +256,9 @@ void main() {
     #endif
 
     #ifdef END_PORTAL_BEAM_INTERNAL
-        volumetricEffect = sqrt(pow2(volumetricEffect) + pow2(GetEndPortalBeam(vec3(0.0), playerPos)));
+        vec4 endPortalBeam = pow2(GetEndPortalBeam(vec3(0.0), playerPos));
+        volumetricEffect = sqrt(pow2(volumetricEffect) + endPortalBeam);
+        purkinjeOverwrite += maxAll(endPortalBeam.rgb);
     #endif
 
     #ifdef NETHER_STORM
@@ -264,20 +274,16 @@ void main() {
         #ifdef OVERWORLD
             lightFogMult *= 0.2 + 0.6 * mix(1.0, 1.0 - sunFactor * invRainFactor, eyeBrightnessM);
         #endif
-
-        color /= 1.0 + pow2(GetLuminance(lightFog)) * lightFogMult * 2.0;
-        color += lightFog * lightFogMult * 0.5;
-        lightFogLength = pow3(length(lightFog));
-        // color = vec3(lightFogLength);
     #endif
+
+    vec4 texture6 = texelFetch(colortex6, texelCoord, 0);
 
     if (isEyeInWater == 1) {
         if (z0 == 1.0) color.rgb = waterFogColor;
 
         vec3 underwaterMult = vec3(0.80, 0.87, 0.97);
         #ifdef DARKER_DEPTH_OCEANS
-            float renderDistanceFade = lViewPos * 5.0 / renderDistance;
-            vec4 texture6 = texelFetch(colortex6, texelCoord, 0);
+            float renderDistanceFade = lViewPos * 5.0 / far;
 
             float lightSourceFactor = pow3(1.0 - texture6.a);
             lightSourceFactor += renderDistanceFade;
@@ -288,7 +294,7 @@ void main() {
                 if (heldItemId == 45032 || heldItemId2 == 45032) heldLight = 15; // Lava Bucket
                 heldLight = clamp(heldLight, 0.0, 15.0);
                 heldLight = sqrt2(heldLight / 15.0) * -1.0 + 1.0; // Normalize and invert
-                heldLight = mix(heldLight, 1.0, clamp01((lViewPos) * 35.0 / renderDistance)); // Only do it around the player
+                heldLight = mix(heldLight, 1.0, clamp01((lViewPos) * 35.0 / far)); // Only do it around the player
             } else {
                 heldLight = 1.0;
             }
@@ -302,27 +308,27 @@ void main() {
         #endif
         color.rgb *= underwaterMult * 0.85;
         volumetricEffect.rgb *= pow2(underwaterMult * 0.71);
-    } else {
-        if (isEyeInWater == 2) {
-            if (z1 == 1.0) color.rgb = fogColor * 5.0;
-            #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
-                color.rgb = changeColorFunction(color.rgb, 1.0, colorSoul, inSoulValley);
-            #endif
-            #ifdef PURPLE_END_FIRE_INTERNAL
-                color.rgb = changeColorFunction(color.rgb, 1.0, colorEndBreath, 1.0);
-            #endif
+        #ifdef COLORED_LIGHT_FOG
+            lightFog *= underwaterMult;
+        #endif
+    } else if (isEyeInWater == 2) {
+        if (z1 == 1.0) color.rgb = fogColor * 5.0;
+        #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
+            color.rgb = changeColorFunction(color.rgb, 1.0, colorSoul, inSoulValley);
+        #endif
+        #ifdef PURPLE_END_FIRE_INTERNAL
+            color.rgb = changeColorFunction(color.rgb, 1.0, colorEndBreath, 1.0);
+        #endif
 
-            volumetricEffect.rgb *= 0.0;
-        }
+        volumetricEffect.rgb *= 0.0;
     }
 
-    // #if TONEMAP > 0
-    //     // convert rgb to linear:
-    //     const vec3 a = vec3(0.055f);
-    //     color = mix(pow((color.rgb + a)/(vec3(1.0f) + a), vec3(2.4)), color.rgb / 12.92f, lessThan(color.rgb, vec3(0.04045f)));
-    // #else
+    #ifdef COLORED_LIGHT_FOG
+        color /= 1.0 + pow2(GetLuminance(lightFog)) * lightFogMult * 2.0;
+        color += lightFog * lightFogMult * 0.5;
+    #endif
+
     color = pow(color, vec3(2.2));
-    // #endif
 
     #if defined LIGHTSHAFTS_ACTIVE || defined END_PORTAL_BEAM_INTERNAL
         #ifdef END
@@ -342,8 +348,13 @@ void main() {
         color.rgb *= mix(vec3(1.0), vec3(RETRO_LOOK_R, RETRO_LOOK_G, RETRO_LOOK_B) * 0.5, nightVision) * RETRO_LOOK_I;
     #endif
 
-    /* DRAWBUFFERS:0 */
+    float materialMask = texture6.g;
+    purkinjeOverwrite = step(0.2, sqrt3(purkinjeOverwrite));
+    if (purkinjeOverwrite > 0) materialMask = OSIEBCA * 251.0 * purkinjeOverwrite;
+
+    /* DRAWBUFFERS:06 */
     gl_FragData[0] = vec4(color, 1.0);
+    gl_FragData[1] = vec4(texture6.r, materialMask, texture6.b, texture6.a);
 
     // supposed to be #if defined LIGHTSHAFTS_ACTIVE && (LIGHTSHAFT_BEHAVIOUR == 1 && SHADOW_QUALITY >= 1 || defined END)
     #if LIGHTSHAFT_QUALI_DEFINE > 0 && LIGHTSHAFT_BEHAVIOUR == 1 && SHADOW_QUALITY >= 1 && defined OVERWORLD || defined END
@@ -352,16 +363,16 @@ void main() {
                 vlFactorM = texelFetch(colortex4, texelCoord, 0).r;
         #endif
 
-        /* DRAWBUFFERS:04 */
-        gl_FragData[1] = vec4(vlFactorM, 0.0, 0.0, 1.0);
+        /* DRAWBUFFERS:064 */
+        gl_FragData[2] = vec4(vlFactorM, 0.0, 0.0, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:049 */
-            gl_FragData[2] = vec4(coloredLight, 1.0);
+            /* DRAWBUFFERS:0649 */
+            gl_FragData[3] = vec4(coloredLight);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:09 */
-        gl_FragData[1] = vec4(coloredLight, 1.0);
+        /* DRAWBUFFERS:069 */
+        gl_FragData[2] = vec4(coloredLight);
     #endif
 }
 

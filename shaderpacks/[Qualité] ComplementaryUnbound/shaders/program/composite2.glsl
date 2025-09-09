@@ -5,6 +5,7 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/composite2.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER

@@ -72,15 +72,14 @@ void main() {
 
     #ifndef GBUFFERS_LINE
         #ifdef SS_BLOCKLIGHT
-            blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos);
+            blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
         #endif
 
-        DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+        DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoord, false, false, false,
-                   false, 0, 0.0, 0.0, 0.0, purkinjeOverwrite);
+                   false, 0, 0.0, 0.0, 0.0, purkinjeOverwrite, false);
     #endif
 
-    #if SELECT_OUTLINE != 1 || defined SELECT_OUTLINE_AUTO_HIDE
     if (abs(color.a - 0.4) + dot(color.rgb, color.rgb) < 0.01) {
         #if SELECT_OUTLINE == 0
             discard;
@@ -107,7 +106,6 @@ void main() {
             }
         #endif
     }
-    #endif
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, -1);
@@ -126,11 +124,11 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+    gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #ifdef SS_BLOCKLIGHT
         /* DRAWBUFFERS:068 */
-        gl_FragData[2] = vec4(0.0, 0.0, 0.0, 1.0);
+        gl_FragData[2] = vec4(0.0, 0.0, 0.0, 0.0);
     #endif
 }
 

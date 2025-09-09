@@ -5,6 +5,9 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/wavingBlocks.glsl"
+#define WATER_CAUSTIC_STRENGTH 1.0 //[0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+#define SHADOW_SATURATION 1.0 //[0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -86,10 +89,11 @@ void main() {
                     #endif
 
                     // Water Caustics
-                    #if WATER_CAUSTIC_STYLE < 3 && PIXEL_WATER == 0
+                    #if WATER_CAUSTIC_STYLE < 3
                         #if MC_VERSION >= 11300
-                            float wcl = GetLuminance(color1.rgb);
-                            color1.rgb = color1.rgb * pow2(wcl) * 1.2;
+                            float wcl = pow2(GetLuminance(color1.rgb));
+                            color1.rgb = color1.rgb * wcl * 1.2;
+                            color1.rgb *= mix(1.0, WATER_CAUSTIC_STRENGTH, wcl);
                         #else
                             color1.rgb = mix(color1.rgb, vec3(GetLuminance(color1.rgb)), 0.88);
                             color1.rgb = pow2(color1.rgb) * vec3(2.5, 3.0, 3.0) * 0.96;
@@ -97,9 +101,6 @@ void main() {
                     #else
                         #define WATER_SPEED_MULT_M WATER_SPEED_MULT * 0.035
                         vec2 causticWind = vec2(frameTimeCounter * WATER_SPEED_MULT_M, 0.0);
-                        #if PIXEL_WATER == 1
-                            causticWind *= 2.0;
-                        #endif
                         vec2 cPos1 = worldPos.xz * 0.10 - causticWind;
                         vec2 cPos2 = worldPos.xz * 0.05 + causticWind;
 
@@ -111,20 +112,13 @@ void main() {
                                  - dot(texture2D(gaux4, cPos1 - vec2(offset, 0.0)).rg, vec2(cMult));
                         caustic += dot(texture2D(gaux4, cPos2 + vec2(0.0, offset)).rg, vec2(cMult))
                                  - dot(texture2D(gaux4, cPos2 - vec2(0.0, offset)).rg, vec2(cMult));
-                        #if PIXEL_WATER == 1
-                            vec2 uv = worldPos.xz + (vec2(frameTimeCounter) * 0.004);
-                            uv = (uv - 0.5) * 0.25 + 0.5;
-                            float pixelWaterSize = 16;
-                            uv = floor(uv * (pixelWaterSize * 4)) / (pixelWaterSize * 4);
-                            float foamNoise = step(texture2D(noisetex, uv + 0.004).y, 0.38);
-                            caustic = clamp01(caustic);
-                            caustic *= foamNoise * 10;
-                        #endif
                         color1.rgb = vec3(max0(min1(caustic * 0.8 + 0.35)) * 0.65 + 0.35);
 
                         #if MC_VERSION < 11300
                             color1.rgb *= vec3(0.3, 0.45, 0.9);
                         #endif
+
+                        color1.rgb *= mix(1.0, WATER_CAUSTIC_STRENGTH, caustic);
                     #endif
 
                     #if MC_VERSION >= 11300
@@ -147,7 +141,7 @@ void main() {
 
                     vec2 waterWind = vec2(syncedTime * 0.01, 0.0);
                     float waterNoise = texture2D(noisetex, worldPosM.xz * 0.012 - waterWind).g;
-                        waterNoise += texture2D(noisetex, worldPosM.xz * 0.05 + waterWind).g;
+                          waterNoise += texture2D(noisetex, worldPosM.xz * 0.05 + waterWind).g;
 
                     float factor = max(2.5 - 0.025 * length(position.xz), 0.8333) * 1.3;
                     waterNoise = pow(waterNoise * 0.5, factor) * factor * 1.3;
@@ -210,14 +204,14 @@ void main() {
         }
     #endif
 
-    gl_FragData[0] = color1; // Shadow Color
+    gl_FragData[0] = vec4(saturateColors(color1.rgb, SHADOW_SATURATION), color1.a); // Shadow Color
 
     #if SHADOW_QUALITY >= 1
         #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
             color2.a = 0.25 + max0(positionYM * 0.05); // consistencyMEJHRI7DG
         #endif
 
-        gl_FragData[1] = color2; // Light Shaft Color
+        gl_FragData[1] = vec4(saturateColors(color2.rgb, pow(SHADOW_SATURATION, 0.8)), color2.a); // Light Shaft Color
     #endif
 }
 
@@ -259,11 +253,15 @@ attribute vec4 mc_Entity;
 //Common Variables//
 vec2 lmCoord;
 
-#if COLORED_LIGHTING_INTERNAL > 0
+#if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     writeonly uniform uimage3D voxel_img;
 
     #ifdef PUDDLE_VOXELIZATION
         writeonly uniform uimage2D puddle_img;
+    #endif
+    
+    #ifdef ACL_GROUND_LEAVES_FIX
+        writeonly uniform uimage3D leaves_img;
     #endif
 #endif
 
@@ -276,11 +274,14 @@ vec2 lmCoord;
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 
-#if COLORED_LIGHTING_INTERNAL > 0
+#if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
     #include "/lib/misc/voxelization.glsl"
 
     #ifdef PUDDLE_VOXELIZATION
         #include "/lib/misc/puddleVoxelization.glsl"
+    #endif
+    #ifdef ACL_GROUND_LEAVES_FIX
+        #include "/lib/misc/leavesVoxelization.glsl"
     #endif
 #endif
 
@@ -361,11 +362,14 @@ void main() {
 
     vec3 normal = mat3(shadowModelViewInverse) * gl_NormalMatrix * gl_Normal;
 
-    #if COLORED_LIGHTING_INTERNAL > 0
+    #if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
         if (gl_VertexID % 4 == 0) {
             UpdateVoxelMap(mat, normal);
             #ifdef PUDDLE_VOXELIZATION
                 UpdatePuddleVoxelMap(mat);
+            #endif
+            #ifdef ACL_GROUND_LEAVES_FIX
+                UpdateLeavesVoxelMap(mat);
             #endif
             #ifdef END_PORTAL_BEAM_INTERNAL
                 if (mat == 10556 && normal.y > 0.99 && length(position.xyz) < 32) SetEndPortalLoc(position.xyz);

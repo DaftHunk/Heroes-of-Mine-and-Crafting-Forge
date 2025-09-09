@@ -5,6 +5,7 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/materials.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -48,6 +49,10 @@ vec2 lmCoordM = lmCoord;
     #include "/lib/antialiasing/jitter.glsl"
 #endif
 
+#ifdef ACL_GROUND_LEAVES_FIX
+    #include "/lib/misc/leavesVoxelization.glsl"
+#endif
+
 #if defined ATM_COLOR_MULTS || defined SPOOKY
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
@@ -67,6 +72,10 @@ vec2 lmCoordM = lmCoord;
     #include "/lib/materials/overlayNoise.glsl"
 #endif
 
+#ifdef SS_BLOCKLIGHT
+    #include "/lib/lighting/coloredBlocklight.glsl"
+#endif
+
 //Program//
 void main() {
     vec4 color = vec4(glColor.rgb, 1.0);
@@ -82,7 +91,6 @@ void main() {
     float VdotU = dot(nViewPos, upVec);
     float VdotS = dot(nViewPos, sunVec);
     vec3 worldPos = playerPos + cameraPosition;
-    vec3 beforeTransformPos = playerPos;
 
     float dither = Bayer64(gl_FragCoord.xy);
     #ifdef TAA
@@ -95,8 +103,8 @@ void main() {
 
     bool noSmoothLighting = false, noDirectionalShading = false, noVanillaAO = false, centerShadowBias = false;
     int subsurfaceMode = 0;
-    float smoothnessG = 0.0, smoothnessD = 0.0, highlightMult = 1.0, emission = 0.0, snowFactor = 1.0, snowMinNdotU = 0.0;
-    vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
+    float smoothnessG = 0.0, smoothnessD = 0.0, highlightMult = 1.0, emission = 0.0, snowFactor = 1.0, snowMinNdotU = 0.0, noPuddles = 0.0;
+    vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0), maRecolor = vec3(0.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
 
     float overlayNoiseIntensity = 1.0;
@@ -114,9 +122,6 @@ void main() {
 
     if (mat == DH_BLOCK_LEAVES) {
         #include "/lib/materials/specificMaterials/terrain/leaves.glsl"
-        isFoliage = true;
-        mossNoiseIntensity = 0.0;
-        sandNoiseIntensity = 0.3;
         #ifdef SPOOKY
             int seed = worldDay / 2; // Thanks to Bálint
             int currTime = (worldDay % 2) * 24000 + worldTime; // Effect happens every 2 minecraft days
@@ -134,35 +139,9 @@ void main() {
         sandNoiseIntensity = 0.2;
         mossNoiseIntensity = 0.2;
     } else if (mat == DH_BLOCK_SNOW) {
-        overlayNoiseIntensity = 0.0;
-        #ifdef SSS_SNOW_ICE
-            subsurfaceMode = 3, noSmoothLighting = true, noDirectionalShading = true;
-        #endif
+        #include "/lib/materials/specificMaterials/terrain/snow.glsl"
     } else if (mat == DH_BLOCK_LAVA) {
-        overlayNoiseIntensity = 0.0;
-        emission = 1.5;
-
-        #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
-            color.rgb = changeColorFunction(color.rgb, 3.0, colorSoul, inSoulValley);
-            color.rgb = mix(color.rgb, (color.rgb - 0.5) * 1.35 + 0.5, inSoulValley); // increase contrast
-        #endif
-        #ifdef PURPLE_END_FIRE_INTERNAL
-            color.rgb = changeColorFunction(color.rgb, 2.5, colorEndBreath * 1.4, 1.0);
-            color.rgb = (color.rgb - 0.5) * 1.3 + 0.5;
-        #endif
-
-        vec3 lavaNoiseColor = color.rgb;
-        #if LAVA_VARIATION > 0
-            vec2 lavaPos = (floor(worldPos.xz * 16.0) + worldPos.y * 32.0) * 0.000666;
-            vec2 wind = vec2(frameTimeCounter * 0.012, 0.0);
-            #ifndef IPBR
-                lavaNoiseIntensity *= 0.95;
-            #endif
-            #include "/lib/materials/specificMaterials/terrain/lavaNoise.glsl"
-            color.rgb = lavaNoiseColor;
-        #else
-            if (LAVA_TEMPERATURE != 0.0) color.rgb += LAVA_TEMPERATURE * 0.3;
-        #endif
+        #include "/lib/materials/specificMaterials/terrain/lava.glsl"
     }
 
     #ifdef SNOWY_WORLD
@@ -170,10 +149,11 @@ void main() {
                      playerPos, lmCoord, snowFactor, snowMinNdotU, NdotU, subsurfaceMode);
     #endif
 
-    float lengthCylinder = max(length(playerPos.xz), abs(playerPos.y));
+    vec3 playerPosAlt = ViewToPlayer(viewPos); // AMD has problems with vertex playerPos and DH
+    float lengthCylinder = max(length(playerPosAlt.xz), abs(playerPosAlt.y));
     highlightMult *= 0.5 + 0.5 * pow2(1.0 - smoothstep(far, far * 1.5, lengthCylinder));
     color.a *= smoothstep(far * 0.5, far * 0.7, lengthCylinder);
-    if (color.a < dither) discard;
+    if (color.a < min(dither, 1.0)) discard;
 
     vec3 noisePos = floor((playerPos + cameraPosition) * 4.0 + 0.001) / 32.0;
     float noiseTexture = Noise3D(noisePos) + 0.5;
@@ -209,11 +189,23 @@ void main() {
         #endif
     #endif
 
-    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+    #ifdef SS_BLOCKLIGHT
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
+        vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
+    #endif
+
+    bool isLightSource = lmCoord.x > 0.99;
+
+    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
-    /* DRAWBUFFERS:0 */
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+    /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
+    gl_FragData[1] = gl_FragData[1] = vec4(smoothnessG, 0.0, 0.0, lmCoordM.x + clamp01(purkinjeOverwrite) + clamp01(emission));
+    #ifdef SS_BLOCKLIGHT
+        /* DRAWBUFFERS:068 */
+        gl_FragData[2] = vec4(lightAlbedo, 0.0);
+    #endif
 }
 
 #endif
@@ -243,6 +235,9 @@ out vec4 glColor;
 #endif
 #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
     #include "/lib/misc/distortWorld.glsl"
+#endif
+#ifdef WAVE_EVERYTHING
+    #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 
 //Program//

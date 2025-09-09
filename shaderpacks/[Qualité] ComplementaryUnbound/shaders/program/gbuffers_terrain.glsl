@@ -2,9 +2,24 @@
 // Complementary Shaders by EminGT //
 // With Euphoria Patches by SpacEagle17 //
 /////////////////////////////////////
+#extension GL_ARB_derivative_control : enable
+#ifdef GL_ARB_derivative_controlAdd
+    #define USE_FINE_DERIVATIVES
+#endif
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/materials.glsl"
+#include "/lib/shaderSettings/shockwave.glsl"
+#include "/lib/shaderSettings/interactiveFoliage.glsl"
+#include "/lib/shaderSettings/emissionMult.glsl"
+#include "/lib/shaderSettings/emissionMult.glsl"
+#include "/lib/shaderSettings/wavingBlocks.glsl"
+#define EYES
+#define EYE_FREQUENCY 1.0 //[0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5]
+#define EYE_SPEED 1.0 //[0.2 0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8 2.0 2.2 2.4 2.6 2.8 3.0]
+#define EYE_RED_PROBABILITY 0.07 //[0.00 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.10 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 0.20 0.21 0.22 0.23 0.24 0.25 0.26 0.27 0.28 0.29 0.30 0.31 0.32 0.33 0.34 0.35 0.36 0.37 0.38 0.39 0.40 0.41 0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.50 0.51 0.52 0.53 0.54 0.55 0.56 0.57 0.58 0.59 0.60 0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.70 0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.80 0.81 0.82 0.83 0.84 0.85 0.86 0.87 0.88 0.89 0.90 0.91 0.92 0.93 0.94 0.95 0.96 0.97 0.98 0.99 1.00]
+//#define NIGHT_DESATURATION
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -25,6 +40,7 @@ in vec3 atMidBlock;
 
 flat in vec3 upVec, sunVec, northVec, eastVec;
 in vec3 normal;
+in vec3 vertexPos;
 
 in vec4 glColorRaw;
 
@@ -41,8 +57,6 @@ in vec4 glColorRaw;
 #if ANISOTROPIC_FILTER > 0
     in vec4 spriteBounds;
 #endif
-
-in vec4 beforeTransformPos;
 
 //Pipeline Constants//
 #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0
@@ -87,8 +101,10 @@ void DoFoliageColorTweaks(inout vec3 color, inout vec3 shadowMult, inout float s
     float factor = max(80.0 - lViewPos, 0.0);
     shadowMult *= 1.0 + 0.004 * noonFactor * factor;
 
-    if (signMidCoordPos.x < 0.0) color.rgb *= 1.08;
-    else color.rgb *= 0.93;
+    #if defined IPBR && !defined IPBR_COMPATIBILITY_MODE
+        if (signMidCoordPos.x < 0.0) color.rgb *= 1.08;
+        else color.rgb *= 0.93;
+    #endif
 
     #ifdef FOLIAGE_ALT_SUBSURFACE
         float edgeSize = 0.12;
@@ -173,6 +189,10 @@ void DoOceanBlockTweaks(inout float smoothnessD) {
     #include "/lib/misc/puddleVoxelization.glsl"
 #endif
 
+#ifdef ACL_GROUND_LEAVES_FIX
+    #include "/lib/misc/leavesVoxelization.glsl"
+#endif
+
 #ifdef SNOWY_WORLD
     #include "/lib/materials/materialMethods/snowyWorld.glsl"
 #endif
@@ -217,7 +237,7 @@ void main() {
     #endif
     float lViewPos = length(viewPos);
     vec3 nViewPos = normalize(viewPos);
-    vec3 playerPos = ViewToPlayer(viewPos);
+    vec3 playerPos = vertexPos;
     vec3 worldPos = playerPos + cameraPosition;
 
     #if SHOCKWAVE > 0
@@ -233,11 +253,13 @@ void main() {
     float smoothnessD = 0.0, materialMask = 0.0, skyLightFactor = 0.0;
 
     #if !defined POM || !defined POM_ALLOW_CUTOUT
-        if (color.a <= 0.00001) discard;
+        if (color.a <= 0.00001) discard; // 6WIR4HT23
     #endif
 
     vec3 colorP = color.rgb;
     color.rgb *= glColor.rgb;
+
+
 
     float dither = Bayer64(gl_FragCoord.xy);
     #ifdef TAA
@@ -255,11 +277,12 @@ void main() {
     vec3 dhColor = vec3(1.0);
     float purkinjeOverwrite = 0.0;
 
-
+    bool isLightSource = false;
     if (lmCoord.x > 0.99 || blockLightEmission > 0) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources
         if (mat == 0) {
-            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, lmCoord.x, blockLightEmission);
+            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, lmCoord.x, blockLightEmission, 0.0);
         }
+        isLightSource = true;
         overlayNoiseIntensity = 0.0;
     }
 
@@ -304,15 +327,8 @@ void main() {
             smoothnessG = 1.0;
         #endif
 
-        //int blockEntityId = mat;
-        //#include "/lib/materials/materialHandling/blockEntityMaterials.glsl"
-
         #ifdef GENERATED_NORMALS
             if (!noGeneratedNormals) GenerateNormals(normalM, colorP);
-        #endif
-
-        #ifdef COATED_TEXTURES
-            CoatTextures(color.rgb, noiseFactor, playerPos, doTileRandomisation);
         #endif
 
         #if IPBR_EMISSIVE_MODE != 1
@@ -325,7 +341,7 @@ void main() {
 
         if (mat == 10001) { // No directional shading
             noDirectionalShading = true;
-        } else if (mat == 10003 || mat == 10005 || mat == 10029) { // Grounded Waving Foliage
+        } else if (mat == 10003 || mat == 10005 || mat == 10029 || mat == 10031) { // Grounded Waving Foliage
             subsurfaceMode = 1, noSmoothLighting = true, noDirectionalShading = true, isFoliage = true;
             DoFoliageColorTweaks(color.rgb, shadowMult, snowMinNdotU, viewPos, nViewPos, lViewPos, dither);
             sandNoiseIntensity = 0.3, mossNoiseIntensity = 0.0;
@@ -361,6 +377,7 @@ void main() {
                 if (LAVA_TEMPERATURE != 0.0) color.rgb += LAVA_TEMPERATURE * 0.3;
             #endif
             vec3 maxLavaColor = max(previousLavaColor, lavaNoiseColor);
+            vec3 minLavaColor = min(previousLavaColor, lavaNoiseColor);
             #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
                 noPuddles = 1.0;
             #endif
@@ -369,11 +386,11 @@ void main() {
 
             emission *= LAVA_EMISSION;
         } else if (mat > 20999 && mat < 21025){
-            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, lmCoord.x, blockLightEmission);
+            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, lmCoord.x, blockLightEmission, 1.0);
         }
 
         #ifdef SNOWY_WORLD
-            else if (mat == 10132) { // Grass Block:Normal
+            else if ((mat == 10132 || mat == 10133)) { // Grass Block:Normal
                 if (glColor.b < 0.999) { // Grass Block:Normal:Grass Part
                     snowMinNdotU = min(pow2(pow2(color.g)) * 1.9, 0.1);
                     color.rgb = color.rgb * 0.5 + 0.5 * (color.rgb / glColor.rgb);
@@ -408,6 +425,10 @@ void main() {
     #endif
     #if defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
         #include "/lib/materials/overlayNoiseApply.glsl"
+    #endif
+
+    #if defined COATED_TEXTURES && defined IPBR
+        CoatTextures(color.rgb, noiseFactor, playerPos, doTileRandomisation);
     #endif
 
     #if MONOTONE_WORLD > 0
@@ -484,7 +505,7 @@ void main() {
     #endif
 
     #ifdef SS_BLOCKLIGHT
-        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos);
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
     #endif
 
     #if defined SPOOKY && BLOOD_MOON > 0
@@ -504,15 +525,15 @@ void main() {
 
     emission *= EMISSION_MULTIPLIER;
 
-    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
 
         #ifdef COLORED_CANDLE_LIGHT
-            if (mat == 10584) { // Candles:Lit
+            if (mat >= 10900 && mat <= 10922) { // Candles:Lit
                 lightAlbedo = normalize(color.rgb) * lmCoord.x;
             }
         #endif
@@ -530,7 +551,7 @@ void main() {
         }
     #endif
 
-    #ifdef PBR_REFLECTIONS
+    #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
         #ifdef OVERWORLD
             skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
         #else
@@ -554,7 +575,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
         /* DRAWBUFFERS:065 */
@@ -562,11 +583,11 @@ void main() {
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0658 */
-            gl_FragData[3] = vec4(lightAlbedo, 1.0);
+            gl_FragData[3] = vec4(lightAlbedo, 0.0);
         #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:068 */
-        gl_FragData[2] = vec4(lightAlbedo, 1.0);
+        gl_FragData[2] = vec4(lightAlbedo, 0.0);
     #endif
 }
 
@@ -583,7 +604,7 @@ out vec2 lmCoord;
 out vec2 signMidCoordPos;
 flat out vec2 absMidCoordPos;
 flat out vec2 midCoord;
-out vec3 blockUV; // useful to hardcode something to a specific pixel coordinate of a block
+out vec3 blockUV;
 out vec3 atMidBlock;
 // #if SEASONS == 1 || SEASONS == 4 || defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
 //     flat out ivec2 pixelTexSize;
@@ -591,6 +612,7 @@ out vec3 atMidBlock;
 
 flat out vec3 upVec, sunVec, northVec, eastVec;
 out vec3 normal;
+out vec3 vertexPos;
 
 out vec4 glColorRaw;
 
@@ -607,8 +629,6 @@ out vec4 glColorRaw;
 #if ANISOTROPIC_FILTER > 0
     out vec4 spriteBounds;
 #endif
-
-out vec4 beforeTransformPos;
 
 //Attributes//
 attribute vec4 mc_Entity;
@@ -636,6 +656,9 @@ vec4 glColor = vec4(1.0);
 #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
     #include "/lib/misc/distortWorld.glsl"
 #endif
+
+float infnorm(vec3 x) {return max(max(abs(x.x), abs(x.y)), abs(x.z));} // Thanks to gri for general non axis aligned normal detection
+float isCross(vec3 x) {return length(abs(normalize(x).xz) - vec2(sqrt(0.5)));}
 
 //Program//
 void main() {
@@ -668,9 +691,17 @@ void main() {
 
     mat = int(mc_Entity.x + 0.5);
 
+    if ((mat == 10132 || mat == 10133)){
+        if (isCross(gl_Normal) < 0.5) mat = 10005; // First detect cross models 
+        else if (infnorm(gl_Normal) < 0.99) mat = 10031; // Then detect extruding faces, but ONLY if it's not already detected as cross
+    }
+
     #if ANISOTROPIC_FILTER > 0
         if (mc_Entity.y > 0.5 && dot(normal, upVec) < 0.999) absMidCoordPos = vec2(0.0); // Fix257062
     #endif
+
+    vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
+    vertexPos = position.xyz;
 
     blockLightEmission = 0;
     #ifdef IRIS_FEATURE_BLOCK_EMISSION_ATTRIBUTE
@@ -678,8 +709,6 @@ void main() {
     #endif
 
     #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVING_ANYTHING_TERRAIN || defined WAVE_EVERYTHING || defined INTERACTIVE_FOLIAGE
-        vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
-        beforeTransformPos = position;
         #ifdef MIRROR_DIMENSION
             doMirrorDimension(position);
         #endif
@@ -711,19 +740,9 @@ void main() {
         #ifdef WAVE_EVERYTHING
             DoWaveEverything(position.xyz);
         #endif
-        gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
-    #else
-        gl_Position = ftransform();
-
-        beforeTransformPos = vec4(0.0);
-
-        #ifndef WAVING_LAVA
-            if (mat == 10068 || mat == 10070) { // Lava
-                // G8FL735 Fixes Optifine-Iris parity. Optifine has 0.9 gl_Color.rgb on a lot of versions
-                glColorRaw.rgb = min(glColorRaw.rgb, vec3(0.9));
-            }
-        #endif
+        
     #endif
+    gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
 
     #ifdef FLICKERING_FIX
         if (mat == 10257) gl_Position.z -= 0.00001; // Iron Bars

@@ -1,9 +1,16 @@
 //////////////////////////////////
 // Complementary Base by EminGT //
 //////////////////////////////////
+#extension GL_ARB_derivative_control : enable
+#ifdef GL_ARB_derivative_controlAdd
+    #define USE_FINE_DERIVATIVES
+#endif
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/shockwave.glsl"
+#include "/lib/shaderSettings/emissionMult.glsl"
+//#define NIGHT_DESATURATION
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -22,6 +29,10 @@ in vec4 glColor;
 #if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || SHOCKWAVE > 0
     in vec2 signMidCoordPos;
     flat in vec2 absMidCoordPos;
+#endif
+
+#ifdef ACL_GROUND_LEAVES_FIX
+    #include "/lib/misc/leavesVoxelization.glsl"
 #endif
 
 #if defined GENERATED_NORMALS || defined CUSTOM_PBR
@@ -171,13 +182,13 @@ void main() {
 
     if (lmCoord.x > 0.99) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources
         if (blockEntityId == 0) {
-            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, 1.0, 15);
+            emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, 1.0, 15, 0.0);
         }
         overlayNoiseIntensity = 0.0;
     }
 
     if (blockEntityId < 21025 && blockEntityId > 20999){
-        emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, 1.0, 15);
+        emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, 1.0, 15, 1.0);
     }
 
     #ifdef IPBR
@@ -191,19 +202,19 @@ void main() {
             GetCustomMaterials(color, normalM, lmCoordM, NdotU, shadowMult, smoothnessG, smoothnessD, highlightMult, emission, materialMask, viewPos, lViewPos);
         #endif
 
-        if (blockEntityId == 60025) { // End Portal, End Gateway
+        if (blockEntityId == 5024) { // End Portal, End Gateway
             #ifdef SPECIAL_PORTAL_EFFECTS
                 #include "/lib/materials/specificMaterials/others/endPortalEffect.glsl"
             #endif
             overlayNoiseIntensity = 0.0;
-        } else if (blockEntityId == 60004) { // Signs
+        } else if (blockEntityId == 5004) { // Signs
             noSmoothLighting = true;
             if (glColor.r + glColor.g + glColor.b <= 2.99 || lmCoord.x > 0.999) { // Sign Text
                 #include "/lib/materials/specificMaterials/others/signText.glsl"
             }
-        } else if (blockEntityId == 60020) { // Conduit
+        } else if (blockEntityId == 5020) { // Conduit
             overlayNoiseIntensity = 0.3;
-        } else if (blockEntityId == 60012) {
+        } else if (blockEntityId == 5012) { // Ender Chest
             overlayNoiseIntensity = 0.5;
         } else {
             noSmoothLighting = true;
@@ -236,7 +247,7 @@ void main() {
     #endif
 
     #ifdef SS_BLOCKLIGHT
-        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos);
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
     #endif
 
     #if defined SPOOKY && BLOOD_MOON > 0
@@ -249,9 +260,11 @@ void main() {
 
     emission *= EMISSION_MULTIPLIER;
 
-    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM,
+    bool isLightSource = lmCoord.x > 0.99;
+
+    DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
-               false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite);
+               false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
@@ -260,7 +273,7 @@ void main() {
         if (blockEntityId == 60004) lightAlbedo = vec3(0.0); // fix glowing sign text affecting blocklight color
     #endif
 
-    #ifdef PBR_REFLECTIONS
+    #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
         #ifdef OVERWORLD
             skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
         #else
@@ -274,7 +287,7 @@ void main() {
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + purkinjeOverwrite + clamp01(emission));
+    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
         /* DRAWBUFFERS:065 */
@@ -282,11 +295,11 @@ void main() {
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0658 */
-            gl_FragData[3] = vec4(lightAlbedo, 1.0);
+            gl_FragData[3] = vec4(lightAlbedo, 0.0);
         #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:068 */
-        gl_FragData[2] = vec4(lightAlbedo, 1.0);
+        gl_FragData[2] = vec4(lightAlbedo, 0.0);
     #endif
 }
 
@@ -387,18 +400,18 @@ void main() {
     if (normal != normal) normal = -upVec; // Mod Fix: Fixes Better Nether Fireflies
 
     #ifdef END_PORTAL_BEAM_INTERNAL
-        if (blockEntityId == 60025 && length((gl_ModelViewMatrix * gl_Vertex).xyz) < 28) // end portal
+        if (blockEntityId == 5024 && length((gl_ModelViewMatrix * gl_Vertex).xyz) < 28) // end portal
         imageStore(endcrystal_img, ivec2(35, 4), ivec4(1));
     #endif
 
     #ifdef IPBR
-        /*if (blockEntityId == 60025) { // End Portal, End Gateway
+        /*if (blockEntityId == 5024) { // End Portal, End Gateway
             gl_Position.z -= 0.002;
         }*/
     #endif
 
     #if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || SHOCKWAVE > 0
-        if (blockEntityId == 60008) { // Chest
+        if (blockEntityId == 5008) { // Chest
             float fractWorldPosY = fract((gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex).y + cameraPosition.y);
             if (fractWorldPosY > 0.56 && 0.57 > fractWorldPosY) gl_Position.z -= 0.0001;
         }

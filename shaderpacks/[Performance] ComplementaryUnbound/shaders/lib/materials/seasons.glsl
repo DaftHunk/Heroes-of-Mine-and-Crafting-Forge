@@ -1,5 +1,30 @@
 // Yes I hate myself for having done all of this in a big file and with functions. Thanks you me from a year ago
 
+#include "/lib/shaderSettings/interactiveFoliage.glsl"
+#include "/lib/shaderSettings/emissiveFlowers.glsl"
+#include "/lib/shaderSettings/wavingBlocks.glsl"
+#define SNOW_NOISE_INTENSITY 1.0 //[0.5 0.75 1.0 1.25 1.5 2.0]
+#define SNOW_TRANSPARENCY 0.90 //[0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 1.00]
+#define MELTING_RADIUS 0.4 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+#define SNOW_SIZE 16 //[16 32 64 128]
+//#define SSS_SEASON_SNOW
+#define SNOW_NOISE_REMOVE_INTENSITY 1.00 //[0.00 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.60 1.70 1.80 1.90 2.00 2.25 2.50 2.75 3.00]
+#define WINTER_GREEN_AMOUNT 0.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+
+#define SUMMER_STRENGTH 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5]
+
+#define LESS_LEAVES 3 //[0 1 2 3 4 5]
+#define AUTUMN_NOISE_SIZE 1.0 //[0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+#define AUTUMN_STRENGTH 0.5 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+//#define EXTRA_FLOOR_LEAVES_IN_FORESTS
+
+#define FLOWER_DENSITY 1.0 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+#define FLOWER_SIZE 16 //[16 32 64 128]
+#define FLOWER_AMOUNT 2 //[0 1 2 3 4 5 6 7 8 9 10]
+#define SPRING_GREEN_INTENSITY 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+//#define EMISSIVE_SPRING_FLOWERS
+#define DISABLE_SPRING_IN_DRY_BIOMES
+
 #ifndef GBUFFERS_HAND
     vec3 oldColor = color.rgb; // Needed for entities
 
@@ -26,14 +51,20 @@
 
     bool dhLeaves = true;
     #ifdef DH_TERRAIN
-        if (mat == DH_BLOCK_LEAVES && dhColor.r < 0.17 || dhColor.r > 0.7) dhLeaves = false;
+        if (BLOCK_LEAVES_SEASONS_DEFINE && (dhColor.r < 0.17 || dhColor.r > 0.7)) {
+            dhLeaves = false;
+            isFoliage = false;
+        }
+    #endif
+    #if defined GBUFFERS_TERRAIN || defined DH_TERRAIN
+        dhLeaves = dhLeaves && BLOCK_LEAVES_SEASONS_DEFINE && isFoliage;
     #endif
 
     #if SEASONS == 1 || SEASONS == 2
         vec3 summerColor = color.rgb;
         if (summerTime > 0) {
             #if defined GBUFFERS_TERRAIN || defined DH_TERRAIN
-                if (isFoliage && dhLeaves || mat == 10132 && glColor.b < 0.999) { // Normal Grass Block
+                if (dhLeaves || (mat == 10132 || mat == 10133) && glColor.b < 0.999) { // Normal Grass Block
                     summerColor = mix(summerColor, GetLuminance(summerColor) * vec3(1.0, 0.8941, 0.3725), 0.3 * SUMMER_STRENGTH);
                 }
             #endif
@@ -48,7 +79,7 @@
     #if SEASONS == 1 || SEASONS == 3
         vec3 autumnColor = vec3(0);
 
-        if (autumnTime > 0 && inPaleGarden < 0.5) {
+        if (autumnTime > 0) {
             autumnColor = mix(color.rgb, desaturatedColor, 0.65 * autumnOnlyForests);
 
             #if defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined DH_TERRAIN
@@ -56,7 +87,7 @@
                 const vec3 autumnLeafColor1 = vec3(0.9922, 0.4786, 0.098);
                 const vec3 autumnLeafColor2 = vec3(0.9804, 0.4033, 0.1569);
                 const vec3 autumnLeafColor3 = vec3(0.9765, 0.3333, 0.149);
-                const vec3 autumnLeafColor4 = vec3(0.9765, 0.1333, 0.149);
+                const vec3 autumnLeafColor4 = vec3(0.5608, 0.2275, 0.1686);
 
                 float noiseLeavesColor1 = smoothstep(0.4, 0.7,  Noise3D(worldPos * 0.0001 * AUTUMN_NOISE_SIZE));
                 float noiseLeavesColor2 = smoothstep(0.3, 0.7,  Noise3D(worldPos * 0.0003 * AUTUMN_NOISE_SIZE + 300.0));
@@ -65,18 +96,16 @@
 
                 vec3 leafMainColor = mix(mix(mix(mix(autumnLeafColor0, autumnLeafColor1, noiseLeavesColor1), autumnLeafColor2, noiseLeavesColor2), autumnLeafColor3, noiseLeavesColor3), autumnLeafColor4, noiseLeavesColor4)  * 1.5; // giant mix :p
 
+                bool isVine = mat == 10013 && inJungle < 0.5;
+
                 if (isFoliage) {
-                    if (mat == 10009 || mat == 10011
-                    #ifdef DH_TERRAIN
-                        || mat == DH_BLOCK_LEAVES && isFoliage && dhLeaves
-                    #endif
-                    ) { // Except some leaves
+                    if (mat == 10009 || mat == 10011 || dhLeaves || isVine) { // Except some leaves
                         autumnColor *= mix(vec3(1.0), leafMainColor, autumnOnlyForests);
                     } else {
                         autumnColor *= mix(vec3(1.0), vec3(0.9882, 0.7725, 0.5725), autumnOnlyForests * 0.5);
                     }
                 } else { // leaves on the ground
-                    if ((mat == 10132
+                    if (((mat == 10132 || mat == 10133)
                     #ifdef DH_TERRAIN
                         || mat == DH_BLOCK_GRASS
                     #endif
@@ -92,28 +121,75 @@
 
                             vec3 leafFloorColorRandomMess = mix(mix(mix(mix(autumnLeafColor0, autumnLeafColor1, noiseLeavesFloorColor), autumnLeafColor2, noiseLeavesFloorColor), autumnLeafColor3, noiseLeavesFloorColor), autumnLeafColor4, noiseLeavesFloorColor) * 2.0;
 
-                            vec3 leafFloorColor = mix(leafFloorColorRandomMess, leafMainColor, 0.6); // this mixes between the random colors and the colors of the leaves at the world pos
-
-                            vec2 leafVec = getOverlayNoise(0.0, true, false, 0.1, 16, worldPos, 1.0, 0.0);
+                            vec3 leafFloorColor = mix(leafFloorColorRandomMess, leafMainColor, 0.66); // this mixes between the random colors and the colors of the leaves at the world pos
+                            
+                            float topCheck = abs(clamp01(dot(normal, upVec)));
+                            float leafSide = 0.0;
+                            if (((mat == 10132 || mat == 10133) && glColor.b < 0.999) || (mat == 10126 && color.b + color.g < color.r * 2.0 && color.b > 0.3 && color.g < 0.45) || (mat == 10493 && color.r > 0.52 && color.b < 0.30 && color.g > 0.41 && color.g + color.b * 0.95 > color.r * 1.2)) { // Normal Grass Block and Dirt Path
+                                leafSide = 1.0;
+                                topCheck = 1.0;
+                            }
+                            vec2 leafVec = getOverlayNoise(1, true, false, 0.1, 16, worldPos, 1.0, 0.0);
 
                             float leafFloorNoise = leafVec.y;
                             float leafVariable = leafVec.x;
 
-                            leafVariable *= (1.0 - pow(lmCoord.y + 0.01, 30.0)) * pow(lmCoord.y + 0.01, 2.0);
+                            leafFloorColor += 0.7 * leafFloorNoise; // make noisier
+                            float skylightCheck = (1.0 - pow(lmCoord.y + 0.01, 30.0)) * pow(lmCoord.y + 0.01, 2.0);
 
-                            leafFloorColor += 0.13 * leafFloorNoise; // make the noise less noticeable
+                            #ifdef ACL_GROUND_LEAVES_FIX
+                                if (skylightCheck > 0.001) {
+                                    uint underneathLeaves = 0u;
+                                    #define LEAVES_VOXEL_RANGE 20 // 20 blocks, increasing this to a large number would have a severe performance impact
+                                    
+                                    float dither1 = 0.0, dither2 = 0.0, scatterAmount = 0.0;
+                                    #ifdef TAA
+                                        dither1 = fract(Bayer64(gl_FragCoord.xy) + goldenRatio * mod(float(frameCounter), 3600.0)) * 2.0 - 1.0;
+                                        dither2 = fract(Bayer64(0.5 * gl_FragCoord.xy + 23) - goldenRatio * mod(float(frameCounter), 3600.0)) * 2.0 - 1.0;
+                                        scatterAmount = 2.0;
+                                    #endif
+                                        
+                                    vec3 voxelPos = SceneToLeavesVoxel(playerPos + scatterAmount * vec3(dither1, -0.1, dither2)); // -0.1 fixes flickering inside water
 
-                            float leafAddNoise1 = 1.0 - texture2D(noisetex, 0.0005 * (worldPos.xz + worldPos.y)).r * 1.3;
-                            float leafAddNoise2 = 1.0 - texture2D(noisetex, 0.005 * (worldPos.xz + worldPos.y)).r * 1.3;
-                            float leafAddNoise3 = texture2D(noisetex, 0.02 * (worldPos.xz + worldPos.y)).r * 1.3;
-                            leafVariable += mix(0.0, lmCoord.y * 1.0 - clamp(2.0 * leafAddNoise1 + 0.70 * leafAddNoise2 + 0.2 * leafAddNoise1, 0.0, 1.0), inForest);
+                                    for (int i = 0; i < LEAVES_VOXEL_RANGE; i++) {
+                                        voxelPos.y += 1;
+                                        
+                                        if (!CheckInsideLeavesVoxelVolume(voxelPos)) {
+                                            underneathLeaves = 1u; // We don't touch the detection outside of the voxel volume
+                                            break;
+                                        }
+
+                                        vec3 voxelSamplePos = clamp01(voxelPos / vec3(leaves_voxelVolumeSize));
+                                        uint voxelData = texture(leaves_sampler, voxelSamplePos).r;
+                                        if (voxelData != 0u) {
+                                            underneathLeaves = voxelData - 1u;
+                                            break;
+                                        }
+                                    }
+
+                                    leafVariable *= underneathLeaves;
+                                    leafFloorColor += 1.25 * leafFloorNoise * underneathLeaves;
+                                }
+                            #endif
+
+                            leafVariable = sqrt4(leafVariable); // make the noise less noticeable
+
+                            leafVariable *= skylightCheck;
+
+                            #ifdef EXTRA_FLOOR_LEAVES_IN_FORESTS
+                                float leafAddNoise1 = 1.0 - texture2D(noisetex, 0.0005 * (worldPos.xz + worldPos.y)).r * 1.3;
+                                float leafAddNoise2 = 1.0 - texture2D(noisetex, 0.005 * (worldPos.xz + worldPos.y)).r * 1.3;
+                                float leafAddNoise3 = texture2D(noisetex, 0.02 * (worldPos.xz + worldPos.y)).r * 1.3;
+                                leafVariable += mix(0.0, lmCoord.y * 1.0 - clamp(2.0 * leafAddNoise1 + 0.70 * leafAddNoise2 + 0.2 * leafAddNoise1, 0.0, 1.0), inForest);
+                            #endif
+
+
                             leafVariable = clamp01(leafVariable);
-
-                            leafVariable *= abs(clamp01(dot(normal, upVec))); // make only appear on top of blocks
+                            leafVariable *= topCheck; // make only appear on top of blocks
 
                             leafVariable *= leafDecider;
 
-                            autumnColor *= mix(vec3(1.0), leafFloorColor, leafVariable * overlayNoiseIntensity * autumnOnlyForests);
+                            autumnColor *= mix(vec3(1.0), leafFloorColor, leafVariable * overlayNoiseIntensity * autumnOnlyForests * (1.0 - inPaleGarden));
                         }
                     #endif
                 }
@@ -121,18 +197,13 @@
             #endif
 
             #ifndef GBUFFERS_ENTITIES
-                autumnColor *= mix(vec3(1.0), vec3(1.0, 0.7, 0.5), autumnTime * 0.7 * autumnOnlyForests * AUTUMN_STRENGTH);
+                autumnColor *= mix(vec3(1.0), vec3(1.0, 0.7, 0.5), autumnTime * 0.7 * autumnOnlyForests * AUTUMN_STRENGTH * (1.0 - inPaleGarden));
             #endif
         }
     #endif
 
     #if (SEASONS == 1 || SEASONS == 3 || SEASONS == 4) && (defined GBUFFERS_TERRAIN || defined DH_TERRAIN) && LESS_LEAVES > 0
         if (mat == 10009 || mat == 10011) { // Except some leaves
-            #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVING_ANYTHING_TERRAIN || defined WAVE_EVERYTHING || defined INTERACTIVE_FOLIAGE
-                vec3 worldLeavesNoise = beforeTransformPos.xyz;
-            #else
-                vec3 worldLeavesNoise = playerPos.xyz;
-            #endif
             float autumnWinterTime = autumnTime + winterTime;
             #if SNOW_CONDITION != 2
                 autumnWinterTime *= mix(inSnowy + autumnOnlyForests, inSnowy, winterTime); // make only appear in cold biomes during winter
@@ -140,8 +211,8 @@
             #if SNOW_CONDITION == 0
                 autumnWinterTime *= mix(rainFactor + autumnOnlyForests, rainFactor, winterTime); // make only appear in rain during winter
             #endif
-            float noiseLeaveAlpha = step(autumnWinterTime * LESS_LEAVES * 0.15, hash13(floor(mod(worldLeavesNoise - 0.001 * (mat3(gbufferModelViewInverse) * normal) + cameraPosition.xyz, vec3(100.0)) * 4) * 4)); // remove some leaves with noise
-            noiseLeaveAlpha += step(autumnWinterTime * LESS_LEAVES * 0.13, hash13(floor(mod(worldLeavesNoise - 0.001 * (mat3(gbufferModelViewInverse) * normal) + cameraPosition.xyz, vec3(100.0)) * 16) * 16));
+            float noiseLeaveAlpha = step(autumnWinterTime * LESS_LEAVES * 0.15, hash13(floor(mod(playerPos.xyz - 0.001 * (mat3(gbufferModelViewInverse) * normal) + cameraPosition.xyz, vec3(100.0)) * 4) * 4)); // remove some leaves with noise
+            noiseLeaveAlpha += step(autumnWinterTime * LESS_LEAVES * 0.13, hash13(floor(mod(playerPos.xyz - 0.001 * (mat3(gbufferModelViewInverse) * normal) + cameraPosition.xyz, vec3(100.0)) * 16) * 16));
             color.a *= noiseLeaveAlpha;
         }
     #endif
@@ -154,7 +225,7 @@
             #if !defined GBUFFERS_ENTITIES && defined GBUFFERS_TERRAIN
                 if (isFoliage) snowSide = mix(1.0, 0.0, 1.0 / (color.g * color.g) * 0.05); // make all foliage white
                 #ifndef DH_TERRAIN
-                if ((mat == 10132 && glColor.b < 0.999) || (mat == 10126 && color.b + color.g < color.r * 2.0 && color.b > 0.3 && color.g < 0.45) || (mat == 10493 && color.r > 0.52 && color.b < 0.30 && color.g > 0.41 && color.g + color.b * 0.95 > color.r * 1.2)) { // Normal Grass Block and Dirt Path
+                if (((mat == 10132 || mat == 10133) && glColor.b < 0.999) || (mat == 10126 && color.b + color.g < color.r * 2.0 && color.b > 0.3 && color.g < 0.45) || (mat == 10493 && color.r > 0.52 && color.b < 0.30 && color.g > 0.41 && color.g + color.b * 0.95 > color.r * 1.2)) { // Normal Grass Block and Dirt Path
                     snowSide = mix(0.0, 1.0, pow(blockUV.y, 3.0));
                     #if defined SSS_SEASON_SNOW && (SEASONS == 1 || SEASONS == 4)
                         #if SNOW_CONDITION == 0
@@ -167,13 +238,13 @@
                     #endif
                 } // add to the side of grass, mycelium, path blocks; in that order. Use blockUV to increase transparency the the further down the block it goes
                 #endif
-                if (mat == 10132 && glColor.b < 0.999) snowSide += abs(color.g - color.g * 0.5); // Normal Grass Block, mute the grass colors a bit
+                if ((mat == 10132 || mat == 10133) && glColor.b < 0.999) snowSide += abs(color.g - color.g * 0.5); // Normal Grass Block, mute the grass colors a bit
 
-                if ((mat == 10132
+                if (((mat == 10132 || mat == 10133)
                 #ifdef DH_TERRAIN
                     || mat == DH_BLOCK_GRASS
                 #endif
-                ) && glColor.b < 0.999 || isFoliage && dhLeaves && mat != 10007) { // Foliage except some leaves
+                ) && glColor.b < 0.999 || isFoliage || dhLeaves && mat != 10007) { // Foliage except some leaves
                     desaturatedColor = mix(desaturatedColor, mix(saturateColors(desaturatedColor, 0.4), desaturatedColor * vec3(0.9098, 0.6118, 0.4118), 0.5), winterTime * (1.0 - WINTER_GREEN_AMOUNT));
                 }
             #endif
@@ -193,7 +264,9 @@
                 float snowVariable = snowVec.x;
 
                 snowColor *= 1.1;
-                snowColor += 0.13 * snowNoise * SNOW_NOISE_INTENSITY; // make the noise less noticeable & configurable with option
+                snowColor += 0.23 * snowNoise * SNOW_NOISE_INTENSITY; // make the noise less noticeable & configurable with option
+
+                snowVariable *= (1.0 - inDry) * SNOW_TRANSPARENCY;
 
                 // snow conditions
                 #if SNOW_CONDITION != 2
@@ -272,9 +345,9 @@
 
     #if SEASONS == 1 || SEASONS == 5
         vec3 springColor = color.rgb;
-        if (springTime > 0 && inPaleGarden < 0.5) {
+        if (springTime > 0) {
             #ifdef GBUFFERS_TERRAIN
-                if (isFoliage && dhLeaves || mat == 10132 && glColor.b < 0.999
+                if (isFoliage || dhLeaves || (mat == 10132 || mat == 10133) && glColor.b < 0.999
                 #ifdef DH_TERRAIN
                     || mat == DH_BLOCK_GRASS
                 #endif
@@ -282,7 +355,7 @@
                     if (glColor.b < 0.99) springColor = mix(springColor, GetLuminance(springColor) * vec3(0.3725, 1.0, 0.4235), 0.5 * SPRING_GREEN_INTENSITY);
                 }
                 #if FLOWER_AMOUNT > 0 && !defined DH_TERRAIN
-                    if (mat == 10132) { // Normal Grass Block
+                    if ((mat == 10132 || mat == 10133)) { // Normal Grass Block
                         float flowerNoiseAdd = step(texture2D(noisetex, 0.0005 * (worldPos.xz + atMidBlock.xz / 64)).r, 0.25) * 3.5 + 1.0; // Noise to add more flowers
                         float flowerNoiseRemove = clamp01(step(texture2D(noisetex, 0.003 * (worldPos.xz + atMidBlock.xz / 64)).g, 0.69) + 0.15); // Noise to reduce the amount of flowers
 
@@ -393,6 +466,11 @@
                     }
                 #endif
             #endif
+            float dryBiome = 1;
+            #ifdef DISABLE_SPRING_IN_DRY_BIOMES
+                dryBiome = 1.0 - inDry;
+            #endif
+            springColor = mix(color.rgb, springColor, springTime * dryBiome * (1.0 - inPaleGarden));
         }
     #endif
 

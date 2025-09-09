@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/bloom.glsl"
 #ifdef CAVE_FOG
     #include "/lib/atmospherics/fog/caveFactor.glsl"
 #endif

@@ -5,6 +5,7 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/bloom.glsl"
 
 //Varyings//
 varying vec2 texCoord;

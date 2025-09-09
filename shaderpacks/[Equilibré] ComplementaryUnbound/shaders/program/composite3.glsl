@@ -5,6 +5,7 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/composite3.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -34,6 +35,14 @@
 #if WORLD_BLUR > 0 || TILT_SHIFT != 0 || TILT_SHIFT2 != 0
     float SdotU = dot(sunVec, upVec);
     float sunFactor = SdotU < 0.0 ? clamp(SdotU + 0.375, 0.0, 0.75) / 0.75 : clamp(SdotU + 0.03125, 0.0, 0.0625) / 0.0625;
+
+    #ifndef SPACEAGLE17
+        float DoFSneaking = isSneaking * float(heldItemId == 45014 || heldItemId2 == 45014);
+        bool isDoFGUI = hideGUI == 0 && (heldItemId == 45014 || heldItemId2 == 45014); // while holding a spyglass
+    #else
+        float DoFSneaking = isSneaking;
+        bool isDoFGUI = hideGUI == 0;
+    #endif
 
     vec2 dofOffsets[18] = vec2[18](
         vec2( 0.0    ,  0.25  ),
@@ -97,8 +106,8 @@
                 float coc = clamp(abs(lViewPos0 * 0.005 - pow2(vsBrightness) + tiltOffset + shiftOffset), 0.0, 0.1) * WB_DOF_I * 0.03;
             #endif
         #endif
-        #ifdef DOF_VIEW_FOCUS_NEW
-            float cocView = float(coc < 0.005 + 0.001 * abs(max(float(TILT_SHIFT), float(TILT_SHIFT2))) && coc > 0 && hideGUI == 0);
+        #ifdef DOF_VIEW_FOCUS_NEW2
+            float cocView = float(coc < 0.005 + 0.001 * abs(max(float(TILT_SHIFT), float(TILT_SHIFT2))) && coc > 0 && isDoFGUI);
         #endif
         #if TILT_SHIFT == 0 && TILT_SHIFT2 == 0
             coc = coc / sqrt(coc * coc + 0.1);
@@ -132,15 +141,15 @@
                 #endif
             }
             dof /= 18.0;
-            #ifdef WORLD_BLUR_SNEAK
-                color = mix(color, dof, isSneaking);
+            #ifdef DOF_SNEAKING
+                color = mix(color, dof, DoFSneaking);
             #else
                 color = dof;
             #endif
         }
-        #ifdef DOF_VIEW_FOCUS_NEW
-            #ifdef WORLD_BLUR_SNEAK
-                color = mix(color, cocColor, cocView * isSneaking);
+        #ifdef DOF_VIEW_FOCUS_NEW2
+            #ifdef DOF_SNEAKING
+                color = mix(color, cocColor, cocView * DoFSneaking);
             #else
                 color = mix(color, cocColor, cocView);
             #endif
@@ -174,17 +183,26 @@ void main() {
             lViewPos = min(lViewPos, length(viewPosDH.xyz));
         #endif
 
-        // #ifdef WORLD_BLUR_SNEAK
-            // if (isSneaking > 0.01) {
-        // #endif
+        #ifdef DOF_SNEAKING
+            if (DoFSneaking > 0.1) {
+        #endif
             DoWorldBlur(color, z1, lViewPos);
-        // #ifdef WORLD_BLUR_SNEAK
-            // }
-        // #endif
+        #ifdef DOF_SNEAKING
+            }
+        #endif
 
         #ifdef BLOOM_FOG_COMPOSITE3
             color *= GetBloomFog(lViewPos); // Reminder: Bloom Fog can move between composite1-2-3
         #endif
+    #endif
+
+    #ifdef PIXELATE_SCREEN
+        if (int(texelFetch(colortex6, texelCoord, 0).g * 255.1) == 252) { // Selection Outline
+            color *= max(100.0 - PIXELATED_SCREEN_SIZE * 3.0, 1.0);
+            #if SELECT_OUTLINE == 4 || SELECT_OUTLINE == 1
+                color *= 10;
+            #endif
+        }
     #endif
 
     /* DRAWBUFFERS:0 */

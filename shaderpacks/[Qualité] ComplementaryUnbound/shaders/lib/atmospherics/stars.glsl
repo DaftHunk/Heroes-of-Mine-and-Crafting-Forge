@@ -1,14 +1,37 @@
 #include "/lib/colors/skyColors.glsl"
+#include "/lib/shaderSettings/stars.glsl"
 
 vec2 GetStarCoord(vec3 viewPos, float sphereness) {
     vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
-    vec3 starCoord = wpos / (wpos.y + length(wpos.xz) * sphereness);
-    starCoord.x += 0.006 * syncedTime;
+    float ySign = sign(wpos.y);
+    float yMagnitude = abs(wpos.y);
+    
+    vec3 adjustedWpos = vec3(wpos.x, yMagnitude, wpos.z);
+    vec3 starCoord = adjustedWpos / (adjustedWpos.y + length(adjustedWpos.xz) * sphereness);
+    
+    if (ySign >= 0.0) {
+        starCoord.x += 0.006 * syncedTime;  // Top hemisphere (original direction)
+    } else {
+        starCoord.x = starCoord.x - 0.006 * syncedTime + 0.37;  // Bottom hemisphere with offset
+        starCoord.z += 0.21;
+    }
+    
     return starCoord.xz;
 }
 
-vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float starAmount) {
-    if (VdotU < 0.0) return vec3(0.0);
+vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float starAmount) { 
+    float starsAroundSun = 1.0;   
+    #ifdef CELESTIAL_BOTH_HEMISPHERES
+        float starBelowHorizonBrightness = 1.0;
+        float horizonFactor = exp(-pow(VdotU / 0.1, 2.0));
+        #ifdef SUN_MOON_HORIZON
+            starsAroundSun = max0(sign(VdotU));
+        #endif
+    #else
+        if (VdotU < 0.0) return vec3(0.0);
+        float starBelowHorizonBrightness = min1(VdotU * 3.0);
+        float horizonFactor = 0.0;
+    #endif
 
     float spookyStarSize = 10000.0;
     #ifdef SPOOKY
@@ -16,6 +39,7 @@ vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float st
     #endif
 
     starCoord *= 0.2 / (min(STAR_SIZE, spookyStarSize) * sizeMult);
+
     const float starFactor = 1024.0;
     
     vec2 fractPart = fract(starCoord * starFactor);
@@ -38,7 +62,7 @@ vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float st
     star *= getStarEdgeFactor(fractPart, STAR_ROUNDNESS_OW / 10.0, STAR_SOFTNESS_OW);
     star *= star;
 
-    star *= min1(VdotU * 3.0) * max0(1.0 - pow(abs(VdotS) * 1.002, 100.0));
+    star *= max0(1.0 - pow(abs(VdotS) * 1.002, 100.0) * starsAroundSun) * starBelowHorizonBrightness - horizonFactor * 0.5;
     #ifndef DAYLIGHT_STARS
         star *= pow2(pow2(invNoonFactor2)) * (1.0 - 0.5 * sunVisibility);
     #endif

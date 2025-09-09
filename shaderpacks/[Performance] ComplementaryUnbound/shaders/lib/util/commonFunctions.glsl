@@ -39,6 +39,17 @@ vec3 max0(vec3 x) {
 vec4 max0(vec4 x) {
     return max(x, vec4(0.0));
 }
+
+float maxAll(vec2 x) {
+    return max(x.x, x.y);
+}
+float maxAll(vec3 x) {
+    return max(x.x, max(x.y, x.z));
+}
+float maxAll(vec4 x) {
+    return max(x.x, max(x.y, max(x.z, x.w)));
+}
+
 int clamp01(int x) {
     return clamp(x, 0, 1);
 }
@@ -306,6 +317,9 @@ float GetHorizonFactor(float XdotU) {
         horizon *= horizon;
         return horizon * horizon * (3.0 - 2.0 * horizon);
     #else
+        #ifdef CELESTIAL_BOTH_HEMISPHERES
+            return 1.0;
+        #endif
         float horizon = min(XdotU + 1.0, 1.0);
         horizon *= horizon;
         horizon *= horizon;
@@ -346,7 +360,8 @@ vec3 getRainbowColor(vec2 coord, float speed) {
 }
 
 vec3 saturateColors(vec3 col, float saturationMult) {
-    float brightness = max(max(col.r, col.g), col.b);
+    if (saturationMult == 1.0) return col;
+    float brightness = maxAll(col);
     return (col - brightness) * saturationMult + brightness;
 }
 
@@ -528,14 +543,14 @@ mat2 rotate(float angle)
     return mat2(c, -s, s, c);
 }
 
-float DoAutomaticEmission(inout bool noSmoothLighting, inout bool noDirectionalShading, vec3 color, float lmCoord, int blockLightEmission){
+float DoAutomaticEmission(inout bool noSmoothLighting, inout bool noDirectionalShading, vec3 color, float lmCoord, int blockLightEmission, float minEmission){
     noSmoothLighting = true, noDirectionalShading = true;
 
     float lightLevel = max(float(lmCoord > 0.99), blockLightEmission / 15.0);
 
     float baseEmission = pow3(GetLuminance(color)) * pow1_5(lightLevel);
 
-    return max(0.0, (baseEmission - 0.1) * 2.5);
+    return max(minEmission, (baseEmission - 0.1) * 2.5);
 }
 
 float hash1(uint n) {

@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/shockwave.glsl"
 // SDF from https://iquilezles.org/articles/distfunctions2d/
 float sdBox(vec2 p, vec2 b) {
     vec2 d = abs(p)-b;

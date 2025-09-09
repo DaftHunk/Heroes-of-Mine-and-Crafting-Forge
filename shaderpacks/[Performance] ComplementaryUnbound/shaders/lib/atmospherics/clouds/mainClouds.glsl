@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/clouds.glsl"
 #include "/lib/colors/lightAndAmbientColors.glsl"
 #include "/lib/colors/cloudColors.glsl"
 #include "/lib/atmospherics/sky.glsl"
@@ -84,10 +85,7 @@ vec4 GetClouds(inout float cloudLinearDepth, float skyFade, vec3 cameraPos, vec3
     cloudAmbientColor *= cloudColorMult;
     cloudLightColor *= cloudColorMult;
 
-    #if !defined DOUBLE_REIM_CLOUDS || defined CLOUDS_UNBOUND
-        clouds = GetVolumetricClouds(cloudAlt1i, thresholdF, cloudLinearDepth, skyFade, skyMult0,
-                                        cameraPos, nPlayerPos, lViewPosM, VdotS, VdotU, dither);
-    #else
+    #if defined CLOUDS_REIMAGINED && defined DOUBLE_REIM_CLOUDS
         int maxCloudAlt = max(cloudAlt1i, cloudAlt2i);
         int minCloudAlt = min(cloudAlt1i, cloudAlt2i);
 
@@ -106,6 +104,30 @@ vec4 GetClouds(inout float cloudLinearDepth, float skyFade, vec3 cameraPos, vec3
                                             cameraPos, nPlayerPos, lViewPosM, VdotS, VdotU, dither);
             }
         }
+
+    #elif defined CLOUDS_UNBOUND && defined DOUBLE_UNBOUND_CLOUDS
+        float cloudLinearDepth1 = 1.0;
+        float cloudLinearDepth2 = 1.0;
+        //The order of calculating the clouds actually matters here
+        vec4 clouds1 = GetVolumetricClouds(cloudAlt1i, thresholdF, cloudLinearDepth1, skyFade, skyMult0,
+                                        cameraPos, nPlayerPos, lViewPosM, VdotS, VdotU, dither);
+        vec4 clouds2 = GetVolumetricClouds(cloudAlt2i, thresholdF, cloudLinearDepth2, skyFade, skyMult0,
+                                        cameraPos, nPlayerPos, lViewPosM, VdotS, VdotU, dither);
+                                        
+        if (clouds1.a * clouds2.a < 1e-36)
+            clouds = clouds1 * sign(max(0.0, clouds1.a - 1e-36)) + clouds2 * sign(max(0.0, clouds2.a - 1e-36));
+        else {
+            if (cloudLinearDepth1 < cloudLinearDepth2)
+                clouds = vec4(mix(clouds2.rgb, clouds1.rgb, clouds1.w), mix(clouds2.w, 1.0, clouds1.w));
+            else
+                clouds = vec4(mix(clouds1.rgb, clouds2.rgb, clouds2.w), mix(clouds1.w, 1.0, clouds2.w));
+        }
+
+        cloudLinearDepth = min(clouds1.a > 0.5 ? cloudLinearDepth1 : 1.0, clouds2.a > 0.5 ? cloudLinearDepth2 : 1.0); 
+    #else
+        clouds = GetVolumetricClouds(cloudAlt1i, thresholdF, cloudLinearDepth, skyFade, skyMult0,
+                                        cameraPos, nPlayerPos, lViewPosM, VdotS, VdotU, dither);
+
     #endif
 
     #if defined ATM_COLOR_MULTS || defined SPOOKY

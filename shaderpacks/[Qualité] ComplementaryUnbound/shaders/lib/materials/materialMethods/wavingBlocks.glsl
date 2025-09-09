@@ -1,3 +1,5 @@
+#include "/lib/shaderSettings/wavingBlocks.glsl"
+
 #if COLORED_LIGHTING_INTERNAL > 0
     #include "/lib/misc/voxelization.glsl"
 #endif
@@ -105,10 +107,18 @@ void DoWave(inout vec3 playerPos, int mat) {
 
     #if defined GBUFFERS_TERRAIN || defined SHADOW
         #ifdef WAVING_FOLIAGE
-            if (mat == 10003 || mat == 10005 || mat == 10029 || mat == 10025) { // Grounded Waving Foliage
+            if (mat == 10003 || mat == 10005 || mat == 10029 || mat == 10025
+                #ifdef DO_MORE_FOLIAGE_WAVING
+                    || mat == 10769
+                    || mat == 10924
+                    || mat == 10972
+                #endif
+            ) { // Grounded Waving Foliage
                 if (gl_MultiTexCoord0.t < mc_midTexCoord.t || fract(worldPos.y + 0.21) > 0.26)
                 DoWave_Foliage(playerPos.xyz, worldPos, 1.0);
-            } else if (mat == 10021 || mat == 10023 || mat == 10027) { // Upper Layer Waving Foliage
+            }
+            
+            else if (mat == 10021 || mat == 10023 || mat == 10027) { // Upper Layer Waving Foliage
                 DoWave_Foliage(playerPos.xyz, worldPos, 1.0);
             }
 
@@ -186,7 +196,7 @@ void DoWave(inout vec3 playerPos, int mat) {
         #endif
     #endif
 
-    #if defined GBUFFERS_WATER || defined SHADOW
+    #if defined GBUFFERS_WATER || defined SHADOW || defined GBUFFERS_TERRAIN
         #ifdef WAVING_WATER_VERTEX
             #if defined WAVING_ANYTHING_TERRAIN && defined SHADOW
                 else

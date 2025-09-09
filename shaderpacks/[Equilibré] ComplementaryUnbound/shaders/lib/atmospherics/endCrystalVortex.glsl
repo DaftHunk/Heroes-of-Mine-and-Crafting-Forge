@@ -35,7 +35,7 @@ float VortexWidth(float x, float ballRadius) {
 }
 
 vec4 SampleEndCrystalVortex(vec3 relPos, vec2 state, vec2 noiseOffset) {
-    float thisBallRadius = GetBallRadius(state.s);
+    float thisBallRadius = GetBallRadius(state.x);
 
     float beamFactor = smoothstep(-thisBallRadius, thisBallRadius, relPos.y);
     float featureWidth = VortexWidth(relPos.y, thisBallRadius);
@@ -253,7 +253,12 @@ vec4 EndCrystalVortices(vec3 start, vec3 direction, float dither) {
                 }
             #endif
             vec2 state = vec2(clamp(rawPos.w / 15000.0, 0.0, 1.0), 1.00001 - exp(-0.0001 * age));
-            color += pow2(SingleEndCrystalVortex(start, direction, pos, state, dither));
+            if (length(pos) > min(shadowDistance, far) * 0.9 && state.x < 0.999) {
+                state.y = state.x;
+                state.x = 1.0;
+            }
+            vec4 thisVortexCol = pow2(SingleEndCrystalVortex(start, direction, pos, state, dither));
+            color += thisVortexCol;
         }
     #endif
     #if END_CRYSTAL_VORTEX_INTERNAL / 2 == 1

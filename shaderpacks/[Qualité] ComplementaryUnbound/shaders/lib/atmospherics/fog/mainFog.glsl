@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/mainFog.glsl"
 #if defined ATM_COLOR_MULTS || defined SPOOKY
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
@@ -12,9 +13,9 @@
         #include "/lib/colors/skyColors.glsl"
     #endif
 
-    void DoBorderFog(inout vec3 color, inout float skyFade, float lPos, float VdotU, float VdotS, float dither, inout float fog) {
+    void DoBorderFog(inout vec3 color, inout float skyFade, float lPos, float VdotU, float VdotS, float dither) {
         #ifdef OVERWORLD
-            fog = lPos / renderDistance;
+            float fog = lPos / renderDistance;
             #ifdef SPOOKY
                 fog = pow2(fog);
             #else
@@ -27,11 +28,11 @@
         #endif
         #ifdef NETHER
             float farM = min(renderDistance, NETHER_VIEW_LIMIT); // consistency9023HFUE85JG
-            fog = lPos / farM;
+            float fog = lPos / farM;
             fog = fog * 0.3 + 0.7 * pow(fog * BORDER_FOG_DISTANCE_NETHER / 3, 256.0 / max(farM, 256.0));
         #endif
         #ifdef END
-            fog = lPos / renderDistance;
+            float fog = lPos / renderDistance;
             fog = pow2(pow2(fog));
             fog = 1.0 - exp(-BORDER_FOG_DISTANCE_END * fog);
         #endif
@@ -282,10 +283,8 @@ void DoFog(inout vec3 color, inout float skyFade, float lViewPos, vec3 playerPos
         DoAtmosphericFog(color, playerPos, lViewPos, VdotS, atmosphericFogAdd);
     #endif
     #ifdef BORDER_FOG
-        DoBorderFog(color, skyFade, max(length(playerPos.xz), abs(playerPos.y)), VdotU, VdotS, dither, borderFogAdd);
+        DoBorderFog(color, skyFade, max(length(playerPos.xz), abs(playerPos.y)), VdotU, VdotS, dither);
     #endif
-
-    float fogAddition = max(max(caveFogAdd, atmosphericFogAdd), borderFogAdd);
 
     if (isEyeInWater == 1) DoWaterFog(color, lViewPos);
     else if (isEyeInWater == 2) DoLavaFog(color, lViewPos);

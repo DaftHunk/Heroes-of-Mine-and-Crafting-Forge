@@ -1,7 +1,28 @@
+#define MOSS_NOISE_INTENSITY 1.0 //[0.5 0.75 1.0 1.25 1.5 2.0]
+#define MOSS_NOISE_REMOVE_INTENSITY 1.00 //[0.00 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.60 1.70 1.80 1.90 2.00 2.25 2.50 2.75 3.00]
+#define MOSS_TRANSPARENCY 0.85 // [0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 1.00]
+#define MOSS_IN_CAVES 0 //[0 1 2] //lush caves, true, false
+#define MOSS_SIDE_INTENSITY 10 //[0 1 2 3 4 5 6 7 8 9 10]
+#define MOSS_NOISE_DISTANCE 1.0 //[0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0]
+#define MOSS_SIZE 16 //[16 32 64 128]
+
+#define SAND_CONDITION 0 //[0 1 2] 0 = dynamic 1 = only in hot biomes, 2 = everywhere
+#define SAND_SIZE 16 //[16 32 64 128]
+#define SAND_NOISE_INTENSITY 1.0 //[0.5 0.75 1.0 1.25 1.5 2.0]
+#define SAND_NOISE_REMOVE_INTENSITY 1.00 //[0.00 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.60 1.70 1.80 1.90 2.00 2.25 2.50 2.75 3.00]
+#define SAND_TRANSPARENCY 0.85 // [0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 1.00]
+#define SAND_IN_CAVES true //[true false]
+#define SAND_SIDE_INTENSITY 7 //[0 1 2 3 4 5 6 7 8 9 10]
+#define SAND_NOISE_DISTANCE 1.0 //[0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0]
+
 vec3 absPlayerPos = abs(playerPos);
 float maxPlayerPosXZ = max(absPlayerPos.x, absPlayerPos.z);
 #ifdef MOSS_NOISE_INTERNAL
-    float mossDecider = -clamp01(pow2(min1(maxPlayerPosXZ / (200 * MOSS_NOISE_DISTANCE)) * 2.0)) + 1.0; // The effect will only be around the player
+    #if MOSS_IN_CAVES == 0
+        float mossDecider = -clamp01(pow2(min1(maxPlayerPosXZ / (200 * MOSS_NOISE_DISTANCE)) * 2.0)) + 1.0; // The effect will only be around the player
+    #else
+        float mossDecider = 1.0;
+    #endif
     if (mossDecider > 0.001){
         vec3 mossColor = mix(vec3(0.2745, 0.3412, 0.1412), vec3(0.451, 0.5804, 0.1255), float(hash33(floor(mod(worldPos, vec3(100.0)) * MOSS_SIZE + 0.03) * MOSS_SIZE)) * 0.15);
         #if MOSS_IN_CAVES < 2
@@ -62,13 +83,17 @@ float maxPlayerPosXZ = max(absPlayerPos.x, absPlayerPos.z);
 
         mossVariable *= mossDecider;
 
-        color.rgb = mix(color.rgb, mossColor, mossVariable * overlayNoiseIntensity * mossNoiseIntensity);
-        color.a = mix(color.a, 1.0, clamp(overlayNoiseTransparentOverwrite * mossVariable * mossNoiseIntensity, 0.0, 1.0));
+        color.rgb = mix(color.rgb, mossColor, mossVariable * overlayNoiseIntensity * mossNoiseIntensity * MOSS_TRANSPARENCY);
+        color.a = mix(color.a, 1.0, clamp(overlayNoiseTransparentOverwrite * mossVariable * mossNoiseIntensity, 0.0, 1.0 * MOSS_TRANSPARENCY));
     }
 #endif
 
 #ifdef SAND_NOISE_INTERNAL
-    float sandDecider = -clamp01(pow2(min1(maxPlayerPosXZ / (200 * SAND_NOISE_DISTANCE)) * 2.0)) + 1.0; // The effect will only be around the player
+    #if SAND_CONDITION < 2
+        float sandDecider = -clamp01(pow2(min1(maxPlayerPosXZ / (200 * SAND_NOISE_DISTANCE)) * 2.0)) + 1.0; // The effect will only be around the player
+    #else
+        float sandDecider = 1.0;
+    #endif
     if (sandDecider > 0.001){
         #if SAND_CONDITION == 0
             float desertSandColorMixer = inSand + inRedSand;
@@ -141,7 +166,7 @@ float maxPlayerPosXZ = max(absPlayerPos.x, absPlayerPos.z);
 
         sandVariable *= sandDecider;
 
-        color.rgb = mix(color.rgb, sandColor, sandVariable * overlayNoiseIntensity * sandNoiseIntensity);
-        color.a = mix(color.a, 1.0, clamp(overlayNoiseTransparentOverwrite * sandVariable * overlayNoiseIntensity * sandNoiseIntensity, 0.0, 1.0));
+        color.rgb = mix(color.rgb, sandColor, sandVariable * overlayNoiseIntensity * sandNoiseIntensity * SAND_TRANSPARENCY);
+        color.a = mix(color.a, 1.0, clamp(overlayNoiseTransparentOverwrite * sandVariable * overlayNoiseIntensity * sandNoiseIntensity * SAND_TRANSPARENCY, 0.0, 1.0));
     }
 #endif

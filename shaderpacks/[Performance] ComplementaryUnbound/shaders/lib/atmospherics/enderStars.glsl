@@ -1,3 +1,4 @@
+#include "/lib/shaderSettings/enderStars.glsl"
 vec3 GetEnderStars(vec3 viewPos, float VdotU, float sizeMult, float starAmount) {
     vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
     vec3 starCoord = 0.65 * wpos / (abs(wpos.y) + length(wpos.xz));
@@ -22,7 +23,7 @@ vec3 GetEnderStars(vec3 viewPos, float VdotU, float sizeMult, float starAmount) 
         star = max0(star - 0.7);
     #endif
 
-    star *= getStarEdgeFactor(fractPart, STAR_ROUNDNESS_OW / 10.0, STAR_SOFTNESS_END);
+    star *= getStarEdgeFactor(fractPart, STAR_ROUNDNESS_END / 10.0, STAR_SOFTNESS_END);
     star = max0(star - starAmount * 0.1);
     star *= star;
 
