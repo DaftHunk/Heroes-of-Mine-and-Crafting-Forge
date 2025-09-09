@@ -80,7 +80,7 @@ globalExecutorParallelism = "default"
 	allowThreadedFeatures = "default"
 	# (Default: true) Whether to allow reducing lock radius 
 	# (may cause incompatibility with other mods)
-	reduceLockRadius = "default"
+	reduceLockRadius = false
 	# (Default: true) Whether to enable async and parallel scheduling 
 	# This will reduce server thread load 
 	# (may cause incompatibility with other mods)

@@ -6,18 +6,18 @@
     "To access config ingame, use the mod modmenu."
   ],
   "Hotbar": {
-    "Smoothness": 0.0,
+    "Smoothness": 0.2,
     "Rollover": true
   },
   "Chat": {
-    "Smoothness": 0.0,
-    "Opening Speed": 0.0
+    "Smoothness": 0.5,
+    "Opening Speed": 0.5
   },
   "Creative Screen": {
-    "Smoothness": 0.0
+    "Smoothness": 0.5
   },
   "Entry List": {
-    "Smoothness": 0.0,
+    "Smoothness": 0.5,
     "Speed": 30.0
   },
   "Misc": {

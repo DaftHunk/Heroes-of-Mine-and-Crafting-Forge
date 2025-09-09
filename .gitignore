@@ -2,6 +2,8 @@
 
 bluemap/
 
+blueprints/structbackup/
+
 backups/
 
 XaeroWaypoints_BACKUP240807/
@@ -33,6 +35,8 @@ emi.json
 fancymenu_data/last_world.fmdata
 
 config/fabric/indigo-renderer.properties
+
+config/spark/
 
 Distant_Horizons_server_data/
 
