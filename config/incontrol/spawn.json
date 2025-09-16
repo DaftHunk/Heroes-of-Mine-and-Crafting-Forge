@@ -15,23 +15,10 @@
 		"scguns:hive", 
 		"scguns:supply_scamp", 
 		"scguns:dissident", 
-		"crabbersdelight:crab", 
+		"crabbersdelight:crab",
 		"mowziesmobs:lantern"
 	],
     "when": "onjoin",
-    "result": "deny"
-  },
-  {
-    "mob": "crittersandcompanions:otter",
-    "mincount": 5,
-    "result": "deny"
-  },
-  {
-    "mob": [
-		"minecraft:enderman"
-	],
-    "when": "onjoin",
-	"dimension": "minecraft:overworld",
     "result": "deny"
   },
   {
