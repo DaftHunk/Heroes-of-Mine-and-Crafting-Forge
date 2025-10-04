@@ -2,6 +2,6 @@
 
 #define VERTEX_SHADER
 #define END
-#define GBUFFERS_BLOCK
+#define GBUFFERS_TERRAIN
 
 #include "/program/clrwl_gbuffers.glsl"
