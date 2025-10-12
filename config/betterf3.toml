@@ -18,7 +18,7 @@
 	name = "minecraft"
 	name_color = 10506797
 	value_color = 43520
-	enabled = true
+	enabled = false
 
 	[modules_left.lines]
 		minecraft = true
@@ -40,10 +40,10 @@
 	enabled = true
 
 	[modules_left.lines]
-		render_distance = true
-		graphics = true
-		clouds = true
-		biome_blend_radius = true
+		render_distance = false
+		graphics = false
+		clouds = false
+		biome_blend_radius = false
 		shader = true
 
 [[modules_left]]
@@ -78,7 +78,7 @@
 	chunks_enabled_color = 5635925
 	chunks_disabled_color = 16733525
 	total_chunks_color = 16755200
-	enabled = true
+	enabled = false
 
 	[modules_left.lines]
 		chunk_sections = true
@@ -102,16 +102,16 @@
 	[modules_left.lines]
 		dimension = true
 		facing = true
-		rotation = true
+		rotation = false
 		light = true
-		light_server = true
+		light_server = false
 		highest_block = true
 		highest_block_server = true
 		biome = true
 		local_difficulty = true
 		day_ticks = true
 		days_played = true
-		slime_chunk = true
+		slime_chunk = false
 
 [[modules_left]]
 	name = "entity"
@@ -123,21 +123,21 @@
 	[modules_left.lines]
 		particles = true
 		entities = true
-		monster = true
-		creature = true
-		ambient = true
-		axolotls = true
-		underground_water_creature = true
-		water_creature = true
-		water_ambient = true
-		misc = true
+		monster = false
+		creature = false
+		ambient = false
+		axolotls = false
+		underground_water_creature = false
+		water_creature = false
+		water_ambient = false
+		misc = false
 
 [[modules_left]]
 	name = "sound"
 	name_color = 16755200
 	value_color = 5636095
 	maximum_color = 43690
-	enabled = true
+	enabled = false
 
 	[modules_left.lines]
 		sounds = true
@@ -150,7 +150,7 @@
 	value_color = 5636095
 	enabled_color = 5635925
 	disabled_color = 16733525
-	enabled = true
+	enabled = false
 
 	[modules_left.lines]
 		pie_graph = true
@@ -222,12 +222,12 @@
 		targeted_block = true
 		id_block = true
 		block_states = true
-		block_tags = true
+		block_tags = false
 		nothing = true
 		targeted_fluid = true
 		id_fluid = true
 		fluid_states = true
-		fluid_tags = true
+		fluid_tags = false
 		nothing2 = true
 		targeted_entity = true
 
