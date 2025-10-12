@@ -53,7 +53,7 @@
     "minecraft:bamboo_raft",
     "minecraft:bamboo_chest_raft"
   ],
-  "disableF3": false,
+  "disableF3": true,
   "skipEntityCulling": false,
   "skipBlockEntityCulling": false
 }
