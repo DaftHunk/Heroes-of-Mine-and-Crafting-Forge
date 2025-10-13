@@ -173,6 +173,15 @@ key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
+key_key.dragnlivestock.horse_speed_up:key.keyboard.left.control
+key_key.dragnlivestock.horse_slow_down:key.keyboard.c
+key_key.dragnlivestock.horse_bow:key.keyboard.keypad.3
+key_key.dragnlivestock.horse_piaffe:key.keyboard.keypad.2
+key_key.dragnlivestock.horse_spanish_walk_toggle:key.keyboard.keypad.5
+key_key.dragnlivestock.horse_wave:key.keyboard.keypad.4
+key_key.dragnlivestock.horse_levade:key.keyboard.keypad.1
+key_key.dragnlivestock.horse_walk_backwards:key.keyboard.s
+key_key.dragnlivestock.plow_mode:key.keyboard.space
 key_key.cataclysm.ability:key.keyboard.unknown
 key_key.cataclysm.helmet_ability:key.keyboard.unknown
 key_key.cataclysm.chestplate_ability:key.keyboard.unknown
@@ -188,10 +197,10 @@ key_key.cobblenav.increase_bucket:key.keyboard.unknown
 key_key.cobblemonrider.pokemon_dismount:key.keyboard.k
 key_key.cobblemonrider.pokemon_mount_entities:key.keyboard.left.alt
 key_keyinfo.copycats.fill_copycat:key.keyboard.left.alt
-key_key.sethorse.desc:key.keyboard.p
+key_key.sethorse.desc:key.keyboard.j:CONTROL
 key_key.callhorse.desc:key.keyboard.j
 key_key.showstats.desc:key.keyboard.i
-key_key.horsecombatcontrols.toggle:key.keyboard.f4
+key_obscure_tooltips_fix.print_screen:key.keyboard.unknown
 key_key.minecolonies.toggle_goggles:key.keyboard.unknown
 key_key.irons_spellbooks.spell_wheel:key.keyboard.grave.accent
 key_key.irons_spellbooks.spellbook_cast:key.keyboard.world.2
@@ -266,6 +275,7 @@ key_gui.xaero_alternative_list_players:key.keyboard.unknown
 key_gui.xaero_toggle_tracked_players_on_map:key.keyboard.unknown
 key_gui.xaero_toggle_tracked_players_in_world:key.keyboard.unknown
 key_gui.xaero_toggle_pac_chunk_claims:key.keyboard.unknown
+key_gnetum.config.keyMapping:key.keyboard.end
 key_key.hexerei.broomDescend:key.keyboard.left.control
 key_key.hexerei.book_hovering_uses:key.keyboard.u
 key_key.hexerei.book_hovering_recipe:key.keyboard.r
@@ -326,6 +336,9 @@ key_key.scguns.unload:key.keyboard.r:CONTROL
 key_key.scguns.attachments:key.keyboard.q
 key_key.scguns.melee:key.keyboard.v
 key_key.scguns.inspect:key.keyboard.x
+key_key.scguns.enable_exo_helmet:key.keyboard.b
+key_key.scguns.enable_exo_chestplate:key.keyboard.m
+key_key.scguns.enable_exo_boots:key.keyboard.n
 key_key.butcher.villagernosepress:key.keyboard.unknown
 key_key.butcher.pillagernosepress:key.keyboard.unknown
 key_create.keyinfo.toolmenu:key.keyboard.left.alt
@@ -336,7 +349,6 @@ key_key.toolbelt.open:key.keyboard.x
 key_key.toolbelt.cycle.left:key.keyboard.unknown
 key_key.toolbelt.cycle.right:key.keyboard.unknown
 key_key.toolbelt.slot:key.keyboard.unknown
-key_key.raws_visual_keybinder.open_screen:key.keyboard.f10
 key_quark.keybind.autorun:key.keyboard.caps.lock
 key_quark.keybind.back:key.keyboard.unknown
 key_quark.keybind.camera_mode:key.keyboard.f12

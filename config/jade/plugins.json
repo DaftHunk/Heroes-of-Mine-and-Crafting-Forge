@@ -81,6 +81,11 @@
     "registry_name": "OFF",
     "mod_name": true
   },
+  "dragnlivestock": {
+    "age_time": true,
+    "dry_time": true,
+    "o_tooltips": true
+  },
   "infinitybuttons": {
     "hide_secret_buttons": true,
     "hide_lantern_buttons": true,
