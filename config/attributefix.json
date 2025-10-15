@@ -892,14 +892,14 @@
       }
     },
     "forge:swim_speed": {
-      "enabled": false,
+      "enabled": true,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 1024,
-        "value": 1024
+        "default": 1,
+        "value": 1
       }
     },
     "protection_pixel:shielda": {
@@ -1140,8 +1140,8 @@
         "value": 0
       },
       "max": {
-        "default": 1024,
-        "value": 1024
+        "default": 10,
+        "value": 10
       }
     },
     "protection_pixel:arrowbarrier": {
