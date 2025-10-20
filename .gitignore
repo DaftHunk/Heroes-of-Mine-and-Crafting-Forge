@@ -57,3 +57,5 @@ foolproof.json
 local/
 
 config/crash_assistant/modlist.json
+
+.mixin.out/class/net/minecraft/world/inventory/AbstractFurnaceMenu.class

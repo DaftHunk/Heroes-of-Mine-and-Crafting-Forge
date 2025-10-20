@@ -11,7 +11,7 @@
 	// The probability to grow is equal to 1/x, where x is the config value.
 	climbingPlantGrowthChance: 16,
 	// If the plant could have grown (see climbingPlantGrowthChance), it has a probability to spread to an adjacent block equal to 1/x, where x is the config value.
-	climbingPlantSpreadChance: 5,
+	climbingPlantSpreadChance: 1,
 	// Worms have a probability to grow on random tick equal to 1/x, where x is the config value.
 	stickBundleGrowthChance: 25,
 	generateChestLoot: true,

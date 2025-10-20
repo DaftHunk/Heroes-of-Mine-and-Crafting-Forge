@@ -172,11 +172,11 @@ key_placebo.toggleWings:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_keybind.sophisticatedbackpacks.inventory_interaction:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_key.dragnlivestock.horse_speed_up:key.keyboard.left.control
 key_key.dragnlivestock.horse_slow_down:key.keyboard.left.alt
 key_key.dragnlivestock.horse_bow:key.keyboard.b
@@ -417,6 +417,8 @@ key_key.inventoryhud.togglepot:key.keyboard.unknown
 key_key.inventoryhud.togglearm:key.keyboard.unknown
 key_key.inventoryhud.toggleall:key.keyboard.unknown
 key_gui.xaero_pac_key_open_menu:key.keyboard.apostrophe
+key_key.fetzisdisplays.switch_item_mode:key.keyboard.period
+key_key.fetzisdisplays.switch_gui_pos:key.keyboard.comma
 soundCategory_master:0.0
 soundCategory_music:0.5035211267605634
 soundCategory_record:0.5052816901408451
