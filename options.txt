@@ -122,6 +122,8 @@ key_key.hotbar.9:key.keyboard.9
 key_key.entityculling.toggle:key.keyboard.unknown
 key_key.modernfix.config:key.keyboard.unknown
 key_qualitysounds.sound_reload_key:key.keyboard.unknown
+key_key.apotheosis.toggle_radial_mining:key.keyboard.o:CONTROL
+key_key.apotheosis.world_tiers_arent_real:key.keyboard.t:CONTROL
 key_key.corpse.death_history:key.keyboard.u
 key_iris.keybind.reload:key.keyboard.unknown
 key_iris.keybind.toggleShaders:key.keyboard.unknown
@@ -172,11 +174,11 @@ key_placebo.toggleWings:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_keybind.sophisticatedbackpacks.inventory_interaction:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_key.dragnlivestock.horse_speed_up:key.keyboard.left.control
 key_key.dragnlivestock.horse_slow_down:key.keyboard.left.alt
 key_key.dragnlivestock.horse_bow:key.keyboard.b

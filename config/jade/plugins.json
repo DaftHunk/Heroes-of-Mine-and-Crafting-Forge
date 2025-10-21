@@ -81,6 +81,10 @@
     "registry_name": "OFF",
     "mod_name": true
   },
+  "apotheosis": {
+    "adventure": true,
+    "ench": true
+  },
   "dragnlivestock": {
     "age_time": true,
     "dry_time": true,

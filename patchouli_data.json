@@ -2,6 +2,16 @@
   "bookGuiScale": 0,
   "clickedVisualize": false,
   "bookData": {
+    "apotheosis:apoth_chronicle": {
+      "viewedEntries": [
+        "apotheosis:adventure/affix_loot/affixes",
+        "apotheosis:adventure/rogue_spawners/brutal_spawners",
+        "apotheosis:adventure/affix_loot/gem_cutting",
+        "apotheosis:adventure/affix_loot/salvaging"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
     "cobblepedia:cobblepedia": {
       "viewedEntries": [
         "cobblepedia:dawn_stone_ore"
