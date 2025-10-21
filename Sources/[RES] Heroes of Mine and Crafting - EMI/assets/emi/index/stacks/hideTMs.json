@@ -1,0 +1,23 @@
+{
+  "filters": [
+    "/simpletms:/",
+	"/quark:seed_pouch/",
+	"/_spawn_egg/",
+	"irons_spellbooks:scroll",
+	"/displaydelight:/",
+	"/terralith:/",
+	"/railways:track_incomplete/",
+	"/tconstruct:potion_bucket/",
+	"/tconstruct:copper_can/",
+	"/tconstruct:seared_fuel_gauge/",
+	"/tconstruct:seared_fuel_tank/",
+	"/tconstruct:seared_ingot_gauge/",
+	"/tconstruct:seared_ingot_tank/",
+	"/tconstruct:seared_lantern/",
+	"/tconstruct:scorched_fuel_gauge/",
+	"/tconstruct:scorched_fuel_tank/",
+	"/tconstruct:scorched_ingot_gauge/",
+	"/tconstruct:scorched_ingot_tank/",	
+	"/tconstruct:scorched_lantern/"
+  ]
+}
