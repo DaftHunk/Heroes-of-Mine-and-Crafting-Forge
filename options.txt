@@ -210,6 +210,8 @@ key_key.sethorse.desc:key.keyboard.j:CONTROL
 key_key.callhorse.desc:key.keyboard.j
 key_key.showstats.desc:key.keyboard.i
 key_obscure_tooltips_fix.print_screen:key.keyboard.unknown
+key_key.tconstruct.helmet_interact:key.keyboard.z
+key_key.tconstruct.leggings_interact:key.keyboard.i
 key_key.minecolonies.toggle_goggles:key.keyboard.unknown
 key_key.irons_spellbooks.spell_wheel:key.keyboard.grave.accent
 key_key.irons_spellbooks.spellbook_cast:key.keyboard.world.2
@@ -242,6 +244,7 @@ key_key.do_a_barrel_roll.roll_right:key.keyboard.unknown
 key_key.do_a_barrel_roll.thrust_forward:key.keyboard.w
 key_key.do_a_barrel_roll.thrust_backward:key.keyboard.s
 key_key.curios.open.desc:key.keyboard.unknown
+key_key.tinkersjewelry.subspace:key.keyboard.k
 key_key.cobblemon.hideparty:key.keyboard.h
 key_key.cobblemon.summary:key.keyboard.y
 key_key.cobblemon.downshiftparty:key.keyboard.down
