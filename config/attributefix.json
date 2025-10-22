@@ -803,17 +803,6 @@
         "value": 1
       }
     },
-    "fallen_gems_affixes:projectile_speed": {
-      "enabled": false,
-      "min": {
-        "default": -0.99,
-        "value": -0.99
-      },
-      "max": {
-        "default": 10,
-        "value": 10
-      }
-    },
     "protection_pixel:preventburial": {
       "enabled": false,
       "min": {
@@ -823,6 +812,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "fallen_gems_affixes:projectile_speed": {
+      "enabled": false,
+      "min": {
+        "default": -0.99,
+        "value": -0.99
+      },
+      "max": {
+        "default": 10,
+        "value": 10
       }
     },
     "protection_pixel:suspension": {
@@ -1089,7 +1089,7 @@
         "value": 100
       }
     },
-    "fallen_gems_affixes:max_health_damage": {
+    "protection_pixel:hellfire": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -1100,7 +1100,7 @@
         "value": 1
       }
     },
-    "protection_pixel:hellfire": {
+    "fallen_gems_affixes:max_health_damage": {
       "enabled": false,
       "min": {
         "default": 0,
