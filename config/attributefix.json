@@ -440,6 +440,17 @@
         "value": 30
       }
     },
+    "block_factorys_bosses:movement_recovery": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 5,
+        "value": 5
+      }
+    },
     "irons_spellbooks:evocation_magic_resist": {
       "enabled": false,
       "min": {
@@ -581,6 +592,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "block_factorys_bosses:burning_stability": {
+      "enabled": false,
+      "min": {
+        "default": -10,
+        "value": -10
+      },
+      "max": {
+        "default": 10,
+        "value": 10
       }
     },
     "minecraft:generic.flying_speed": {
@@ -834,6 +856,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "block_factorys_bosses:roll_animtime": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "attributeslib:overheal": {
