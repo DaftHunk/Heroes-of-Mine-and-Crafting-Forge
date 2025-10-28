@@ -1,0 +1,19 @@
+
+#Macaw's Bridges
+[mcwbridges]
+	#Enable automatic snow-covered blocks and models.
+	Enable = true
+
+#In Control
+[incontrol]
+	Enable = true
+
+#DynamicTrees
+[dynamictrees]
+	Enable = true
+
+#Domum Ornamentum
+[domum_ornamentum]
+	#Enable automatic snow-covered blocks and models.
+	Enable = true
+

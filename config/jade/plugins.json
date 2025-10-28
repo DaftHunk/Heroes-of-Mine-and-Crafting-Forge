@@ -103,6 +103,13 @@
   "balm": {
     "jade": true
   },
+  "eclipticseasons": {
+    "animal": true,
+    "cauldron": true,
+    "crop": true,
+    "snowy_status": true,
+    "crop.shift_hint": true
+  },
   "ars_nouveau": {
     "mob_jar": true
   },
