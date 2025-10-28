@@ -10,8 +10,8 @@
   "name": "gui.xaero_entity_category_root",
   "protection": true,
   "settingOverrides": {
-    "displayHeight": 0.0,
     "displayed": true,
+    "displayHeight": 0.0,
     "heightBasedFade": true,
     "renderOrder": 0.0,
     "color": 13.0,
@@ -22,11 +22,35 @@
     "startFadingAt": 0.0,
     "renderOverMinimapFrame": 1.0,
     "icons": 2.0,
-    "names": 2.0,
     "heightLimit": 40.0,
+    "names": 2.0,
     "iconScale": 1.0
   },
   "subCategories": [
+    {
+      "hardInclude": "nothing",
+      "includeList": [
+        "illagerinvasion:*",
+        "minecraft:evoker",
+        "minecraft:illusioner",
+        "minecraft:pillager",
+        "minecraft:ravager",
+        "minecraft:vindicator",
+        "minecraft:witch"
+      ],
+      "includeListInSuperCategory": true,
+      "excludeMode": "ONLY",
+      "excludeList": [],
+      "name": "Raid",
+      "protection": false,
+      "settingOverrides": {
+        "displayed": true,
+        "color": 4.0,
+        "icons": 0.0,
+        "names": 0.0
+      },
+      "subCategories": []
+    },
     {
       "hardInclude": "living",
       "includeList": [],
@@ -55,9 +79,9 @@
           "protection": false,
           "settingOverrides": {
             "displayed": true,
-            "names": 0.0,
             "color": 3.0,
-            "icons": 2.0
+            "icons": 2.0,
+            "names": 0.0
           },
           "subCategories": []
         },
@@ -73,9 +97,9 @@
           "protection": false,
           "settingOverrides": {
             "displayed": true,
-            "names": 1.0,
             "color": 15.0,
-            "icons": 0.0
+            "icons": 0.0,
+            "names": 1.0
           },
           "subCategories": []
         },
@@ -91,9 +115,9 @@
           "protection": false,
           "settingOverrides": {
             "displayed": true,
-            "names": 0.0,
             "color": 2.0,
-            "icons": 0.0
+            "icons": 0.0,
+            "names": 0.0
           },
           "subCategories": []
         },
@@ -110,9 +134,9 @@
           "settingOverrides": {
             "displayed": true,
             "heightBasedFade": true,
-            "names": 2.0,
             "color": 1.0,
-            "icons": 2.0
+            "icons": 2.0,
+            "names": 2.0
           },
           "subCategories": []
         },
@@ -127,10 +151,10 @@
           "settingOverrides": {
             "displayed": true,
             "renderOrder": 6.0,
-            "names": 2.0,
-            "heightLimit": 2050.0,
             "color": 2.0,
-            "icons": 2.0
+            "icons": 2.0,
+            "heightLimit": 2050.0,
+            "names": 2.0
           },
           "subCategories": [
             {

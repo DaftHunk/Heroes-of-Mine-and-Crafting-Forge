@@ -59,6 +59,12 @@
 	"result": "deny"
   },
   {
+    "mob": "minecraft:phantom",
+	"dimension": "minecraft:overworld",
+    "when": "onjoin",
+    "result": "deny"
+  },
+  {
     "mob": "crittersandcompanions:otter",
     "mincount": 5,
     "result": "deny"
