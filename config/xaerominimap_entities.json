@@ -22,8 +22,8 @@
     "startFadingAt": 0.0,
     "renderOverMinimapFrame": 1.0,
     "icons": 2.0,
-    "heightLimit": 40.0,
     "names": 2.0,
+    "heightLimit": 40.0,
     "iconScale": 1.0
   },
   "subCategories": [
@@ -45,9 +45,9 @@
       "protection": false,
       "settingOverrides": {
         "displayed": true,
+        "names": 0.0,
         "color": 4.0,
-        "icons": 0.0,
-        "names": 0.0
+        "icons": 0.0
       },
       "subCategories": []
     },
@@ -79,9 +79,9 @@
           "protection": false,
           "settingOverrides": {
             "displayed": true,
+            "names": 0.0,
             "color": 3.0,
-            "icons": 2.0,
-            "names": 0.0
+            "icons": 2.0
           },
           "subCategories": []
         },
@@ -97,9 +97,9 @@
           "protection": false,
           "settingOverrides": {
             "displayed": true,
+            "names": 1.0,
             "color": 15.0,
-            "icons": 0.0,
-            "names": 1.0
+            "icons": 0.0
           },
           "subCategories": []
         },
@@ -115,9 +115,9 @@
           "protection": false,
           "settingOverrides": {
             "displayed": true,
+            "names": 0.0,
             "color": 2.0,
-            "icons": 0.0,
-            "names": 0.0
+            "icons": 0.0
           },
           "subCategories": []
         },
@@ -134,9 +134,9 @@
           "settingOverrides": {
             "displayed": true,
             "heightBasedFade": true,
+            "names": 2.0,
             "color": 1.0,
-            "icons": 2.0,
-            "names": 2.0
+            "icons": 2.0
           },
           "subCategories": []
         },
@@ -151,10 +151,10 @@
           "settingOverrides": {
             "displayed": true,
             "renderOrder": 6.0,
-            "color": 2.0,
-            "icons": 2.0,
+            "names": 2.0,
             "heightLimit": 2050.0,
-            "names": 2.0
+            "color": 2.0,
+            "icons": 2.0
           },
           "subCategories": [
             {

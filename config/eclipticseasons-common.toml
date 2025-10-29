@@ -9,7 +9,7 @@
 	#Enable the season definitions system.
 	EnableSeasonDefinition = false
 	#Enable solar term change inform.
-	EnableInform = true
+	EnableInform = false
 	#Whether send inform with icon.
 	EnableInformIcon = true
 	#Enable local calendar and local info synchronization.
@@ -53,7 +53,7 @@
 
 [Temperature]
 	#Ice or snow layer will melt in warm time.
-	IceAndSnowMelt = false
+	IceAndSnowMelt = true
 	#It will snow in cold time.
 	IceAndSnow = false
 	#Add heat stroke effect in summer noon while in hot biome.

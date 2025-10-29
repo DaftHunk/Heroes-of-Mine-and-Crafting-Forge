@@ -3,8 +3,8 @@
 	#Info used for development.
 	DebugInfo = false
 	#Render snow edge overlay on neighbors for smoother snowy transitions.
-	SmoothSnowyEdges = true
-	FrozenWater = true
+	SmoothSnowyEdges = false
+	FrozenWater = false
 	FrozenWaterBreakable = true
 	frozenWaterCheckLight = true
 
