@@ -19,7 +19,7 @@
   "capePhysics": false,
   "fishingRodPhysics": false,
   "leashPhysics": false,
-  "bannerPhysics": false,
+  "bannerPhysics": true,
   "clothSmoothShading": false,
   "showUpdateNotifications": false,
   "clothThreads": 2,
