@@ -21,5 +21,9 @@
     "allowEnderPearls": true,
     "allowCreativeFlight": true
   },
-  "note": "Configuration for structure behavior modification"
+  "note": "Configuration for structure behavior modification",
+  "allowElytraFlight": true,
+  "allowEnderPearls": true,
+  "allowRiptide": true,
+  "configVersion": 2
 }
