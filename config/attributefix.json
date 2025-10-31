@@ -121,6 +121,17 @@
         "value": 100
       }
     },
+    "protection_pixel:effectclear": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
+      }
+    },
     "attributeslib:armor_pierce": {
       "enabled": false,
       "min": {
@@ -132,7 +143,7 @@
         "value": 1000
       }
     },
-    "protection_pixel:effectclear": {
+    "protection_pixel:highspeeddamageincrease": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -163,17 +174,6 @@
       "max": {
         "default": 100000,
         "value": 100000
-      }
-    },
-    "protection_pixel:highspeeddamageincrease": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
       }
     },
     "minecraft:generic.luck": {
@@ -528,17 +528,6 @@
         "value": 1024
       }
     },
-    "tconstruct:generic.safe_fall_distance": {
-      "enabled": false,
-      "min": {
-        "default": -10,
-        "value": -10
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "scguns:bullet_damage_multiplier": {
       "enabled": false,
       "min": {
@@ -548,6 +537,17 @@
       "max": {
         "default": 1000,
         "value": 1000
+      }
+    },
+    "tconstruct:generic.safe_fall_distance": {
+      "enabled": false,
+      "min": {
+        "default": -10,
+        "value": -10
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "feathers:feathers.max_feathers": {
@@ -979,22 +979,22 @@
         "value": 10
       }
     },
-    "irons_spellbooks:holy_magic_resist": {
+    "scguns:projectile_speed": {
       "enabled": false,
       "min": {
-        "default": -100,
-        "value": -100
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
         "default": 100,
         "value": 100
       }
     },
-    "scguns:projectile_speed": {
+    "irons_spellbooks:holy_magic_resist": {
       "enabled": false,
       "min": {
-        "default": 0.01,
-        "value": 0.01
+        "default": -100,
+        "value": -100
       },
       "max": {
         "default": 100,
@@ -1144,17 +1144,6 @@
         "value": 100
       }
     },
-    "irons_spellbooks:spell_power": {
-      "enabled": false,
-      "min": {
-        "default": -100,
-        "value": -100
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "protection_pixel:hellfire": {
       "enabled": false,
       "min": {
@@ -1164,6 +1153,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "irons_spellbooks:spell_power": {
+      "enabled": false,
+      "min": {
+        "default": -100,
+        "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "fallen_gems_affixes:max_health_damage": {
@@ -1232,6 +1232,17 @@
         "value": 1000000
       }
     },
+    "protection_pixel:shielda": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 25,
+        "value": 25
+      }
+    },
     "tinkersjewelry:silk": {
       "enabled": false,
       "min": {
@@ -1254,15 +1265,15 @@
         "value": 1024
       }
     },
-    "protection_pixel:shielda": {
+    "reach-entity-attributes:attack_range": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": -1024,
+        "value": -1024
       },
       "max": {
-        "default": 25,
-        "value": 25
+        "default": 1024,
+        "value": 1024
       }
     },
     "irons_spellbooks:fire_magic_resist": {
@@ -1287,17 +1298,6 @@
         "value": 100
       }
     },
-    "reach-entity-attributes:attack_range": {
-      "enabled": false,
-      "min": {
-        "default": -1024,
-        "value": -1024
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
     "tinkersjewelry:subspace": {
       "enabled": false,
       "min": {
@@ -1314,17 +1314,6 @@
       "min": {
         "default": -100,
         "value": -100
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
-    "attributeslib:crit_damage": {
-      "enabled": false,
-      "min": {
-        "default": 1,
-        "value": 1
       },
       "max": {
         "default": 100,
@@ -1351,6 +1340,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "attributeslib:crit_damage": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "tconstruct:generic.bouncy": {
@@ -1518,17 +1518,6 @@
         "value": 100
       }
     },
-    "obscure_api:critical_hit": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "protection_pixel:cleave": {
       "enabled": false,
       "min": {
@@ -1538,6 +1527,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "obscure_api:critical_hit": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "tconstruct:generic.knockback_multiplier": {
@@ -1573,17 +1573,6 @@
         "value": 1024
       }
     },
-    "tconstruct:player.mining_speed_multiplier": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
     "protection_pixel:arrowbarrier": {
       "enabled": false,
       "min": {
@@ -1593,6 +1582,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "tconstruct:player.mining_speed_multiplier": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "tinkersjewelry:trade": {
