@@ -27,7 +27,8 @@
 		"cnb:little_grebe",
 		"cnb:yeti",
 		"cnb:lizard",
-		"cnb:catem"
+		"cnb:sporeling",
+		"cnb:cactem"
 	],
     "when": "onjoin",
     "result": "deny"
