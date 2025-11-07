@@ -2,7 +2,7 @@
   "foodItems": {
     "entries": [
       "{id:\"item\",item:\"relics:infinity_ham\"}",
-      "{id:\"item\",item:\"minecraft:air\"}"
+      "{id:\"item\",item:\"some_assembly_required:sandwich\"}"
     ],
     "isWhitelist": false
   },
