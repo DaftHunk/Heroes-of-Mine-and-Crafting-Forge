@@ -8,7 +8,7 @@
   "textureUpdateFrequency_V2": "Slow",
   "enableEmissiveTextures": true,
   "enableEnchantedTextures": true,
-  "enableEmissiveBlockEntities": true,
+  "enableEmissiveBlockEntities": false,
   "emissiveRenderMode": "DULL",
   "alwaysCheckVanillaEmissiveSuffix": true,
   "enableArmorAndTrims": false,

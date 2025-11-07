@@ -28,30 +28,6 @@
   },
   "subCategories": [
     {
-      "hardInclude": "nothing",
-      "includeList": [
-        "illagerinvasion:*",
-        "minecraft:evoker",
-        "minecraft:illusioner",
-        "minecraft:pillager",
-        "minecraft:ravager",
-        "minecraft:vindicator",
-        "minecraft:witch"
-      ],
-      "includeListInSuperCategory": true,
-      "excludeMode": "ONLY",
-      "excludeList": [],
-      "name": "Raid",
-      "protection": false,
-      "settingOverrides": {
-        "displayed": true,
-        "names": 0.0,
-        "color": 4.0,
-        "icons": 0.0
-      },
-      "subCategories": []
-    },
-    {
       "hardInclude": "living",
       "includeList": [],
       "includeListInSuperCategory": true,

@@ -90,11 +90,6 @@
     "adventure": true,
     "ench": true
   },
-  "dragnlivestock": {
-    "age_time": true,
-    "dry_time": true,
-    "o_tooltips": true
-  },
   "infinitybuttons": {
     "hide_secret_buttons": true,
     "hide_lantern_buttons": true,
@@ -148,6 +143,11 @@
   },
   "corpse": {
     "corpse": true
+  },
+  "ancientnature": {
+    "gestation_time": true,
+    "gender": true,
+    "hunger": true
   },
   "storagedrawers": {
     "display.stacklimit": true,
