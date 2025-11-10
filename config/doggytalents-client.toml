@@ -22,7 +22,7 @@
 	#Render a universal dog inventory access button in your inventory gui.
 	#If this is turned off, you can still access the button via the dog's
 	#GUI in Talents > Pack Puppy.
-	dog_inv_button_in_inv = true
+	dog_inv_button_in_inv = false
 	#Set a custom position for the universal dog inventory access button here.
 	#Can be utilized when the button overlaps with another mod's GUI feature or you 
 	#simply prefer it being in a different position.

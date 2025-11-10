@@ -10,47 +10,23 @@
   "name": "gui.xaero_entity_category_root",
   "protection": true,
   "settingOverrides": {
-    "displayed": true,
     "displayHeight": 0.0,
+    "displayed": true,
     "heightBasedFade": true,
     "renderOrder": 0.0,
     "color": 13.0,
     "displayNameWhenIconFails": true,
     "entityNumber": 1000.0,
     "alwaysDisplayNametags": false,
-    "startFadingAt": 0.0,
     "dotSize": 2.0,
+    "startFadingAt": 0.0,
     "renderOverMinimapFrame": 1.0,
     "icons": 2.0,
-    "heightLimit": 40.0,
     "names": 2.0,
+    "heightLimit": 40.0,
     "iconScale": 1.0
   },
   "subCategories": [
-    {
-      "hardInclude": "nothing",
-      "includeList": [
-        "illagerinvasion:*",
-        "minecraft:evoker",
-        "minecraft:illusioner",
-        "minecraft:pillager",
-        "minecraft:ravager",
-        "minecraft:vindicator",
-        "minecraft:witch"
-      ],
-      "includeListInSuperCategory": true,
-      "excludeMode": "ONLY",
-      "excludeList": [],
-      "name": "Raid",
-      "protection": false,
-      "settingOverrides": {
-        "displayed": true,
-        "names": 0.0,
-        "color": 4.0,
-        "icons": 0.0
-      },
-      "subCategories": []
-    },
     {
       "hardInclude": "living",
       "includeList": [],
@@ -151,8 +127,8 @@
           "settingOverrides": {
             "displayed": true,
             "renderOrder": 6.0,
-            "heightLimit": 2050.0,
             "names": 2.0,
+            "heightLimit": 2050.0,
             "color": 2.0,
             "icons": 2.0
           },

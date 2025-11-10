@@ -27,7 +27,8 @@
 		"cnb:little_grebe",
 		"cnb:yeti",
 		"cnb:lizard",
-		"cnb:catem"
+		"cnb:sporeling",
+		"cnb:cactem"
 	],
     "when": "onjoin",
     "result": "deny"
@@ -61,12 +62,6 @@
 	"when": "onjoin",
 	"spawntype": ["natural", "chunk_generation"],
 	"result": "deny"
-  },
-  {
-    "mob": "minecraft:phantom",
-	"dimension": "minecraft:overworld",
-    "when": "onjoin",
-    "result": "deny"
   },
   {
     "mob": "crittersandcompanions:otter",

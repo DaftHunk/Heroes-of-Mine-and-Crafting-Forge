@@ -1,0 +1,15 @@
+# Use Cloth Config mod for the descriptions.
+---
+rules:
+  minecraft:the_nether:
+    doFireTick: 'true'
+    mobGriefing: 'true'
+    lava_source_conversion: 'true'
+  minecraft:overworld:
+    doFireTick: 'false'
+    mobGriefing: 'false'
+    lava_source_conversion: 'false'
+  minecraft:the_end:
+    doFireTick: 'true'
+    mobGriefing: 'true'
+    lava_source_conversion: 'false'
