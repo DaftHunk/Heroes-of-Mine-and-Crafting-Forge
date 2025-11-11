@@ -1,0 +1,3329 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "true"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "north",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "south",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "west",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "true",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "true",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "true",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "true",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "true",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"up": "false",
+			"right": "false",
+			"powered": "false",
+			"open": "false",
+			"left": "false",
+			"facing": "east",
+			"down": "false"
+		},
+		"Name": "furnish:pink_curtain"
+	}
+]

@@ -1,0 +1,221 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "true",
+			"facing": "north"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "true",
+			"facing": "north"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "true",
+			"facing": "north"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "false",
+			"facing": "north"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "false",
+			"facing": "north"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "true",
+			"facing": "south"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "true",
+			"facing": "south"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "true",
+			"facing": "south"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "false",
+			"facing": "south"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "false",
+			"facing": "south"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "false",
+			"facing": "south"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "true",
+			"facing": "west"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "true",
+			"facing": "west"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "true",
+			"facing": "west"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "false",
+			"facing": "west"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "false",
+			"facing": "west"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "false",
+			"facing": "west"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "true",
+			"facing": "east"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "true",
+			"facing": "east"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "true",
+			"facing": "east"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "closed",
+			"right": "false",
+			"facing": "east"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "half_open",
+			"right": "false",
+			"facing": "east"
+		},
+		"Name": "furnish:mangrove_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"state": "open",
+			"right": "false",
+			"facing": "east"
+		},
+		"Name": "furnish:mangrove_shutter"
+	}
+]

@@ -1,0 +1,102 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "2",
+			"bottom": "true"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "3",
+			"bottom": "true"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "4",
+			"bottom": "true"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "5",
+			"bottom": "true"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "6",
+			"bottom": "true"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "1",
+			"bottom": "false"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "2",
+			"bottom": "false"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "3",
+			"bottom": "false"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "4",
+			"bottom": "false"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "5",
+			"bottom": "false"
+		},
+		"Name": "cluttered:willow_vines"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"gradient": "6",
+			"bottom": "false"
+		},
+		"Name": "cluttered:willow_vines"
+	}
+]

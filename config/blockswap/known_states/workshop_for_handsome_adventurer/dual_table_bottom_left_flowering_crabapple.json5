@@ -1,0 +1,324 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "north",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "north",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "north",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "south",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "south",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "south",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "south",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "west",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "west",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "west",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "west",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "east",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "east",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "east",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "east",
+			"being_placed": "true"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "north",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "north",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "north",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "north",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "south",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "south",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "south",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "south",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "west",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "west",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "west",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "west",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "true",
+			"facing": "east",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "true",
+			"facing": "east",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "true",
+			"has_inventory": "false",
+			"facing": "east",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"has_lanterns": "false",
+			"has_inventory": "false",
+			"facing": "east",
+			"being_placed": "false"
+		},
+		"Name": "workshop_for_handsome_adventurer:dual_table_bottom_left_flowering_crabapple"
+	}
+]

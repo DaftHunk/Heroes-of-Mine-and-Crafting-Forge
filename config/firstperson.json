@@ -154,6 +154,7 @@
     "lilis_lucky_lures:bamboo_fishing_rod"
   ],
   "autoToggleModItems": [
-    "exposure:camera"
+    "exposure:camera",
+    "cataclysm:the_incinerator"
   ]
 }
