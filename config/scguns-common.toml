@@ -20,8 +20,6 @@
 		headShotDamageMultiplier = 1.25
 		#If true, projectiles will ignore leaves when checking for collision
 		ignoreLeaves = true
-		#If true, projectiles will cause knockback when an entity is hit. By default this is set to true to match the behaviour of Minecraft.
-		enableKnockback = true
 		#Sets the strength of knockback when shot by a bullet projectile. Knockback must be enabled for this to take effect. If value is equal to zero, knockback will use default minecraft value
 		#Range: 0.0 ~ 1.0
 		knockbackStrength = 0.15
@@ -63,6 +61,15 @@
 		#Global multiplier for mob fire rate. 1.0 = normal speed, 0.5 = faster (half delay), 2.0 = slower (double delay). Lower values = faster shooting.
 		#Range: 0.1 ~ 5.0
 		mobFireRateMultiplier = 1.0
+		#Multiplier for delay between bursts. Higher = longer delays between bursts. 1.0 = normal, 2.0 = double delay.
+		#Range: 0.1 ~ 5.0
+		mobBurstDelayMultiplier = 1.0
+		#Global multiplier for mob gun damage. 1.0 = normal damage, 0.5 = half damage, 2.0 = double damage. Affects all projectile damage from mobs.
+		#Range: 0.01 ~ 100.0
+		mobGunDamageMultiplier = 1.0
+		#Chance (0.0 to 1.0) that Cog enemies will spawn a Signal Beacon on death. Set to 0.0 to disable beacon spawning from Cog deaths.
+		#Range: 0.0 ~ 1.0
+		cogBeaconSpawnChance = 0.15
 
 		#Properties related to gun griefing
 		[common.gameplay.griefing]
@@ -81,6 +88,8 @@
 			enableBlockBreaking = false
 			#If true, allows beam weapons to mine blocks
 			enableBeamMining = true
+			#If enabled, allows block removal on explosions from mob weapons. Only applies if enableBlockRemovalOnExplosions is also true
+			enableMobExplosionBlockRemoval = false
 
 		[common.gameplay.gameplay]
 			#Set to false to disable the spawning of casing items when firing guns.
@@ -219,4 +228,23 @@
 		#This is the spawn chance on NORMAL difficulty.
 		#Range: 0.0 ~ 1.0
 		eliteChance = 0.2
+
+	#Mini-Raid Configuration
+	[common.raids]
+		#If enabled, mini-raids can spawn at night based on player progression.
+		raidsEnabled = false
+		#Chance each night for a raid to spawn near a valid player (0.0 = never, 1.0 = always).
+		#Set to 0.0 to effectively disable raids without turning off the system entirely.
+		#Range: 0.0 ~ 1.0
+		nightlyRaidChance = 0.2
+		#Minimum number of days that must pass between natural raid spawns.
+		#Set to 0 to allow raids every night (if chance succeeds).
+		#Set to 1 to allow raids every other night.
+		#Set to 2 or higher to space out raids further.
+		#Range: 0 ~ 100
+		minDaysBetweenRaids = 2
+		#Time in minutes before a raid automatically fails if the boss is not defeated.
+		#Default: 10 minutes
+		#Range: 0 ~ 60
+		raidTimeoutMinutes = 20
 
