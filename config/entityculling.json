@@ -12,14 +12,17 @@
   ],
   "entityWhitelist": [
     "botania:mana_burst",
-    "drg_flares:drg_flares"
+    "drg_flares:drg_flares",
+    "smallships:cannon_ball",
+    "siegemachines:cannonball",
+    "scguns:throwable_shotball",
+    "scguns:shotball_projectile"
   ],
   "tracingDistance": 128,
   "debugMode": false,
   "sleepDelay": 10,
   "hitboxLimit": 50,
   "captureRate": 5,
-  "skipMarkerArmorStands": true,
   "tickCulling": true,
   "tickCullingWhitelist": [
     "create:contraption",
@@ -52,9 +55,10 @@
     "minecraft:spruce_chest_boat",
     "minecraft:bamboo_raft",
     "minecraft:bamboo_chest_raft",
-	"automobility:hitbox"
+    "automobility:hitbox"
   ],
   "disableF3": true,
   "skipEntityCulling": false,
-  "skipBlockEntityCulling": false
+  "skipBlockEntityCulling": false,
+  "blockEntityFrustumCulling": true
 }

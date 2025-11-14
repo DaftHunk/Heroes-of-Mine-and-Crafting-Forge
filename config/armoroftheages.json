@@ -72,7 +72,7 @@
 	"quetzalcoatlFeetDef": 2,
 	"quetzalcoatlEnchantability": 20,
 	"quetzalcoatlToughness": 6.0,
-	"generateArmorLoot": true,
+	"generateArmorLoot": false,
 	"generateBambooHat": true,
 	"generateAnubisArmor": true,
 	"generateCenturionArmor": true,

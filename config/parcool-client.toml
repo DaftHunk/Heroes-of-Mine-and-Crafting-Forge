@@ -62,7 +62,7 @@
 	#Allowed Values: PressRightAndLeft, TapMovementAndJump, PressFlippingKey
 	flip_control = "PressRightAndLeft"
 	#Enable double-tapping ctrl for Dodge
-	enable_double_tapping_for_dodge = true
+	enable_double_tapping_for_dodge = false
 	#Enable Crawl in air
 	enable_crawl_in_air = true
 	#Enable Vault in air
@@ -91,7 +91,7 @@
 	#Allowed Values: PressKey, ReleaseKey
 	wall-jump_control = "PressKey"
 	#Enable cooldown of wall jump
-	enable_wall_jump_cooldown = true
+	enable_wall_jump_cooldown = false
 	#Control of Cling To Cliff
 	#Allowed Values: PressKey, Toggle
 	cling-to-cliff_control = "PressKey"
