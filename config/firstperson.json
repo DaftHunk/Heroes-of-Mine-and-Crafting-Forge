@@ -156,5 +156,6 @@
   "autoToggleModItems": [
     "exposure:camera",
     "cataclysm:the_incinerator"
-  ]
+  ],
+  "hiddenLayers": []
 }

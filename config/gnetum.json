@@ -362,6 +362,12 @@
       },
       "pass": 1
     },
+    "immersive_aircraft:ia_overlay": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 2
+    },
     "supplementaries:quiver_overlay": {
       "enabled": {
         "value": "AUTO"
@@ -469,6 +475,12 @@
       "pass": 3
     },
     "bettercombat": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 3
+    },
+    "thief": {
       "enabled": {
         "value": "AUTO"
       },

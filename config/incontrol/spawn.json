@@ -57,7 +57,9 @@
 		"born_in_chaos_v1:nightmare_stalker",		
 		"born_in_chaos_v1:missioner",
 		"born_in_chaos_v1:krampus_henchman",
-		"born_in_chaos_v1:krampus"
+		"born_in_chaos_v1:krampus",
+		"scguns:sulfurhead",
+		"scguns:trauma_unit"
 	],
 	"when": "onjoin",
 	"spawntype": ["natural", "chunk_generation"],

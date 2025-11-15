@@ -83,7 +83,7 @@
 	dodge_cool_time = 11
 	#Max number of times of successive Dodge action
 	#Range: > 1
-	successive_dodge_count = 3
+	successive_dodge_count = 99
 	#Control of Horizontal Wall Run
 	#Allowed Values: PressKey, Auto
 	h-wall-run_control = "PressKey"
