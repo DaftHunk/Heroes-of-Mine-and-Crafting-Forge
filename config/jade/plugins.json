@@ -83,7 +83,7 @@
     "distance": false,
     "block_face": false,
     "coordinates": false,
-    "registry_name": "OFF",
+    "registry_name": "ON",
     "mod_name": true
   },
   "apotheosis": {
@@ -97,13 +97,6 @@
   },
   "balm": {
     "jade": true
-  },
-  "eclipticseasons": {
-    "animal": true,
-    "cauldron": true,
-    "crop": true,
-    "snowy_status": true,
-    "crop.shift_hint": true
   },
   "ars_nouveau": {
     "mob_jar": true
@@ -143,11 +136,6 @@
   },
   "corpse": {
     "corpse": true
-  },
-  "ancientnature": {
-    "gestation_time": true,
-    "gender": true,
-    "hunger": true
   },
   "storagedrawers": {
     "display.stacklimit": true,
