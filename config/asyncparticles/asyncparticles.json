@@ -2,7 +2,7 @@
   "version": 1,
   "particle": {
     "particleLimit": 16384,
-    "removeIfMissedTick": false,
+    "removeIfMissedTick": true,
     "particleLightCache": true,
     "cullUnderwaterParticleType": true
   },
@@ -13,7 +13,7 @@
     "deferredTextureTick": true,
     "failPerSecLimit": 5,
     "failBehavior": "RAISE_CRASH",
-    "suppressCME": false,
+    "suppressCME": true,
     "syncParticleClasses": []
   },
   "rendering": {
