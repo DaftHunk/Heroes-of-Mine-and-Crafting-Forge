@@ -12,7 +12,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:portal": {
       "enabled": {
@@ -42,19 +42,19 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "xaeroworldmap:xaero_wm_crosshair_message": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "parcool:hud.stamina.host": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "irons_spellbooks:spell_bar": {
       "enabled": {
@@ -72,7 +72,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "feathers:feathers": {
       "enabled": {
@@ -84,7 +84,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "relics:active_abilities": {
       "enabled": {
@@ -96,7 +96,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "horseman:horseman_xp_bar": {
       "enabled": {
@@ -108,7 +108,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "createbigcannons:entity_goggles_overlay": {
       "enabled": {
@@ -126,19 +126,19 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:potion_icons": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "inventoryhud:armor": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "xaerominimap:xaero": {
       "enabled": {
@@ -156,7 +156,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "ars_nouveau:tooltip": {
       "enabled": {
@@ -168,7 +168,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:experience_bar": {
       "enabled": {
@@ -186,19 +186,19 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:subtitles": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:chat_panel": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "supplementaries:slimed_overlay": {
       "enabled": {
@@ -222,7 +222,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:frostbite": {
       "enabled": {
@@ -252,7 +252,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "create:schematic": {
       "enabled": {
@@ -270,7 +270,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "create:blueprint": {
       "enabled": {
@@ -282,19 +282,19 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "bagus_lib:dialog": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "minecraft:player_list": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "create:track_placement": {
       "enabled": {
@@ -318,7 +318,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "irons_spellbooks:cast_bar": {
       "enabled": {
@@ -336,13 +336,13 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "shouldersurfing:post_crosshair": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "create:linked_controller": {
       "enabled": {
@@ -354,7 +354,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "relics:researching_hint": {
       "enabled": {
@@ -378,7 +378,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "horseman:horseman_food_level": {
       "enabled": {
@@ -402,7 +402,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "create:goggle_info": {
       "enabled": {
@@ -454,55 +454,55 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "watut": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "scguns": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "block_factorys_bosses": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "bettercombat": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "thief": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "xaerominimap": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "architectury": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "scholar": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     }
   }
 }
