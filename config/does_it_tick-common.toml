@@ -1,5 +1,5 @@
 
-#DoesPotatoTick?
+#Does It Tick?
 ["Living Entities Tick Settings"]
 	#If you disable this, entities will not stop ticking when they'are far from you, this mod may be useless for you too
 	OptimizeEntitiesTicking = true
@@ -36,4 +36,7 @@
 
 [Misc]
 	SendWarningMessageWhenPlayerLogIn = false
+	DisableOnClient = true
+	#If you disable this, entities near player bases may be affected.
+	DisableInActiveChunks = true
 
