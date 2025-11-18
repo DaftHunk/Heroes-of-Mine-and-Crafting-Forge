@@ -1,0 +1,29 @@
+{
+	"level_display": "tconstruct:default",
+	"modules": [{
+		"type": "tinkersjewelry:attribute_modifier",
+		"attribute": "minecraft:generic.movement_speed",
+		"formula": [
+			"$level",
+			"$amplification",
+			"*",
+			0.2,
+			"+",
+			0.15,
+			"*"
+		],
+		"operation": "multiply_total",
+		"unique": "tinkersjewelry.modifier.speed_gem",
+		"variables": {
+			"amplification": {
+				"type": "tconstruct:tool_stat",
+				"stat": "tinkersjewelry:amplification"
+			}
+		}
+	},
+	{  
+		"type": "tinkersjewelry:hurt_enemy",
+		"flat": 1.0
+	}],
+	"tooltip_display": "always"
+}

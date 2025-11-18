@@ -1,0 +1,21 @@
+{
+  "colors": {
+    "accent": "#EDE746",
+    "base": "#606060"
+  },
+  "display": {
+    "scale": 0.25
+  },
+  "item": {
+    "item": "minecraft:stone"
+  },
+  "name": {
+    "color": "#EDE746",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "item.minecraft.stone"
+      }
+    ]
+  }
+}

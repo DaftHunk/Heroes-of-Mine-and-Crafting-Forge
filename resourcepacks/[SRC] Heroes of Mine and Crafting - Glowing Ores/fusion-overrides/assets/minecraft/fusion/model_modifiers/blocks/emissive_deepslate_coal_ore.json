@@ -1,8 +1,0 @@
-{
-    "targets": [
-        "minecraft:deepslate_coal_ore"
-    ],
-    "append": [
-        "minecraft:block/deepslate_coal_ore_e"
-    ]
-}

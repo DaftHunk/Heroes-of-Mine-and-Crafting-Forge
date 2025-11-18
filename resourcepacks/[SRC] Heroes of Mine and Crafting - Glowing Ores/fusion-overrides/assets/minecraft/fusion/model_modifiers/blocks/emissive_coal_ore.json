@@ -1,8 +1,0 @@
-{
-    "targets": [
-        "minecraft:coal_ore"
-    ],
-    "append": [
-        "minecraft:block/coal_ore_e"
-    ]
-}
