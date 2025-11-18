@@ -98,7 +98,7 @@
 #All configuration items related to the combat elements of MineColonies
 [combat]
 	#minecolonies.config.dobarbariansspawn.comment [Default: true]
-	dobarbariansspawn = true
+	dobarbariansspawn = false
 	#minecolonies.config.barbarianhordedifficulty.comment [Default: 5, min: 0, max: 10]
 	#Range: 0 ~ 10
 	barbarianhordedifficulty = 5
@@ -155,7 +155,7 @@
 	minimumrailstopath = 8
 	#Amount of additional threads to be used for pathfinding. [Default: 1, min: 1, max: 10]
 	#Range: 1 ~ 10
-	pathfindingmaxthreadcount = 6
+	pathfindingmaxthreadcount = 10
 
 #All configurations related to the request system
 [requestSystem]
