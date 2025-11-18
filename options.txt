@@ -1,5 +1,5 @@
 version:3465
-betterBiomeBlendRadius:14
+betterBiomeBlendRadius:10
 autoJump:false
 operatorItemsTab:false
 autoSuggestions:true
