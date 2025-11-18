@@ -12,5 +12,5 @@
 	#Range: 1 ~ 110
 	respawnPercentage = 104
 	#Zombie Deaths In Hard Mode
-	hardModeZombieDeaths = true
+	hardModeZombieDeaths = false
 

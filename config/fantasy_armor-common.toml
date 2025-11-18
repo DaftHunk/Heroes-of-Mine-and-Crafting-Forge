@@ -7,7 +7,7 @@
 	#Show item descriptions
 	showDescriptions = true
 	#Render custom capes attached to chestplates
-	showCapes = true
+	showCapes = false
 	#Do not make capes static if Epic Fight is loaded. It is not implemented yet completely
 	epicFightNotStaticCapes = false
 	#Show effect particles

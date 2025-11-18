@@ -1,7 +1,7 @@
 {
   "skipWeatherOnSleep": {
     "desc:": "Whether to skip weather after sleeping: default:false",
-    "skipWeatherOnSleep": false
+    "skipWeatherOnSleep": true
   },
   "clearWeatherCommand": {
     "desc:": "Command for clean weather",
@@ -16,15 +16,15 @@
           "command": "weather rain",
           "weight": 100,
           "duration": 300,
-          "clearDuration": 3600
+          "clearDuration": 7200
         },
         "thunder": {
           "command": "weather thunder",
           "weight": 20,
           "duration": 200,
-          "clearDuration": 3600
+          "clearDuration": 7200
         }
       }
     ]
   }
-}
+}                          

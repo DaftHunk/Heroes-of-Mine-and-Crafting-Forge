@@ -3,7 +3,7 @@
 	#Whether Rotten Flesh afflicts you with Rotten Stink
 	ROTTEN_CONSUMPTION_ENABLED = false
 	#Whether soul stratisfaction is enabled
-	SOUL_STRATIFICATION_EFFECT_ENABLED = true
+	SOUL_STRATIFICATION_EFFECT_ENABLED = false
 	#Whether spirits disappear in the sun is enabled
 	SPIRIT_DISSAPPEAR_IN_SUN_ENABLED = true
 	#Whether mobs retalliate to other mobs attacking them
@@ -11,9 +11,9 @@
 	#Whether infested diamonds generate
 	INFESTED_DIAMONDS_ENABLED = false
 	#Whether you get the warning effect that you get for Missioners and Nightmare Stalkers
-	WARNING_SPAWN_ENABLED = true
+	WARNING_SPAWN_ENABLED = false
 	#Whether you gain naughtiness from certain actions
-	NAUGHTINESS_ENABLED = true
+	NAUGHTINESS_ENABLED = false
 
 [Weapons]
 	#Amount of phantom bombs that gets spawned when thrown
@@ -427,7 +427,7 @@
 			#Range: 0.0 ~ 1.7976931348623157E308
 			FALLEN_KNIGHT_SPEED = 0.32
 			#Whether Fallen Knights inflict cursed marks
-			FALLEN_KNIGHT_CURSE_ENABLED = true
+			FALLEN_KNIGHT_CURSE_ENABLED = false
 
 		[Weapons.Mobs.Felsteed]
 			#.
@@ -463,7 +463,7 @@
 			#Range: 0.0 ~ 1.7976931348623157E308
 			FIRELIGHT_KNOCKBACK = 0.1
 			#.
-			FIRELIGHT_SPAWNING_ENABLED = true
+			FIRELIGHT_SPAWNING_ENABLED = false
 			#.
 			#Range: 0.0 ~ 1.7976931348623157E308
 			FIRELIGHT_SPEED = 0.3
@@ -488,7 +488,7 @@
 			#Range: 0.0 ~ 1.7976931348623157E308
 			GLUTTON_FISH_KNOCKBACK_RESISTANCE = 0.5
 			#.
-			GLUTTON_FISH_SPAWNING_ENABLED = true
+			GLUTTON_FISH_SPAWNING_ENABLED = false
 			#.
 			#Range: 0.0 ~ 1.7976931348623157E308
 			GLUTTON_FISH_SPEED = 0.7
@@ -703,7 +703,7 @@
 			#Range: 0.0 ~ 1.7976931348623157E308
 			MAGGOT_SPEED = 0.2
 			#.
-			MAGGOT_SPAWNING_ENABLED = true
+			MAGGOT_SPAWNING_ENABLED = false
 
 		[Weapons.Mobs.Missioner]
 			#Days till The Missioner spawns
@@ -1355,7 +1355,7 @@
 			#Range: 0.0 ~ 1.7976931348623157E308
 			ZOMBIE_BRUISER_KNOCKBACK_RESISTANCE = 0.6
 			#.
-			ZOMBIE_BRUISER_SPAWNING_ENABLED = true
+			ZOMBIE_BRUISER_SPAWNING_ENABLED = false
 			#.
 			#Range: 0.0 ~ 1.7976931348623157E308
 			ZOMBIE_BRUISER_SPEED = 0.26

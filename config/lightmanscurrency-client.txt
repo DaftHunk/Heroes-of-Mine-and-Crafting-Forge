@@ -4,7 +4,7 @@
 	#Setting to 0 will disable item rendering entirely, so use with caution.
 	#Range: 0 -> 2147483647
 	#Default: 2147483647
-	itemTraderRenderLimit=2147483647
+	itemTraderRenderLimit=1000
 	#A list of item ids or item tags that should be rendered by Item Traders at a different scale.
 	#Should be formatted as "namespace:item_id;SCALE" where SCALE is decimal number between 0.0 and 1.0 (exclusive)
 	#Scale of 1.0 will be drawn at full size, Scale of 0.0 will not draw at all
@@ -23,7 +23,7 @@
 	#How Notification Timestamps are displayed.
 	#Follows SimpleDateFormat formatting: https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
 	#Default: "MM/dd/yy hh:mmaa"
-	timeFormatting="MM/dd/yy hh:mmaa"
+	timeFormatting="dd/MM/yy hh:mmaa"
 #Wallet Slot Settings
 [wallet_slot]
 	#The position that the wallet slot will be placed at in the players inventory.
@@ -50,7 +50,7 @@
 	#Whether the wallets contents should be displayed as a coin item, or as value text.
 	#Options: ITEMS_WIDE, ITEMS_NARROW, TEXT
 	#Default: ITEMS_WIDE
-	displayType=ITEMS_WIDE
+	displayType=TEXT
 #Network Terminal Settings
 [network_terminal]
 	#The maximum number of columns the Network Terminal is allowed to display

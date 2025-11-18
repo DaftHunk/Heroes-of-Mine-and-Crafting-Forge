@@ -64,7 +64,7 @@
     "golemsAvoidRail": true,
     "golemsAvoidTrapdoor": true,
     "golemsAvoidPowderedSnow": true,
-    "golemsDontAttackPlayer": true,
+    "golemsDontAttackPlayer": false,
     "golemsDontTrampleCrops": true,
     "villagersDontSummonGolems": false,
     "golemSpawnLimit": false,

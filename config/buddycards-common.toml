@@ -3,15 +3,15 @@
 	#
 	#Odds of baby villager dropping base set packs, 0 for 0%, 1 for 100%, default is 5%
 	#Range: 0.0 ~ 1.0
-	villagerChance = 0.05
+	villagerChance = 0.0
 	#
 	#Odds of baby piglin dropping nether set packs, 0 for 0%, 1 for 100%, default is 5%
 	#Range: 0.0 ~ 1.0
-	piglinChance = 0.05
+	piglinChance = 0.0
 	#
 	#Odds of ender dragons dropping end set packs, 0 for 0%, 1 for 100%, default is 100%
 	#Range: 0.0 ~ 1.0
-	dragonChance = 1.0
+	dragonChance = 0.0
 	#
 	#Maximum amount of packs dropped when a dragon drops packs, default is 4
 	#Range: 1 ~ 16
@@ -19,11 +19,11 @@
 	#
 	#Odds of withers dropping nether set packs, 0 for 0%, 1 for 100%, default is 50%
 	#Range: 0.0 ~ 1.0
-	witherChance = 0.5
+	witherChance = 0.0
 	#
 	#Odds of baby zombie villager dropping base set packs, 0 for 0%, 1 for 100%, default is 10%
 	#Range: 0.0 ~ 1.0
-	zombieVillagerChance = 0.1
+	zombieVillagerChance = 0.0
 	#
 	#Maximum amount of packs dropped when a wither drops packs, default is 3
 	#Range: 1 ~ 16
@@ -32,15 +32,15 @@
 	#
 	#Odds of baby zombie dropping base set packs, 0 for 0%, 1 for 100%, default is 5%
 	#Range: 0.0 ~ 1.0
-	zombieChance = 0.05
+	zombieChance = 0.0
 	#
 	#Odds of baby zombie piglin dropping nether set , 0 for 0%, 1 for 100%, default is 5%
 	#Range: 0.0 ~ 1.0
-	zombiePiglinChance = 0.05
+	zombiePiglinChance = 0.0
 	#
 	#Odds of shulkers dropping end set packs, 0 for 0%, 1 for 100%, default is 5%
 	#Range: 0.0 ~ 1.0
-	shulkerChance = 0.05
+	shulkerChance = 0.0
 
 [deckBuilding]
 	#
@@ -83,7 +83,7 @@
 [battles]
 	#
 	#Enables Buddycards Battles Beta, default is false. Currently unfinished and buggy. Some bugged cards may cause crashes or other issues.
-	enabled = false
+	enabled = true
 
 [enderling]
 	#

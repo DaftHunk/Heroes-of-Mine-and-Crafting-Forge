@@ -3,5 +3,5 @@
 show_villager_reputation_tooltip = true
 # Villager reputation tooltip requires item tagged as '#thief:villager_gifts' in hand.
 # Default: true.
-villager_reputation_tooltip_requires_gift = true
+villager_reputation_tooltip_requires_gift = false
 

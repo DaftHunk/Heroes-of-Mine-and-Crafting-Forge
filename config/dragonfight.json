@@ -25,7 +25,7 @@
   },
   "dragonHealthModifier": {
     "desc:": "Sets the dragon health modifier: default:1.0",
-    "dragonHealthModifier": 1.0
+    "dragonHealthModifier": 2.0
   },
   "dragonDamageModifier": {
     "desc:": "Sets the dragon damage modifier: default:1.0",
@@ -57,7 +57,7 @@
   "spawnoncrystalrespawn": {
     "desc:": "List of mobs spawning on crystal respawn, intended to be ranged to ward of players from a distance: e.g. format :  [\"minecraft:zombie\", \"minecraft:creeper\"]",
     "spawnoncrystalrespawn": [
-      "minecraft:blaze"
+      "minecraft:shulker"
     ]
   },
   "spawnwhilelanded": {
