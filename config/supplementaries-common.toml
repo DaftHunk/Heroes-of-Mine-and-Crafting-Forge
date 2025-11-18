@@ -264,7 +264,7 @@
 	[building.flower_box]
 		enabled = true
 		#Makes so flower boxes can only contain one tall flower item per block
-		simple_mode = true
+		simple_mode = false
 
 	[building.blackboard]
 		enabled = true
@@ -321,7 +321,7 @@
 		enabled = true
 		#If enabled end crystals placed on a pedestals will provide an enchantment power bonus equivalent to 3 bookshelves
 		#Range: 0.0 ~ 100.0
-		crystal_enchanting = 3
+		crystal_enchanting = 3.0
 
 	[building.ash]
 		enabled = true

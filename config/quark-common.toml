@@ -1565,7 +1565,7 @@
 	"Soul Candles" = true
 	"Usage Ticker" = true
 	"Uses For Curses" = true
-	"Variant Animal Textures" = true
+	"Variant Animal Textures" = false
 	"Wool Shuts Up Minecarts" = true
 
 	[client.auto_walk_keybind]
@@ -1580,7 +1580,7 @@
 
 	[client.camera]
 		#Date format that will be displayed in screenshots. Must be a valid one (i.e. MM/dd/yyyy)
-		"Date Format" = "MM/dd/yyyy"
+		"Date Format" = "dd/MM/yyyy"
 
 	[client.chest_searching]
 
@@ -1649,10 +1649,10 @@
 		"Bind Armor Stands With Player Heads" = true
 
 	[client.variant_animal_textures]
-		"Enable Cow" = true
-		"Enable Pig" = true
-		"Enable Chicken" = true
-		"Enable Shiny Rabbit" = true
+		"Enable Cow" = false
+		"Enable Pig" = false
+		"Enable Chicken" = false
+		"Enable Shiny Rabbit" = false
 		"Enable Shiny Llama" = true
 		"Enable Shiny Dolphin" = true
 		"Enable Shiny Slime" = true

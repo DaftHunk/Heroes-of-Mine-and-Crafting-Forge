@@ -38,9 +38,6 @@
 		#Global multiplier for all gun damage. 1.0 = normal damage, 0.5 = half damage, 2.0 = double damage. Affects all projectile damage from guns.
 		#Range: 0.01 ~ 100.0
 		globalDamageMultiplier = 1.0
-		#Global multiplier for all turret gun damage. 1.0 = normal damage, 0.5 = half damage, 2.0 = double damage. Affects all projectile damage from turrets.
-		#Range: 0.01 ~ 100.0
-		globalTurretDamageMultiplier = 1.0
 		#If true, the Brass Mask ritual will never spawn villagers. When disabled, it will spawn Dissidents instead based on the spawn chance below.
 		disableVillagerSpawning = false
 		#When villager spawning is disabled, this is the chance (0.0 to 1.0) that a Dissident will spawn. If a Dissident doesn't spawn, nothing will be created from the ritual.
@@ -50,6 +47,9 @@
 		enableAutoReload = true
 		#If true, allows flamethrowers to place fire on blocks
 		enableFirePlacement = true
+		#Global multiplier for all turret gun damage. 1.0 = normal damage, 0.5 = half damage, 2.0 = double damage. Affects all projectile damage from turrets.
+		#Range: 0.01 ~ 100.0
+		globalTurretDamageMultiplier = 1.0
 		#If true, allows flamethrowers weapons to purify sculk blocks
 		enableSculkPurification = true
 		#The volume for Player Gunfire. Default is 8
@@ -199,10 +199,22 @@
 		#Range: > 1
 		maxCount = 10
 
+	#Properties relating to ExoSuit Core capacities
+	[common.exosuit_cores]
+		#Energy capacity for Basic ExoSuit Core
+		#Range: 1000 ~ 100000
+		basicCoreCapacity = 10000
+		#Energy capacity for Advanced ExoSuit Core
+		#Range: 1000 ~ 100000
+		advancedCoreCapacity = 20000
+		#Energy capacity for Elite ExoSuit Core
+		#Range: 1000 ~ 100000
+		eliteCoreCapacity = 30000
+
 	#Gun Mob Spawning Configuration
 	[common.gunner_config]
 		#If enabled, mobs will have a chance to spawn with guns.
-		gunnerMobSpawning = true
+		gunnerMobSpawning = false
 		#Base chance for progression-based gunner mobs to spawn (0.0 = never, 1.0 = always).
 		#This is the spawn chance on NORMAL difficulty. Thematic mobs use their own config.
 		#Range: 0.0 ~ 1.0
@@ -217,22 +229,10 @@
 		#Range: 0.0 ~ 1.0
 		eliteChance = 0.2
 
-	#Properties relating to ExoSuit Core capacities
-	[common.exosuit_cores]
-		#Energy capacity for Basic ExoSuit Core
-		#Range: 1000 ~ 100000
-		basicCoreCapacity = 30000
-		#Energy capacity for Advanced ExoSuit Core
-		#Range: 1000 ~ 100000
-		advancedCoreCapacity = 60000
-		#Energy capacity for Elite ExoSuit Core
-		#Range: 1000 ~ 100000
-		eliteCoreCapacity = 70000
-
 	#Mini-Raid Configuration
 	[common.raids]
 		#If enabled, mini-raids can spawn at night based on player progression.
-		raidsEnabled = true
+		raidsEnabled = false
 		#Chance each night for a raid to spawn near a valid player (0.0 = never, 1.0 = always).
 		#Set to 0.0 to effectively disable raids without turning off the system entirely.
 		#Range: 0.0 ~ 1.0

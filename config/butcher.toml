@@ -29,7 +29,7 @@
 	#Enable/Disable organ drops
 	Organs = true
 	#Enable/Disable first join message.
-	"First Join Message" = true
+	"First Join Message" = false
 	#Enable/Disable overlay hints
 	"Hints (Disabled due to bugs)" = false
 
@@ -131,5 +131,5 @@
 	#Enable/Disable the butchers house structure
 	butchers_house = true
 	#Enable/Disable the salt formation structure
-	salt_formation = true
+	salt_formation = false
 

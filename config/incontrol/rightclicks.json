@@ -1,1 +1,19 @@
-[]
+[{
+   "playerhelditem": "minecraft:flint_and_steel",
+   "block": "minecraft:obsidian",
+   "dimension": "minecraft:overworld",
+   "gamestage": "admin",
+   "result": "allow"
+},{
+   "playerhelditem": "minecraft:flint_and_steel",
+   "block": "minecraft:obsidian",
+   "dimension": "minecraft:overworld",
+   "message": "Seuls les admins peuvent ouvrir les portails",
+   "result": "deny"
+},{
+	"playerhelditem": "minecraft:wither_skeleton_skull",
+	"block": "minecraft:soul_sand",
+	"dimension": "minecraft:overworld",
+	"message": "Le Wither ne peut être invoqué que dans le Nether",
+	"result": "deny"
+}]

@@ -2,4 +2,14 @@
 ---
 rules:
   minecraft:the_nether:
-    doMobLoot: 'false'
+    doFireTick: 'true'
+    mobGriefing: 'true'
+    lava_source_conversion: 'true'
+  minecraft:overworld:
+    doFireTick: 'false'
+    mobGriefing: 'false'
+    lava_source_conversion: 'false'
+  minecraft:the_end:
+    doFireTick: 'true'
+    mobGriefing: 'true'
+    lava_source_conversion: 'false'
