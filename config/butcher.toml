@@ -4,8 +4,6 @@
 	"Specific Tools Only" = true
 	#Enable/Disable End Dragon armor
 	"Dragon Armor" = true
-	#Enable/Disable the butchers house structure
-	Structures = true
 	#Enalbe/Disable guide book on first join
 	"Guide Book" = true
 	#Enable this to use vanilla foods instead of butchery's foods
@@ -28,10 +26,12 @@
 	Salt = false
 	#Enable to use a vanilla bucket to collect salt water. Disable to use butchery's own bucket.
 	"Salt Water: Vanilla Bucket" = true
-	#Enable/Disable overlay hints
-	Hints = true
 	#Enable/Disable organ drops
 	Organs = true
+	#Enable/Disable first join message.
+	"First Join Message" = true
+	#Enable/Disable overlay hints
+	"Hints (Disabled due to bugs)" = false
 
 ["Boss Carcasses"]
 	#Enable/Disable End Dragon carcass
@@ -97,10 +97,39 @@
 	Piglin = true
 	"Zombified Piglin" = true
 	Slime = true
+	Horse = true
+	Wolf = true
+	Axolotl = true
+	Donkey = true
+	Mule = true
+	Ocelot = true
+	Sniffer = true
+	Strider = true
+	Evoker = true
+	Guardian = true
+	Phantom = true
+	"Piglin Brute" = true
+	Shulker = true
+	Silverfish = true
+	Zoglin = true
+	"Zombie Villager" = true
+	Cat = true
 
 [Seasonal]
 	#Enable/Disable the Halloween update
 	Halloween = false
 	#Enable/Disable the Christmas update
 	Christmas = false
+
+["Block Audio"]
+	#Enable/Disable the grinders sound effect when in use.
+	"Grinder Sound Effect" = true
+	#Enable/Disable the crushers sound effect when in use.
+	"Crusher Sound Effect" = true
+
+[Structures]
+	#Enable/Disable the butchers house structure
+	butchers_house = true
+	#Enable/Disable the salt formation structure
+	salt_formation = true
 

@@ -1,0 +1,6914 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "none"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "left"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "north",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "south",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "west",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "upper",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "lower",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "middle",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "0",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "1",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "true",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"powered": "false",
+			"open": "2",
+			"half": "normal",
+			"facing": "east",
+			"double_door": "right"
+		},
+		"Name": "shutter:netherite_shutter"
+	}
+]

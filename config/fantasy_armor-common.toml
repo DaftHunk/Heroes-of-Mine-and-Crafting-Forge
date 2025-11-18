@@ -12,4 +12,9 @@
 	epicFightNotStaticCapes = false
 	#Show effect particles
 	showParticles = false
+	#The minimum duration of the existing effect, after which it will be given again
+	#Range: > 1
+	effectsInterval = 241
+	#Show effect icon or not
+	showEffectIcon = true
 

@@ -123,6 +123,18 @@
 		"psystrike",
 		"psychoboost"
 	],
+	// Moves that hurts the entity(including the allies) around the pokemon
+	"self_centered_aoe_moves": [
+		"earthquake",
+		"surf",
+		"lavaplume",
+		"discharge",
+		"sludgewave",
+		"magnitude",
+		"bulldoze",
+		"petalblizzard",
+		"corrosivegas"
+	],
 	// Moves that drains HP(50% of the damage dealt)
 	"hp_draining_moves_50": [
 		"absorb",
@@ -207,5 +219,9 @@
 	// Moves that burns the pokemon(unused)
 	"burn_status_move": [
 		"willowisp"
-	]
+	],
+	// Do Pokemon grief(only explosions currently)?
+	"pokemon_griefing": false,
+	// Fire type attack(only explosions currently) should burn the ground
+	"should_create_fire": false
 }

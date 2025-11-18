@@ -1,0 +1,644 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "opening"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "opened"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "closing"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "north",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "north",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "south",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "south",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "west",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "west",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "true",
+			"facing": "east",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"fairkeeper_alert": "false",
+			"facing": "east",
+			"chest_state": "closed"
+		},
+		"Name": "dungeonnowloading:fairkeeper_chest"
+	}
+]

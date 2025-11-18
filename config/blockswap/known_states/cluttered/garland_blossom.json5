@@ -1,0 +1,221 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "center",
+			"facing": "north"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "left",
+			"facing": "north"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "left",
+			"facing": "north"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "right",
+			"facing": "north"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "right",
+			"facing": "north"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "center",
+			"facing": "south"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "center",
+			"facing": "south"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "left",
+			"facing": "south"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "left",
+			"facing": "south"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "right",
+			"facing": "south"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "right",
+			"facing": "south"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "center",
+			"facing": "west"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "center",
+			"facing": "west"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "left",
+			"facing": "west"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "left",
+			"facing": "west"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "right",
+			"facing": "west"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "right",
+			"facing": "west"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "center",
+			"facing": "east"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "center",
+			"facing": "east"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "left",
+			"facing": "east"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "left",
+			"facing": "east"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "true",
+			"offset": "right",
+			"facing": "east"
+		},
+		"Name": "cluttered:garland_blossom"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"waterlogged": "false",
+			"offset": "right",
+			"facing": "east"
+		},
+		"Name": "cluttered:garland_blossom"
+	}
+]

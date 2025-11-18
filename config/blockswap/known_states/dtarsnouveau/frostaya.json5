@@ -1,0 +1,1301 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+[
+	{
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "north",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "south",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "west",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "east",
+			"age": "0"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "north",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "south",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "west",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "east",
+			"age": "1"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "north",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "south",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "west",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "east",
+			"age": "2"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "north",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "south",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "west",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "16",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "8",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "9",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "10",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "11",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "12",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "13",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "14",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	},
+	{
+		// Properties define the state of this block/fluid.
+		"Properties": {
+			"radius_offset": "15",
+			"facing": "east",
+			"age": "3"
+		},
+		"Name": "dtarsnouveau:frostaya"
+	}
+]

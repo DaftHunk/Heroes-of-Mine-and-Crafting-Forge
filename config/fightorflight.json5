@@ -64,7 +64,7 @@
 	"minimum_attack_damage": 0.5,
 	// The  damage a pokemon would do on hit if it had reached the max stat
 	"maximum_attack_damage": 4.0,
-	// Attack stat required to reach the maximum damage,the default value is calculated with 50 level, 120 stat, 252 EVs, IVs of 31, and a helpful nature.
+	// Attack stat required to reach the maximum damage,the default value is calculated with 50 level, 130 stat, 252 EVs, IVs of 31, and a helpful nature.
 	"maximum_attack_stat": 189,
 	// The movement speed multiplier of a pokemon if the Spe stat of this Pokemon is 0.
 	"minimum_movement_speed": 1.2999999523162842,
@@ -90,6 +90,31 @@
 	"minimum_ranged_attack_damage": 1.0,
 	// The amount of damage a pokemon would do on contact if it had reached the max stat
 	"maximum_ranged_attack_damage": 7.0,
-	// Special attack stat required to reach the maximum damage,the default value is calculated with 50 level, 120 stat, 252 EVs, IVs of 31, and a helpful nature.
-	"maximum_special_attack_stat": 189
+	// Special attack stat required to reach the maximum damage,the default value is calculated with 50 level, 130 stat, 252 EVs, IVs of 31, and a helpful nature.
+	"maximum_special_attack_stat": 189,
+	// Water type damage will be more effective on mobs like Blaze,Enderman,etc.
+	"water_type_super_effective_dmg_multiplier": 2.0,
+	// Fire type damage will be not very effective against fire immune entity.(set to 0 if you want a complete immune)
+	"fire_type_no_effect_dmg_multiplier": 0.10000000149011612,
+	// Ice type damage will be not very effective against entity that can't be frozen.(set to 0 if you want a complete immune)
+	"ice_type_no_effect_dmg_multiplier": 0.10000000149011612,
+	// Ice type damage will be more effective against entity that has a weaker resistant to the frost damage.
+	"ice_type_super_effective_dmg_multiplier": 2.0,
+	// Poison type damage will be not very effective against undead mobs.(set to 0 if you want a complete immune)
+	"poison_type_no_effect_dmg_multiplier": 0.10000000149011612,
+	// If the original updateMaxHealth() will be replaced by my version. This version uses the hp stat instead of the base hp stat.The following configurations needs this one to work.
+	"shouldOverrideUpdateMaxHealth": true,
+	// The minimum hp of a pokemon entity,shedinja is set to 1.0 and can't be changed.
+	"min_HP": 8,
+	// The medium hp value of a pokemon entity,the medium value is designed to allow you to better tweak the growth of HP value for the entity
+	"mid_HP": 40,
+	// The maximum hp of a pokemon entity.
+	"max_HP": 100,
+	// HP above this value will increase the HP of the entity
+	"min_HP_required_stat": 20,
+	// The medium hp value of a pokemon entity.
+	"mid_HP_required_stat": 160,
+	// The maximum hp of a pokemon entity.The max hp of a Blissey is 714.
+	"max_HP_required_stat": 500,
+	"stay_after_move_command": true
 }
