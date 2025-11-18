@@ -13,7 +13,18 @@
     "rain_splash": true,
     "block_break": true,
     "block_breaking": true,
-    "other": {}
+    "other": {
+      "subtle_effects:potion_dot": true,
+      "subtle_effects:potion_cloud": true,
+      "subtle_effects:potion_emitter": true,
+      "subtle_effects:potion_poof_cloud": true,
+      "subtle_effects:potion_ring": true,
+      "mowziesmobs:bubble": true,
+      "minecells:aura": true,
+      "minecraft:bubble": true,
+      "minecraft:effect": true,
+      "minecraft:entity_effect": false
+    }
   },
   "detail_settings": {
     "sky": true,
