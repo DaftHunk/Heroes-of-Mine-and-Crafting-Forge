@@ -13,12 +13,12 @@
     "deferredTextureTick": true,
     "failPerSecLimit": 5,
     "failBehavior": "RAISE_CRASH",
-    "suppressCME": false,
+    "suppressCME": true,
     "syncParticleClasses": []
   },
   "rendering": {
-    "particleRenderingMode": "SYNCHRONOUSLY",
-    "particleCulling": "AABB",
+    "particleRenderingMode": "DELAYED",
+    "particleCulling": "ASYNC_SPHERE",
     "cullWeathers": true,
     "failPerSecLimit": 20,
     "failBehavior": "MARK_AS_SYNC",
