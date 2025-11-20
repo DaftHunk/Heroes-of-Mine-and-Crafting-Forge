@@ -19,7 +19,7 @@
 	#Collect salt water from ocean biomes using a bucket
 	"Salt Water" = true
 	#Instantly drain carcasses/corpses
-	"Instant Drain" = true
+	"Instant Drain" = false
 	#Enable/Disable sulfur ore generation
 	"Sulfur Ore" = false
 	#Enable/Disable salt generation

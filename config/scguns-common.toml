@@ -129,7 +129,7 @@
 		unsilencedRange = 20.0
 		#Any mobs within a sphere of this radius will flee from the shooter of a silenced gun.
 		#Range: 0.0 ~ 1.7976931348623157E308
-		silencedRange = 20.0
+		silencedRange = 5.0
 		#LEGACY: Additional entities that will flee from gunshots. Animals are automatically detected. Use the 'scguns:fleeing_from_guns' entity tag instead for better mod compatibility.
 		fleeingEntities = ["minecraft:cow", "minecraft:sheep", "minecraft:pig", "minecraft:chicken", "minecraft:rabbit", "minecraft:horse", "minecraft:villager"]
 
@@ -203,13 +203,13 @@
 	[common.exosuit_cores]
 		#Energy capacity for Basic ExoSuit Core
 		#Range: 1000 ~ 100000
-		basicCoreCapacity = 10000
+		basicCoreCapacity = 30000
 		#Energy capacity for Advanced ExoSuit Core
 		#Range: 1000 ~ 100000
-		advancedCoreCapacity = 20000
+		advancedCoreCapacity = 60000
 		#Energy capacity for Elite ExoSuit Core
 		#Range: 1000 ~ 100000
-		eliteCoreCapacity = 30000
+		eliteCoreCapacity = 70000
 
 	#Gun Mob Spawning Configuration
 	[common.gunner_config]

@@ -76,7 +76,7 @@
 [Block]
 	#Cursed Tombstone Summon cooldown Minute
 	#Range: 1 ~ 300
-	"Cursed Tombstone Summon cooldown Minute" = 30
+	"Cursed Tombstone Summon cooldown Minute" = 1
 
 ["Entity damage"]
 	#Void Rune's Damage
@@ -158,7 +158,7 @@
 	EnderGuardianDamageCap = 22.0
 	#EnderGuardian's Healing with out target
 	#Range: 0.0 ~ 1000000.0
-	EnderGuardianNatureHealing = 10.0
+	EnderGuardianNatureHealing = 25.0
 	#Ender guardian's block breaking ignore the MobGriefing
 	EnderguardianBlockBreaking = true
 	#Guardian's Immune to Long distance attack range.
@@ -213,7 +213,7 @@
 	MonstrosityHealingMultiplier = 1.0
 	# Monstrosity's Healing with out target
 	#Range: 0.0 ~ 1000000.0
-	MonstrosityNatureHealing = 10.0
+	MonstrosityNatureHealing = 25.0
 	#Monstrosity's DamageCap
 	#Range: 0.0 ~ 1000000.0
 	MonstrosityDamageCap = 22.0
@@ -334,7 +334,7 @@
 	LeviathanDamageMultiplier = 1.0
 	#Leviathan's Healing with out target
 	#Range: 0.0 ~ 1000000.0
-	LeviathanNatureHealing = 10.0
+	LeviathanNatureHealing = 25.0
 	#Leviathan's Immune to Long distance attack range.
 	#Range: 1.0 ~ 1000000.0
 	"Leviathan's prevent attacks from far away Range" = 38.0

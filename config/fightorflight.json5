@@ -21,7 +21,10 @@
 		"primeape"
 	],
 	// Pokemon that will never be aggressive
-	"never_aggro": [],
+	"never_aggro": [
+		"slowpoke",
+		"pyukumuku"
+	],
 	// Pokemon that will be aggressive only when provoked(WIP)
 	"provoke_only_aggro": [],
 	// Pokemon that will always flee away from the player

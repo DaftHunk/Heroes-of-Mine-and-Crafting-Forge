@@ -101,6 +101,7 @@
 		"photongeyser",
 		"flashcannon",
 		"flamethrower",
+		"mysticalfire",
 		"oblivionwing",
 		"snipeshot"
 	],
@@ -121,7 +122,8 @@
 		"seedflare",
 		"psyshock",
 		"psystrike",
-		"psychoboost"
+		"psychoboost",
+		"earthpower"
 	],
 	// Moves that hurts the entity(including the allies) around the pokemon
 	"self_centered_aoe_moves": [

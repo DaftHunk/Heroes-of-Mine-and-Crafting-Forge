@@ -25,7 +25,7 @@ buttonAlignment = "RIGHT"
 		#If true, uses the old animation poses for weapons. This is only for nostalgic reasons and not recommended to switch back.
 		oldAnimations = false
 		#The custom crosshair to use for weapons. Go to (Options > Controls > Mouse Settings > Crosshair) in game to change this!
-		crosshair = "minecraft:default"
+		crosshair = "scguns:dynamic"
 		#If enabled, renders a cooldown indicator to make it easier to learn when you fire again.
 		cooldownIndicator = true
 		#If enabled, the weapon will sway when the player moves their look direction. This does not affect aiming and is only visual.

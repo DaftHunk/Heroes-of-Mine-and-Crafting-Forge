@@ -1,14 +1,1 @@
-{
-  "states": {
-    "hovered": {
-      "volume_multipliers": {
-        "master": 1.0
-      }
-    },
-    "abandoned": {
-      "volume_multipliers": {
-        "master": 1.0
-      }
-    }
-  }
-}
+{}

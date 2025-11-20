@@ -49,7 +49,7 @@ adjustNameTagWhenSleeping = true
 
 [humanoids]
 drowningBubblesDisplayType = "DEFAULT"
-drowningBubblesDensity = 10
+drowningBubblesDensity = 3
 drowningBubbleAlpha = 1.0
 forceDrowningBubblesToColumn = false
 potionRingsDisplayType = "DEFAULT"
@@ -80,9 +80,9 @@ alpha = 1.0
 preventWhenRaining = false
 flyIntoWall = true
 lessViewBlocking = false
-playerFell = false
-mobFell = false
-landMaceAttack = false
+playerFell = true
+mobFell = true
+landMaceAttack = true
 playerRunning = false
 mobRunning = false
 playerRunningRequiresSpeed = false
