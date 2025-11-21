@@ -13,12 +13,11 @@ const float death_radius = 70.0;
     #ifdef GBUFFERS_WATER
         float vlFactor = 0.5;
     #endif
-    vec3 endDragonCol = vec3(E_DRAGON_BEAM_R, E_DRAGON_BEAM_G, E_DRAGON_BEAM_B) / 255.0 * E_DRAGON_BEAM_I;
-    vec3 beamCol = normalize(endColorBeam * endColorBeam * endColorBeam) * (2.5 - 1.0 * vlFactor) * E_BEAM_I;
 #endif
+vec3 beamPurple = normalize(endColorBeam * endColorBeam * endColorBeam) * (2.5 - 1.0 * vlFactor) * E_BEAM_I;
 
-vec3 endDragonColM = sqrt(endDragonCol);
-vec3 beamColM = sqrt(beamCol);
+vec3 endDragonColM = sqrt(endOrangeCol);
+vec3 beamColM = sqrt(beamPurple);
 
 float GetBallRadius(float state) {
     return vortex_ballRadius * (1.0 + 4.0 * sqrt(1.0 - state));
@@ -48,10 +47,10 @@ vec4 SampleEndCrystalVortex(vec3 relPos, vec2 state, vec2 noiseOffset) {
     float spiralStrength = 200 * beamFactor * pow(featureDist, 7) * pow2(1.0 - featureDist) * pow2(max(0.0, 1 - pow2(0.02 / (0.6 * state.x * state.x + 0.4) / state.y * relPos.y)));
     float spiralAngle = (0.4 / vortex_cylinderRadius * relPos.y - 0.2 * pow2(min(0.0, -2.5 + relPos.y / thisBallRadius))) / (state.x + 0.2);
     vec2 spiralPos = mat2(cos(spiralAngle), -sin(spiralAngle), sin(spiralAngle), cos(spiralAngle)) * horizontalScaledPos;
-    vec4 beamNoise = texture2D(noisetex, noiseOffset + 5.0 / noiseTextureResolution * horizontalScaledPos);
-    vec4 beamNoise2 = texture2D(noisetex, noiseOffset + 5.0 / noiseTextureResolution * vec2(relPos.y * 0.02 + 2.7 * beamNoise.gb - 3.6 * frameTimeCounter * 0.5));
-    vec4 spiralNoise = texture2D(noisetex, noiseOffset + 5.0 / noiseTextureResolution * spiralPos);
-    vec4 spiralNoise2 = texture2D(noisetex, noiseOffset + 20.0 / noiseTextureResolution * spiralPos);
+    vec4 beamNoise = texture2DLod(noisetex, noiseOffset + 5.0 / noiseTextureResolution * horizontalScaledPos, 0.0);
+    vec4 beamNoise2 = texture2DLod(noisetex, noiseOffset + 5.0 / noiseTextureResolution * vec2(relPos.y * 0.02 + 2.7 * beamNoise.gb - 3.6 * frameTimeCounter * 0.5), 0.0);
+    vec4 spiralNoise = texture2DLod(noisetex, noiseOffset + 5.0 / noiseTextureResolution * spiralPos, 0.0);
+    vec4 spiralNoise2 = texture2DLod(noisetex, noiseOffset + 20.0 / noiseTextureResolution * spiralPos, 0.0);
     return vec4(beamStrength * beamNoise.r * beamNoise2.r * endDragonColM + spiralStrength * pow2(spiralNoise.r) * (0.5 + spiralNoise2.r) * beamColM, beamStrength + spiralStrength) * 0.3;
 }
 
@@ -95,19 +94,19 @@ vec4 SampleEndCrystalBeam(vec3 relPos, float len) {
 
     if (beamWidth > 0.0001) {
         float beamFactor = smoothstep(0.0, 2.0 * healing_ballRadius, 0.5 * len - abs(relPos.x - 0.5 * len));
-        float noisyTime = frameTimeCounter + 0.4 * texture2D(noisetex, vec2(3.0 / noiseTextureResolution, frameTimeCounter / (0.45 * noiseTextureResolution))).r;
+        float noisyTime = frameTimeCounter + 0.4 * texture2DLod(noisetex, vec2(3.0 / noiseTextureResolution, frameTimeCounter / (0.45 * noiseTextureResolution)), 0.0).r;
 
         relPos.yz /= beamWidth;
         float strength = 0.0;
         vec3 healBeamColor = vec3(0);
         for (int k = 0; k < 3; k++) {
             vec2 noiseCoords = vec2(0.2 / noiseTextureResolution * relPos.x, 0 + vec2(k, 6 * k) / noiseTextureResolution);
-            vec4 zapNoise0 = texture2D(noisetex, noiseCoords + floor(8.0 * noisyTime) / noiseTextureResolution);
-            vec4 zapNoise1 = texture2D(noisetex, 3.3 * noiseCoords + floor(8.0 * noisyTime));
-            vec4 zapNoise2 = texture2D(noisetex, 6.8 * noiseCoords + (15.0 * frameTimeCounter));
+            vec4 zapNoise0 = texture2DLod(noisetex, noiseCoords + floor(8.0 * noisyTime) / noiseTextureResolution, 0.0);
+            vec4 zapNoise1 = texture2DLod(noisetex, 3.3 * noiseCoords + floor(8.0 * noisyTime) / noiseTextureResolution, 0.0);
+            vec4 zapNoise2 = texture2DLod(noisetex, 6.8 * noiseCoords + (15.0 * frameTimeCounter) / noiseTextureResolution, 0.0);
             vec2 thisRelPos = relPos.yz + beamFactor / beamWidth * (6.0 * zapNoise0.rb + 1.6 * zapNoise1.rb + 1.2 * zapNoise2.rb - (3.0 + 0.8 + 0.6));
-            vec4 sideNoise = texture2D(noisetex, (7.0 * thisRelPos.xy) / noiseTextureResolution);
-            vec3 colorNoise = texture2D(noisetex, 4.0 * noiseCoords + floor(12.0 * noisyTime) / noiseTextureResolution).rgb;
+            vec4 sideNoise = texture2DLod(noisetex, (7.0 * thisRelPos.xy) / noiseTextureResolution, 0.0);
+            vec3 colorNoise = texture2DLod(noisetex, 4.0 * noiseCoords + floor(12.0 * noisyTime) / noiseTextureResolution, 0.0).rgb;
             float centerDist0 = length(thisRelPos.xy);
 
             float centerDist = centerDist0 - 1.2;
@@ -162,7 +161,7 @@ float GetDragonDeathFactor(float dragonDeathTime) {
 vec4 SampleDeathBuildup(vec3 relPos, float dragonDeathTime) {
     float effectFactor = GetDragonDeathFactor(dragonDeathTime);
     float effectRadius = death_radius * effectFactor;
-    float sizeNoiseFactor = 1.0 + 0.3 * texture2D(noisetex, vec2(0.2, dragonDeathTime * 5.0 / noiseTextureResolution)).r;
+    float sizeNoiseFactor = 1.0 + 0.3 * texture2DLod(noisetex, vec2(0.2, dragonDeathTime * 5.0 / noiseTextureResolution), 0.0).r;
     float centerDist = length(relPos) / effectRadius;
     relPos *= sizeNoiseFactor;
     float angle = centerDist * 5.0 / log(dragonDeathTime * 0.6 + 1.0);

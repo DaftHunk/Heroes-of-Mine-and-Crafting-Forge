@@ -1,8 +1,9 @@
-//////////////////////////////////
-// Complementary Base by EminGT //
-//////////////////////////////////
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
+// With Euphoria Patches by SpacEagle17 //
+//////////////////////////////////////////
 #extension GL_ARB_derivative_control : enable
-#ifdef GL_ARB_derivative_controlAdd
+#ifdef GL_ARB_derivative_control
     #define USE_FINE_DERIVATIVES
 #endif
 
@@ -12,11 +13,19 @@
 #include "/lib/shaderSettings/emissionMult.glsl"
 //#define NIGHT_DESATURATION
 
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
+
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
 
 in vec2 texCoord;
-in vec2 lmCoord;
+#ifdef GBUFFERS_COLORWHEEL
+    vec2 lmCoord;
+#else
+    in vec2 lmCoord;
+#endif
 
 flat in int mat;
 
@@ -31,8 +40,8 @@ in vec4 glColor;
     flat in vec2 absMidCoordPos;
 #endif
 
-#ifdef ACL_GROUND_LEAVES_FIX
-    #include "/lib/misc/leavesVoxelization.glsl"
+#ifdef ACT_GROUND_LEAVES_FIX
+    #include "/lib/voxelization/leavesVoxelization.glsl"
 #endif
 
 #if defined GENERATED_NORMALS || defined CUSTOM_PBR
@@ -128,7 +137,7 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 #endif
 
 #ifdef PORTAL_EDGE_EFFECT
-    #include "/lib/misc/voxelization.glsl"
+    #include "/lib/voxelization/lightVoxelization.glsl"
 #endif
 
 #if SHOCKWAVE > 0
@@ -152,10 +161,28 @@ void main() {
     #else
         vec4 color = texture2D(tex, texCoord);
     #endif
-    #if defined GENERATED_NORMALS || PIXEL_WATER == 1
-        vec3 colorP = color.rgb;
+    vec3 colorP = color.rgb;
+    #ifdef GBUFFERS_COLORWHEEL
+        float ao;
+        vec4 overlayColor;
+        
+        clrwl_computeFragment(color, color, lmCoord, ao, overlayColor);
+        color.rgb = mix(color.rgb, overlayColor.rgb, overlayColor.a);
+        lmCoord = clamp((lmCoord - 1.0 / 32.0) * 32.0 / 30.0, 0.0, 1.0);
+    #else
+        color *= glColor;
     #endif
-    color *= glColor;
+
+    float dither = Bayer64(gl_FragCoord.xy);
+    #ifdef TAA
+        dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
+    #endif
+
+    #ifdef DISTANT_HORIZONS
+        if (getDHFadeFactor(playerPos) < dither) {
+            discard;
+        }
+    #endif
 
     float overlayNoiseIntensity = 1.0;
     float snowNoiseIntensity = 1.0;
@@ -173,7 +200,7 @@ void main() {
     #endif
 
     bool noSmoothLighting = false, noDirectionalShading = false;
-    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = 0.0;
+    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = 0.0, enderDragonDead = 1.0;
     float smoothnessG = 0.0, highlightMult = 1.0, emission = 0.0, noiseFactor = 1.0;
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
@@ -191,8 +218,12 @@ void main() {
         emission = DoAutomaticEmission(noSmoothLighting, noDirectionalShading, color.rgb, 1.0, 15, 1.0);
     }
 
+    if (blockEntityId == 5017) { // Player Head
+        #include "/lib/materials/specificMaterials/others/SpacEagle17.glsl"
+    }
+
     #ifdef IPBR
-        #include "/lib/materials/materialHandling/blockEntityMaterials.glsl"
+        #include "/lib/materials/materialHandling/blockEntityIPBR.glsl"
 
         #if IPBR_EMISSIVE_MODE != 1
             emission = GetCustomEmissionForIPBR(color, emission);
@@ -264,22 +295,16 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
-               false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+               false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
+               enderDragonDead);
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
 
-        if (blockEntityId == 60000) lightAlbedo = color.rgb;
-        if (blockEntityId == 60004) lightAlbedo = vec3(0.0); // fix glowing sign text affecting blocklight color
+        if (blockEntityId == 5004) lightAlbedo = vec3(0.0); // fix glowing sign text affecting blocklight color
     #endif
 
-    #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
-        #ifdef OVERWORLD
-            skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
-        #else
-            skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
-        #endif
-    #endif
+    skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, blockEntityId);
@@ -290,15 +315,15 @@ void main() {
     gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
-        /* DRAWBUFFERS:065 */
+        /* DRAWBUFFERS:064 */
         gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0658 */
+            /* DRAWBUFFERS:0649 */
             gl_FragData[3] = vec4(lightAlbedo, 0.0);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(lightAlbedo, 0.0);
     #endif
 }
@@ -313,7 +338,11 @@ void main() {
 #endif
 
 out vec2 texCoord;
-out vec2 lmCoord;
+#ifdef GBUFFERS_COLORWHEEL
+    vec2 lmCoord;
+#else
+    out vec2 lmCoord;
+#endif
 
 flat out int mat;
 
@@ -361,10 +390,6 @@ attribute vec4 mc_Entity;
 //Includes//
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
-#endif
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
 #endif
 
 #ifdef WAVE_EVERYTHING

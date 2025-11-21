@@ -1,7 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
@@ -35,9 +35,11 @@ vec2 view = vec2(viewWidth, viewHeight);
 #include "/lib/colors/tonemaps.glsl"
 
 void DoBSLColorSaturation(inout vec3 color) {
+    float saturationFactor = T_SATURATION + 0.07;
+
     float grayVibrance = (color.r + color.g + color.b) / 3.0;
     float graySaturation = grayVibrance;
-    if (saturationTM < 1.00) graySaturation = dot(color, vec3(0.299, 0.587, 0.114));
+    if (saturationFactor < 1.00) graySaturation = dot(color, vec3(0.299, 0.587, 0.114));
 
     float mn = min(color.r, min(color.g, color.b));
     float mx = max(color.r, max(color.g, color.b));
@@ -46,10 +48,10 @@ void DoBSLColorSaturation(inout vec3 color) {
 
     color = mix(color, mix(color, lightness, 1.0 - T_VIBRANCE), sat);
     color = mix(color, lightness, (1.0 - lightness) * (2.0 - T_VIBRANCE) / 2.0 * abs(T_VIBRANCE - 1.0));
-    color = color * saturationTM - graySaturation * (saturationTM - 1.0);
+    color = color * saturationFactor - graySaturation * (saturationFactor - 1.0);
 }
 
-#ifdef BLOOM
+#if BLOOM_ENABLED == 1
     vec2 rescale = max(vec2(viewWidth, viewHeight) / vec2(1920.0, 1080.0), vec2(1.0));
     vec3 GetBloomTile(float lod, vec2 coord, vec2 offset) {
         float scale = exp2(lod);
@@ -92,9 +94,9 @@ void DoBSLColorSaturation(inout vec3 color) {
 
 #include "/lib/util/colorConversion.glsl"
 
-#if COLORED_LIGHTING_INTERNAL > 0
-    #include "/lib/misc/voxelization.glsl"
-#endif
+// #if COLORED_LIGHTING_INTERNAL > 0
+//     #include "/lib/voxelization/lightVoxelization.glsl"
+// #endif
 
 // http://www.diva-portal.org/smash/get/diva2:24136/FULLTEXT01.pdf
 // The MIT License
@@ -102,7 +104,7 @@ void DoBSLColorSaturation(inout vec3 color) {
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 // The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 // THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, float purkinjeOverwrite) {
+vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, float purkinjeOverwrite, float z0, float fogValue) {
     float interiorFactorM = 0;
     #ifdef NETHER
         float nightDesaturationIntensity = NIGHT_DESATURATION_NETHER;
@@ -122,11 +124,12 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
 		#endif
     #endif
 
-    float renderDistanceFade = mix(0, lViewPos * 2.5 / far, renderdistanceFade);
+    float lightFogFactor = smoothstep(-0.5, 1.0, fogValue);
+    float renderDistanceFade = mix(0, lViewPos * 2.5 / far, renderdistanceFade * (1.0 - lightFogFactor));
     if (isEyeInWater == 1) renderDistanceFade = lViewPos * 7.0 / far;
     float nightCaveDesaturation = NIGHT_CAVE_DESATURATION * 0.1;
-    
-    float interiorFactor = isEyeInWater == 1 ? 0.0 : pow2(1.0 - texture6.b);
+
+    float interiorFactor = isEyeInWater == 1 ? 0.0 : pow2(1.0 - texture6.b * (1.0 - lightFogFactor));
     interiorFactor =  mix(interiorFactor, interiorFactorM, renderDistanceFade);
     interiorFactor -= sqrt2(eyeBrightnessM) * 0.66;
     interiorFactor = smoothstep(0.0, 1.0, clamp01(interiorFactor));
@@ -137,7 +140,7 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
 
     float lightSourceFactor = 1.0;
     #ifdef NIGHT_DESATURATION_REMOVE_NEAR_LIGHTS
-        lightSourceFactor = pow3(1.0 - texture6.a);
+        lightSourceFactor = pow3(1.0 - texture6.a * (1.0 - lightFogFactor));
         lightSourceFactor += renderDistanceFade;
         lightSourceFactor = clamp01(lightSourceFactor);
     #endif
@@ -163,6 +166,7 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
     float purkinjeIntensity = 0.004 * purkinjeOverwrite * nightDesaturationIntensity;
     purkinjeIntensity  = purkinjeIntensity * fuzzyOr(interiorFactor, sqrt3(nightFactor - 0.1)); // No purkinje shift in daylight
     purkinjeIntensity *= lightSourceFactor; // Reduce purkinje intensity in blocklight
+    purkinjeIntensity *= (1.0 - lightFogFactor);
     purkinjeIntensity *= clamp01(nightCaveDesaturation + (1.0 - nightCaveDesaturation) * pow3(1.0 - interiorFactor)); // Reduce purkinje intensity underground
     purkinjeIntensity *= clamp01(heldLight); // Reduce purkinje intensity when holding light sources
     purkinjeIntensity *= nightVisionFactor * (1.0 - isLightningActive()); // Reduce purkinje intensity when using night vision or during lightning
@@ -199,7 +203,7 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
     #include "/lib/atmospherics/fog/bloomFog.glsl"
 #endif
 
-#ifdef BLOOM
+#if BLOOM_ENABLED == 1
     #include "/lib/util/dither.glsl"
 #endif
 
@@ -213,16 +217,21 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
 void main() {
     vec3 color = texture2D(colortex0, texCoord).rgb;
 
+    vec4 texture5 = texelFetch(colortex5, texelCoord, 0);
+    
     #if defined BLOOM_FOG || LENSFLARE_MODE > 0 && defined OVERWORLD || defined NIGHT_DESATURATION
         float z0 = texture2D(depthtex0, texCoord).r;
-
         vec4 screenPos = vec4(texCoord, z0, 1.0);
         vec4 viewPos = gbufferProjectionInverse * (screenPos * 2.0 - 1.0);
         viewPos /= viewPos.w;
         float lViewPos = length(viewPos.xyz);
 
         vec3 playerPos = ViewToPlayer(viewPos.xyz);
+    #else
+        float lViewPos = 0.0;
+    #endif
 
+    #if defined BLOOM_FOG || LENSFLARE_MODE > 0 && defined OVERWORLD
         #if defined DISTANT_HORIZONS && defined NETHER
             float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
             vec4 screenPosDH = vec4(texCoord, z0DH, 1.0);
@@ -230,11 +239,9 @@ void main() {
             viewPosDH /= viewPosDH.w;
             lViewPos = min(lViewPos, length(viewPosDH.xyz));
         #endif
-    #else
-        float lViewPos = 0.0;
     #endif
 
-    float dither = texture2D(noisetex, texCoord * view / 128.0).b;
+    float dither = texture2DLod(noisetex, texCoord * view / 128.0, 0.0).b;
     #ifdef TAA
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
@@ -243,7 +250,7 @@ void main() {
         color /= GetBloomFog(lViewPos);
     #endif
 
-    #ifdef BLOOM
+    #if BLOOM_ENABLED == 1
         DoBloom(color, texCoord, dither, lViewPos);
     #endif
 
@@ -308,20 +315,13 @@ void main() {
 
     DoBSLColorSaturation(color);
 
-    float filmGrain = dither;
-    color += vec3((filmGrain - 0.25) / 128.0);
-
     #ifdef NIGHT_DESATURATION
-        color.rgb = purkinjeShift(color.rgb, texture6, playerPos, lViewPos, purkinjeOverwrite);
+        color.rgb = purkinjeShift(color.rgb, texture6, playerPos, lViewPos, purkinjeOverwrite, z0, texture5.r);
     #endif
 
-    // vec4 texture6 = texelFetch(colortex6, texelCoord, 0).rgba;
-    // float interiorFactor = texture6.b;
-
-    // color = vec3(interiorFactor);
-
-    /* DRAWBUFFERS:3 */
+    /* DRAWBUFFERS:35 */
     gl_FragData[0] = vec4(color, 1.0);
+    gl_FragData[1] = vec4(vec3(0), texture5.a);
 }
 
 #endif

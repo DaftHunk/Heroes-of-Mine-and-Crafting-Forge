@@ -1,12 +1,16 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/emissionMult.glsl"
 //#define NIGHT_DESATURATION
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -111,8 +115,9 @@ void main() {
     vec4 color = texture2D(tex, texCoord);
     float purkinjeOverwrite = 0.0, emission = 0.0;
 
-    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
-    vec3 normalM = normal;
+    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
+    vec2 lmCoordM = lmCoord;
+    vec3 normalM = normal, shadowMult = vec3(0.5); // Reduced shadowMult for held items to not get too bright
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = vec3(0.0);
@@ -135,16 +140,12 @@ void main() {
         vec3 viewPos = ScreenToView(screenPos);
         vec3 playerPos = ViewToPlayer(viewPos);
 
-        float luminance = GetLuminance(color.rgb);
-
         if (color.a < 0.75) materialMask = 0.0;
 
         bool noSmoothLighting = true, noGeneratedNormals = false, noDirectionalShading = false, noVanillaAO = false;
         float smoothnessG = 0.0, highlightMult = 1.0, noiseFactor = 0.6;
-        vec2 lmCoordM = lmCoord;
         vec3 geoNormal = normalM;
         vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
-        vec3 shadowMult = vec3(0.4);
 
         float overlayNoiseIntensity = 1.0;
         float snowNoiseIntensity = 1.0;
@@ -156,7 +157,7 @@ void main() {
         #ifdef IPBR
             #ifdef IS_IRIS
                 vec3 maRecolor = vec3(0.0);
-                #include "/lib/materials/materialHandling/irisMaterials.glsl"
+                #include "/lib/materials/materialHandling/irisIPBR.glsl"
 
                 if (materialMask != OSIEBCA * 254.0) materialMask += OSIEBCA * 100.0; // Entity Reflection Handling
             #endif
@@ -212,7 +213,8 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, 0.0, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-                   false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, false);
+                   false, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, false,
+                   enderDragonDead);
 
         #ifdef SS_BLOCKLIGHT
             lightAlbedo = normalize(color.rgb) * min1(emission);
@@ -222,13 +224,7 @@ void main() {
             color.rgb += maRecolor;
         #endif
 
-        #if (defined CUSTOM_PBR || defined IPBR && defined IS_IRIS) && (defined PBR_REFLECTIONS || defined NIGHT_DESATURATION)
-            #ifdef OVERWORLD
-                skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
-            #else
-                skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
-            #endif
-        #endif
+        skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
     }
     float handSSBLMask = 0.0;
     #ifdef ENTITIES_ARE_LIGHT
@@ -249,15 +245,15 @@ void main() {
     gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, purkinjeData);
 
     #if BLOCK_REFLECT_QUALITY >= 2 && (RP_MODE >= 2 || defined IS_IRIS)
-        /* DRAWBUFFERS:065 */
+        /* DRAWBUFFERS:064 */
         gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0658 */
+            /* DRAWBUFFERS:0649 */
             gl_FragData[3] = vec4(lightAlbedo, handSSBLMask);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(lightAlbedo, handSSBLMask);
     #endif
 }

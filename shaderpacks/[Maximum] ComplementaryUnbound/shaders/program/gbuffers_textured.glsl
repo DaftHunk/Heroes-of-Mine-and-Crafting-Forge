@@ -1,12 +1,17 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/raindropColor.glsl"
 //#define GLOWING_COLORED_PARTICLES
+#define SMOKE_PARTICLE_OPACITY 0.5 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -14,18 +19,10 @@
 in vec2 texCoord;
 in vec2 lmCoord;
 
-flat in vec3 upVec, sunVec;
+flat in vec3 upVec, sunVec, northVec, eastVec;
 in vec3 normal;
 
 flat in vec4 glColor;
-
-#ifdef CLOUD_SHADOWS
-    flat in vec3 eastVec;
-
-    #if SUN_ANGLE != 0
-        flat in vec3 northVec;
-    #endif
-#endif
 
 //Pipeline Constants//
 
@@ -88,7 +85,7 @@ void main() {
     float lViewPos = length(viewPos);
     vec3 playerPos = ViewToPlayer(viewPos);
 
-    float dither = texture2D(noisetex, gl_FragCoord.xy / 128.0).b;
+    float dither = texture2DLod(noisetex, gl_FragCoord.xy / 128.0, 0.0).b;
     #ifdef TAA
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
@@ -98,13 +95,13 @@ void main() {
     #endif
 
     #ifdef VL_CLOUDS_ACTIVE
-        float cloudLinearDepth = texelFetch(gaux1, texelCoord, 0).r;
+        float cloudLinearDepth = texelFetch(gaux2, texelCoord, 0).a;
 
         if (cloudLinearDepth > 0.0) // Because Iris changes the pipeline position of opaque particles
         if (pow2(cloudLinearDepth + OSIEBCA * dither) * renderDistance < min(lViewPos, renderDistance)) discard;
     #endif
 
-    float emission = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
+    float emission = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
@@ -156,7 +153,7 @@ void main() {
                 if (fract(playerPos.y + cameraPosition.y) > 0.25) discard;
             }
         } else if (color.a < 0.99 && dot(color.rgb, color.rgb) < 1.0) { // Campfire Smoke
-            color.a *= 0.5;
+            color.a *= SMOKE_PARTICLE_OPACITY;
             materialMask = 0.0;
         } else if (max(abs(colorP.r - colorP.b), abs(colorP.b - colorP.g)) < 0.001) { // Grayscale Particles
             float dotColor = dot(color.rgb, color.rgb);
@@ -284,7 +281,8 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
                worldGeoNormal, lmCoordM, noSmoothLighting, false, true,
-               false, 0, 0.0, 1.0, emission, purkinjeOverwrite, isLightSource);
+               false, 0, 0.0, 1.0, emission, purkinjeOverwrite, isLightSource,
+               enderDragonDead);
 
     #if MC_VERSION >= 11500
         vec3 nViewPos = normalize(viewPos);
@@ -293,7 +291,9 @@ void main() {
         float VdotS = dot(nViewPos, sunVec);
         float sky = 0.0;
 
-        DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
+        float prevAlpha = color.a;
+        DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither);
+        color.a = prevAlpha;
     #endif
 
     vec3 translucentMult = mix(vec3(0.666), color.rgb * (1.0 - pow2(pow2(color.a))), color.a);
@@ -313,7 +313,7 @@ void main() {
     gl_FragData[2] = vec4(1.0 - translucentMult, 1.0);
 
     #ifdef SS_BLOCKLIGHT
-        /* DRAWBUFFERS:06389 */
+        /* RENDERTARGETS: 0,6,3,9,10 */
         gl_FragData[3] = vec4(0.0, 0.0, 0.0, SSBLMask);
         gl_FragData[4] = vec4(0.0, 0.0, 0.0, SSBLMask);
     #endif
@@ -327,18 +327,10 @@ void main() {
 out vec2 texCoord;
 out vec2 lmCoord;
 
-flat out vec3 upVec, sunVec;
+flat out vec3 upVec, sunVec, northVec, eastVec;
 out vec3 normal;
 
 flat out vec4 glColor;
-
-#ifdef CLOUD_SHADOWS
-    flat out vec3 eastVec;
-
-    #if SUN_ANGLE != 0
-        flat out vec3 northVec;
-    #endif
-#endif
 
 //Attributes//
 
@@ -352,16 +344,13 @@ flat out vec4 glColor;
 
 //Includes//
 
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
-
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 
 //Program//
 void main() {
+    vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
     gl_Position = ftransform();
 
     texCoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;
@@ -374,18 +363,25 @@ void main() {
 
     normal = normalize(gl_NormalMatrix * gl_Normal);
     upVec = normalize(gbufferModelView[1].xyz);
+    eastVec = normalize(gbufferModelView[0].xyz);
+    northVec = normalize(gbufferModelView[2].xyz);
     sunVec = GetSunVector();
+
+    #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVE_EVERYTHING
+        #ifdef MIRROR_DIMENSION
+            doMirrorDimension(position);
+        #endif
+        #ifdef WORLD_CURVATURE
+            position.y += doWorldCurvature(position.xz);
+        #endif
+        #ifdef WAVE_EVERYTHING
+            DoWaveEverything(position.xyz);
+        #endif
+        gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
+    #endif
 
     #ifdef FLICKERING_FIX
         gl_Position.z -= 0.000002;
-    #endif
-
-    #ifdef CLOUD_SHADOWS
-        eastVec = normalize(gbufferModelView[0].xyz);
-
-        #if SUN_ANGLE != 0
-            northVec = normalize(gbufferModelView[2].xyz);
-        #endif
     #endif
 }
 

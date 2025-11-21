@@ -1,30 +1,3 @@
-ivec3 getPotatoColorInt(ivec2 pixelPos) {
-    // Convert to 8-bit color integers (0-255)
-    return ivec3(round(texelFetch(colortex5, pixelPos, 0).rgb * 255.0));
-}
-
-bool checkPotatoPixel(ivec2 pixelToCheck, ivec3 targetColor, float threshold, inout vec3 potatoColor) {    
-    // Convert target color to 8-bit integer (0-255)
-    ivec3 sampledInt = getPotatoColorInt(pixelToCheck);
-    potatoColor = vec3(sampledInt) / 255.0; // just for debugging
-    
-    // Define maximum allowed difference
-    int maxDiff = int(threshold * 255.0);
-    
-    // Strict integer comparison for each channel
-    ivec3 diff = ivec3(abs(sampledInt.r - targetColor.r),
-                       abs(sampledInt.g - targetColor.g),
-                       abs(sampledInt.b - targetColor.b));
-    
-    // All channels must be within threshold AND exact match for specific values
-    return all(lessThan(diff, ivec3(maxDiff))) && // stuff hardcoded to my image
-           sampledInt.r > 200 && // Ensure high red component
-           sampledInt.g > 150 && // Ensure medium-high green
-           sampledInt.b > 80 &&  // Ensure medium blue
-           sampledInt.r > sampledInt.g && // Red must be highest
-           sampledInt.g > sampledInt.b;   // Green must be higher than blue
-}
-
 vec3 getPixelPotato(vec2 pixelCoord, vec3 color, vec2 size) { // Original Pixel art by Memokii
     if (pixelCoord.x < 0.0 || pixelCoord.x >= size.x || 
         pixelCoord.y < 0.0 || pixelCoord.y >= size.y) {
@@ -110,7 +83,7 @@ uint letterAnimation(float offset, float verticalOffset) {
     if (animation < 0.95) {
         return randomLetter(offset);
     } else {
-        float noise = texture2D(noisetex, vec2(frameTimeCounter * 0.002)).r;
+        float noise = texture2DLod(noisetex, vec2(frameTimeCounter * 0.002), 0.0).r;
         if (abs(verticalOffset) > 0.05 && noise > 0.6 || noise > 0.8) {
             if (offset == 0.0) return _G;
             else if (offset == 0.1) return _L;
@@ -136,40 +109,40 @@ vec3 printPhrase(vec3 color, int verticalTextOffset){
 
     // For each letter position, check if it should be randomized
     printString((
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.1)).r > 0.85 ? randomLetter(0.1) : _Y,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.2)).r > 0.85 ? randomLetter(0.2) : _o,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.3)).r > 0.85 ? randomLetter(0.3) : _u,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.4)).r > 0.85 ? randomLetter(0.4) : _r,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.1), 0.0).r > 0.85 ? randomLetter(0.1) : _Y,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.2), 0.0).r > 0.85 ? randomLetter(0.2) : _o,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.3), 0.0).r > 0.85 ? randomLetter(0.3) : _u,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.4), 0.0).r > 0.85 ? randomLetter(0.4) : _r,
         _space,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.5)).r > 0.85 ? randomLetter(0.5) : _A,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.6)).r > 0.85 ? randomLetter(0.6) : _c,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.7)).r > 0.85 ? randomLetter(0.7) : _t,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.8)).r > 0.85 ? randomLetter(0.8) : _i,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 0.9)).r > 0.85 ? randomLetter(0.9) : _o,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.0)).r > 0.85 ? randomLetter(1.0) : _n,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.1)).r > 0.85 ? randomLetter(1.1) : _s,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.5), 0.0).r > 0.85 ? randomLetter(0.5) : _A,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.6), 0.0).r > 0.85 ? randomLetter(0.6) : _c,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.7), 0.0).r > 0.85 ? randomLetter(0.7) : _t,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.8), 0.0).r > 0.85 ? randomLetter(0.8) : _i,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 0.9), 0.0).r > 0.85 ? randomLetter(0.9) : _o,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.0), 0.0).r > 0.85 ? randomLetter(1.0) : _n,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.1), 0.0).r > 0.85 ? randomLetter(1.1) : _s,
         _space,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.2)).r > 0.85 ? randomLetter(1.2) : _h,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.3)).r > 0.85 ? randomLetter(1.3) : _a,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.4)).r > 0.85 ? randomLetter(1.4) : _v,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.5)).r > 0.85 ? randomLetter(1.5) : _e
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.2), 0.0).r > 0.85 ? randomLetter(1.2) : _h,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.3), 0.0).r > 0.85 ? randomLetter(1.3) : _a,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.4), 0.0).r > 0.85 ? randomLetter(1.4) : _v,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.5), 0.0).r > 0.85 ? randomLetter(1.5) : _e
     ));
     printLine();
 
     // Second line with similar randomization
     printString((
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.6)).r > 0.85 ? randomLetter(1.6) : _C,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.7)).r > 0.85 ? randomLetter(1.7) : _o,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.8)).r > 0.85 ? randomLetter(1.8) : _n,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 1.9)).r > 0.85 ? randomLetter(1.9) : _s,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.0)).r > 0.85 ? randomLetter(2.0) : _e,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.1)).r > 0.85 ? randomLetter(2.1) : _q,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.2)).r > 0.85 ? randomLetter(2.2) : _u,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.3)).r > 0.85 ? randomLetter(2.3) : _e,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.4)).r > 0.85 ? randomLetter(2.4) : _n,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.5)).r > 0.85 ? randomLetter(2.5) : _c,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.6)).r > 0.85 ? randomLetter(2.6) : _e,
-        texture2D(noisetex, vec2(frameTimeCounter * 0.01 + 2.7)).r > 0.85 ? randomLetter(2.7) : _s,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.6), 0.0).r > 0.85 ? randomLetter(1.6) : _C,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.7), 0.0).r > 0.85 ? randomLetter(1.7) : _o,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.8), 0.0).r > 0.85 ? randomLetter(1.8) : _n,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 1.9), 0.0).r > 0.85 ? randomLetter(1.9) : _s,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.0), 0.0).r > 0.85 ? randomLetter(2.0) : _e,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.1), 0.0).r > 0.85 ? randomLetter(2.1) : _q,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.2), 0.0).r > 0.85 ? randomLetter(2.2) : _u,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.3), 0.0).r > 0.85 ? randomLetter(2.3) : _e,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.4), 0.0).r > 0.85 ? randomLetter(2.4) : _n,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.5), 0.0).r > 0.85 ? randomLetter(2.5) : _c,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.6), 0.0).r > 0.85 ? randomLetter(2.6) : _e,
+        texture2DLod(noisetex, vec2(frameTimeCounter * 0.01 + 2.7), 0.0).r > 0.85 ? randomLetter(2.7) : _s,
         _exclm
     ));
     endText(color);
@@ -203,12 +176,12 @@ vec3 potatoWatermark(vec3 color, vec2 displacedCoord, vec2 flickerNoiseVec) {
     float flickerNoise = max(flickerNoiseVec.r, flickerNoiseVec.g);
     float flickerFactor = step(0.4, flickerNoise);
 
-    float rareBlend = smoothstep(0.3, 0.6, texture2D(noisetex, vec2(frameTimeCounter * 0.09)).r);
+    float rareBlend = smoothstep(0.3, 0.6, texture2DLod(noisetex, vec2(frameTimeCounter * 0.09), 0.0).r);
     flickerFactor = mix(flickerFactor, rareBlend, 0.3);
 
     vec3 newWatermarkColors = saturateColors(watermarkColor.rgb, flickerFactor * 0.4 + flickerNoiseVec.r);
 
-    float noise = texture2D(noisetex, displacedCoord.xy * 3.0 + vec2(frameTimeCounter * 0.1, sin(frameTimeCounter * 0.05) * 0.5)).r * 10.0;
+    float noise = texture2DLod(noisetex, displacedCoord.xy * 3.0 + vec2(frameTimeCounter * 0.1, sin(frameTimeCounter * 0.05) * 0.5), 0.0).r * 10.0;
     noise = smoothstep(0.3, 0.7, noise) * sin(frameTimeCounter * 3.0 + displacedCoord.x * 10.0);
     float invertAlpha = watermarkColor.a * noise;
     vec4 flickeringWatermarkColor = vec4(newWatermarkColors, invertAlpha);
@@ -241,7 +214,7 @@ vec3 potatoError(){
     vec2 texCoordBorder = curveDisplay(texCoord, 1.2, 3);
     vec2 displacedCoord = texCoordBorder;
     float verticalIndicator = 0.0;
-    vec2 noiseVec = texture2D(noisetex, vec2(frameTimeCounter * 0.06)).rb;
+    vec2 noiseVec = texture2DLod(noisetex, vec2(frameTimeCounter * 0.06), 0.0).rb;
 
     applyVerticalScreenDisplacement(displacedCoord, verticalIndicator, 1.0, 1.0, 1.0, true);
     float verticalOffset = displacedCoord.y - texCoordBorder.y;

@@ -1,7 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
@@ -66,23 +66,27 @@ void main() {
 
         vec4 translucentMult = vec4(mix(vec3(0.666), color.rgb * (1.0 - pow2(pow2(color.a))), color.a), 1.0);
 
-        #if defined BORDER_FOG && !defined DREAM_TWEAKED_BORDERFOG || RAINBOW_CLOUD != 0 || defined AURORA_INFLUENCE
+        #if defined BORDER_FOG || RAINBOW_CLOUD != 0 || defined AURORA_INFLUENCE
             vec3 screenPos = vec3(gl_FragCoord.xy / vec2(viewWidth, viewHeight), gl_FragCoord.z);
             #ifdef TAA
                 vec3 viewPos = ScreenToView(vec3(TAAJitter(screenPos.xy, -0.5), screenPos.z));
             #else
                 vec3 viewPos = ScreenToView(screenPos);
             #endif
-            #if defined BORDER_FOG && !defined DREAM_TWEAKED_BORDERFOG
-                vec3 playerPos = ViewToPlayer(viewPos);
+            vec3 playerPos = ViewToPlayer(viewPos);
+            float xzMaxDistance = max(abs(playerPos.x), abs(playerPos.z));
 
-                float xzMaxDistance = max(abs(playerPos.x), abs(playerPos.z));
+            #if MC_VERSION < 12106
                 float cloudDistance = 375.0;
-                cloudDistance = clamp((cloudDistance - xzMaxDistance) / cloudDistance, 0.0, 1.0);
-                color.a *= clamp01(cloudDistance * 3.0);
+            #else
+                float cloudDistance = 2000.0;
             #endif
+
+            cloudDistance = clamp((cloudDistance - xzMaxDistance) / cloudDistance, 0.0, 1.0);
+            color.a *= clamp01(cloudDistance * 3.0);
         #endif
-        
+
+        color.a *= CLOUD_TRANSPARENCY;        
 
         #ifdef OVERWORLD
             vec3 cloudLight = mix(vec3(0.8, 1.6, 1.5) * sqrt1(nightFactor), mix(dayDownSkyColor, dayMiddleSkyColor, 0.1), sunFactor);
@@ -114,7 +118,6 @@ void main() {
                 color.rgb *= moonPhaseInfluence;
             #endif
         #endif
-        color.a *= CLOUD_TRANSPARENCY;
 
         #ifdef COLOR_CODED_PROGRAMS
             ColorCodeProgram(color, -1);

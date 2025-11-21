@@ -1,9 +1,14 @@
-//////////////////////////////////
-// Complementary Base by EminGT //
-//////////////////////////////////
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
+// With Euphoria Patches by SpacEagle17 //
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -68,7 +73,7 @@ void main() {
     float materialMask = 0.0;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
-    float purkinjeOverwrite = 0.0, emission = 0.0;
+    float purkinjeOverwrite = 0.0, emission = 0.0, enderDragonDead = 1.0;
 
     #ifndef GBUFFERS_LINE
         #ifdef SS_BLOCKLIGHT
@@ -77,7 +82,8 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoord, false, false, false,
-                   false, 0, 0.0, 0.0, 0.0, purkinjeOverwrite, false);
+                   false, 0, 0.0, 0.0, 0.0, purkinjeOverwrite, false,
+                   enderDragonDead);
     #endif
 
     if (abs(color.a - 0.4) + dot(color.rgb, color.rgb) < 0.01) {
@@ -127,7 +133,7 @@ void main() {
     gl_FragData[1] = vec4(0.0, materialMask, 0.0, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #ifdef SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(0.0, 0.0, 0.0, 0.0);
     #endif
 }
@@ -156,10 +162,6 @@ flat out vec4 glColor;
 //Includes//
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
-#endif
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
 #endif
 
 #ifdef WAVE_EVERYTHING

@@ -1,5 +1,5 @@
 vec3 DoBSLTonemap(vec3 color) {
-    color = T_EXPOSURE * color;
+    color = TM_EXPOSURE * color;
     color = color / pow(pow(color, vec3(TM_WHITE_CURVE)) + 1.0, vec3(1.0 / TM_WHITE_CURVE));
     color = pow(color, mix(vec3(T_LOWER_CURVE), vec3(T_UPPER_CURVE), sqrt(color)));
 
@@ -12,9 +12,70 @@ void linearToRGB(inout vec3 color) {
 }
 
 void doColorAdjustments(inout vec3 color) {
-    color = (T_EXPOSURE - 0.40) * color;
-    // color = color / pow(pow(color, vec3(TM_WHITE_CURVE * 0.5)) + 1.0, vec3(1.0 / (TM_WHITE_CURVE * 0.5)));
-    color = pow(color, mix(vec3(T_LOWER_CURVE - 0.20), vec3(T_UPPER_CURVE - 0.30), sqrt(color)));
+    color = TM_EXPOSURE * color;
+    color = pow(color, mix(vec3(T_LOWER_CURVE - 0.10), vec3(T_UPPER_CURVE - 0.30), sqrt(color)));
+}
+
+vec3 DoCompTonemap(inout vec3 color) {
+    // Lottes tonemap modified for Complementary Shaders
+    // Lottes 2016, "Advanced Techniques and Optimization of HDR Color Pipelines"
+    // http://32ipi028l5q82yhj72224m8j.wpengine.netdna-cdn.com/wp-content/uploads/2016/03/GdcVdrLottes.pdf
+    color = TM_EXPOSURE * color;
+
+    float colorMax = max(color.r, max(color.g, color.b));
+    float initialLuminance = GetLuminance(color);
+
+    vec3 a      = vec3(TM_CONTRAST); // General Contrast
+    vec3 d      = vec3(1.0); // Roll-off control
+    vec3 hdrMax = vec3(8.0); // Maximum input brightness
+    vec3 midIn  = vec3(0.25); // Input middle gray
+    vec3 midOut = vec3(0.25); // Output middle gray
+
+    vec3 a_d = a * d;
+    vec3 hdrMaxA = pow(hdrMax, a);
+    vec3 hdrMaxAD = pow(hdrMax, a_d);
+    vec3 midInA = pow(midIn, a);
+    vec3 midInAD = pow(midIn, a_d);
+    vec3 HM1 = hdrMaxA * midOut;
+    vec3 HM2 = hdrMaxAD - midInAD;
+
+    vec3 b = (-midInA + HM1) / (HM2 * midOut);
+    vec3 c = (hdrMaxAD * midInA - HM1 * midInAD) / (HM2 * midOut);
+
+    vec3 colorOut = pow(color, a) / (pow(color, a_d) * b + c);
+
+    linearToRGB(colorOut);
+
+    // Remove tonemapping from darker colors for better readability
+    const float darkLiftStart = 0.1;
+    const float darkLiftMix = 0.75;
+    float darkLift = smoothstep(darkLiftStart, 0.0, initialLuminance);
+    vec3 smoothColor = pow(color, vec3(1.0 / 2.2));
+    colorOut = mix(colorOut, smoothColor, darkLift * darkLiftMix * max0(0.55 - abs(1.05 - TM_CONTRAST)) / 0.55);
+    
+    // Path to White
+    const float wpInputCurveStart = 0.0;
+    const float wpInputCurveMax = 16.0; // Increase this value to reduce the effect of white path
+    float modifiedLuminance = pow(initialLuminance / wpInputCurveMax, 2.0 - TM_WHITE_PATH) * wpInputCurveMax;
+    float whitePath = smoothstep(wpInputCurveStart, wpInputCurveMax, modifiedLuminance);
+    colorOut = mix(colorOut, vec3(1.0), whitePath);
+
+    // Desaturate dark colors
+    const float dpInputCurveStart = 0.1;
+    const float dpInputCurveMax = 0.0;
+    float desaturatePath = smoothstep(dpInputCurveStart, dpInputCurveMax, initialLuminance);
+    colorOut = mix(colorOut, vec3(GetLuminance(colorOut)), desaturatePath * TM_DARK_DESATURATION);
+
+    doColorAdjustments(colorOut);
+    
+    color = clamp01(colorOut);
+    return color;
+}
+
+float rollOffBrightValues(vec3 color, float intensity) {
+    float luminance = GetLuminance(color);
+    float rolled = luminance / (1.0 + luminance * intensity);
+    return rolled / max(luminance, 0.0001);
 }
 
 float saturationTM = T_SATURATION;
@@ -53,6 +114,9 @@ vec3 LottesTonemap(vec3 color) {
 vec3 ACESTonemap(vec3 color) {
     float white = ACES_WHITE;
     const float exposure_bias = ACES_EXPOSURE;
+    
+    color *= rollOffBrightValues(color, ACES_BRIGHTNESS_ROLLOFF);
+
     const float A = 0.0245786f;
     const float B = 0.000090537f;
     const float C = 0.983729f;
@@ -85,6 +149,9 @@ vec3 ACESTonemap(vec3 color) {
 vec3 ACESRedModified(vec3 color) {
     float white = ACES_WHITE;
     const float exposure_bias = ACES_EXPOSURE;
+
+    color *= rollOffBrightValues(color, ACES_BRIGHTNESS_ROLLOFF);
+
     const float A = 0.0245786f;
     const float B = 0.000090537f;
     const float C = 0.983729f;

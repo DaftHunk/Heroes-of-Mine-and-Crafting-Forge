@@ -15,7 +15,7 @@
     #undef NO_WAVING_INDOORS
 #endif
 
-#if defined WAVING_LEAVES
+#ifdef WAVING_LEAVES
     #define WAVING_LEAVES_ENABLED
 #endif
 

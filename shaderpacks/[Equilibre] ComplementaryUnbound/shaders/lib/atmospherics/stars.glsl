@@ -1,3 +1,5 @@
+#if !defined STARS_FILE_INCLUDED
+#define STARS_FILE_INCLUDED
 #include "/lib/colors/skyColors.glsl"
 #include "/lib/shaderSettings/stars.glsl"
 
@@ -19,8 +21,11 @@ vec2 GetStarCoord(vec3 viewPos, float sphereness) {
     return starCoord.xz;
 }
 
-vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float starAmount) { 
-    float starsAroundSun = 1.0;   
+vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float starAmount) {
+    #if NIGHT_STAR_AMOUNT == 0
+        return vec3(0.0, 0.0, 0.0);
+    #endif
+    float starsAroundSun = 1.0;
     #ifdef CELESTIAL_BOTH_HEMISPHERES
         float starBelowHorizonBrightness = 1.0;
         float horizonFactor = exp(-pow(VdotU / 0.1, 2.0));
@@ -48,14 +53,17 @@ vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float st
     
     float star = GetStarNoise(starCoord.xy) * GetStarNoise(starCoord.xy+0.1) * GetStarNoise(starCoord.xy+0.23);
 
-    #if MORE_STARS_OVERWORLD == 1 || defined SPOOKY
-        star = max0((star - 0.5) * 0.55);
-    #elif MORE_STARS_OVERWORLD == 2
-        star = max0((star - 0.4) * 0.45);
+    #if NIGHT_STAR_AMOUNT == 1
+        star -= 0.82;
+        star *= 2.0;
     #elif NIGHT_STAR_AMOUNT == 2
-        star = max0(star - 0.7);
-    #else
-        star = max0((star - 0.6) * 0.65);
+        star -= 0.7;
+    #elif NIGHT_STAR_AMOUNT == 3
+        star -= 0.62;
+        star *= 0.75;
+    #elif NIGHT_STAR_AMOUNT == 4
+        star -= 0.52;
+        star *= 0.55;
     #endif
 
     star = max0(star - starAmount * 0.1);
@@ -82,14 +90,12 @@ vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float st
         spookyStarMult = 2.0;
     #endif
 
-    const float starBrightness = STAR_BRIGHTNESS > 3.0 ? ((STAR_BRIGHTNESS - 3.0) * 0.1) : STAR_BRIGHTNESS;
-
     vec3 starColor = GetStarColor(starCoord, 
                                 vec3(0.38, 0.4, 0.5),
                                   vec3(STAR_COLOR_1_OW_R, STAR_COLOR_1_OW_G, STAR_COLOR_1_OW_B),
                                   vec3(STAR_COLOR_2_OW_R, STAR_COLOR_2_OW_G, STAR_COLOR_2_OW_B),
                                   vec3(STAR_COLOR_3_OW_R, STAR_COLOR_3_OW_G, STAR_COLOR_3_OW_B),
-                                  STAR_COLOR_VARIATION_OW);
+                                  float(STAR_COLOR_VARIATION_OW));
 
     vec3 stars = 40.0 * star * starColor * max(starBrightness, spookyStarMult);
 
@@ -99,3 +105,4 @@ vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float st
 
     return stars;
 }
+#endif

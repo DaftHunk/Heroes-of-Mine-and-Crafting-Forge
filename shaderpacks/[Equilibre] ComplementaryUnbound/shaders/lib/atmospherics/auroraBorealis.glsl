@@ -122,7 +122,7 @@ vec3 AuroraAmbientColor(vec3 color, vec3 viewPos) {
         #elif defined GBUFFERS_CLOUDS
             auroraColor *= 0.6;
             visibility *= AURORA_CLOUD_INFLUENCE_INTENSITY;
-        #elif defined COMPOSITE
+        #elif defined COMPOSITE1
             visibility *= AURORA_CLOUD_INFLUENCE_INTENSITY;
             return mix(color, auroraColor, visibility);
         #else
@@ -170,18 +170,18 @@ vec3 GetAuroraBorealis(vec3 viewPos, float VdotU, float dither) {
             #if AURORA_STYLE == 1
                 planePos = floor(planePos) * 0.0007;
 
-                float noise = texture2D(noisetex, planePos).b;
+                float noise = texture2DLod(noisetex, planePos, 0.0).b;
                 noise = pow2(pow2(pow2(pow2(1.0 - 2.0 * abs(noise - 0.5)))));
 
-                noise *= pow1_5(texture2D(noisetex, planePos * 100.0 + auroraAnimate).b);
+                noise *= pow1_5(texture2DLod(noisetex, planePos * 100.0 + auroraAnimate, 0.0).b);
             #else
                 planePos *= 0.0007;
 
-                float noise = texture2D(noisetex, planePos).r;
+                float noise = texture2DLod(noisetex, planePos, 0.0).r;
                 noise = pow2(pow2(pow2(pow2(1.0 - 2.0 * abs(noise - 0.5)))));
 
-                noise *= texture2D(noisetex, planePos * 3.0 + auroraAnimate).b;
-                noise *= texture2D(noisetex, planePos * 5.0 - auroraAnimate).b;
+                noise *= texture2DLod(noisetex, planePos * 3.0 + auroraAnimate, 0.0).b;
+                noise *= texture2DLod(noisetex, planePos * 5.0 - auroraAnimate, 0.0).b;
             #endif
 
             float currentM = 1.0 - current;

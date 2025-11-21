@@ -1,3 +1,6 @@
+#if !defined PIXELATION_FILE
+#define PIXELATION_FILE
+
 #if PIXEL_SCALE == -2
     #define PIXEL_TEXEL_SCALE 4.0
 #elif PIXEL_SCALE == -1
@@ -90,3 +93,5 @@
         return value + valueOffset;
     }
 #endif
+
+#endif // !defined PIXELATION_FILE

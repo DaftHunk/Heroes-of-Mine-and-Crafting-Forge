@@ -1,15 +1,7 @@
 #ifndef DEFERRED1_SETTINGS_FILE
 #define DEFERRED1_SETTINGS_FILE
 
-#define SSAO_QUALI_DEFINE 2 //[0 2 3]
-#define SSAO_I 100 //[0 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 220 240 260 280 300]
-
-#if SSAO_I > 0
-    #define SSAO_QUALI SSAO_QUALI_DEFINE
-#else
-    #define SSAO_QUALI 0
-#endif
-
+#include "/lib/shaderSettings/SSAO.glsl"
 
 // Euphoria Patches
 
@@ -18,5 +10,9 @@
 #define NETHER_NOISE 0 //[0 1]
 
 //#define END_SMOKE
+
+#define EP_END_FLASH 0 //[0 1 2]
+#ifdef EP_END_FLASH
+#endif
 
 #endif

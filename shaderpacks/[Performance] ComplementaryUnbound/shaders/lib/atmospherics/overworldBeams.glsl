@@ -5,8 +5,8 @@ vec3 beamCol = normalize(ColorBeam) * 3.0 * (2.5 - 1.0 * vlFactor) * OVERWORLD_B
 vec2 wind = vec2(syncedTime * 0.0056);
 
 float BeamNoise(vec2 planeCoord, vec2 wind) {
-    float noise = texture2D(noisetex, planeCoord * 0.275   - wind * 0.0625).b;
-          noise+= texture2D(noisetex, planeCoord * 0.34375 + wind * 0.0575).b * 10.0;
+    float noise = texture2DLod(noisetex, planeCoord * 0.275   - wind * 0.0625, 0.0).b;
+          noise+= texture2DLod(noisetex, planeCoord * 0.34375 + wind * 0.0575, 0.0).b * 10.0;
 
     return noise;
 }
@@ -32,7 +32,7 @@ vec4 DrawOverworldBeams(float VdotU, vec3 playerPos, vec3 viewPos) {
             beamCol *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
         #endif
         #ifdef AURORA_INFLUENCE
-            beamCol = mix(AuroraAmbientColor(beamCol, viewPos), beamCol, auroraSpookyMix);
+            beamCol = mix(AuroraAmbientColor(beamCol, viewPos), beamCol, auroraSpookyMix) * OVERWORLD_BEAMS_INTENSITY;
         #endif
 
         for(int i = 0; i < sampleCount; i++) {
@@ -43,7 +43,7 @@ vec4 DrawOverworldBeams(float VdotU, vec3 playerPos, vec3 viewPos) {
 
             if (noise > 0.0) {
                 noise *= 0.55;
-                float fireNoise = texture2D(noisetex, abs(planeCoord * 0.2) - wind).b;
+                float fireNoise = texture2DLod(noisetex, abs(planeCoord * 0.2) - wind, 0.0).b;
                 noise *= 0.5 * fireNoise + 0.75;
                 noise = noise * noise * 3.0 / sampleCount;
                 noise *= mix(1.0, sqrt3(VdotUM2), 0.25);

@@ -1,11 +1,16 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/materials.glsl"
+#include "/lib/shaderSettings/SSAO.glsl"
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -49,8 +54,8 @@ vec2 lmCoordM = lmCoord;
     #include "/lib/antialiasing/jitter.glsl"
 #endif
 
-#ifdef ACL_GROUND_LEAVES_FIX
-    #include "/lib/misc/leavesVoxelization.glsl"
+#ifdef ACT_GROUND_LEAVES_FIX
+    #include "/lib/voxelization/leavesVoxelization.glsl"
 #endif
 
 #if defined ATM_COLOR_MULTS || defined SPOOKY
@@ -116,12 +121,15 @@ void main() {
     float IPBRMult = 1.0;
     bool isFoliage = false;
     vec3 dhColor = color.rgb;
-    float purkinjeOverwrite = 0.0;
+    float purkinjeOverwrite = 0.0, enderDragonDead = 1.0;
 
     float lavaNoiseIntensity = LAVA_NOISE_INTENSITY;
 
+    float dhSSAOBrightnessBoost = 1.05;
+
     if (mat == DH_BLOCK_LEAVES) {
         #include "/lib/materials/specificMaterials/terrain/leaves.glsl"
+	    dhSSAOBrightnessBoost = 1.35; // make brighter to compensate SSAO
         #ifdef SPOOKY
             int seed = worldDay / 2; // Thanks to Bálint
             int currTime = (worldDay % 2) * 24000 + worldTime; // Effect happens every 2 minecraft days
@@ -133,16 +141,29 @@ void main() {
         #endif
     } else if (mat == DH_BLOCK_GRASS) {
         smoothnessG = pow2(color.g) * 0.85;
+	    dhSSAOBrightnessBoost = mix(1.0, 1.2, 1.0 - clamp01(dot(worldGeoNormal, ViewToPlayer(upVec)))); // only make brighter on the sides
+    } else if (mat == DH_BLOCK_SNOW) {
+        #include "/lib/materials/specificMaterials/terrain/snow.glsl"
+	    dhSSAOBrightnessBoost = 1.19;
+    } else if (mat == DH_BLOCK_LAVA) {
+        #include "/lib/materials/specificMaterials/terrain/lava.glsl"
+        #ifndef NETHER
+            color.rgb *= 0.75;
+        #else
+            color.rgb *= 0.89;
+        #endif
+	    dhSSAOBrightnessBoost = 0.9;        
     } else if (mat == DH_BLOCK_ILLUMINATED) {
         emission = 2.5;
         snowNoiseIntensity = 0.0;
         sandNoiseIntensity = 0.2;
         mossNoiseIntensity = 0.2;
-    } else if (mat == DH_BLOCK_SNOW) {
-        #include "/lib/materials/specificMaterials/terrain/snow.glsl"
-    } else if (mat == DH_BLOCK_LAVA) {
-        #include "/lib/materials/specificMaterials/terrain/lava.glsl"
+	    dhSSAOBrightnessBoost = 1.2;
     }
+
+    #if SSAO_QUALI > 0
+        color.rgb *= dhSSAOBrightnessBoost;
+    #endif
 
     #ifdef SNOWY_WORLD
         DoSnowyWorld(color, smoothnessG, highlightMult, smoothnessD, emission,
@@ -194,16 +215,15 @@ void main() {
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
     #endif
 
-    bool isLightSource = lmCoord.x > 0.99;
-
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, false,
+               enderDragonDead);
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
     gl_FragData[1] = gl_FragData[1] = vec4(smoothnessG, 0.0, 0.0, lmCoordM.x + clamp01(purkinjeOverwrite) + clamp01(emission));
     #ifdef SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(lightAlbedo, 0.0);
     #endif
 }
@@ -232,9 +252,6 @@ out vec4 glColor;
 //Includes//
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
-#endif
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
 #endif
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"

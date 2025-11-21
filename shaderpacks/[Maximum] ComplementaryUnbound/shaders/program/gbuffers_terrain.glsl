@@ -1,9 +1,9 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 #extension GL_ARB_derivative_control : enable
-#ifdef GL_ARB_derivative_controlAdd
+#ifdef GL_ARB_derivative_control
     #define USE_FINE_DERIVATIVES
 #endif
 
@@ -21,6 +21,10 @@
 #define EYE_RED_PROBABILITY 0.07 //[0.00 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.10 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 0.20 0.21 0.22 0.23 0.24 0.25 0.26 0.27 0.28 0.29 0.30 0.31 0.32 0.33 0.34 0.35 0.36 0.37 0.38 0.39 0.40 0.41 0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.50 0.51 0.52 0.53 0.54 0.55 0.56 0.57 0.58 0.59 0.60 0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.70 0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.80 0.81 0.82 0.83 0.84 0.85 0.86 0.87 0.88 0.89 0.90 0.91 0.92 0.93 0.94 0.95 0.96 0.97 0.98 0.99 1.00]
 //#define NIGHT_DESATURATION
 
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
+
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
 
@@ -28,7 +32,11 @@ flat in int mat;
 flat in int blockLightEmission;
 
 in vec2 texCoord;
-in vec2 lmCoord;
+#ifdef GBUFFERS_COLORWHEEL
+    vec2 lmCoord;
+#else
+    in vec2 lmCoord;
+#endif
 in vec2 signMidCoordPos;
 flat in vec2 absMidCoordPos;
 flat in vec2 midCoord;
@@ -60,13 +68,18 @@ in vec4 glColorRaw;
 
 //Pipeline Constants//
 #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0
-    const float voxelDistance = 128.0;
+    const float voxelDistance = 64.0;
 #elif COLORED_LIGHTING_INTERNAL > 0
-    const float voxelDistance = 32.0;
+    #if WORLD_SPACE_REFLECTIONS_INTERNAL == -1
+        const float voxelDistance = 32.0;
+    #else
+        const float voxelDistance = 64.0;
+    #endif
 #endif
 
 //Common Variables//
 float NdotU = dot(normal, upVec);
+float geoNdotU = NdotU;
 float NdotUmax0 = max(NdotU, 0.0);
 float SdotU = dot(sunVec, upVec);
 float sunFactor = SdotU < 0.0 ? clamp(SdotU + 0.375, 0.0, 0.75) / 0.75 : clamp(SdotU + 0.03125, 0.0, 0.0625) / 0.0625;
@@ -95,25 +108,21 @@ vec4 glColor = glColorRaw;
 
 //Common Functions//
 void DoFoliageColorTweaks(inout vec3 color, inout vec3 shadowMult, inout float snowMinNdotU, vec3 viewPos, vec3 nViewPos, float lViewPos, float dither) {
-    #ifdef DREAM_TWEAKED_LIGHTING
-        return;
-    #endif
     float factor = max(80.0 - lViewPos, 0.0);
     shadowMult *= 1.0 + 0.004 * noonFactor * factor;
 
-    #if defined IPBR && !defined IPBR_COMPATIBILITY_MODE
-        if (signMidCoordPos.x < 0.0) color.rgb *= 1.08;
-        else color.rgb *= 0.93;
+    #if defined IPBR && !defined IPBR_COMPAT_MODE
+        color.rgb *= 0.97 - 0.2 * signMidCoordPos.x;
     #endif
+
+    //#define FOLIAGE_ALT_SUBSURFACE
 
     #ifdef FOLIAGE_ALT_SUBSURFACE
         float edgeSize = 0.12;
         float edgeEffectFactor = 0.75;
 
-        edgeEffectFactor *= (sqrt1(abs(dot(nViewPos, normal))) - 0.1) * 1.111;
-
         vec2 texCoordM = texCoord;
-             texCoordM.y -= edgeSize * pow2(dither) * absMidCoordPos.y;
+             texCoordM.y -= edgeSize * dither * absMidCoordPos.y;
              texCoordM.y = max(texCoordM.y, midCoord.y - absMidCoordPos.y);
         vec4 colorSample = texture2DLod(tex, texCoordM, 0);
 
@@ -122,7 +131,7 @@ void DoFoliageColorTweaks(inout vec3 color, inout vec3 shadowMult, inout float s
             shadowMult *= 1.0 + edgeEffectFactor * (1.0 + edgeFactor);
         }
 
-        shadowMult *= 1.0 + 0.2333 * edgeEffectFactor * (dot(normal, lightVec) - 1.0);
+        shadowMult *= 1.03 + 0.2333 * edgeEffectFactor * (dot(normal, lightVec) - 1.0);
     #endif
 
     #ifdef SNOWY_WORLD
@@ -139,7 +148,7 @@ void DoFoliageColorTweaks(inout vec3 color, inout vec3 shadowMult, inout float s
 }
 
 void DoBrightBlockTweaks(vec3 color, float minLight, inout vec3 shadowMult, inout float highlightMult) {
-    float factor = mix(minLight, 1.0, pow2(pow2(color.r)));
+    float factor = mix(minLight * 0.5 + 0.5, 1.0, pow2(pow2(color.r)));
     shadowMult = vec3(factor);
     highlightMult /= factor;
 }
@@ -186,11 +195,11 @@ void DoOceanBlockTweaks(inout float smoothnessD) {
 #endif
 
 #ifdef PUDDLE_VOXELIZATION
-    #include "/lib/misc/puddleVoxelization.glsl"
+    #include "/lib/voxelization/puddleVoxelization.glsl"
 #endif
 
-#ifdef ACL_GROUND_LEAVES_FIX
-    #include "/lib/misc/leavesVoxelization.glsl"
+#ifdef ACT_GROUND_LEAVES_FIX
+    #include "/lib/voxelization/leavesVoxelization.glsl"
 #endif
 
 #ifdef SNOWY_WORLD
@@ -250,32 +259,39 @@ void main() {
         #endif
     #endif
 
-    float smoothnessD = 0.0, materialMask = 0.0, skyLightFactor = 0.0;
+    float smoothnessD = 0.0, materialMask = 0.0;
 
     #if !defined POM || !defined POM_ALLOW_CUTOUT
         if (color.a <= 0.00001) discard; // 6WIR4HT23
     #endif
 
     vec3 colorP = color.rgb;
-    color.rgb *= glColor.rgb;
 
-
+    #ifdef GBUFFERS_COLORWHEEL
+        float ao;
+        vec4 overlayColor;
+        
+        clrwl_computeFragment(color, color, lmCoord, ao, overlayColor);
+        color.rgb = mix(color.rgb, overlayColor.rgb, overlayColor.a);
+        lmCoord = clamp((lmCoord - 1.0 / 32.0) * 32.0 / 30.0, 0.0, 1.0);
+    #else
+        color.rgb *= glColor.rgb;
+    #endif
 
     float dither = Bayer64(gl_FragCoord.xy);
     #ifdef TAA
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
 
-    float luminance = GetLuminance(color.rgb);
-
     int subsurfaceMode = 0;
     bool noSmoothLighting = false, noDirectionalShading = false, noVanillaAO = false, centerShadowBias = false, noGeneratedNormals = false, doTileRandomisation = true, isFoliage = false;
-    float smoothnessG = 0.0, highlightMult = 1.0, emission = 0.0, noiseFactor = 1.0, snowFactor = 1.0, snowMinNdotU = 0.0, noPuddles = 0.0, overlayNoiseIntensity = 1.0, snowNoiseIntensity = 1.0, sandNoiseIntensity = 1.0, mossNoiseIntensity = 1.0, overlayNoiseTransparentOverwrite = 0.0, overlayNoiseEmission = 1.0, IPBRMult = 1.0, lavaNoiseIntensity = LAVA_NOISE_INTENSITY;
+    float smoothnessG = 0.0, highlightMult = 1.0, emission = 0.0, noiseFactor = 1.0, snowFactor = 1.0, snowMinNdotU = 0.0, noPuddles = 0.0, overlayNoiseIntensity = 1.0, snowNoiseIntensity = 1.0, sandNoiseIntensity = 1.0, mossNoiseIntensity = 1.0, overlayNoiseTransparentOverwrite = 0.0, overlayNoiseEmission = 1.0, IPBRMult = 1.0, lavaNoiseIntensity = LAVA_NOISE_INTENSITY, enderDragonDead = 1.0;
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     vec3 dhColor = vec3(1.0);
     float purkinjeOverwrite = 0.0;
+    float SSBLAlpha = 1.0;
 
     bool isLightSource = false;
     if (lmCoord.x > 0.99 || blockLightEmission > 0) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources
@@ -294,34 +310,35 @@ void main() {
         isFoliage = true;
         sandNoiseIntensity = 0.3, mossNoiseIntensity = 0.0;
     }
+    #ifdef EYES
+        #ifdef SPOOKY
+            vec3 eyes1 = vec3(0.0);
+            vec3 eyes2 = vec3(0.0);
+            float sideRandom = hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.00001, vec3(100)));
+            vec3 blockUVEyes = blockUV;
+            if (step(0.5, sideRandom) > 0.0) { // Randomly make eyes visible only on either the x or z axis
+                blockUVEyes.x = 0.0;
+            } else {
+                blockUVEyes.z = 0.0;
+            }
+            float spookyEyesFrequency = EYE_FREQUENCY;
+            float spookyEyesSpeed = EYE_SPEED;
 
-    #if defined SPOOKY && defined EYES
-        vec3 eyes1 = vec3(0.0);
-        vec3 eyes2 = vec3(0.0);
-        float sideRandom = hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.00001, vec3(100)));
-        vec3 blockUVEyes = blockUV;
-        if (step(0.5, sideRandom) > 0.0) { // Randomly make eyes visible only on either the x or z axis
-            blockUVEyes.x = 0.0;
-        } else {
-            blockUVEyes.z = 0.0;
-        }
-        float spookyEyesFrequency = EYE_FREQUENCY;
-        float spookyEyesSpeed = EYE_SPEED;
-
-        float randomEyesTime = 24000 * hash1(worldDay * 3); // Effect happens randomly throughout the day
-        int moreEyesEffect = (int(hash1(worldDay / 2)) % (2 * 24000)) + int(randomEyesTime);
-        if (worldTime > moreEyesEffect && worldTime < moreEyesEffect + 30) { // 30 in ticks - 1.5s, how long the effect will be on
-            spookyEyesFrequency = 20.0; // make eyes appear everywhere
-        }
-        if ((blockUVEyes.x > 0.15 && blockUVEyes.x < 0.43 || blockUVEyes.x < 0.85 && blockUVEyes.x > 0.57 || blockUVEyes.z > 0.15 && blockUVEyes.z < 0.43 || blockUVEyes.z < 0.85 && blockUVEyes.z > 0.57) && blockUVEyes.y > 0.42 && blockUVEyes.y < 0.58 && abs(clamp01(dot(normal, upVec))) < 0.99) eyes1 = vec3(1.0); // Eye Shape 1 Horizontal
-        if ((blockUVEyes.x > 0.65 && blockUVEyes.x < 0.8 || blockUVEyes.x < 0.35 && blockUVEyes.x > 0.2 || blockUVEyes.z > 0.65 && blockUVEyes.z < 0.8 || blockUVEyes.z < 0.35 && blockUVEyes.z > 0.2) && blockUVEyes.y > 0.3 && blockUVEyes.y < 0.7 && abs(clamp01(dot(normal, upVec))) < 0.99) eyes2 = vec3(1.0); // Eye Shape 2 Vertical
-        vec3 spookyEyes = mix(eyes1, eyes2, step(0.75, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.00005, vec3(100))))); // have either eye shape 1 or 2 randomly, the horizontal ones have a 0.75 to 0.25 higher probability of appearing
-        spookyEyes *= vec3(step(1.0075 - spookyEyesFrequency * 0.01, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.0000005 * spookyEyesSpeed, vec3(100))))); // Make them appear randomly and much less
+            float randomEyesTime = 24000 * hash1(worldDay * 3); // Effect happens randomly throughout the day
+            int moreEyesEffect = (int(hash1(worldDay / 2)) % (2 * 24000)) + int(randomEyesTime);
+            if (worldTime > moreEyesEffect && worldTime < moreEyesEffect + 30) { // 30 in ticks - 1.5s, how long the effect will be on
+                spookyEyesFrequency = 20.0; // make eyes appear everywhere
+            }
+            if ((blockUVEyes.x > 0.15 && blockUVEyes.x < 0.43 || blockUVEyes.x < 0.85 && blockUVEyes.x > 0.57 || blockUVEyes.z > 0.15 && blockUVEyes.z < 0.43 || blockUVEyes.z < 0.85 && blockUVEyes.z > 0.57) && blockUVEyes.y > 0.42 && blockUVEyes.y < 0.58 && abs(clamp01(dot(normal, upVec))) < 0.99) eyes1 = vec3(1.0); // Eye Shape 1 Horizontal
+            if ((blockUVEyes.x > 0.65 && blockUVEyes.x < 0.8 || blockUVEyes.x < 0.35 && blockUVEyes.x > 0.2 || blockUVEyes.z > 0.65 && blockUVEyes.z < 0.8 || blockUVEyes.z < 0.35 && blockUVEyes.z > 0.2) && blockUVEyes.y > 0.3 && blockUVEyes.y < 0.7 && abs(clamp01(dot(normal, upVec))) < 0.99) eyes2 = vec3(1.0); // Eye Shape 2 Vertical
+            vec3 spookyEyes = mix(eyes1, eyes2, step(0.75, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.00005, vec3(100))))); // have either eye shape 1 or 2 randomly, the horizontal ones have a 0.75 to 0.25 higher probability of appearing
+            spookyEyes *= vec3(step(1.0075 - spookyEyesFrequency * 0.01, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.0000005 * spookyEyesSpeed, vec3(100))))); // Make them appear randomly and much less
+        #endif
     #endif
 
     #ifdef IPBR
         vec3 maRecolor = vec3(0.0);
-        #include "/lib/materials/materialHandling/terrainMaterials.glsl"
+        #include "/lib/materials/materialHandling/terrainIPBR.glsl"
         #ifdef REFLECTIVE_WORLD
             smoothnessD = 1.0;
             smoothnessG = 1.0;
@@ -415,6 +432,7 @@ void main() {
 
     #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS && !defined IPBR
         if (mat == 10476 || mat == 10588 || mat == 10592) { // Crying Obsidian, Respawn Anchor lit and unlit
+            float luminance = GetLuminance(color.rgb);
             emission = sqrt(luminance * luminance) * 10.0;
             color.a *= luminance;
         }
@@ -472,8 +490,8 @@ void main() {
             puddlePosNormal *= 0.1;
             vec2 pNormalCoord1 = puddlePosNormal + vec2(puddleWind.x, puddleWind.y);
             vec2 pNormalCoord2 = puddlePosNormal + vec2(puddleWind.x * -1.5, puddleWind.y * -1.0);
-            vec3 pNormalNoise1 = texture2D(noisetex, pNormalCoord1).rgb;
-            vec3 pNormalNoise2 = texture2D(noisetex, pNormalCoord2).rgb;
+            vec3 pNormalNoise1 = texture2DLod(noisetex, pNormalCoord1, 0.0).rgb;
+            vec3 pNormalNoise2 = texture2DLod(noisetex, pNormalCoord2, 0.0).rgb;
             float pNormalMult = 0.03;
 
             vec3 puddleNormal = vec3((pNormalNoise1.xy + pNormalNoise2.xy - vec2(1.0)) * pNormalMult, 1.0);
@@ -481,9 +499,9 @@ void main() {
 
             #if RAIN_PUDDLES == 1 || RAIN_PUDDLES == 3 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
                 vec2 puddlePosForm = puddlePosNormal * 0.05;
-                float pFormNoise  = texture2D(noisetex, puddlePosForm).b        * 3.0;
-                      pFormNoise += texture2D(noisetex, puddlePosForm * 0.5).b  * 5.0;
-                      pFormNoise += texture2D(noisetex, puddlePosForm * 0.25).b * 8.0;
+                float pFormNoise  = texture2DLod(noisetex, puddlePosForm, 0.0).b        * 3.0;
+                      pFormNoise += texture2DLod(noisetex, puddlePosForm * 0.5, 0.0).b  * 5.0;
+                      pFormNoise += texture2DLod(noisetex, puddlePosForm * 0.25, 0.0).b * 8.0;
                       pFormNoise *= sqrt1(wetnessM) * 0.5625 + 0.4375;
                       pFormNoise  = clamp(pFormNoise - 7.0, 0.0, 1.0);
             #else
@@ -505,7 +523,11 @@ void main() {
     #endif
 
     #ifdef SS_BLOCKLIGHT
-        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
+        float lmCoordXModified = lmCoord.x;
+        #ifdef IS_IRIS
+            lmCoordXModified = lmCoord.x == 1.0 && blockLightEmission < 0.5 ? 0.0 : lmCoord.x;
+        #endif
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoordXModified);
     #endif
 
     #if defined SPOOKY && BLOOD_MOON > 0
@@ -519,7 +541,7 @@ void main() {
     #ifdef SPOOKY
         if (mat != 10068 && mat != 10070) { // Lava
             float noiseAdd = hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.000001, vec3(100)));
-            emission *= mix(clamp(noiseAdd * 1.5, 0.1, 2.0), 1.0, smoothstep(0.1, 0.11, texture2D(noisetex, vec2(frameTimeCounter * 0.008 + noiseAdd)).r));
+            emission *= mix(clamp(noiseAdd * 1.5, 0.1, 2.0), 1.0, smoothstep(0.1, 0.11, texture2DLod(noisetex, vec2(frameTimeCounter * 0.008 + noiseAdd), 0.0).r));
         }
     #endif
 
@@ -527,7 +549,8 @@ void main() {
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
+               enderDragonDead);
 
     #ifdef SS_BLOCKLIGHT
         vec3 lightAlbedo = normalize(color.rgb) * min1(emission);
@@ -539,29 +562,31 @@ void main() {
         #endif
     #endif
 
+    #ifdef DISTANT_HORIZONS
+        if (getDHFadeFactor(playerPos) < dither) {
+            discard;
+        }
+    #endif
+
     #ifdef IPBR
         color.rgb += maRecolor;
     #endif
 
     #if defined SPOOKY && defined EYES
-        vec2 flickerEyeNoise = texture2D(noisetex, vec2(frameTimeCounter * 0.025 + hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.000001, vec3(100))))).rb;
+        vec2 flickerEyeNoise = texture2DLod(noisetex, vec2(frameTimeCounter * 0.025 + hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.000001, vec3(100)))), 0.0).rb;
         if (length(playerPos) > 8.0) {
             vec3 eyesColor = mix(vec3(1.0), vec3(3.0, 0.0, 0.0), vec3(step(1.0 - EYE_RED_PROBABILITY * mix(1.0, 2.0, getBloodMoon(moonPhase, sunVisibility)), hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.0000002, vec3(500)))))); // Make Red eyes appear rarely, 7% chance
             color.rgb += spookyEyes * 3.0 * skyLightCheck * min1(max(flickerEyeNoise.r, flickerEyeNoise.g)) * clamp((1.0 - 1.15 * lmCoord.x) * 10.0, 0.0, 1.0) * eyesColor;
         }
     #endif
 
-    #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
-        #ifdef OVERWORLD
-            skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
-        #else
-            skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
-        #endif
-    #endif
+    float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, mat);
     #endif
+
+    // color.rgb = lmCoord.x == 1.0 && blockLightEmission == 0 ? vec3(1) : vec3(0);
 
     #ifdef SPOOKY
         int seed = worldDay / 2; // Thanks to Bálint
@@ -578,16 +603,16 @@ void main() {
     gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
-        /* DRAWBUFFERS:065 */
+        /* DRAWBUFFERS:064 */
         gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0658 */
-            gl_FragData[3] = vec4(lightAlbedo, 0.0);
+            /* DRAWBUFFERS:0649 */
+            gl_FragData[3] = vec4(lightAlbedo, SSBLAlpha);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
-        gl_FragData[2] = vec4(lightAlbedo, 0.0);
+        /* DRAWBUFFERS:069 */
+        gl_FragData[2] = vec4(lightAlbedo, SSBLAlpha);
     #endif
 }
 
@@ -600,7 +625,12 @@ flat out int mat;
 flat out int blockLightEmission;
 
 out vec2 texCoord;
-out vec2 lmCoord;
+#ifdef GBUFFERS_COLORWHEEL
+    vec2 lmCoord;
+#else
+    out vec2 lmCoord;
+#endif
+
 out vec2 signMidCoordPos;
 flat out vec2 absMidCoordPos;
 flat out vec2 midCoord;
@@ -653,10 +683,6 @@ vec4 glColor = vec4(1.0);
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
-
 float infnorm(vec3 x) {return max(max(abs(x.x), abs(x.y)), abs(x.z));} // Thanks to gri for general non axis aligned normal detection
 float isCross(vec3 x) {return length(abs(normalize(x).xz) - vec2(sqrt(0.5)));}
 
@@ -691,10 +717,12 @@ void main() {
 
     mat = int(mc_Entity.x + 0.5);
 
-    if ((mat == 10132 || mat == 10133)){
-        if (isCross(gl_Normal) < 0.5) mat = 10005; // First detect cross models 
-        else if (infnorm(gl_Normal) < 0.99) mat = 10031; // Then detect extruding faces, but ONLY if it's not already detected as cross
-    }
+    #ifndef GBUFFERS_COLORWHEEL
+        if ((mat == 10132 || mat == 10133)){ // Improve Patrix Resource pack extra grass block model
+            if (isCross(gl_Normal) < 0.5) mat = 10005; // First detect cross models 
+            else if (infnorm(gl_Normal) < 0.99) mat = 10031; // Then detect extruding faces, but ONLY if it's not already detected as cross
+        }
+    #endif
 
     #if ANISOTROPIC_FILTER > 0
         if (mc_Entity.y > 0.5 && dot(normal, upVec) < 0.999) absMidCoordPos = vec2(0.0); // Fix257062
@@ -719,7 +747,7 @@ void main() {
             DoWave(position.xyz, mat);
         #endif
         #ifdef INTERACTIVE_FOLIAGE
-            if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10021 || mat == 10029 || mat == 10023 || mat == 10629 || mat == 10632 || mat == 10777 || mat == 10025 || mat == 10027 || mat == 10923) {
+            if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10021 || mat == 10029 || mat == 10023 || mat == 10629 || mat == 10632 || mat == 10025 || mat == 10027 || mat == 10923 || mat == 10972) {
                 vec3 playerPosM = position.xyz + relativeEyePosition;
                 DoInteractiveWave(playerPosM, mat);
                 position.xyz = playerPosM - relativeEyePosition;
@@ -732,7 +760,7 @@ void main() {
         //          irisThirdPersonPull = eyePosition - cameraPosition;
         //      #endif
         //      vec3 pullCenter = vec3(0.1, -0.1, -0.05) - irisThirdPersonPull;
-        //      float pullFactor = pow(min(abs(sin(1.81 * frameTimeCounter) + cos(0.9124 * frameTimeCounter)), 1.0), 10.0) * 4.0 / (length(position.xyz) + max(20 * texture2D(noisetex, vec2(frameTimeCounter * 0.1)).r, 10.0));
+        //      float pullFactor = pow(min(abs(sin(1.81 * frameTimeCounter) + cos(0.9124 * frameTimeCounter)), 1.0), 10.0) * 4.0 / (length(position.xyz) + max(20 * texture2DLod(noisetex, vec2(frameTimeCounter * 0.1), 0.0).r, 10.0));
         //      vec3 pullDir = pullCenter - position.xyz - at_midBlock.xyz / 64.0;
         //      position.xyz += pullDir * pullFactor;
         //  }

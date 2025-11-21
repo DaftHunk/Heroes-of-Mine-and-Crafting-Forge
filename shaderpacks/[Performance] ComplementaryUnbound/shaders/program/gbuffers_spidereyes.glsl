@@ -1,11 +1,15 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 //#define INTENSE_DEEP_DARK
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -29,21 +33,18 @@ in vec4 glColor;
 void main() {
     vec4 color = texture2D(tex, texCoord) * glColor;
 
-    #ifdef IPBR
-        if (CheckForColor(color.rgb, vec3(224, 121, 250))) { // Enderman Eye Edges
-            color.rgb = vec3(0.8, 0.25, 0.8);
-        }
-    #endif
     #ifdef INTENSE_DEEP_DARK
         if (color.b > 0.1 && color.r < 0.5) { // Warden
             color.rgb = mix(color.rgb, color.rgb + 0.3, darknessFactor);
         }
     #endif
-
-    color.rgb *= 1.0 - 0.6 * pow2(pow2(min1(GetLuminance(color.rgb) * 1.2))); // Fixes ultra bright Breeze
-
-    color.rgb = pow1_5(color.rgb);
-    color.rgb *= pow2(1.0 + color.b + 0.5 * color.g) * 1.5;
+    color.rgb = pow1_5(color.rgb) * (
+        1.5
+        + vec3(4.1, 3.0, 4.1) * max0(color.r * color.b - color.g) // Tweak for Enderman
+        + 5.0 * max0(color.g * color.b - color.r) // Tweak for Warden
+        - 0.5 * sqrt(color.r * color.g * color.b) // Tweak for Breeze
+        - vec3(0.0, 0.7, 0.7) * max0(color.r * color.g - color.b) // Tweak for Copper Golem
+    );
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, -1);
@@ -54,7 +55,7 @@ void main() {
     gl_FragData[1] = vec4(0, 0, 0, 1);
 
     #ifdef ENTITIES_ARE_LIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(1);
     #endif
 }
@@ -80,10 +81,6 @@ out vec4 glColor;
 //Common Functions//
 
 //Includes//
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
 
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"

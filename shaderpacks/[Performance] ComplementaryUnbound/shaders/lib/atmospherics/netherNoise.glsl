@@ -25,8 +25,8 @@ vec3 GetNetherNoise(vec3 viewPos, float VdotU, float dither) {
 
             vec2 planePos = wpos.xz * (0.8 + current) * noiseHeight;
             planePos = (planePos * 0.5 + cameraPositionM * 0.5) * 1.5;
-            float noiseSpots = texture2D(noisetex, planePos * 0.5).g;
-            vec3 noise = texture2D(noisetex, vec2(noiseSpots) + wind).g * netherColor * 2.5 - netherColor * 1.3;
+            float noiseSpots = texture2DLod(noisetex, planePos * 0.5, 0.0).g;
+            vec3 noise = texture2DLod(noisetex, vec2(noiseSpots) + wind, 0.0).g * netherColor * 2.5 - netherColor * 1.3;
 
             float currentM = 1.0 - current;
             spots += noise * currentM * 6.0;

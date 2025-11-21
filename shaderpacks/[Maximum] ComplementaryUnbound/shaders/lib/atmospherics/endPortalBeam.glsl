@@ -14,8 +14,8 @@ vec2 RayAABoxIntersection(vec2 start, vec2 dir, vec2 lower, vec2 upper) {
 }
 
 vec4 GetEndPortalBeamNoise(vec3 relPos) {
-    float colMixFactor = texture(noisetex, (relPos.xz + 0.1 * frameTimeCounter * vec2(-0.5, 1.5)) * 10.0 / noiseTextureResolution).r;
-    float strengthMul = texture(noisetex, (relPos.xz + 0.1 * frameTimeCounter * vec2(1.5, -1.0)) * 5.0 / noiseTextureResolution + 0.2).r;
+    float colMixFactor = texture2DLod(noisetex, (relPos.xz + 0.1 * frameTimeCounter * vec2(-0.5, 1.5)) * 10.0 / noiseTextureResolution, 0.0).r;
+    float strengthMul = texture2DLod(noisetex, (relPos.xz + 0.1 * frameTimeCounter * vec2(1.5, -1.0)) * 5.0 / noiseTextureResolution + 0.2, 0.0).r;
     colMixFactor = pow2(pow2(colMixFactor));
     strengthMul = pow2(strengthMul);
     vec3 col = mix(vec3(0.1137, 0.5569, 0.5255), vec3(0.3725, 0.8863, 0.749), colMixFactor);

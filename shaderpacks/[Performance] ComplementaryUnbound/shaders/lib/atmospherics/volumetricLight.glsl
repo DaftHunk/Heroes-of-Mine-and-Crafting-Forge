@@ -1,6 +1,7 @@
 // Volumetric tracing from Robobo1221, highly modified
 #include "/lib/shaderSettings/volumetricLight.glsl"
 #include "/lib/shaderSettings/endBeams.glsl"
+#include "/lib/shaderSettings/endFlash.glsl"
 #include "/lib/colors/lightAndAmbientColors.glsl"
 //#define BEDROCK_NOISE
 
@@ -39,18 +40,19 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
 
         #ifdef SPECIAL_BIOME_WEATHER
             vlSceneIntensity = mix(vlSceneIntensity, 1.0, inDry * rainFactor);
+            vlColor *= 1.0 + 0.6 * inDry * rainFactor;
         #endif
 
         if (sunVisibility < 0.5) {
             vlSceneIntensity = 0.0;
             
-            float vlMultNightModifier = 0.6 + 0.4 * max0(far - lViewPos1) / far;
+            float vlMultNightModifier = (0.3 + 0.4 * rainFactor2 + 0.5 * max0(far - lViewPos1) / far);
             #ifdef SPECIAL_PALE_GARDEN_LIGHTSHAFTS
                 vlMultNightModifier = mix(vlMultNightModifier, 1.0, inPaleGarden);
             #endif
             vlMult *= vlMultNightModifier;
 
-            vlColor = normalize(pow(vlColor, vec3(1.0 - max0(1.0 - 1.5 * nightFactor))));
+            vlColor = normalize(pow(vlColor, vec3(1.0 - max0(1.0 - 1.5 * nightFactor) + rainFactor)));
             vlColor *= 0.0766 + 0.0766 * vsBrightness;
         } else {
             vlColorReducer = 1.0 / sqrt(vlColor);
@@ -137,10 +139,8 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
         vec4 wpos = gbufferModelViewInverse * viewPos;
         vec3 playerPos = wpos.xyz / wpos.w;
         #if defined END && defined END_BEAMS
-            #ifdef DISTANT_HORIZONS
-                playerPos *= sqrt(renderDistance / far);
-            #endif
-            vec4 enderBeamSample = vec4(DrawEnderBeams(VdotU, playerPos), 1.0);
+            playerPos *= 512.0 / far;
+            vec4 enderBeamSample = vec4(DrawEnderBeams(VdotU, playerPos, nViewPos), 1.0);
             enderBeamSample /= sampleCount;
         #endif
         #if defined OVERWORLD && defined OVERWORLD_BEAMS
@@ -171,6 +171,10 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
                 shadowSample = clamp((shadowSample-shadowPosition.z)*65536.0,0.0,1.0);
 
                 vlSample = vec3(shadowSample);
+                
+                #ifdef END_FLASH_SHADOW_INTERNAL
+                    vlSample = mix(vec3(1.0), vlSample, endFlashIntensity);
+                #endif
 
                 #if SHADOW_QUALITY >= 1
                     if (shadowSample == 0.0) {
@@ -315,26 +319,30 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
     volumetricLight.rgb *= vlMult;
     volumetricLight = max(volumetricLight, vec4(0.0));
 
-    #ifdef DISTANT_HORIZONS
+    #if defined DISTANT_HORIZONS && defined OVERWORLD
         if (isEyeInWater == 0) {
-            #ifdef OVERWORLD
-                float lViewPosM = lViewPos0;
-                if (z0 >= 1.0) {
-                    float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
-                    vec4 screenPosDH = vec4(texCoord, z0DH, 1.0);
-                    vec4 viewPosDH = dhProjectionInverse * (screenPosDH * 2.0 - 1.0);
-                    viewPosDH /= viewPosDH.w;
-                    lViewPosM = length(viewPosDH.xyz);
-                }
-                lViewPosM = min(lViewPosM, renderDistance * 0.6);
+            float lViewPosM = lViewPos0;
+            if (z0 >= 1.0) {
+                float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
+                vec4 screenPosDH = vec4(texCoord, z0DH, 1.0);
+                vec4 viewPosDH = dhProjectionInverse * (screenPosDH * 2.0 - 1.0);
+                viewPosDH /= viewPosDH.w;
+                lViewPosM = length(viewPosDH.xyz);
+            }
+            lViewPosM = min(lViewPosM, renderDistance * 0.6);
 
-                float dhVlStillIntense = max(max(vlSceneIntensity, rainFactor), nightFactor * 0.5);
+            float dhVlStillIntense = max(max(vlSceneIntensity, rainFactor), nightFactor * 0.5);
 
-                volumetricLight *= mix(0.0003 * lViewPosM, 1.0, dhVlStillIntense);
-            #else
-                volumetricLight *= min1(lViewPos1 * 3.0 / renderDistance);
-            #endif
+            volumetricLight *= mix(0.0003 * lViewPosM, 1.0, dhVlStillIntense);
         }
+    #endif
+
+    #ifdef END
+        #ifndef DISTANT_HORIZONS
+            volumetricLight *= sqrt1(min1(lViewPos1 * 2.0 / 512.0));
+        #else
+            volumetricLight *= min1(lViewPos1 * 3.0 / renderDistance);
+        #endif
     #endif
 
     #if RETRO_LOOK == 1

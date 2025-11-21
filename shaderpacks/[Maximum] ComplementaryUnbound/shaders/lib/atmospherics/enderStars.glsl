@@ -32,7 +32,7 @@ vec3 GetEnderStars(vec3 viewPos, float VdotU, float sizeMult, float starAmount) 
                                   vec3(STAR_COLOR_1_END_R, STAR_COLOR_1_END_G, STAR_COLOR_1_END_B),
                                   vec3(STAR_COLOR_2_END_R, STAR_COLOR_2_END_G, STAR_COLOR_2_END_B),
                                   vec3(STAR_COLOR_3_END_R, STAR_COLOR_3_END_G, STAR_COLOR_3_END_B),
-                                  STAR_COLOR_VARIATION_END);
+                                  float(STAR_COLOR_VARIATION_END));
 
     vec3 enderStars = star * starColor * 3000.0 * END_STAR_BRIGHTNESS;
 

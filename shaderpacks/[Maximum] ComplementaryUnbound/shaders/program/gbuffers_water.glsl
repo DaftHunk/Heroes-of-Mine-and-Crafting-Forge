@@ -1,9 +1,9 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT // Can't be filled with white spaces because of Physics Mod detection
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 #extension GL_ARB_derivative_control : enable
-#ifdef GL_ARB_derivative_controlAdd
+#ifdef GL_ARB_derivative_control
     #define USE_FINE_DERIVATIVES
 #endif
 
@@ -14,6 +14,10 @@
 #include "/lib/shaderSettings/emissionMult.glsl"
 #define WAVING_WATER_VERTEX
 
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
+
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
 
@@ -21,7 +25,11 @@ flat in int mat;
 flat in int blockLightEmission;
 
 in vec2 texCoord;
-in vec2 lmCoord;
+#ifdef GBUFFERS_COLORWHEEL_TRANSLUCENT
+    vec2 lmCoord;
+#else
+    in vec2 lmCoord;
+#endif
 in vec2 signMidCoordPos;
 flat in vec2 absMidCoordPos;
 
@@ -103,7 +111,7 @@ float GetLinearDepth(float depth) {
 #if WATER_REFLECT_QUALITY >= 0
     #if defined SKY_EFFECT_REFLECTION && defined OVERWORLD
         #include "/lib/atmospherics/stars.glsl"
-        #ifdef NIGHT_NEBULA
+        #if NIGHT_NEBULAE == 1
             #include "/lib/atmospherics/nightNebula.glsl"
         #endif
 
@@ -147,7 +155,7 @@ float GetLinearDepth(float depth) {
 #endif
 
 #ifdef PORTAL_EDGE_EFFECT
-    #include "/lib/misc/voxelization.glsl"
+    #include "/lib/voxelization/lightVoxelization.glsl"
 #endif
 
 #ifdef CONNECTED_GLASS_EFFECT
@@ -170,6 +178,8 @@ float GetLinearDepth(float depth) {
     #include "/lib/misc/shockwave.glsl"
 #endif
 
+#include "/lib/atmospherics/fog/endCenterFog.glsl"
+
 //Program//
 void main() {
     #if SHOCKWAVE > 0
@@ -177,7 +187,17 @@ void main() {
     #else
         vec4 colorP = texture2D(tex, texCoord);
     #endif
-    vec4 color = colorP * vec4(glColor.rgb, 1.0);
+
+    #ifdef GBUFFERS_COLORWHEEL_TRANSLUCENT
+        float ao;
+        vec4 overlayColor;
+        
+        clrwl_computeFragment(colorP, colorP, lmCoord, ao, overlayColor);
+        vec4 color = mix(colorP, overlayColor, overlayColor.a);
+        lmCoord = clamp((lmCoord - 1.0 / 32.0) * 32.0 / 30.0, 0.0, 1.0);
+    #else
+        vec4 color = colorP * vec4(glColor.rgb, 1.0);
+    #endif
 
     vec3 screenPos = vec3(gl_FragCoord.xy / vec2(viewWidth, viewHeight), gl_FragCoord.z);
     #ifdef TAA
@@ -190,6 +210,12 @@ void main() {
     float dither = Bayer64(gl_FragCoord.xy);
     #ifdef TAA
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
+    #endif
+
+    #ifdef DISTANT_HORIZONS
+        if (getDHFadeFactor(playerPos) < dither) {
+            discard;
+        }
     #endif
 
     #ifdef LIGHT_COLOR_MULTS
@@ -210,17 +236,15 @@ void main() {
     float IPBRMult = 1.0;
     bool isFoliage = false;
     vec3 dhColor = vec3(1.0);
-    float purkinjeOverwrite = 0.0;
+    float purkinjeOverwrite = 0.0, enderDragonDead = 1.0;
 
     #ifdef VL_CLOUDS_ACTIVE
-        float cloudLinearDepth = texelFetch(gaux1, texelCoord, 0).r;
+        float cloudLinearDepth = texelFetch(gaux2, texelCoord, 0).a;
 
         if (pow2(cloudLinearDepth + OSIEBCA * dither) * renderDistance < min(lViewPos, renderDistance)) discard;
     #endif
 
-    #if WATER_MAT_QUALITY >= 3
-        float materialMask = 0.0;
-    #endif
+    float materialMask = 0.0;
 
     vec3 nViewPos = normalize(viewPos);
     float VdotU = dot(nViewPos, upVec);
@@ -232,15 +256,17 @@ void main() {
     vec4 translucentMult = vec4(1.0);
     bool noSmoothLighting = false, noDirectionalShading = false, translucentMultCalculated = false, noGeneratedNormals = false;
     int subsurfaceMode = 0;
-    float smoothnessG = 0.0, highlightMult = 1.0, reflectMult = 0.0, emission = 0.0;
     vec2 lmCoordM = lmCoord;
+    float smoothnessG = 0.0, highlightMult = 1.0, reflectMult = 0.0, emission = 0.0;
     vec3 normalM = VdotN > 0.0 ? -normal : normal; // Inverted Iris Water Normal Workaround
     vec3 geoNormal = normalM;
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     vec3 shadowMult = vec3(1.0);
     float fresnel = clamp(1.0 + dot(normalM, nViewPos), 0.0, 1.0);
+    float fresnelM = pow3(fresnel);
+    float SSBLAlpha = 1.0;
     #ifdef IPBR
-        #include "/lib/materials/materialHandling/translucentMaterials.glsl"
+        #include "/lib/materials/materialHandling/translucentIPBR.glsl"
 
         #ifdef GENERATED_NORMALS
             if (!noGeneratedNormals) GenerateNormals(normalM, colorP.rgb * colorP.a * 1.5);
@@ -312,7 +338,11 @@ void main() {
     translucentMult.rgb = mix(translucentMult.rgb, vec3(1.0), min1(pow2(pow2(lViewPos / far))));
 
     #ifdef SS_BLOCKLIGHT
-        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
+        float lmCoordXModified = lmCoord.x;
+        #ifdef IS_IRIS
+            lmCoordXModified = lmCoord.x == 1.0 && blockLightEmission < 0.5 ? 0.0 : lmCoord.x;
+        #endif
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoordXModified);
     #endif
 
     #if defined SPOOKY && BLOOD_MOON > 0
@@ -337,24 +367,19 @@ void main() {
     // Lighting
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
-               false, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+               false, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
+               enderDragonDead);
 
     #ifdef SS_BLOCKLIGHT
         vec3 normalizedColor = normalize(color.rgb);
-
-        vec3 opaquelightAlbedo = texture2D(colortex8, screenPos.xy).rgb;
-        opaquelightAlbedo *= normalizedColor;
-
-        if (mat == 30012 || mat == 30016 || mat >= 31000 && mat < 32000 || mat == 32004 ) // Slime, Honey, Glass, Ice
-            opaquelightAlbedo = mix(normalizedColor, opaquelightAlbedo, min1(GetLuminance(opaquelightAlbedo)));
-
-        vec3 lightAlbedo = normalizedColor * min1(emission);
-
-        lightAlbedo = mix(opaquelightAlbedo, lightAlbedo, color.a);
+        vec3 maskedLightAlbedo = 
+            (mat == 30012 || mat == 30016 || (mat >= 31000 && mat < 32000) || mat == 32004) // Slime, Honey, Glass, Ice
+            ? normalizedColor : vec3(0.0);
+        vec3 lightAlbedo = mix(maskedLightAlbedo, normalizedColor * min1(emission), color.a);
     #endif
 
-    float skyLightFactor = pow2(max(lmCoordM.y - 0.7, 0.0) * 3.33333);
     // Reflections
+    float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
     #if WATER_REFLECT_QUALITY >= 0
         #ifdef LIGHT_COLOR_MULTS
             highlightColor *= lightColorMult;
@@ -366,24 +391,19 @@ void main() {
             highlightColor *= 0.3;
         #endif
 
-        float fresnelM = (pow3(fresnel) * 0.85 + 0.15) * reflectMult;
-
-        #if SHADOW_QUALITY > -1 && WATER_REFLECT_QUALITY >= 2 && WATER_MAT_QUALITY >= 2
-            skyLightFactor = max(skyLightFactor, min1(dot(shadowMult, shadowMult)));
-        #endif
-
+        fresnelM = (fresnelM * 0.85 + 0.15) * reflectMult;
+        vec2 texelOffset = vec2(0.0);
         #ifdef PIXELATED_WATER_REFLECTIONS
-        vec2 texelOffset = ComputeTexelOffset(tex, texCoord);
-        vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
-                                        depthtex1, dither, skyLightFactor, fresnel,
-                                        smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult, texelOffset);
-        #else
-        vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
-                                        depthtex1, dither, skyLightFactor, fresnel,
-                                        smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult);
+            texelOffset = ComputeTexelOffset(tex, texCoord);
         #endif
-
+        vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
+                                        depthtex1, dither, skyLightFactor, fresnel,
+                                        smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult, enderDragonDead, texelOffset);
         color.rgb = mix(color.rgb, reflection.rgb, fresnelM);
+
+    #else
+        fresnelM = 0.0;
+        vec4 reflection = vec4(0.0);
     #endif
     ////
 
@@ -391,31 +411,51 @@ void main() {
         ColorCodeProgram(color, mat);
     #endif
 
-    float sky = 0.0;
-    DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
-    color.a *= 1.0 - sky;
+    float skyFade = 0.0;
+    float prevAlpha = color.a;
+    color.a = 1.0;
+    DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither);
+    #if defined END && END_CENTER_LIGHTING > 0
+        float attentuation = doEndCenterFog(cameraPositionBest, normalize(playerPos), min(renderDistance, lViewPos), 0.5);
+        vec3 pointLightFog = vec3(END_CENTER_LIGHTING_R, END_CENTER_LIGHTING_G, END_CENTER_LIGHTING_B) * 0.5 * END_CENTER_LIGHTING * 0.1 * attentuation * enderDragonDead;
+        color.rgb = sqrt(pow2(color.rgb) + vec3(pointLightFog));
+    #endif
+    float fogAlpha = color.a;
+    color.a = prevAlpha * (1.0 - skyFade);
 
-    float waterSSBLAlpha = 1.0;
     #ifdef ENTITIES_ARE_LIGHT
-        waterSSBLAlpha = 0.0;
+        SSBLAlpha = 0.0;
     #endif
 
     /* DRAWBUFFERS:03 */
     gl_FragData[0] = color;
     gl_FragData[1] = vec4(1.0 - translucentMult.rgb, translucentMult.a);
 
-    // supposed to be #if WATER_MAT_QUALITY >= 3 but optifine bad
-    #if DETAIL_QUALITY >= 3
+    #if DETAIL_QUALITY >= 3 || (WATER_REFLECT_QUALITY > 0 && WORLD_SPACE_REFLECTIONS > 0) || defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:036 */
-        gl_FragData[2] = vec4(0.0, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
+        gl_FragData[2] = vec4(1.0, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
-        #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0368 */
-            gl_FragData[3] = vec4(lightAlbedo, waterSSBLAlpha);
+        #if WORLD_SPACE_REFLECTIONS > 0
+            #ifdef SS_BLOCKLIGHT
+                /* DRAWBUFFERS:036489 */
+                gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, sqrt(fresnelM * color.a * fogAlpha));
+                gl_FragData[4] = vec4(reflection.rgb * fresnelM * color.a * fogAlpha, reflection.a);
+                gl_FragData[5] = vec4(lightAlbedo, SSBLAlpha);
+            #else
+                /* DRAWBUFFERS:03648 */
+                gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, sqrt(fresnelM * color.a * fogAlpha));
+                gl_FragData[4] = vec4(reflection.rgb * fresnelM * color.a * fogAlpha, reflection.a);
+            #endif
+        #else
+            #ifdef SS_BLOCKLIGHT
+            /* DRAWBUFFERS:0369 */
+            gl_FragData[3] = vec4(lightAlbedo, SSBLAlpha);
+            #endif
         #endif
-    #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:038 */
-        gl_FragData[2] = vec4(lightAlbedo, waterSSBLAlpha);
+    #elif WORLD_SPACE_REFLECTIONS > 0
+        /* DRAWBUFFERS:0348 */
+        gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, sqrt(fresnelM * color.a * fogAlpha));
+        gl_FragData[3] = vec4(reflection.rgb * fresnelM * color.a * fogAlpha, reflection.a);
     #endif
 }
 
@@ -428,7 +468,12 @@ flat out int mat;
 flat out int blockLightEmission;
 
 out vec2 texCoord;
-out vec2 lmCoord;
+#ifdef GBUFFERS_COLORWHEEL_TRANSLUCENT
+    vec2 lmCoord;
+#else
+    out vec2 lmCoord;
+#endif
+
 out vec2 signMidCoordPos;
 flat out vec2 absMidCoordPos;
 
@@ -471,10 +516,6 @@ attribute vec4 at_tangent;
 //Includes//
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
-#endif
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
 #endif
 
 #if defined WAVE_EVERYTHING || defined WAVING_WATER_VERTEX

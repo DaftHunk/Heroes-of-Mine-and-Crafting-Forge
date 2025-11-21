@@ -46,8 +46,8 @@ vec3 GetBedrockNoise(vec3 viewPos, float VdotU, float dither) {
             vec2 planePos = wpos.xz * (0.5 + current) * noiseHeight;
             planePos = (planePos * 0.5 + cameraPositionM * 0.5) * 20.0;
             
-            float noiseSpots = texture2D(noisetex, floor(planePos) * 0.1).g;
-            vec3 noise = texture2D(noisetex, vec2(noiseSpots) + wind * 0.3).b * vec3(0.3);
+            float noiseSpots = texture2DLod(noisetex, floor(planePos) * 0.1, 0.0).g;
+            vec3 noise = texture2DLod(noisetex, vec2(noiseSpots) + wind * 0.3, 0.0).b * vec3(0.3);
             
             spots += noise * currentM * 6.0;
         }

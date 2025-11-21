@@ -28,8 +28,6 @@
 //Activate Settings//
 #ifdef POM_ALLOW_CUTOUT
 #endif
-#ifdef BRIGHT_CAVE_WATER
-#endif
 #ifdef IPBR_PARTICLE_FEATURES
 #endif
 #ifdef COLORED_CANDLE_LIGHT
@@ -42,8 +40,6 @@
 #endif
 #ifdef WAVIER_LAVA
 #endif
-#ifdef WATER_GENERATED_NORMALS
-#endif
 #ifdef WORLD_OUTLINE
 #endif
 #ifdef SOUL_SAND_VALLEY_OVERHAUL
@@ -52,13 +48,9 @@
 #endif
 #ifdef RAIN_ATMOSPHERE
 #endif
-#ifdef CLOUD_MINECRAFT_TEXTURE
+#ifdef CLOUD_TEXTURE
 #endif
 #ifdef WATERMARK
-#endif
-#ifdef DISTANCE_MIN_LIGHT
-#endif
-#ifdef MORE_STARS_OVERWORLD
 #endif
 #ifdef TWINKLING_STARS
 #endif
@@ -104,8 +96,6 @@
 #endif
 #ifdef STAR_ROUNDNESS_END
 #endif
-#ifdef EMISSIVE_SPRING_FLOWERS
-#endif
 #ifdef DO_IPBR_LIGHTS
 #endif
 #ifdef NIGHT_DESATURATION
@@ -120,7 +110,19 @@
 #endif
 #ifdef LIGHTMAP_CURVES
 #endif
-#ifdef PIXELATED_HANDHELD_LIGHT
-#endif
 #ifdef CLOUD_DIRECTION
+#endif
+#ifdef WORLD_SPACE_HALF_DISTANCE
+#endif
+#ifdef OPTIMIZATION_REF_LOD_SYSTEM_1
+#endif
+#ifdef OPTIMIZATION_REF_LOD_SYSTEM_2
+#endif
+#ifdef BORDER_FOG_NETHER
+#endif
+#ifdef BORDER_FOG_END
+#endif
+#ifdef BORDER_FOG_OVERWORLD
+#endif
+#ifdef NO_WAVING_INDOORS
 #endif

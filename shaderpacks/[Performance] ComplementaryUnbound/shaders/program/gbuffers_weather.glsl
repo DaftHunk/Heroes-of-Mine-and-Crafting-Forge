@@ -1,11 +1,15 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/raindropColor.glsl"
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -74,6 +78,10 @@ void main() {
 
     /* DRAWBUFFERS:0 */
     gl_FragData[0] = color;
+    #ifdef PBR_REFLECTIONS
+        /* DRAWBUFFERS:04 */
+        gl_FragData[1] = vec4(0);
+    #endif
 }
 
 #endif
@@ -101,10 +109,6 @@ flat out vec4 glColor;
 //Common Functions//
 
 //Includes//
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
 
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"

@@ -17,6 +17,37 @@
         #endif
     }
 #endif
+float Noise3D(vec3 p) {
+    p.z = fract(p.z) * 128.0;
+    float iz = floor(p.z);
+    float fz = fract(p.z);
+    vec2 a_off = vec2(23.0, 29.0) * (iz) / 128.0;
+    vec2 b_off = vec2(23.0, 29.0) * (iz + 1.0) / 128.0;
+    float a = texture2DLod(noisetex, p.xy + a_off, 0.0).r;
+    float b = texture2DLod(noisetex, p.xy + b_off, 0.0).r;
+    return mix(a, b, fz);
+}
+
+float GetSkyLightFactor(vec2 lmCoordM, vec3 shadowMult) {
+    #ifdef OVERWORLD
+        #if WORLD_SPACE_REFLECTIONS_INTERNAL == -1
+            float skyLightFactor = max(lmCoordM.y - 0.7, 0.0) * 3.33333;
+                  skyLightFactor *= skyLightFactor;
+        #else
+            float skyLightFactor = lmCoordM.y;
+        #endif
+
+        #if defined GBUFFERS_WATER || defined DH_WATER
+            #if SHADOW_QUALITY > -1 && WATER_REFLECT_QUALITY >= 2 && WATER_MAT_QUALITY >= 2
+                skyLightFactor = max(skyLightFactor, dot(shadowMult, shadowMult) * 0.333333);
+            #endif
+        #endif
+    #else
+        float skyLightFactor = dot(shadowMult, shadowMult) * 0.333333;
+    #endif
+
+    return skyLightFactor;
+}
 
 int min1(int x) {
     return min(x, 1);
@@ -365,33 +396,8 @@ vec3 saturateColors(vec3 col, float saturationMult) {
     return (col - brightness) * saturationMult + brightness;
 }
 
-float Noise3D(vec3 p) {
-    p.z = fract(p.z) * 128.0;
-    float iz = floor(p.z);
-    float fz = fract(p.z);
-    vec2 a_off = vec2(23.0, 29.0) * (iz) / 128.0;
-    vec2 b_off = vec2(23.0, 29.0) * (iz + 1.0) / 128.0;
-    float a = texture2D(noisetex, p.xy + a_off).r;
-    float b = texture2D(noisetex, p.xy + b_off).r;
-    return mix(a, b, fz);
-}
-
 float fuzzyOr(float a, float b) {
     return clamp01(a + b - (a * b));
-}
-
-// Previous frame reprojection from Chocapic13
-vec2 Reprojection(vec3 pos, vec3 cameraOffset) {
-    pos = pos * 2.0 - 1.0;
-
-    vec4 viewPosPrev = gbufferProjectionInverse * vec4(pos, 1.0);
-    viewPosPrev /= viewPosPrev.w;
-    viewPosPrev = gbufferModelViewInverse * viewPosPrev;
-
-    vec4 previousPosition = viewPosPrev + vec4(cameraOffset, 0.0);
-    previousPosition = gbufferPreviousModelView * previousPosition;
-    previousPosition = gbufferPreviousProjection * previousPosition;
-    return previousPosition.xy / previousPosition.w * 0.5 + 0.5;
 }
 
 bool isViewMoving() {
@@ -415,7 +421,7 @@ vec3 changeColorFunction(vec3 color, float strength, vec3 changeColor, float uni
 
 float isLightningActive() {
     float lightning = 0.0;
-    #ifdef IS_IRIS
+    #if defined IS_IRIS || defined IS_ANGELICA
         lightning = lightningBoltPosition.w;
     #else
         lightning = lightningFlashOptifine * rainFactor * inRainy;
@@ -471,7 +477,7 @@ void redstoneIPBR(inout vec3 color, inout float emission) {
 }
 
 float getTwinklingStars(vec2 coord, float speed){
-    return clamp01((texture2D(noisetex, coord + frameTimeCounter * 0.0003 * speed).r - 0.5) * 10.0 + 0.5);
+    return clamp01((texture2DLod(noisetex, coord + frameTimeCounter * 0.0003 * speed, 0.0).r - 0.5) * 10.0 + 0.5);
 }
 
 float GetStarNoise(vec2 pos) {
@@ -551,6 +557,30 @@ float DoAutomaticEmission(inout bool noSmoothLighting, inout bool noDirectionalS
     float baseEmission = pow3(GetLuminance(color)) * pow1_5(lightLevel);
 
     return max(minEmission, (baseEmission - 0.1) * 2.5);
+}
+
+float getDHFadeFactor(vec3 playerPosition) {
+    float horizontalDistance = length(playerPosition.xz);
+    
+    float verticalDistance = abs(playerPosition.y);
+    
+    float fadeTransitionLength = (far - near) * RENDER_EDGE_FADE_TRANSITION_PERCENT;
+    fadeTransitionLength = max(fadeTransitionLength, 1.0);
+    float fadeStartPoint = far - fadeTransitionLength;
+    fadeStartPoint = max(near + 0.01 * (far - near), fadeStartPoint); 
+    if (fadeStartPoint >= far) {
+        fadeStartPoint = far - max(0.001 * (far - near), 0.1); 
+    }
+
+    float horizontalFade = smoothstep(far, fadeStartPoint, horizontalDistance);
+    float verticalFade = smoothstep(far, fadeStartPoint, verticalDistance);
+    
+    return min(horizontalFade, verticalFade);
+}
+
+vec2 causticOffsetDist(float x, int s) {
+    float n = fract(x * 2.427) * 3.1415;
+    return vec2(cos(n), sin(n)) * 2.0 * x / float(s) / 256.0;
 }
 
 float hash1(uint n) {

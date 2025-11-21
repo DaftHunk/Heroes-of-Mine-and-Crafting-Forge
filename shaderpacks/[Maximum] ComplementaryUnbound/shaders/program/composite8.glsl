@@ -1,9 +1,8 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 #include "/lib/common.glsl"
-//#define RENKO_CUT
 
 #ifdef RENKO_CUT
     #ifdef FRAGMENT_SHADER
@@ -38,7 +37,7 @@
     }
 
     void main() {
-        vec4 cutData = texelFetch(colortex1, texelCoord, 0);
+        vec4 cutData = texelFetch(colortex2, texelCoord, 0);
         vec4 color = texelFetch(colortex3, texelCoord, 0);
         vec2 relPos = texelPos - knifePos;
         float projW = dot(relPos, knifeDir);
@@ -49,7 +48,7 @@
             float aroundHealthy = 0;
             for (int k = 0; k < 4; k++) {
                 ivec2 offset = (k/2*2-1) * ivec2(k%2, (k+1)%2);
-                aroundHealthy += texelFetch(colortex1, texelCoord + offset, 0).g;
+                aroundHealthy += texelFetch(colortex2, texelCoord + offset, 0).g;
             }
             if (aroundHealthy < 3.5) cutData.g = 0.0;
         }
@@ -60,7 +59,7 @@
         if (frameCounter < 10) {
             cutData.g = 0.0;
         }
-        /* DRAWBUFFERS:31 */
+        /* DRAWBUFFERS:32 */
         gl_FragData[0] = color;
         gl_FragData[1] = cutData;
     }

@@ -1,8 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
-
+//////////////////////////////////////////
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/composite3.glsl"
@@ -66,6 +65,18 @@
     );
 #endif
 
+vec2 getPolygonOffset(float angle, int sides, float radius) { // based on the hexablur function by halcy from https://www.shadertoy.com/view/4tK3WK
+    float rotationRadians = DOF_SHAPE_ROTATION_DEGREES * (pi / 180.0);
+
+    // Calculate regular polygon coordinates 
+    float segmentAngle = 2.0 * pi / float(sides);
+    float r = cos(pi / float(sides)) / cos(mod(angle, segmentAngle) - pi / float(sides));
+    r *= radius;
+
+    vec2 baseCoord = vec2(sin(angle), cos(angle)) * r;
+    return rotate(rotationRadians) * baseCoord;
+}
+
 //Common Functions//
 #if WORLD_BLUR > 0 || TILT_SHIFT != 0 || TILT_SHIFT2 != 0
     void DoWorldBlur(inout vec3 color, float z1, float lViewPos0) {
@@ -124,23 +135,62 @@
             chromaticScale *= vec2(1.0, viewHeight / viewWidth);
             vec2 aberration = (15.0 / vec2(viewWidth, viewHeight)) * chromaticScale * coc;
         #endif
-        #ifdef WB_ANAMORPHIC
-            dofScale *= vec2(0.5, 1.5);
+
+        #if DOF_SHAPE == 0 // Original mode
+            #ifdef WB_ANAMORPHIC
+                dofScale *= vec2(0.5, 1.5);
+            #endif
         #endif
 
         if (coc * 0.5 > 1.0 / max(viewWidth, viewHeight)) {
-            for (int i = 0; i < 18; i++) {
-                vec2 offset = dofOffsets[i] * coc * 0.0085 * dofScale;
+            #if DOF_SHAPE == 0 // Original implementation
+                for (int i = 0; i < 18; i++) {
+                    vec2 offset = dofOffsets[i] * coc * 0.0085 * dofScale;
+                    float lod = log2(viewHeight * aspectRatio * coc * 0.75 / 320.0);
+                    #ifndef WB_CHROMATIC
+                        dof += texture2DLod(colortex0, texCoord + offset, lod).rgb;
+                    #else
+                        dof += vec3(texture2DLod(colortex0, texCoord + offset + aberration, lod).r,
+                                    texture2DLod(colortex0, texCoord + offset             , lod).g,
+                                    texture2DLod(colortex0, texCoord + offset - aberration, lod).b);
+                    #endif
+                }
+                dof /= 18.0;
+            #elif DOF_SHAPE >= 3 && DOF_SHAPE <= 8
+                float totalWeight = 0.0;
                 float lod = log2(viewHeight * aspectRatio * coc * 0.75 / 320.0);
-                #ifndef WB_CHROMATIC
-                    dof += texture2DLod(colortex0, texCoord + offset, lod).rgb;
-                #else
-                    dof += vec3(texture2DLod(colortex0, texCoord + offset + aberration, lod).r,
-                                texture2DLod(colortex0, texCoord + offset             , lod).g,
-                                texture2DLod(colortex0, texCoord + offset - aberration, lod).b);
-                #endif
-            }
-            dof /= 18.0;
+                
+                int polygonSamples = int(DOF_POLYGON_SAMPLES * 10);
+                
+                // Sample in multiple concentric rings to fill the polygon
+                for (int ring = 1; ring <= DOF_POLYGON_RINGS; ring++) {
+                    float ringFactor = float(ring) / float(DOF_POLYGON_RINGS);
+                    
+                    // For each polygon ring, sample multiple points
+                    for (int i = 0; i < polygonSamples; i++) {
+                        float angle = float(i) * (2.0 * pi) / float(polygonSamples);
+                        
+                        vec2 offset = getPolygonOffset(angle, DOF_SHAPE, ringFactor * coc * 0.01) * dofScale;
+                        float weight = 1.0 - 0.2 * ringFactor; // Weight based on distance from center
+                        
+                        #ifndef WB_CHROMATIC
+                            vec3 sampleColor = texture2DLod(colortex0, texCoord + offset, lod).rgb;
+                            dof += sampleColor * weight;
+                        #else
+                            dof += vec3(
+                                texture2DLod(colortex0, texCoord + offset + aberration, lod).r,
+                                texture2DLod(colortex0, texCoord + offset, lod).g,
+                                texture2DLod(colortex0, texCoord + offset - aberration, lod).b
+                            ) * weight;
+                        #endif
+                        
+                        totalWeight += weight;
+                    }
+                }
+                
+                dof /= totalWeight;
+            #endif
+
             #ifdef DOF_SNEAKING
                 color = mix(color, dof, DoFSneaking);
             #else
@@ -192,7 +242,7 @@ void main() {
         #endif
 
         #ifdef BLOOM_FOG_COMPOSITE3
-            color *= GetBloomFog(lViewPos); // Reminder: Bloom Fog can move between composite1-2-3
+            color *= GetBloomFog(lViewPos); // Reminder: Bloom Fog can move between composite1-3
         #endif
     #endif
 

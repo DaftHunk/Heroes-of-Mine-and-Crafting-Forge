@@ -13,7 +13,7 @@
         #include "/lib/colors/skyColors.glsl"
     #endif
 
-    void DoBorderFog(inout vec3 color, inout float skyFade, float lPos, float VdotU, float VdotS, float dither) {
+    void DoBorderFog(inout vec4 color, inout float skyFade, float lPos, float VdotU, float VdotS, float dither) {
         #ifdef OVERWORLD
             float fog = lPos / renderDistance;
             #ifdef SPOOKY
@@ -35,10 +35,6 @@
             float fog = lPos / renderDistance;
             fog = pow2(pow2(fog));
             fog = 1.0 - exp(-BORDER_FOG_DISTANCE_END * fog);
-        #endif
-
-        #ifdef DREAM_TWEAKED_BORDERFOG
-            fog *= fog * 0.5;
         #endif
 
         if (fog > 0.0) {
@@ -63,7 +59,7 @@
             #endif
 
             fog *= BORDER_FOG_DENSITY;
-            color = mix(color, fogColorM, fog);
+            color = mix(color, vec4(fogColorM, 0.0), fog);
 
             #ifndef GBUFFERS_WATER
                 skyFade = fog;
@@ -77,10 +73,10 @@
 #ifdef CAVE_FOG
     #include "/lib/atmospherics/fog/caveFactor.glsl"
 
-    void DoCaveFog(inout vec3 color, float lViewPos, inout float fog) {
-        fog = GetCaveFactor() * (0.9 - 0.9 * exp(- lViewPos * 0.015 * CAVE_FOG_DENSITY));
+    void DoCaveFog(inout vec4 color, float lViewPos) {
+        float fog = GetCaveFactor() * (0.9 - 0.9 * exp(- lViewPos * 0.015 * CAVE_FOG_DENSITY));
 
-        color = mix(color, caveFogColor, fog);
+        color = mix(color, vec4(caveFogColor, 0.0), fog);
     }
 #endif
 
@@ -99,7 +95,7 @@
         #endif
 
         vec3 GetAtmFogColor(float altitudeFactorRaw, float VdotS) {
-            vec3 atmFogColor = vec3(ATMOSPHERIC_FOG_R, ATMOSPHERIC_FOG_G, ATMOSPHERIC_FOG_B) * ATMOSPHERIC_FOG_I / 255;
+            vec3 atmFogColor = vec3(ATMOSPHERIC_FOG_R_NEW, ATMOSPHERIC_FOG_G_NEW, ATMOSPHERIC_FOG_B_NEW) * ATMOSPHERIC_FOG_I;
             #ifdef RADIOACTIVE_ATMOSPHERIC_FOG
                 atmFogColor *= GetLuminance(atmFogColor) * 10;
             #endif
@@ -128,7 +124,7 @@
         return altitudeFactor;
     }
 
-    void DoAtmosphericFog(inout vec3 color, vec3 playerPos, float lViewPos, float VdotS, inout float fog) {
+    void DoAtmosphericFog(inout vec4 color, vec3 playerPos, float lViewPos, float VdotS) {
         #ifndef DISTANT_HORIZONS
             float renDisFactor = min1(192.0 / renderDistance);
 
@@ -141,9 +137,9 @@
                 renDisFactor *= 100.0;
             #endif
 
-            fog = 1.0 - exp(-pow(lViewPos * (0.001 - 0.0007 * rainFactor), 2.0 - rainFactor2) * lViewPos * renDisFactor);
+            float fog = 1.0 - exp(-pow(lViewPos * (0.001 - 0.0007 * rainFactor), 2.0 - rainFactor2) * lViewPos * renDisFactor);
         #else
-            fog = pow2(1.0 - exp(-max0(lViewPos - 40.0) * (0.7 + 0.7 * rainFactor) / ATM_FOG_DISTANCE));
+            float fog = pow2(1.0 - exp(-max0(lViewPos - 40.0) * (0.7 + 0.7 * rainFactor) / ATM_FOG_DISTANCE));
         #endif
 
         float atmFogA = 1.0;
@@ -174,6 +170,7 @@
                 #ifdef SPECIAL_BIOME_WEATHER
                     fogFactor += 2.0 * inDry;
                 #endif
+                fogFactor *= 0.5 + 0.5 * sunVisibility;
 
                 float fogIntense = pow2(1.0 - exp(-lViewPos * fogFactor / ATM_FOG_DISTANCE));
                 fog = mix(fog, fogIntense / altitudeFactor, 0.8 * rainFactor * factor);
@@ -211,14 +208,14 @@
                 fogColorM *= moonPhaseInfluence;
             #endif
 
-            color = mix(color, fogColorM, fog);
+            color = mix(color, vec4(fogColorM, 0.0), fog);
         }
     }
 #endif
 
 #include "/lib/atmospherics/fog/waterFog.glsl"
 
-void DoWaterFog(inout vec3 color, float lViewPos) {
+void DoWaterFog(inout vec4 color, float lViewPos) {
     float fog = GetWaterFog(lViewPos);
 
     float spookyWaterFog = 1.0;
@@ -226,10 +223,10 @@ void DoWaterFog(inout vec3 color, float lViewPos) {
         spookyWaterFog = 0.7;
     #endif
 
-    color = mix(color, waterFogColor, fog) * spookyWaterFog;
+    color = mix(color, vec4(waterFogColor, 0), fog) * spookyWaterFog;
 }
 
-void DoLavaFog(inout vec3 color, float lViewPos) {
+void DoLavaFog(inout vec4 color, float lViewPos) {
     float fog = (lViewPos * 3.0 - gl_Fog.start) * gl_Fog.scale;
 
     #ifdef LESS_LAVA_FOG
@@ -239,10 +236,10 @@ void DoLavaFog(inout vec3 color, float lViewPos) {
     fog = 1.0 - exp(-fog);
 
     fog = clamp(fog, 0.0, 1.0);
-    color = mix(color, fogColor * 5.0, fog);
+    color = mix(color, vec4(fogColor * 5.0, 0.0), fog);
 }
 
-void DoPowderSnowFog(inout vec3 color, float lViewPos) {
+void DoPowderSnowFog(inout vec4 color, float lViewPos) {
     float fog = lViewPos;
 
     #ifdef LESS_LAVA_FOG
@@ -253,34 +250,31 @@ void DoPowderSnowFog(inout vec3 color, float lViewPos) {
     fog = 1.0 - exp(-fog);
 
     fog = clamp(fog, 0.0, 1.0);
-    color = mix(color, fogColor, fog);
+    color = mix(color, vec4(fogColor, 0.0), fog);
 }
 
-void DoBlindnessFog(inout vec3 color, float lViewPos) {
+void DoBlindnessFog(inout vec4 color, float lViewPos) {
     float fog = lViewPos * 0.3 * blindness;
     fog *= fog;
     fog = 1.0 - exp(-fog);
 
     fog = clamp(fog, 0.0, 1.0);
-    color = mix(color, vec3(0.0), fog);
+    color *= 1.0 - fog;
 }
 
-void DoDarknessFog(inout vec3 color, float lViewPos) {
+void DoDarknessFog(inout vec4 color, float lViewPos) {
     float fog = lViewPos * 0.075 * darknessFactor;
     fog *= fog;
     fog *= fog;
     color *= exp(-fog);
 }
 
-void DoFog(inout vec3 color, inout float skyFade, float lViewPos, vec3 playerPos, float VdotU, float VdotS, float dither) {
-    float caveFogAdd = 0.0;
-    float atmosphericFogAdd = 0.0;
-    float borderFogAdd = 0.0;
+void DoFog(inout vec4 color, inout float skyFade, float lViewPos, vec3 playerPos, float VdotU, float VdotS, float dither) {
     #ifdef CAVE_FOG
-        DoCaveFog(color, lViewPos, caveFogAdd);
+        DoCaveFog(color, lViewPos);
     #endif
     #ifdef ATMOSPHERIC_FOG
-        DoAtmosphericFog(color, playerPos, lViewPos, VdotS, atmosphericFogAdd);
+        DoAtmosphericFog(color, playerPos, lViewPos, VdotS);
     #endif
     #ifdef BORDER_FOG
         DoBorderFog(color, skyFade, max(length(playerPos.xz), abs(playerPos.y)), VdotU, VdotS, dither);

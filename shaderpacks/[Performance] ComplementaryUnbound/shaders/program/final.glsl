@@ -1,7 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
@@ -19,6 +19,7 @@ noperspective in vec2 texCoord;
 #include "/lib/pipelineSettings.glsl"
 
 //Common Variables//
+vec2 view = vec2(viewWidth, viewHeight);
 
 //Common Functions//
 #if IMAGE_SHARPENING > 0
@@ -132,8 +133,8 @@ float layeredNoiseSpeedLines(float a, float s) {
 float speedLines(vec2 uv, float speed) { // Thanks to https://www.shadertoy.com/view/NldyDn by HalbFettKaese - modified a bit
     uv = uv * 2.0 - 1.0;
     float a = atan(uv.x, uv.y) / pi;
-    float value = layeredNoiseSpeedLines((a * 17 + velocity * 7.0) * SPEED_LINE_THICKNESS * 1.5, (floor(frameTimeCounter * 10.0 * SPEED_LINES_SPEED) / 10.0 + velocity * 0.1) * 2.0);
-    value -= 1.0 / length(uv) * 0.9 * (1.0 - clamp(velocity, 0.0, 0.4));
+    float value = layeredNoiseSpeedLines((a * 17) * (1.9 - SPEED_LINE_THICKNESS) * 1.5, (floor(frameTimeCounter * 10.0 * SPEED_LINES_SPEED) / 10.0) * 2.0);
+    value -= 1.0 / length(uv) * 0.9;
     return clamp(value, 0.0, 0.1 * speed);
 }
 
@@ -187,6 +188,7 @@ void applyVerticalScreenDisplacement(inout vec2 texCoordM, inout float verticalO
     else texCoordM.x = mix(texCoordM.x, mod(texCoordM.x + verticalOffset, verticalEdgeGlitch), displaceEffectOn);
 }
 
+#ifdef IS_IRIS
 vec4 waterMarkFunction(ivec2 pixelSize, vec2 textCoord, vec2 screenUV, float watermarkSizeMult, bool hideWatermark){
     float watermarkAspectRatio = float(pixelSize.x) / pixelSize.y;
     float watermarkSize = 1 / watermarkSizeMult;
@@ -198,7 +200,7 @@ vec4 waterMarkFunction(ivec2 pixelSize, vec2 textCoord, vec2 screenUV, float wat
     if (textCoord.x > -1 && textCoord.x < 0 && textCoord.y > 0 && textCoord.y < 1) {
         vec2 texCoordMapped = fract(textCoord);
         ivec2 fetchCoord = ivec2(texCoordMapped * pixelSize);
-        vec4 EuphoriaPatchesText = texelFetch(depthtex2, fetchCoord, 0);
+        vec4 EuphoriaPatchesText = texelFetch(epWatermark, fetchCoord, 0);
         
         float guiIsNotHidden = 1.0;
         if (hideWatermark) {
@@ -212,6 +214,7 @@ vec4 waterMarkFunction(ivec2 pixelSize, vec2 textCoord, vec2 screenUV, float wat
     }
     return vec4(0.0); // Transparent
 }
+#endif
 
 vec3 staticColor(vec3 color, float staticIntensity, float minStaticStrength, float maxStaticStrength, float staticSpeed) { // credit to arananderson https://www.shadertoy.com/view/tsX3RN
     float maxStrength = max(minStaticStrength, maxStaticStrength);
@@ -233,11 +236,11 @@ void beginTextM(int textSize, vec2 offset) {
     beginText(ivec2(vec2(scale * viewWidth / viewHeight, scale) * texCoord) / textSize, ivec2(0 + offset.x, scale / textSize - offset.y));
     text.bgCol = vec4(0.0);
 }
-
-#include "/lib/misc/potato.glsl"
+#ifdef EUPHORIA_PATCHES_POTATO_REMOVED
+    #include "/lib/misc/potato.glsl"
+#endif
 
 #ifdef ENTITIES_ARE_LIGHT
-    vec2 view = vec2(viewWidth, viewHeight);
     #include "/lib/misc/worldOutline.glsl"
 #endif
 
@@ -260,10 +263,6 @@ void main() {
 
     vec2 texCoordBorder = texCoordM;
 
-    #if CAMERA_NOISE_OVERLAY == 1
-        texCoordM += vec2(randomNoiseOverlay1(texCoordM + vec2(0.0, 0.0)), randomNoiseOverlay1(texCoordM + vec2(1.0, 1.0))) * 0.01 * CAMERA_NOISE_OVERLAY_INTENSITY;
-    #endif
-
     #if HORIZONTAL_NOISE > 0 && defined RETRO_ON
         texCoordM = applyHorizontalNoise(texCoordM, HORIZONTAL_NOISE, HORIZONTAL_NOISE_INTENSITY, HORIZONTAL_NOISE_SPEED);
     #endif
@@ -273,13 +272,53 @@ void main() {
         applyVerticalScreenDisplacement(texCoordM, verticalOffset, VERTICAL_SCROLL_SPEED, VERTICAL_STUTTER_SPEED, VERTICAL_EDGE_GLITCH, true);
     #endif
 
-    #if WATERMARK > 0
+    #if WATERMARK > 0 && defined IS_IRIS
         vec4 watermarkColor = waterMarkFunction(ivec2(100, 29), vec2(0.05), texCoordM.xy, WATERMARK_SIZE, true);
+    #endif
+
+    #if CAMERA_NOISE_OVERLAY == 1
+        texCoordM += vec2(randomNoiseOverlay1(texCoordM + vec2(0.0, 0.0)), randomNoiseOverlay1(texCoordM + vec2(1.0, 1.0))) * 0.01 * CAMERA_NOISE_OVERLAY_INTENSITY;
     #endif
 
     #ifdef UNDERWATER_DISTORTION
         if (isEyeInWater == 1)
             texCoordM += WATER_REFRACTION_INTENSITY * 0.00035 * sin((texCoord.x + texCoord.y) * 25.0 + frameTimeCounter * UNDERWATER_DISTORTION_STRENGTH);
+    #endif
+
+    #if LETTERBOXING > 0 && defined EXCLUDE_ENTITIES || defined BAD_APPLE || DELTARUNE_BATTLE_BACKGROUND == 2 || defined ENTITIES_ARE_LIGHT || NETHER_HEAT_DISTORTION > 0 && defined NETHER
+        vec4 texture6 = texelFetch(colortex6, texelCoord, 0);
+        #if defined ENTITIES_ARE_LIGHT || NETHER_HEAT_DISTORTION > 0 && defined NETHER
+            float z0 = GetLinearDepth(texelFetch(depthtex0, texelCoord, 0).r);
+        #endif
+    #endif
+
+    #if NETHER_HEAT_DISTORTION > 0 && defined NETHER
+        float heatAmount = max(0.0, eyeBrightnessSmooth.x / 240.0 - 0.2) * 1.25;
+        float verticalFalloff = 1.0 - pow3(texCoord.y); // More intensity at bottom of screen (heat rising effect)
+
+        float lightmap = texture6.a;
+        float depthFactor = clamp01((z0 - 0.06) * 4.0); // Adjusted depth to only be 0 close to the player
+        float distanceAdjustedLightmap = pow3(lightmap) * 0.23 * (0.3 + min(depthFactor, 0.7)); // Boost distant lights, reduce close ones
+        
+        // Blend frequencies based on distance - near:far
+        float freqY1 = mix(25.0, 14.0, depthFactor);
+        float freqY2 = mix(18.0, 27.0, depthFactor);  
+        float freqX1 = mix(22.0, 14.8, depthFactor);
+        float freqX2 = mix(15.0, 21.7, depthFactor);
+                
+        vec2 heatDistort = vec2(
+            sin((texCoord.y * NETHER_HEAT_DISTORTION_SCALE * freqY1) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.3) * 0.7 +
+            sin((texCoord.y * NETHER_HEAT_DISTORTION_SCALE * freqY2) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 0.9) * 0.2,
+
+            sin((texCoord.x * NETHER_HEAT_DISTORTION_SCALE * freqX1) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.5) * 0.7 +
+            sin((texCoord.x * NETHER_HEAT_DISTORTION_SCALE * freqX2) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.1) * 0.3
+        );
+
+        float playerSpeed = smoothstep(0.0, 0.75, 1.0 - clamp01(length(cameraPosition - previousCameraPosition) / sqrt3(frameTime)));
+
+        float distortionMask = max(heatAmount * pow2(verticalFalloff), distanceAdjustedLightmap) * playerSpeed;
+
+        texCoordM += heatDistort * 0.00012 * NETHER_HEAT_DISTORTION * distortionMask;
     #endif
 
     #if defined PIXELATE_SCREEN
@@ -292,7 +331,7 @@ void main() {
         if (hideGUI == 0 || isViewMoving()) { 
             color = textureFinal(colortex3);
         } else {
-            color = textureFinal(colortex7);
+            color = textureFinal(colortex2);
         }
     #else
         color = textureFinal(colortex3);
@@ -306,7 +345,15 @@ void main() {
             float aberrationStrength = CHROMA_ABERRATION;
         #endif
         vec2 aberration = (texCoordM - 0.5) * (2.0 / vec2(viewWidth, viewHeight)) * scale * aberrationStrength;
-        color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
+        #if LONG_EXPOSURE > 0
+            if (hideGUI == 0 || isViewMoving()) {
+                color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
+            } else {
+                color.rb = vec2(texture2D(colortex2, texCoordM + aberration).r, texture2D(colortex2, texCoordM - aberration).b);
+            }
+        #else
+            color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
+        #endif
     #endif
 
     #if IMAGE_SHARPENING > 0 && !defined PIXELATE_SCREEN
@@ -321,7 +368,7 @@ void main() {
 
     #if LETTERBOXING > 0
         #if BORDER_AMOUNT > 0
-            viewWidthM = viewWidth - viewWidth * BORDER_AMOUNT * 0.04;
+            viewWidth   M = viewWidth - viewWidth * BORDER_AMOUNT * 0.04;
         #endif
         float letterboxMargin = 0.5 - viewWidthM / (2 * viewHeightM * ASPECT_RATIO);
         #if LETTERBOXING == 2
@@ -330,7 +377,7 @@ void main() {
         
         if (texCoord.y > 1.0 - letterboxMargin || texCoord.y < letterboxMargin) {
             #ifdef EXCLUDE_ENTITIES
-                if (int(texelFetch(colortex6, texelCoord, 0).g * 255.1) != 254) color *= 0.0;
+                if (int(texture6.g * 255.1) != 254) color *= 0.0;
             #else
                 color *= mix(0.0, 1.0, LETTERBOXING_TRANSPARENCY);
             #endif
@@ -338,7 +385,7 @@ void main() {
     #endif
 
     #ifdef BAD_APPLE
-        color = vec3((int(texelFetch(colortex6, texelCoord, 0).g * 255.1) != 254) ? 0.0 : 1.0);
+        color = vec3((int(texture6.g * 255.1) != 254) ? 0.0 : 1.0);
     #endif
     
     #if DELTARUNE_BATTLE_BACKGROUND > 0
@@ -347,7 +394,7 @@ void main() {
         #if DELTARUNE_BATTLE_BACKGROUND == 1
             if (texture2D(depthtex0, texCoord).r == 1.0) color = deltaruneColor;
         #elif DELTARUNE_BATTLE_BACKGROUND == 2
-            if ((int(texelFetch(colortex6, texelCoord, 0).g * 255.1) != 254)) {
+            if ((int(texture6.g * 255.1) != 254)) {
                 color = deltaruneColor;
             }
         #endif
@@ -369,15 +416,17 @@ void main() {
     }*/
 
     #ifdef ENTITIES_ARE_LIGHT
-        vec4 texture9 = texture2D(colortex9, texCoordM);
-        vec4 texture6 = texture2D(colortex6, texCoordM);
-        float z0 = GetLinearDepth(texelFetch(depthtex0, texelCoord, 0).r);
-        color = texture9.a * mix(vec3(1), texture9.rgb, texture6.a);
-        DoWorldOutline(color, z0);
+        vec4 texture10 = texture2D(colortex10, texCoordM);
+        color = texture10.a * mix(vec3(1), texture10.rgb, texture6.a);
+        DoWorldOutline(color, z0, 1.0, vec3(1.0), far);
     #endif
 
-    #if WATERMARK > 0
-        color.rgb = mix(color.rgb, watermarkColor.rgb, watermarkColor.a);
+    #if WATERMARK > 0 && defined IS_IRIS
+        #if WATERMARK < 4
+            color.rgb = mix(color.rgb, watermarkColor.rgb, watermarkColor.a);
+        #elif WATERMARK == 4
+            color.rgb = mix(color.rgb, vec3(GetLuminance(watermarkColor.rgb)), watermarkColor.a);
+        #endif
     #endif
 
     #ifdef LET_THERE_BE_COLORS
@@ -416,18 +465,18 @@ void main() {
 
     #if SPEED_LINES > 0
         #if SPEED_LINES != 3
-            float speed = (length(cameraPosition - previousCameraPosition) / frameTime) * 0.08;
+            float speedIntensity = (length(cameraPosition - previousCameraPosition) / frameTime) * 0.08;
             float speedThreshold = 3.0;
-            float speedFactor = smoothstep(speedThreshold * 0.45, speedThreshold, speed);
+            float speedFactor = smoothstep(speedThreshold * 0.45, speedThreshold, speedIntensity);
             float isSprintingM = 0.0;
             #if SPEED_LINES == 2
                 isSprintingM = isSprinting;
             #endif
-            speed = max(speedFactor, isSprintingM);
+            speedIntensity = max(speedFactor, isSprintingM);
         #else 
-            float speed = 1.0;
+            float speedIntensity = 1.0;
         #endif
-        float speedLines = speedLines(texCoordM, speed);
+        float speedLines = speedLines(texCoordM, speedIntensity);
         speedLines = mix(0.0, speedLines, SPEED_LINES_TRANSPARENCY);
         color += vec3(speedLines);
     #endif
@@ -451,21 +500,27 @@ void main() {
         color *= vignette;
     #endif
 
+    float dither = texture2DLod(noisetex, texCoord * view / 128.0, 0.0).b;
+    color += vec3((dither - 0.25) / 128.0);
+
     #if defined CURVE_DISPLAY || BORDER_AMOUNT != 0
         if (texCoordBorder.x < 0.0 || texCoordBorder.x > 1.0) color = vec3(0.0);
         if (texCoordBorder.y < 0.0 || texCoordBorder.y > 1.0) color = vec3(0.0);
     #endif
 
     #ifdef EUPHORIA_PATCHES_POTATO_REMOVED
-        ivec2 pixelToCheck = ivec2(42, 30);
-        vec3 potatoColor = vec3(0.0);
-        // beginTextM(8, vec2(6, 10)); printVec3(vec3(getPotatoColorInt(pixelToCheck))); endText(color.rgb);
-        bool isPotato = checkPotatoPixel(pixelToCheck, ivec3(235, 191, 121), 0.1, potatoColor);
-        if(!isPotato) color.rgb = potatoError();
-        // color.rgb = potatoColor;
+        color.rgb = potatoError();
     #endif
 
     #include "/lib/textRendering/all_text_messages.glsl"
+
+    // Example of printing a float value (for debugging)
+    // float placeholder = texture2D(colortex2, ivec2(0)).g;
+    // beginTextM(2, vec2(5));
+    // text.fpPrecision = 6;
+    // printFloat(placeholder);
+    // endText(color.rgb);
+    // color.rgb = texture2D(colortex9, texCoord).rgb;
 
     /* DRAWBUFFERS:0 */
     gl_FragData[0] = vec4(color, 1.0);

@@ -13,6 +13,9 @@
 
 ---------------------------------------------------------------------------------------------*/
 uniform bool isRightHanded = true;
+uniform bool heavyFog = false;
+uniform bool firstPersonCamera = true;
+uniform bool isSpectator = false;
 
 uniform int renderStage;
 uniform int blockEntityId;
@@ -36,7 +39,6 @@ uniform int hideGUI;
 
 uniform float aspectRatio;
 uniform float blindness;
-uniform float cloudHeight = 192.0;
 uniform float darknessFactor;
 uniform float darknessLightFactor;
 uniform float maxBlindnessDarkness;
@@ -51,12 +53,15 @@ uniform float far;
 uniform float near;
 uniform float nightVision;
 uniform float rainStrength;
+uniform float thunderStrength = 0.0;
 uniform float screenBrightness;
 uniform float viewHeight;
 uniform float viewWidth;
 uniform float wetness;
 uniform float sunAngle;
 uniform float playerMood;
+uniform float cloudHeight = 192.0;
+uniform float currentPlayerArmor = 0.0;
 
 uniform ivec2 atlasSize;
 uniform ivec2 eyeBrightness;
@@ -90,11 +95,12 @@ uniform sampler2D colortex5;
 uniform sampler2D colortex6;
 uniform sampler2D colortex7;
 uniform sampler2D colortex8;
+#ifdef SS_BLOCKLIGHT
 uniform sampler2D colortex9;
+uniform sampler2D colortex10;
+#endif
 uniform sampler2D depthtex0;
 uniform sampler2D depthtex1;
-uniform sampler2D depthtex2;
-uniform sampler2D gaux1;
 uniform sampler2D gaux2;
 uniform sampler2D gaux4;
 uniform sampler2D normals;
@@ -102,10 +108,22 @@ uniform sampler2D noisetex;
 uniform sampler2D specular;
 uniform sampler2D tex;
 
+#if defined IS_IRIS && defined FINAL
+uniform sampler2D epWatermark;
+#endif
+
 uniform ivec3 cameraPositionInt;
 uniform ivec3 previousCameraPositionInt;
 uniform vec3 cameraPositionFract;
 uniform vec3 previousCameraPositionFract;
+
+#ifdef IS_IRIS
+    #if MC_VERSION >= 12109
+        uniform float endFlashIntensity;
+        uniform float previousEndFlashIntensity;
+        uniform vec3 endFlashPosition;
+    #endif
+#endif
 
 #if SHADOW_QUALITY > -1 || defined LIGHTSHAFTS_ACTIVE || defined FF_BLOCKLIGHT
     uniform sampler2D shadowcolor0;
@@ -113,7 +131,7 @@ uniform vec3 previousCameraPositionFract;
 
     uniform sampler2DShadow shadowtex1;
 
-    #ifdef COMPOSITE
+    #ifdef COMPOSITE1
         uniform sampler2D shadowtex0;
     #else
         uniform sampler2DShadow shadowtex0;
@@ -128,6 +146,9 @@ uniform vec3 previousCameraPositionFract;
 
     uniform sampler2D dhDepthTex;
     uniform sampler2D dhDepthTex1;
+
+    uniform float dhNearPlane;
+    uniform float dhFarPlane;
 #endif
 
 #if !defined DH_TERRAIN && !defined DH_WATER
@@ -148,7 +169,14 @@ uniform vec3 previousCameraPositionFract;
     uniform usampler2D puddle_sampler;
 #endif
 
-#ifdef ACL_GROUND_LEAVES_FIX
+#if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+    uniform sampler2D textureAtlas;
+
+    uniform usampler3D wsr_sampler;
+    uniform usampler3D wsr_sampler_lod;
+#endif
+
+#ifdef ACT_GROUND_LEAVES_FIX
     uniform usampler3D leaves_sampler;
 #endif
 
@@ -160,12 +188,15 @@ uniform vec3 previousCameraPositionFract;
 
 -----------------------------------------------------------------------------*/
 
+uniform bool isOnGround = true;
+
+uniform float framemod2;
+uniform float framemod4;
 uniform float framemod8;
 uniform float isEyeInCave;
 uniform float inDry;
 uniform float inRainy;
 uniform float inSnowy;
-uniform float velocity;
 uniform float starter;
 uniform float frameTimeSmooth;
 uniform float eyeBrightnessM;

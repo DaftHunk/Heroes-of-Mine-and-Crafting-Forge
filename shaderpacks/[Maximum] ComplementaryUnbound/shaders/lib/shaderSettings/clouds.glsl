@@ -14,7 +14,7 @@
 
 #define CLOUD_STRETCH 1.0 //[0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0]
 #define CLOUD_DIRECTION 1 //[1 2]
-//#define CLOUD_MINECRAFT_TEXTURE
+#define CLOUD_TEXTURE 0 //[0 1 2]
 #define CLOUD_ROUNDNESS 0.125 //[0.025 0.05 0.125 0.2]
 #define RAINBOW_CLOUD 0 //[0 1 2 3 4 5 6 7 8 8 10]
 #if RAINBOW_CLOUD == 0
@@ -46,7 +46,12 @@ const float rainbowCloudDistribution = 10.0;
 
 #define CLOUD_UNBOUND_LAYER2_HEIGHT 1.0 //[0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0]
 #define CLOUD_UNBOUND_LAYER2_SIZE 5 //[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]
-#define CLOUD_UNBOUND_LAYER2_AMOUNT 2.0 //[0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0]
+#define CLOUD_UNBOUND_LAYER2_AMOUNT 1.3 //[0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0]
 #define CLOUD_LAYER2_SPEED_MULT 1.0 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0]
+
+//#define CLOUD_SUN_MOON_SHADING // thanks to fozy
+
+#define CLOUD_NARROWNESS 0.07 //[0.1 0.075 0.05 0.07 0.025]
+
 
 #endif

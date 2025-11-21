@@ -1,10 +1,11 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/tonemaps.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -25,6 +26,22 @@ flat in vec4 glColor;
     float sunVisibility = clamp(SdotU + 0.0625, 0.0, 0.125) / 0.125;
     float sunVisibility2 = sunVisibility * sunVisibility;
 #endif
+
+const int DoCompTonemap = 0;
+const int DoBSLTonemap = 1;
+const int ACESTonemap = 2;
+const int ACESRedModified = 3;
+const int BurgessTonemap = 4;
+const int LottesTonemap = 5;
+const int Uncharted2 = 6;
+const int uncharted2_tonemap_partial = 7;
+const int uncharted2_filmic = 8;
+const int reinhard2 = 9;
+const int filmic = 10;
+const int GTTonemap = 11;
+const int uchimura = 12;
+const int agxTonemap = 13;
+const int unreal = 14;
 
 //Common Functions//
 
@@ -56,13 +73,14 @@ void main() {
 
         float VdotS = dot(nViewPos, sunVec);
         float VdotU = dot(nViewPos, upVec);
+        bool sunSideCheck = VdotS > 0.0;
 
         #ifdef IS_IRIS
             bool isSun = renderStage == MC_RENDER_STAGE_SUN;
             bool isMoon = renderStage == MC_RENDER_STAGE_MOON;
+            if (sunSideCheck) isSun = true; // Workaround for sun rendering as MC_RENDER_STAGE_MOON in some Iris versions
         #else
             bool tSizeCheck = abs(tSize.y - 264.0) < 248.5; //tSize.y must range from 16 to 512
-            bool sunSideCheck = VdotS > 0.0;
             bool isSun = tSizeCheck && sunSideCheck;
             bool isMoon = tSizeCheck && !sunSideCheck;
         #endif
@@ -72,21 +90,22 @@ void main() {
                 discard;
             #endif
 
-            float luminance = GetLuminance(color.rgb);
-
             if (isSun) {
-                float sunBrightness = 3.2;
+                float sunBrightness = 4.5;
                 #ifdef SPOOKY
-                    sunBrightness = 0.5;
+                    sunBrightness = 1.2;
                 #endif
-                color.rgb *= dot(color.rgb, color.rgb) * normalize(lightColor) * sunBrightness;
-                color.rgb *= 0.25 + (0.75 - 0.25 * rainFactor) * sunVisibility2;
+                color.rgb = vec3(pow(dot(color.rgb, color.rgb) * 0.45, 6.0 - 5.0 * rainFactor));
+                if (tonemap == ACESTonemap) color.rgb *= mix(vec3(1.0, 0.5, 0.28), vec3(0.35), rainFactor * 0.75) * sunBrightness * 0.5;
+                else color.rgb *= mix(vec3(1.1, 0.55, 0.0), vec3(0.35), rainFactor * 0.75) * sunBrightness; // all other tonemaps
+                color.rgb *= 0.25 + 0.75 * sunVisibility2 + 0.5 * noonFactor;
             }
 
             if (isMoon) {
                 // vec3 pixelGlareColor = color.rgb;
                 // pixelGlareColor = mix(pixelGlareColor, pixelGlareColor * vec3(0.9, 0.95, 1.1), 0.5) * 1.3;
                 color.rgb *= smoothstep1(min1(length(color.rgb))) * 1.3;
+                float luminance = GetLuminance(color.rgb);
                 
                 // float pixelGlareFactor = 1 - step(0.09,luminance);
                 // color.rgb = mix(color.rgb, pixelGlareColor, pixelGlareFactor);

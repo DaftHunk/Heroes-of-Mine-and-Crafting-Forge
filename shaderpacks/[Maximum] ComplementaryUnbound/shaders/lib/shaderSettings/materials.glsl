@@ -32,7 +32,7 @@
 //#define SITUATIONAL_ORES
 //#define GLOWING_WART
 
-#define LAVA_VARIATION 0 //[0 1 2 3 4]
+#define LAVA_VARIATION 0 //[0 1 2 3 4 5]
 #define LAVA_NOISE_INTENSITY 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
 #define LAVA_NOISE_AMOUNT 0.0 //[-0.5 -0.4 -0.3 -0.2 -0.1 0.0 0.1 0.2 0.3 0.4 0.5]
 #define LAVA_EMISSION 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0]
@@ -71,6 +71,8 @@
 #undef EMISSIVE_BLOOD_MOON_FLOWERS
 #endif
 
-#define ACL_ORE_INTENSITY 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+#define ACT_ORE_INTENSITY 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+
+//#define WATER_CAULDRON_COLOR_OVERRIDE
 
 #endif

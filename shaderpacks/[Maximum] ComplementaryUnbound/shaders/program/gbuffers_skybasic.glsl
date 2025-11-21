@@ -1,11 +1,15 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/stars.glsl"
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -37,6 +41,7 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 #ifdef OVERWORLD
     #include "/lib/atmospherics/sky.glsl"
     #include "/lib/atmospherics/stars.glsl"
+    #include "/lib/atmospherics/shootingStars.glsl"
 #endif
 
 #ifdef CAVE_FOG
@@ -107,6 +112,9 @@ void main() {
             #endif
 
             color.rgb += starColor;
+            #ifdef SHOOTING_STARS
+                color.rgb += GetShootingStars(starCoord, VdotU, VdotS);
+            #endif
         #endif
 
         #if SUN_MOON_STYLE >= 2
@@ -139,29 +147,27 @@ void main() {
                     #ifdef CAVE_FOG
                         sunMoonMixer *= 1.0 - 0.65 * GetCaveFactor();
                     #endif
-
-                    float sunBrightness = 10.0;
+                    float sunBrightness = 25.0;
                     #ifdef SPOOKY
-                        sunBrightness = 7.0;
+                        sunBrightness = 18.0;
                     #endif
-
                     color.rgb = mix(color.rgb, vec3(0.9, 0.5, 0.3) * sunBrightness, sunMoonMixer);
                 } else {
                     float horizonFactor = GetHorizonFactor(-SdotU);
                     sunMoonMixer = max0(sunMoonMixer - 0.25) * 1.33333 * horizonFactor;
 
                     starCoord = GetStarCoord(viewPos.xyz, 1.0) * 0.5 + 0.617;
-                    float moonNoise = texture2D(noisetex, starCoord).g
-                                    + texture2D(noisetex, starCoord * 2.5).g * 0.7
-                                    + texture2D(noisetex, starCoord * 5.0).g * 0.5;
+                    float moonNoise = texture2DLod(noisetex, starCoord, 0.0).g
+                                    + texture2DLod(noisetex, starCoord * 2.5, 0.0).g * 0.7
+                                    + texture2DLod(noisetex, starCoord * 5.0, 0.0).g * 0.5;
                     moonNoise = max0(moonNoise - 0.75) * 1.7;
                     float moonNoiseIntensity = 1.0;
-                    vec3 moonColorSpooky = vec3(0.38, 0.4, 0.5);
+                    vec3 moonColor = vec3(0.38, 0.4, 0.5);
                     #if defined SPOOKY && BLOOD_MOON > 0
                         moonNoiseIntensity = mix(1.0, 1.5, getBloodMoon(moonPhase, sunVisibility));
-                        moonColorSpooky = mix(vec3(0.38, 0.4, 0.5), vec3(1.0, 0.0, 0.0), getBloodMoon(moonPhase, sunVisibility));
+                        moonColor = mix(moonColor, vec3(1.0, 0.0, 0.0), getBloodMoon(moonPhase, sunVisibility));
                     #endif
-                    vec3 moonColor = moonColorSpooky * (1.2 - (0.2 + 0.2 * sqrt1(nightFactor)) * moonNoise * moonNoiseIntensity);
+                    moonColor *= (1.2 - (0.2 + 0.2 * sqrt1(nightFactor)) * moonNoise * moonNoiseIntensity);
 
                     if (moonPhase >= 1) {
                         float moonPhaseOffset = 0.0;
@@ -228,10 +234,6 @@ flat out vec4 glColor;
 //Common Functions//
 
 //Includes//
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
 
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"

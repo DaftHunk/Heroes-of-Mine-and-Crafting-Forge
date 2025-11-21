@@ -1,6 +1,7 @@
 // ============================== Step 1: Color Prep ============================== //
 #include "/lib/shaderSettings/water.glsl"
 vec3 glColorM = vec3(0.43, 0.6, 0.8);
+SSBLAlpha = 0.0;
 #if MC_VERSION >= 11300
     #if WATERCOLOR_MODE >= 2
         glColorM = glColor.rgb;
@@ -55,6 +56,9 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
     noGeneratedNormals = true;
 #endif
 
+#ifdef WATER_GENERATED_NORMALS
+#endif
+
 #if defined GBUFFERS_WATER || defined DH_WATER
     lmCoordM.y = min(lmCoord.y * 1.07, 1.0); // Iris/Sodium skylight inconsistency workaround
     
@@ -82,7 +86,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
         #endif
         waterPos = 0.032 * (waterPos + worldPos.y * 2.0);
         #ifdef CLEAR_WATER_SPOTS
-            waterBumpNoise = 1 - clamp01((1 - smoothstep(0, 0.5, texture2D(noisetex, waterPos.x * 0.045 + waterPos * 0.042 + wind * 0.006).g)) * 2) * 0.85;
+            waterBumpNoise = 1 - clamp01((1 - smoothstep(0, 0.5, texture2DLod(noisetex, waterPos.x * 0.045 + waterPos * 0.042 + wind * 0.006, 0.0).g)) * 2) * 0.85;
         #endif
     #endif
 
@@ -97,16 +101,6 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
             #endif
 
             #define WATER_BUMPINESS_M WATER_BUMPINESS * 0.8
-
-            float rainWaterStrength = 1.0;
-            #if INCREASED_RAIN_STRENGTH > 0
-                rainWaterStrength = mix(1.0, 2.5, rainFactor);
-                #if INCREASED_RAIN_STRENGTH == 1
-                    wind *= mix(1.0, 2.0, rainFactor);
-                #elif INCREASED_RAIN_STRENGTH == 2
-                    if (rainFactor > 0.01) wind *= 2.0;
-                #endif
-            #endif
 
             #if WATER_STYLE >= 2
                 waterPosM *= 2.5; wind *= 2.5;
@@ -125,7 +119,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
                      normalBig += texture2D(gaux4, waterPosM * 0.05 - 0.05 * wind).rg - 0.5;
 
                 normalMap.xy = normalMed * WATER_BUMP_MED + normalSmall * WATER_BUMP_SMALL + normalBig * WATER_BUMP_BIG;
-                normalMap.xy *= 6.0 * (1.0 - 0.7 * fresnel) * WATER_BUMPINESS_M * rainWaterStrength * waterBumpNoise;
+                normalMap.xy *= 6.0 * (1.0 - 0.7 * fresnel) * WATER_BUMPINESS_M * waterBumpNoise;
             #endif
 
             normalMap.xy *= 0.03 * lmCoordM.y + 0.01;
@@ -138,8 +132,8 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
                 vec2 puddleWind = vec2(frameTimeCounter) * 0.015;
                 vec2 pNormalCoord1 = puddlePos + vec2(puddleWind.x, puddleWind.y);
                 vec2 pNormalCoord2 = puddlePos + vec2(puddleWind.x * -1.5, puddleWind.y * -1.0);
-                vec3 pNormalNoise1 = texture2D(noisetex, pNormalCoord1).rgb;
-                vec3 pNormalNoise2 = texture2D(noisetex, pNormalCoord2).rgb;
+                vec3 pNormalNoise1 = texture2DLod(noisetex, pNormalCoord1, 0.0).rgb;
+                vec3 pNormalNoise2 = texture2DLod(noisetex, pNormalCoord2, 0.0).rgb;
 
                 normalMap.xy = (pNormalNoise1.xy + pNormalNoise2.xy - vec2(1.0)) * pNormalMult;
         #endif
@@ -167,7 +161,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
     #if WATER_MAT_QUALITY >= 2
         if (isEyeInWater != 1) {
             // Noise Coloring //
-            float noise = texture2D(noisetex, (waterPos + wind) * 0.25).g;
+            float noise = texture2DLod(noisetex, (waterPos + wind) * 0.25, 0.0).g;
                   noise = noise - 0.5;
                   noise *= 0.25;
             color.rgb = pow(color.rgb, vec3(1.0 + noise));
@@ -235,7 +229,7 @@ vec3 glColorM = vec3(0.43, 0.6, 0.8);
                         #endif
                         float foamThreshold = min(pow2(dotColorPM) * 1.6, 1.2);
                     #else
-                        float foamThreshold = pow2(texture2D(noisetex, waterPos * 4.0 + wind * 0.5).g) * 1.6;
+                        float foamThreshold = pow2(texture2DLod(noisetex, waterPos * 4.0 + wind * 0.5, 0.0).g) * 1.6;
                     #endif
                     float foam = pow2(clamp((foamThreshold + yPosDif) / foamThreshold, 0.0, 1.0));
                     #ifndef END

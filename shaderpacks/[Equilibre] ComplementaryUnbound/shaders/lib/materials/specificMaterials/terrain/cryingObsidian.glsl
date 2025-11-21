@@ -11,7 +11,8 @@ color.r *= 1.15;
 maRecolor = vec3(factor0 * min(max0(factor1 * 0.7 - 0.1) * 1.3, 0.5));
 
 #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS
-    color.rgb = mix(color.rgb, vec3(GetLuminance(color.rgb)), 0.88);
+    float luminance = GetLuminance(color.rgb);
+    color.rgb = mix(color.rgb, vec3(luminance), 0.88);
     color.rgb = normalize(netherColor) * luminance * 2.0;
 #endif
 overlayNoiseIntensity = 0.65;

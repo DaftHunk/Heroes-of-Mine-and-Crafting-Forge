@@ -8,7 +8,7 @@ void doMirrorDimension(inout vec4 position) {
     float z = position.z;
     float xz = x * x + x * z + z * z;
 
-    float noiseNumber1 = texture2D(noisetex, vec2(frameTimeCounter, 0.0)).r;
+    float noiseNumber1 = texture2DLod(noisetex, vec2(frameTimeCounter, 0.0), 0.0).r;
     position.y += 15.0 * sin(xz * sin(frameTimeCounter * 1.3 + 25.0) / 1000.0) * noiseNumber1;
 
     float noiseNumber2 = sin(xz * abs(sin(frameTimeCounter * 0.1 + 540.0) / 5000.0)) * abs(sin(frameTimeCounter * 0.05 + 180.0)) * 0.5;

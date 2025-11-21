@@ -1,11 +1,15 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #define BEACON_BEAM_EMISSION 1.0 //[0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0]
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -109,22 +113,26 @@ void main() {
         ColorCodeProgram(color, -1);
     #endif
 
-    // We do border fog here as well because the outer layer of the beam has broken depth in later programs
+    // We do fog here as well because the outer layer of the beam has broken depth in later programs
     float sky = 0.0;
     #ifndef NETHER
         if (playerPos.y > 0.0) {
             playerPos.y = pow(playerPos.y / far, 0.15) * far;
         }
     #endif
-    DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
-    color.a *= 1.0 - sky;
+
+    float prevAlpha = color.a;
+    DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither);
+    color.a = prevAlpha * (1.0 - sky);
+    
+    if (color.a < 0.2 * dither) discard;
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
     gl_FragData[1] = vec4(0.0, 0.0, 0.0, 1.0);
 
     #ifdef SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(lightAlbedo, 1);
     #endif
 }
@@ -154,10 +162,6 @@ out vec4 glColor;
 //Includes//
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
-#endif
-
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
 #endif
 
 #ifdef WAVE_EVERYTHING

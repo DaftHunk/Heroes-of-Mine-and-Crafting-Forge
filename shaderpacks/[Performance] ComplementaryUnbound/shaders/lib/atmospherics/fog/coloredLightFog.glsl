@@ -1,13 +1,13 @@
-vec3 GetColoredLightFog(vec3 nPlayerPos, vec3 translucentMult, float lViewPos, float lViewPos1, float dither) {
+vec3 GetColoredLightFog(vec3 nPlayerPos, vec3 translucentMult, float lViewPos, float lViewPos1, float dither, float vlFactor) {
     vec3 lightFog = vec3(0.0);
 
     float stepMult = 8.0;
 
     #ifdef CAVE_SMOKE
-        float caveFactor = GetCaveFactor();
+        float caveFactor = GetCaveFactor() * (1.0 - clamp01(isEyeInWater));
     #endif
 
-    float maxDist = min(effectiveACLdistance * 0.5, far);
+    float maxDist = min(effectiveACTdistance * 0.5, far);
     int sampleCount = int(maxDist / stepMult + 0.001);
     vec3 traceAdd = nPlayerPos * stepMult;
     vec3 tracePos = traceAdd * dither;
@@ -24,6 +24,15 @@ vec3 GetColoredLightFog(vec3 nPlayerPos, vec3 translucentMult, float lViewPos, f
 
         vec4 lightVolume = GetLightVolume(voxelPos);
         vec3 lightSample = lightVolume.rgb;
+
+        #if defined END && END_CENTER_LIGHTING > 0 && defined END_CENTER_LIGHTING_AFFECT_BLOCKLIGHT
+            vec3 endCenterCol = saturateColors(vec3(END_CENTER_LIGHTING_R, END_CENTER_LIGHTING_G, END_CENTER_LIGHTING_B), 1.1);
+            vec3 endCenterPos = vec3(0.5, 60.5, 0.5) - (tracePos + cameraPositionBest);
+            endCenterPos.y *= 0.66; // Make it a pill-shaped point light
+            float rawDistance = length(endCenterPos);
+            float endCenterLightDist = exp(-rawDistance * 0.62) * 100;
+            lightSample = mix(lightSample, clamp01(saturateColors(endCenterCol, 1.3)), clamp01(endCenterLightDist) * (1.0 - vlFactor));
+        #endif
 
         float lTracePosM = length(
             vec3(

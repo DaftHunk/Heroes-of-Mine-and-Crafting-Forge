@@ -1,7 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
@@ -148,8 +148,11 @@ void main() {
                         imageLoad(endcrystal_img, ivec2(index, 7)).r,
                         imageLoad(endcrystal_img, ivec2(index, 8)).r
                     );
-                    ivec4 writeData = ivec4(
-                        readData.w > 0 ? 10000.0 * readData.xyz / readData.w : temporalData.xyz + ivec3(10000 * (previousCameraPosition - cameraPosition)),
+                    ivec4 writeData = ivec4( // is 0 if dragon is dead, otherwise contains dragon position
+                        isDying <= 9000 && temporalData.w > 0 ? ivec3(0.0) : 
+                        readData.w > 0 ? 10000.0 * readData.xyz / readData.w : 
+                        abs(length(vec3(readData.xyz)) - length(vec3(temporalData.xyz))) <= 0.001 ? ivec3(0.0) : 
+                        temporalData.xyz + ivec3(10000 * (previousCameraPosition - cameraPosition)),
                         isDying > 0 ? temporalData.w + int(10000 * frameTime) : 0
                     );
                     imageStore(endcrystal_img, ivec2(index, 0), ivec4(max(0, isDying - int(1000 * frameTime))));
@@ -158,7 +161,7 @@ void main() {
                         imageStore(endcrystal_img, ivec2(index, i + 5), ivec4(writeData[i]));
                     }
                 }
-                #endif
+            #endif
             
             #ifdef END_PORTAL_BEAM_INTERNAL
                 for (int k = 0; k < 4; k++) {

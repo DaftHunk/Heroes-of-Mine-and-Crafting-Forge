@@ -1,7 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
@@ -10,113 +10,114 @@
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
 
-#ifdef MOTION_BLURRING
-    noperspective in vec2 texCoord;
-
-    #ifdef BLOOM_FOG_COMPOSITE2
-        flat in vec3 upVec, sunVec;
-    #endif
-#endif
+noperspective in vec2 texCoord;
 
 //Pipeline Constants//
 
 //Common Variables//
-#if defined MOTION_BLURRING && defined BLOOM_FOG_COMPOSITE2
-    float SdotU = dot(sunVec, upVec);
-    float sunFactor = SdotU < 0.0 ? clamp(SdotU + 0.375, 0.0, 0.75) / 0.75 : clamp(SdotU + 0.03125, 0.0, 0.0625) / 0.0625;
-#endif
+
+vec2 view = vec2(viewWidth, viewHeight);
 
 //Common Functions//
-#ifdef MOTION_BLURRING
-    vec3 MotionBlur(vec3 color, float z, float dither) {
-        if (z > 0.56) {
-            float mbwg = 0.0;
-            vec2 doublePixel = 2.0 / vec2(viewWidth, viewHeight);
-            vec3 mblur = vec3(0.0);
+#ifdef SS_BLOCKLIGHT
+    #include "/lib/misc/reprojection.glsl"
 
-            vec4 currentPosition = vec4(texCoord, z, 1.0) * 2.0 - 1.0;
+    float GetLinearDepth(float depth) {
+        return (2.0 * near) / (far + near - depth * (far - near));
+    }
 
-            vec4 viewPos = gbufferProjectionInverse * currentPosition;
-            viewPos = gbufferModelViewInverse * viewPos;
-            viewPos /= viewPos.w;
+    vec2 OffsetDist(float x) {
+        float n = fract(x * 16.2) * 2 * pi;
+        return vec2(cos(n), sin(n)) * x;
+    }
 
-            vec3 cameraOffset = cameraPosition - previousCameraPosition;
+    vec4 GetMultiColoredBlocklight(vec4 lightAlbedo, vec2 coord, float z, float dither) {
+        vec3 cameraOffset = cameraPosition - previousCameraPosition;
+        cameraOffset *= float(z * 2.0 - 1.0 > 0.56);
 
-            vec4 previousPosition = viewPos + vec4(cameraOffset, 0.0);
-            previousPosition = gbufferPreviousModelView * previousPosition;
-            previousPosition = gbufferPreviousProjection * previousPosition;
-            previousPosition /= previousPosition.w;
+        vec2 prevCoord = Reprojection(vec3(coord, z), cameraOffset);
+        float lz = GetLinearDepth(z);
 
-            vec2 velocity = (currentPosition - previousPosition).xy;
-            velocity = velocity / (1.0 + length(velocity)) * MOTION_BLURRING_STRENGTH * 0.02;
+        float distScale = clamp((far - near) * lz + near, 4.0, 128.0);
+        float fovScale = gbufferProjection[1][1] / 1.37;
 
-            vec2 coord = texCoord - velocity * (3.5 + dither);
-            for (int i = 0; i < 9; i++, coord += velocity) {
-                vec2 coordb = clamp(coord, doublePixel, 1.0 - doublePixel);
-                mblur += texture2DLod(colortex0, coordb, 0).rgb;
-                mbwg += 1.0;
-            }
-            mblur /= mbwg;
+        vec2 blurstr = vec2(1.0 / (viewWidth / viewHeight), 1.0) * fovScale / distScale;
+        vec4 previousColoredLight = vec4(0.0);
 
-            return mblur;
-        } else return color;
+        float mask = clamp(2.0 - 2.0 * max(abs(prevCoord.x - 0.5), abs(prevCoord.y - 0.5)), 0.0, 1.0);
+
+        vec2 offset = OffsetDist(dither) * blurstr;
+
+        vec2 sampleZPos = coord + offset;
+        float sampleZ0 = texture2D(depthtex0, sampleZPos).r;
+        float sampleZ1 = texture2D(depthtex1, sampleZPos).r;
+        float linearSampleZ = GetLinearDepth(sampleZ1 >= 1.0 ? sampleZ0 : sampleZ1);
+
+        float sampleWeight = clamp(abs(lz - linearSampleZ) * far / 16.0, 0.0, 1.0);
+        sampleWeight = 1.0 - sampleWeight * sampleWeight;
+
+        previousColoredLight += texture2D(colortex10, prevCoord.xy + offset) * sampleWeight;
+        previousColoredLight *= previousColoredLight * mask;
+        lightAlbedo = clamp01(lightAlbedo);
+        if (lightAlbedo.g + lightAlbedo.b < 0.05) lightAlbedo.r *= 0.45; // red color reduction to prevent redstone from overpowering everything
+
+        return sqrt(max(vec4(0.0), mix(previousColoredLight, lightAlbedo * lightAlbedo / clamp(previousColoredLight.r + previousColoredLight.g + previousColoredLight.b, 0.01, 1.0), 0.01)));
     }
 #endif
 
-//Includes//
-#ifdef MOTION_BLURRING
-    #include "/lib/util/dither.glsl"
 
-    #ifdef BLOOM_FOG_COMPOSITE2
-        #include "/lib/atmospherics/fog/bloomFog.glsl"
-    #endif
-#endif
+//Includes//
 
 //Program//
 void main() {
     vec3 color = texelFetch(colortex0, texelCoord, 0).rgb;
 
-    #ifdef MOTION_BLURRING
+    #if defined SS_BLOCKLIGHT
+        float z0 = texelFetch(depthtex0, texelCoord, 0).r;
         float z = texture2D(depthtex1, texCoord).x;
-        float dither = Bayer64(gl_FragCoord.xy);
-
-        color = MotionBlur(color, z, dither);
-
-        #ifdef BLOOM_FOG_COMPOSITE2
-            float z0 = texelFetch(depthtex0, texelCoord, 0).r;
-            vec4 screenPos = vec4(texCoord, z0, 1.0);
-            vec4 viewPos = gbufferProjectionInverse * (screenPos * 2.0 - 1.0);
-            viewPos /= viewPos.w;
-            float lViewPos = length(viewPos.xyz);
-
-            #if defined DISTANT_HORIZONS && defined NETHER
-                float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
-                vec4 screenPosDH = vec4(texCoord, z0DH, 1.0);
-                vec4 viewPosDH = dhProjectionInverse * (screenPosDH * 2.0 - 1.0);
-                viewPosDH /= viewPosDH.w;
-                lViewPos = min(lViewPos, length(viewPosDH.xyz));
-            #endif
-
-            color *= GetBloomFog(lViewPos); // Reminder: Bloom Fog can move between composite1-2-3
-        #endif
+        float dither;
+        vec4 screenPos = vec4(texCoord, z0, 1.0);
+        vec4 viewPos = gbufferProjectionInverse * (screenPos * 2.0 - 1.0);
+        viewPos /= viewPos.w;
     #endif
 
-    /* DRAWBUFFERS:0 */
-    gl_FragData[0] = vec4(color, 1.0);
+    // SS_BLOCKLIGHT code
+    #ifdef SS_BLOCKLIGHT        
+        vec4 lightAlbedo = texture2D(colortex9, texCoord);
+
+        dither = texture2DLod(noisetex, texCoord * view / 128.0, 0.0).b;
+        #ifdef TAA
+            dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
+        #endif
+        
+        #ifdef ENTITIES_ARE_LIGHT
+            int heldBlockLight = 0;
+            heldBlockLight = (viewPos.x > 0.0 ^^ isRightHanded) ? heldBlockLightValue2 : heldBlockLightValue;
+
+            if (heldBlockLight > 0) {
+                lightAlbedo.a *= 30;
+            }
+        #endif
+        
+        float lightZ = z >= 1.0 ? z0 : z;
+        vec4 coloredLight = GetMultiColoredBlocklight(lightAlbedo, texCoord, lightZ, dither);
+    #endif
+
+    #ifdef SS_BLOCKLIGHT
+        /* RENDERTARGETS: 0,10 */
+        gl_FragData[0] = vec4(color, 1.0);
+        gl_FragData[1] = vec4(coloredLight);
+    #else
+        /* DRAWBUFFERS:0 */
+        gl_FragData[0] = vec4(color, 1.0);
+    #endif
 }
 
 #endif
 
 //////////Vertex Shader//////////Vertex Shader//////////Vertex Shader//////////
 #ifdef VERTEX_SHADER
-
-#ifdef MOTION_BLURRING
-    noperspective out vec2 texCoord;
-
-    #ifdef BLOOM_FOG_COMPOSITE2
-        flat out vec3 upVec, sunVec;
-    #endif
-#endif
+noperspective out vec2 texCoord;
 
 //Attributes//
 
@@ -130,14 +131,7 @@ void main() {
 void main() {
     gl_Position = ftransform();
 
-    #ifdef MOTION_BLURRING
-        texCoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;
-
-        #ifdef BLOOM_FOG_COMPOSITE2
-            upVec = normalize(gbufferModelView[1].xyz);
-            sunVec = GetSunVector();
-        #endif
-    #endif
+    texCoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;
 }
 
 #endif

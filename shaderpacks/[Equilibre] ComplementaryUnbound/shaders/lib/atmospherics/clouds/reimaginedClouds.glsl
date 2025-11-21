@@ -1,8 +1,8 @@
 #include "/lib/shaderSettings/cloudsAndLighting.glsl"
 #include "/lib/atmospherics/clouds/cloudCoord.glsl"
 
-const float cloudStretch = CLOUD_STRETCH * 5.5;
-const float cloudHeightShader  = cloudStretch * 2.0;
+const float cloudStretch = CLOUD_STRETCH * 4.2;
+const float cloudTallness  = cloudStretch * 2.0;
 
 bool GetCloudNoise(vec3 tracePos, inout vec3 tracePosM, int cloudAltitude) {
     tracePosM = ModifyTracePos(tracePos, cloudAltitude);
@@ -19,7 +19,7 @@ bool GetCloudNoise(vec3 tracePos, inout vec3 tracePosM, int cloudAltitude) {
     return noise > threshold * 0.5 + 0.25;
 }
 
-vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float cloudLinearDepth, float skyFade, float skyMult0, vec3 cameraPos, vec3 nPlayerPos, float lViewPosM, float VdotS, float VdotU, float dither) {
+vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float cloudLinearDepth, float skyFade, float skyMult0, vec3 cameraPos, vec3 nPlayerPos, float lViewPosM, float VdotS, float VdotU, float dither, vec3 sunVec) {
     vec4 volumetricClouds = vec4(0.0);
 
     float higherPlaneAltitude = cloudAltitude + cloudStretch;
@@ -69,7 +69,7 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
             float lightMult = 1.0;
 
             #if SHADOW_QUALITY > -1
-                float shadowLength = min(shadowDistance, far) * 0.9166667; //consistent08JJ622
+                float shadowLength = shadowDistance * 0.9166667; //consistent08JJ622
                 if (shadowLength > lTracePos)
                 if (GetShadowOnCloud(tracePos, cameraPos, cloudAltitude, lowerPlaneAltitude, higherPlaneAltitude)) {
                     #ifdef CLOUD_CLOSED_AREA_CHECK
@@ -80,7 +80,8 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
                 }
             #endif
 
-            float cloudShading = 1.0 - (higherPlaneAltitude - tracePos.y) / cloudHeightShader;
+            float cloudShading = 1.0 - (higherPlaneAltitude - tracePos.y) / cloudTallness;
+                  cloudShading = pow(max0(cloudShading), 0.8);
             float VdotSM1 = max0(sunVisibility > 0.5 ? VdotS : - VdotS);
 
             #if CLOUD_QUALITY_INTERNAL >= 2
@@ -115,9 +116,24 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
                 cloudShading = VdotSM2 * light * lightMult;
             #endif
 
-            vec3 colorSample = cloudAmbientColor + cloudLightColor * (0.07 + cloudShading);
+            #ifdef CLOUD_SUN_MOON_SHADING
+                vec3 worldLightVec = mat3(gbufferModelViewInverse) * sunVec;
+                float cloudLightRadius = 375.0;
+
+                float aboveFade = 1.0 - smoothstep(-20.0, 0.0, cameraPos.y - cloudAltitude);
+                float sunPlaneIntersect = (cloudAltitude - cameraPos.y) / worldLightVec.y;
+                vec2 posVector = cameraPos.xz + worldLightVec.xz * sunPlaneIntersect - tracePos.xz;
+                
+                float moonVisibility = abs(1.0 - moonPhase / 4.0);
+                float sunMult = mix(moonVisibility, 0.75, sunVisibility);
+                float falloff = exp((1.0 - max0(1.0 - length(posVector) / cloudLightRadius)) * -6.0) * aboveFade * sunMult;
+
+                cloudShading += falloff * 6.5 * mix(1.0, (lTracePos - minPlaneDistance) / (maxPlaneDistance - minPlaneDistance), 0.7);
+            #endif
+
+            vec3 colorSample = cloudAmbientColor * 0.95 * (1.0 - 0.35 * cloudShading) + cloudLightColor * (0.1 + cloudShading);
             #ifdef EPIC_THUNDERSTORM
-                vec3 lightningPos = getLightningPos(tracePos - cameraPosition, lightningBoltPosition.xyz, false);
+                vec3 lightningPos = getLightningPos(tracePos - cameraPos, lightningBoltPosition.xyz, false);
                 vec2 lightningAdd = lightningFlashEffect(lightningPos, vec3(1.0), 450.0, 0.0, 0) * isLightningActive() * 10.0;
                 colorSample += lightningAdd.y;
             #endif
@@ -126,12 +142,7 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
                 cloudSkyColor *= sqrtAtmColorMult; // C72380KD - Reduced atmColorMult impact on some things
             #endif
             float distanceRatio = (distanceThreshold - lTracePosXZ) / distanceThreshold;
-            float cloudDistanceFactor = clamp(distanceRatio, 0.0, 0.75);
-            #ifndef DISTANT_HORIZONS
-                float cloudFogFactor = cloudDistanceFactor;
-            #else
-                float cloudFogFactor = pow1_5(clamp(distanceRatio, 0.0, 1.0)) * 0.75;
-            #endif
+            float cloudFogFactor = pow2(clamp(distanceRatio, 0.0, 1.0)) * 0.75;
             float nightCloudRemove = NIGHT_CLOUD_UNBOUND_REMOVE * (1.0 - sunVisibility) * -1 + 1.0; // mapped to 1 to 0 range
             cloudMult *= CLOUD_TRANSPARENCY * nightCloudRemove;
             float skyMult1 = 1.0 - 0.2 * (1.0 - skyFade) * max(sunVisibility2, nightFactor);
@@ -139,9 +150,15 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
             colorSample = mix(cloudSkyColor, colorSample * skyMult1, cloudFogFactor * skyMult2);
             colorSample *= pow2(1.0 - maxBlindnessDarkness);
 
-            cloudLinearDepth = sqrt(lTracePos / renderDistance);
-            volumetricClouds.a = pow(cloudDistanceFactor * 1.33333, 0.5 + 10.0 * pow(abs(VdotSM1), 90.0)) * cloudMult;
+            float cloudDistanceFactor = clamp(distanceRatio, 0.0, 0.75);
+            //float distanceRatioNew = (2000 - lTracePosXZ) / 2000;
+            //float cloudDistanceFactorNew = clamp(distanceRatioNew, 0.5, 0.75);
+
+            //volumetricClouds.a = pow(cloudDistanceFactor * 1.33333, 0.5 + 10.0 * pow(abs(VdotSM1), 90.0)) * cloudMult;
+            volumetricClouds.a = sqrt(cloudDistanceFactor * 1.33333) * cloudMult;
             volumetricClouds.rgb = colorSample;
+
+            cloudLinearDepth = sqrt(lTracePos / renderDistance);
             break;
         }
     }

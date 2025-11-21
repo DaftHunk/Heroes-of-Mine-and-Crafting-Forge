@@ -1,4 +1,4 @@
-#if !defined IPBR_COMPATIBILITY_MODE && !defined DH_TERRAIN
+#if !defined IPBR_COMPAT_MODE && defined GBUFFERS_TERRAIN && !defined GBUFFERS_COLORWHEEL
     // Tweak to prevent the animation of lava causing brightness pulsing
     vec3 avgColor = vec3(0.0);
     ivec2 itexCoordC = ivec2(midCoord * atlasSize + 0.0001);
@@ -13,14 +13,14 @@
 #endif
 noDirectionalShading = true;
 lmCoordM = vec2(0.0);
-emission = GetLuminance(color.rgb) * 6.5;
+emission = GetLuminance(color.rgb) * 7.48 + 0.5;
 
 vec3 worldPos = playerPos + cameraPosition;
 vec2 lavaPos = (floor(worldPos.xz * 16.0) + worldPos.y * 32.0) * 0.000666;
 vec2 wind = vec2(frameTimeCounter * 0.012, 0.0);
 
 #ifdef NETHER
-    float noiseSample = texture2D(noisetex, lavaPos + wind).g;
+    float noiseSample = texture2DLod(noisetex, lavaPos + wind, 0.0).g;
     noiseSample = noiseSample - 0.5;
     noiseSample *= 0.1;
     color.rgb = pow(color.rgb, vec3(1.0 + noiseSample));
@@ -45,7 +45,7 @@ vec3 lavaNoiseColor = color.rgb;
         color.rgb = lavaNoiseColor;
     }
 #else
-    maRecolor = vec3(clamp(pow2(pow2(pow2(smoothstep1(emission * 0.28)))), 0.12, 0.4) * 1.3) * vec3(1.0, vec2(0.7));
+    maRecolor = vec3(clamp(pow2(pow2(pow2(smoothstep1(emission * 0.28)))), 0.12, 0.4) * 1.3) * vec3(0.25, vec2(0.175));
     if (LAVA_TEMPERATURE != 0.0) maRecolor += LAVA_TEMPERATURE * 0.5 - 0.2;
     lavaNoiseColor *= 1.3;
 #endif

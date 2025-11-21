@@ -1,12 +1,16 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/emissionMult.glsl"
 //#define NIGHT_DESATURATION
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -88,11 +92,10 @@ void main() {
     #endif
     color *= glColor;
 
-    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
-    vec3 normalM = normal, lightAlbedo = vec3(0.0);
+    float smoothnessD = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
+    vec3 normalM = normal, lightAlbedo = vec3(0.0), shadowMult = vec3(1.0);
     float purkinjeOverwrite = 0.0, emission = 0.0;
-
-    float luminance = GetLuminance(color.rgb);
+    vec2 lmCoordM = lmCoord;
 
     if (color.a > 0.001) {
         vec3 screenPos = vec3(gl_FragCoord.xy / vec2(viewWidth, viewHeight), gl_FragCoord.z);
@@ -125,14 +128,16 @@ void main() {
         bool noSmoothLighting = atlasSize.x < 600.0; // To fix fire looking too dim
         bool noGeneratedNormals = false;
         float smoothnessG = 0.0, highlightMult = 0.0, noiseFactor = 0.75;
-        vec2 lmCoordM = lmCoord;
-        vec3 shadowMult = vec3(1.0);
 
         #ifdef CUSTOM_PBR
             GetCustomMaterials(color, normalM, lmCoordM, NdotU, shadowMult, smoothnessG, smoothnessD, highlightMult, emission, materialMask, viewPos, lViewPos);
         #endif
 
-        if (entityId == 50004) { // Lightning Bolt
+        if (entityId == 50004
+        #if MC_VERSION >= 12105 && defined IS_IRIS
+            || color.r < 0.45 && color.g < 0.45 && color.b < 0.5 && gl_Color.a == 0.0
+        #endif
+        ) { // Lightning Bolt
             #include "/lib/materials/specificMaterials/entities/lightningBolt.glsl"
         }
 
@@ -150,16 +155,11 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoordM, noSmoothLighting, false, false,
-                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
-
-        #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
-            #ifdef OVERWORLD
-                skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
-            #else
-                skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
-            #endif
-        #endif
+                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
+                   enderDragonDead);
     }
+
+    float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, -1);
@@ -170,15 +170,15 @@ void main() {
     gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
-        /* DRAWBUFFERS:065 */
+        /* DRAWBUFFERS:064 */
         gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0658 */
+            /* DRAWBUFFERS:0649 */
             gl_FragData[3] = vec4(lightAlbedo, 1.0);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(lightAlbedo, 1.0);
     #endif
 }
@@ -235,14 +235,11 @@ attribute vec4 at_midBlock;
 //Includes//
 #include "/lib/util/spaceConversion.glsl"
 
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 #if DRAGON_DEATH_EFFECT_INTERNAL > 0
-    #include "/lib/misc/endCrystalVoxelization.glsl"
+    #include "/lib/voxelization/endCrystalVoxelization.glsl"
 #endif
 
 //Program//

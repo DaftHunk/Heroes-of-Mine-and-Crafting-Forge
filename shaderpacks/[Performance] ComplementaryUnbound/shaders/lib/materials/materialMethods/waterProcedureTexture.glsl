@@ -121,7 +121,7 @@ vec3 waterMaskFunc(vec3 worldPos, const float water_scroll_speed, vec3 waterColo
     foam *= 1.3;
 
     //not regular structure water
-    float water_sample = floor(texture2D(noisetex, uv.xz * 0.25 + foamNoise.xz * water_warp + water_pos).r * 16) / 16;
+    float water_sample = floor(texture2DLod(noisetex, uv.xz * 0.25 + foamNoise.xz * water_warp + water_pos, 0.0).r * 16) / 16;
     vec3 water = mix(water_color, vec3(0.001), water_sample * float(foam));
 
     // small particles in water

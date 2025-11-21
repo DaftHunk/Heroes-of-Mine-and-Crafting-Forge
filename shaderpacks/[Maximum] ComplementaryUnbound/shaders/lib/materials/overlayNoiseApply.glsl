@@ -4,10 +4,10 @@
 #define MOSS_IN_CAVES 0 //[0 1 2] //lush caves, true, false
 #define MOSS_SIDE_INTENSITY 10 //[0 1 2 3 4 5 6 7 8 9 10]
 #define MOSS_NOISE_DISTANCE 1.0 //[0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0]
-#define MOSS_SIZE 16 //[16 32 64 128]
+#define MOSS_SIZE 16 //[8 16 32 64 128]
 
 #define SAND_CONDITION 0 //[0 1 2] 0 = dynamic 1 = only in hot biomes, 2 = everywhere
-#define SAND_SIZE 16 //[16 32 64 128]
+#define SAND_SIZE 16 //[8 16 32 64 128]
 #define SAND_NOISE_INTENSITY 1.0 //[0.5 0.75 1.0 1.25 1.5 2.0]
 #define SAND_NOISE_REMOVE_INTENSITY 1.00 //[0.00 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.60 1.70 1.80 1.90 2.00 2.25 2.50 2.75 3.00]
 #define SAND_TRANSPARENCY 0.85 // [0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 1.00]

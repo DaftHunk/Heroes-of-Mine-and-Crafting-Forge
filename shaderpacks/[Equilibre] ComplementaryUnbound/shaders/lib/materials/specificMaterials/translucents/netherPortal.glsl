@@ -1,4 +1,6 @@
 #define NETHER_PORTAL_VARIATION 1 //[1 2]
+//#define NETHER_PORTAL_NOISE
+
 #if NETHER_PORTAL_VARIATION == 1
     lmCoordM = vec2(0.0);
     color = vec4(0.0);
@@ -32,9 +34,8 @@
 
     emission *= emission;
     emission *= emission;
-    emission *= emission;    emission = clamp(emission * 120.0, 0.03, 1.2) * 8.0;
-
-
+    emission *= emission;
+    emission = clamp(emission * 120.0, 0.03, 1.2) * 8.0;
 #else
     #ifdef GENERATED_NORMALS
         noGeneratedNormals = true;
@@ -44,10 +45,10 @@
 
     vec2 wind = vec2(0.0, frameTimeCounter * 0.03);
 
-    float noise = texture2D(noisetex, wpos.xz * 0.20 + wind * 0.2).r * 0.01;
-            noise+= texture2D(noisetex, wpos.xz * 0.15 + wind * 0.15).r * 0.02;
-            noise+= texture2D(noisetex, wpos.xz * 0.10 + wind * 0.10).r * 0.06;
-            noise+= texture2D(noisetex, wpos.xz * 0.05 + wind * 0.05).r * 0.12;
+    float noise = texture2DLod(noisetex, wpos.xz * 0.20 + wind * 0.2, 0.0).r * 0.01;
+            noise+= texture2DLod(noisetex, wpos.xz * 0.15 + wind * 0.15, 0.0).r * 0.02;
+            noise+= texture2DLod(noisetex, wpos.xz * 0.10 + wind * 0.10, 0.0).r * 0.06;
+            noise+= texture2DLod(noisetex, wpos.xz * 0.05 + wind * 0.05, 0.0).r * 0.12;
 
     color.rgb = vec3(0.4431, 0.102, 0.6118) * noise * 3.0;
     color.rgb *= color.rgb * 24.0;
@@ -60,6 +61,28 @@
     color.a = 0.7;
 #endif
 
+#ifdef NETHER_PORTAL_NOISE
+    vec2 portalUV;
+    if (abs(worldGeoNormal.x) > 0.5) {
+        portalUV = worldPos.yz;
+    } else {
+        portalUV = worldPos.yx;
+    }
+
+    float baseNoise = texture2DLod(noisetex, portalUV * 0.03 + frameTimeCounter * 0.01, 0.0).b;
+    vec2 timeWaves = vec2(
+        sin(frameTimeCounter * 0.7 + portalUV.x * 2.0),
+        cos(frameTimeCounter * 0.5 + portalUV.y * 2.0)
+    );
+
+    vec2 warpedUV = portalUV * 0.1 + baseNoise * 0.05 * timeWaves + frameTimeCounter * 0.0083;
+    float portalNoise = 1.0 - texture2DLod(noisetex, warpedUV, 0.0).g;
+
+    color.rgb = mix(color.rgb * 0.66, color.rgb * 0.66 + pow2(vec3(portalNoise * 1.2)), portalNoise);
+    emission = mix(0, emission, portalNoise);
+    noGeneratedNormals = portalNoise > 0.25;
+#endif
+
 #define PORTAL_REDUCE_CLOSEUP
 #ifdef PORTAL_REDUCE_CLOSEUP
     color.a *= min1(lViewPos - 0.2);
@@ -70,7 +93,12 @@
 #endif
 
 #ifdef PORTAL_EDGE_EFFECT
-    vec3 voxelPos = SceneToVoxel(playerPos);
+    vec3 playerPosCurved = playerPos;
+
+    #ifdef WORLD_CURVATURE
+        playerPosCurved.y += doWorldCurvature(playerPosCurved.xz);
+    #endif
+    vec3 voxelPos = SceneToVoxel(playerPosCurved);
 
     if (CheckInsideVoxelVolume(voxelPos)) {
         float portalOffset = 0.0625 * dither;
@@ -85,7 +113,7 @@
 
         float edge = 0.0;
         for (int i = 0; i < 6; i++) {
-            uint voxel = texelFetch(voxel_sampler, ivec3(voxelPos + portalOffsets[i]), 0).r;
+            uint voxel = GetVoxelVolume(ivec3(voxelPos + portalOffsets[i]));
             if (voxel != uint(25)) {
                 edge = 1.0; break;
             }
@@ -98,6 +126,8 @@
     }
 #endif
 #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS
-    float luminance = GetLuminance(color.rgb);
-    color.rgb = normalize(netherColor) * luminance * 2.5;
+    color.rgb = normalize(netherColor) * GetLuminance(color.rgb) * 2.5;
 #endif
+
+// color.rgb = vec3(0);
+// emission = 0;

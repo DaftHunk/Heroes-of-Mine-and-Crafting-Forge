@@ -1,13 +1,17 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/wavingBlocks.glsl"
-#define WATER_CAUSTIC_STRENGTH 1.0 //[0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+#include "/lib/shaderSettings/shadowMainLighting.glsl"
 #define SHADOW_SATURATION 1.0 //[0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -50,6 +54,13 @@ void DoNaturalShadowCalculation(inout vec4 color1, inout vec4 color2) {
 //Program//
 void main() {
     vec4 color1 = texture2DLod(tex, texCoord, 0); // Shadow Color
+    #ifdef SHADOW_COLORWHEEL
+        vec2 lmCoord; // needed as otherwise undeclared in the function below
+        float ao;
+        vec4 overlayColor;
+
+        clrwl_computeFragment(color1, color1, lmCoord, ao, overlayColor);
+    #endif
 
     #if SHADOW_QUALITY >= 1
         vec4 color2 = color1; // Light Shaft Color
@@ -62,19 +73,14 @@ void main() {
 
         if (mat < 32008) {
             if (mat < 32000) {
-                #ifdef CONNECTED_GLASS_EFFECT
-                    if (mat == 30008) { // Tinted Glass
-                        DoSimpleConnectedGlass(color1);
+                #if defined CONNECTED_GLASS_EFFECT || defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
+                    if (mat == 30008 || mat >= 31000) { // Tinted Glass || Stained Glass, Stained Glass Pane
+                        #ifdef CONNECTED_GLASS_EFFECT
+                            DoSimpleConnectedGlass(color1);
+                        #endif
                         
                         #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
                             positionYM = 0.0; // 86AHGA: For scene-aware light shafts to be less prone to get extreme under large glass planes
-                        #endif
-                    }
-                    if (mat >= 31000) { // Stained Glass, Stained Glass Pane
-                        DoSimpleConnectedGlass(color1);
-
-                        #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
-                            positionYM = 0.0; // 86AHGA
                         #endif
                     }
                 #endif
@@ -140,8 +146,8 @@ void main() {
                     #endif
 
                     vec2 waterWind = vec2(syncedTime * 0.01, 0.0);
-                    float waterNoise = texture2D(noisetex, worldPosM.xz * 0.012 - waterWind).g;
-                          waterNoise += texture2D(noisetex, worldPosM.xz * 0.05 + waterWind).g;
+                    float waterNoise = texture2DLod(noisetex, worldPosM.xz * 0.012 - waterWind, 0.0).g;
+                          waterNoise += texture2DLod(noisetex, worldPosM.xz * 0.05 + waterWind, 0.0).g;
 
                     float factor = max(2.5 - 0.025 * length(position.xz), 0.8333) * 1.3;
                     waterNoise = pow(waterNoise * 0.5, factor) * factor * 1.3;
@@ -204,13 +210,14 @@ void main() {
         }
     #endif
 
+    /* DRAWBUFFERS:0 */
     gl_FragData[0] = vec4(saturateColors(color1.rgb, SHADOW_SATURATION), color1.a); // Shadow Color
 
     #if SHADOW_QUALITY >= 1
         #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
             color2.a = 0.25 + max0(positionYM * 0.05); // consistencyMEJHRI7DG
         #endif
-
+        /* DRAWBUFFERS:01 */
         gl_FragData[1] = vec4(saturateColors(color2.rgb, pow(SHADOW_SATURATION, 0.8)), color2.a); // Light Shaft Color
     #endif
 }
@@ -241,14 +248,8 @@ flat out vec4 glColor;
 
 //Attributes//
 attribute vec4 mc_Entity;
-
-#if defined PERPENDICULAR_TWEAKS || defined WAVING_ANYTHING_TERRAIN || defined WAVING_WATER_VERTEX || defined CONNECTED_GLASS_EFFECT
-    attribute vec4 mc_midTexCoord;
-#endif
-
-#if COLORED_LIGHTING_INTERNAL > 0 || defined IRIS_FEATURE_BLOCK_EMISSION_ATTRIBUTE
-    attribute vec4 at_midBlock;
-#endif
+attribute vec4 mc_midTexCoord;
+attribute vec4 at_midBlock;
 
 //Common Variables//
 vec2 lmCoord;
@@ -259,8 +260,13 @@ vec2 lmCoord;
     #ifdef PUDDLE_VOXELIZATION
         writeonly uniform uimage2D puddle_img;
     #endif
+
+    #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+        writeonly uniform uimage3D wsr_img;
+        writeonly uniform uimage3D wsr_img_lod;
+    #endif
     
-    #ifdef ACL_GROUND_LEAVES_FIX
+    #ifdef ACT_GROUND_LEAVES_FIX
         writeonly uniform uimage3D leaves_img;
     #endif
 #endif
@@ -275,22 +281,22 @@ vec2 lmCoord;
 #endif
 
 #if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
-    #include "/lib/misc/voxelization.glsl"
+    #include "/lib/voxelization/lightVoxelization.glsl"
 
     #ifdef PUDDLE_VOXELIZATION
-        #include "/lib/misc/puddleVoxelization.glsl"
+        #include "/lib/voxelization/puddleVoxelization.glsl"
     #endif
-    #ifdef ACL_GROUND_LEAVES_FIX
-        #include "/lib/misc/leavesVoxelization.glsl"
-    #endif
-#endif
 
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
+    #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+        #include "/lib/voxelization/reflectionVoxelization.glsl"
+    #endif
+    #ifdef ACT_GROUND_LEAVES_FIX
+        #include "/lib/voxelization/leavesVoxelization.glsl"
+    #endif
 #endif
 
 #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
-    #include "/lib/misc/endCrystalVoxelization.glsl"
+    #include "/lib/voxelization/endCrystalVoxelization.glsl"
 #endif
 
 //Program//
@@ -337,14 +343,14 @@ void main() {
     //          irisThirdPersonPull = eyePosition - cameraPosition;
     //      #endif
     //      vec3 pullCenter = vec3(0.1, -0.1, -0.05) - irisThirdPersonPull;
-    //      float pullFactor = pow(min(abs(sin(1.81 * frameTimeCounter) + cos(0.9124 * frameTimeCounter)), 1.0), 10.0) * 4.0 / (length(position.xyz) + max(20 * texture2D(noisetex, vec2(frameTimeCounter * 0.1)).r, 10.0));
+    //      float pullFactor = pow(min(abs(sin(1.81 * frameTimeCounter) + cos(0.9124 * frameTimeCounter)), 1.0), 10.0) * 4.0 / (length(position.xyz) + max(20 * texture2DLod(noisetex, vec2(frameTimeCounter * 0.1), 0.0).r, 10.0));
     //      vec3 pullDir = pullCenter - position.xyz - at_midBlock.xyz / 64.0;
     //      position.xyz += pullDir * pullFactor;
     //  }
     // #endif
 
     #ifdef PERPENDICULAR_TWEAKS
-        if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10017 || mat == 10019 || mat == 10029) { // Foliage
+        if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10017 || mat == 10019 || mat == 10029 || mat == 10039) { // Foliage
             #ifndef CONNECTED_GLASS_EFFECT
                 vec2 midCoord = (gl_TextureMatrix[0] * mc_midTexCoord).st;
                 vec2 texMinMidCoord = texCoord - midCoord;
@@ -368,7 +374,11 @@ void main() {
             #ifdef PUDDLE_VOXELIZATION
                 UpdatePuddleVoxelMap(mat);
             #endif
-            #ifdef ACL_GROUND_LEAVES_FIX
+            #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+                vec3 normal = mat3(shadowModelViewInverse) * gl_NormalMatrix * gl_Normal;
+                UpdateSceneVoxelMap(mat, normal, position.xyz);
+            #endif
+            #ifdef ACT_GROUND_LEAVES_FIX
                 UpdateLeavesVoxelMap(mat);
             #endif
             #ifdef END_PORTAL_BEAM_INTERNAL

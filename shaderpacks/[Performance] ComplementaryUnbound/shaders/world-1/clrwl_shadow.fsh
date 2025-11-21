@@ -3,5 +3,6 @@
 #define FRAGMENT_SHADER
 #define NETHER
 #define SHADOW
+#define SHADOW_COLORWHEEL
 
-#include "/program/clrwl_shadow.glsl"
+#include "/program/shadow.glsl"

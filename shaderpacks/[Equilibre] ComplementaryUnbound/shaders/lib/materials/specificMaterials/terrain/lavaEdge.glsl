@@ -53,10 +53,10 @@
 
             vec3 absPlayerPos = abs(playerPos);
             float maxPlayerPos = max(absPlayerPos.x, max(absPlayerPos.y * 2.0, absPlayerPos.z));
-            float edgeDecider = pow2(min1(maxPlayerPos / min(effectiveACLdistance, far) * 2.0)); // this is to make the effect fade at the edge of ACL range
+            float edgeDecider = pow2(min1(maxPlayerPos / min(effectiveACTdistance, far) * 2.0)); // this is to make the effect fade at the edge of ACT range
 
             color.rgb = mix(color.rgb, edgeColor, edge * (1.0 - edgeDecider));
-            emission = min(mix(emission, edgeEmission, edge * (1.0 - edgeDecider)), 3.5);
+            emission = mix(emission, min(edgeEmission, 3.5), edge * (1.0 - edgeDecider));
         }
     }
 #endif

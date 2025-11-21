@@ -1,10 +1,14 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
+#include "/lib/shaderSettings/water.glsl"
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -74,7 +78,7 @@ float vlFactor = 0.0;
 #if WATER_REFLECT_QUALITY >= 0
     #if defined SKY_EFFECT_REFLECTION && defined OVERWORLD
         #include "/lib/atmospherics/stars.glsl"
-        #ifdef NIGHT_NEBULA
+        #if NIGHT_NEBULAE == 1
             #include "/lib/atmospherics/nightNebula.glsl"
         #endif
 
@@ -94,6 +98,10 @@ float vlFactor = 0.0;
 #endif
 #if PIXEL_WATER > 0
     #include "/lib/materials/materialMethods/waterProcedureTexture.glsl"
+#endif
+
+#ifdef SS_BLOCKLIGHT
+    #include "/lib/lighting/coloredBlocklight.glsl"
 #endif
 
 //Program//
@@ -116,7 +124,7 @@ void main() {
     #endif
 
     #ifdef VL_CLOUDS_ACTIVE
-        float cloudLinearDepth = texelFetch(gaux1, texelCoord, 0).r;
+        float cloudLinearDepth = texelFetch(gaux2, texelCoord, 0).a;
 
         if (pow2(cloudLinearDepth + OSIEBCA * dither) * renderDistance < min(lViewPos, renderDistance)) discard;
     #endif
@@ -139,11 +147,17 @@ void main() {
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     float fresnel = clamp(1.0 + dot(normalM, nViewPos), 0.0, 1.0);
-    float purkinjeOverwrite = 0.0;
+    float purkinjeOverwrite = 0.0, enderDragonDead = 1.0;
+    float SSBLAlpha = 1.0;
 
     if (mat == DH_BLOCK_WATER) {
-        #include "/lib/materials/specificMaterials/translucents/water.glsl"
+        #ifdef SHADER_WATER
+            #include "/lib/materials/specificMaterials/translucents/water.glsl"
+        #endif
+        color.rgb *= 1.2; // compensates for lack of texture and material reflections
     }
+    
+    float fresnelM = (pow3(fresnel) * 0.85 + 0.15) * reflectMult;
 
     float lengthCylinder = max(length(playerPos.xz), abs(playerPos.y) * 2.0);
     color.a *= smoothstep(far * 0.5, far * 0.7, lengthCylinder);
@@ -168,12 +182,22 @@ void main() {
 
     bool isLightSource = lmCoord.x > 0.99;
 
+    #ifdef SS_BLOCKLIGHT
+        blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
+    #endif
+
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+               centerShadowBias, subsurfaceMode, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
+               enderDragonDead);
+
+    #ifdef SS_BLOCKLIGHT
+        vec3 normalizedColor = normalize(color.rgb);
+        vec3 lightAlbedo = normalizedColor * step(0.6, lmCoord.x);
+    #endif
 
     // Reflections
-    float skyLightFactor = pow2(max(lmCoordM.y - 0.7, 0.0) * 3.33333);
+    float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
     #if WATER_REFLECT_QUALITY >= 0
         #ifdef LIGHT_COLOR_MULTS
             highlightColor *= lightColorMult;
@@ -182,27 +206,39 @@ void main() {
             highlightColor *= pow2(moonPhaseInfluence);
         #endif
 
-        float fresnelM = (pow3(fresnel) * 0.85 + 0.15) * reflectMult;
-
-        #if SHADOW_QUALITY > -1 && WATER_REFLECT_QUALITY >= 2 && WATER_MAT_QUALITY >= 2
-            skyLightFactor = max(skyLightFactor, min1(dot(shadowMult, shadowMult)));
-        #endif
-
         vec4 reflection = GetReflection(normalM, viewPos.xyz, nViewPos, playerPos, lViewPos, -1.0,
                                         dhDepthTex1, dither, skyLightFactor, fresnel,
-                                        smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult);
+                                        smoothnessG, geoNormal, color.rgb, shadowMult, highlightMult, 0.0, vec2(0.0));
 
         color.rgb = mix(color.rgb, reflection.rgb, fresnelM);
     #endif
     ////
 
     float sky = 0.0;
-    DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
-    color.a *= 1.0 - sky;
+
+    float prevAlpha = color.a;
+    DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither);
+    float fogAlpha = color.a;
+    color.a = prevAlpha * (1.0 - sky);
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;
     gl_FragData[1] = vec4(smoothnessG, 0.0, skyLightFactor, lmCoordM.x + clamp01(purkinjeOverwrite) + clamp01(emission));
+    #ifdef SS_BLOCKLIGHT
+        /* DRAWBUFFERS:069 */
+        gl_FragData[2] = vec4(lightAlbedo, SSBLAlpha);
+        #if WORLD_SPACE_REFLECTIONS > 0
+            /* DRAWBUFFERS:06948 */
+            gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, sqrt(fresnelM * color.a * fogAlpha));
+            gl_FragData[4] = vec4(reflection.rgb * fresnelM * color.a * fogAlpha, reflection.a);
+        #endif
+    #else
+        #if WORLD_SPACE_REFLECTIONS > 0
+            /* DRAWBUFFERS:0648 */
+            gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, sqrt(fresnelM * color.a * fogAlpha));
+            gl_FragData[3] = vec4(reflection.rgb * fresnelM * color.a * fogAlpha, reflection.a);
+        #endif
+    #endif
 }
 
 #endif
@@ -231,9 +267,6 @@ attribute vec4 at_tangent;
 //Includes//
 #ifdef TAA
     #include "/lib/antialiasing/jitter.glsl"
-#endif
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
 #endif
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"

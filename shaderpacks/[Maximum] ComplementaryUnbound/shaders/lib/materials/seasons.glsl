@@ -6,7 +6,7 @@
 #define SNOW_NOISE_INTENSITY 1.0 //[0.5 0.75 1.0 1.25 1.5 2.0]
 #define SNOW_TRANSPARENCY 0.90 //[0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 1.00]
 #define MELTING_RADIUS 0.4 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
-#define SNOW_SIZE 16 //[16 32 64 128]
+#define SNOW_SIZE 16 //[8 16 32 64 128]
 //#define SSS_SEASON_SNOW
 #define SNOW_NOISE_REMOVE_INTENSITY 1.00 //[0.00 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.60 1.70 1.80 1.90 2.00 2.25 2.50 2.75 3.00]
 #define WINTER_GREEN_AMOUNT 0.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
@@ -19,11 +19,13 @@
 //#define EXTRA_FLOOR_LEAVES_IN_FORESTS
 
 #define FLOWER_DENSITY 1.0 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
-#define FLOWER_SIZE 16 //[16 32 64 128]
+#define FLOWER_SIZE 16 //[8 16 32 64 128]
 #define FLOWER_AMOUNT 2 //[0 1 2 3 4 5 6 7 8 9 10]
 #define SPRING_GREEN_INTENSITY 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
 //#define EMISSIVE_SPRING_FLOWERS
 #define DISABLE_SPRING_IN_DRY_BIOMES
+#ifdef EMISSIVE_SPRING_FLOWERS
+#endif
 
 #ifndef GBUFFERS_HAND
     vec3 oldColor = color.rgb; // Needed for entities
@@ -137,7 +139,7 @@
                             leafFloorColor += 0.7 * leafFloorNoise; // make noisier
                             float skylightCheck = (1.0 - pow(lmCoord.y + 0.01, 30.0)) * pow(lmCoord.y + 0.01, 2.0);
 
-                            #ifdef ACL_GROUND_LEAVES_FIX
+                            #ifdef ACT_GROUND_LEAVES_FIX
                                 if (skylightCheck > 0.001) {
                                     uint underneathLeaves = 0u;
                                     #define LEAVES_VOXEL_RANGE 20 // 20 blocks, increasing this to a large number would have a severe performance impact
@@ -177,9 +179,9 @@
                             leafVariable *= skylightCheck;
 
                             #ifdef EXTRA_FLOOR_LEAVES_IN_FORESTS
-                                float leafAddNoise1 = 1.0 - texture2D(noisetex, 0.0005 * (worldPos.xz + worldPos.y)).r * 1.3;
-                                float leafAddNoise2 = 1.0 - texture2D(noisetex, 0.005 * (worldPos.xz + worldPos.y)).r * 1.3;
-                                float leafAddNoise3 = texture2D(noisetex, 0.02 * (worldPos.xz + worldPos.y)).r * 1.3;
+                                float leafAddNoise1 = 1.0 - texture2DLod(noisetex, 0.0005 * (worldPos.xz + worldPos.y), 0.0).r * 1.3;
+                                float leafAddNoise2 = 1.0 - texture2DLod(noisetex, 0.005 * (worldPos.xz + worldPos.y), 0.0).r * 1.3;
+                                float leafAddNoise3 = texture2DLod(noisetex, 0.02 * (worldPos.xz + worldPos.y), 0.0).r * 1.3;
                                 leafVariable += mix(0.0, lmCoord.y * 1.0 - clamp(2.0 * leafAddNoise1 + 0.70 * leafAddNoise2 + 0.2 * leafAddNoise1, 0.0, 1.0), inForest);
                             #endif
 
@@ -356,8 +358,8 @@
                 }
                 #if FLOWER_AMOUNT > 0 && !defined DH_TERRAIN
                     if ((mat == 10132 || mat == 10133)) { // Normal Grass Block
-                        float flowerNoiseAdd = step(texture2D(noisetex, 0.0005 * (worldPos.xz + atMidBlock.xz / 64)).r, 0.25) * 3.5 + 1.0; // Noise to add more flowers
-                        float flowerNoiseRemove = clamp01(step(texture2D(noisetex, 0.003 * (worldPos.xz + atMidBlock.xz / 64)).g, 0.69) + 0.15); // Noise to reduce the amount of flowers
+                        float flowerNoiseAdd = step(texture2DLod(noisetex, 0.0005 * (worldPos.xz + atMidBlock.xz / 64), 0.0).r, 0.25) * 3.5 + 1.0; // Noise to add more flowers
+                        float flowerNoiseRemove = clamp01(step(texture2DLod(noisetex, 0.003 * (worldPos.xz + atMidBlock.xz / 64), 0.0).g, 0.69) + 0.15); // Noise to reduce the amount of flowers
 
                         ivec2 flowerUV = ivec2(blockUV.xz * FLOWER_SIZE);
 

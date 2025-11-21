@@ -22,4 +22,7 @@
 
 //#define CLEAR_WATER_SPOTS
 
+#ifdef BRIGHT_CAVE_WATER
+#endif
+
 #endif

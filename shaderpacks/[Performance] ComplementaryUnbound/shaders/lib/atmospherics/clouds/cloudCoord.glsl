@@ -3,6 +3,8 @@
 
     #include "/lib/shaderSettings/clouds.glsl"
 
+    const float cloudNarrowness = CLOUD_NARROWNESS;
+
         // Thanks to SixthSurge
         vec2 GetRoundedCloudCoord(vec2 pos, float cloudRoundness) { // cloudRoundness is meant to be 0.125 for clouds and 0.35 for cloud shadows
             vec2 coord = pos.xy + 0.5;
@@ -26,9 +28,6 @@
             wind *= CLOUD_LAYER2_SPEED_MULT;
         }
 
-        #if INCREASED_RAIN_STRENGTH > 0
-            if (rainFactor > 0.01) wind *= 2.5;
-        #endif
         #if CLOUD_DIRECTION == 1
             tracePos.x += wind;
         #else
@@ -36,7 +35,7 @@
         #endif
 
         tracePos.z += cloudAltitude * 64.0;
-        tracePos.xz *= CLOUD_NARROWNESS;
+        tracePos.xz *= cloudNarrowness;
         return tracePos.xyz;
     }
 

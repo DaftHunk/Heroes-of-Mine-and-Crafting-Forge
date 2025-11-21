@@ -69,8 +69,8 @@ float dither = Bayer64(gl_FragCoord.xy);
                 vec3 psample = pow(texture2D(tex, coord).rgb, vec3(0.85)) * colors[i-1] * colormult;
                 color.rgb += psample * length(psample.rgb) * (3000.0 / repeat);
             #else
-                float noisePortal = texture2D(noisetex, pos * 0.5).g;
-                color.rgb += texture2D(noisetex, vec2(noisePortal, noisePortal) + wind * 2.0).g * colors[i % 3] * 0.1;
+                float noisePortal = texture2DLod(noisetex, pos * 0.5, 0.0).g;
+                color.rgb += texture2DLod(noisetex, vec2(noisePortal, noisePortal) + wind * 2.0, 0.0).g * colors[i % 3] * 0.1;
             #endif
         }
     }
@@ -116,7 +116,7 @@ noDirectionalShading = true;
 
         float edge = 0.0;
         for (int i = 0; i < 4; i++) {
-            int voxel = int(texelFetch(voxel_sampler, ivec3(voxelPos + portalOffsets[i]), 0).r);
+            int voxel = int(GetVoxelVolume(ivec3(voxelPos + portalOffsets[i])));
             if (voxel == 58 || voxel == 255) { // End Portal Frame or Bedrock
                 edge = 1.0; break;
             }

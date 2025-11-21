@@ -1,7 +1,7 @@
-/////////////////////////////////////
-// Complementary Shaders by EminGT //
+//////////////////////////////////////////
+// Complementary Shaders by EminGT      //
 // With Euphoria Patches by SpacEagle17 //
-/////////////////////////////////////
+//////////////////////////////////////////
 
 //Common//
 #include "/lib/common.glsl"
@@ -9,6 +9,10 @@
 #include "/lib/shaderSettings/entities.glsl"
 #include "/lib/shaderSettings/emissionMult.glsl"
 //#define NIGHT_DESATURATION
+
+#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
+    #include "/lib/misc/distortWorld.glsl"
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -130,21 +134,19 @@ void main() {
     #else
         vec4 color = texture2D(tex, texCoord);
     #endif
-    #if defined GENERATED_NORMALS || PIXEL_WATER == 1
-        vec3 colorP = color.rgb;
-    #endif
+    vec3 colorP = color.rgb;
     color *= glColor;
 
-    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA
-    vec3 normalM = normal;
+    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
+    vec2 lmCoordM = lmCoord;
+    vec3 normalM = normal, shadowMult = vec3(1.0);
 
-    float luminance = GetLuminance(color.rgb);
     vec3 lightAlbedo = vec3(0.0);
 
     float alphaCheck = color.a;
     #ifdef DO_PIXELATION_EFFECTS
         // Fixes artifacts on fragment edges with non-nvidia gpus
-        alphaCheck = max(fwidth(color.a), alphaCheck);
+        if (entityId != 50112) alphaCheck = max(fwidth(color.a), alphaCheck); // Except for nametags as that causes issues
     #endif
 
     if (alphaCheck > 0.001) {
@@ -171,19 +173,33 @@ void main() {
             #endif
         #endif
 
+        float dither = Bayer64(gl_FragCoord.xy);
+        #ifdef TAA
+            dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
+        #endif
+
+        #ifdef DISTANT_HORIZONS
+            if (entityId != 0 && getDHFadeFactor(playerPos) < dither) {
+                discard;
+            }
+        #endif
+
         color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 
         bool noSmoothLighting = atlasSize.x < 600.0; // To fix fire looking too dim
         bool noGeneratedNormals = false, noDirectionalShading = false, noVanillaAO = false;
         float smoothnessG = 0.0, highlightMult = 0.0, emission = 0.0, noiseFactor = 0.75;
-        vec2 lmCoordM = lmCoord;
-        vec3 shadowMult = vec3(1.0);
+
+        if (entityId == 50016 || entityId == 50017) { // Player
+            #include "/lib/materials/specificMaterials/others/SpacEagle17.glsl"
+        }
+
         #ifdef IPBR
-            #include "/lib/materials/materialHandling/entityMaterials.glsl"
+            #include "/lib/materials/materialHandling/entityIPBR.glsl"
 
             #ifdef IS_IRIS
                 vec3 maRecolor = vec3(0.0);
-                #include "/lib/materials/materialHandling/irisMaterials.glsl"
+                #include "/lib/materials/materialHandling/irisIPBR.glsl"
             #endif
 
             if (materialMask != OSIEBCA * 254.0) materialMask += OSIEBCA * 100.0; // Entity Reflection Handling
@@ -255,19 +271,14 @@ void main() {
 
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
-                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource);
+                   true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
+                   enderDragonDead);
 
         #if defined IPBR && defined IS_IRIS
             color.rgb += maRecolor;
         #endif
 
-        #if defined PBR_REFLECTIONS || defined NIGHT_DESATURATION
-            #ifdef OVERWORLD
-                skyLightFactor = clamp01(pow2(max(lmCoord.y - 0.7, 0.0) * 3.33333) + 0.0 + 0.0);
-            #else
-                skyLightFactor = dot(shadowMult, shadowMult) / 3.0;
-            #endif
-        #endif
+        skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
         emissionOld = emission;
     }
 
@@ -284,15 +295,15 @@ void main() {
     gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emissionOld));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
-        /* DRAWBUFFERS:065 */
+        /* DRAWBUFFERS:064 */
         gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0658 */
+            /* DRAWBUFFERS:0649 */
             gl_FragData[3] = vec4(lightAlbedo, entitySSBLMask);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:068 */
+        /* DRAWBUFFERS:069 */
         gl_FragData[2] = vec4(lightAlbedo, entitySSBLMask);
     #endif
 }
@@ -343,9 +354,6 @@ attribute vec4 at_midBlock;
 
 //Includes//
 
-#if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
-    #include "/lib/misc/distortWorld.glsl"
-#endif
 #ifdef WAVE_EVERYTHING
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif

@@ -3,5 +3,6 @@
 #define VERTEX_SHADER
 #define END
 #define SHADOW
+#define SHADOW_COLORWHEEL
 
-#include "/program/clrwl_shadow.glsl"
+#include "/program/shadow.glsl"
