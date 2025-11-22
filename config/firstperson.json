@@ -151,7 +151,12 @@
     "aquaculture:neptunium_fishing_rod",
     "netherdepthsupgrade:lava_fishing_rod",
     "minecraft:fishing_rod",
-    "lilis_lucky_lures:bamboo_fishing_rod"
+    "lilis_lucky_lures:bamboo_fishing_rod",
+    "musketmod:blunderbuss",
+    "musketmod:musket",
+    "musketmod:musket_with_bayonet",
+    "musketmod:musket_with_scope",
+    "musketmod:pistol"
   ],
   "autoToggleModItems": [
     "exposure:camera",
