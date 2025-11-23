@@ -7,13 +7,13 @@
 
 [Render]
 	# Distance in blocks before item labels stop rendering
-	labelRenderDistance = 20.0
+	labelRenderDistance = 14.0
 	# 
 	# Distance in blocks before quantity numbers stop rendering
 	quantityRenderDistance = 10.0
 	# 
 	# Distance in blocks before quantity numbers begin to fade out
-	quantityFadeDistance = 4.0
+	quantityFadeDistance = 10.0
 
 	# Render settings specific to framed drawers.
 	[Render.FramedDrawers]
