@@ -23,6 +23,9 @@
 	#The camera FOV when in shoulder surfing perspective. Depends on config option 'fov_override_enabled'.
 	#Range: 30.0 ~ 110.0
 	fov_override = 70.0
+	#Whether to apply view bobbing in shoulder surfing perspective. Set to INHERIT to inherit vanilla setting.
+	#Allowed Values: INHERIT, ON, OFF
+	view_bobbing_mode = "INHERIT"
 
 	[camera.offset]
 		#Third person camera x-offset.
@@ -33,7 +36,7 @@
 		offset_y = 0.0
 		#Third person camera z-offset.
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-		offset_z = 4.6000000000000085
+		offset_z = 4.575000000000008
 
 		[camera.offset.min]
 			#When x-offset is limited this is the minimum amount.

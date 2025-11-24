@@ -109,6 +109,10 @@
     "jade_plugin3": true,
     "jade_plugin1": true
   },
+  "item-descriptions": {
+    "block_descriptions": true,
+    "entity_descriptions": true
+  },
   "delightful": {
     "crop_progress": true,
     "pie_icons": true,

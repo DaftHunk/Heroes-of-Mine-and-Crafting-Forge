@@ -1,3 +1,7 @@
+#Whether to show a toast when a player encounters a caravan.
+showEncounterToast = true
+#Whether to use light mode for the toast.
+toastLightMode = false
 
 [Spawning]
 	#Minimum world age in ticks required before caravans can start spawning.
