@@ -1,0 +1,135 @@
+{
+      "name": "Scovillain",
+      "nationalPokedexNumber": 952,
+      "primaryType": "grass",
+      "secondaryType": "fire",
+      "abilities": [
+            "chlorophyll",
+            "insomnia",
+            "h:moody"
+      ],
+      "baseStats": {
+            "hp": 65,
+            "attack": 108,
+            "defence": 65,
+            "special_attack": 108,
+            "special_defence": 65,
+            "speed": 75
+      },
+      "catchRate": 75,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 170,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass"
+      ],
+      "moves": [
+            "tm:temperflare",
+            "tm:endure",
+            "tm:grassknot",
+            "tm:magicalleaf",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:protect",
+            "tm:solarbeam",
+            "tm:hyperbeam",
+            "tm:zenheadbutt",
+            "tm:trailblaze",
+            "tm:substitute",
+            "tm:grassyglide",
+            "48:solarbeam",
+            "38:crunch",
+            "tm:burningjealousy",
+            "tm:superfang",
+            "33:worryseed",
+            "tm:flamethrower",
+            "tm:bulletseed",
+            "tm:lashout",
+            "17:sunnyday",
+            "1:leafage",
+            "tm:gigaimpact",
+            "tm:facade",
+            "21:bulletseed",
+            "1:firefang",
+            "tm:grassyterrain",
+            "1:flamethrower",
+            "tm:sleeptalk",
+            "24:headbutt",
+            "tm:endeavor",
+            "tm:scaryface",
+            "13:razorleaf",
+            "tm:leafstorm",
+            "1:spicyextract",
+            "tm:fireblast",
+            "tm:seedbomb",
+            "1:leer",
+            "tm:gigadrain",
+            "tm:willowisp",
+            "44:seedbomb",
+            "tm:helpinghand",
+            "4:bite",
+            "10:growth",
+            "tm:crunch",
+            "tm:sunnyday",
+            "tm:firefang",
+            "tm:takedown",
+            "tm:thief",
+            "tm:rest",
+            "tm:stompingtantrum",
+            "28:zenheadbutt",
+            "48:overheat",
+            "tm:energyball",
+            "tm:sandstorm"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 9,
+      "weight": 150,
+      "preEvolution": "capsakid",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.scovillain.desc"
+      ],
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "cobblemon:roasted_leek",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 0.9,
+            "height": 1.4,
+            "fixed": false
+      },
+      "baseScale": 1,
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      }
+}

@@ -1,0 +1,37 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "chienpao",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "75-80",
+                  "weight": 2.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "minecraft:ice_spikes"
+                        ]
+                  },
+                  "id": "chienpao-1"
+            },
+            {
+                  "pokemon": "chienpao",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "65",
+                  "weight": 5,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_freezing"
+                        ],
+                        "timeRange": "night"
+                  },
+                  "id": "chienpao-2"
+            }
+      ]
+}

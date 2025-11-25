@@ -1,0 +1,268 @@
+{
+      "implemented": true,
+      "name": "Swinub",
+      "nationalPokedexNumber": 220,
+      "primaryType": "ice",
+      "secondaryType": "ground",
+      "abilities": [
+            "oblivious",
+            "snowcloak",
+            "h:thickfat"
+      ],
+      "baseStats": {
+            "hp": 50,
+            "attack": 50,
+            "defence": 40,
+            "special_attack": 30,
+            "special_defence": 30,
+            "speed": 50
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "catchRate": 225,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 50,
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:porkchop"
+                  },
+                  {
+                        "item": "minecraft:brown_wool"
+                  },
+                  {
+                        "item": "cobblemon:never_melt_ice",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:aspear_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "moves": [
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "tm:superpower",
+            "tutor:attract",
+            "tm:avalanche",
+            "tutor:curse",
+            "tutor:protect",
+            "tm:highhorsepower",
+            "tm:trailblaze",
+            "egg:stealthrock",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tutor:return",
+            "tutor:roar",
+            "tutor:blizzard",
+            "egg:mudbomb",
+            "30:icywind",
+            "tutor:mudslap",
+            "tm:earthpower",
+            "tutor:toxic",
+            "tm:bodyslam",
+            "tm:mudbomb",
+            "tm:captivate",
+            "tm:charm",
+            "tutor:headbutt",
+            "tutor:raindance",
+            "tutor:swagger",
+            "tm:babydolleyes",
+            "tutor:stealthrock",
+            "1:mudslap",
+            "45:earthquake",
+            "tm:roar",
+            "tutor:earthpower",
+            "tm:reflect",
+            "egg:iciclecrash",
+            "tm:smackdown",
+            "tm:rocktomb",
+            "tm:terablast",
+            "tm:earthquake",
+            "tm:doubleedge",
+            "1:odorsleuth",
+            "tm:strength",
+            "tutor:iciclespear",
+            "egg:fissure",
+            "tm:substitute",
+            "tutor:mist",
+            "20:mist",
+            "tm:return",
+            "5:mudsport",
+            "tm:sleeptalk",
+            "tm:endeavor",
+            "5:powdersnow",
+            "tm:amnesia",
+            "tm:mudsport",
+            "tutor:ancientpower",
+            "tm:iceshard",
+            "tm:naturalgift",
+            "egg:curse",
+            "egg:bodyslam",
+            "tutor:bodyslam",
+            "tutor:amnesia",
+            "1:mudsport",
+            "tm:takedown",
+            "tm:stoneedge",
+            "tm:icebeam",
+            "tutor:substitute",
+            "tm:flail",
+            "40:takedown",
+            "egg:takedown",
+            "15:iceshard",
+            "tm:mudshot",
+            "tm:raindance",
+            "10:flail",
+            "tm:attract",
+            "egg:bite",
+            "tutor:snore",
+            "tm:reversal",
+            "tutor:takedown",
+            "tm:powdersnow",
+            "tm:snore",
+            "tm:facade",
+            "tm:ancientpower",
+            "tm:rocksmash",
+            "tm:snowscape",
+            "tutor:sleeptalk",
+            "tutor:mimic",
+            "tutor:mudshot",
+            "tutor:odorsleuth",
+            "tutor:doubleteam",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:hail",
+            "egg:doubleedge",
+            "tm:dig",
+            "tutor:defensecurl",
+            "18:mudbomb",
+            "tm:sandtomb",
+            "tutor:endure",
+            "tm:lightscreen",
+            "tutor:tackle",
+            "egg:rockslide",
+            "tutor:icywind",
+            "tutor:powdersnow",
+            "egg:ancientpower",
+            "tm:iciclecrash",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "tutor:superpower",
+            "tm:headbutt",
+            "tm:iciclespear",
+            "tm:icywind",
+            "tm:haze",
+            "tutor:bite",
+            "tm:odorsleuth",
+            "tm:protect",
+            "egg:avalanche",
+            "tm:icefang",
+            "25:endure",
+            "tutor:rest",
+            "tm:bulldoze",
+            "tm:fissure",
+            "tutor:rockslide",
+            "35:amnesia",
+            "tm:toxic",
+            "1:tackle",
+            "tutor:endeavor",
+            "tutor:charm",
+            "egg:freezedry",
+            "tutor:rocksmash",
+            "tm:freezedry",
+            "50:blizzard",
+            "tm:tackle",
+            "tutor:detect",
+            "egg:iciclespear",
+            "tutor:frustration",
+            "tm:scaryface",
+            "tm:mist",
+            "egg:mudshot",
+            "tm:bite",
+            "tutor:doubleedge",
+            "tutor:hiddenpower",
+            "tutor:earthquake",
+            "tm:hiddenpower",
+            "tutor:strength",
+            "tm:stompingtantrum",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen2"
+      ],
+      "pokedex": [
+            "cobblemon.species.swinub.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "piloswine",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "icefang"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 33
+                        }
+                  ],
+                  "id": "swinub_piloswine"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "piloswine",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "furyattack",
+                        "icefang"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 33
+                        }
+                  ],
+                  "id": "swinub_piloswine-1"
+            }
+      ],
+      "baseScale": 1.1,
+      "hitbox": {
+            "width": 0.7,
+            "height": 0.4,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 65,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

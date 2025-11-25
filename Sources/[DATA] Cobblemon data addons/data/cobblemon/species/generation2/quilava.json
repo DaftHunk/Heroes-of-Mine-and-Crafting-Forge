@@ -1,0 +1,595 @@
+{
+      "implemented": true,
+      "name": "Quilava",
+      "nationalPokedexNumber": 156,
+      "primaryType": "fire",
+      "abilities": [
+            "blaze",
+            "h:flashfire"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "features": [
+            "region_bias"
+      ],
+      "forms": [
+            {
+                  "name": "Hisui Bias",
+                  "primaryType": "fire",
+                  "abilities": [
+                        "blaze",
+                        "h:flashfire"
+                  ],
+                  "drops": {
+                        "amount": 1,
+                        "entries": [
+                              {
+                                    "item": "cobblemon:charcoal_stick",
+                                    "percentage": 10.0
+                              }
+                        ]
+                  },
+                  "baseStats": {
+                        "hp": 58,
+                        "attack": 64,
+                        "defence": 58,
+                        "special_attack": 80,
+                        "special_defence": 65,
+                        "speed": 80
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.875,
+                  "shoulderMountable": false,
+                  "baseExperienceYield": 142,
+                  "experienceGroup": "medium_slow",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "field"
+                  ],
+                  "behaviour": {
+                        "resting": {
+                              "canSleep": true,
+                              "willSleepOnBed": false,
+                              "depth": "normal",
+                              "light": "0-4"
+                        },
+                        "moving": {
+                              "walk": {
+                                    "walkSpeed": 0.2
+                              }
+                        }
+                  },
+                  "moves": [
+                        "1:leer",
+                        "1:smokescreen",
+                        "1:tackle",
+                        "10:ember",
+                        "13:quickattack",
+                        "20:flamewheel",
+                        "24:defensecurl",
+                        "31:swift",
+                        "35:flamecharge",
+                        "42:lavaplume",
+                        "46:flamethrower",
+                        "53:inferno",
+                        "57:rollout",
+                        "64:doubleedge",
+                        "68:burnup",
+                        "68:overheat",
+                        "75:eruption",
+                        "tm:aerialace",
+                        "tm:attract",
+                        "tm:bodyslam",
+                        "tm:brickbreak",
+                        "tm:burningjealousy",
+                        "tm:captivate",
+                        "tm:confide",
+                        "tm:curse",
+                        "tm:cut",
+                        "tm:dig",
+                        "tm:doubleedge",
+                        "tm:doubleteam",
+                        "tm:endeavor",
+                        "tm:endure",
+                        "tm:facade",
+                        "tm:fireblast",
+                        "tm:firefang",
+                        "tm:firepledge",
+                        "tm:firespin",
+                        "tm:flamecharge",
+                        "tm:flamethrower",
+                        "tm:flareblitz",
+                        "tm:focuspunch",
+                        "tm:frustration",
+                        "tm:heatwave",
+                        "tm:hiddenpower",
+                        "tm:incinerate",
+                        "tm:ironhead",
+                        "tm:naturalgift",
+                        "tm:naturepower",
+                        "tm:overheat",
+                        "tm:playrough",
+                        "tm:protect",
+                        "tm:rest",
+                        "tm:return",
+                        "tm:reversal",
+                        "tm:roar",
+                        "tm:rocksmash",
+                        "tm:round",
+                        "tm:secretpower",
+                        "tm:sleeptalk",
+                        "tm:strength",
+                        "tm:substitute",
+                        "tm:sunnyday",
+                        "tm:swagger",
+                        "tm:swift",
+                        "tm:takedown",
+                        "tm:temperflare",
+                        "tm:terablast",
+                        "tm:toxic",
+                        "tm:wildcharge",
+                        "tm:willowisp",
+                        "tm:workup",
+                        "tm:zenheadbutt",
+                        "tutor:attract",
+                        "tutor:bodyslam",
+                        "tutor:covet",
+                        "tutor:curse",
+                        "tutor:cut",
+                        "tutor:defensecurl",
+                        "tutor:detect",
+                        "tutor:dig",
+                        "tutor:doubleedge",
+                        "tutor:doubleteam",
+                        "tutor:ember",
+                        "tutor:endure",
+                        "tutor:fireblast",
+                        "tutor:firepledge",
+                        "tutor:flamethrower",
+                        "tutor:flamewheel",
+                        "tutor:focuspunch",
+                        "tutor:frustration",
+                        "tutor:furycutter",
+                        "tutor:headbutt",
+                        "tutor:heatwave",
+                        "tutor:hiddenpower",
+                        "tutor:irontail",
+                        "tutor:leer",
+                        "tutor:mimic",
+                        "tutor:mudslap",
+                        "tutor:protect",
+                        "tutor:quickattack",
+                        "tutor:rest",
+                        "tutor:return",
+                        "tutor:roar",
+                        "tutor:rocksmash",
+                        "tutor:rollout",
+                        "tutor:sleeptalk",
+                        "tutor:smokescreen",
+                        "tutor:snore",
+                        "tutor:strength",
+                        "tutor:substitute",
+                        "tutor:sunnyday",
+                        "tutor:swagger",
+                        "tutor:swift",
+                        "tutor:tackle",
+                        "tutor:toxic"
+                  ],
+                  "labels": [
+                        "gen2",
+                        "hisui_regional"
+                  ],
+                  "preEvolution": "cyndaquil region_bias=hisui",
+                  "evolutions": [
+                        {
+                              "id": "hisui_quilava_hisui_typhlosion",
+                              "variant": "level_up",
+                              "result": "typhlosion hisuian",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "infernalparade"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 36
+                                    }
+                              ]
+                        },
+                        {
+                              "id": "hisui_quilava_typhlosion",
+                              "variant": "level_up",
+                              "result": "typhlosion",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 36
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:is_temperate"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:is_spooky"
+                                    }
+                              ]
+                        }
+                  ],
+                  "baseScale": 0.7,
+                  "hitbox": {
+                        "width": 1,
+                        "height": 0.9,
+                        "fixed": false
+                  },
+                  "baseFriendship": 70,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 1,
+                        "special_defence": 0,
+                        "speed": 1
+                  },
+                  "height": 9,
+                  "weight": 190,
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "cannotDynamax": false
+            },
+            {
+                  "weight": 190,
+                  "maleRatio": 0.875,
+                  "name": "Hisui-Bias",
+                  "height": 9,
+                  "primaryType": "fire",
+                  "pokedex": [
+                        "cobblemon.species.quilava-hisuibias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen8a",
+                        "customized_official",
+                        "hisuian_form"
+                  ],
+                  "preEvolution": "cyndaquil",
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "typhlosion",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 36
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/quilava_hisuibiome"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/regional/quilava_johtobiome"
+                                    }
+                              ],
+                              "id": "quilava_typhlosion"
+                        },
+                        {
+                              "variant": "level_up",
+                              "result": "typhlosion hisuian",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "infernalparade"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 36
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/quilava_johtobiome"
+                                    }
+                              ],
+                              "id": "quilava_typhlosionhisui"
+                        }
+                  ]
+            }
+      ],
+      "baseStats": {
+            "hp": 58,
+            "attack": 64,
+            "defence": 58,
+            "special_attack": 80,
+            "special_defence": 65,
+            "speed": 80
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 142,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field"
+      ],
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.2
+                  }
+            }
+      },
+      "moves": [
+            "tm:curse",
+            "tm:endure",
+            "egg:covet",
+            "tutor:attract",
+            "53:inferno",
+            "tm:flamecharge",
+            "egg:flameburst",
+            "tutor:curse",
+            "tutor:protect",
+            "tutor:swift",
+            "tutor:heatwave",
+            "tm:zenheadbutt",
+            "tm:wildcharge",
+            "tutor:return",
+            "tm:doubleteam",
+            "tm:firespin",
+            "tm:extrasensory",
+            "tutor:roar",
+            "tutor:sunnyday",
+            "1:smokescreen",
+            "tutor:mudslap",
+            "egg:reversal",
+            "tutor:toxic",
+            "tm:bodyslam",
+            "tm:captivate",
+            "tutor:headbutt",
+            "tutor:swagger",
+            "tm:fireblast",
+            "tutor:ember",
+            "tm:covet",
+            "tm:flamewheel",
+            "egg:thrash",
+            "tm:roar",
+            "tm:smokescreen",
+            "egg:extrasensory",
+            "tutor:dig",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:doubleedge",
+            "tm:strength",
+            "tm:flameburst",
+            "tm:furycutter",
+            "tm:substitute",
+            "tm:rollout",
+            "tm:return",
+            "tutor:rollout",
+            "egg:doublekick",
+            "tm:focuspunch",
+            "tm:sleeptalk",
+            "68:overheat",
+            "tutor:leer",
+            "tm:endeavor",
+            "68:burnup",
+            "tm:naturalgift",
+            "egg:curse",
+            "tm:leer",
+            "tutor:bodyslam",
+            "tm:sunnyday",
+            "tm:takedown",
+            "13:quickattack",
+            "tm:furyswipes",
+            "tm:quickattack",
+            "tutor:substitute",
+            "tm:howl",
+            "tm:firepledge",
+            "tutor:covet",
+            "tm:swift",
+            "46:flamethrower",
+            "tm:thrash",
+            "egg:furyswipes",
+            "tm:ironhead",
+            "20:flamewheel",
+            "tm:naturepower",
+            "tm:attract",
+            "tm:eruption",
+            "tutor:irontail",
+            "tutor:snore",
+            "tm:reversal",
+            "42:lavaplume",
+            "24:defensecurl",
+            "tutor:fireblast",
+            "tm:facade",
+            "57:rollout",
+            "tm:rocksmash",
+            "tutor:quickattack",
+            "tm:incinerate",
+            "tutor:sleeptalk",
+            "tutor:mimic",
+            "35:flamecharge",
+            "tutor:doubleteam",
+            "1:leer",
+            "tm:secretpower",
+            "tm:dig",
+            "tutor:endure",
+            "tutor:defensecurl",
+            "tutor:flamethrower",
+            "tutor:tackle",
+            "tutor:flamewheel",
+            "tm:firefang",
+            "tm:cut",
+            "tm:rest",
+            "tm:temperflare",
+            "tm:doublekick",
+            "tm:headbutt",
+            "egg:crushclaw",
+            "tm:aerialace",
+            "tutor:focuspunch",
+            "tutor:smokescreen",
+            "tm:foresight",
+            "31:swift",
+            "tm:protect",
+            "tm:lavaplume",
+            "tm:ember",
+            "tm:burnup",
+            "tutor:rest",
+            "tm:brickbreak",
+            "tm:burningjealousy",
+            "75:eruption",
+            "tm:toxic",
+            "1:tackle",
+            "tm:heatwave",
+            "tutor:rocksmash",
+            "tutor:cut",
+            "tm:playrough",
+            "tm:tackle",
+            "egg:foresight",
+            "egg:howl",
+            "tutor:detect",
+            "tutor:frustration",
+            "tm:willowisp",
+            "tutor:firepledge",
+            "tutor:furycutter",
+            "tm:crushclaw",
+            "64:doubleedge",
+            "10:ember",
+            "tm:inferno",
+            "tm:workup",
+            "tutor:doubleedge",
+            "tutor:hiddenpower",
+            "tm:defensecurl",
+            "tutor:strength",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen2",
+            "johtonian_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.quilava.desc"
+      ],
+      "preEvolution": "cyndaquil",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "typhlosion",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        }
+                  ],
+                  "id": "quilava_typhlosion"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "typhlosion hisuian",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "infernalparade"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/cyndaquil_quilava_hisui_bias"
+                        }
+                  ],
+                  "id": "quilava_hisui_typhlosion"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "typhlosion",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/quilava_hisuibiome"
+                        }
+                  ],
+                  "id": "quilava_typhlosion-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "typhlosion hisuian",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "infernalparade"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/regional/quilava_hisuibiome"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/quilava_johtobiome"
+                        }
+                  ],
+                  "id": "quilava_typhlosionhisui"
+            }
+      ],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 1,
+            "height": 0.9,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 1,
+            "special_defence": 0,
+            "speed": 1
+      },
+      "height": 9,
+      "weight": 190,
+      "aspects": [],
+      "cannotDynamax": false
+}

@@ -1,0 +1,173 @@
+{
+      "implemented": true,
+      "name": "Charcadet",
+      "nationalPokedexNumber": 935,
+      "primaryType": "fire",
+      "abilities": [
+            "flashfire",
+            "h:flamebody"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:charcoal",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 40,
+            "attack": 50,
+            "defence": 40,
+            "special_attack": 50,
+            "special_defence": 40,
+            "speed": 35
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.25
+                  }
+            }
+      },
+      "shoulderMountable": true,
+      "catchRate": 90,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 51,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 1,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 35,
+      "eggGroups": [
+            "human_like"
+      ],
+      "moves": [
+            "tm:endure",
+            "egg:destinybond",
+            "tm:flamecharge",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:destinybond",
+            "20:nightshade",
+            "tm:lavaplume",
+            "tm:protect",
+            "tm:ember",
+            "tm:clearsmog",
+            "tm:spite",
+            "24:flamecharge",
+            "egg:spite",
+            "tm:substitute",
+            "tm:firespin",
+            "32:lavaplume",
+            "8:clearsmog",
+            "tm:heatwave",
+            "tm:disable",
+            "tm:facade",
+            "tm:astonish",
+            "egg:disable",
+            "tm:nightshade",
+            "tm:sleeptalk",
+            "tm:incinerate",
+            "1:ember",
+            "tm:fireblast",
+            "28:incinerate",
+            "1:leer",
+            "tm:confuseray",
+            "tm:willowisp",
+            "tm:helpinghand",
+            "tm:leer",
+            "1:astonish",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:rest",
+            "12:firespin",
+            "16:willowisp",
+            "tm:flamethrower"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 6,
+      "weight": 105,
+      "evolutions": [
+            {
+                  "variant": "item_interact",
+                  "result": "armarouge",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "psyshock"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:auspicious_armor",
+                  "id": "charcadet_armarouge"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "ceruledge",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "shadowclaw"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:malicious_armor",
+                  "id": "charcadet_ceruledge"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "armarouge",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "psyshock"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:auspicious_armor",
+                  "id": "charcadet_armarouge-1"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "ceruledge",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "shadowclaw"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:malicious_armor",
+                  "id": "charcadet_ceruledge-1"
+            }
+      ],
+      "baseScale": 0.55,
+      "hitbox": {
+            "width": 0.6,
+            "height": 1.3,
+            "fixed": false
+      },
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.charcadet.desc"
+      ],
+      "forms": []
+}

@@ -1,0 +1,48 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "pikipek",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "uncommon",
+                  "level": "9-18",
+                  "weight": 4,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_forest",
+                              "#cobblemon:is_jungle",
+                              "#minecraft:is_taiga"
+                        ]
+                  },
+                  "id": "pikipek-1"
+            },
+            {
+                  "pokemon": "pikipek",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "2-27",
+                  "weight": 9.0,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_jungle",
+                              "#cobblemon:is_sky",
+                              "#cobblemon:is_tropical_island"
+                        ],
+                        "timeRange": "day"
+                  },
+                  "anticondition": {
+                        "biomes": [
+                              "#cobblemon:is_freezing"
+                        ]
+                  },
+                  "id": "pikipek-2"
+            }
+      ]
+}

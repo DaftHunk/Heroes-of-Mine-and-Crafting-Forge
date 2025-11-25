@@ -1,0 +1,40 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "celebi",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "30-32",
+                  "weight": 2.8,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "minecraft:birch_forest"
+                        ]
+                  },
+                  "id": "celebi-1"
+            },
+            {
+                  "pokemon": "celebi",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "65",
+                  "weight": 5.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_forest"
+                        ],
+                        "dimensions": [
+                              "minecraft:overworld"
+                        ]
+                  },
+                  "id": "celebi-2"
+            }
+      ]
+}

@@ -1,0 +1,143 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "slowpoke",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "7-32",
+                  "weight": 5.4,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_beach"
+                        ]
+                  },
+                  "id": "slowpoke-1"
+            },
+            {
+                  "pokemon": "slowpoke",
+                  "presets": [
+                        "natural",
+                        "river"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "7-32",
+                  "weight": 6.0,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15
+                  },
+                  "id": "slowpoke-2"
+            },
+            {
+                  "pokemon": "slowpoke",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "7-32",
+                  "weight": 5.4,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_beach"
+                        ]
+                  },
+                  "id": "slowpoke-3"
+            },
+            {
+                  "pokemon": "slowpoke galarian",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "uncommon",
+                  "level": "10-25",
+                  "weight": 6.0,
+                  "condition": {
+                        "biomes": [
+                              "minecraft:mangrove_swamp"
+                        ]
+                  },
+                  "id": "slowpoke-galarian-2"
+            },
+            {
+                  "pokemon": "slowpoke galarian",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "7-32",
+                  "weight": 3.4,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "minecraft:mushroom_fields"
+                        ]
+                  },
+                  "id": "slowpoke-4"
+            },
+            {
+                  "pokemon": "slowpoke",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "7-32",
+                  "weight": 6.0,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_river"
+                        ]
+                  },
+                  "anticondition": {
+                        "biomes": [
+                              "#cobblemon:is_freezing"
+                        ]
+                  },
+                  "id": "slowpoke-5"
+            },
+            {
+                  "pokemon": "slowpoke galarian",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "7-32",
+                  "weight": 5.4,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "minecraft:mushroom_fields",
+                              "#cobblemon:is_tropical_island"
+                        ],
+                        "neededNearbyBlocks": [
+                              "#minecraft:water"
+                        ]
+                  },
+                  "id": "slowpoke-galarian-7"
+            }
+      ]
+}

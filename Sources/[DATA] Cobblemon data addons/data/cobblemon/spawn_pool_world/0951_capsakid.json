@@ -1,0 +1,22 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "capsakid",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "4-25",
+                  "weight": 4.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_savanna"
+                        ]
+                  },
+                  "id": "capsakid-1"
+            }
+      ]
+}

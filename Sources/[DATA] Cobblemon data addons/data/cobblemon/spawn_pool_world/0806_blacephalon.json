@@ -1,0 +1,39 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "blacephalon",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "15-32",
+                  "weight": 3.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "minecraft:dark_forest"
+                        ]
+                  },
+                  "id": "blacephalon-1"
+            },
+            {
+                  "pokemon": "blacephalon",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "60",
+                  "weight": 4.0,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_nether_desert"
+                        ]
+                  },
+                  "id": "blacephalon-2"
+            }
+      ]
+}

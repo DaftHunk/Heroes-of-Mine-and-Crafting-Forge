@@ -1,0 +1,21 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "arceus",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70",
+                  "weight": 0.8,
+                  "condition": {
+                        "biomes": [
+                              "#minecraft:is_end"
+                        ]
+                  },
+                  "id": "arceus-1"
+            }
+      ]
+}

@@ -1,0 +1,228 @@
+{
+      "name": "Swablu",
+      "nationalPokedexNumber": 333,
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+            "naturalcure",
+            "h:cloudnine"
+      ],
+      "baseStats": {
+            "hp": 45,
+            "attack": 40,
+            "defence": 60,
+            "special_attack": 40,
+            "special_defence": 75,
+            "speed": 50
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 62,
+      "experienceGroup": "erratic",
+      "eggCycles": 20,
+      "eggGroups": [
+            "flying",
+            "dragon"
+      ],
+      "moves": [
+            "egg:featherdance",
+            "tm:endure",
+            "16:round",
+            "tutor:skyattack",
+            "tutor:hypervoice",
+            "tutor:swift",
+            "egg:agility",
+            "tutor:heatwave",
+            "tutor:twister",
+            "tm:trailblaze",
+            "tm:doubleteam",
+            "tutor:healbell",
+            "tm:hypervoice",
+            "tutor:mudslap",
+            "egg:roost",
+            "tm:bodyslam",
+            "tm:echoedvoice",
+            "tm:captivate",
+            "tutor:swagger",
+            "tutor:peck",
+            "tm:outrage",
+            "tutor:psychup",
+            "tutor:featherdance",
+            "tm:pluck",
+            "tm:safeguard",
+            "28:sing",
+            "tm:dragoncheer",
+            "tm:hurricane",
+            "tm:terablast",
+            "12:furyattack",
+            "1:growl",
+            "tm:substitute",
+            "30:mirrormove",
+            "4:disarmingvoice",
+            "tm:dragonpulse",
+            "tm:return",
+            "36:takedown",
+            "tm:tailwind",
+            "egg:hypervoice",
+            "egg:playrough",
+            "tm:sleeptalk",
+            "38:dragonpulse",
+            "40:moonblast",
+            "tm:endeavor",
+            "tutor:roost",
+            "tm:naturalgift",
+            "egg:rage",
+            "tutor:bodyslam",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:icebeam",
+            "egg:astonish",
+            "tutor:substitute",
+            "20:naturalgift",
+            "egg:defog",
+            "egg:haze",
+            "tutor:dualwingbeat",
+            "tm:raindance",
+            "tm:swift",
+            "20:dragonbreath",
+            "3:astonish",
+            "tm:disarmingvoice",
+            "tm:powerswap",
+            "tm:attract",
+            "1:peck",
+            "tutor:snore",
+            "egg:dragonrush",
+            "tm:snore",
+            "tm:facade",
+            "tutor:growl",
+            "tutor:sleeptalk",
+            "tm:agility",
+            "32:cottonguard",
+            "tutor:mimic",
+            "tm:secretpower",
+            "tm:steelwing",
+            "egg:pursuit",
+            "tutor:endure",
+            "tutor:outrage",
+            "tm:fly",
+            "tm:featherdance",
+            "tm:rest",
+            "tm:dreameater",
+            "26:refresh",
+            "tm:haze",
+            "egg:powerswap",
+            "tm:aerialace",
+            "tm:psychup",
+            "tm:protect",
+            "tm:solarbeam",
+            "44:perishsong",
+            "24:safeguard",
+            "tutor:aircutter",
+            "tutor:falseswipe",
+            "tm:falseswipe",
+            "tm:toxic",
+            "tm:heatwave",
+            "tm:bravebird",
+            "tm:playrough",
+            "tutor:ominouswind",
+            "tutor:defog",
+            "egg:steelwing",
+            "8:mist",
+            "tm:dualwingbeat",
+            "tutor:dreameater",
+            "tm:helpinghand",
+            "tm:uproar",
+            "tm:acrobatics",
+            "tm:roost",
+            "tutor:doubleedge",
+            "tutor:tailwind",
+            "tm:thief",
+            "egg:tailwind",
+            "tm:hiddenpower",
+            "tutor:uproar",
+            "tm:confide",
+            "tutor:dragonpulse",
+            "tm:dazzlinggleam",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen3"
+      ],
+      "pokedex": [
+            "cobblemon.species.swablu.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "altaria",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "dragonpulse"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 35
+                        }
+                  ],
+                  "id": "swablu_altaria"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "altaria",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "dragonbreath",
+                        "dragonpulse"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 35
+                        }
+                  ],
+                  "id": "swablu_altaria-1"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 0.5,
+            "height": 0.75,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 1,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 12,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:white_wool",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:yache_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "implemented": true,
+      "target": "cobblemon:swablu",
+      "forms": []
+}

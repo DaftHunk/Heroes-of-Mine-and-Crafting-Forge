@@ -1,0 +1,182 @@
+{
+      "implemented": true,
+      "name": "Tatsugiri",
+      "nationalPokedexNumber": 978,
+      "primaryType": "dragon",
+      "secondaryType": "water",
+      "abilities": [
+            "commander",
+            "h:stormdrain"
+      ],
+      "baseStats": {
+            "hp": 68,
+            "attack": 50,
+            "defence": 60,
+            "special_attack": 120,
+            "special_defence": 95,
+            "speed": 82
+      },
+      "catchRate": 100,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 166,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 2,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 35,
+      "eggGroups": [
+            "water_2"
+      ],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canWalkOnWater": true,
+                        "canSwimInLava": false
+                  },
+                  "walk": {
+                        "avoidsLand": false
+                  }
+            }
+      },
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:salmon"
+                  },
+                  {
+                        "item": "minecraft:bone_meal",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:haban_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:dracometeor",
+            "tm:endure",
+            "tm:taunt",
+            "tm:icywind",
+            "tm:dragoncheer",
+            "39:muddywater",
+            "tm:terablast",
+            "tm:raindance",
+            "tm:surf",
+            "tm:protect",
+            "tm:memento",
+            "tm:hyperbeam",
+            "6:harden",
+            "tm:splash",
+            "28:taunt",
+            "tm:substitute",
+            "1:watergun",
+            "tm:batonpass",
+            "tm:dragonpulse",
+            "tm:watergun",
+            "egg:rapidspin",
+            "tm:muddywater",
+            "tm:mirrorcoat",
+            "tm:whirlpool",
+            "tm:chillingwater",
+            "tm:gigaimpact",
+            "tm:facade",
+            "tm:rapidspin",
+            "tm:sleeptalk",
+            "tm:soak",
+            "tm:hydropump",
+            "23:soak",
+            "egg:batonpass",
+            "tm:lunge",
+            "tm:counter",
+            "tm:harden",
+            "1:splash",
+            "tm:dragondance",
+            "34:memento",
+            "52:dragonpulse",
+            "tm:helpinghand",
+            "tm:nastyplot",
+            "17:waterpulse",
+            "43:nastyplot",
+            "tm:takedown",
+            "12:helpinghand",
+            "tm:outrage",
+            "tm:rest",
+            "egg:counter",
+            "tm:waterpulse",
+            "47:mirrorcoat"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [
+            "tatsugiri-texture-curly"
+      ],
+      "height": 3,
+      "weight": 80,
+      "evolutions": [],
+      "baseScale": 0.8,
+      "hitbox": {
+            "width": 0.8,
+            "height": 0.65,
+            "fixed": false
+      },
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.tatsugiri.desc"
+      ],
+      "target": "cobblemon:tatsugiri",
+      "forms": [
+            {
+                  "secondaryType": "water",
+                  "weight": 80,
+                  "maleRatio": 0.5,
+                  "name": "Droopy",
+                  "height": 3,
+                  "battleOnly": false,
+                  "primaryType": "dragon",
+                  "pokedex": [
+                        "cobblemon.species.tatsugiri-droopy.desc"
+                  ],
+                  "aspects": [
+                        "tatsugiri-texture-droopy"
+                  ],
+                  "labels": [
+                        "gen9"
+                  ],
+                  "forms": [],
+                  "evolutions": []
+            },
+            {
+                  "secondaryType": "water",
+                  "weight": 80,
+                  "maleRatio": 0.5,
+                  "name": "Stretchy",
+                  "height": 3,
+                  "battleOnly": false,
+                  "primaryType": "dragon",
+                  "pokedex": [
+                        "cobblemon.species.tatsugiri-stretchy.desc"
+                  ],
+                  "aspects": [
+                        "tatsugiri-texture-stretchy"
+                  ],
+                  "labels": [
+                        "gen9"
+                  ],
+                  "forms": [],
+                  "evolutions": []
+            }
+      ]
+}

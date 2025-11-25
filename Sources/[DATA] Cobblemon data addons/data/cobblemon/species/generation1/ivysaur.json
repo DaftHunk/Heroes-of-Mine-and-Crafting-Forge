@@ -1,0 +1,270 @@
+{
+      "implemented": true,
+      "name": "Ivysaur",
+      "nationalPokedexNumber": 2,
+      "primaryType": "grass",
+      "secondaryType": "poison",
+      "abilities": [
+            "overgrow",
+            "h:chlorophyll"
+      ],
+      "baseStats": {
+            "hp": 60,
+            "attack": 62,
+            "defence": 63,
+            "special_attack": 80,
+            "special_defence": 80,
+            "speed": 60
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.25
+                  }
+            }
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 142,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "monster",
+            "grass"
+      ],
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:melon_seeds",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:miracle_seed",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:curse",
+            "tm:endure",
+            "tm:venoshock",
+            "tutor:attract",
+            "tm:grassknot",
+            "tutor:rage",
+            "tm:poisonpowder",
+            "tutor:curse",
+            "tutor:protect",
+            "tm:trailblaze",
+            "tutor:flash",
+            "tm:doubleteam",
+            "tutor:return",
+            "tutor:grasspledge",
+            "tutor:sunnyday",
+            "tutor:mudslap",
+            "tutor:seedbomb",
+            "tutor:grassyglide",
+            "tutor:sleeppowder",
+            "tutor:toxic",
+            "tm:sludgebomb",
+            "tm:bodyslam",
+            "tm:echoedvoice",
+            "tutor:megadrain",
+            "tm:captivate",
+            "tm:charm",
+            "tutor:headbutt",
+            "tutor:swagger",
+            "tutor:facade",
+            "tutor:vinewhip",
+            "tutor:stringshot",
+            "35:synthesis",
+            "tm:roar",
+            "30:sweetscent",
+            "tm:worryseed",
+            "tm:petaldance",
+            "9:leechseed",
+            "tm:safeguard",
+            "tm:growth",
+            "tm:magicalleaf",
+            "tm:sweetscent",
+            "tm:terablast",
+            "tutor:bide",
+            "1:vinewhip",
+            "tm:doubleedge",
+            "1:growl",
+            "tm:grasspledge",
+            "40:worryseed",
+            "tm:strength",
+            "tm:furycutter",
+            "tm:substitute",
+            "egg:skullbash",
+            "tm:return",
+            "tm:stringshot",
+            "tutor:bind",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "tm:amnesia",
+            "tm:knockoff",
+            "tm:bind",
+            "tm:vinewhip",
+            "tm:acidspray",
+            "tm:naturalgift",
+            "tutor:sweetscent",
+            "egg:curse",
+            "tutor:lightscreen",
+            "tutor:worryseed",
+            "tutor:bodyslam",
+            "12:razorleaf",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:grasswhistle",
+            "tutor:swordsdance",
+            "tutor:substitute",
+            "45:powerwhip",
+            "tm:weatherball",
+            "15:poisonpowder",
+            "tutor:poisonpowder",
+            "1:growth",
+            "tm:naturepower",
+            "tm:attract",
+            "50:solarbeam",
+            "tm:skullbash",
+            "tutor:snore",
+            "tm:powerwhip",
+            "tm:sleeppowder",
+            "tm:bulletseed",
+            "tm:leechseed",
+            "tutor:takedown",
+            "tm:snore",
+            "tm:facade",
+            "tutor:growl",
+            "tm:rocksmash",
+            "tutor:sleeptalk",
+            "tutor:mimic",
+            "egg:ingrain",
+            "egg:petaldance",
+            "tutor:doubleteam",
+            "tm:secretpower",
+            "tutor:endure",
+            "tutor:defensecurl",
+            "20:seedbomb",
+            "tutor:outrage",
+            "tm:lightscreen",
+            "tutor:tackle",
+            "45:doubleedge",
+            "tm:cut",
+            "tm:rest",
+            "tutor:sludgebomb",
+            "tutor:solarbeam",
+            "tm:gigadrain",
+            "tm:energyball",
+            "tm:razorleaf",
+            "tm:headbutt",
+            "15:sleeppowder",
+            "tm:flash",
+            "tm:protect",
+            "tm:solarbeam",
+            "tutor:rest",
+            "tm:grassyglide",
+            "tm:falseswipe",
+            "tm:swordsdance",
+            "tm:toxic",
+            "egg:sludge",
+            "1:tackle",
+            "tm:ingrain",
+            "tutor:reflect",
+            "tutor:cut",
+            "tm:tackle",
+            "tutor:razorleaf",
+            "tutor:frustration",
+            "tm:sludge",
+            "egg:toxic",
+            "tm:seedbomb",
+            "tm:leafstorm",
+            "tm:synthesis",
+            "tm:helpinghand",
+            "tutor:furycutter",
+            "tutor:gigadrain",
+            "tutor:knockoff",
+            "tm:growl",
+            "tm:workup",
+            "tutor:doubleedge",
+            "tutor:leechseed",
+            "25:takedown",
+            "tutor:hiddenpower",
+            "tm:hiddenpower",
+            "egg:grasswhistle",
+            "tm:confide",
+            "tutor:growth",
+            "tutor:synthesis",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen1"
+      ],
+      "pokedex": [
+            "cobblemon.species.ivysaur.desc"
+      ],
+      "preEvolution": "bulbasaur",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "venusaur",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "petalblizzard"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 32
+                        }
+                  ],
+                  "id": "ivysaur_venusaur"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "venusaur",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "petaldance",
+                        "petalblizzard"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 32
+                        }
+                  ],
+                  "id": "ivysaur_venusaur-1"
+            }
+      ],
+      "baseScale": 0.95,
+      "hitbox": {
+            "width": 0.7,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 1,
+            "special_defence": 1,
+            "speed": 0
+      },
+      "height": 10,
+      "weight": 130,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

@@ -1,0 +1,184 @@
+{
+      "name": "Foongus",
+      "nationalPokedexNumber": 590,
+      "primaryType": "grass",
+      "secondaryType": "poison",
+      "abilities": [
+            "effectspore",
+            "h:regenerator"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:red_mushroom",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:cheri_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 69,
+            "attack": 55,
+            "defence": 45,
+            "special_attack": 55,
+            "special_defence": 55,
+            "speed": 15
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 59,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass"
+      ],
+      "moves": [
+            "tm:absorb",
+            "tm:venoshock",
+            "tm:endure",
+            "tm:poisonpowder",
+            "40:ragepowder",
+            "tm:grassknot",
+            "16:synthesis",
+            "egg:poisonpowder",
+            "tm:clearsmog",
+            "20:clearsmog",
+            "tm:doubleteam",
+            "tm:foulplay",
+            "1:bide",
+            "tutor:seedbomb",
+            "tm:sludgebomb",
+            "egg:clearsmog",
+            "tm:bodyslam",
+            "tm:spore",
+            "egg:endure",
+            "1:absorb",
+            "tutor:afteryou",
+            "1:astonish",
+            "tm:payback",
+            "36:toxic",
+            "egg:gastroacid",
+            "tm:worryseed",
+            "egg:worryseed",
+            "tm:growth",
+            "tutor:gastroacid",
+            "4:growth",
+            "tm:magicalleaf",
+            "tm:sweetscent",
+            "tm:terablast",
+            "tm:substitute",
+            "tm:megadrain",
+            "tm:rollout",
+            "tm:gastroacid",
+            "tm:return",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "egg:growth",
+            "32:ingrain",
+            "egg:bodyslam",
+            "tutor:worryseed",
+            "tm:sunnyday",
+            "tm:stunspore",
+            "egg:rollout",
+            "44:solarbeam",
+            "tm:raindance",
+            "egg:stunspore",
+            "tm:pollenpuff",
+            "8:stunspore",
+            "tm:naturepower",
+            "tm:attract",
+            "tm:feintattack",
+            "tutor:snore",
+            "48:spore",
+            "tm:bulletseed",
+            "tm:snore",
+            "tm:facade",
+            "tutor:sleeptalk",
+            "tm:afteryou",
+            "tutor:foulplay",
+            "tm:secretpower",
+            "tm:rest",
+            "28:gigadrain",
+            "tm:gigadrain",
+            "tm:energyball",
+            "12:megadrain",
+            "tm:flash",
+            "tm:protect",
+            "tm:solarbeam",
+            "12:bide",
+            "tm:bide",
+            "tm:ragepowder",
+            "tm:toxic",
+            "tm:ingrain",
+            "egg:defensecurl",
+            "24:sweetscent",
+            "tm:astonish",
+            "20:feintattack",
+            "tm:seedbomb",
+            "tm:leafstorm",
+            "tm:synthesis",
+            "tutor:gigadrain",
+            "tm:defensecurl",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tutor:synthesis",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5"
+      ],
+      "pokedex": [
+            "cobblemon.species.foongus.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "amoonguss",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 39
+                        }
+                  ],
+                  "id": "foongus_amoonguss"
+            }
+      ],
+      "baseScale": 0.45,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 1,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 2,
+      "weight": 10,
+      "aspects": [],
+      "cannotDynamax": false,
+      "implemented": true,
+      "target": "cobblemon:foongus",
+      "forms": [],
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "light": "0-4"
+            }
+      }
+}

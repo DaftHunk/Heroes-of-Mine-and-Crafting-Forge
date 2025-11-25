@@ -1,0 +1,449 @@
+{
+      "implemented": true,
+      "name": "Floette",
+      "nationalPokedexNumber": 670,
+      "primaryType": "fairy",
+      "abilities": [
+            "flowerveil",
+            "h:symbiosis"
+      ],
+      "baseStats": {
+            "hp": 54,
+            "attack": 45,
+            "defence": 47,
+            "special_attack": 75,
+            "special_defence": 98,
+            "speed": 52
+      },
+      "behaviour": {
+            "moving": {
+                  "fly": {
+                        "canFly": true
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "catchRate": 120,
+      "maleRatio": 0,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Eternal",
+                  "primaryType": "fairy",
+                  "abilities": [
+                        "flowerveil"
+                  ],
+                  "baseStats": {
+                        "hp": 74,
+                        "attack": 65,
+                        "defence": 67,
+                        "special_attack": 125,
+                        "special_defence": 128,
+                        "speed": 92
+                  },
+                  "catchRate": 120,
+                  "maleRatio": 0,
+                  "baseExperienceYield": 193,
+                  "baseFriendship": 70,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 2,
+                        "speed": 0
+                  },
+                  "experienceGroup": "medium_fast",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "undiscovered",
+                        "fairy"
+                  ],
+                  "moves": [
+                        "1:tackle",
+                        "1:vinewhip",
+                        "6:fairywind",
+                        "10:luckychant",
+                        "15:razorleaf",
+                        "20:wish",
+                        "25:magicalleaf",
+                        "27:grassyterrain",
+                        "33:petalblizzard",
+                        "38:aromatherapy",
+                        "43:mistyterrain",
+                        "46:moonblast",
+                        "50:lightofruin",
+                        "51:petaldance",
+                        "58:solarbeam",
+                        "tm:attract",
+                        "tm:calmmind",
+                        "tm:confide",
+                        "tm:dazzlinggleam",
+                        "tm:doubleteam",
+                        "tm:echoedvoice",
+                        "tm:energyball",
+                        "tm:facade",
+                        "tm:flash",
+                        "tm:frustration",
+                        "tm:grassknot",
+                        "tm:hiddenpower",
+                        "tm:naturepower",
+                        "tm:protect",
+                        "tm:psychic",
+                        "tm:raindance",
+                        "tm:rest",
+                        "tm:return",
+                        "tm:round",
+                        "tm:safeguard",
+                        "tm:secretpower",
+                        "tm:sleeptalk",
+                        "tm:solarbeam",
+                        "tm:substitute",
+                        "tm:sunnyday",
+                        "tm:swagger",
+                        "tm:toxic",
+                        "tutor:afteryou",
+                        "tutor:allyswitch",
+                        "tutor:covet",
+                        "tutor:endeavor",
+                        "tutor:gigadrain",
+                        "tutor:healbell",
+                        "tutor:helpinghand",
+                        "tutor:magiccoat",
+                        "tutor:seedbomb",
+                        "tutor:snore",
+                        "tutor:synthesis",
+                        "tutor:worryseed"
+                  ],
+                  "labels": [
+                        "gen6"
+                  ],
+                  "aspects": [
+                        "eternal",
+                        "flower-eternal"
+                  ],
+                  "height": 2,
+                  "weight": 9,
+                  "cannotDynamax": false,
+                  "battleOnly": false,
+                  "drops": {
+                        "amount": 2,
+                        "entries": [
+                              {
+                                    "item": "minecraft:wither_rose"
+                              },
+                              {
+                                    "item": "cobblemon:kebia_berry",
+                                    "percentage": 5.0
+                              }
+                        ]
+                  },
+                  "pokedex": [
+                        "cobblemon.species.floette-eternal.desc"
+                  ],
+                  "forms": [],
+                  "evolutions": []
+            },
+            {
+                  "weight": 9,
+                  "maleRatio": 0,
+                  "name": "Yellow",
+                  "height": 2,
+                  "battleOnly": false,
+                  "primaryType": "fairy",
+                  "pokedex": [
+                        "cobblemon.species.floette-yellow.desc"
+                  ],
+                  "aspects": [
+                        "flower-yellow"
+                  ],
+                  "labels": [
+                        "gen6"
+                  ],
+                  "preEvolution": "flabebe",
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "item_interact",
+                              "result": "florges",
+                              "consumeHeldItem": true,
+                              "learnableMoves": [],
+                              "requirements": [],
+                              "requiredContext": "cobblemon:shiny_stone",
+                              "id": "floette_florges"
+                        }
+                  ]
+            },
+            {
+                  "weight": 9,
+                  "maleRatio": 0,
+                  "name": "Orange",
+                  "height": 2,
+                  "battleOnly": false,
+                  "primaryType": "fairy",
+                  "pokedex": [
+                        "cobblemon.species.floette-orange.desc"
+                  ],
+                  "aspects": [
+                        "flower-orange"
+                  ],
+                  "labels": [
+                        "gen6"
+                  ],
+                  "preEvolution": "flabebe",
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "item_interact",
+                              "result": "florges",
+                              "consumeHeldItem": true,
+                              "learnableMoves": [],
+                              "requirements": [],
+                              "requiredContext": "cobblemon:shiny_stone",
+                              "id": "floette_florges"
+                        }
+                  ]
+            },
+            {
+                  "weight": 9,
+                  "maleRatio": 0,
+                  "name": "Blue",
+                  "height": 2,
+                  "battleOnly": false,
+                  "primaryType": "fairy",
+                  "pokedex": [
+                        "cobblemon.species.floette-blue.desc"
+                  ],
+                  "aspects": [
+                        "flower-blue"
+                  ],
+                  "labels": [
+                        "gen6"
+                  ],
+                  "preEvolution": "flabebe",
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "item_interact",
+                              "result": "florges",
+                              "consumeHeldItem": true,
+                              "learnableMoves": [],
+                              "requirements": [],
+                              "requiredContext": "cobblemon:shiny_stone",
+                              "id": "floette_florges"
+                        }
+                  ]
+            },
+            {
+                  "weight": 9,
+                  "maleRatio": 0,
+                  "name": "White",
+                  "height": 2,
+                  "battleOnly": false,
+                  "primaryType": "fairy",
+                  "pokedex": [
+                        "cobblemon.species.floette-white.desc"
+                  ],
+                  "aspects": [
+                        "flower-white"
+                  ],
+                  "labels": [
+                        "gen6"
+                  ],
+                  "preEvolution": "flabebe",
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "item_interact",
+                              "result": "florges",
+                              "consumeHeldItem": true,
+                              "learnableMoves": [],
+                              "requirements": [],
+                              "requiredContext": "cobblemon:shiny_stone",
+                              "id": "floette_florges"
+                        }
+                  ]
+            }
+      ],
+      "baseExperienceYield": 130,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "fairy"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:grassknot",
+            "egg:captivate",
+            "tm:storedpower",
+            "1:luckychant",
+            "33:petalblizzard",
+            "tm:trailblaze",
+            "tm:metronome",
+            "tm:doubleteam",
+            "tm:batonpass",
+            "tutor:synthesis",
+            "tm:wish",
+            "tutor:healbell",
+            "tm:healbell",
+            "tutor:seedbomb",
+            "tm:echoedvoice",
+            "tm:luckychant",
+            "tm:charm",
+            "tm:captivate",
+            "tm:aromatherapy",
+            "tm:alluringvoice",
+            "tm:covet",
+            "38:synthesis",
+            "tutor:afteryou",
+            "tm:worryseed",
+            "tm:petaldance",
+            "tm:safeguard",
+            "tm:magicalleaf",
+            "tm:terablast",
+            "1:vinewhip",
+            "tm:substitute",
+            "27:grassyterrain",
+            "tm:return",
+            "tm:moonblast",
+            "tm:chillingwater",
+            "tm:copycat",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "tm:endeavor",
+            "tm:vinewhip",
+            "tutor:magiccoat",
+            "tm:fairywind",
+            "tutor:worryseed",
+            "tm:petalblizzard",
+            "tm:sunnyday",
+            "46:moonblast",
+            "tm:mistyterrain",
+            "tm:raindance",
+            "tutor:covet",
+            "tm:magiccoat",
+            "tm:swift",
+            "tm:calmmind",
+            "tm:skillswap",
+            "tm:pollenpuff",
+            "tm:disarmingvoice",
+            "25:magicalleaf",
+            "38:aromatherapy",
+            "tm:naturepower",
+            "tm:attract",
+            "tutor:snore",
+            "egg:endeavor",
+            "58:solarbeam",
+            "tm:facade",
+            "tm:drainingkiss",
+            "tm:afteryou",
+            "tutor:helpinghand",
+            "tutor:allyswitch",
+            "egg:copycat",
+            "1:fairywind",
+            "tm:secretpower",
+            "tm:lightscreen",
+            "tm:allyswitch",
+            "10:safeguard",
+            "tm:psychic",
+            "15:razorleaf",
+            "tm:rest",
+            "egg:camouflage",
+            "tm:tearfullook",
+            "tm:gigadrain",
+            "tm:energyball",
+            "tm:razorleaf",
+            "tm:flash",
+            "tm:protect",
+            "tm:solarbeam",
+            "10:luckychant",
+            "tm:camouflage",
+            "tm:trick",
+            "tm:toxic",
+            "1:tackle",
+            "tutor:endeavor",
+            "tm:tackle",
+            "51:petaldance",
+            "20:wish",
+            "egg:tearfullook",
+            "tm:seedbomb",
+            "tm:synthesis",
+            "tm:helpinghand",
+            "tutor:gigadrain",
+            "tm:hiddenpower",
+            "43:mistyterrain",
+            "tm:confide",
+            "tm:dazzlinggleam",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen6"
+      ],
+      "pokedex": [
+            "cobblemon.species.floette.desc"
+      ],
+      "preEvolution": "flabebe",
+      "evolutions": [
+            {
+                  "variant": "item_interact",
+                  "result": "florges",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:shiny_stone",
+                  "id": "floette_florges"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "florges",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:shiny_stone",
+                  "id": "floette_florges-1"
+            }
+      ],
+      "baseScale": 0.4,
+      "hitbox": {
+            "width": 1.15,
+            "height": 1.3,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 2,
+            "speed": 0
+      },
+      "height": 2,
+      "weight": 9,
+      "aspects": [
+            "flower-red"
+      ],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:lily_of_the_valley"
+                  },
+                  {
+                        "item": "cobblemon:kebia_berry",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "minecraft:poppy"
+                  }
+            ]
+      }
+}

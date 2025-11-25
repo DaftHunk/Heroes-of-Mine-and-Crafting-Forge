@@ -1,0 +1,155 @@
+{
+      "name": "Hattrem",
+      "nationalPokedexNumber": 857,
+      "primaryType": "psychic",
+      "abilities": [
+            "healer",
+            "anticipation",
+            "h:magicbounce"
+      ],
+      "baseStats": {
+            "hp": 57,
+            "attack": 40,
+            "defence": 65,
+            "special_attack": 86,
+            "special_defence": 73,
+            "speed": 49
+      },
+      "catchRate": 120,
+      "maleRatio": 0,
+      "shoulderMountable": false,
+      "baseExperienceYield": 130,
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "fairy"
+      ],
+      "moves": [
+            "tutor:expandingforce",
+            "tm:endure",
+            "tm:psychicterrain",
+            "tm:safeguard",
+            "egg:mysticalfire",
+            "tm:magicalleaf",
+            "egg:nuzzle",
+            "1:confusion",
+            "tm:psyshock",
+            "tm:quash",
+            "tm:mistyterrain",
+            "tm:terablast",
+            "1:lifedew",
+            "tm:aromaticmist",
+            "tm:storedpower",
+            "tm:psychup",
+            "25:healpulse",
+            "tm:protect",
+            "tm:swift",
+            "tm:calmmind",
+            "tm:skillswap",
+            "tm:imprison",
+            "tm:disarmingvoice",
+            "37:calmmind",
+            "tm:metronome",
+            "tm:psybeam",
+            "tm:substitute",
+            "tm:attract",
+            "tm:batonpass",
+            "tm:trick",
+            "tm:reflect",
+            "51:healingwish",
+            "tm:brutalswing",
+            "tm:thunderwave",
+            "tm:round",
+            "tm:futuresight",
+            "44:psychic",
+            "tm:healpulse",
+            "20:psybeam",
+            "30:dazzlinggleam",
+            "tm:playrough",
+            "tm:snore",
+            "tm:facade",
+            "tm:drainingkiss",
+            "1:playnice",
+            "tm:sleeptalk",
+            "15:aromaticmist",
+            "tm:afteryou",
+            "tm:charm",
+            "egg:quash",
+            "tm:healingwish",
+            "tm:aromatherapy",
+            "egg:afteryou",
+            "1:brutalswing",
+            "tm:expandingforce",
+            "egg:aromaticmist",
+            "tm:helpinghand",
+            "15:aromatherapy",
+            "tm:lightscreen",
+            "tm:lifedew",
+            "tm:mysticalfire",
+            "1:aromatherapy",
+            "tm:psychic",
+            "tm:confusion",
+            "tm:playnice",
+            "tm:rest",
+            "tm:trickroom",
+            "tm:dazzlinggleam",
+            "tm:darkpulse",
+            "tm:gigadrain",
+            "tm:nuzzle",
+            "1:disarmingvoice"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.hattrem.desc"
+      ],
+      "preEvolution": "hatenna",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "hatterene",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "psychocut"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 42
+                        }
+                  ],
+                  "id": "hattrem_hatterene"
+            }
+      ],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 1,
+            "height": 1.2,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 2,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 6,
+      "weight": 48,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:babiri_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": []
+}

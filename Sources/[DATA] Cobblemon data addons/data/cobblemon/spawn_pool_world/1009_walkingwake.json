@@ -1,0 +1,26 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "walkingwake",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "50-70",
+                  "weight": 0.5,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_beach",
+                              "#cobblemon:is_coast"
+                        ],
+                        "timeRange": "morning",
+                        "neededBaseBlocks": [
+                              "minecraft:sand"
+                        ]
+                  },
+                  "id": "walkingwake-1"
+            }
+      ]
+}

@@ -1,0 +1,21 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "manaphy",
+                  "type": "pokemon",
+                  "context": "submerged",
+                  "bucket": "ultra-rare",
+                  "level": "50",
+                  "weight": 3.0,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_ocean"
+                        ]
+                  },
+                  "id": "manaphy-1"
+            }
+      ]
+}

@@ -1,0 +1,149 @@
+{
+      "name": "Bramblin",
+      "nationalPokedexNumber": 946,
+      "primaryType": "grass",
+      "secondaryType": "ghost",
+      "abilities": [
+            "windrider",
+            "h:infiltrator"
+      ],
+      "baseStats": {
+            "hp": 40,
+            "attack": 65,
+            "defence": 30,
+            "special_attack": 45,
+            "special_defence": 35,
+            "speed": 60
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 55,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass"
+      ],
+      "moves": [
+            "17:infestation",
+            "tm:curse",
+            "tm:endure",
+            "tm:beatup",
+            "1:defensecurl",
+            "55:powerwhip",
+            "tm:grassknot",
+            "tm:terablast",
+            "tm:poltergeist",
+            "29:disable",
+            "tm:block",
+            "9:rapidspin",
+            "tm:protect",
+            "tm:solarbeam",
+            "tutor:block",
+            "tm:pounce",
+            "tm:spite",
+            "tutor:rest",
+            "tm:trailblaze",
+            "tm:substitute",
+            "tutor:painsplit",
+            "tm:infestation",
+            "tm:grassyglide",
+            "25:megadrain",
+            "tm:spikes",
+            "tutor:spikes",
+            "tm:rollout",
+            "tm:powerwhip",
+            "egg:strengthsap",
+            "tm:bulletseed",
+            "tm:hex",
+            "tutor:rollout",
+            "tutor:seedbomb",
+            "tutor:grassyglide",
+            "tm:facade",
+            "tm:shadowball",
+            "5:absorb",
+            "40:gigadrain",
+            "tm:grassyterrain",
+            "tm:nightshade",
+            "21:hex",
+            "tm:sleeptalk",
+            "tutor:energyball",
+            "tutor:sleeptalk",
+            "tutor:poltergeist",
+            "tm:scaryface",
+            "tm:seedbomb",
+            "1:rollout",
+            "tm:leafstorm",
+            "egg:leechseed",
+            "13:bulletseed",
+            "tm:confuseray",
+            "egg:beatup",
+            "tm:gigadrain",
+            "tm:painsplit",
+            "45:curse",
+            "tutor:gigadrain",
+            "1:astonish",
+            "tm:thief",
+            "35:phantomforce",
+            "egg:shadowsneak",
+            "tutor:spite",
+            "egg:block",
+            "tm:rest",
+            "tm:phantomforce",
+            "tutor:shadowball",
+            "tm:energyball",
+            "50:painsplit"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 6,
+      "weight": 6,
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "brambleghast",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "blocks_traveled",
+                              "amount": 1000
+                        }
+                  ],
+                  "id": "bramblin_brambleghast"
+            }
+      ],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.bramblin.desc"
+      ],
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:stick",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:kasib_berry",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "minecraft:dead_bush",
+                        "quantityRange": "0-1"
+                  }
+            ]
+      },
+      "forms": [],
+      "implemented": true
+}

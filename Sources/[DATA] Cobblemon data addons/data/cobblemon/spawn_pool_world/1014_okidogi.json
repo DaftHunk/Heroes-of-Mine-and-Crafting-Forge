@@ -1,0 +1,22 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "okidogi",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70",
+                  "weight": 3.25,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_savanna"
+                        ]
+                  },
+                  "id": "okidogi-1"
+            }
+      ]
+}

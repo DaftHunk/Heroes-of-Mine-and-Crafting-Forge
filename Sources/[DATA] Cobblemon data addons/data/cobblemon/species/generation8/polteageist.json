@@ -1,0 +1,179 @@
+{
+      "name": "Polteageist",
+      "nationalPokedexNumber": 855,
+      "primaryType": "ghost",
+      "abilities": [
+            "weakarmor",
+            "h:cursedbody"
+      ],
+      "baseStats": {
+            "hp": 60,
+            "attack": 65,
+            "defence": 65,
+            "special_attack": 134,
+            "special_defence": 114,
+            "speed": 70
+      },
+      "catchRate": 60,
+      "maleRatio": -1,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Antique",
+                  "primaryType": "ghost",
+                  "abilities": [
+                        "weakarmor",
+                        "h:cursedbody"
+                  ],
+                  "baseStats": {
+                        "hp": 60,
+                        "attack": 65,
+                        "defence": 65,
+                        "special_attack": 134,
+                        "special_defence": 114,
+                        "speed": 70
+                  },
+                  "catchRate": 60,
+                  "maleRatio": -1,
+                  "baseExperienceYield": 178,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 2,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "experienceGroup": "medium_fast",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "undiscovered"
+                  ],
+                  "labels": [
+                        "gen8"
+                  ],
+                  "aspects": [
+                        "antique",
+                        "is_antique"
+                  ],
+                  "height": 2,
+                  "weight": 4,
+                  "preEvolution": "sinistea antique",
+                  "cannotDynamax": false,
+                  "battleOnly": false,
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "baseExperienceYield": 178,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "mineral",
+            "amorphous"
+      ],
+      "moves": [
+            "24:suckerpunch",
+            "tm:curse",
+            "tm:endure",
+            "1:aromaticmist",
+            "tm:magicalleaf",
+            "tm:psyshock",
+            "48:shadowball",
+            "tm:terablast",
+            "tm:poltergeist",
+            "tm:storedpower",
+            "1:strengthsap",
+            "tm:protect",
+            "42:nastyplot",
+            "tm:calmmind",
+            "tm:spite",
+            "tm:hyperbeam",
+            "tm:skillswap",
+            "18:protect",
+            "tm:imprison",
+            "tm:metronome",
+            "tm:foulplay",
+            "tm:psybeam",
+            "tm:substitute",
+            "tm:trick",
+            "tm:batonpass",
+            "tm:selfdestruct",
+            "tm:reflect",
+            "tm:hex",
+            "tm:round",
+            "36:gigadrain",
+            "30:aromatherapy",
+            "tm:gigaimpact",
+            "1:withdraw",
+            "66:curse",
+            "tm:facade",
+            "tm:snore",
+            "tm:shadowball",
+            "tm:nightshade",
+            "tm:sleeptalk",
+            "tutor:poltergeist",
+            "54:memento",
+            "tm:confuseray",
+            "tm:wonderroom",
+            "tm:painsplit",
+            "tm:willowisp",
+            "1:megadrain",
+            "tm:lightscreen",
+            "1:astonish",
+            "30:sweetscent",
+            "tm:allyswitch",
+            "tm:nastyplot",
+            "tm:payback",
+            "tm:psychic",
+            "60:shellsmash",
+            "tm:rest",
+            "tm:trickroom",
+            "tm:phantomforce",
+            "tm:darkpulse",
+            "tm:gigadrain"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.polteageist.desc",
+            "Leaving leftover black tea unattended is asking for this Pok\u00c3\u00a9mon to come along and pour itself into it, turning the tea into a new Polteageist."
+      ],
+      "preEvolution": "sinistea",
+      "evolutions": [],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 0.75,
+            "height": 1.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 2,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 2,
+      "weight": 4,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:spell_tag",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "features": [
+            "is_antique"
+      ],
+      "implemented": true,
+      "target": "cobblemon:polteageist"
+}

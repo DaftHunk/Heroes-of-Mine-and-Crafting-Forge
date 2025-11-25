@@ -1,0 +1,28 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "primeape",
+                  "presets": [
+                        "natural",
+                        "treetop"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "28-46",
+                  "weight": 0.54,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_hills",
+                              "#cobblemon:is_jungle"
+                        ]
+                  },
+                  "id": "primeape-1"
+            }
+      ]
+}

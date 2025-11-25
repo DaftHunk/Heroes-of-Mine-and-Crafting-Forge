@@ -1,0 +1,249 @@
+{
+      "implemented": true,
+      "name": "Prinplup",
+      "nationalPokedexNumber": 394,
+      "primaryType": "water",
+      "abilities": [
+            "torrent",
+            "h:competitive"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:mystic_water",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 64,
+            "attack": 66,
+            "defence": 68,
+            "special_attack": 81,
+            "special_defence": 76,
+            "speed": 50
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 142,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "field"
+      ],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canSwimInLava": false,
+                        "swimSpeed": "0.2"
+                  },
+                  "walk": {
+                        "walkSpeed": 0.3
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "moves": [
+            "egg:featherdance",
+            "24:swagger",
+            "tm:endure",
+            "tm:grassknot",
+            "tm:waterpledge",
+            "tutor:dive",
+            "tm:signalbeam",
+            "tm:surf",
+            "16:metalclaw",
+            "42:mist",
+            "tm:metalclaw",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "1:bide",
+            "tm:furyattack",
+            "tutor:mudslap",
+            "33:brine",
+            "egg:roost",
+            "tm:shadowclaw",
+            "tm:tripleaxel",
+            "tm:echoedvoice",
+            "tm:captivate",
+            "tm:charm",
+            "tm:icespinner",
+            "tutor:headbutt",
+            "tm:supersonic",
+            "tm:covet",
+            "tm:babydolleyes",
+            "tm:bubble",
+            "tutor:stealthrock",
+            "24:bide",
+            "tm:yawn",
+            "28:furyattack",
+            "tm:waterpulse",
+            "15:peck",
+            "tm:pluck",
+            "tm:rocktomb",
+            "tm:quash",
+            "tm:terablast",
+            "tm:doubleedge",
+            "1:growl",
+            "tm:fling",
+            "tm:strength",
+            "tm:pound",
+            "tm:brine",
+            "tm:substitute",
+            "1:pound",
+            "tm:dive",
+            "tm:return",
+            "tm:scald",
+            "tutor:waterpledge",
+            "egg:aquaring",
+            "tm:whirlpool",
+            "46:drillpeck",
+            "tm:chillingwater",
+            "egg:flail",
+            "tm:watersport",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "egg:bide",
+            "egg:supersonic",
+            "tm:mudsport",
+            "19:bubblebeam",
+            "tm:naturalgift",
+            "1:metalclaw",
+            "egg:yawn",
+            "egg:mudsport",
+            "tm:takedown",
+            "egg:doublehit",
+            "tm:icebeam",
+            "tm:defog",
+            "tm:flail",
+            "51:hydropump",
+            "1:bubble",
+            "tm:drillpeck",
+            "tm:raindance",
+            "tutor:covet",
+            "tm:doublehit",
+            "tm:swift",
+            "tm:weatherball",
+            "tm:disarmingvoice",
+            "tm:attract",
+            "1:watergun",
+            "tm:watergun",
+            "tutor:snore",
+            "tm:snore",
+            "tm:facade",
+            "tm:rocksmash",
+            "tm:snowscape",
+            "tutor:sleeptalk",
+            "tm:agility",
+            "egg:snore",
+            "tm:peck",
+            "tm:secretpower",
+            "tm:waterfall",
+            "tm:hail",
+            "1:watersport",
+            "tm:dig",
+            "tutor:waterpulse",
+            "tm:powertrip",
+            "egg:swagger",
+            "8:bubble",
+            "tutor:icywind",
+            "tm:featherdance",
+            "tm:cut",
+            "tm:rest",
+            "tm:aquaring",
+            "tm:stealthrock",
+            "tm:headbutt",
+            "tm:flipturn",
+            "tm:icywind",
+            "tm:haze",
+            "tm:aerialace",
+            "tm:psychup",
+            "tm:protect",
+            "19:bide",
+            "tm:bide",
+            "11:watersport",
+            "tm:brickbreak",
+            "tm:toxic",
+            "1:tackle",
+            "50:hydropump",
+            "tm:liquidation",
+            "egg:powertrip",
+            "tm:tackle",
+            "tm:hydropump",
+            "tutor:defog",
+            "tutor:signalbeam",
+            "37:whirlpool",
+            "tm:mist",
+            "tm:bubblebeam",
+            "tm:helpinghand",
+            "tm:growl",
+            "tm:workup",
+            "tm:roost",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen4"
+      ],
+      "pokedex": [
+            "cobblemon.species.prinplup.desc"
+      ],
+      "preEvolution": "piplup",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "empoleon",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "aquajet"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        }
+                  ],
+                  "id": "prinplup_empoleon"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.75,
+            "height": 1.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 2,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 8,
+      "weight": 230,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

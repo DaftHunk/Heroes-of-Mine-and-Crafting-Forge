@@ -1,0 +1,297 @@
+{
+      "name": "Shellos",
+      "nationalPokedexNumber": 422,
+      "primaryType": "water",
+      "abilities": [
+            "stickyhold",
+            "stormdrain",
+            "h:sandforce"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:clay_ball",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:rindo_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 76,
+            "attack": 48,
+            "defence": 48,
+            "special_attack": 57,
+            "special_defence": 62,
+            "speed": 34
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 65,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "amorphous"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "tutor:dive",
+            "tm:surf",
+            "tutor:yawn",
+            "egg:trumpcard",
+            "egg:amnesia",
+            "tm:memento",
+            "tm:clearsmog",
+            "tm:recover",
+            "tutor:painsplit",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "egg:swallow",
+            "25:bodyslam",
+            "31:muddywater",
+            "egg:mudbomb",
+            "tutor:mudslap",
+            "egg:spitup",
+            "tm:earthpower",
+            "egg:clearsmog",
+            "tm:bodyslam",
+            "tm:mudbomb",
+            "tm:captivate",
+            "tutor:headbutt",
+            "11:mudbomb",
+            "tutor:stringshot",
+            "1:mudslap",
+            "40:raindance",
+            "tm:yawn",
+            "tutor:earthpower",
+            "tm:waterpulse",
+            "tm:rocktomb",
+            "tm:terablast",
+            "46:recover",
+            "22:raindance",
+            "egg:fissure",
+            "tm:brine",
+            "tm:substitute",
+            "15:waterpulse",
+            "tm:dive",
+            "tm:return",
+            "tm:scald",
+            "egg:acidarmor",
+            "tm:mirrorcoat",
+            "tm:whirlpool",
+            "5:harden",
+            "tm:chillingwater",
+            "tm:stringshot",
+            "tm:sleeptalk",
+            "tm:amnesia",
+            "tm:mudsport",
+            "tutor:ancientpower",
+            "tm:stockpile",
+            "tm:counter",
+            "tm:harden",
+            "tm:naturalgift",
+            "egg:curse",
+            "tm:trumpcard",
+            "tm:acidarmor",
+            "egg:yawn",
+            "20:ancientpower",
+            "tutor:skittersmack",
+            "1:mudsport",
+            "tm:takedown",
+            "tm:stoneedge",
+            "tm:icebeam",
+            "2:mudsport",
+            "16:hiddenpower",
+            "tm:mudshot",
+            "tm:raindance",
+            "tm:swallow",
+            "tm:attract",
+            "1:watergun",
+            "tm:watergun",
+            "tm:muddywater",
+            "tutor:snore",
+            "tm:snore",
+            "tm:facade",
+            "tm:ancientpower",
+            "tm:snowscape",
+            "tutor:sleeptalk",
+            "45:memento",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:waterfall",
+            "tm:hail",
+            "tutor:secretpower",
+            "tutor:waterpulse",
+            "7:waterpulse",
+            "egg:memento",
+            "tutor:icywind",
+            "tm:rest",
+            "egg:counter",
+            "tm:stealthrock",
+            "tm:spitup",
+            "tm:sandstorm",
+            "tm:headbutt",
+            "tm:icywind",
+            "tm:protect",
+            "tm:bulldoze",
+            "tm:fissure",
+            "tm:infestation",
+            "10:recover",
+            "35:earthpower",
+            "tm:toxic",
+            "egg:sludge",
+            "egg:stockpile",
+            "tm:liquidation",
+            "37:muddywater",
+            "tm:skittersmack",
+            "egg:mirrorcoat",
+            "4:harden",
+            "egg:brine",
+            "tm:sludge",
+            "tm:mist",
+            "tm:painsplit",
+            "egg:mist",
+            "tm:helpinghand",
+            "tm:swagger",
+            "29:bodyslam",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen4"
+      ],
+      "pokedex": [
+            "cobblemon.species.shellos.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "gastrodon",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        }
+                  ],
+                  "id": "shellos_gastrodon"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "gastrodon west",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        }
+                  ],
+                  "id": "shellos_gastrodon_west"
+            }
+      ],
+      "baseScale": 0.55,
+      "hitbox": {
+            "width": 0.9,
+            "height": 1.15,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 1,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 3,
+      "weight": 63,
+      "aspects": [
+            "west-sea"
+      ],
+      "cannotDynamax": false,
+      "implemented": true,
+      "features": [
+            "west"
+      ],
+      "target": "cobblemon:shellos",
+      "forms": [
+            {
+                  "weight": 63,
+                  "maleRatio": 0.5,
+                  "name": "East",
+                  "height": 3,
+                  "battleOnly": false,
+                  "primaryType": "water",
+                  "pokedex": [
+                        "cobblemon.species.shellos-east.desc"
+                  ],
+                  "aspects": [
+                        "east-sea"
+                  ],
+                  "labels": [
+                        "gen4"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "gastrodon",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 30
+                                    }
+                              ],
+                              "id": "shellos_gastrodon"
+                        }
+                  ]
+            },
+            {
+                  "name": "west",
+                  "aspects": [
+                        "west"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "gastrodon west",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 30
+                                    }
+                              ],
+                              "id": "shellos_gastrodon_west"
+                        }
+                  ]
+            }
+      ],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      }
+}

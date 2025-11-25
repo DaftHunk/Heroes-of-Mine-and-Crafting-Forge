@@ -1,16 +1,17 @@
 {
-  "target": "cobblemon:eghowartortle",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "minecraft:feather",
-        "quantityRange": "0-2"
-      }
-    ]
-  }
+        "target": "cobblemon:eghowartortle",
+        "drops": {
+                "amount": 3,
+                "entries": [
+                        {
+                                "item": "minecraft:scute",
+                                "quantityRange": "0-2"
+                        },
+                        {
+                                "item": "minecraft:feather",
+                                "quantityRange": "0-2"
+                        }
+                ]
+        },
+        "implemented": true
 }

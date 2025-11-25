@@ -1,0 +1,209 @@
+{
+      "name": "Sandaconda",
+      "nationalPokedexNumber": 844,
+      "primaryType": "ground",
+      "abilities": [
+            "sandspit",
+            "shedskin",
+            "h:sandveil"
+      ],
+      "baseStats": {
+            "hp": 72,
+            "attack": 107,
+            "defence": 125,
+            "special_attack": 65,
+            "special_defence": 70,
+            "speed": 71
+      },
+      "catchRate": 120,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Gmax",
+                  "primaryType": "ground",
+                  "abilities": [
+                        "sandspit",
+                        "shedskin",
+                        "h:sandveil"
+                  ],
+                  "baseStats": {
+                        "hp": 72,
+                        "attack": 107,
+                        "defence": 125,
+                        "special_attack": 65,
+                        "special_defence": 70,
+                        "speed": 71
+                  },
+                  "catchRate": 120,
+                  "maleRatio": 0.5,
+                  "baseExperienceYield": 179,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 2,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "experienceGroup": "medium_fast",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "field",
+                        "dragon"
+                  ],
+                  "labels": [
+                        "gen8",
+                        "gmax"
+                  ],
+                  "aspects": [
+                        "gmax"
+                  ],
+                  "height": 220,
+                  "weight": 0,
+                  "cannotDynamax": false,
+                  "battleOnly": false,
+                  "pokedex": [
+                        "cobblemon.species.sandaconda-gmax.desc"
+                  ],
+                  "dynamaxBlocked": true,
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "baseExperienceYield": 179,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field",
+            "dragon"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:endure",
+            "tm:highhorsepower",
+            "51:sandtomb",
+            "tm:zenheadbutt",
+            "tutor:irondefense",
+            "1:wrap",
+            "tutor:mudslap",
+            "20:headbutt",
+            "49:coil",
+            "tm:gigaimpact",
+            "tm:earthpower",
+            "tutor:bulldoze",
+            "egg:belch",
+            "tm:bodyslam",
+            "tutor:stealthrock",
+            "1:skullbash",
+            "tutor:earthpower",
+            "tm:outrage",
+            "tutor:ironhead",
+            "tutor:drillrun",
+            "tm:rocktomb",
+            "tm:irondefense",
+            "30:dig",
+            "tm:hurricane",
+            "tm:terablast",
+            "1:minimize",
+            "tm:earthquake",
+            "tm:substitute",
+            "tutor:gigaimpact",
+            "tutor:firefang",
+            "tutor:hyperbeam",
+            "tutor:stoneedge",
+            "tm:scorchingsands",
+            "tm:sleeptalk",
+            "tutor:lastresort",
+            "tm:endeavor",
+            "tutor:thunderfang",
+            "15:bulldoze",
+            "tutor:skittersmack",
+            "tm:takedown",
+            "tm:stoneedge",
+            "egg:poisontail",
+            "tm:bodypress",
+            "tutor:scorchingsands",
+            "tm:mudshot",
+            "tm:rockblast",
+            "tm:ironhead",
+            "tutor:scaleshot",
+            "tm:attract",
+            "tm:brutalswing",
+            "egg:dragonrush",
+            "25:glare",
+            "tm:facade",
+            "tm:snore",
+            "tutor:sleeptalk",
+            "tm:screech",
+            "1:sandattack",
+            "tm:lastresort",
+            "1:brutalswing",
+            "tm:mudslap",
+            "egg:lastresort",
+            "tm:dig",
+            "tm:sandtomb",
+            "tm:scaleshot",
+            "tutor:outrage",
+            "egg:mudslap",
+            "tm:firefang",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "tm:headbutt",
+            "tutor:highhorsepower",
+            "tm:protect",
+            "tm:hyperbeam",
+            "tutor:rest",
+            "tm:bulldoze",
+            "tutor:rockslide",
+            "42:slam",
+            "tutor:endeavor",
+            "tm:skittersmack",
+            "tm:scaryface",
+            "tm:thunderfang",
+            "35:sandstorm",
+            "tutor:zenheadbutt",
+            "tm:drillrun",
+            "tm:poisontail",
+            "tm:round"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.sandaconda.desc"
+      ],
+      "preEvolution": "silicobra",
+      "evolutions": [],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 2,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 38,
+      "weight": 655,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:soft_sand",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true
+}

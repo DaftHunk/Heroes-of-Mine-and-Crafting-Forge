@@ -1,0 +1,43 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "landorus",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "50",
+                  "weight": 3.0,
+                  "condition": {
+                        "isRaining": false,
+                        "biomes": [
+                              "#cobblemon:is_savanna"
+                        ]
+                  },
+                  "id": "landorus-1"
+            },
+            {
+                  "pokemon": "landorus",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70-100",
+                  "weight": 2,
+                  "condition": {
+                        "isRaining": false,
+                        "biomes": [
+                              "#cobblemon:is_badlands"
+                        ]
+                  },
+                  "id": "landorus-2"
+            }
+      ]
+}

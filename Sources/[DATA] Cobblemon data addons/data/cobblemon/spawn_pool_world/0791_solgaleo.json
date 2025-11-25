@@ -1,0 +1,24 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "solgaleo",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70",
+                  "weight": 0.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_badlands",
+                              "#cobblemon:is_savanna"
+                        ],
+                        "timeRange": "morning"
+                  },
+                  "id": "solgaleo-1"
+            }
+      ]
+}

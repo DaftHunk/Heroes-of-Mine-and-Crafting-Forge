@@ -1,0 +1,210 @@
+{
+      "name": "Shelgon",
+      "nationalPokedexNumber": 372,
+      "primaryType": "dragon",
+      "abilities": [
+            "rockhead",
+            "h:overcoat"
+      ],
+      "baseStats": {
+            "hp": 65,
+            "attack": 95,
+            "defence": 100,
+            "special_attack": 60,
+            "special_defence": 50,
+            "speed": 50
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 147,
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "dragon"
+      ],
+      "moves": [
+            "tm:dracometeor",
+            "tm:rockslide",
+            "tm:endure",
+            "tutor:hypervoice",
+            "tm:zenheadbutt",
+            "1:rage",
+            "tutor:twister",
+            "tm:doubleteam",
+            "tm:firespin",
+            "tutor:irondefense",
+            "tm:hypervoice",
+            "39:zenheadbutt",
+            "tutor:mudslap",
+            "20:scaryface",
+            "tm:shadowclaw",
+            "tm:bodyslam",
+            "tm:captivate",
+            "tutor:headbutt",
+            "tutor:swagger",
+            "53:flamethrower",
+            "tm:fireblast",
+            "1:bite",
+            "egg:thrash",
+            "tm:roar",
+            "33:dragonclaw",
+            "tm:outrage",
+            "tm:rocktomb",
+            "tm:irondefense",
+            "tm:dragoncheer",
+            "tm:terablast",
+            "60:outrage",
+            "tm:doubleedge",
+            "tm:strength",
+            "tm:furycutter",
+            "tm:dragonclaw",
+            "tm:substitute",
+            "tm:dragonpulse",
+            "tm:rollout",
+            "tm:return",
+            "egg:twister",
+            "tutor:rollout",
+            "tutor:dragonpulse",
+            "tutor:dracometeor",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "tm:dragonbreath",
+            "tm:naturalgift",
+            "tm:leer",
+            "tutor:bodyslam",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tutor:substitute",
+            "tm:dragontail",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tm:thrash",
+            "tm:ironhead",
+            "tm:attract",
+            "tutor:snore",
+            "egg:dragonrush",
+            "1:protect",
+            "tm:snore",
+            "tm:facade",
+            "tm:rocksmash",
+            "tm:incinerate",
+            "tutor:sleeptalk",
+            "tutor:mimic",
+            "1:ember",
+            "1:leer",
+            "tm:dragondance",
+            "tm:mudslap",
+            "tm:secretpower",
+            "tutor:endure",
+            "egg:dragonrage",
+            "tutor:defensecurl",
+            "tutor:outrage",
+            "tm:firefang",
+            "tm:cut",
+            "tm:rest",
+            "67:doubleedge",
+            "tm:temperflare",
+            "tm:headbutt",
+            "tm:aerialace",
+            "tm:protect",
+            "tm:ember",
+            "25:crunch",
+            "tm:dragonrush",
+            "tm:brickbreak",
+            "tutor:rockslide",
+            "tm:rage",
+            "15:headbutt",
+            "tm:toxic",
+            "egg:defensecurl",
+            "tm:twister",
+            "46:focusenergy",
+            "tm:hydropump",
+            "tm:scaryface",
+            "tm:thunderfang",
+            "tm:helpinghand",
+            "tutor:furycutter",
+            "tm:bite",
+            "tutor:doubleedge",
+            "tm:crunch",
+            "tm:defensecurl",
+            "tutor:zenheadbutt",
+            "tm:hiddenpower",
+            "tm:dragonrage",
+            "tm:confide",
+            "1:dragonbreath",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen3"
+      ],
+      "pokedex": [
+            "cobblemon.species.shelgon.desc"
+      ],
+      "preEvolution": "bagon",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "salamence",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "fly"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 50
+                        }
+                  ],
+                  "id": "shelgon_salamence"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1.5,
+            "height": 1.55,
+            "fixed": false
+      },
+      "baseFriendship": 35,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 2,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 11,
+      "weight": 1105,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "cobblemon:dragon_fang",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:dragon_scale",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:yache_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "walking": {
+                        "walkSpeed": 0.2
+                  }
+            }
+      }
+}

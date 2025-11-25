@@ -1,0 +1,541 @@
+{
+      "name": "Toxel",
+      "nationalPokedexNumber": 848,
+      "primaryType": "electric",
+      "secondaryType": "poison",
+      "abilities": [
+            "rattled",
+            "static",
+            "h:klutz"
+      ],
+      "baseStats": {
+            "hp": 40,
+            "attack": 38,
+            "defence": 35,
+            "special_attack": 54,
+            "special_defence": 35,
+            "speed": 40
+      },
+      "catchRate": 75,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 48,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 25,
+      "eggGroups": [
+            "undiscovered"
+      ],
+      "moves": [
+            "1:acid",
+            "1:belch",
+            "1:flail",
+            "1:growl",
+            "1:nuzzle",
+            "1:tearfullook",
+            "egg:endeavor",
+            "egg:metalsound",
+            "egg:poweruppunch",
+            "tm:attract",
+            "tm:charm",
+            "tm:encore",
+            "tm:endeavor",
+            "tm:endure",
+            "tm:facade",
+            "tm:metalsound",
+            "tm:protect",
+            "tm:rest",
+            "tm:round",
+            "tm:sleeptalk",
+            "tm:snore",
+            "tm:substitute",
+            "tm:terablast",
+            "tutor:acid",
+            "tutor:flail",
+            "tutor:growl",
+            "tutor:nuzzle"
+      ],
+      "labels": [
+            "gen8",
+            "baby"
+      ],
+      "pokedex": [
+            "cobblemon.species.toxel.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity lowkey",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "spark"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        }
+                  ],
+                  "id": "toxel_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=hardy"
+                        }
+                  ],
+                  "id": "toxelhardy_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=brave"
+                        }
+                  ],
+                  "id": "toxelbrave_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=adamant"
+                        }
+                  ],
+                  "id": "toxeladamant_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=naughty"
+                        }
+                  ],
+                  "id": "toxelnaughty_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=docile"
+                        }
+                  ],
+                  "id": "toxeldocile_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=impish"
+                        }
+                  ],
+                  "id": "toxelimpish_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=lax"
+                        }
+                  ],
+                  "id": "toxellax_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=hasty"
+                        }
+                  ],
+                  "id": "toxelhasty_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=jolly"
+                        }
+                  ],
+                  "id": "toxeljolly_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=naive"
+                        }
+                  ],
+                  "id": "toxelnaive_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=rash"
+                        }
+                  ],
+                  "id": "toxelrash_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=sassy"
+                        }
+                  ],
+                  "id": "toxelsassy_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=amped",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "spark"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=quirky"
+                        }
+                  ],
+                  "id": "toxelquirky_toxtricity"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=lonely"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=bold"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=relaxed"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-2"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=timid"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-3"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=serious"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-4"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=modest"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-5"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=mild"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-6"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=quiet"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-7"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=bashful"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-8"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=calm"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-9"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=gentle"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-10"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "toxtricity punk_form=low_key",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "spark"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        },
+                        {
+                              "variant": "properties",
+                              "target": "toxel nature=careful"
+                        }
+                  ],
+                  "id": "toxel_toxtricitylowkey-11"
+            }
+      ],
+      "baseScale": 0.5,
+      "hitbox": {
+            "width": 1,
+            "height": 0.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 1,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 110,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:shuca_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "implemented": true,
+      "target": "cobblemon:toxel",
+      "forms": []
+}

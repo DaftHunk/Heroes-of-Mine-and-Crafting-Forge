@@ -1,0 +1,124 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "gastrodon",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "rare",
+                  "level": "30-40",
+                  "weight": 5.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_beach"
+                        ]
+                  },
+                  "id": "gastrodon-1"
+            },
+            {
+                  "pokemon": "gastrodon west=true",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "rare",
+                  "level": "30-40",
+                  "weight": 4,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#minecraft:is_beach"
+                        ]
+                  },
+                  "id": "gastrodon-west"
+            },
+            {
+                  "pokemon": "gastrodon sea=east",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "uncommon",
+                  "level": "30-48",
+                  "weight": 1.6,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_beach"
+                        ],
+                        "isRaining": true,
+                        "minX": 0
+                  },
+                  "id": "gastrodon-east-1"
+            },
+            {
+                  "pokemon": "gastrodon sea=east",
+                  "presets": [
+                        "underwater"
+                  ],
+                  "type": "pokemon",
+                  "context": "seafloor",
+                  "bucket": "common",
+                  "level": "30-48",
+                  "weight": 0.6,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_cold_ocean",
+                              "#cobblemon:is_frozen_ocean"
+                        ],
+                        "minX": 0
+                  },
+                  "id": "gastrodon-east-2"
+            },
+            {
+                  "pokemon": "gastrodon sea=west",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "uncommon",
+                  "level": "30-48",
+                  "weight": 1.6,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_beach"
+                        ],
+                        "isRaining": true,
+                        "maxX": 0
+                  },
+                  "anticondition": {
+                        "biomes": [
+                              "#cobblemon:is_freezing"
+                        ]
+                  },
+                  "id": "gastrodon-west-4"
+            },
+            {
+                  "pokemon": "gastrodon sea=west",
+                  "presets": [
+                        "underwater"
+                  ],
+                  "type": "pokemon",
+                  "context": "seafloor",
+                  "bucket": "common",
+                  "level": "30-48",
+                  "weight": 0.6,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_lukewarm_ocean",
+                              "#cobblemon:is_warm_ocean"
+                        ],
+                        "maxX": 0
+                  },
+                  "id": "gastrodon-west-5"
+            }
+      ]
+}

@@ -1,0 +1,239 @@
+{
+      "name": "Sandygast",
+      "nationalPokedexNumber": 769,
+      "primaryType": "ghost",
+      "secondaryType": "ground",
+      "abilities": [
+            "watercompaction",
+            "h:sandveil"
+      ],
+      "baseStats": {
+            "hp": 55,
+            "attack": 55,
+            "defence": 80,
+            "special_attack": 70,
+            "special_defence": 45,
+            "speed": 15
+      },
+      "catchRate": 140,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 64,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+            "amorphous"
+      ],
+      "moves": [
+            "tm:absorb",
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "tm:gravity",
+            "egg:amnesia",
+            "tm:imprison",
+            "tutor:painsplit",
+            "tm:doubleteam",
+            "tm:sandattack",
+            "tutor:irondefense",
+            "egg:swallow",
+            "tutor:trick",
+            "egg:spitup",
+            "tm:earthpower",
+            "tm:sludgebomb",
+            "tutor:skillswap",
+            "30:hypnosis",
+            "tutor:stealthrock",
+            "25:bulldoze",
+            "1:absorb",
+            "tutor:afteryou",
+            "35:gigadrain",
+            "tutor:earthpower",
+            "tm:flashcannon",
+            "10:sandtomb",
+            "40:irondefense",
+            "tm:rocktomb",
+            "tm:irondefense",
+            "egg:destinybond",
+            "45:shadowball",
+            "tm:terablast",
+            "tm:destinybond",
+            "50:earthpower",
+            "tm:earthquake",
+            "tm:fling",
+            "15:megadrain",
+            "20:sandattack",
+            "tm:brine",
+            "tm:substitute",
+            "tm:megadrain",
+            "tm:roleplay",
+            "1:harden",
+            "tm:recycle",
+            "tm:return",
+            "tm:chillingwater",
+            "tm:scorchingsands",
+            "tm:sleeptalk",
+            "tm:amnesia",
+            "tutor:poltergeist",
+            "tm:stockpile",
+            "tm:harden",
+            "5:astonish",
+            "tm:rockpolish",
+            "egg:curse",
+            "tm:sunnyday",
+            "tm:stoneedge",
+            "55:shoreup",
+            "tutor:scorchingsands",
+            "tm:mudshot",
+            "tm:raindance",
+            "tm:block",
+            "tutor:block",
+            "tm:skillswap",
+            "tm:swallow",
+            "tm:attract",
+            "tutor:snore",
+            "tm:snore",
+            "tm:facade",
+            "tm:shadowball",
+            "tm:ancientpower",
+            "tutor:recycle",
+            "tutor:roleplay",
+            "tm:afteryou",
+            "tm:confuseray",
+            "tm:mudslap",
+            "tm:sandtomb",
+            "egg:ancientpower",
+            "tm:psychic",
+            "tutor:spite",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:spitup",
+            "tm:gigadrain",
+            "tm:energyball",
+            "tm:sandstorm",
+            "60:sandstorm",
+            "tm:poltergeist",
+            "tm:protect",
+            "tm:spite",
+            "tm:bulldoze",
+            "tm:trick",
+            "tm:infestation",
+            "tm:toxic",
+            "tm:hex",
+            "tm:shoreup",
+            "egg:stockpile",
+            "tm:hypnosis",
+            "tm:astonish",
+            "tm:nightshade",
+            "tm:scaryface",
+            "tm:painsplit",
+            "tutor:gigadrain",
+            "tutor:gravity",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7"
+      ],
+      "pokedex": [
+            "cobblemon.species.sandygast.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "palossand",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 42
+                        }
+                  ],
+                  "id": "sandygast_palossand"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "palossand redsand",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 42
+                        }
+                  ],
+                  "id": "sandygast_palossand_redsand"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.9,
+            "height": 0.9,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 5,
+      "weight": 700,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "cobblemon:soft_sand",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:passho_berry",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "minecraft:sand",
+                        "quantityRange": "0-1"
+                  }
+            ]
+      },
+      "implemented": true,
+      "features": [
+            "redsand"
+      ],
+      "target": "cobblemon:sandygast",
+      "forms": [
+            {
+                  "secondaryType": "ground",
+                  "name": "redsand",
+                  "primaryType": "ghost",
+                  "aspects": [
+                        "redsand"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "palossand redsand",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 42
+                                    }
+                              ],
+                              "id": "sandygast_palossand_redsand"
+                        }
+                  ]
+            }
+      ]
+}

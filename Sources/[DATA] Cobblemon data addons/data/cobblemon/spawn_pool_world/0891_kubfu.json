@@ -1,0 +1,41 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "kubfu",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "15-30",
+                  "weight": 4.0,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_bamboo"
+                        ]
+                  },
+                  "id": "kubfu-1"
+            },
+            {
+                  "pokemon": "kubfu",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "20-40",
+                  "weight": 5,
+                  "condition": {
+                        "biomes": [
+                              "minecraft:cherry_grove"
+                        ]
+                  },
+                  "id": "kubfu-2"
+            }
+      ]
+}

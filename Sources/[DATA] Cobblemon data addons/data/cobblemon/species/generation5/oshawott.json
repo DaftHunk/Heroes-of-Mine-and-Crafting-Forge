@@ -1,0 +1,478 @@
+{
+      "implemented": true,
+      "name": "Oshawott",
+      "nationalPokedexNumber": 501,
+      "primaryType": "water",
+      "abilities": [
+            "torrent",
+            "h:shellarmor"
+      ],
+      "features": [
+            "region_bias"
+      ],
+      "forms": [
+            {
+                  "name": "Hisui Bias",
+                  "primaryType": "water",
+                  "abilities": [
+                        "torrent",
+                        "h:shellarmor"
+                  ],
+                  "drops": {
+                        "amount": 2,
+                        "entries": [
+                              {
+                                    "item": "cobblemon:mystic_water",
+                                    "percentage": 5.0
+                              },
+                              {
+                                    "item": "minecraft:nautilus_shell",
+                                    "percentage": 5.0
+                              }
+                        ]
+                  },
+                  "baseStats": {
+                        "hp": 55,
+                        "attack": 55,
+                        "defence": 45,
+                        "special_attack": 63,
+                        "special_defence": 45,
+                        "speed": 45
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.875,
+                  "shoulderMountable": false,
+                  "baseExperienceYield": 62,
+                  "experienceGroup": "medium_slow",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "field"
+                  ],
+                  "behaviour": {
+                        "moving": {
+                              "swim": {
+                                    "canSwimInWater": true,
+                                    "canBreatheUnderwater": true,
+                                    "canWalkOnWater": true
+                              }
+                        },
+                        "resting": {
+                              "canSleep": true,
+                              "willSleepOnBed": true,
+                              "depth": "normal",
+                              "light": "0-4"
+                        }
+                  },
+                  "moves": [
+                        "1:tackle",
+                        "5:tailwhip",
+                        "7:watergun",
+                        "11:soak",
+                        "11:watersport",
+                        "13:focusenergy",
+                        "17:razorshell",
+                        "19:furycutter",
+                        "23:waterpulse",
+                        "25:aerialace",
+                        "25:revenge",
+                        "29:aquajet",
+                        "31:encore",
+                        "35:aquatail",
+                        "37:retaliate",
+                        "41:swordsdance",
+                        "43:hydropump",
+                        "egg:airslash",
+                        "egg:aquacutter",
+                        "egg:assurance",
+                        "egg:brine",
+                        "egg:copycat",
+                        "egg:detect",
+                        "egg:knockoff",
+                        "egg:nightslash",
+                        "egg:sacredsword",
+                        "egg:screech",
+                        "egg:trumpcard",
+                        "tm:aerialace",
+                        "tm:airslash",
+                        "tm:attract",
+                        "tm:avalanche",
+                        "tm:blizzard",
+                        "tm:chillingwater",
+                        "tm:confide",
+                        "tm:cut",
+                        "tm:dig",
+                        "tm:dive",
+                        "tm:doubleteam",
+                        "tm:encore",
+                        "tm:endure",
+                        "tm:facade",
+                        "tm:falseswipe",
+                        "tm:fling",
+                        "tm:flipturn",
+                        "tm:frustration",
+                        "tm:grassknot",
+                        "tm:hail",
+                        "tm:helpinghand",
+                        "tm:hiddenpower",
+                        "tm:hydropump",
+                        "tm:icebeam",
+                        "tm:icywind",
+                        "tm:knockoff",
+                        "tm:liquidation",
+                        "tm:protect",
+                        "tm:raindance",
+                        "tm:rest",
+                        "tm:retaliate",
+                        "tm:return",
+                        "tm:rocksmash",
+                        "tm:round",
+                        "tm:scald",
+                        "tm:secretpower",
+                        "tm:sleeptalk",
+                        "tm:snowscape",
+                        "tm:substitute",
+                        "tm:surf",
+                        "tm:swagger",
+                        "tm:swift",
+                        "tm:swordsdance",
+                        "tm:takedown",
+                        "tm:taunt",
+                        "tm:terablast",
+                        "tm:thief",
+                        "tm:toxic",
+                        "tm:waterfall",
+                        "tm:waterpledge",
+                        "tm:waterpulse",
+                        "tm:whirlpool",
+                        "tm:workup",
+                        "tm:xscissor",
+                        "tutor:aquatail",
+                        "tutor:covet",
+                        "tutor:helpinghand",
+                        "tutor:icywind",
+                        "tutor:irontail",
+                        "tutor:sleeptalk",
+                        "tutor:snore",
+                        "tutor:waterpledge",
+                        "tutor:waterpulse"
+                  ],
+                  "labels": [
+                        "gen5",
+                        "hisui_regional"
+                  ],
+                  "evolutions": [
+                        {
+                              "id": "hisui_oshawott_hisui_dewott",
+                              "variant": "level_up",
+                              "result": "dewott region_bias=hisui",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 17
+                                    }
+                              ]
+                        },
+                        {
+                              "id": "hisui_oshawott_dewott",
+                              "variant": "level_up",
+                              "result": "dewott region_bias=unova",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 17
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:is_beach"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:is_freezing"
+                                    }
+                              ]
+                        }
+                  ],
+                  "baseScale": 0.5,
+                  "hitbox": {
+                        "width": 0.9,
+                        "height": 1.25,
+                        "fixed": false
+                  },
+                  "baseFriendship": 70,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 1,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "height": 5,
+                  "weight": 59,
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "cannotDynamax": false
+            },
+            {
+                  "weight": 59,
+                  "maleRatio": 0.875,
+                  "name": "Hisui-Bias",
+                  "height": 5,
+                  "primaryType": "water",
+                  "pokedex": [
+                        "cobblemon.species.oshawott-hisuibias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen8a",
+                        "starter",
+                        "customized_official",
+                        "hisuian_form"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "dewott",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 17
+                                    }
+                              ],
+                              "id": "oshawott_dewott"
+                        }
+                  ]
+            }
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:mystic_water",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:shell_bell",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 55,
+            "attack": 55,
+            "defence": 45,
+            "special_attack": 63,
+            "special_defence": 45,
+            "speed": 45
+      },
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canWalkOnWater": true
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 62,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field"
+      ],
+      "moves": [
+            "tm:endure",
+            "5:tailwhip",
+            "tm:grassknot",
+            "tm:waterpledge",
+            "tm:avalanche",
+            "tm:surf",
+            "egg:trumpcard",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tm:aquajet",
+            "7:watergun",
+            "29:aquajet",
+            "31:encore",
+            "37:retaliate",
+            "tm:aquacutter",
+            "egg:knockoff",
+            "25:aerialace",
+            "tm:covet",
+            "tm:nightslash",
+            "35:aquatail",
+            "tm:assurance",
+            "egg:screech",
+            "tm:waterpulse",
+            "egg:assurance",
+            "tm:terablast",
+            "tm:fling",
+            "tm:furycutter",
+            "tm:substitute",
+            "tm:brine",
+            "tm:dive",
+            "tm:airslash",
+            "tm:return",
+            "tm:scald",
+            "19:furycutter",
+            "tutor:waterpledge",
+            "tm:whirlpool",
+            "tm:chillingwater",
+            "tm:watersport",
+            "tm:copycat",
+            "43:hydropump",
+            "tm:sleeptalk",
+            "tm:soak",
+            "tm:razorshell",
+            "tm:knockoff",
+            "egg:aquacutter",
+            "13:focusenergy",
+            "tm:trumpcard",
+            "tm:takedown",
+            "tm:icebeam",
+            "tm:revenge",
+            "25:revenge",
+            "17:razorshell",
+            "tm:taunt",
+            "tm:aquatail",
+            "egg:airslash",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tutor:covet",
+            "tm:swift",
+            "tm:detect",
+            "tm:attract",
+            "tm:watergun",
+            "tutor:irontail",
+            "tutor:aquatail",
+            "tutor:snore",
+            "23:waterpulse",
+            "tm:facade",
+            "tm:rocksmash",
+            "tm:snowscape",
+            "tutor:sleeptalk",
+            "tm:sacredsword",
+            "tm:screech",
+            "tutor:helpinghand",
+            "egg:copycat",
+            "tm:secretpower",
+            "tm:waterfall",
+            "tm:hail",
+            "1:watersport",
+            "tm:dig",
+            "tutor:waterpulse",
+            "tutor:icywind",
+            "tm:cut",
+            "tm:rest",
+            "tm:xscissor",
+            "tm:retaliate",
+            "tm:flipturn",
+            "tm:icywind",
+            "tm:aerialace",
+            "tm:protect",
+            "11:watersport",
+            "tm:falseswipe",
+            "egg:nightslash",
+            "tm:swordsdance",
+            "tm:toxic",
+            "1:tackle",
+            "tm:liquidation",
+            "tm:tackle",
+            "11:soak",
+            "tm:hydropump",
+            "tm:irontail",
+            "egg:detect",
+            "egg:brine",
+            "tm:tailwhip",
+            "41:swordsdance",
+            "tm:helpinghand",
+            "tm:workup",
+            "tm:thief",
+            "tm:encore",
+            "tm:hiddenpower",
+            "egg:sacredsword",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5",
+            "starter",
+            "unovan_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.oshawott.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "dewott",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 17
+                        }
+                  ],
+                  "id": "oshawott_dewott"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "dewott region_bias=hisui",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 17
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/oshawott_dewott_hisui_bias"
+                        }
+                  ],
+                  "id": "oshawott_hisui_dewott"
+            }
+      ],
+      "baseScale": 0.5,
+      "hitbox": {
+            "width": 0.9,
+            "height": 1.25,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 1,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 5,
+      "weight": 59,
+      "aspects": [],
+      "cannotDynamax": false
+}

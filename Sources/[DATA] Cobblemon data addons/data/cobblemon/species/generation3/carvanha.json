@@ -1,0 +1,222 @@
+{
+      "implemented": true,
+      "name": "Carvanha",
+      "nationalPokedexNumber": 318,
+      "primaryType": "water",
+      "secondaryType": "dark",
+      "abilities": [
+            "roughskin",
+            "h:speedboost"
+      ],
+      "baseStats": {
+            "hp": 45,
+            "attack": 90,
+            "defence": 20,
+            "special_attack": 65,
+            "special_defence": 20,
+            "speed": 65
+      },
+      "catchRate": 225,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 61,
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_2"
+      ],
+      "behaviour": {
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "avoidsLand": true
+                  },
+                  "swim": {
+                        "swimSpeed": 0.2,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canSwimInLava": false
+                  }
+            }
+      },
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:deep_sea_tooth",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:aspear_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "moves": [
+            "tm:endure",
+            "20:icefang",
+            "tutor:dive",
+            "tm:surf",
+            "tutor:thrash",
+            "tutor:refresh",
+            "tutor:swift",
+            "tm:zenheadbutt",
+            "1:rage",
+            "tutor:bounce",
+            "egg:psychicfangs",
+            "tm:blizzard",
+            "12:scaryface",
+            "tm:doubleteam",
+            "tm:aquajet",
+            "tm:bounce",
+            "tutor:mudslap",
+            "tm:snarl",
+            "tm:captivate",
+            "tutor:swagger",
+            "egg:swift",
+            "44:takedown",
+            "egg:waterpulse",
+            "tutor:scaryface",
+            "egg:thrash",
+            "tm:assurance",
+            "tm:payback",
+            "tm:waterpulse",
+            "36:agility",
+            "egg:destinybond",
+            "tm:terablast",
+            "tm:destinybond",
+            "tm:doubleedge",
+            "tm:furycutter",
+            "4:poisonfang",
+            "tm:brine",
+            "tm:substitute",
+            "tm:dive",
+            "tm:return",
+            "tm:scald",
+            "tutor:hydropump",
+            "tm:whirlpool",
+            "tutor:superfang",
+            "tm:sleeptalk",
+            "tutor:leer",
+            "tutor:ancientpower",
+            "tm:naturalgift",
+            "tm:leer",
+            "tm:poisonfang",
+            "tm:takedown",
+            "tm:icebeam",
+            "tutor:substitute",
+            "28:swagger",
+            "egg:hydropump",
+            "tm:psychicfangs",
+            "tm:taunt",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tm:swift",
+            "tm:thrash",
+            "tutor:flipturn",
+            "tutor:scaleshot",
+            "tm:attract",
+            "tutor:snore",
+            "8:focusenergy",
+            "40:liquidation",
+            "tm:snore",
+            "tm:facade",
+            "tutor:darkpulse",
+            "tm:ancientpower",
+            "tutor:sleeptalk",
+            "tm:agility",
+            "tm:screech",
+            "tutor:mimic",
+            "1:leer",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:waterfall",
+            "tm:hail",
+            "egg:doubleedge",
+            "tutor:endure",
+            "tutor:waterpulse",
+            "24:screech",
+            "tm:scaleshot",
+            "tutor:icywind",
+            "egg:ancientpower",
+            "tutor:spite",
+            "tm:rest",
+            "tm:darkpulse",
+            "tm:retaliate",
+            "32:crunch",
+            "tm:flipturn",
+            "tm:icywind",
+            "4:rage",
+            "tutor:bite",
+            "tm:protect",
+            "tm:icefang",
+            "tm:spite",
+            "tm:superfang",
+            "tm:rage",
+            "tm:toxic",
+            "tm:liquidation",
+            "tm:hydropump",
+            "egg:brine",
+            "tm:torment",
+            "tm:scaryface",
+            "15:assurance",
+            "16:bite",
+            "tm:uproar",
+            "tutor:furycutter",
+            "tm:bite",
+            "1:aquajet",
+            "tutor:doubleedge",
+            "tm:crunch",
+            "tm:thief",
+            "tutor:zenheadbutt",
+            "tm:hiddenpower",
+            "tutor:uproar",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen3"
+      ],
+      "pokedex": [
+            "cobblemon.species.carvanha.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "sharpedo",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "slash"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        }
+                  ],
+                  "id": "carvanha_sharpedo"
+            }
+      ],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 0.7,
+            "height": 1.1,
+            "fixed": false
+      },
+      "baseFriendship": 35,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 8,
+      "weight": 208,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

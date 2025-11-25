@@ -1,0 +1,162 @@
+{
+      "name": "Kilowattrel",
+      "nationalPokedexNumber": 941,
+      "primaryType": "electric",
+      "secondaryType": "flying",
+      "abilities": [
+            "windpower",
+            "voltabsorb",
+            "h:competitive"
+      ],
+      "baseStats": {
+            "hp": 70,
+            "attack": 70,
+            "defence": 60,
+            "special_attack": 105,
+            "special_defence": 60,
+            "speed": 125
+      },
+      "catchRate": 90,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 172,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 2
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "flying"
+      ],
+      "moves": [
+            "egg:featherdance",
+            "tm:endure",
+            "tm:pluck",
+            "egg:weatherball",
+            "tm:hurricane",
+            "tm:terablast",
+            "tm:aerialace",
+            "11:pluck",
+            "tm:protect",
+            "1:growl",
+            "tm:swift",
+            "tm:weatherball",
+            "tm:charge",
+            "tm:hyperbeam",
+            "1:electroball",
+            "tm:wildcharge",
+            "tm:aircutter",
+            "tm:substitute",
+            "tm:swallow",
+            "1:peck",
+            "tm:electricterrain",
+            "tm:supercellslam",
+            "egg:swallow",
+            "43:voltswitch",
+            "tm:airslash",
+            "tm:thunderwave",
+            "55:hurricane",
+            "egg:endeavor",
+            "tm:bravebird",
+            "tm:chargebeam",
+            "tm:tailwind",
+            "tm:electroweb",
+            "tm:electroball",
+            "tm:gigaimpact",
+            "tm:eerieimpulse",
+            "egg:spitup",
+            "egg:stockpile",
+            "tm:facade",
+            "tm:thunderbolt",
+            "tm:voltswitch",
+            "tm:thundershock",
+            "tm:sleeptalk",
+            "48:discharge",
+            "tm:discharge",
+            "19:uproar",
+            "tm:agility",
+            "tm:endeavor",
+            "tm:scaryface",
+            "24:roost",
+            "tm:thunder",
+            "tm:stockpile",
+            "tm:peck",
+            "tm:dualwingbeat",
+            "tm:uturn",
+            "tm:uproar",
+            "tm:growl",
+            "tm:acrobatics",
+            "tm:roost",
+            "tm:spark",
+            "tm:fly",
+            "tm:featherdance",
+            "tm:takedown",
+            "15:spark",
+            "4:thundershock",
+            "tm:rest",
+            "tm:quickattack",
+            "tm:spitup",
+            "36:agility",
+            "7:quickattack",
+            "30:dualwingbeat"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 14,
+      "weight": 386,
+      "preEvolution": "wattrel",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.kilowattrel.desc"
+      ],
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:sharp_beak",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:razz_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 1,
+            "height": 1.72,
+            "fixed": false
+      },
+      "baseScale": 1.1,
+      "behaviour": {
+            "moving": {
+                  "fly": {
+                        "canFly": true
+                  },
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      }
+}

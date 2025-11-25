@@ -1,0 +1,22 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "silicobra",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "14-35",
+                  "weight": 7.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_desert"
+                        ]
+                  },
+                  "id": "silicobra-1"
+            }
+      ]
+}

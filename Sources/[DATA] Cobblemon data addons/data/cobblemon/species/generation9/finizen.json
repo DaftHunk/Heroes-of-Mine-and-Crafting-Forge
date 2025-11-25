@@ -1,0 +1,173 @@
+{
+      "name": "Finizen",
+      "nationalPokedexNumber": 963,
+      "primaryType": "water",
+      "abilities": [
+            "waterveil",
+            "h:waterveil"
+      ],
+      "baseStats": {
+            "hp": 70,
+            "attack": 45,
+            "defence": 40,
+            "special_attack": 45,
+            "special_defence": 40,
+            "speed": 75
+      },
+      "catchRate": 200,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 63,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 1
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "field",
+            "water_2"
+      ],
+      "moves": [
+            "egg:boomburst",
+            "tm:endure",
+            "tm:boomburst",
+            "tm:waterpulse",
+            "tm:icywind",
+            "tm:haze",
+            "tm:aquatail",
+            "egg:haze",
+            "tm:terablast",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tm:surf",
+            "tm:doublehit",
+            "tm:psychup",
+            "tm:protect",
+            "egg:bounce",
+            "tm:swift",
+            "tm:fling",
+            "25:charm",
+            "tm:zenheadbutt",
+            "44:mist",
+            "tm:disarmingvoice",
+            "tm:substitute",
+            "tm:blizzard",
+            "tm:aquajet",
+            "1:watergun",
+            "tm:watergun",
+            "tm:dive",
+            "egg:tickle",
+            "tm:bounce",
+            "39:aquatail",
+            "50:hydropump",
+            "tm:liquidation",
+            "17:doublehit",
+            "tm:chillingwater",
+            "tm:facade",
+            "tm:tickle",
+            "21:dive",
+            "tm:drainingkiss",
+            "tm:sleeptalk",
+            "tm:astonish",
+            "tm:bodyslam",
+            "tm:agility",
+            "tm:charm",
+            "tm:supersonic",
+            "tm:counter",
+            "10:focusenergy",
+            "tm:mist",
+            "tm:waterfall",
+            "13:aquajet",
+            "tm:helpinghand",
+            "34:encore",
+            "tm:acrobatics",
+            "1:supersonic",
+            "29:acrobatics",
+            "tm:encore",
+            "tm:takedown",
+            "tm:rest",
+            "tm:icebeam",
+            "egg:counter",
+            "7:astonish",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 13,
+      "weight": 602,
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "palafin",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "flipturn"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 38
+                        }
+                  ],
+                  "id": "finizen_palafin"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "palafin dolphin_form=zero",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "flipturn"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 38
+                        }
+                  ],
+                  "id": "finizen_palafin-1"
+            }
+      ],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.finizen.desc"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "minecraft:cod",
+                        "quantityRange": "0-1"
+                  }
+            ]
+      },
+      "implemented": true,
+      "target": "cobblemon:finizen",
+      "forms": [],
+      "hitbox": {
+            "width": 1.25,
+            "height": 1,
+            "fixed": false
+      },
+      "baseScale": 0.85,
+      "behaviour": {
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "avoidsLand": true
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canBreatheUnderwater": true,
+                        "canSwimInWater": true,
+                        "canSwimInLava": false
+                  }
+            }
+      }
+}

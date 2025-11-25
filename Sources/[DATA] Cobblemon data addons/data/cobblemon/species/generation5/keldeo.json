@@ -1,0 +1,261 @@
+{
+      "name": "Keldeo",
+      "nationalPokedexNumber": 647,
+      "primaryType": "water",
+      "secondaryType": "fighting",
+      "abilities": [
+            "justified",
+            "h:justified"
+      ],
+      "baseStats": {
+            "hp": 91,
+            "attack": 72,
+            "defence": 90,
+            "special_attack": 129,
+            "special_defence": 90,
+            "speed": 108
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "shoulderMountable": false,
+      "baseExperienceYield": 290,
+      "baseFriendship": 35,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 3,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 80,
+      "eggGroups": [
+            "undiscovered"
+      ],
+      "moves": [
+            "tm:superpower",
+            "tm:endure",
+            "form_change:secretsword",
+            "tm:surf",
+            "tutor:swift",
+            "tutor:calmmind",
+            "tutor:bounce",
+            "tm:trailblaze",
+            "tutor:painsplit",
+            "tm:doubleteam",
+            "tutor:secretsword",
+            "tm:batonpass",
+            "tm:bounce",
+            "tm:gigaimpact",
+            "tutor:vacuumwave",
+            "tm:covet",
+            "tm:roar",
+            "35:aquatail",
+            "1:secretsword",
+            "tutor:xscissor",
+            "tm:aurasphere",
+            "tm:waterpulse",
+            "tm:reflect",
+            "tm:safeguard",
+            "tm:terablast",
+            "tm:doubleedge",
+            "tm:strength",
+            "tm:substitute",
+            "tutor:gigaimpact",
+            "tm:airslash",
+            "tm:return",
+            "tm:scald",
+            "tutor:hydropump",
+            "tutor:hyperbeam",
+            "tm:chillingwater",
+            "tutor:stoneedge",
+            "tm:sleeptalk",
+            "tutor:lastresort",
+            "tutor:leer",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:stoneedge",
+            "tm:megahorn",
+            "tutor:swordsdance",
+            "tm:revenge",
+            "63:hydropump",
+            "tm:taunt",
+            "tm:aquatail",
+            "tm:raindance",
+            "tutor:covet",
+            "tutor:aerialace",
+            "tm:smartstrike",
+            "tm:swift",
+            "tm:calmmind",
+            "tutor:flipturn",
+            "14:quickguard",
+            "tm:closecombat",
+            "tutor:aquatail",
+            "tm:muddywater",
+            "tm:reversal",
+            "tutor:snore",
+            "70:closecombat",
+            "tutor:coaching",
+            "tutor:poisonjab",
+            "tm:snore",
+            "tm:facade",
+            "tutor:bubblebeam",
+            "tm:rocksmash",
+            "28:retaliate",
+            "tutor:sleeptalk",
+            "42:takedown",
+            "tutor:helpinghand",
+            "tm:vacuumwave",
+            "tutor:megahorn",
+            "tm:lastresort",
+            "1:leer",
+            "tm:secretpower",
+            "tm:hail",
+            "tutor:lowkick",
+            "tutor:waterpulse",
+            "tm:focusblast",
+            "tutor:icywind",
+            "tm:cut",
+            "tm:rest",
+            "tm:xscissor",
+            "tutor:doublekick",
+            "tutor:superpower",
+            "49:sacredsword",
+            "tm:retaliate",
+            "21:doublekick",
+            "tm:flipturn",
+            "1:workup",
+            "tm:icywind",
+            "tutor:aquajet",
+            "tm:aerialace",
+            "tm:psychup",
+            "tm:protect",
+            "tm:hyperbeam",
+            "tutor:rest",
+            "tm:brickbreak",
+            "tutor:liquidation",
+            "tutor:falseswipe",
+            "tm:falseswipe",
+            "tm:swordsdance",
+            "tm:toxic",
+            "tm:liquidation",
+            "56:swordsdance",
+            "tutor:endeavor",
+            "tutor:rocksmash",
+            "1:helpinghand",
+            "tm:coaching",
+            "tm:poisonjab",
+            "tm:hydropump",
+            "tutor:sacredsword",
+            "7:bubblebeam",
+            "tm:upperhand",
+            "tm:painsplit",
+            "tm:helpinghand",
+            "tm:lowkick",
+            "1:aquajet",
+            "tm:workup",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5",
+            "mythical",
+            "legendary"
+      ],
+      "pokedex": [
+            "cobblemon.species.keldeo.desc"
+      ],
+      "height": 14,
+      "weight": 485,
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "keldeo sword_form=resolute",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "has_move",
+                              "move": "secretsword"
+                        }
+                  ],
+                  "id": "keldeo_keldeor"
+            }
+      ],
+      "forms": [
+            {
+                  "name": "Resolute",
+                  "primaryType": "water",
+                  "secondaryType": "fighting",
+                  "abilities": [
+                        "justified"
+                  ],
+                  "baseStats": {
+                        "hp": 91,
+                        "attack": 72,
+                        "defence": 90,
+                        "special_attack": 129,
+                        "special_defence": 90,
+                        "speed": 108
+                  },
+                  "catchRate": 3,
+                  "maleRatio": -1,
+                  "baseExperienceYield": 290,
+                  "baseFriendship": 35,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 3,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "experienceGroup": "slow",
+                  "eggCycles": 80,
+                  "eggGroups": [
+                        "undiscovered"
+                  ],
+                  "labels": [
+                        "gen5",
+                        "mythical",
+                        "legendary"
+                  ],
+                  "aspects": [
+                        "resolute",
+                        "resolute-form"
+                  ],
+                  "height": 14,
+                  "weight": 485,
+                  "cannotDynamax": false,
+                  "battleOnly": false,
+                  "pokedex": [
+                        "cobblemon.species.keldeo-resolute.desc"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "keldeo sword_form=ordinary",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "has_move",
+                                          "move": "secretsword"
+                                    }
+                              ],
+                              "id": "keldeo_keldeor"
+                        }
+                  ]
+            }
+      ],
+      "aspects": [
+            "ordinary-form"
+      ],
+      "cannotDynamax": false,
+      "implemented": true
+}

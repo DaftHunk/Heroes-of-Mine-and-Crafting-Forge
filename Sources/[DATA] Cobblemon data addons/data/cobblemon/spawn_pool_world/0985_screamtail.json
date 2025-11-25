@@ -1,0 +1,36 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "screamtail",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "48-80",
+                  "weight": 11.0,
+                  "condition": {
+                        "biomes": [
+                              "minecraft:dripstone_caves"
+                        ]
+                  },
+                  "id": "screamtail-1"
+            },
+            {
+                  "pokemon": "screamtail",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "rare",
+                  "level": "40-65",
+                  "weight": 3.0,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_floral"
+                        ],
+                        "isRaining": true
+                  },
+                  "id": "screamtail-2"
+            }
+      ]
+}

@@ -1,0 +1,471 @@
+{
+      "implemented": true,
+      "name": "Rowlet",
+      "nationalPokedexNumber": 722,
+      "primaryType": "grass",
+      "secondaryType": "flying",
+      "abilities": [
+            "overgrow",
+            "h:longreach"
+      ],
+      "features": [
+            "region_bias"
+      ],
+      "forms": [
+            {
+                  "name": "Hisui Bias",
+                  "primaryType": "grass",
+                  "secondaryType": "flying",
+                  "abilities": [
+                        "overgrow",
+                        "h:longreach"
+                  ],
+                  "baseStats": {
+                        "hp": 68,
+                        "attack": 55,
+                        "defence": 55,
+                        "special_attack": 50,
+                        "special_defence": 50,
+                        "speed": 42
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.875,
+                  "shoulderMountable": false,
+                  "baseExperienceYield": 64,
+                  "experienceGroup": "medium_slow",
+                  "eggCycles": 15,
+                  "eggGroups": [
+                        "flying"
+                  ],
+                  "behaviour": {
+                        "moving": {
+                              "fly": {
+                                    "canFly": true
+                              }
+                        }
+                  },
+                  "drops": {
+                        "amount": 3,
+                        "entries": [
+                              {
+                                    "item": "minecraft:feather",
+                                    "quantityRange": "0-1"
+                              },
+                              {
+                                    "item": "minecraft:chicken"
+                              },
+                              {
+                                    "item": "cobblemon:miracle_seed",
+                                    "percentage": 5.0
+                              }
+                        ]
+                  },
+                  "moves": [
+                        "1:growl",
+                        "1:tackle",
+                        "3:leafage",
+                        "6:astonish",
+                        "9:peck",
+                        "12:shadowsneak",
+                        "15:razorleaf",
+                        "16:ominouswind",
+                        "18:foresight",
+                        "18:synthesis",
+                        "21:pluck",
+                        "24:nastyplot",
+                        "27:suckerpunch",
+                        "29:furyattack",
+                        "30:leafblade",
+                        "33:featherdance",
+                        "36:bravebird",
+                        "egg:batonpass",
+                        "egg:confuseray",
+                        "egg:curse",
+                        "egg:defog",
+                        "egg:doubleteam",
+                        "egg:haze",
+                        "egg:knockoff",
+                        "egg:ominouswind",
+                        "egg:roost",
+                        "tm:aerialace",
+                        "tm:aircutter",
+                        "tm:airslash",
+                        "tm:attract",
+                        "tm:batonpass",
+                        "tm:bravebird",
+                        "tm:bulletseed",
+                        "tm:confide",
+                        "tm:confuseray",
+                        "tm:doubleteam",
+                        "tm:dualwingbeat",
+                        "tm:echoedvoice",
+                        "tm:endure",
+                        "tm:energyball",
+                        "tm:facade",
+                        "tm:falseswipe",
+                        "tm:featherdance",
+                        "tm:frustration",
+                        "tm:gigadrain",
+                        "tm:grassknot",
+                        "tm:grasspledge",
+                        "tm:grassyglide",
+                        "tm:grassyterrain",
+                        "tm:haze",
+                        "tm:helpinghand",
+                        "tm:hiddenpower",
+                        "tm:knockoff",
+                        "tm:leafblade",
+                        "tm:leafstorm",
+                        "tm:lightscreen",
+                        "tm:magicalleaf",
+                        "tm:nastyplot",
+                        "tm:naturepower",
+                        "tm:nightshade",
+                        "tm:protect",
+                        "tm:raindance",
+                        "tm:rest",
+                        "tm:return",
+                        "tm:roost",
+                        "tm:round",
+                        "tm:safeguard",
+                        "tm:seedbomb",
+                        "tm:shadowclaw",
+                        "tm:sleeptalk",
+                        "tm:snore",
+                        "tm:solarbeam",
+                        "tm:steelwing",
+                        "tm:substitute",
+                        "tm:sunnyday",
+                        "tm:swagger",
+                        "tm:swift",
+                        "tm:swordsdance",
+                        "tm:takedown",
+                        "tm:terablast",
+                        "tm:toxic",
+                        "tm:trailblaze",
+                        "tm:workup",
+                        "tutor:covet",
+                        "tutor:defog",
+                        "tutor:dualwingbeat",
+                        "tutor:gigadrain",
+                        "tutor:grasspledge",
+                        "tutor:grassyglide",
+                        "tutor:seedbomb",
+                        "tutor:skyattack",
+                        "tutor:snore",
+                        "tutor:synthesis",
+                        "tutor:worryseed"
+                  ],
+                  "labels": [
+                        "gen7",
+                        "hisui_regional"
+                  ],
+                  "evolutions": [
+                        {
+                              "id": "hisui_rowlet_hisui_dartrix",
+                              "variant": "level_up",
+                              "result": "dartrix region_bias=hisui",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 17
+                                    }
+                              ]
+                        },
+                        {
+                              "id": "hisui_rowlet_dartrix",
+                              "variant": "level_up",
+                              "result": "dartrix region_bias=alola",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 17
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/rowlet_dartrix_alolan"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:is_freezing"
+                                    }
+                              ]
+                        }
+                  ],
+                  "baseScale": 0.6,
+                  "hitbox": {
+                        "width": 0.95,
+                        "height": 0.8,
+                        "fixed": false
+                  },
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 1,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "height": 3,
+                  "weight": 15,
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "cannotDynamax": false
+            },
+            {
+                  "secondaryType": "flying",
+                  "weight": 15,
+                  "maleRatio": 0.875,
+                  "name": "Hisui-Bias",
+                  "height": 3,
+                  "primaryType": "grass",
+                  "pokedex": [
+                        "cobblemon.species.rowlet-hisuibias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen8a",
+                        "starter",
+                        "customized_official",
+                        "hisuian_form"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "dartrix",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 17
+                                    }
+                              ],
+                              "id": "rowlet_dartrix"
+                        }
+                  ]
+            }
+      ],
+      "baseStats": {
+            "hp": 68,
+            "attack": 55,
+            "defence": 55,
+            "special_attack": 50,
+            "special_defence": 50,
+            "speed": 42
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 64,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 15,
+      "eggGroups": [
+            "flying"
+      ],
+      "behaviour": {
+            "moving": {
+                  "fly": {
+                        "canFly": true
+                  }
+            }
+      },
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:miracle_seed",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:endure",
+            "tm:grassknot",
+            "tutor:skyattack",
+            "egg:ominouswind",
+            "tm:trailblaze",
+            "tm:doubleteam",
+            "tutor:grasspledge",
+            "tm:batonpass",
+            "21:pluck",
+            "tm:furyattack",
+            "egg:roost",
+            "tutor:seedbomb",
+            "tutor:grassyglide",
+            "egg:knockoff",
+            "tm:shadowclaw",
+            "tm:echoedvoice",
+            "tm:covet",
+            "tm:worryseed",
+            "27:suckerpunch",
+            "3:leafage",
+            "29:furyattack",
+            "tm:pluck",
+            "tm:safeguard",
+            "tm:magicalleaf",
+            "tm:terablast",
+            "egg:furyattack",
+            "1:growl",
+            "tm:grasspledge",
+            "tm:substitute",
+            "30:leafblade",
+            "tm:airslash",
+            "tm:return",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "egg:batonpass",
+            "tm:knockoff",
+            "12:shadowsneak",
+            "egg:curse",
+            "tutor:worryseed",
+            "tm:skyattack",
+            "tm:nastyplot",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:defog",
+            "egg:defog",
+            "egg:haze",
+            "tutor:dualwingbeat",
+            "tm:raindance",
+            "tutor:covet",
+            "tm:swift",
+            "tm:shadowsneak",
+            "tm:leafblade",
+            "tm:aircutter",
+            "tm:naturepower",
+            "tm:attract",
+            "tutor:snore",
+            "tm:bulletseed",
+            "18:foresight",
+            "9:peck",
+            "tm:snore",
+            "tm:facade",
+            "24:nastyplot",
+            "tm:peck",
+            "tm:confuseray",
+            "tm:steelwing",
+            "tm:lightscreen",
+            "tm:featherdance",
+            "15:razorleaf",
+            "tm:rest",
+            "16:ominouswind",
+            "tm:suckerpunch",
+            "tm:gigadrain",
+            "tm:energyball",
+            "tm:razorleaf",
+            "egg:doubleteam",
+            "36:bravebird",
+            "tm:haze",
+            "tm:aerialace",
+            "tm:foresight",
+            "tm:protect",
+            "tm:solarbeam",
+            "18:synthesis",
+            "tm:grassyglide",
+            "tm:falseswipe",
+            "tm:leafage",
+            "tm:swordsdance",
+            "tm:toxic",
+            "1:tackle",
+            "tm:bravebird",
+            "tm:tackle",
+            "tm:astonish",
+            "tm:nightshade",
+            "tutor:defog",
+            "tm:seedbomb",
+            "tm:leafstorm",
+            "tm:synthesis",
+            "egg:confuseray",
+            "tm:dualwingbeat",
+            "33:featherdance",
+            "tm:helpinghand",
+            "tutor:gigadrain",
+            "tm:growl",
+            "tm:roost",
+            "tm:workup",
+            "tm:hiddenpower",
+            "tm:confide",
+            "6:astonish",
+            "tutor:synthesis",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7",
+            "starter",
+            "alolan_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.rowlet.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "dartrix",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 17
+                        }
+                  ],
+                  "id": "rowlet_dartrix"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "dartrix region_bias=hisui",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 17
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/rowlet_dartrix_hisui_bias"
+                        }
+                  ],
+                  "id": "rowlet_hisui_dartrix"
+            }
+      ],
+      "baseScale": 0.6,
+      "hitbox": {
+            "width": 0.95,
+            "height": 0.8,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 1,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 3,
+      "weight": 15,
+      "aspects": [],
+      "cannotDynamax": false
+}

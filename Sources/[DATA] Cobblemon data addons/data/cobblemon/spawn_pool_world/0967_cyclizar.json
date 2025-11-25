@@ -1,0 +1,24 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "cyclizar",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "rare",
+                  "level": "30-50",
+                  "weight": 5.0,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_desert"
+                        ]
+                  },
+                  "id": "cyclizar-1"
+            }
+      ]
+}

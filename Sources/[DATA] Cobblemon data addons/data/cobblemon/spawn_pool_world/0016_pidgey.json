@@ -1,0 +1,34 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "pidgey",
+                  "presets": [
+                        "natural",
+                        "treetop"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "1-25",
+                  "weight": 9.0,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_temperate",
+                              "#cobblemon:is_sky"
+                        ],
+                        "timeRange": "day"
+                  },
+                  "anticondition": {
+                        "biomes": [
+                              "#cobblemon:is_spooky"
+                        ]
+                  },
+                  "id": "pidgey-1"
+            }
+      ]
+}

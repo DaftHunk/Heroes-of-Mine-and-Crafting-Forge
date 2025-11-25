@@ -1,0 +1,199 @@
+{
+      "implemented": true,
+      "name": "Klang",
+      "nationalPokedexNumber": 600,
+      "primaryType": "steel",
+      "abilities": [
+            "plus",
+            "minus",
+            "h:clearbody"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:raw_iron",
+                        "quantityRange": "0-2"
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 60,
+            "attack": 80,
+            "defence": 95,
+            "special_attack": 70,
+            "special_defence": 85,
+            "speed": 50
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "swim": {
+                        "avoidsWater": true,
+                        "canSwimInWater": false
+                  }
+            }
+      },
+      "catchRate": 60,
+      "maleRatio": -1,
+      "shoulderMountable": false,
+      "baseExperienceYield": 154,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "mineral"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:gravity",
+            "1:mirrorshot",
+            "tm:zapcannon",
+            "tm:signalbeam",
+            "tm:autotomize",
+            "tm:wildcharge",
+            "tm:doubleteam",
+            "tutor:irondefense",
+            "20:autotomize",
+            "1:visegrip",
+            "1:thundershock",
+            "42:shiftgear",
+            "32:geargrind",
+            "tutor:chargebeam",
+            "tutor:risingvoltage",
+            "tm:assurance",
+            "36:lockon",
+            "tm:flashcannon",
+            "tm:irondefense",
+            "1:charge",
+            "tm:terablast",
+            "1:bind",
+            "tutor:shockwave",
+            "tm:geargrind",
+            "tm:powergem",
+            "tm:substitute",
+            "tm:recycle",
+            "tm:return",
+            "tm:mirrorshot",
+            "tutor:steelbeam",
+            "tutor:bind",
+            "tm:sleeptalk",
+            "tm:bind",
+            "tm:rockpolish",
+            "tutor:magiccoat",
+            "36:mirrorshot",
+            "tm:telekinesis",
+            "tm:risingvoltage",
+            "tm:shiftgear",
+            "tutor:steelroller",
+            "tm:magiccoat",
+            "48:zapcannon",
+            "tm:charge",
+            "tutor:snore",
+            "tm:lockon",
+            "tm:thunderwave",
+            "tm:chargebeam",
+            "tm:metalsound",
+            "tm:snore",
+            "tm:facade",
+            "tm:rocksmash",
+            "tutor:recycle",
+            "tm:discharge",
+            "tutor:sleeptalk",
+            "tm:screech",
+            "tutor:allyswitch",
+            "tm:secretpower",
+            "tm:allyswitch",
+            "tm:rest",
+            "tm:visegrip",
+            "tm:sandstorm",
+            "54:hyperbeam",
+            "24:discharge",
+            "tm:protect",
+            "tm:magnetrise",
+            "tm:hyperbeam",
+            "tm:steelroller",
+            "tm:toxic",
+            "tutor:telekinesis",
+            "tm:steelbeam",
+            "28:screech",
+            "tm:thundershock",
+            "tm:thunderbolt",
+            "tm:voltswitch",
+            "tm:shockwave",
+            "tutor:magnetrise",
+            "tutor:signalbeam",
+            "16:metalsound",
+            "tm:uproar",
+            "12:chargebeam",
+            "tutor:gravity",
+            "tm:hiddenpower",
+            "tutor:uproar",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5"
+      ],
+      "pokedex": [
+            "cobblemon.species.klang.desc"
+      ],
+      "preEvolution": "klink",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "klinklang",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 49
+                        }
+                  ],
+                  "id": "klang_klinklang"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "klinklang",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "magneticflux"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 49
+                        }
+                  ],
+                  "id": "klang_klinklang-1"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1.5,
+            "height": 1.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 2,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 6,
+      "weight": 510,
+      "aspects": [],
+      "cannotDynamax": false,
+      "target": "cobblemon:klang",
+      "forms": []
+}

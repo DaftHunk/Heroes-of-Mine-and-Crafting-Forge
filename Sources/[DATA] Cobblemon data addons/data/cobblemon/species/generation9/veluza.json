@@ -1,0 +1,146 @@
+{
+      "name": "Veluza",
+      "nationalPokedexNumber": 976,
+      "primaryType": "water",
+      "secondaryType": "psychic",
+      "abilities": [
+            "moldbreaker",
+            "h:sharpness"
+      ],
+      "baseStats": {
+            "hp": 90,
+            "attack": 102,
+            "defence": 73,
+            "special_attack": 78,
+            "special_defence": 65,
+            "speed": 70
+      },
+      "catchRate": 100,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 167,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_2"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:flipturn",
+            "tm:psychicfangs",
+            "tm:psychicterrain",
+            "tm:pluck",
+            "tm:icywind",
+            "egg:recover",
+            "tm:terablast",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tm:surf",
+            "tm:doubleedge",
+            "tm:storedpower",
+            "tm:protect",
+            "tm:thrash",
+            "tm:icefang",
+            "40:psychocut",
+            "tm:hyperbeam",
+            "tm:zenheadbutt",
+            "tm:slash",
+            "tm:recover",
+            "tm:substitute",
+            "tm:blizzard",
+            "tm:aquajet",
+            "15:focusenergy",
+            "tm:filletaway",
+            "tm:finalgambit",
+            "25:aquacutter",
+            "1:tackle",
+            "tm:liquidation",
+            "50:crunch",
+            "tm:chillingwater",
+            "30:filletaway",
+            "tm:gigaimpact",
+            "tm:aquacutter",
+            "tm:tackle",
+            "55:finalgambit",
+            "tm:sleeptalk",
+            "tm:snowscape",
+            "tm:psychocut",
+            "tm:bodyslam",
+            "tm:hydropump",
+            "tm:agility",
+            "tm:endeavor",
+            "20:slash",
+            "tm:painsplit",
+            "tm:waterfall",
+            "tm:expandingforce",
+            "egg:thrash",
+            "tm:nightslash",
+            "35:nightslash",
+            "tm:scaleshot",
+            "1:aquajet",
+            "tm:crunch",
+            "tm:psychic",
+            "tm:takedown",
+            "7:pluck",
+            "tm:drillrun",
+            "tm:rest",
+            "tm:icebeam",
+            "tm:waterpulse",
+            "11:waterpulse",
+            "45:liquidation"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 25,
+      "weight": 900,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.veluza.desc"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:cod",
+                        "quantityRange": "1-3"
+                  },
+                  {
+                        "item": "minecraft:bone_meal",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "target": "cobblemon:veluza",
+      "forms": [],
+      "hitbox": {
+            "width": 1.1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseScale": 1,
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "swimSpeed": 0.5,
+                        "canBreatheUnderwater": true,
+                        "canSwimInWater": true,
+                        "canSwimInLava": false
+                  },
+                  "walk": {
+                        "avoidsLand": true
+                  }
+            }
+      }
+}

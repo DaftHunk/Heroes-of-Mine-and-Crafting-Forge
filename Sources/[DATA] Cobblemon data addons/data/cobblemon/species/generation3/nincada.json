@@ -1,0 +1,206 @@
+{
+      "implemented": true,
+      "name": "Nincada",
+      "nationalPokedexNumber": 290,
+      "primaryType": "bug",
+      "secondaryType": "ground",
+      "abilities": [
+            "compoundeyes",
+            "h:runaway"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:soft_sand",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 31,
+            "attack": 45,
+            "defence": 90,
+            "special_attack": 30,
+            "special_defence": 30,
+            "speed": 40
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 53,
+      "experienceGroup": "erratic",
+      "eggCycles": 15,
+      "eggGroups": [
+            "bug"
+      ],
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.2
+                  }
+            }
+      },
+      "moves": [
+            "tm:absorb",
+            "egg:gust",
+            "tm:endure",
+            "35:mindreader",
+            "tm:bugbuzz",
+            "tm:metalclaw",
+            "29:bide",
+            "tm:silverwind",
+            "tm:sandattack",
+            "tm:doubleteam",
+            "egg:bugbite",
+            "tutor:mudslap",
+            "tutor:leechlife",
+            "tutor:swagger",
+            "tutor:stringshot",
+            "egg:endure",
+            "tm:nightslash",
+            "40:dig",
+            "10:falseswipe",
+            "tm:terablast",
+            "tm:bugbite",
+            "tm:furycutter",
+            "egg:feintattack",
+            "tm:substitute",
+            "tm:finalgambit",
+            "tm:return",
+            "1:scratch",
+            "5:harden",
+            "egg:flail",
+            "tm:stringshot",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "egg:bide",
+            "tm:harden",
+            "tm:naturalgift",
+            "5:leechlife",
+            "tutor:skittersmack",
+            "tm:sunnyday",
+            "tm:furyswipes",
+            "tutor:substitute",
+            "tm:flail",
+            "15:mudslap",
+            "21:absorb",
+            "tm:scratch",
+            "tm:feintattack",
+            "tutor:snore",
+            "egg:silverwind",
+            "tutor:bugbite",
+            "tm:snore",
+            "tm:facade",
+            "tm:shadowball",
+            "tutor:sleeptalk",
+            "tm:leechlife",
+            "tutor:mimic",
+            "tutor:nightslash",
+            "1:sandattack",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:dig",
+            "tutor:endure",
+            "30:furyswipes",
+            "egg:bugbuzz",
+            "tm:cut",
+            "tutor:spite",
+            "tm:rest",
+            "tm:xscissor",
+            "tm:gigadrain",
+            "tm:sandstorm",
+            "tm:strugglebug",
+            "tm:flash",
+            "tm:aerialace",
+            "tm:protect",
+            "tm:solarbeam",
+            "tm:spite",
+            "tm:bide",
+            "tm:falseswipe",
+            "25:metalclaw",
+            "egg:nightslash",
+            "tm:toxic",
+            "tm:gust",
+            "tm:skittersmack",
+            "egg:finalgambit",
+            "tutor:furycutter",
+            "tutor:gigadrain",
+            "tutor:doubleedge",
+            "tm:mindreader",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen3"
+      ],
+      "pokedex": [
+            "cobblemon.species.nincada.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "ninjask",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "doubleteam",
+                        "furycutter",
+                        "screech"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 20
+                        }
+                  ],
+                  "id": "nincada_ninjask"
+            },
+            {
+                  "shedder": "shedinja",
+                  "variant": "level_up",
+                  "result": "ninjask",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "doubleteam",
+                        "screech",
+                        "furycutter"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 20
+                        }
+                  ],
+                  "id": "nincada_ninjask-1"
+            }
+      ],
+      "baseScale": 0.45,
+      "hitbox": {
+            "width": 0.9,
+            "height": 0.7,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 5,
+      "weight": 55,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

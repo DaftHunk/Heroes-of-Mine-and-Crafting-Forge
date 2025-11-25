@@ -1,0 +1,280 @@
+{
+      "implemented": true,
+      "name": "Eiscue",
+      "nationalPokedexNumber": 875,
+      "primaryType": "ice",
+      "abilities": [
+            "iceface",
+            "h:iceface"
+      ],
+      "baseStats": {
+            "hp": 75,
+            "attack": 80,
+            "defence": 110,
+            "special_attack": 65,
+            "special_defence": 90,
+            "speed": 50
+      },
+      "catchRate": 60,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 165,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 2,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 25,
+      "eggGroups": [
+            "water_1",
+            "field"
+      ],
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "minecraft:cod",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:blue_ice"
+                  },
+                  {
+                        "item": "cobblemon:aspear_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.15
+                  },
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      },
+      "moves": [
+            "tm:headbutt",
+            "egg:bellydrum",
+            "tm:endure",
+            "tm:flipturn",
+            "tm:iciclespear",
+            "42:hail",
+            "30:amnesia",
+            "tm:irondefense",
+            "tm:icywind",
+            "tm:waterpulse",
+            "54:surf",
+            "tm:avalanche",
+            "tm:terablast",
+            "tm:raindance",
+            "tm:surf",
+            "egg:soak",
+            "tm:doubleedge",
+            "tm:protect",
+            "tm:weatherball",
+            "tm:ironhead",
+            "tm:hyperbeam",
+            "tm:zenheadbutt",
+            "tm:brine",
+            "tm:blizzard",
+            "tm:substitute",
+            "tm:bellydrum",
+            "tm:attract",
+            "42:snowscape",
+            "tm:reflect",
+            "egg:headsmash",
+            "tm:dive",
+            "tm:reversal",
+            "tm:auroraveil",
+            "1:tackle",
+            "36:freezedry",
+            "egg:aquaring",
+            "tm:liquidation",
+            "tm:round",
+            "tm:whirlpool",
+            "1:powdersnow",
+            "tm:chillingwater",
+            "tm:gigaimpact",
+            "tm:freezedry",
+            "tm:powdersnow",
+            "48:auroraveil",
+            "tm:facade",
+            "tm:snore",
+            "tm:tackle",
+            "tm:sleeptalk",
+            "18:icywind",
+            "tm:snowscape",
+            "tm:bodyslam",
+            "24:headbutt",
+            "tm:agility",
+            "tm:soak",
+            "60:blizzard",
+            "12:weatherball",
+            "tm:amnesia",
+            "tm:icespinner",
+            "tm:headsmash",
+            "tm:mist",
+            "tm:waterfall",
+            "tm:hail",
+            "egg:doubleedge",
+            "tm:icepunch",
+            "tm:featherdance",
+            "tm:takedown",
+            "tm:iciclecrash",
+            "tm:rest",
+            "tm:icebeam",
+            "6:mist",
+            "egg:iciclecrash",
+            "tm:aquaring",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "aspects": [
+            "ice_face"
+      ],
+      "height": 14,
+      "weight": 890,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "forms": [
+            {
+                  "name": "Noice",
+                  "primaryType": "ice",
+                  "abilities": [
+                        "iceface"
+                  ],
+                  "drops": {
+                        "amount": 4,
+                        "entries": [
+                              {
+                                    "item": "minecraft:feather",
+                                    "percentage": 50
+                              },
+                              {
+                                    "item": "minecraft:chicken"
+                              },
+                              {
+                                    "item": "minecraft:cod",
+                                    "percentage": 50
+                              },
+                              {
+                                    "item": "cobblemon:aspear_berry",
+                                    "percentage": 5
+                              }
+                        ]
+                  },
+                  "baseStats": {
+                        "hp": 75,
+                        "attack": 80,
+                        "defence": 70,
+                        "special_attack": 65,
+                        "special_defence": 50,
+                        "speed": 130
+                  },
+                  "catchRate": 60,
+                  "maleRatio": 0.5,
+                  "baseExperienceYield": 165,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 2,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "experienceGroup": "slow",
+                  "eggCycles": 25,
+                  "eggGroups": [
+                        "water_1",
+                        "field"
+                  ],
+                  "labels": [
+                        "gen8"
+                  ],
+                  "aspects": [
+                        "noice"
+                  ],
+                  "height": 14,
+                  "weight": 890,
+                  "cannotDynamax": false,
+                  "battleOnly": true
+            },
+            {
+                  "weight": 890,
+                  "maleRatio": 0.5,
+                  "baseStats": {
+                        "hp": 75,
+                        "attack": 80,
+                        "defence": 70,
+                        "special_attack": 65,
+                        "special_defence": 50,
+                        "speed": 130
+                  },
+                  "name": "Noice-Face",
+                  "drops": {
+                        "amount": 4,
+                        "entries": [
+                              {
+                                    "item": "minecraft:feather",
+                                    "quantityRange": "0-1"
+                              },
+                              {
+                                    "item": "minecraft:chicken"
+                              },
+                              {
+                                    "item": "minecraft:cod",
+                                    "quantityRange": "0-1"
+                              },
+                              {
+                                    "item": "cobblemon:aspear_berry",
+                                    "percentage": 5.0
+                              }
+                        ]
+                  },
+                  "height": 14,
+                  "battleOnly": true,
+                  "primaryType": "ice",
+                  "pokedex": [
+                        "cobblemon.species.eiscue-noiceface.desc"
+                  ],
+                  "aspects": [
+                        "noice_face"
+                  ],
+                  "labels": [
+                        "gen8"
+                  ],
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "pokedex": [
+            "cobblemon.species.eiscue.desc"
+      ]
+}

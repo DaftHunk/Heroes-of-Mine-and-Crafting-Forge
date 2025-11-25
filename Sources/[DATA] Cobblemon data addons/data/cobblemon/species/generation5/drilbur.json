@@ -1,0 +1,193 @@
+{
+      "name": "Drilbur",
+      "nationalPokedexNumber": 529,
+      "primaryType": "ground",
+      "abilities": [
+            "sandrush",
+            "sandforce",
+            "h:moldbreaker"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:soft_sand",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:pinap_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 60,
+            "attack": 85,
+            "defence": 40,
+            "special_attack": 30,
+            "special_defence": 45,
+            "speed": 68
+      },
+      "catchRate": 120,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 66,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field"
+      ],
+      "moves": [
+            "5:rapidspin",
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "26:slash",
+            "tm:highhorsepower",
+            "16:metalclaw",
+            "40:drillrun",
+            "tm:metalclaw",
+            "tm:doubleteam",
+            "44:earthquake",
+            "tutor:irondefense",
+            "8:mudslap",
+            "tm:earthpower",
+            "tm:shadowclaw",
+            "tm:sludgebomb",
+            "egg:submission",
+            "8:honeclaws",
+            "tutor:rapidspin",
+            "tutor:stealthrock",
+            "1:mudslap",
+            "15:metalclaw",
+            "tutor:rockclimb",
+            "tutor:earthpower",
+            "29:rockslide",
+            "tutor:drillrun",
+            "tm:rocktomb",
+            "tm:irondefense",
+            "tm:terablast",
+            "32:dig",
+            "tm:earthquake",
+            "tm:doubleedge",
+            "47:fissure",
+            "tm:fling",
+            "36:swordsdance",
+            "tm:strength",
+            "tutor:metalsound",
+            "tm:substitute",
+            "egg:rockclimb",
+            "egg:skullbash",
+            "tm:return",
+            "20:sandstorm",
+            "19:dig",
+            "40:sandstorm",
+            "1:scratch",
+            "12:furyswipes",
+            "tm:scorchingsands",
+            "43:drillrun",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "1:rapidspin",
+            "egg:irondefense",
+            "egg:earthpower",
+            "1:mudsport",
+            "tm:sunnyday",
+            "tm:takedown",
+            "33:earthquake",
+            "28:rockslide",
+            "tutor:scorchingsands",
+            "tm:mudshot",
+            "24:crushclaw",
+            "tm:attract",
+            "egg:rapidspin",
+            "tutor:snore",
+            "tm:metalsound",
+            "tm:snore",
+            "tm:facade",
+            "egg:slash",
+            "tm:rocksmash",
+            "tutor:sleeptalk",
+            "tm:secretpower",
+            "tm:mudslap",
+            "22:honeclaws",
+            "tm:dig",
+            "tm:sandtomb",
+            "tm:cut",
+            "tm:rest",
+            "tm:xscissor",
+            "tm:stealthrock",
+            "48:fissure",
+            "tm:sandstorm",
+            "egg:crushclaw",
+            "tm:aerialace",
+            "tm:protect",
+            "tm:bulldoze",
+            "tm:brickbreak",
+            "tm:swordsdance",
+            "tm:toxic",
+            "tm:poisonjab",
+            "4:scratch",
+            "egg:metalsound",
+            "tm:helpinghand",
+            "tm:hiddenpower",
+            "tm:drillrun",
+            "tm:stompingtantrum",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5"
+      ],
+      "pokedex": [
+            "cobblemon.species.drilbur.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "excadrill",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "horndrill"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 31
+                        }
+                  ],
+                  "id": "drilbur_excadrill"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 0.9,
+            "height": 0.8,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 3,
+      "weight": 85,
+      "aspects": [],
+      "cannotDynamax": false,
+      "implemented": true,
+      "forms": [],
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      }
+}

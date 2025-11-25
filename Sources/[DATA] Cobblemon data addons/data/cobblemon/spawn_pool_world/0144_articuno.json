@@ -1,0 +1,45 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "articuno",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70",
+                  "weight": 3.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_freezing"
+                        ],
+                        "isRaining": true
+                  },
+                  "id": "articuno"
+            },
+            {
+                  "pokemon": "articuno galarian",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70",
+                  "weight": 3.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_freezing"
+                        ],
+                        "isRaining": false
+                  },
+                  "id": "articuno-galarian"
+            }
+      ]
+}

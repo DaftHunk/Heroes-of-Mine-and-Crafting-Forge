@@ -1,0 +1,125 @@
+{
+      "name": "Wugtrio",
+      "nationalPokedexNumber": 961,
+      "primaryType": "water",
+      "abilities": [
+            "gooey",
+            "rattled",
+            "h:sandveil"
+      ],
+      "baseStats": {
+            "hp": 35,
+            "attack": 100,
+            "defence": 50,
+            "special_attack": 50,
+            "special_defence": 70,
+            "speed": 120
+      },
+      "catchRate": 50,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 149,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 2
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_3"
+      ],
+      "moves": [
+            "tm:headbutt",
+            "tm:endure",
+            "tm:slam",
+            "tm:terablast",
+            "tm:mudshot",
+            "tm:raindance",
+            "30:tripledive",
+            "tm:surf",
+            "tm:protect",
+            "tm:swift",
+            "tm:memento",
+            "tm:hyperbeam",
+            "tm:bulldoze",
+            "20:waterpulse",
+            "tm:substitute",
+            "tm:blizzard",
+            "tm:foulplay",
+            "tm:throatchop",
+            "tm:aquajet",
+            "1:watergun",
+            "tm:sandattack",
+            "tm:watergun",
+            "tm:muddywater",
+            "tm:finalgambit",
+            "12:aquajet",
+            "42:suckerpunch",
+            "tm:liquidation",
+            "tm:whirlpool",
+            "tm:wrap",
+            "tm:chillingwater",
+            "36:dig",
+            "tm:gigaimpact",
+            "tm:earthpower",
+            "tm:facade",
+            "tm:sleeptalk",
+            "24:headbutt",
+            "tm:agility",
+            "54:liquidation",
+            "tm:tripledive",
+            "48:throatchop",
+            "egg:finalgambit",
+            "1:sandattack",
+            "tm:mudslap",
+            "tm:painsplit",
+            "tm:suckerpunch",
+            "1:mudslap",
+            "tm:dig",
+            "tm:helpinghand",
+            "egg:memento",
+            "16:slam",
+            "tm:takedown",
+            "tm:rest",
+            "tm:stompingtantrum",
+            "tm:icebeam",
+            "1:wrap",
+            "tm:waterpulse",
+            "tm:sandstorm",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 12,
+      "weight": 54,
+      "preEvolution": "wiglett",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.wugtrio.desc"
+      ],
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 1.5,
+            "height": 1.4,
+            "fixed": false
+      },
+      "baseScale": 0.7,
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canSwimInLava": false,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      }
+}

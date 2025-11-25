@@ -1,0 +1,542 @@
+{
+      "implemented": true,
+      "name": "Dartrix",
+      "nationalPokedexNumber": 723,
+      "primaryType": "grass",
+      "secondaryType": "flying",
+      "abilities": [
+            "overgrow",
+            "h:longreach"
+      ],
+      "features": [
+            "region_bias"
+      ],
+      "forms": [
+            {
+                  "name": "Hisui Bias",
+                  "primaryType": "grass",
+                  "secondaryType": "flying",
+                  "abilities": [
+                        "overgrow",
+                        "h:longreach"
+                  ],
+                  "baseStats": {
+                        "hp": 78,
+                        "attack": 75,
+                        "defence": 75,
+                        "special_attack": 70,
+                        "special_defence": 70,
+                        "speed": 52
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.875,
+                  "shoulderMountable": false,
+                  "baseExperienceYield": 147,
+                  "experienceGroup": "medium_slow",
+                  "eggCycles": 15,
+                  "eggGroups": [
+                        "flying"
+                  ],
+                  "behaviour": {
+                        "moving": {
+                              "fly": {
+                                    "canFly": true
+                              }
+                        }
+                  },
+                  "drops": {
+                        "amount": 4,
+                        "entries": [
+                              {
+                                    "item": "minecraft:feather",
+                                    "quantityRange": "0-2"
+                              },
+                              {
+                                    "item": "minecraft:chicken"
+                              },
+                              {
+                                    "item": "cobblemon:miracle_seed",
+                                    "percentage": 10.0
+                              }
+                        ]
+                  },
+                  "moves": [
+                        "1:astonish",
+                        "1:growl",
+                        "1:leafage",
+                        "1:tackle",
+                        "9:peck",
+                        "12:shadowsneak",
+                        "15:razorleaf",
+                        "16:ominouswind",
+                        "19:foresight",
+                        "20:synthesis",
+                        "25:pluck",
+                        "30:nastyplot",
+                        "33:furyattack",
+                        "35:suckerpunch",
+                        "40:leafblade",
+                        "45:featherdance",
+                        "50:bravebird",
+                        "tm:aerialace",
+                        "tm:aircutter",
+                        "tm:airslash",
+                        "tm:attract",
+                        "tm:batonpass",
+                        "tm:bravebird",
+                        "tm:bulletseed",
+                        "tm:confide",
+                        "tm:confuseray",
+                        "tm:doubleteam",
+                        "tm:dualwingbeat",
+                        "tm:echoedvoice",
+                        "tm:endure",
+                        "tm:energyball",
+                        "tm:facade",
+                        "tm:falseswipe",
+                        "tm:featherdance",
+                        "tm:frustration",
+                        "tm:gigadrain",
+                        "tm:grassknot",
+                        "tm:grasspledge",
+                        "tm:grassyglide",
+                        "tm:grassyterrain",
+                        "tm:haze",
+                        "tm:helpinghand",
+                        "tm:hiddenpower",
+                        "tm:knockoff",
+                        "tm:leafblade",
+                        "tm:leafstorm",
+                        "tm:lightscreen",
+                        "tm:magicalleaf",
+                        "tm:nastyplot",
+                        "tm:naturepower",
+                        "tm:nightshade",
+                        "tm:protect",
+                        "tm:raindance",
+                        "tm:rest",
+                        "tm:return",
+                        "tm:roost",
+                        "tm:round",
+                        "tm:safeguard",
+                        "tm:seedbomb",
+                        "tm:shadowclaw",
+                        "tm:sleeptalk",
+                        "tm:snore",
+                        "tm:solarbeam",
+                        "tm:steelwing",
+                        "tm:substitute",
+                        "tm:sunnyday",
+                        "tm:swagger",
+                        "tm:swift",
+                        "tm:swordsdance",
+                        "tm:tailwind",
+                        "tm:takedown",
+                        "tm:terablast",
+                        "tm:toxic",
+                        "tm:trailblaze",
+                        "tm:workup",
+                        "tutor:covet",
+                        "tutor:defog",
+                        "tutor:dualwingbeat",
+                        "tutor:gigadrain",
+                        "tutor:grasspledge",
+                        "tutor:grassyglide",
+                        "tutor:seedbomb",
+                        "tutor:skyattack",
+                        "tutor:snore",
+                        "tutor:synthesis",
+                        "tutor:worryseed"
+                  ],
+                  "labels": [
+                        "gen7",
+                        "hisui_regional"
+                  ],
+                  "preEvolution": "rowlet region_bias=hisui",
+                  "evolutions": [
+                        {
+                              "id": "hisui_dartrix_hisui_decidueye",
+                              "variant": "level_up",
+                              "result": "decidueye hisuian",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "triplearrows"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 36
+                                    }
+                              ]
+                        },
+                        {
+                              "id": "hisui_dartrix_decidueye",
+                              "variant": "level_up",
+                              "result": "decidueye",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "spiritshackle"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 34
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/rowlet_dartrix_alolan"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:is_freezing"
+                                    }
+                              ]
+                        }
+                  ],
+                  "baseScale": 0.6,
+                  "hitbox": {
+                        "width": 1,
+                        "height": 2,
+                        "fixed": false
+                  },
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 2,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "height": 7,
+                  "weight": 160,
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "cannotDynamax": false
+            },
+            {
+                  "secondaryType": "flying",
+                  "weight": 160,
+                  "maleRatio": 0.875,
+                  "name": "Hisui-Bias",
+                  "height": 7,
+                  "primaryType": "grass",
+                  "pokedex": [
+                        "cobblemon.species.dartrix-hisuibias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen8a",
+                        "customized_official",
+                        "hisuian_form"
+                  ],
+                  "preEvolution": "rowlet",
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "decidueye",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "spiritshackle"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 34
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/dartrix_hisuibiome"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/regional/dartrix_alolabiome"
+                                    }
+                              ],
+                              "id": "dartrix_decidueye"
+                        },
+                        {
+                              "variant": "level_up",
+                              "result": "decidueye hisuian",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "triplearrows"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 36
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/dartrix_alolabiome"
+                                    }
+                              ],
+                              "id": "dartrix_decidueyehisui"
+                        }
+                  ]
+            }
+      ],
+      "baseStats": {
+            "hp": 78,
+            "attack": 75,
+            "defence": 75,
+            "special_attack": 70,
+            "special_defence": 70,
+            "speed": 52
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 147,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 15,
+      "eggGroups": [
+            "flying"
+      ],
+      "behaviour": {
+            "moving": {
+                  "fly": {
+                        "canFly": true
+                  }
+            }
+      },
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:miracle_seed",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:endure",
+            "tm:grassknot",
+            "tutor:skyattack",
+            "tm:trailblaze",
+            "tm:doubleteam",
+            "tutor:grasspledge",
+            "tm:batonpass",
+            "tm:furyattack",
+            "1:leafage",
+            "egg:roost",
+            "tutor:seedbomb",
+            "tutor:grassyglide",
+            "egg:knockoff",
+            "tm:shadowclaw",
+            "tm:echoedvoice",
+            "tm:covet",
+            "35:suckerpunch",
+            "1:astonish",
+            "33:furyattack",
+            "tm:worryseed",
+            "tm:pluck",
+            "tm:safeguard",
+            "tm:magicalleaf",
+            "tm:terablast",
+            "egg:furyattack",
+            "1:growl",
+            "19:foresight",
+            "tm:grasspledge",
+            "tm:substitute",
+            "tm:airslash",
+            "tm:return",
+            "tm:tailwind",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "25:pluck",
+            "tm:knockoff",
+            "12:shadowsneak",
+            "tutor:worryseed",
+            "tm:skyattack",
+            "tm:nastyplot",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:defog",
+            "egg:defog",
+            "tutor:dualwingbeat",
+            "tm:raindance",
+            "tutor:covet",
+            "tm:swift",
+            "tm:shadowsneak",
+            "tm:leafblade",
+            "tm:aircutter",
+            "tm:naturepower",
+            "tm:attract",
+            "tutor:snore",
+            "tm:bulletseed",
+            "9:peck",
+            "tm:snore",
+            "tm:facade",
+            "30:nastyplot",
+            "tm:peck",
+            "tm:confuseray",
+            "tm:steelwing",
+            "tm:lightscreen",
+            "tm:featherdance",
+            "15:razorleaf",
+            "tm:rest",
+            "16:ominouswind",
+            "tm:suckerpunch",
+            "tm:gigadrain",
+            "tm:energyball",
+            "tm:razorleaf",
+            "egg:doubleteam",
+            "tm:haze",
+            "tm:aerialace",
+            "tm:foresight",
+            "tm:protect",
+            "tm:solarbeam",
+            "20:synthesis",
+            "tm:grassyglide",
+            "tm:falseswipe",
+            "tm:leafage",
+            "tm:swordsdance",
+            "tm:toxic",
+            "1:tackle",
+            "50:bravebird",
+            "tm:bravebird",
+            "tm:tackle",
+            "1:furyattack",
+            "tm:nightshade",
+            "tm:astonish",
+            "40:leafblade",
+            "1:foresight",
+            "tutor:defog",
+            "tm:seedbomb",
+            "tm:leafstorm",
+            "tm:synthesis",
+            "egg:confuseray",
+            "tm:dualwingbeat",
+            "tm:helpinghand",
+            "tutor:gigadrain",
+            "tm:growl",
+            "tm:workup",
+            "tm:roost",
+            "tm:hiddenpower",
+            "45:featherdance",
+            "tm:confide",
+            "tutor:synthesis",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7",
+            "alolan_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.dartrix.desc"
+      ],
+      "preEvolution": "rowlet",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "decidueye",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "spiritshackle"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 34
+                        }
+                  ],
+                  "id": "dartrix_decidueye"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "decidueye hisuian",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "triplearrows"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/rowlet_dartrix_hisui_bias"
+                        }
+                  ],
+                  "id": "dartrix_decidueye_hisui"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "decidueye",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "spiritshackle"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 34
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/dartrix_hisuibiome"
+                        }
+                  ],
+                  "id": "dartrix_decidueye-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "decidueye hisuian",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "triplearrows"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/regional/dartrix_hisuibiome"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/dartrix_alolabiome"
+                        }
+                  ],
+                  "id": "dartrix_decidueyehisui"
+            }
+      ],
+      "baseScale": 0.6,
+      "hitbox": {
+            "width": 1,
+            "height": 2,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 2,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 7,
+      "weight": 160,
+      "aspects": [],
+      "cannotDynamax": false
+}

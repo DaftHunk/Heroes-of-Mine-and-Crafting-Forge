@@ -1,0 +1,145 @@
+{
+      "implemented": true,
+      "name": "Dreepy",
+      "nationalPokedexNumber": 885,
+      "primaryType": "dragon",
+      "secondaryType": "ghost",
+      "abilities": [
+            "clearbody",
+            "infiltrator",
+            "h:cursedbody"
+      ],
+      "baseStats": {
+            "hp": 28,
+            "attack": 60,
+            "defence": 30,
+            "special_attack": 40,
+            "special_defence": 30,
+            "speed": 82
+      },
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "swimSpeed": 0.3,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canWalkOnWater": true
+                  },
+                  "fly": {
+                        "canFly": true
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 54,
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "amorphous",
+            "dragon"
+      ],
+      "moves": [
+            "egg:doubleteam",
+            "tm:dracometeor",
+            "egg:dragontail",
+            "tm:curse",
+            "tm:endure",
+            "tm:dragontail",
+            "tm:terablast",
+            "tm:protect",
+            "tm:swift",
+            "1:quickattack",
+            "tm:substitute",
+            "tm:doubleteam",
+            "tm:infestation",
+            "tm:attract",
+            "tm:batonpass",
+            "tm:grudge",
+            "tm:thunderwave",
+            "tm:disable",
+            "tm:snore",
+            "tm:facade",
+            "tutor:dracometeor",
+            "tm:astonish",
+            "egg:disable",
+            "tm:sleeptalk",
+            "1:bite",
+            "egg:confuseray",
+            "tm:confuseray",
+            "egg:suckerpunch",
+            "egg:curse",
+            "tm:helpinghand",
+            "tm:bite",
+            "1:astonish",
+            "egg:grudge",
+            "tm:rest",
+            "tm:quickattack",
+            "tm:suckerpunch",
+            "tm:round",
+            "1:infestation"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.dreepy.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "drakloak",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "dragonpulse"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 50
+                        }
+                  ],
+                  "id": "dreepy_drakloak"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.75,
+            "height": 0.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 1
+      },
+      "height": 5,
+      "weight": 20,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:phantom_membrane",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:haban_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "forms": []
+}

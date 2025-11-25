@@ -1,0 +1,172 @@
+{
+      "implemented": true,
+      "name": "Ceruledge",
+      "nationalPokedexNumber": 937,
+      "primaryType": "fire",
+      "secondaryType": "ghost",
+      "abilities": [
+            "flashfire",
+            "h:weakarmor"
+      ],
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:charcoal",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:malicious_armor",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 75,
+            "attack": 125,
+            "defence": 80,
+            "special_attack": 60,
+            "special_defence": 100,
+            "speed": 85
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "walking": {
+                  "walkSpeed": 0.5
+            }
+      },
+      "catchRate": 25,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 263,
+      "baseScale": 0.85,
+      "hitbox": {
+            "width": 1.1,
+            "height": 2.7,
+            "fixed": false
+      },
+      "baseFriendship": 20,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 35,
+      "eggGroups": [
+            "human_like"
+      ],
+      "moves": [
+            "tm:curse",
+            "tm:endure",
+            "tm:flamecharge",
+            "tm:storedpower",
+            "tm:clearsmog",
+            "1:solarblade",
+            "24:flamecharge",
+            "tm:quickguard",
+            "tm:firespin",
+            "tm:shadowclaw",
+            "tm:bulkup",
+            "tm:fireblast",
+            "56:psychocut",
+            "tm:nightslash",
+            "1:astonish",
+            "62:flareblitz",
+            "tm:reflect",
+            "37:swordsdance",
+            "tm:irondefense",
+            "egg:destinybond",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:destinybond",
+            "tm:fling",
+            "1:shadowclaw",
+            "tm:dragonclaw",
+            "tm:substitute",
+            "tm:disable",
+            "tm:sleeptalk",
+            "tm:psychocut",
+            "28:incinerate",
+            "tm:leer",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:taunt",
+            "1:quickguard",
+            "48:bitterblade",
+            "20:nightshade",
+            "tm:shadowsneak",
+            "tm:ironhead",
+            "tm:closecombat",
+            "egg:spite",
+            "tm:solarblade",
+            "8:clearsmog",
+            "tm:bitterblade",
+            "tm:facade",
+            "tm:shadowball",
+            "egg:disable",
+            "tm:incinerate",
+            "1:ember",
+            "tm:vacuumwave",
+            "1:leer",
+            "tm:confuseray",
+            "tm:lightscreen",
+            "tm:allyswitch",
+            "1:nightslash",
+            "1:shadowsneak",
+            "tm:rest",
+            "tm:xscissor",
+            "tm:phantomforce",
+            "tm:poltergeist",
+            "tm:lavaplume",
+            "42:allyswitch",
+            "tm:protect",
+            "tm:psychup",
+            "tm:ember",
+            "tm:spite",
+            "tm:throatchop",
+            "32:lavaplume",
+            "tm:brickbreak",
+            "tm:falseswipe",
+            "tm:swordsdance",
+            "tm:hex",
+            "tm:heatwave",
+            "tm:astonish",
+            "tm:nightshade",
+            "tm:poisonjab",
+            "tm:willowisp",
+            "tm:helpinghand",
+            "12:firespin",
+            "16:willowisp",
+            "tm:flamethrower"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 16,
+      "weight": 620,
+      "preEvolution": "charcadet",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.ceruledge.desc"
+      ],
+      "forms": []
+}

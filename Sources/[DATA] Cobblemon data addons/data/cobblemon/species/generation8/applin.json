@@ -1,0 +1,231 @@
+{
+      "name": "Applin",
+      "nationalPokedexNumber": 840,
+      "primaryType": "grass",
+      "secondaryType": "dragon",
+      "abilities": [
+            "ripen",
+            "gluttony",
+            "h:bulletproof"
+      ],
+      "baseStats": {
+            "hp": 40,
+            "attack": 40,
+            "defence": 80,
+            "special_attack": 40,
+            "special_defence": 40,
+            "speed": 20
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 52,
+      "experienceGroup": "erratic",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass",
+            "dragon"
+      ],
+      "moves": [
+            "1:astonish",
+            "1:withdraw",
+            "egg:defensecurl",
+            "egg:recycle",
+            "egg:rollout",
+            "egg:suckerpunch",
+            "tm:attract",
+            "tm:pounce",
+            "tm:terablast",
+            "tutor:dracometeor",
+            "tutor:grassyglide"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.applin.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "item_interact",
+                  "result": "flapple",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "wingattack"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:tart_apple",
+                  "id": "applin_flapple"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "appletun",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "headbutt"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:sweet_apple",
+                  "id": "applin_appletun"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "dipplin",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "doublehit"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:syrupy_apple",
+                  "id": "applin_dipplin"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "dipplin",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "minecraft:honey_bottle"
+                        },
+                        {
+                              "variant": "level",
+                              "minLevel": 1
+                        }
+                  ],
+                  "id": "applin_dipplin-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "flapple",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "cobblemon:tart_apple"
+                        },
+                        {
+                              "variant": "level",
+                              "minLevel": 1
+                        }
+                  ],
+                  "id": "applin_flapple-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "appletun",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "cobblemon:sweet_apple"
+                        },
+                        {
+                              "variant": "level",
+                              "minLevel": 1
+                        }
+                  ],
+                  "id": "applin_appletun-1"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "flapple",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "wingattack"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:tart_apple",
+                  "id": "applin_flapple-2"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "appletun",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "headbutt"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:sweet_apple",
+                  "id": "applin_appletun-2"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "dipplin",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "doublehit"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:syrupy_apple",
+                  "id": "applin_dipplin-2"
+            }
+      ],
+      "baseScale": 0.4,
+      "hitbox": {
+            "width": 0.3,
+            "height": 0.4,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 2,
+      "weight": 5,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": "1",
+            "entries": [
+                  {
+                        "item": "minecraft:apple"
+                  },
+                  {
+                        "item": "cobblemon:yache_berry",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:tart_apple",
+                        "quantityRange": "1-2",
+                        "percentage": 50
+                  },
+                  {
+                        "item": "cobblemon:sweet_apple",
+                        "quantityRange": "1-2",
+                        "percentage": 50
+                  }
+            ]
+      },
+      "target": "cobblemon:applin",
+      "implemented": true,
+      "forms": [],
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "walkSpeed": 0.145,
+                        "canWalk": true,
+                        "avoidsLand": false
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": false
+                  }
+            }
+      }
+}

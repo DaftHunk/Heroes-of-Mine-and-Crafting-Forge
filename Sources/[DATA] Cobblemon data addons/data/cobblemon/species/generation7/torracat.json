@@ -1,0 +1,189 @@
+{
+      "implemented": true,
+      "name": "Torracat",
+      "nationalPokedexNumber": 726,
+      "primaryType": "fire",
+      "abilities": [
+            "blaze",
+            "h:intimidate"
+      ],
+      "baseStats": {
+            "hp": 65,
+            "attack": 85,
+            "defence": 50,
+            "special_attack": 80,
+            "special_defence": 50,
+            "speed": 90
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 147,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 15,
+      "eggGroups": [
+            "field"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 10.0
+                  },
+                  {
+                        "item": "cobblemon:expert_belt",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:endure",
+            "tm:flamecharge",
+            "tutor:heatwave",
+            "tm:trailblaze",
+            "tm:doubleteam",
+            "tm:firespin",
+            "tm:shadowclaw",
+            "tm:bulkup",
+            "tm:bodyslam",
+            "tm:fireblast",
+            "tm:covet",
+            "tm:roar",
+            "tm:outrage",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:doubleedge",
+            "1:growl",
+            "egg:fakeout",
+            "tutor:dualchop",
+            "15:bite",
+            "tm:substitute",
+            "tm:return",
+            "1:scratch",
+            "50:flareblitz",
+            "12:furyswipes",
+            "tm:sleeptalk",
+            "tm:lick",
+            "tm:endeavor",
+            "tm:partingshot",
+            "20:doublekick",
+            "tm:leer",
+            "tm:nastyplot",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:furyswipes",
+            "tm:revenge",
+            "30:scaryface",
+            "tm:taunt",
+            "11:leer",
+            "tm:firepledge",
+            "tutor:covet",
+            "tm:thrash",
+            "tm:scratch",
+            "tm:attract",
+            "tutor:snore",
+            "25:firefang",
+            "35:swagger",
+            "tm:snore",
+            "tm:facade",
+            "tm:leechlife",
+            "1:ember",
+            "egg:partingshot",
+            "1:lick",
+            "1:leer",
+            "tutor:outrage",
+            "tm:powertrip",
+            "tm:firefang",
+            "tm:rest",
+            "40:flamethrower",
+            "tm:temperflare",
+            "tm:doublekick",
+            "45:thrash",
+            "tm:dualchop",
+            "tm:protect",
+            "tm:ember",
+            "tm:fakeout",
+            "9:roar",
+            "tm:swordsdance",
+            "tm:toxic",
+            "tm:heatwave",
+            "tutor:endeavor",
+            "egg:powertrip",
+            "tm:payday",
+            "tm:torment",
+            "tm:scaryface",
+            "tm:willowisp",
+            "tutor:firepledge",
+            "tm:helpinghand",
+            "tm:uturn",
+            "tm:growl",
+            "tm:acrobatics",
+            "tm:workup",
+            "tm:bite",
+            "tm:crunch",
+            "tm:hiddenpower",
+            "55:outrage",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7"
+      ],
+      "pokedex": [
+            "cobblemon.species.torracat.desc"
+      ],
+      "preEvolution": "litten",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "incineroar",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "darkestlariat"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 34
+                        }
+                  ],
+                  "id": "torracat_incineroar"
+            }
+      ],
+      "baseScale": 0.8,
+      "hitbox": {
+            "width": 1,
+            "height": 1.1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 2
+      },
+      "height": 7,
+      "weight": 250,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.19
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true
+            }
+      }
+}

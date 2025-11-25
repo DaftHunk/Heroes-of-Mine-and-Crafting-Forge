@@ -1,0 +1,212 @@
+{
+      "name": "Kubfu",
+      "nationalPokedexNumber": 891,
+      "primaryType": "fighting",
+      "abilities": [
+            "innerfocus",
+            "h:noguard",
+            "h:innerfocus"
+      ],
+      "baseStats": {
+            "hp": 60,
+            "attack": 90,
+            "defence": 60,
+            "special_attack": 53,
+            "special_defence": 50,
+            "speed": 72
+      },
+      "catchRate": 3,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 77,
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+            "undiscovered"
+      ],
+      "moves": [
+            "tm:retaliate",
+            "tm:superpower",
+            "tm:endure",
+            "tm:headbutt",
+            "tutor:bulkup",
+            "tutor:ironhead",
+            "tm:terablast",
+            "tm:focusenergy",
+            "tm:aerialace",
+            "44:counter",
+            "tm:doubleedge",
+            "tm:thunderpunch",
+            "tm:protect",
+            "tutor:aerialace",
+            "tm:megakick",
+            "tm:fling",
+            "24:brickbreak",
+            "tm:ironhead",
+            "40:dynamicpunch",
+            "tm:lowsweep",
+            "tm:zenheadbutt",
+            "tm:metalclaw",
+            "tutor:rest",
+            "tm:closecombat",
+            "tm:substitute",
+            "tutor:superpower",
+            "tm:attract",
+            "tm:brickbreak",
+            "tm:reversal",
+            "8:focusenergy",
+            "tutor:focuspunch",
+            "tm:swordsdance",
+            "4:endure",
+            "20:headbutt",
+            "tutor:rocksmash",
+            "28:detect",
+            "tutor:coaching",
+            "tm:focuspunch",
+            "tm:snore",
+            "tm:facade",
+            "tutor:firepunch",
+            "tm:sleeptalk",
+            "tm:bulkup",
+            "tm:rocksmash",
+            "16:scaryface",
+            "tm:bodyslam",
+            "tutor:leer",
+            "48:closecombat",
+            "tm:megapunch",
+            "tutor:sleeptalk",
+            "tutor:helpinghand",
+            "tm:scaryface",
+            "12:aerialace",
+            "1:leer",
+            "36:ironhead",
+            "tm:dig",
+            "tutor:endure",
+            "tm:helpinghand",
+            "tm:firepunch",
+            "tm:uturn",
+            "tm:lowkick",
+            "tutor:lowkick",
+            "tm:acrobatics",
+            "1:rocksmash",
+            "tm:workup",
+            "tm:icepunch",
+            "tm:takedown",
+            "tutor:zenheadbutt",
+            "tutor:icepunch",
+            "tm:rest",
+            "tutor:thunderpunch",
+            "tutor:focusenergy",
+            "tm:round",
+            "32:bulkup",
+            "52:focuspunch",
+            "tm:revenge"
+      ],
+      "labels": [
+            "gen8",
+            "legendary"
+      ],
+      "pokedex": [
+            "cobblemon.species.kubfu.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "block_click",
+                  "result": "urshifu rapidstrike",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "surgingstrikes"
+                  ],
+                  "requirements": [],
+                  "block": "cobblemon:scroll_of_waters",
+                  "id": "kubfu_urshifu"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "urshifu wushu_style=single_strike",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "wickedblow"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:muscle_band",
+                  "id": "kubfu_urshifu-1"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "urshifu wushu_style=rapid_strike",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "surgingstrikes"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:expert_belt",
+                  "id": "kubfu_urshifurapidstrike"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "urshifu wushu_style=single_strike",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "wickedblow"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:scroll_of_darkness",
+                  "id": "kubfu_urshifu-2"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "urshifu wushu_style=rapid_strike",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "surgingstrikes"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:scroll_of_waters",
+                  "id": "kubfu_urshifurapidstrike-1"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "urshifu",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "wickedblow"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:muscle_band",
+                  "id": "kubfu_urshifu-3"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "urshifu rapidstrike",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "surgingstrikes"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:expert_belt",
+                  "id": "kubfu_urshifu_rapidstrike"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 6,
+      "weight": 120,
+      "aspects": [],
+      "cannotDynamax": false,
+      "implemented": true,
+      "forms": []
+}

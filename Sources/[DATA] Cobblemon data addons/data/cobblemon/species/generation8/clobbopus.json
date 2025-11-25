@@ -1,0 +1,161 @@
+{
+      "name": "Clobbopus",
+      "nationalPokedexNumber": 852,
+      "primaryType": "fighting",
+      "abilities": [
+            "limber",
+            "h:technician"
+      ],
+      "baseStats": {
+            "hp": 50,
+            "attack": 68,
+            "defence": 60,
+            "special_attack": 50,
+            "special_defence": 50,
+            "speed": 32
+      },
+      "catchRate": 180,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 62,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 25,
+      "eggGroups": [
+            "water_1",
+            "human_like"
+      ],
+      "moves": [
+            "5:feint",
+            "tm:retaliate",
+            "tm:superpower",
+            "tm:endure",
+            "tm:taunt",
+            "tutor:bulkup",
+            "egg:poweruppunch",
+            "egg:seismictoss",
+            "tm:terablast",
+            "tm:mudshot",
+            "tutor:dive",
+            "egg:soak",
+            "tm:protect",
+            "egg:circlethrow",
+            "35:taunt",
+            "tutor:rest",
+            "30:submission",
+            "tm:brine",
+            "tm:closecombat",
+            "tm:substitute",
+            "tutor:painsplit",
+            "tm:attract",
+            "tm:brickbreak",
+            "tutor:liquidation",
+            "tm:dive",
+            "tm:muddywater",
+            "tm:reversal",
+            "tm:round",
+            "tm:liquidation",
+            "tutor:rocksmash",
+            "tutor:suckerpunch",
+            "tutor:coaching",
+            "tm:snore",
+            "tm:facade",
+            "tm:coaching",
+            "tm:poweruppunch",
+            "10:bind",
+            "25:bulkup",
+            "tm:bulkup",
+            "tm:sleeptalk",
+            "tm:bodyslam",
+            "tm:rocksmash",
+            "tutor:bind",
+            "tutor:sleeptalk",
+            "tm:megapunch",
+            "tm:bind",
+            "1:leer",
+            "15:detect",
+            "egg:painsplit",
+            "egg:suckerpunch",
+            "tm:waterfall",
+            "tm:painsplit",
+            "45:superpower",
+            "tm:focusblast",
+            "1:rocksmash",
+            "tm:payback",
+            "tm:workup",
+            "tm:icepunch",
+            "tutor:icepunch",
+            "tm:rest",
+            "20:brickbreak",
+            "tm:suckerpunch",
+            "40:reversal",
+            "tutor:superpower",
+            "tm:revenge"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.clobbopus.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "grapploct",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "octolock"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "has_move",
+                              "move": "taunt"
+                        }
+                  ],
+                  "id": "clobbopus_grapploct"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 6,
+      "weight": 40,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:ink_sac",
+                        "quantityRange": "1-3"
+                  },
+                  {
+                        "item": "cobblemon:pinap_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      },
+      "implemented": true
+}

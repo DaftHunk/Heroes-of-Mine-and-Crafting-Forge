@@ -1,0 +1,167 @@
+{
+      "name": "Flamigo",
+      "nationalPokedexNumber": 973,
+      "primaryType": "flying",
+      "secondaryType": "fighting",
+      "abilities": [
+            "scrappy",
+            "tangledfeet",
+            "h:costar"
+      ],
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:payapa_berry",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:fairy_feather",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 82,
+            "attack": 115,
+            "defence": 74,
+            "special_attack": 75,
+            "special_defence": 64,
+            "speed": 90
+      },
+      "catchRate": 100,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 175,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "flying"
+      ],
+      "moves": [
+            "18:lowkick",
+            "egg:doubleteam",
+            "egg:skyattack",
+            "tm:endure",
+            "44:wideguard",
+            "tm:taunt",
+            "tm:hurricane",
+            "tm:terablast",
+            "tm:focusenergy",
+            "tm:aerialace",
+            "27:payback",
+            "tm:psychup",
+            "tm:protect",
+            "tm:megakick",
+            "tm:fling",
+            "tm:lowsweep",
+            "tm:hyperbeam",
+            "tm:aircutter",
+            "tm:closecombat",
+            "tm:substitute",
+            "tm:detect",
+            "tm:throatchop",
+            "15:focusenergy",
+            "tm:doubleteam",
+            "1:peck",
+            "tm:quickguard",
+            "9:detect",
+            "tm:reversal",
+            "tm:airslash",
+            "tm:swordsdance",
+            "39:megakick",
+            "5:doublekick",
+            "tm:bravebird",
+            "tm:liquidation",
+            "21:feint",
+            "tm:tailwind",
+            "tm:chillingwater",
+            "tm:gigaimpact",
+            "tm:wideguard",
+            "tm:facade",
+            "31:roost",
+            "tm:copycat",
+            "tm:sleeptalk",
+            "tm:bulkup",
+            "tm:agility",
+            "12:wingattack",
+            "tm:endeavor",
+            "tm:lunge",
+            "tm:feint",
+            "48:throatchop",
+            "tm:peck",
+            "tm:upperhand",
+            "tm:dualwingbeat",
+            "35:airslash",
+            "tm:uturn",
+            "egg:quickguard",
+            "tm:skyattack",
+            "tm:lowkick",
+            "tm:wingattack",
+            "tm:acrobatics",
+            "54:bravebird",
+            "tm:payback",
+            "tm:fly",
+            "tm:thief",
+            "1:copycat",
+            "tm:featherdance",
+            "tm:takedown",
+            "tm:roost",
+            "tm:rest",
+            "tm:waterpulse",
+            "tm:doublekick",
+            "tm:pounce"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 16,
+      "weight": 370,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.flamigo.desc"
+      ],
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 1,
+            "height": 2,
+            "fixed": false
+      },
+      "baseScale": 0.75,
+      "behaviour": {
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.16
+                  },
+                  "fly": {
+                        "canFly": true
+                  },
+                  "swim": {
+                        "swimSpeed": 0.16,
+                        "canBreatheUnderwater": true,
+                        "canWalkOnWater": true
+                  }
+            },
+            "resting": {
+                  "canSleep": true
+            }
+      }
+}

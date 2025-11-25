@@ -1,0 +1,300 @@
+{
+      "name": "Rufflet",
+      "nationalPokedexNumber": 627,
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+            "keeneye",
+            "sheerforce",
+            "h:hustle"
+      ],
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:razz_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 70,
+            "attack": 83,
+            "defence": 50,
+            "special_attack": 37,
+            "special_defence": 50,
+            "speed": 60
+      },
+      "catchRate": 190,
+      "maleRatio": 1,
+      "shoulderMountable": false,
+      "baseExperienceYield": 70,
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "flying"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:superpower",
+            "tm:endure",
+            "50:skydrop",
+            "tutor:heatwave",
+            "tm:zenheadbutt",
+            "tm:slash",
+            "tm:doubleteam",
+            "tm:skydrop",
+            "tm:furyattack",
+            "24:scaryface",
+            "egg:roost",
+            "tm:shadowclaw",
+            "tm:bulkup",
+            "tm:bodyslam",
+            "48:crushclaw",
+            "tm:assurance",
+            "tm:pluck",
+            "tm:rocktomb",
+            "tm:hurricane",
+            "tm:terablast",
+            "tm:doubleedge",
+            "tm:strength",
+            "tm:substitute",
+            "tm:airslash",
+            "tm:return",
+            "tm:tailwind",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "tutor:roost",
+            "18:tailwind",
+            "tm:leer",
+            "tm:wingattack",
+            "36:slash",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:defog",
+            "30:aerialace",
+            "tm:ominouswind",
+            "tutor:dualwingbeat",
+            "tm:raindance",
+            "60:defog",
+            "tm:swift",
+            "tm:thrash",
+            "tm:aircutter",
+            "tm:closecombat",
+            "tm:attract",
+            "1:peck",
+            "tutor:snore",
+            "tm:snore",
+            "tm:facade",
+            "tm:rocksmash",
+            "tutor:sleeptalk",
+            "tm:agility",
+            "12:wingattack",
+            "tm:peck",
+            "1:leer",
+            "tm:secretpower",
+            "tm:steelwing",
+            "tm:fly",
+            "tm:featherdance",
+            "tm:cut",
+            "tm:rest",
+            "tutor:superpower",
+            "tm:retaliate",
+            "5:furyattack",
+            "tm:aerialace",
+            "tm:protect",
+            "72:bravebird",
+            "55:airslash",
+            "egg:rocksmash",
+            "42:whirlwind",
+            "tm:toxic",
+            "tm:heatwave",
+            "tm:bravebird",
+            "66:thrash",
+            "1:furyattack",
+            "6:honeclaws",
+            "tutor:defog",
+            "tm:scaryface",
+            "tm:dualwingbeat",
+            "tm:helpinghand",
+            "tm:uturn",
+            "tm:crushclaw",
+            "tm:acrobatics",
+            "tm:roost",
+            "tm:workup",
+            "tutor:tailwind",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:whirlwind",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5",
+            "unovan_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.rufflet.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "braviary hisuian",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "esperwing"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 54
+                        }
+                  ],
+                  "id": "rufflet_braviary"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "braviary",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "superpower"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 54
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
+                        }
+                  ],
+                  "id": "rufflet_braviary-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "braviary hisuian",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "esperwing"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 54
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+                        }
+                  ],
+                  "id": "rufflet_braviaryhisui"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.8,
+            "height": 1.2,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 5,
+      "weight": 105,
+      "aspects": [],
+      "cannotDynamax": false,
+      "implemented": true,
+      "forms": [
+            {
+                  "secondaryType": "flying",
+                  "weight": 105,
+                  "maleRatio": 1,
+                  "name": "Hisui-Bias",
+                  "height": 5,
+                  "primaryType": "normal",
+                  "pokedex": [
+                        "cobblemon.species.rufflet-hisuibias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-hisui"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen8a",
+                        "customized_official",
+                        "hisuian_form"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "braviary",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "superpower"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 54
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+                                    }
+                              ],
+                              "id": "rufflet_braviary"
+                        },
+                        {
+                              "variant": "level_up",
+                              "result": "braviary hisuian",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "esperwing"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 54
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+                                    }
+                              ],
+                              "id": "rufflet_braviaryhisui"
+                        }
+                  ]
+            }
+      ],
+      "behaviour": {
+            "moving": {
+                  "fly": {
+                        "canFly": true
+                  }
+            }
+      }
+}

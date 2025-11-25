@@ -1,0 +1,182 @@
+{
+      "implemented": true,
+      "name": "Dwebble",
+      "nationalPokedexNumber": 557,
+      "primaryType": "bug",
+      "secondaryType": "rock",
+      "abilities": [
+            "sturdy",
+            "shellarmor",
+            "h:weakarmor"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:hard_stone",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "minecraft:terracotta",
+                        "quantityRange": "0-1"
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 50,
+            "attack": 65,
+            "defence": 85,
+            "special_attack": 35,
+            "special_defence": 35,
+            "speed": 55
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 65,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "bug",
+            "mineral"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "tm:slash",
+            "tm:sandattack",
+            "tm:doubleteam",
+            "tm:spikes",
+            "16:flail",
+            "tutor:irondefense",
+            "8:smackdown",
+            "egg:spikes",
+            "egg:knockoff",
+            "tm:shadowclaw",
+            "egg:endure",
+            "tutor:stealthrock",
+            "tm:nightslash",
+            "egg:sandtomb",
+            "tm:smackdown",
+            "tm:rocktomb",
+            "tm:irondefense",
+            "tm:terablast",
+            "40:rockpolish",
+            "tm:earthquake",
+            "tm:bugbite",
+            "tm:strength",
+            "tm:furycutter",
+            "36:xscissor",
+            "tm:substitute",
+            "egg:rototiller",
+            "tm:return",
+            "tm:wideguard",
+            "4:withdraw",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "egg:irondefense",
+            "20:slash",
+            "tm:knockoff",
+            "tm:withdraw",
+            "tm:counter",
+            "tm:rockpolish",
+            "egg:curse",
+            "tutor:skittersmack",
+            "tm:stoneedge",
+            "tm:flail",
+            "tm:block",
+            "tm:rockblast",
+            "44:shellsmash",
+            "tutor:block",
+            "tm:rockwrecker",
+            "tm:naturepower",
+            "tm:attract",
+            "tm:feintattack",
+            "tutor:snore",
+            "tutor:bugbite",
+            "tm:snore",
+            "tm:facade",
+            "32:rockblast",
+            "tm:rocksmash",
+            "tutor:sleeptalk",
+            "28:stealthrock",
+            "1:sandattack",
+            "tm:secretpower",
+            "tm:dig",
+            "tm:sandtomb",
+            "13:feintattack",
+            "tm:cut",
+            "tm:rest",
+            "tm:xscissor",
+            "egg:counter",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "1:furycutter",
+            "tm:strugglebug",
+            "tm:aerialace",
+            "tm:protect",
+            "tm:solarbeam",
+            "tm:bulldoze",
+            "tm:rototiller",
+            "egg:nightslash",
+            "24:rockslide",
+            "tm:swordsdance",
+            "tm:toxic",
+            "tm:skittersmack",
+            "1:feintattack",
+            "tm:poisonjab",
+            "egg:wideguard",
+            "tm:shellsmash",
+            "48:rockwrecker",
+            "12:bugbite",
+            "tutor:knockoff",
+            "tm:hiddenpower",
+            "egg:block",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5"
+      ],
+      "pokedex": [
+            "cobblemon.species.dwebble.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "crustle",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 34
+                        }
+                  ],
+                  "id": "dwebble_crustle"
+            }
+      ],
+      "baseScale": 0.8,
+      "hitbox": {
+            "width": 0.9,
+            "height": 0.7,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 3,
+      "weight": 145,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

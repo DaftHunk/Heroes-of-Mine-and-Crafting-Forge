@@ -1,0 +1,261 @@
+{
+      "name": "Gastrodon",
+      "nationalPokedexNumber": 423,
+      "primaryType": "water",
+      "secondaryType": "ground",
+      "abilities": [
+            "stickyhold",
+            "stormdrain",
+            "h:sandforce"
+      ],
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:clay_ball",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:rindo_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 111,
+            "attack": 83,
+            "defence": 68,
+            "special_attack": 92,
+            "special_defence": 82,
+            "speed": 39
+      },
+      "catchRate": 75,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 166,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "amorphous"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "tutor:dive",
+            "tutor:protect",
+            "tm:surf",
+            "egg:trumpcard",
+            "tm:memento",
+            "tm:clearsmog",
+            "1:recover",
+            "tm:recover",
+            "tutor:painsplit",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tm:spikes",
+            "egg:swallow",
+            "25:bodyslam",
+            "egg:mudbomb",
+            "tutor:mudslap",
+            "tm:gigaimpact",
+            "egg:spitup",
+            "tm:earthpower",
+            "tm:sludgebomb",
+            "egg:clearsmog",
+            "tm:bodyslam",
+            "tm:mudbomb",
+            "tm:captivate",
+            "tutor:headbutt",
+            "11:mudbomb",
+            "tutor:stringshot",
+            "tutor:stompingtantrum",
+            "1:mudslap",
+            "tutor:recover",
+            "tm:yawn",
+            "tutor:earthpower",
+            "tm:waterpulse",
+            "1:waterpulse",
+            "tm:rocktomb",
+            "tm:terablast",
+            "33:muddywater",
+            "tm:earthquake",
+            "22:raindance",
+            "tm:strength",
+            "egg:fissure",
+            "tm:brine",
+            "tm:substitute",
+            "1:harden",
+            "15:waterpulse",
+            "tm:dive",
+            "tm:return",
+            "tm:scald",
+            "egg:acidarmor",
+            "tm:mirrorcoat",
+            "tm:whirlpool",
+            "tm:chillingwater",
+            "tm:stringshot",
+            "tm:sleeptalk",
+            "tm:amnesia",
+            "tm:mudsport",
+            "tutor:ancientpower",
+            "tm:stockpile",
+            "tm:counter",
+            "tm:harden",
+            "tm:naturalgift",
+            "egg:curse",
+            "tm:trumpcard",
+            "41:muddywater",
+            "tm:acidarmor",
+            "egg:yawn",
+            "46:raindance",
+            "20:ancientpower",
+            "tutor:skittersmack",
+            "1:mudsport",
+            "tm:takedown",
+            "tm:stoneedge",
+            "tm:icebeam",
+            "16:hiddenpower",
+            "1:mudbomb",
+            "tm:mudshot",
+            "tm:raindance",
+            "tm:block",
+            "tm:weatherball",
+            "tm:rockblast",
+            "tutor:block",
+            "tm:swallow",
+            "tm:attract",
+            "1:watergun",
+            "tm:watergun",
+            "tm:muddywater",
+            "tutor:snore",
+            "tm:snore",
+            "tm:facade",
+            "tm:ancientpower",
+            "tm:rocksmash",
+            "tm:snowscape",
+            "tutor:sleeptalk",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:waterfall",
+            "tm:hail",
+            "tm:dig",
+            "tutor:waterpulse",
+            "tm:sandtomb",
+            "39:earthpower",
+            "tutor:icywind",
+            "tm:rest",
+            "tm:sludgewave",
+            "egg:counter",
+            "54:recover",
+            "tm:stealthrock",
+            "tm:spitup",
+            "tm:sandstorm",
+            "tm:headbutt",
+            "53:memento",
+            "tm:icywind",
+            "tm:flash",
+            "tm:protect",
+            "tm:hyperbeam",
+            "tm:bulldoze",
+            "tm:fissure",
+            "tm:infestation",
+            "tm:toxic",
+            "egg:sludge",
+            "tm:liquidation",
+            "tutor:icebeam",
+            "egg:stockpile",
+            "tm:skittersmack",
+            "egg:mirrorcoat",
+            "tm:sludge",
+            "tm:mist",
+            "tm:painsplit",
+            "tm:helpinghand",
+            "egg:mist",
+            "tm:swagger",
+            "29:bodyslam",
+            "tm:hiddenpower",
+            "tm:stompingtantrum",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen4"
+      ],
+      "pokedex": [
+            "cobblemon.species.gastrodon.desc"
+      ],
+      "preEvolution": "shellos",
+      "evolutions": [],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 1.8,
+            "height": 1.95,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 2,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 9,
+      "weight": 299,
+      "aspects": [
+            "west-sea"
+      ],
+      "cannotDynamax": false,
+      "implemented": true,
+      "features": [
+            "west"
+      ],
+      "target": "cobblemon:gastrodon",
+      "forms": [
+            {
+                  "secondaryType": "ground",
+                  "weight": 299,
+                  "maleRatio": 0.5,
+                  "name": "East",
+                  "height": 9,
+                  "battleOnly": false,
+                  "primaryType": "water",
+                  "pokedex": [
+                        "cobblemon.species.gastrodon-east.desc"
+                  ],
+                  "aspects": [
+                        "east-sea"
+                  ],
+                  "labels": [
+                        "gen4"
+                  ],
+                  "preEvolution": "shellos",
+                  "forms": [],
+                  "evolutions": []
+            },
+            {
+                  "name": "west",
+                  "aspects": [
+                        "west"
+                  ],
+                  "preEvolution": "shellos form=west",
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      }
+}

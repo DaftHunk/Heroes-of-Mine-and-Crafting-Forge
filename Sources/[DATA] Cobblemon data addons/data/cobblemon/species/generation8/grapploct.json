@@ -1,0 +1,165 @@
+{
+      "name": "Grapploct",
+      "nationalPokedexNumber": 853,
+      "primaryType": "fighting",
+      "abilities": [
+            "limber",
+            "h:technician"
+      ],
+      "baseStats": {
+            "hp": 80,
+            "attack": 118,
+            "defence": 90,
+            "special_attack": 70,
+            "special_defence": 80,
+            "speed": 42
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 168,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 25,
+      "eggGroups": [
+            "water_1",
+            "human_like"
+      ],
+      "moves": [
+            "tm:superpower",
+            "tm:endure",
+            "1:octolock",
+            "egg:seismictoss",
+            "tutor:dive",
+            "tm:surf",
+            "egg:circlethrow",
+            "30:submission",
+            "tutor:painsplit",
+            "tm:gigaimpact",
+            "tm:bulkup",
+            "tm:bodyslam",
+            "15:detect",
+            "tutor:stompingtantrum",
+            "1:rocksmash",
+            "tm:payback",
+            "tutor:drainpunch",
+            "20:brickbreak",
+            "tm:terablast",
+            "1:bind",
+            "tm:brine",
+            "tm:substitute",
+            "tutor:gigaimpact",
+            "tm:dive",
+            "tm:whirlpool",
+            "tutor:hyperbeam",
+            "tutor:bind",
+            "tm:sleeptalk",
+            "tm:bind",
+            "1:octazooka",
+            "tutor:skittersmack",
+            "tutor:icepunch",
+            "tm:revenge",
+            "tm:taunt",
+            "tutor:bulkup",
+            "tm:mudshot",
+            "egg:soak",
+            "35:taunt",
+            "tm:closecombat",
+            "tm:attract",
+            "tm:muddywater",
+            "tm:reversal",
+            "tm:brutalswing",
+            "tutor:suckerpunch",
+            "tutor:coaching",
+            "tm:snore",
+            "tm:facade",
+            "tm:poweruppunch",
+            "40:reversal",
+            "25:bulkup",
+            "tm:rocksmash",
+            "tutor:sleeptalk",
+            "tm:drainpunch",
+            "tm:megapunch",
+            "1:leer",
+            "egg:painsplit",
+            "tm:waterfall",
+            "tm:dig",
+            "45:superpower",
+            "1:feint",
+            "50:topsyturvy",
+            "tm:focusblast",
+            "tm:rest",
+            "tm:suckerpunch",
+            "tutor:superpower",
+            "tm:retaliate",
+            "egg:poweruppunch",
+            "tm:protect",
+            "tm:hyperbeam",
+            "tutor:rest",
+            "tm:brickbreak",
+            "tutor:liquidation",
+            "tm:liquidation",
+            "tutor:rocksmash",
+            "tm:skittersmack",
+            "tm:coaching",
+            "tm:scaryface",
+            "tm:painsplit",
+            "egg:suckerpunch",
+            "tm:workup",
+            "tm:icepunch",
+            "tm:stompingtantrum",
+            "tm:round",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.grapploct.desc"
+      ],
+      "preEvolution": "clobbopus",
+      "evolutions": [],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 16,
+      "weight": 390,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:ink_sac",
+                        "quantityRange": "2-4"
+                  },
+                  {
+                        "item": "cobblemon:pinap_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      },
+      "implemented": true
+}

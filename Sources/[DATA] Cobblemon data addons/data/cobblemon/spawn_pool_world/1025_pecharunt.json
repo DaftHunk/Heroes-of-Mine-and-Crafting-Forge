@@ -1,0 +1,37 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "pecharunt",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "60-80",
+                  "weight": 3.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_spooky"
+                        ]
+                  },
+                  "id": "pecharunt-1"
+            },
+            {
+                  "pokemon": "pecharunt",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "60",
+                  "weight": 4.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_swamp"
+                        ]
+                  },
+                  "id": "pecharunt-2"
+            }
+      ]
+}

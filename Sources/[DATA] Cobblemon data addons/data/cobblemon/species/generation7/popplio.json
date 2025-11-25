@@ -1,0 +1,205 @@
+{
+      "implemented": true,
+      "name": "Popplio",
+      "nationalPokedexNumber": 728,
+      "primaryType": "water",
+      "abilities": [
+            "torrent",
+            "h:liquidvoice"
+      ],
+      "baseStats": {
+            "hp": 50,
+            "attack": 54,
+            "defence": 54,
+            "special_attack": 66,
+            "special_defence": 56,
+            "speed": 40
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": true,
+      "baseExperienceYield": 64,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 15,
+      "eggGroups": [
+            "water_1",
+            "field"
+      ],
+      "behaviour": {
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.15
+                  },
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canSwimInLava": false,
+                        "swimSpeed": "0.2"
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:mystic_water",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:endure",
+            "tm:waterpledge",
+            "tutor:hypervoice",
+            "tm:surf",
+            "egg:captivate",
+            "egg:amnesia",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tm:aquajet",
+            "tm:doubleslap",
+            "tm:hypervoice",
+            "tm:sing",
+            "6:disarmingvoice",
+            "tm:tripleaxel",
+            "tm:echoedvoice",
+            "24:encore",
+            "tm:charm",
+            "tm:captivate",
+            "tm:icespinner",
+            "tm:covet",
+            "tm:babydolleyes",
+            "tutor:tripleaxel",
+            "33:moonblast",
+            "tm:waterpulse",
+            "21:bubblebeam",
+            "3:watergun",
+            "tm:terablast",
+            "1:growl",
+            "36:hydropump",
+            "tm:pound",
+            "tm:brine",
+            "tm:substitute",
+            "1:pound",
+            "tm:dive",
+            "tm:return",
+            "tm:scald",
+            "tutor:waterpledge",
+            "egg:aquaring",
+            "egg:doubleslap",
+            "tm:whirlpool",
+            "tm:moonblast",
+            "tm:chillingwater",
+            "30:hypervoice",
+            "egg:lifedew",
+            "tm:sleeptalk",
+            "tm:amnesia",
+            "egg:wonderroom",
+            "29:doubleslap",
+            "tm:icebeam",
+            "egg:perishsong",
+            "egg:charm",
+            "tm:aquatail",
+            "tm:mistyterrain",
+            "9:aquajet",
+            "tm:raindance",
+            "tutor:covet",
+            "tm:swift",
+            "tutor:flipturn",
+            "15:icywind",
+            "27:mistyterrain",
+            "tm:disarmingvoice",
+            "tm:attract",
+            "tm:watergun",
+            "tutor:irontail",
+            "tutor:aquatail",
+            "tutor:snore",
+            "12:babydolleyes",
+            "tm:snore",
+            "tm:facade",
+            "tm:drainingkiss",
+            "tutor:helpinghand",
+            "18:sing",
+            "tm:wonderroom",
+            "tm:perishsong",
+            "tm:waterfall",
+            "tm:hail",
+            "tutor:waterpulse",
+            "tm:lifedew",
+            "tutor:icywind",
+            "tm:rest",
+            "tm:aquaring",
+            "tm:flipturn",
+            "tm:icywind",
+            "tm:aromaticmist",
+            "tm:protect",
+            "tutor:wonderroom",
+            "tm:toxic",
+            "tm:playrough",
+            "tm:hydropump",
+            "tm:irontail",
+            "egg:aromaticmist",
+            "tm:bubblebeam",
+            "tm:helpinghand",
+            "tm:uproar",
+            "tm:growl",
+            "tm:acrobatics",
+            "tm:workup",
+            "tm:encore",
+            "tm:hiddenpower",
+            "tutor:uproar",
+            "39:captivate",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7",
+            "starter"
+      ],
+      "pokedex": [
+            "cobblemon.species.popplio.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "brionne",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 17
+                        }
+                  ],
+                  "id": "popplio_brionne"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.9,
+            "height": 0.75,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 1,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 75,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

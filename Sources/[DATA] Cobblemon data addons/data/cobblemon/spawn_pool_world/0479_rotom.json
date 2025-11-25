@@ -1,0 +1,32 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "rotom",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "uncommon",
+                  "level": "25-50",
+                  "weight": 3.6,
+                  "weightMultiplier": {
+                        "multiplier": 5.0,
+                        "condition": {
+                              "isThundering": true
+                        }
+                  },
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_overworld"
+                        ],
+                        "timeRange": "night",
+                        "neededNearbyBlocks": [
+                              "cobblemon:pc",
+                              "cobblemon:monitor"
+                        ]
+                  },
+                  "id": "rotom-1"
+            }
+      ]
+}

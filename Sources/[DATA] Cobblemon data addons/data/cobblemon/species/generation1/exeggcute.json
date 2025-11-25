@@ -1,0 +1,432 @@
+{
+      "implemented": true,
+      "name": "Exeggcute",
+      "nationalPokedexNumber": 102,
+      "primaryType": "grass",
+      "secondaryType": "psychic",
+      "abilities": [
+            "chlorophyll",
+            "h:harvest"
+      ],
+      "baseStats": {
+            "hp": 60,
+            "attack": 40,
+            "defence": 80,
+            "special_attack": 60,
+            "special_defence": 45,
+            "speed": 40
+      },
+      "catchRate": 90,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Alola Bias",
+                  "maleRatio": 0.5,
+                  "labels": [
+                        "alola_regional"
+                  ],
+                  "aspects": [
+                        "region-bias-alola"
+                  ],
+                  "evolutions": [
+                        {
+                              "id": "alola_exeggcute_exeggutor",
+                              "variant": "item_interact",
+                              "result": "exeggutor alolan=false",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "stomp"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:is_jungle"
+                                    }
+                              ],
+                              "requiredContext": "cobblemon:leaf_stone"
+                        },
+                        {
+                              "id": "alola_exeggcute_alola_exeggutor",
+                              "variant": "item_interact",
+                              "result": "exeggutor alolan",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "dragonhammer"
+                              ],
+                              "requirements": [],
+                              "requiredContext": "cobblemon:leaf_stone"
+                        }
+                  ]
+            },
+            {
+                  "secondaryType": "psychic",
+                  "weight": 25,
+                  "maleRatio": 0.5,
+                  "name": "Alola-Bias",
+                  "height": 4,
+                  "primaryType": "grass",
+                  "pokedex": [
+                        "cobblemon.species.exeggcute-alolabias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-alola"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen7",
+                        "customized_official",
+                        "alolan_form"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "item_interact",
+                              "result": "exeggutor",
+                              "consumeHeldItem": true,
+                              "learnableMoves": [
+                                    "stomp"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/exeggcute_alolabiome"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/regional/exeggcute_kantobiome"
+                                    }
+                              ],
+                              "requiredContext": "cobblemon:leaf_stone",
+                              "id": "exeggcute_exeggutor"
+                        },
+                        {
+                              "variant": "item_interact",
+                              "result": "exeggutor alolan",
+                              "consumeHeldItem": true,
+                              "learnableMoves": [
+                                    "dragonhammer"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/exeggcute_kantobiome"
+                                    }
+                              ],
+                              "requiredContext": "cobblemon:leaf_stone",
+                              "id": "exeggcute_exeggutoralola"
+                        }
+                  ]
+            }
+      ],
+      "baseExperienceYield": 65,
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass"
+      ],
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:egg",
+                        "quantityRange": "0-3"
+                  },
+                  {
+                        "item": "cobblemon:oval_stone",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:tanga_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "moves": [
+            "tm:absorb",
+            "tm:curse",
+            "20:confusion",
+            "tm:endure",
+            "tutor:attract",
+            "tm:grassknot",
+            "tutor:rage",
+            "tm:poisonpowder",
+            "tutor:curse",
+            "tutor:protect",
+            "tm:storedpower",
+            "egg:poisonpowder",
+            "tm:zenheadbutt",
+            "tutor:hypnosis",
+            "tm:imprison",
+            "tutor:flash",
+            "tm:doubleteam",
+            "tm:psybeam",
+            "tutor:psybeam",
+            "tutor:return",
+            "tm:selfdestruct",
+            "egg:skillswap",
+            "tm:extrasensory",
+            "tutor:sunnyday",
+            "tutor:seedbomb",
+            "tutor:grassyglide",
+            "tutor:sleeppowder",
+            "tutor:toxic",
+            "tm:sludgebomb",
+            "tutor:barrage",
+            "tutor:megadrain",
+            "egg:moonlight",
+            "tm:captivate",
+            "tm:luckychant",
+            "tutor:headbutt",
+            "tutor:swagger",
+            "tutor:facade",
+            "tutor:skillswap",
+            "1:absorb",
+            "35:gigadrain",
+            "tm:worryseed",
+            "tutor:psychup",
+            "tm:psychicnoise",
+            "tm:reflect",
+            "egg:naturalgift",
+            "tutor:stunspore",
+            "tutor:explosion",
+            "50:bestow",
+            "tm:psyshock",
+            "tm:terablast",
+            "tutor:bide",
+            "tutor:eggbomb",
+            "1:barrage",
+            "tm:strength",
+            "40:extrasensory",
+            "23:sleeppowder",
+            "15:megadrain",
+            "tm:substitute",
+            "egg:luckychant",
+            "tm:megadrain",
+            "tm:rollout",
+            "tm:return",
+            "tutor:rollout",
+            "tm:barrage",
+            "tm:grassyterrain",
+            "egg:sleeppowder",
+            "tm:sleeptalk",
+            "tutor:ancientpower",
+            "tm:naturalgift",
+            "tutor:sweetscent",
+            "egg:curse",
+            "tutor:lightscreen",
+            "30:bulletseed",
+            "tutor:worryseed",
+            "tm:bestow",
+            "37:naturalgift",
+            "tm:telekinesis",
+            "tm:sunnyday",
+            "tm:confusion",
+            "tm:stunspore",
+            "tutor:teleport",
+            "tutor:nightmare",
+            "tutor:substitute",
+            "tm:block",
+            "egg:synthesis",
+            "egg:stunspore",
+            "tutor:block",
+            "tutor:poisonpowder",
+            "tm:skillswap",
+            "5:reflect",
+            "tm:naturepower",
+            "tm:powerswap",
+            "tm:attract",
+            "tutor:thief",
+            "egg:grassyterrain",
+            "tutor:snore",
+            "tm:sleeppowder",
+            "tm:bulletseed",
+            "tm:leechseed",
+            "45:uproar",
+            "tutor:takedown",
+            "25:synthesis",
+            "tutor:psywave",
+            "tm:snore",
+            "tm:explosion",
+            "tm:facade",
+            "tm:ancientpower",
+            "tutor:sleeptalk",
+            "egg:ingrain",
+            "tutor:mimic",
+            "1:hypnosis",
+            "tutor:doubleteam",
+            "egg:psychup",
+            "tm:secretpower",
+            "tutor:selfdestruct",
+            "tutor:endure",
+            "tm:lightscreen",
+            "egg:ancientpower",
+            "tm:psychic",
+            "tm:rest",
+            "tutor:sludgebomb",
+            "47:psychic",
+            "tutor:solarbeam",
+            "tm:gigadrain",
+            "tm:energyball",
+            "tm:dreameater",
+            "tm:moonlight",
+            "tutor:confusion",
+            "egg:powerswap",
+            "tm:flash",
+            "tm:psychup",
+            "tm:protect",
+            "tm:solarbeam",
+            "tutor:rest",
+            "21:poisonpowder",
+            "tm:trick",
+            "tm:infestation",
+            "tm:grassyglide",
+            "55:solarbeam",
+            "tm:swordsdance",
+            "tm:toxic",
+            "tutor:telekinesis",
+            "tm:ingrain",
+            "tutor:moonlight",
+            "tutor:reflect",
+            "tm:hypnosis",
+            "10:leechseed",
+            "19:stunspore",
+            "egg:reflect",
+            "tutor:frustration",
+            "tm:seedbomb",
+            "tm:leafstorm",
+            "egg:leafstorm",
+            "50:worryseed",
+            "tm:synthesis",
+            "egg:gigadrain",
+            "tutor:psychic",
+            "tutor:dreameater",
+            "tm:helpinghand",
+            "tm:uproar",
+            "tutor:gigadrain",
+            "tutor:doubleedge",
+            "egg:naturepower",
+            "tm:thief",
+            "tutor:hiddenpower",
+            "tutor:gravity",
+            "tutor:leechseed",
+            "tm:hiddenpower",
+            "tutor:strength",
+            "egg:block",
+            "tm:confide",
+            "tm:trickroom",
+            "tutor:uproar",
+            "tutor:synthesis",
+            "tutor:wish",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen1",
+            "kantonian_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.exeggcute.desc"
+      ],
+      "features": [
+            "alolan",
+            "region_bias"
+      ],
+      "evolutions": [
+            {
+                  "variant": "item_interact",
+                  "result": "exeggutor alolan",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "dragonhammer"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/alolan"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#minecraft:is_freezing"
+                        }
+                  ],
+                  "requiredContext": "cobblemon:leaf_stone",
+                  "id": "exeggcute_alola_exeggutor"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "exeggutor alolan=false",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "stomp"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:leaf_stone",
+                  "id": "exeggcute_exeggutor"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "exeggutor",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "stomp"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/exeggcute_alolabiome"
+                        }
+                  ],
+                  "requiredContext": "cobblemon:leaf_stone",
+                  "id": "exeggcute_exeggutor-1"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "exeggutor alolan",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "dragonhammer"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/regional/exeggcute_alolabiome"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/exeggcute_kantobiome"
+                        }
+                  ],
+                  "requiredContext": "cobblemon:leaf_stone",
+                  "id": "exeggcute_exeggutoralola"
+            }
+      ],
+      "baseScale": 1.0,
+      "hitbox": {
+            "width": 1.1,
+            "height": 0.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 25,
+      "aspects": [],
+      "cannotDynamax": false
+}

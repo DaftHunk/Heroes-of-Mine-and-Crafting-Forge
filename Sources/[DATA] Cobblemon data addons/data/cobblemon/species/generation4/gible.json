@@ -1,0 +1,236 @@
+{
+      "implemented": true,
+      "name": "Gible",
+      "nationalPokedexNumber": 443,
+      "primaryType": "dragon",
+      "secondaryType": "ground",
+      "abilities": [
+            "sandveil",
+            "h:roughskin"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:dragon_fang",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:haban_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 58,
+            "attack": 70,
+            "defence": 45,
+            "special_attack": 40,
+            "special_defence": 45,
+            "speed": 42
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 60,
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "monster",
+            "dragon"
+      ],
+      "moves": [
+            "tm:dracometeor",
+            "tm:rockslide",
+            "tm:endure",
+            "12:dragonbreath",
+            "tutor:swift",
+            "tm:metalclaw",
+            "tutor:twister",
+            "tm:slash",
+            "tm:sandattack",
+            "tm:doubleteam",
+            "13:sandstorm",
+            "18:bulldoze",
+            "25:slash",
+            "tutor:mudslap",
+            "egg:metalclaw",
+            "tm:earthpower",
+            "tm:shadowclaw",
+            "tm:bodyslam",
+            "egg:dragonbreath",
+            "tm:captivate",
+            "tutor:headbutt",
+            "tm:fireblast",
+            "tutor:stealthrock",
+            "tm:rockclimb",
+            "egg:thrash",
+            "tm:roar",
+            "54:takedown",
+            "tutor:earthpower",
+            "tm:outrage",
+            "egg:sandtomb",
+            "tutor:ironhead",
+            "tm:rocktomb",
+            "tm:dragoncheer",
+            "tm:terablast",
+            "60:dragonrush",
+            "tm:earthquake",
+            "tm:doubleedge",
+            "tm:strength",
+            "tm:furycutter",
+            "tm:dragonclaw",
+            "tm:substitute",
+            "tm:dragonpulse",
+            "egg:rockclimb",
+            "tm:return",
+            "egg:twister",
+            "25:bite",
+            "tm:scorchingsands",
+            "tutor:dragonpulse",
+            "tutor:dracometeor",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "tm:dragonbreath",
+            "tm:naturalgift",
+            "egg:bodyslam",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:stoneedge",
+            "27:dragonclaw",
+            "1:sandtomb",
+            "egg:ironhead",
+            "egg:irontail",
+            "tm:dragontail",
+            "tutor:scorchingsands",
+            "15:takedown",
+            "tm:mudshot",
+            "tm:raindance",
+            "7:dragonrage",
+            "tm:swift",
+            "tm:thrash",
+            "tm:ironhead",
+            "tutor:scaleshot",
+            "1:dragonrage",
+            "tm:attract",
+            "tutor:irontail",
+            "tutor:snore",
+            "tutor:dragonrage",
+            "tm:snore",
+            "6:sandattack",
+            "tm:facade",
+            "tm:rocksmash",
+            "tm:incinerate",
+            "tutor:sleeptalk",
+            "tm:secretpower",
+            "egg:doubleedge",
+            "tm:dig",
+            "tutor:endure",
+            "tm:sandtomb",
+            "tm:scaleshot",
+            "tutor:outrage",
+            "tm:firefang",
+            "tm:cut",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "tm:headbutt",
+            "31:dig",
+            "tm:aerialace",
+            "tm:protect",
+            "3:sandattack",
+            "36:dragonclaw",
+            "tm:bulldoze",
+            "48:sandstorm",
+            "tm:dragonrush",
+            "tm:falseswipe",
+            "tm:swordsdance",
+            "tm:toxic",
+            "1:tackle",
+            "30:slash",
+            "tm:tackle",
+            "tm:twister",
+            "42:dig",
+            "egg:scaryface",
+            "tm:irontail",
+            "tm:scaryface",
+            "tm:thunderfang",
+            "egg:mudshot",
+            "egg:outrage",
+            "37:dragonrush",
+            "tm:helpinghand",
+            "tutor:furycutter",
+            "tm:bite",
+            "tm:hiddenpower",
+            "tm:dragonrage",
+            "19:sandtomb",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen4"
+      ],
+      "pokedex": [
+            "cobblemon.species.gible.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "gabite",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 24
+                        }
+                  ],
+                  "id": "gible_gabite"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "gabite",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "dualchop"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 24
+                        }
+                  ],
+                  "id": "gible_gabite-1"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.93,
+            "height": 0.93,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 7,
+      "weight": 205,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInLava": true
+                  }
+            }
+      }
+}

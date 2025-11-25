@@ -1,0 +1,217 @@
+{
+      "implemented": true,
+      "name": "Gabite",
+      "nationalPokedexNumber": 444,
+      "primaryType": "dragon",
+      "secondaryType": "ground",
+      "abilities": [
+            "sandveil",
+            "h:roughskin"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:dragon_fang",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:haban_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 68,
+            "attack": 90,
+            "defence": 65,
+            "special_attack": 50,
+            "special_defence": 55,
+            "speed": 82
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 144,
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "monster",
+            "dragon"
+      ],
+      "moves": [
+            "24:dualchop",
+            "tm:dracometeor",
+            "tm:endure",
+            "tm:rockslide",
+            "tutor:swift",
+            "tm:metalclaw",
+            "tutor:twister",
+            "tm:slash",
+            "tm:sandattack",
+            "tm:doubleteam",
+            "13:sandstorm",
+            "18:bulldoze",
+            "tutor:mudslap",
+            "egg:metalclaw",
+            "tm:earthpower",
+            "tm:shadowclaw",
+            "tm:bodyslam",
+            "tm:captivate",
+            "tutor:headbutt",
+            "tm:fireblast",
+            "tutor:stealthrock",
+            "tm:rockclimb",
+            "egg:thrash",
+            "tm:roar",
+            "42:dragonclaw",
+            "1:dualchop",
+            "tutor:earthpower",
+            "tm:outrage",
+            "tutor:ironhead",
+            "tm:rocktomb",
+            "34:slash",
+            "tm:dragoncheer",
+            "tm:terablast",
+            "tm:earthquake",
+            "tm:doubleedge",
+            "tm:strength",
+            "tm:furycutter",
+            "tutor:dualchop",
+            "tm:powergem",
+            "tm:dragonclaw",
+            "tm:substitute",
+            "tm:dragonpulse",
+            "tm:return",
+            "egg:twister",
+            "tm:scorchingsands",
+            "tutor:dragonpulse",
+            "tutor:dracometeor",
+            "tm:sleeptalk",
+            "tm:honeclaws",
+            "tm:dragonbreath",
+            "tm:naturalgift",
+            "66:takedown",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:stoneedge",
+            "1:sandtomb",
+            "tm:dragontail",
+            "tutor:scorchingsands",
+            "15:takedown",
+            "tm:mudshot",
+            "tm:raindance",
+            "7:dragonrage",
+            "tm:swift",
+            "tm:thrash",
+            "tm:ironhead",
+            "tutor:scaleshot",
+            "1:dragonrage",
+            "tm:attract",
+            "tutor:irontail",
+            "tutor:snore",
+            "tm:breakingswipe",
+            "tm:snore",
+            "tm:facade",
+            "tm:rocksmash",
+            "tm:incinerate",
+            "tutor:sleeptalk",
+            "1:sandattack",
+            "58:sandstorm",
+            "tm:secretpower",
+            "tm:dig",
+            "egg:doubleedge",
+            "tm:sandtomb",
+            "tm:scaleshot",
+            "tutor:outrage",
+            "tm:firefang",
+            "tm:cut",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "tm:headbutt",
+            "tm:dualchop",
+            "tm:aerialace",
+            "tm:protect",
+            "tm:bulldoze",
+            "tutor:laserfocus",
+            "tm:dragonrush",
+            "tm:laserfocus",
+            "tm:falseswipe",
+            "50:dig",
+            "tm:swordsdance",
+            "tm:toxic",
+            "1:tackle",
+            "74:dragonrush",
+            "tm:tackle",
+            "tm:twister",
+            "27:bite",
+            "tm:irontail",
+            "tm:scaryface",
+            "tm:thunderfang",
+            "tm:helpinghand",
+            "tutor:furycutter",
+            "tm:bite",
+            "tm:crunch",
+            "tm:hiddenpower",
+            "tm:dragonrage",
+            "19:sandtomb",
+            "1:dragonbreath",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen4"
+      ],
+      "pokedex": [
+            "cobblemon.species.gabite.desc"
+      ],
+      "preEvolution": "gible",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "garchomp",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "crunch"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 48
+                        }
+                  ],
+                  "id": "gabite_garchomp"
+            }
+      ],
+      "baseScale": 1.2,
+      "hitbox": {
+            "width": 1,
+            "height": 1.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 14,
+      "weight": 560,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInLava": true
+                  }
+            }
+      }
+}

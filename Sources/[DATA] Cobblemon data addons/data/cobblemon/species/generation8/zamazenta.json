@@ -1,0 +1,262 @@
+{
+      "name": "Zamazenta",
+      "nationalPokedexNumber": 889,
+      "primaryType": "fighting",
+      "abilities": [
+            "dauntlessshield",
+            "h:dauntlessshield"
+      ],
+      "baseStats": {
+            "hp": 92,
+            "attack": 120,
+            "defence": 115,
+            "special_attack": 80,
+            "special_defence": 115,
+            "speed": 138
+      },
+      "catchRate": 10,
+      "maleRatio": -1,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Crowned",
+                  "primaryType": "fighting",
+                  "secondaryType": "steel",
+                  "abilities": [
+                        "dauntlessshield"
+                  ],
+                  "baseStats": {
+                        "hp": 92,
+                        "attack": 120,
+                        "defence": 140,
+                        "special_attack": 80,
+                        "special_defence": 140,
+                        "speed": 128
+                  },
+                  "catchRate": 10,
+                  "maleRatio": -1,
+                  "baseExperienceYield": 350,
+                  "baseFriendship": 0,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 3
+                  },
+                  "experienceGroup": "slow",
+                  "eggCycles": 120,
+                  "eggGroups": [
+                        "undiscovered"
+                  ],
+                  "moves": [
+                        "form_change:behemothbash"
+                  ],
+                  "labels": [
+                        "gen8",
+                        "legendary",
+                        "restricted"
+                  ],
+                  "aspects": [
+                        "crowned"
+                  ],
+                  "height": 29,
+                  "weight": 7850,
+                  "cannotDynamax": true,
+                  "battleOnly": true,
+                  "drops": {
+                        "amount": 1,
+                        "entries": [
+                              {
+                                    "item": "cobblemon:ability_shield"
+                              }
+                        ]
+                  },
+                  "pokedex": [
+                        "cobblemon.species.zamazenta-crowned.desc"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "zamazenta behemoth_warrior=hero",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "held_item",
+                                          "itemCondition": "cobblemon:kings_rock"
+                                    }
+                              ],
+                              "id": "zamazenta_crowned_r"
+                        }
+                  ]
+            }
+      ],
+      "baseExperienceYield": 330,
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+            "undiscovered"
+      ],
+      "moves": [
+            "tutor:slash",
+            "tm:endure",
+            "1:wideguard",
+            "tutor:hypervoice",
+            "tutor:swift",
+            "44:laserfocus",
+            "tm:metalclaw",
+            "tm:trailblaze",
+            "tm:imprison",
+            "tm:wildcharge",
+            "tutor:irondefense",
+            "tutor:dazzlinggleam",
+            "tutor:wildcharge",
+            "tm:guardswap",
+            "tm:hypervoice",
+            "88:gigaimpact",
+            "tm:snarl",
+            "tm:gigaimpact",
+            "66:moonblast",
+            "tm:bodyslam",
+            "1:bite",
+            "tm:roar",
+            "tm:payback",
+            "tm:flashcannon",
+            "tm:reflect",
+            "tutor:ironhead",
+            "tm:safeguard",
+            "tm:irondefense",
+            "tutor:flashcannon",
+            "tm:terablast",
+            "1:quickattack",
+            "tm:substitute",
+            "tm:heavyslam",
+            "tutor:gigaimpact",
+            "tutor:firefang",
+            "tutor:hyperbeam",
+            "tutor:stoneedge",
+            "tutor:steelbeam",
+            "tm:sleeptalk",
+            "tutor:thunderfang",
+            "22:irondefense",
+            "tutor:snarl",
+            "1:metalclaw",
+            "tm:tailslap",
+            "33:ironhead",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tutor:closecombat",
+            "tm:stoneedge",
+            "tutor:focusenergy",
+            "tm:revenge",
+            "tm:psychicfangs",
+            "tm:bodypress",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tm:swift",
+            "tm:ironhead",
+            "tm:closecombat",
+            "tm:powerswap",
+            "tutor:irontail",
+            "tm:reversal",
+            "tutor:coaching",
+            "tm:snore",
+            "tm:facade",
+            "tutor:playrough",
+            "tutor:sleeptalk",
+            "tm:agility",
+            "tutor:helpinghand",
+            "77:closecombat",
+            "tm:dig",
+            "tm:lightscreen",
+            "tm:focusblast",
+            "1:howl",
+            "tutor:crunch",
+            "tm:firefang",
+            "tm:rest",
+            "11:slash",
+            "tm:sandstorm",
+            "tm:retaliate",
+            "tm:protect",
+            "tm:solarbeam",
+            "44:metalburst",
+            "tm:icefang",
+            "tm:hyperbeam",
+            "tutor:rest",
+            "tutor:icefang",
+            "tutor:laserfocus",
+            "tm:laserfocus",
+            "tm:brickbreak",
+            "tm:steelbeam",
+            "tm:playrough",
+            "55:crunch",
+            "tm:coaching",
+            "tm:irontail",
+            "tm:scaryface",
+            "tutor:wideguard",
+            "tm:thunderfang",
+            "tutor:psychic",
+            "tm:helpinghand",
+            "tm:workup",
+            "tm:crunch",
+            "tm:dazzlinggleam",
+            "tm:round"
+      ],
+      "labels": [
+            "gen8",
+            "legendary",
+            "restricted"
+      ],
+      "pokedex": [
+            "cobblemon.species.zamazenta.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "zamazenta behemoth_warrior=crowned",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "cobblemon:kings_rock"
+                        }
+                  ],
+                  "id": "zamazenta_crowned_r"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 0,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 3
+      },
+      "height": 29,
+      "weight": 2100,
+      "dynamaxBlocked": true,
+      "aspects": [
+            "hero"
+      ],
+      "cannotDynamax": true,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:ability_shield"
+                  }
+            ]
+      },
+      "implemented": true
+}

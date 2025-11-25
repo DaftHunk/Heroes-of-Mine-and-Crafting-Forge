@@ -1,0 +1,24 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "quaxwell",
+                  "presets": [
+                        "natural",
+                        "river"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "16-41",
+                  "weight": 0.9,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15
+                  },
+                  "id": "quaxwell-1"
+            }
+      ]
+}

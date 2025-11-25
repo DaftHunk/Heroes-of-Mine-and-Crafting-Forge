@@ -1,0 +1,257 @@
+{
+      "name": "Zacian",
+      "nationalPokedexNumber": 888,
+      "primaryType": "fairy",
+      "abilities": [
+            "intrepidsword",
+            "h:intrepidsword"
+      ],
+      "baseStats": {
+            "hp": 92,
+            "attack": 120,
+            "defence": 115,
+            "special_attack": 80,
+            "special_defence": 115,
+            "speed": 138
+      },
+      "catchRate": 10,
+      "maleRatio": -1,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Crowned",
+                  "primaryType": "fairy",
+                  "secondaryType": "steel",
+                  "abilities": [
+                        "intrepidsword"
+                  ],
+                  "baseStats": {
+                        "hp": 92,
+                        "attack": 150,
+                        "defence": 115,
+                        "special_attack": 80,
+                        "special_defence": 115,
+                        "speed": 148
+                  },
+                  "catchRate": 10,
+                  "maleRatio": -1,
+                  "baseExperienceYield": 350,
+                  "baseFriendship": 0,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 3
+                  },
+                  "experienceGroup": "slow",
+                  "eggCycles": 120,
+                  "eggGroups": [
+                        "undiscovered"
+                  ],
+                  "moves": [
+                        "form_change:behemothblade"
+                  ],
+                  "labels": [
+                        "gen8",
+                        "legendary",
+                        "restricted"
+                  ],
+                  "aspects": [
+                        "crowned"
+                  ],
+                  "height": 28,
+                  "weight": 3550,
+                  "cannotDynamax": true,
+                  "battleOnly": true,
+                  "drops": {
+                        "amount": 1,
+                        "entries": [
+                              {
+                                    "item": "minecraft:diamond_sword"
+                              }
+                        ]
+                  },
+                  "pokedex": [
+                        "cobblemon.species.zacian-crowned.desc"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "zacian behemoth_warrior=hero",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "held_item",
+                                          "itemCondition": "cobblemon:kings_rock"
+                                    }
+                              ],
+                              "id": "zacian_crowned_r"
+                        }
+                  ]
+            }
+      ],
+      "baseExperienceYield": 330,
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+            "undiscovered"
+      ],
+      "moves": [
+            "tm:endure",
+            "tutor:hypervoice",
+            "tutor:swift",
+            "44:laserfocus",
+            "tm:metalclaw",
+            "tm:trailblaze",
+            "tm:imprison",
+            "tm:wildcharge",
+            "tutor:irondefense",
+            "tutor:dazzlinggleam",
+            "tutor:wildcharge",
+            "tm:hypervoice",
+            "88:gigaimpact",
+            "tm:snarl",
+            "tm:gigaimpact",
+            "66:moonblast",
+            "tm:bodyslam",
+            "1:bite",
+            "tm:assurance",
+            "tm:flashcannon",
+            "tutor:ironhead",
+            "tm:irondefense",
+            "tutor:flashcannon",
+            "tm:terablast",
+            "1:quickattack",
+            "tm:substitute",
+            "tutor:gigaimpact",
+            "tutor:firefang",
+            "tm:airslash",
+            "tutor:hyperbeam",
+            "tutor:steelbeam",
+            "tm:psychocut",
+            "tm:sleeptalk",
+            "44:nobleroar",
+            "tutor:thunderfang",
+            "tutor:snarl",
+            "1:metalclaw",
+            "tm:tailslap",
+            "tutor:psychocut",
+            "33:ironhead",
+            "tm:takedown",
+            "tutor:focusenergy",
+            "tutor:swordsdance",
+            "tm:revenge",
+            "tm:psychicfangs",
+            "1:sacredsword",
+            "1:quickguard",
+            "tm:mistyterrain",
+            "tm:focusenergy",
+            "tm:swift",
+            "tm:ironhead",
+            "tm:closecombat",
+            "tm:solarblade",
+            "tutor:irontail",
+            "tm:reversal",
+            "tm:brutalswing",
+            "tutor:poisonjab",
+            "tm:snore",
+            "tm:facade",
+            "tutor:playrough",
+            "tutor:sleeptalk",
+            "tm:agility",
+            "tutor:helpinghand",
+            "77:closecombat",
+            "tm:dig",
+            "tm:focusblast",
+            "1:howl",
+            "tutor:crunch",
+            "tm:firefang",
+            "tm:rest",
+            "22:swordsdance",
+            "11:slash",
+            "tm:retaliate",
+            "tm:protect",
+            "tm:icefang",
+            "tm:hyperbeam",
+            "tutor:rest",
+            "tutor:icefang",
+            "tutor:laserfocus",
+            "tm:laserfocus",
+            "tm:brickbreak",
+            "tutor:falseswipe",
+            "tm:falseswipe",
+            "tm:swordsdance",
+            "tm:steelbeam",
+            "tm:playrough",
+            "55:crunch",
+            "tm:poisonjab",
+            "tm:irontail",
+            "tutor:sacredsword",
+            "tm:scaryface",
+            "tm:thunderfang",
+            "tutor:psychic",
+            "tm:helpinghand",
+            "tm:workup",
+            "tm:crunch",
+            "tm:dazzlinggleam",
+            "tm:round"
+      ],
+      "labels": [
+            "gen8",
+            "legendary",
+            "restricted"
+      ],
+      "pokedex": [
+            "cobblemon.species.zacian.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "zacian behemoth_warrior=crowned",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "cobblemon:kings_rock"
+                        }
+                  ],
+                  "id": "zacian_crowned_r"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 0,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 3
+      },
+      "height": 28,
+      "weight": 1100,
+      "dynamaxBlocked": true,
+      "aspects": [
+            "hero"
+      ],
+      "cannotDynamax": true,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "minecraft:diamond_sword"
+                  }
+            ]
+      },
+      "implemented": true
+}

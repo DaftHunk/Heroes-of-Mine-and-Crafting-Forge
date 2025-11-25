@@ -1,0 +1,205 @@
+{
+      "name": "Shelmet",
+      "nationalPokedexNumber": 616,
+      "primaryType": "bug",
+      "abilities": [
+            "hydration",
+            "shellarmor",
+            "h:overcoat"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "minecraft:iron_helmet",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 50,
+            "attack": 40,
+            "defence": 85,
+            "special_attack": 40,
+            "special_defence": 65,
+            "speed": 25
+      },
+      "catchRate": 200,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 61,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+            "bug"
+      ],
+      "moves": [
+            "tm:absorb",
+            "tm:venoshock",
+            "tm:endure",
+            "tm:curse",
+            "tutor:protect",
+            "tm:signalbeam",
+            "tutor:yawn",
+            "tm:bugbuzz",
+            "tm:recover",
+            "egg:feint",
+            "tm:doubleteam",
+            "tutor:encore",
+            "1:bide",
+            "48:finalgambit",
+            "tm:batonpass",
+            "tm:spikes",
+            "egg:spikes",
+            "tm:guardswap",
+            "tm:sludgebomb",
+            "tm:bodyslam",
+            "tutor:megadrain",
+            "24:acidarmor",
+            "egg:endure",
+            "1:absorb",
+            "tm:yawn",
+            "1:leechlife",
+            "tm:guardsplit",
+            "16:strugglebug",
+            "tutor:gastroacid",
+            "tm:terablast",
+            "tm:bugbite",
+            "tm:doubleedge",
+            "20:yawn",
+            "36:bodyslam",
+            "44:bugbuzz",
+            "tm:substitute",
+            "tm:megadrain",
+            "tm:finalgambit",
+            "tm:gastroacid",
+            "tm:return",
+            "4:acid",
+            "tm:sleeptalk",
+            "egg:batonpass",
+            "tm:acid",
+            "tm:acidarmor",
+            "tutor:bodyslam",
+            "tutor:skittersmack",
+            "egg:guardsplit",
+            "32:guardswap",
+            "egg:mindreader",
+            "tm:mudshot",
+            "tm:raindance",
+            "tm:attract",
+            "40:recover",
+            "tutor:snore",
+            "tutor:bugbite",
+            "1:protect",
+            "egg:toxicspikes",
+            "tm:snore",
+            "tm:facade",
+            "tutor:sleeptalk",
+            "tm:leechlife",
+            "tm:secretpower",
+            "tm:mudslap",
+            "egg:pursuit",
+            "egg:doubleedge",
+            "egg:mudslap",
+            "tm:rest",
+            "28:gigadrain",
+            "tutor:bugbuzz",
+            "tm:gigadrain",
+            "tm:energyball",
+            "egg:encore",
+            "tm:strugglebug",
+            "12:megadrain",
+            "tm:toxicspikes",
+            "tm:protect",
+            "tutor:strugglebug",
+            "tm:bide",
+            "tutor:acid",
+            "tm:infestation",
+            "8:bide",
+            "tm:toxic",
+            "8:curse",
+            "tm:skittersmack",
+            "tm:feint",
+            "tm:pursuit",
+            "tutor:batonpass",
+            "tutor:signalbeam",
+            "tutor:gigadrain",
+            "tm:mindreader",
+            "tm:encore",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5"
+      ],
+      "pokedex": [
+            "cobblemon.species.shelmet.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "trade",
+                  "result": "accelgor",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [],
+                  "requiredContext": "karrablast",
+                  "id": "shelmet_accelgor"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "accelgor",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "party_member",
+                              "target": "karrablast",
+                              "contains": true
+                        }
+                  ],
+                  "requiredContext": "cobblemon:link_cable",
+                  "drops": {
+                        "amount": 1,
+                        "entries": [
+                              {
+                                    "type": "evolution",
+                                    "item": "minecraft:iron_helmet",
+                                    "percentage": 100.0,
+                                    "requirements": [
+                                          {
+                                                "variant": "party_member",
+                                                "target": "karrablast",
+                                                "contains": true
+                                          }
+                                    ]
+                              }
+                        ]
+                  },
+                  "id": "shelmet_accelgor_item"
+            }
+      ],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 0.9,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 77,
+      "aspects": [],
+      "cannotDynamax": false,
+      "implemented": true,
+      "forms": []
+}

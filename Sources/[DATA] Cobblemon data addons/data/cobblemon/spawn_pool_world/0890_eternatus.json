@@ -1,0 +1,43 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "eternatus",
+                  "presets": [
+                        "natural",
+                        "wild"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "80",
+                  "weight": 1.5,
+                  "condition": {
+                        "biomes": [
+                              "#minecraft:is_end"
+                        ]
+                  },
+                  "id": "eternatus-1"
+            },
+            {
+                  "pokemon": "eternatus",
+                  "presets": [
+                        "natural",
+                        "wild"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70-100",
+                  "weight": 1,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_end"
+                        ]
+                  },
+                  "id": "eternatus-2"
+            }
+      ]
+}

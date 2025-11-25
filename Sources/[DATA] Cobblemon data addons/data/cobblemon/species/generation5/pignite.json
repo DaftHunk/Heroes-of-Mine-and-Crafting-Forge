@@ -1,0 +1,231 @@
+{
+      "implemented": true,
+      "name": "Pignite",
+      "nationalPokedexNumber": 499,
+      "primaryType": "fire",
+      "secondaryType": "fighting",
+      "abilities": [
+            "blaze",
+            "h:thickfat"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:porkchop",
+                        "quantityRange": "1-3"
+                  },
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 90,
+            "attack": 93,
+            "defence": 55,
+            "special_attack": 70,
+            "special_defence": 55,
+            "speed": 55
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.15
+                  },
+                  "swim": {
+                        "avoidsWater": true
+                  }
+            }
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 146,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:curse",
+            "23:rollout",
+            "tm:endure",
+            "egg:superpower",
+            "tm:grassknot",
+            "tm:superpower",
+            "tm:flamecharge",
+            "tm:highhorsepower",
+            "tm:lowsweep",
+            "tutor:heatwave",
+            "tm:zenheadbutt",
+            "tm:trailblaze",
+            "tm:wildcharge",
+            "tm:doubleteam",
+            "tm:firespin",
+            "tm:magnitude",
+            "tm:bulkup",
+            "tm:bodyslam",
+            "tm:echoedvoice",
+            "tm:headsmash",
+            "tm:fireblast",
+            "tm:covet",
+            "tutor:stompingtantrum",
+            "egg:thrash",
+            "tm:roar",
+            "tm:assurance",
+            "tm:yawn",
+            "tutor:thunderpunch",
+            "39:flamethrower",
+            "tm:rocktomb",
+            "47:roar",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:doubleedge",
+            "1:odorsleuth",
+            "tm:fling",
+            "tm:strength",
+            "tm:substitute",
+            "tm:heavyslam",
+            "tm:rollout",
+            "tm:return",
+            "tm:focuspunch",
+            "tm:sleeptalk",
+            "tm:endeavor",
+            "tm:knockoff",
+            "tm:heatcrash",
+            "egg:yawn",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:stoneedge",
+            "egg:magnitude",
+            "tm:taunt",
+            "tm:firepledge",
+            "tm:thunderpunch",
+            "tutor:covet",
+            "tm:thrash",
+            "31:heatcrash",
+            "tm:closecombat",
+            "44:headsmash",
+            "tm:attract",
+            "tutor:irontail",
+            "tm:smog",
+            "20:smog",
+            "tutor:snore",
+            "tm:reversal",
+            "1:endure",
+            "tm:facade",
+            "tm:poweruppunch",
+            "tm:rocksmash",
+            "tm:incinerate",
+            "tutor:sleeptalk",
+            "tm:drainpunch",
+            "1:ember",
+            "tutor:helpinghand",
+            "egg:burnup",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:dig",
+            "tutor:lowkick",
+            "tm:firepunch",
+            "tm:focusblast",
+            "tm:rest",
+            "tm:suckerpunch",
+            "tutor:superpower",
+            "tm:temperflare",
+            "tutor:focuspunch",
+            "tm:odorsleuth",
+            "tm:protect",
+            "tm:solarbeam",
+            "tm:ember",
+            "tm:burnup",
+            "1:tailwhip",
+            "tm:bulldoze",
+            "tm:brickbreak",
+            "tm:toxic",
+            "1:tackle",
+            "15:flamecharge",
+            "36:assurance",
+            "tm:heatwave",
+            "tutor:endeavor",
+            "tm:armthrust",
+            "tm:tackle",
+            "tm:coaching",
+            "tutor:firepunch",
+            "13:defensecurl",
+            "tm:poisonjab",
+            "tm:irontail",
+            "52:flareblitz",
+            "tm:tailwhip",
+            "tm:scaryface",
+            "1:armthrust",
+            "tm:willowisp",
+            "tutor:firepledge",
+            "egg:suckerpunch",
+            "28:takedown",
+            "tm:helpinghand",
+            "tm:lowkick",
+            "tm:workup",
+            "tm:defensecurl",
+            "tutor:zenheadbutt",
+            "tm:hiddenpower",
+            "tm:gyroball",
+            "tm:stompingtantrum",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen5"
+      ],
+      "pokedex": [
+            "cobblemon.species.pignite.desc"
+      ],
+      "preEvolution": "tepig",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "emboar",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 36
+                        }
+                  ],
+                  "id": "pignite_emboar"
+            }
+      ],
+      "baseScale": 0.85,
+      "hitbox": {
+            "width": 1,
+            "height": 1.5,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 10,
+      "weight": 555,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

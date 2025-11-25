@@ -1,0 +1,153 @@
+{
+      "name": "Nymble",
+      "nationalPokedexNumber": 919,
+      "primaryType": "bug",
+      "abilities": [
+            "swarm",
+            "h:tintedlens"
+      ],
+      "baseStats": {
+            "hp": 33,
+            "attack": 46,
+            "defence": 40,
+            "special_attack": 21,
+            "special_defence": 25,
+            "speed": 45
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 42,
+      "baseFriendship": 20,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "bug"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:strugglebug",
+            "tm:terablast",
+            "tm:raindance",
+            "tm:bugbite",
+            "tm:protect",
+            "tm:bugbuzz",
+            "26:feint",
+            "tm:trailblaze",
+            "tm:substitute",
+            "4:strugglebug",
+            "18:endure",
+            "38:suckerpunch",
+            "1:tackle",
+            "9:assurance",
+            "tm:skittersmack",
+            "14:screech",
+            "tm:facade",
+            "tm:sleeptalk",
+            "tm:agility",
+            "tm:leechlife",
+            "30:agility",
+            "1:leer",
+            "22:bugbite",
+            "6:antonish",
+            "tm:uturn",
+            "11:doublekick",
+            "41:firstimpression",
+            "egg:skittersmack",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:thief",
+            "tm:rest",
+            "tm:xscissor",
+            "6:astonish",
+            "egg:counter",
+            "tm:pounce"
+      ],
+      "labels": [
+            "gen9",
+            "custom"
+      ],
+      "aspects": [],
+      "height": 2,
+      "weight": 1.8,
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "lokix",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "lunge"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 24
+                        }
+                  ],
+                  "id": "nymble_lokix"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "lokix",
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 24
+                        }
+                  ],
+                  "id": "nymble_lokix_level"
+            }
+      ],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.nymble.desc",
+            "cobblemon.species.nymble.desc1",
+            "cobblemon.species.nymble.desc2"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:coba_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "shoulderMountable": false,
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 0.4,
+            "height": 0.5,
+            "fixed": false
+      },
+      "baseScale": 0.6,
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "depth": "normal",
+                  "times": "night",
+                  "light": "0-7"
+            },
+            "moving": {
+                  "canLook": true,
+                  "walk": {
+                        "canWalk": true,
+                        "avoidsLand": false
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": false
+                  },
+                  "wanderChance": 1
+            }
+      }
+}

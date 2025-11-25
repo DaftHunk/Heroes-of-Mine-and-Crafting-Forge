@@ -1,0 +1,24 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "quaquaval",
+                  "presets": [
+                        "natural",
+                        "river"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "36-53",
+                  "weight": 0.1,
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15
+                  },
+                  "id": "quaquaval-1"
+            }
+      ]
+}

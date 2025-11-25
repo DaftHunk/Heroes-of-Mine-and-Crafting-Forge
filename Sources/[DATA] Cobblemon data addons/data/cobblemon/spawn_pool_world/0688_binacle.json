@@ -1,0 +1,56 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "binacle",
+                  "presets": [
+                        "natural",
+                        "wild"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "20-27",
+                  "weight": 3.6,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_beach"
+                        ]
+                  },
+                  "id": "binacle-1"
+            },
+            {
+                  "pokemon": "binacle",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "6-31",
+                  "weight": 1.8,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_coast"
+                        ]
+                  },
+                  "id": "binacle-2"
+            },
+            {
+                  "pokemon": "binacle",
+                  "presets": [
+                        "water"
+                  ],
+                  "type": "pokemon",
+                  "context": "seafloor",
+                  "bucket": "uncommon",
+                  "level": "6-31",
+                  "weight": 8.4,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_ocean"
+                        ]
+                  },
+                  "id": "binacle-3"
+            }
+      ]
+}

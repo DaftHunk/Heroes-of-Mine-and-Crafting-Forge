@@ -1,0 +1,193 @@
+{
+      "name": "Feebas",
+      "nationalPokedexNumber": 349,
+      "primaryType": "water",
+      "abilities": [
+            "swiftswim",
+            "oblivious",
+            "h:adaptability"
+      ],
+      "baseStats": {
+            "hp": 20,
+            "attack": 15,
+            "defence": 20,
+            "special_attack": 10,
+            "special_defence": 55,
+            "speed": 80
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 40,
+      "experienceGroup": "erratic",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "dragon"
+      ],
+      "moves": [
+            "tm:endure",
+            "tutor:dive",
+            "egg:captivate",
+            "tm:surf",
+            "egg:lightscreen",
+            "tutor:swift",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tutor:splash",
+            "15:tackle",
+            "egg:dragonbreath",
+            "tm:captivate",
+            "tutor:swagger",
+            "tm:waterpulse",
+            "tm:terablast",
+            "tm:doubleedge",
+            "tm:brine",
+            "tm:substitute",
+            "tm:dragonpulse",
+            "tm:dive",
+            "tm:return",
+            "tm:scald",
+            "tm:mirrorcoat",
+            "tm:whirlpool",
+            "tm:chillingwater",
+            "tm:sleeptalk",
+            "tm:dragonbreath",
+            "tm:mudsport",
+            "tm:naturalgift",
+            "egg:mudsport",
+            "tm:icebeam",
+            "tutor:substitute",
+            "tm:flail",
+            "egg:irontail",
+            "egg:haze",
+            "tm:mudshot",
+            "tm:raindance",
+            "tutor:mirrorcoat",
+            "tm:swift",
+            "tm:splash",
+            "tutor:scaleshot",
+            "tm:attract",
+            "tutor:irontail",
+            "tm:muddywater",
+            "tutor:snore",
+            "tm:snore",
+            "tm:facade",
+            "tm:tickle",
+            "tutor:captivate",
+            "tutor:sleeptalk",
+            "tutor:mimic",
+            "tm:confuseray",
+            "tm:secretpower",
+            "tm:waterfall",
+            "tm:hail",
+            "tutor:endure",
+            "tutor:waterpulse",
+            "tm:scaleshot",
+            "tm:lightscreen",
+            "tutor:icywind",
+            "egg:hypnosis",
+            "25:flail",
+            "tm:rest",
+            "tm:icywind",
+            "tm:haze",
+            "tm:protect",
+            "egg:tickle",
+            "tm:toxic",
+            "tm:hypnosis",
+            "tm:tackle",
+            "egg:mirrorcoat",
+            "tm:irontail",
+            "egg:brine",
+            "tm:mist",
+            "egg:confuseray",
+            "1:splash",
+            "egg:mist",
+            "egg:dragonpulse",
+            "tutor:doubleedge",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tutor:dragonpulse",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen3"
+      ],
+      "pokedex": [
+            "cobblemon.species.feebas.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "trade",
+                  "result": "milotic",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "waterpulse"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "cobblemon:prism_scale"
+                        }
+                  ],
+                  "id": "feebas_milotic"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 0.8,
+            "height": 0.8,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 1
+      },
+      "height": 6,
+      "weight": 74,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 3,
+            "entries": [
+                  {
+                        "item": "minecraft:salmon"
+                  },
+                  {
+                        "item": "minecraft:bone_meal",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:prism_scale",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "implemented": true,
+      "target": "cobblemon:feebas",
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "avoidsLand": true
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canBreatheUnderwater": true,
+                        "canSwimInWater": true,
+                        "canSwimInLava": false
+                  }
+            },
+            "resting": {
+                  "canSleep": true
+            }
+      }
+}

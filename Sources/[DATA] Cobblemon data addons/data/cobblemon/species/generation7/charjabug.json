@@ -1,0 +1,165 @@
+{
+      "name": "Charjabug",
+      "nationalPokedexNumber": 737,
+      "primaryType": "bug",
+      "secondaryType": "electric",
+      "abilities": [
+            "battery"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:string",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:wepear_berry",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:cell_battery",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 57,
+            "attack": 82,
+            "defence": 95,
+            "special_attack": 55,
+            "special_defence": 75,
+            "speed": 36
+      },
+      "catchRate": 120,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 140,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+            "bug"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:irondefense",
+            "1:charge",
+            "tm:strugglebug",
+            "57:irondefense",
+            "tm:terablast",
+            "tm:mudshot",
+            "tm:raindance",
+            "tm:bugbite",
+            "23:spark",
+            "1:stringshot",
+            "tm:protect",
+            "tutor:shockwave",
+            "tm:charge",
+            "36:xscissor",
+            "15:bite",
+            "tm:wildcharge",
+            "tm:substitute",
+            "tm:doubleteam",
+            "tm:attract",
+            "tm:batonpass",
+            "tm:electricterrain",
+            "tutor:electroweb",
+            "tutor:irondefense",
+            "tutor:snore",
+            "50:dig",
+            "1:bugbite",
+            "tm:thunderwave",
+            "tm:return",
+            "tm:toxic",
+            "tm:chargebeam",
+            "tutor:bugbite",
+            "tm:electroweb",
+            "tm:electroball",
+            "tm:eerieimpulse",
+            "tm:skittersmack",
+            "tm:snore",
+            "1:visegrip",
+            "tm:facade",
+            "tm:thunderbolt",
+            "19:acrobatics",
+            "tm:voltswitch",
+            "tm:poisonjab",
+            "tm:sleeptalk",
+            "29:stickyweb",
+            "tm:lunge",
+            "tm:screech",
+            "tutor:magnetrise",
+            "tm:thunder",
+            "64:discharge",
+            "tutor:risingvoltage",
+            "tm:mudslap",
+            "1:mudslap",
+            "tm:dig",
+            "tm:lightscreen",
+            "tm:acrobatics",
+            "tm:crunch",
+            "tutor:skittersmack",
+            "tm:takedown",
+            "43:crunch",
+            "tm:hiddenpower",
+            "tm:rest",
+            "tm:confide",
+            "tm:xscissor",
+            "tm:round",
+            "tm:frustration",
+            "tm:pounce",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7"
+      ],
+      "pokedex": [
+            "cobblemon.species.charjabug.desc"
+      ],
+      "preEvolution": "grubbin",
+      "evolutions": [
+            {
+                  "variant": "item_interact",
+                  "result": "vikavolt",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "thunderbolt"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:thunder_stone",
+                  "id": "charjabug_vikavolt"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "vikavolt",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "thunderbolt"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:thunder_stone",
+                  "id": "charjabug_vikavolt-1"
+            }
+      ],
+      "baseScale": 0.6,
+      "hitbox": {
+            "width": 1,
+            "height": 0.4,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 2,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 5,
+      "weight": 105,
+      "aspects": [],
+      "cannotDynamax": false,
+      "implemented": true,
+      "forms": []
+}

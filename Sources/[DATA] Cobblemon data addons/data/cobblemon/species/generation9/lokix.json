@@ -1,0 +1,147 @@
+{
+      "name": "Lokix",
+      "nationalPokedexNumber": 920,
+      "primaryType": "bug",
+      "secondaryType": "dark",
+      "abilities": [
+            "swarm",
+            "h:tintedlens"
+      ],
+      "baseStats": {
+            "hp": 71,
+            "attack": 102,
+            "defence": 78,
+            "special_attack": 52,
+            "special_defence": 55,
+            "speed": 92
+      },
+      "catchRate": 30,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 158,
+      "baseFriendship": 0,
+      "evYield": {
+            "hp": 0,
+            "attack": 2,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "bug"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:taunt",
+            "36:throatchop",
+            "tm:strugglebug",
+            "tm:terablast",
+            "tm:aerialace",
+            "tm:bugbite",
+            "tm:doubleedge",
+            "tm:raindance",
+            "tm:protect",
+            "tm:bugbuzz",
+            "tm:fling",
+            "tm:lowsweep",
+            "tm:spite",
+            "tm:trailblaze",
+            "tm:substitute",
+            "tm:throatchop",
+            "4:strugglebug",
+            "18:endure",
+            "tm:brickbreak",
+            "tm:reversal",
+            "48:bounce",
+            "tm:swordsdance",
+            "1:tackle",
+            "tm:lashout",
+            "44:firstimpression",
+            "1:lowkick",
+            "9:assurance",
+            "tm:gigaimpact",
+            "tm:skittersmack",
+            "14:screech",
+            "tm:facade",
+            "tm:sleeptalk",
+            "tm:agility",
+            "tm:leechlife",
+            "tm:lunge",
+            "tm:knockoff",
+            "53:axekick",
+            "32:agility",
+            "tm:scaryface",
+            "1:lunge",
+            "1:leer",
+            "22:bugbite",
+            "40:suckerpunch",
+            "tm:uturn",
+            "tm:lowkick",
+            "28:feint",
+            "11:doublekick",
+            "1:detect",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:thief",
+            "egg:skittersmack",
+            "tm:rest",
+            "tm:xscissor",
+            "6:astonish",
+            "egg:counter",
+            "tm:darkpulse",
+            "tm:pounce"
+      ],
+      "labels": [
+            "gen9",
+            "custom"
+      ],
+      "aspects": [],
+      "height": 10,
+      "weight": 1.8,
+      "preEvolution": "nymble",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.lokix.desc",
+            "cobblemon.species.lokix.desc1",
+            "cobblemon.species.lokix.desc2"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:coba_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "shoulderMountable": false,
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 0.7,
+            "height": 2.7,
+            "fixed": false
+      },
+      "baseScale": 0.65,
+      "behaviour": {
+            "resting": {
+                  "canSleep": false
+            },
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "canWalk": true,
+                        "avoidsLand": false
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": false
+                  },
+                  "wanderChance": 1
+            }
+      }
+}

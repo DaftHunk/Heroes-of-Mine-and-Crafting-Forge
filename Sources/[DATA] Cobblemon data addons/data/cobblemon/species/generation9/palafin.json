@@ -1,0 +1,340 @@
+{
+      "name": "Palafin",
+      "nationalPokedexNumber": 964,
+      "primaryType": "water",
+      "abilities": [
+            "zerotohero",
+            "h:zerotohero"
+      ],
+      "baseStats": {
+            "hp": 100,
+            "attack": 70,
+            "defence": 72,
+            "special_attack": 53,
+            "special_defence": 62,
+            "speed": 100
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 160,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 2,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "field",
+            "water_2"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:grassknot",
+            "tm:surf",
+            "tm:zenheadbutt",
+            "tm:blizzard",
+            "tm:aquajet",
+            "tm:bounce",
+            "tm:hypervoice",
+            "tm:gigaimpact",
+            "tm:bulkup",
+            "tm:bodyslam",
+            "tm:charm",
+            "55:focuspunch",
+            "tm:supersonic",
+            "34:encore",
+            "1:supersonic",
+            "tm:aurasphere",
+            "tm:outrage",
+            "tm:waterpulse",
+            "7:astonish",
+            "egg:boomburst",
+            "tm:hardpress",
+            "1:jetpunch",
+            "tm:terablast",
+            "tm:fling",
+            "tm:substitute",
+            "tm:dive",
+            "17:doublehit",
+            "tm:whirlpool",
+            "tm:chillingwater",
+            "tm:focuspunch",
+            "tm:sleeptalk",
+            "tm:endeavor",
+            "tm:counter",
+            "tm:takedown",
+            "tm:icebeam",
+            "tm:wavecrash",
+            "tm:boomburst",
+            "tm:taunt",
+            "tm:aquatail",
+            "egg:haze",
+            "tm:focusenergy",
+            "tm:raindance",
+            "tm:doublehit",
+            "tm:swift",
+            "egg:bounce",
+            "tm:ironhead",
+            "44:mist",
+            "tm:closecombat",
+            "tm:disarmingvoice",
+            "1:watergun",
+            "tm:watergun",
+            "tm:reversal",
+            "39:aquatail",
+            "tm:facade",
+            "tm:tickle",
+            "21:dive",
+            "tm:drainingkiss",
+            "61:wavecrash",
+            "tm:agility",
+            "tm:drainpunch",
+            "tm:jetpunch",
+            "10:focusenergy",
+            "tm:waterfall",
+            "13:aquajet",
+            "tm:focusblast",
+            "29:acrobatics",
+            "tm:rest",
+            "egg:counter",
+            "tm:flipturn",
+            "tm:icywind",
+            "tm:haze",
+            "tm:psychup",
+            "tm:protect",
+            "25:charm",
+            "tm:hyperbeam",
+            "tm:throatchop",
+            "egg:tickle",
+            "50:hydropump",
+            "tm:liquidation",
+            "tm:astonish",
+            "1:flipturn",
+            "tm:mist",
+            "tm:helpinghand",
+            "tm:acrobatics",
+            "tm:icepunch",
+            "tm:encore",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [
+            "zero-form"
+      ],
+      "height": 13,
+      "weight": 602,
+      "preEvolution": "finizen",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "palafinhero",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 45
+                        }
+                  ],
+                  "id": "palafin_palafinhero"
+            }
+      ],
+      "cannotDynamax": false,
+      "forms": [
+            {
+                  "name": "Hero",
+                  "primaryType": "water",
+                  "abilities": [
+                        "zerotohero"
+                  ],
+                  "baseStats": {
+                        "hp": 100,
+                        "attack": 160,
+                        "defence": 97,
+                        "special_attack": 106,
+                        "special_defence": 87,
+                        "speed": 100
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.5,
+                  "baseExperienceYield": 160,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 2,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "experienceGroup": "slow",
+                  "eggCycles": 40,
+                  "eggGroups": [
+                        "field",
+                        "water_2"
+                  ],
+                  "labels": [
+                        "gen9"
+                  ],
+                  "aspects": [
+                        "hero",
+                        "hero-form"
+                  ],
+                  "height": 18,
+                  "weight": 974,
+                  "cannotDynamax": false,
+                  "battleOnly": true,
+                  "moves": [
+                        "1:flipturn",
+                        "1:jetpunch",
+                        "1:supersonic",
+                        "1:watergun",
+                        "7:astonish",
+                        "10:focusenergy",
+                        "13:aquajet",
+                        "17:doublehit",
+                        "21:dive",
+                        "25:charm",
+                        "29:acrobatics",
+                        "34:encore",
+                        "39:aquatail",
+                        "44:mist",
+                        "50:hydropump",
+                        "55:focuspunch",
+                        "61:wavecrash",
+                        "tm:acrobatics",
+                        "tm:agility",
+                        "tm:aquajet",
+                        "tm:aquatail",
+                        "tm:astonish",
+                        "tm:aurasphere",
+                        "tm:blizzard",
+                        "tm:bodyslam",
+                        "tm:boomburst",
+                        "tm:bounce",
+                        "tm:bulkup",
+                        "tm:charm",
+                        "tm:chillingwater",
+                        "tm:closecombat",
+                        "tm:counter",
+                        "tm:disarmingvoice",
+                        "tm:dive",
+                        "tm:doublehit",
+                        "tm:drainingkiss",
+                        "tm:drainpunch",
+                        "tm:encore",
+                        "tm:endeavor",
+                        "tm:endure",
+                        "tm:facade",
+                        "tm:fling",
+                        "tm:flipturn",
+                        "tm:focusblast",
+                        "tm:focusenergy",
+                        "tm:focuspunch",
+                        "tm:gigaimpact",
+                        "tm:grassknot",
+                        "tm:hardpress",
+                        "tm:haze",
+                        "tm:helpinghand",
+                        "tm:hydropump",
+                        "tm:hyperbeam",
+                        "tm:hypervoice",
+                        "tm:icebeam",
+                        "tm:icepunch",
+                        "tm:icywind",
+                        "tm:ironhead",
+                        "tm:jetpunch",
+                        "tm:liquidation",
+                        "tm:mist",
+                        "tm:outrage",
+                        "tm:protect",
+                        "tm:psychup",
+                        "tm:raindance",
+                        "tm:rest",
+                        "tm:reversal",
+                        "tm:sleeptalk",
+                        "tm:substitute",
+                        "tm:supersonic",
+                        "tm:surf",
+                        "tm:swift",
+                        "tm:takedown",
+                        "tm:taunt",
+                        "tm:terablast",
+                        "tm:throatchop",
+                        "tm:tickle",
+                        "tm:waterfall",
+                        "tm:watergun",
+                        "tm:waterpulse",
+                        "tm:wavecrash",
+                        "tm:whirlpool",
+                        "tm:zenheadbutt"
+                  ],
+                  "hitbox": {
+                        "width": 1.2,
+                        "height": 2.5,
+                        "fixed": false
+                  },
+                  "pokedex": [
+                        "cobblemon.species.palafin-hero.desc"
+                  ],
+                  "behaviour": {
+                        "moving": {
+                              "canLook": false,
+                              "walk": {
+                                    "avoidsLand": true
+                              },
+                              "swim": {
+                                    "swimSpeed": "0.2",
+                                    "canBreatheUnderwater": true,
+                                    "canSwimInWater": true,
+                                    "canSwimInLava": false
+                              }
+                        }
+                  },
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "pokedex": [
+            "cobblemon.species.palafin.desc"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:cod",
+                        "quantityRange": "0-2"
+                  }
+            ]
+      },
+      "implemented": true,
+      "target": "cobblemon:palafin",
+      "battleOnly": true,
+      "hitbox": {
+            "width": 1.25,
+            "height": 1,
+            "fixed": false
+      },
+      "baseScale": 0.85,
+      "behaviour": {
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "avoidsLand": true
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canBreatheUnderwater": true,
+                        "canSwimInWater": true,
+                        "canSwimInLava": false
+                  }
+            }
+      }
+}

@@ -1,0 +1,272 @@
+{
+      "name": "Cramorant",
+      "nationalPokedexNumber": 845,
+      "primaryType": "flying",
+      "secondaryType": "water",
+      "abilities": [
+            "gulpmissile",
+            "h:gulpmissile"
+      ],
+      "baseStats": {
+            "hp": 70,
+            "attack": 85,
+            "defence": 55,
+            "special_attack": 85,
+            "special_defence": 95,
+            "speed": 85
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Gulping",
+                  "primaryType": "flying",
+                  "secondaryType": "water",
+                  "abilities": [
+                        "gulpmissile"
+                  ],
+                  "baseStats": {
+                        "hp": 70,
+                        "attack": 85,
+                        "defence": 55,
+                        "special_attack": 85,
+                        "special_defence": 95,
+                        "speed": 85
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.5,
+                  "baseExperienceYield": 166,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 2,
+                        "speed": 0
+                  },
+                  "experienceGroup": "medium_fast",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "water_1",
+                        "flying"
+                  ],
+                  "labels": [
+                        "gen8"
+                  ],
+                  "aspects": [
+                        "gulping",
+                        "gulping-form"
+                  ],
+                  "height": 8,
+                  "weight": 180,
+                  "cannotDynamax": false,
+                  "battleOnly": true,
+                  "pokedex": [
+                        "cobblemon.species.cramorant-gulping.desc"
+                  ],
+                  "forms": [],
+                  "evolutions": []
+            },
+            {
+                  "name": "Gorging",
+                  "primaryType": "flying",
+                  "secondaryType": "water",
+                  "abilities": [
+                        "gulpmissile"
+                  ],
+                  "baseStats": {
+                        "hp": 70,
+                        "attack": 85,
+                        "defence": 55,
+                        "special_attack": 85,
+                        "special_defence": 95,
+                        "speed": 85
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.5,
+                  "baseExperienceYield": 166,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 2,
+                        "speed": 0
+                  },
+                  "experienceGroup": "medium_fast",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "water_1",
+                        "flying"
+                  ],
+                  "labels": [
+                        "gen8"
+                  ],
+                  "aspects": [
+                        "gorging",
+                        "gorging-form"
+                  ],
+                  "height": 8,
+                  "weight": 180,
+                  "cannotDynamax": false,
+                  "battleOnly": true,
+                  "pokedex": [
+                        "cobblemon.species.cramorant-gorging.desc"
+                  ],
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "baseExperienceYield": 166,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "flying"
+      ],
+      "moves": [
+            "egg:featherdance",
+            "tm:superpower",
+            "tm:endure",
+            "tm:surf",
+            "tm:blizzard",
+            "7:watergun",
+            "1:swallow",
+            "21:pluck",
+            "tm:furyattack",
+            "egg:roost",
+            "tm:gigaimpact",
+            "tm:aquacutter",
+            "14:furyattack",
+            "tm:assurance",
+            "tm:waterpulse",
+            "tm:pounce",
+            "tm:pluck",
+            "tm:hurricane",
+            "tm:terablast",
+            "tm:substitute",
+            "tm:dive",
+            "tm:airslash",
+            "tm:scald",
+            "egg:aquaring",
+            "tm:tailwind",
+            "tm:whirlpool",
+            "tm:chillingwater",
+            "tm:sleeptalk",
+            "28:dive",
+            "tm:endeavor",
+            "tm:amnesia",
+            "egg:aquacutter",
+            "tm:stockpile",
+            "egg:aerialace",
+            "tm:takedown",
+            "tm:icebeam",
+            "tm:defog",
+            "tm:drillpeck",
+            "egg:defog",
+            "tutor:dualwingbeat",
+            "tm:raindance",
+            "tm:weatherball",
+            "tm:thrash",
+            "tm:aircutter",
+            "tm:swallow",
+            "tm:attract",
+            "tm:watergun",
+            "1:peck",
+            "tm:reversal",
+            "tm:snore",
+            "tm:facade",
+            "tm:belch",
+            "tm:agility",
+            "tm:peck",
+            "tm:steelwing",
+            "tm:fly",
+            "tm:featherdance",
+            "tm:rest",
+            "tm:aquaring",
+            "tm:spitup",
+            "56:hydropump",
+            "1:belch",
+            "35:drillpeck",
+            "tm:icywind",
+            "tm:aerialace",
+            "49:thrash",
+            "tm:protect",
+            "tm:hyperbeam",
+            "tm:throatchop",
+            "42:amnesia",
+            "tm:bravebird",
+            "tm:liquidation",
+            "1:stockpile",
+            "1:spitup",
+            "tm:dualwingbeat",
+            "tm:uproar",
+            "tm:acrobatics",
+            "tm:roost",
+            "tm:thief",
+            "tm:round",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.cramorant.desc"
+      ],
+      "evolutions": [],
+      "baseScale": 0.6,
+      "hitbox": {
+            "width": 0.6,
+            "height": 1.7,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 2,
+            "speed": 0
+      },
+      "height": 8,
+      "weight": 180,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 6,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "minecraft:cod",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:wacan_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "battleOnly": true,
+      "target": "cobblemon:cramorant",
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "canBreatheUnderwater": true,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      }
+}

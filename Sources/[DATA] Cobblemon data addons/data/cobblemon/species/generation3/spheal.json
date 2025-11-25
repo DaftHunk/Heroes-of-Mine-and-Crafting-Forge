@@ -1,0 +1,220 @@
+{
+      "name": "Spheal",
+      "nationalPokedexNumber": 363,
+      "primaryType": "ice",
+      "secondaryType": "water",
+      "abilities": [
+            "thickfat",
+            "icebody",
+            "h:oblivious"
+      ],
+      "baseStats": {
+            "hp": 70,
+            "attack": 40,
+            "defence": 50,
+            "special_attack": 55,
+            "special_defence": 50,
+            "speed": 25
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 58,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "water_1",
+            "field"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "egg:bellydrum",
+            "tm:endure",
+            "tm:curse",
+            "1:defensecurl",
+            "tutor:dive",
+            "tm:signalbeam",
+            "tm:surf",
+            "24:brine",
+            "28:aurorabeam",
+            "egg:sleeptalk",
+            "20:snore",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tm:iceball",
+            "egg:swallow",
+            "tutor:watergun",
+            "tutor:mudslap",
+            "egg:spitup",
+            "tm:bodyslam",
+            "tm:echoedvoice",
+            "tm:captivate",
+            "tutor:headbutt",
+            "tutor:swagger",
+            "egg:waterpulse",
+            "tm:aurorabeam",
+            "tm:babydolleyes",
+            "tm:yawn",
+            "egg:signalbeam",
+            "tm:waterpulse",
+            "tm:rocktomb",
+            "tm:terablast",
+            "tm:earthquake",
+            "16:rest",
+            "36:bodyslam",
+            "tm:strength",
+            "8:watergun",
+            "egg:fissure",
+            "12:powdersnow",
+            "tm:brine",
+            "tm:substitute",
+            "40:surf",
+            "tm:bellydrum",
+            "tm:rollout",
+            "tm:dive",
+            "13:iceball",
+            "44:blizzard",
+            "tm:return",
+            "tutor:rollout",
+            "egg:aquaring",
+            "tm:whirlpool",
+            "tutor:superfang",
+            "tm:watersport",
+            "tm:sleeptalk",
+            "33:encore",
+            "tm:stockpile",
+            "tm:naturalgift",
+            "egg:curse",
+            "egg:yawn",
+            "tutor:bodyslam",
+            "tm:icebeam",
+            "tutor:substitute",
+            "egg:rollout",
+            "tm:aquatail",
+            "tutor:steelroller",
+            "tm:raindance",
+            "48:hail",
+            "egg:watersport",
+            "tutor:aurorabeam",
+            "tm:swallow",
+            "tm:attract",
+            "tm:watergun",
+            "tutor:irontail",
+            "tutor:aquatail",
+            "tutor:snore",
+            "tm:powdersnow",
+            "tm:snore",
+            "tm:facade",
+            "tm:frostbreath",
+            "tm:rocksmash",
+            "tutor:sleeptalk",
+            "tutor:mimic",
+            "1:rollout",
+            "tm:secretpower",
+            "tm:mudslap",
+            "tm:sheercold",
+            "tm:waterfall",
+            "tm:hail",
+            "tutor:endure",
+            "tutor:defensecurl",
+            "tutor:waterpulse",
+            "egg:rockslide",
+            "tutor:icywind",
+            "tutor:powdersnow",
+            "tm:rest",
+            "tm:aquaring",
+            "tm:spitup",
+            "tm:headbutt",
+            "tm:icywind",
+            "tm:protect",
+            "52:sheercold",
+            "tm:steelroller",
+            "tm:bulldoze",
+            "tm:fissure",
+            "tutor:fissure",
+            "tm:superfang",
+            "tutor:rockslide",
+            "tm:toxic",
+            "egg:stockpile",
+            "tutor:charm",
+            "tm:irontail",
+            "4:growl",
+            "tutor:signalbeam",
+            "tm:growl",
+            "tutor:doubleedge",
+            "tm:encore",
+            "tm:defensecurl",
+            "tm:hiddenpower",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen3"
+      ],
+      "pokedex": [
+            "cobblemon.species.spheal.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "sealeo",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "swagger"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 32
+                        }
+                  ],
+                  "id": "spheal_sealeo"
+            }
+      ],
+      "baseScale": 0.8,
+      "hitbox": {
+            "width": 0.9,
+            "height": 0.9,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 1,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 8,
+      "weight": 395,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:cod",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:chesto_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "canBreatheUnderwater": true,
+                        "canSwimInWater": true,
+                        "canSwimInLava": false,
+                        "swimSpeed": "0.2"
+                  }
+            }
+      }
+}

@@ -1,0 +1,199 @@
+{
+      "implemented": true,
+      "name": "Mudbray",
+      "nationalPokedexNumber": 749,
+      "primaryType": "ground",
+      "abilities": [
+            "owntempo",
+            "stamina",
+            "h:innerfocus"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:leather",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:clay_ball",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:light_clay",
+                        "percentage": 2.5
+                  },
+                  {
+                        "item": "cobblemon:passho_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 70,
+            "attack": 100,
+            "defence": 70,
+            "special_attack": 45,
+            "special_defence": 55,
+            "speed": 45
+      },
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.23
+                  }
+            }
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 77,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field"
+      ],
+      "moves": [
+            "tm:rockslide",
+            "tm:curse",
+            "tm:endure",
+            "tm:superpower",
+            "8:rototiller",
+            "tm:highhorsepower",
+            "egg:closecombat",
+            "tm:lowsweep",
+            "16:stomp",
+            "tm:doubleteam",
+            "tutor:irondefense",
+            "egg:mudbomb",
+            "tm:magnitude",
+            "tm:earthpower",
+            "tm:bodyslam",
+            "tm:mudbomb",
+            "8:doublekick",
+            "tutor:stompingtantrum",
+            "tutor:stealthrock",
+            "1:rototiller",
+            "1:mudslap",
+            "tm:roar",
+            "1:rocksmash",
+            "tm:payback",
+            "tutor:earthpower",
+            "tutor:ironhead",
+            "egg:roar",
+            "tm:smackdown",
+            "44:superpower",
+            "tm:rocktomb",
+            "tm:irondefense",
+            "tm:terablast",
+            "tm:earthquake",
+            "tm:doubleedge",
+            "4:irondefense",
+            "tm:megakick",
+            "tm:strength",
+            "egg:fissure",
+            "36:earthquake",
+            "tm:substitute",
+            "tm:heavyslam",
+            "tm:return",
+            "tm:sleeptalk",
+            "egg:bide",
+            "tm:endeavor",
+            "tm:mudsport",
+            "3:mudsport",
+            "tm:counter",
+            "tm:stomp",
+            "egg:bodyslam",
+            "tm:sunnyday",
+            "tm:takedown",
+            "1:mudsport",
+            "tm:stoneedge",
+            "22:bide",
+            "egg:magnitude",
+            "24:counter",
+            "12:bulldoze",
+            "20:strength",
+            "tm:ironhead",
+            "tm:closecombat",
+            "tm:attract",
+            "28:highhorsepower",
+            "tutor:snore",
+            "egg:endeavor",
+            "tm:snore",
+            "tm:facade",
+            "tm:rocksmash",
+            "32:heavyslam",
+            "tm:mudslap",
+            "egg:doubleedge",
+            "tutor:lowkick",
+            "tm:sandtomb",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "tutor:superpower",
+            "egg:smackdown",
+            "tm:protect",
+            "tm:bulldoze",
+            "tm:bide",
+            "tm:fissure",
+            "tm:rototiller",
+            "tm:toxic",
+            "tutor:endeavor",
+            "tm:lowkick",
+            "40:megakick",
+            "tm:hiddenpower",
+            "tm:stompingtantrum",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:doublekick",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7"
+      ],
+      "pokedex": [
+            "cobblemon.species.mudbray.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "mudsdale",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 30
+                        }
+                  ],
+                  "id": "mudbray_mudsdale"
+            }
+      ],
+      "baseScale": 1,
+      "hitbox": {
+            "width": 1,
+            "height": 1,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 10,
+      "weight": 1100,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

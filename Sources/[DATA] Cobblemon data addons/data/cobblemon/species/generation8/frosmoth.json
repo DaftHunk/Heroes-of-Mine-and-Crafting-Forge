@@ -1,0 +1,142 @@
+{
+      "name": "Frosmoth",
+      "nationalPokedexNumber": 873,
+      "primaryType": "ice",
+      "secondaryType": "bug",
+      "abilities": [
+            "shielddust",
+            "h:icescales"
+      ],
+      "baseStats": {
+            "hp": 70,
+            "attack": 65,
+            "defence": 60,
+            "special_attack": 125,
+            "special_defence": 90,
+            "speed": 65
+      },
+      "catchRate": 75,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 166,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "bug"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:iciclespear",
+            "tm:safeguard",
+            "tm:icywind",
+            "tm:strugglebug",
+            "1:attract",
+            "tm:avalanche",
+            "tm:hurricane",
+            "tm:terablast",
+            "tutor:dualwingbeat",
+            "tm:bugbite",
+            "tm:protect",
+            "tm:swift",
+            "tm:bugbuzz",
+            "tm:weatherball",
+            "tm:calmmind",
+            "4:stunspore",
+            "24:aurorabeam",
+            "tm:hyperbeam",
+            "28:hail",
+            "8:infestation",
+            "32:bugbuzz",
+            "12:mist",
+            "52:quiverdance",
+            "tm:imprison",
+            "tm:substitute",
+            "tm:blizzard",
+            "tm:attract",
+            "40:blizzard",
+            "tm:airslash",
+            "36:auroraveil",
+            "tm:round",
+            "16:defog",
+            "tm:tailwind",
+            "28:snowscape",
+            "1:powdersnow",
+            "1:helpinghand",
+            "tm:gigaimpact",
+            "tm:playrough",
+            "tm:skittersmack",
+            "tm:snore",
+            "44:tailwind",
+            "tm:facade",
+            "tm:tripleaxel",
+            "tm:sleeptalk",
+            "tm:snowscape",
+            "1:strugglebug",
+            "tm:leechlife",
+            "tm:lunge",
+            "tm:icespinner",
+            "21:featherdance",
+            "tm:hail",
+            "48:wideguard",
+            "tutor:tripleaxel",
+            "tm:helpinghand",
+            "tm:uturn",
+            "tm:lightscreen",
+            "tm:acrobatics",
+            "tutor:skittersmack",
+            "tm:featherdance",
+            "tm:takedown",
+            "tm:rest",
+            "tm:icebeam",
+            "tm:dazzlinggleam",
+            "tm:reflect",
+            "tm:gigadrain",
+            "tm:pounce"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.frosmoth.desc"
+      ],
+      "preEvolution": "snom",
+      "evolutions": [],
+      "baseScale": 0.8,
+      "hitbox": {
+            "width": 1,
+            "height": 1.75,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 2,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 13,
+      "weight": 420,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:snowball",
+                        "quantityRange": "0-2"
+                  },
+                  {
+                        "item": "cobblemon:silver_powder",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:charti_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": []
+}

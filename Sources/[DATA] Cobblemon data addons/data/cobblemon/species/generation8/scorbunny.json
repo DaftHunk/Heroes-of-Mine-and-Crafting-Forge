@@ -1,0 +1,164 @@
+{
+      "implemented": true,
+      "name": "Scorbunny",
+      "nationalPokedexNumber": 813,
+      "primaryType": "fire",
+      "abilities": [
+            "blaze",
+            "h:libero"
+      ],
+      "baseStats": {
+            "hp": 50,
+            "attack": 71,
+            "defence": 40,
+            "special_attack": 40,
+            "special_defence": 40,
+            "speed": 69
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "baseExperienceYield": 62,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field",
+            "human_like"
+      ],
+      "drops": {
+            "amount": 4,
+            "entries": [
+                  {
+                        "item": "minecraft:rabbit_hide",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:rabbit"
+                  },
+                  {
+                        "item": "minecraft:rabbit_foot",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:temperflare",
+            "tm:doublekick",
+            "tm:headbutt",
+            "tm:endure",
+            "tm:taunt",
+            "tm:flamecharge",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:firepledge",
+            "tm:focusenergy",
+            "tm:gunkshot",
+            "tm:mudshot",
+            "tm:doubleedge",
+            "8:quickattack",
+            "tm:protect",
+            "1:growl",
+            "36:doubleedge",
+            "tm:megakick",
+            "tm:swift",
+            "tm:ember",
+            "tm:lowsweep",
+            "tm:trailblaze",
+            "32:bounce",
+            "egg:highjumpkick",
+            "tm:substitute",
+            "tm:sandattack",
+            "tm:firespin",
+            "tm:attract",
+            "tm:batonpass",
+            "tm:blazekick",
+            "tm:superfang",
+            "tm:burningjealousy",
+            "tm:bounce",
+            "tm:reversal",
+            "1:tackle",
+            "tm:heatwave",
+            "12:doublekick",
+            "17:flamecharge",
+            "tm:electroball",
+            "tm:tackle",
+            "tm:snore",
+            "tm:facade",
+            "tm:sleeptalk",
+            "24:headbutt",
+            "tm:agility",
+            "tm:fireblast",
+            "tm:counter",
+            "tm:suckerpunch",
+            "egg:suckerpunch",
+            "6:ember",
+            "tutor:firepledge",
+            "tm:helpinghand",
+            "tm:uturn",
+            "tm:highjumpkick",
+            "tm:assurance",
+            "tm:lowkick",
+            "tm:acrobatics",
+            "tm:workup",
+            "tm:growl",
+            "tm:allyswitch",
+            "tm:sunnyday",
+            "tm:firefang",
+            "egg:superfang",
+            "tm:takedown",
+            "tm:rest",
+            "egg:sandattack",
+            "tm:quickattack",
+            "28:counter",
+            "tm:round",
+            "tm:flamethrower",
+            "20:agility"
+      ],
+      "labels": [
+            "gen8",
+            "starter"
+      ],
+      "pokedex": [
+            "cobblemon.species.scorbunny.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "raboot",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 16
+                        }
+                  ],
+                  "id": "scorbunny_raboot"
+            }
+      ],
+      "baseScale": 0.5,
+      "hitbox": {
+            "width": 0.7,
+            "height": 1.3,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 1
+      },
+      "height": 3,
+      "weight": 45,
+      "aspects": [],
+      "cannotDynamax": false,
+      "forms": []
+}

@@ -1,0 +1,197 @@
+{
+      "implemented": true,
+      "name": "Drakloak",
+      "nationalPokedexNumber": 886,
+      "primaryType": "dragon",
+      "secondaryType": "ghost",
+      "abilities": [
+            "clearbody",
+            "infiltrator",
+            "h:cursedbody"
+      ],
+      "baseStats": {
+            "hp": 68,
+            "attack": 80,
+            "defence": 50,
+            "special_attack": 60,
+            "special_defence": 50,
+            "speed": 102
+      },
+      "behaviour": {
+            "moving": {
+                  "swim": {
+                        "swimSpeed": 0.3,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canWalkOnWater": true
+                  },
+                  "fly": {
+                        "canFly": true
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": false,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 144,
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+            "amorphous",
+            "dragon"
+      ],
+      "moves": [
+            "tm:dracometeor",
+            "tm:curse",
+            "tm:endure",
+            "1:dragonpulse",
+            "tm:surf",
+            "tm:doubleteam",
+            "18:hex",
+            "tm:batonpass",
+            "tm:grudge",
+            "66:doubleedge",
+            "tm:fireblast",
+            "1:bite",
+            "6:lockon",
+            "54:takedown",
+            "tm:assurance",
+            "1:astonish",
+            "tm:outrage",
+            "tm:reflect",
+            "24:agility",
+            "tm:pounce",
+            "tm:dragoncheer",
+            "tm:terablast",
+            "tm:doubleedge",
+            "61:dragonrush",
+            "1:quickattack",
+            "72:lastresort",
+            "tm:brine",
+            "tm:substitute",
+            "tm:dragonpulse",
+            "tm:dive",
+            "tm:scald",
+            "tm:disable",
+            "36:uturn",
+            "tutor:dracometeor",
+            "tm:sleeptalk",
+            "egg:curse",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:quickattack",
+            "1:infestation",
+            "tm:beatup",
+            "tm:psychicfangs",
+            "tm:dragontail",
+            "tm:doublehit",
+            "tm:swift",
+            "tm:attract",
+            "tm:lockon",
+            "tm:thunderwave",
+            "tm:breakingswipe",
+            "tm:snore",
+            "tm:facade",
+            "tm:shadowball",
+            "egg:disable",
+            "tm:agility",
+            "tm:thunder",
+            "tm:lastresort",
+            "tm:confuseray",
+            "tm:dragondance",
+            "tm:steelwing",
+            "30:doublehit",
+            "tm:lightscreen",
+            "tm:allyswitch",
+            "tm:rest",
+            "tm:phantomforce",
+            "tm:suckerpunch",
+            "egg:doubleteam",
+            "egg:dragontail",
+            "tm:protect",
+            "48:phantomforce",
+            "tm:infestation",
+            "tm:dragonrush",
+            "tm:hex",
+            "tm:thunderbolt",
+            "tm:astonish",
+            "tm:nightshade",
+            "12:assurance",
+            "egg:confuseray",
+            "tm:willowisp",
+            "egg:suckerpunch",
+            "tm:helpinghand",
+            "tm:uturn",
+            "tm:acrobatics",
+            "tm:bite",
+            "tm:thief",
+            "egg:grudge",
+            "42:dragondance",
+            "tm:round",
+            "tm:flamethrower",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.drakloak.desc"
+      ],
+      "preEvolution": "dreepy",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "dragapult",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "dragondarts"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 60
+                        }
+                  ],
+                  "id": "drakloak_dragapult"
+            }
+      ],
+      "baseScale": 0.75,
+      "hitbox": {
+            "width": 0.9,
+            "height": 1.55,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 2
+      },
+      "height": 14,
+      "weight": 110,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:phantom_membrane",
+                        "percentage": 5.0
+                  },
+                  {
+                        "item": "cobblemon:haban_berry",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "forms": []
+}

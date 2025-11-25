@@ -1,0 +1,42 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "xurkitree",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "70-100",
+                  "weight": 3.5,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "minecraft:mangrove_swamp"
+                        ]
+                  },
+                  "id": "xurkitree-1"
+            },
+            {
+                  "pokemon": "xurkitree",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "ultra-rare",
+                  "level": "60",
+                  "weight": 5.0,
+                  "condition": {
+                        "biomes": [
+                              "#cobblemon:is_end"
+                        ],
+                        "neededNearbyBlocks": [
+                              "minecraft:lightning_rod"
+                        ]
+                  },
+                  "id": "xurkitree-2"
+            }
+      ]
+}

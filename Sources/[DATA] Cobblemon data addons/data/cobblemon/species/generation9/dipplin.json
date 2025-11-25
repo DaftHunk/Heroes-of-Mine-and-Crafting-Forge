@@ -1,0 +1,196 @@
+{
+      "name": "Dipplin",
+      "nationalPokedexNumber": 1011,
+      "primaryType": "grass",
+      "secondaryType": "dragon",
+      "abilities": [
+            "supersweetsyrup",
+            "gluttony",
+            "h:stickyhold"
+      ],
+      "baseStats": {
+            "hp": 80,
+            "attack": 80,
+            "defence": 110,
+            "special_attack": 95,
+            "special_defence": 80,
+            "speed": 40
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 0,
+      "baseFriendship": 0,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 2,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass",
+            "dragon"
+      ],
+      "moves": [
+            "tm:dracometeor",
+            "tm:endure",
+            "tm:grassknot",
+            "12:dragonbreath",
+            "32:dragonpulse",
+            "tm:dragoncheer",
+            "36:recover",
+            "20:bulletseed",
+            "tm:dragontail",
+            "tm:terablast",
+            "tm:bugbite",
+            "28:syrupbomb",
+            "40:energyball",
+            "tm:protect",
+            "tm:solarbeam",
+            "tm:hyperbeam",
+            "tm:pollenpuff",
+            "tm:substitute",
+            "tm:grassyglide",
+            "tm:dragonpulse",
+            "8:growth",
+            "tm:bulletseed",
+            "tm:gigaimpact",
+            "1:withdraw",
+            "50:dragoncheer",
+            "tm:facade",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "44:substitute",
+            "tm:bodyslam",
+            "tm:seedbomb",
+            "tm:leafstorm",
+            "tm:gigadrain",
+            "1:recycle",
+            "4:dragontail",
+            "1:sweetscent",
+            "1:astonish",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:gyroball",
+            "tm:outrage",
+            "16:protect",
+            "tm:rest",
+            "tm:reflect",
+            "tm:energyball",
+            "tm:pounce",
+            "1:infestation"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 4,
+      "weight": 44,
+      "preEvolution": "applin",
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "hydrapple",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "ficklebeam"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "has_move",
+                              "type": "dragoncheer"
+                        }
+                  ],
+                  "id": "dipplin_hydrapple"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "hydrapple",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "ficklebeam"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "held_item",
+                              "itemCondition": "minecraft:dragon_breath"
+                        }
+                  ],
+                  "id": "dipplin_hydrapple-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "hydrapple",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "ficklebeam"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "has_move",
+                              "move": "dragoncheer"
+                        }
+                  ],
+                  "id": "dipplin_hydrapple-2"
+            }
+      ],
+      "cannotDynamax": false,
+      "target": "cobblemon:dipplin",
+      "drops": {
+            "amount": "1",
+            "entries": [
+                  {
+                        "item": "createfood:caramel_glazed_apple",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "create:honeyed_apple",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "minecraft:apple"
+                  },
+                  {
+                        "item": "minecraft:apple",
+                        "quantityRange": "1-2",
+                        "percentage": 50
+                  }
+            ]
+      },
+      "shoulderMountable": true,
+      "pokedex": [
+            "Dipplin is two creatures in one Pok\u00c3\u00a9mon. Its evolution was triggered by a special apple grown only in one place.",
+            "cobblemon.species.dipplin.desc"
+      ],
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 0.5,
+            "height": 0.5,
+            "fixed": false
+      },
+      "baseScale": 0.5,
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            },
+            "moving": {
+                  "canLook": false,
+                  "walk": {
+                        "walkSpeed": 0.175,
+                        "canWalk": true,
+                        "avoidsLand": false
+                  },
+                  "swim": {
+                        "swimSpeed": 0.1,
+                        "canSwimInWater": false,
+                        "canBreatheUnderwater": false
+                  }
+            }
+      }
+}

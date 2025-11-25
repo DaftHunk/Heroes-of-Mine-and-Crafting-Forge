@@ -1,0 +1,230 @@
+{
+      "implemented": true,
+      "name": "Cinderace",
+      "nationalPokedexNumber": 815,
+      "primaryType": "fire",
+      "abilities": [
+            "blaze",
+            "h:libero"
+      ],
+      "baseStats": {
+            "hp": 80,
+            "attack": 116,
+            "defence": 75,
+            "special_attack": 65,
+            "special_defence": 75,
+            "speed": 119
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Gmax",
+                  "primaryType": "fire",
+                  "abilities": [
+                        "blaze",
+                        "h:libero"
+                  ],
+                  "baseStats": {
+                        "hp": 80,
+                        "attack": 116,
+                        "defence": 75,
+                        "special_attack": 65,
+                        "special_defence": 75,
+                        "speed": 119
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0.875,
+                  "baseExperienceYield": 265,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 0,
+                        "special_defence": 0,
+                        "speed": 3
+                  },
+                  "experienceGroup": "medium_slow",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "field",
+                        "human_like"
+                  ],
+                  "labels": [
+                        "gen8",
+                        "gmax"
+                  ],
+                  "aspects": [
+                        "gmax"
+                  ],
+                  "height": 30,
+                  "weight": 0,
+                  "cannotDynamax": false,
+                  "battleOnly": false,
+                  "pokedex": [
+                        "cobblemon.species.cinderace-gmax.desc"
+                  ],
+                  "dynamaxBlocked": true,
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "baseExperienceYield": 265,
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "field",
+            "human_like"
+      ],
+      "drops": {
+            "amount": 6,
+            "entries": [
+                  {
+                        "item": "minecraft:rabbit_hide",
+                        "quantityRange": "0-3"
+                  },
+                  {
+                        "item": "minecraft:rabbit"
+                  },
+                  {
+                        "item": "minecraft:rabbit_foot",
+                        "percentage": 25.0
+                  },
+                  {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 25.0
+                  }
+            ]
+      },
+      "moves": [
+            "tm:endure",
+            "tm:flamecharge",
+            "tm:lowsweep",
+            "tutor:blastburn",
+            "tm:zenheadbutt",
+            "tm:trailblaze",
+            "egg:highjumpkick",
+            "tm:sandattack",
+            "tm:firespin",
+            "tm:batonpass",
+            "tm:blazekick",
+            "tm:bounce",
+            "tm:snarl",
+            "tm:gigaimpact",
+            "tm:bulkup",
+            "tm:fireblast",
+            "tm:assurance",
+            "24:agility",
+            "tm:smackdown",
+            "tm:flareblitz",
+            "tm:overheat",
+            "tm:terablast",
+            "tm:courtchange",
+            "tm:doubleedge",
+            "1:growl",
+            "tm:megakick",
+            "tm:fling",
+            "1:quickattack",
+            "tm:pyroball",
+            "tm:substitute",
+            "tm:scorchingsands",
+            "1:pyroball",
+            "tm:sleeptalk",
+            "tm:counter",
+            "19:flamecharge",
+            "tm:sunnyday",
+            "tm:takedown",
+            "egg:superfang",
+            "egg:sandattack",
+            "tm:quickattack",
+            "54:doubleedge",
+            "tm:revenge",
+            "tm:taunt",
+            "tutor:scorchingsands",
+            "tm:firepledge",
+            "tm:focusenergy",
+            "tm:gunkshot",
+            "tm:mudshot",
+            "tm:swift",
+            "tm:weatherball",
+            "tm:ironhead",
+            "tm:attract",
+            "tm:reversal",
+            "12:doublekick",
+            "tm:electroball",
+            "tutor:coaching",
+            "tm:snore",
+            "tm:facade",
+            "tm:shadowball",
+            "tm:blastburn",
+            "30:headbutt",
+            "tm:agility",
+            "1:ember",
+            "46:bounce",
+            "tm:mudslap",
+            "tm:firepunch",
+            "1:feint",
+            "tm:focusblast",
+            "tm:allyswitch",
+            "tm:firefang",
+            "tm:rest",
+            "tm:suckerpunch",
+            "tm:temperflare",
+            "tm:doublekick",
+            "tm:headbutt",
+            "tm:protect",
+            "tm:ember",
+            "tm:hyperbeam",
+            "tm:superfang",
+            "tm:burningjealousy",
+            "62:courtchange",
+            "tm:swordsdance",
+            "1:tackle",
+            "tm:heatwave",
+            "38:counter",
+            "tm:tackle",
+            "tm:coaching",
+            "tm:feint",
+            "tm:willowisp",
+            "tutor:firepledge",
+            "egg:suckerpunch",
+            "tm:helpinghand",
+            "tm:uturn",
+            "tm:highjumpkick",
+            "tm:lowkick",
+            "tm:growl",
+            "tm:acrobatics",
+            "tm:workup",
+            "tm:round",
+            "tm:flamethrower"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.cinderace.desc"
+      ],
+      "preEvolution": "raboot",
+      "evolutions": [],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 0.9,
+            "height": 3,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 3
+      },
+      "height": 14,
+      "weight": 330,
+      "aspects": [],
+      "cannotDynamax": false
+}

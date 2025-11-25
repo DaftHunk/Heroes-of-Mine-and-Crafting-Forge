@@ -1,0 +1,213 @@
+{
+      "name": "Hatterene",
+      "nationalPokedexNumber": 858,
+      "primaryType": "psychic",
+      "secondaryType": "fairy",
+      "abilities": [
+            "healer",
+            "anticipation",
+            "h:magicbounce"
+      ],
+      "baseStats": {
+            "hp": 57,
+            "attack": 90,
+            "defence": 95,
+            "special_attack": 136,
+            "special_defence": 103,
+            "speed": 29
+      },
+      "catchRate": 45,
+      "maleRatio": 0,
+      "shoulderMountable": false,
+      "forms": [
+            {
+                  "name": "Gmax",
+                  "primaryType": "psychic",
+                  "secondaryType": "fairy",
+                  "abilities": [
+                        "healer",
+                        "anticipation",
+                        "h:magicbounce"
+                  ],
+                  "baseStats": {
+                        "hp": 57,
+                        "attack": 90,
+                        "defence": 95,
+                        "special_attack": 136,
+                        "special_defence": 103,
+                        "speed": 29
+                  },
+                  "catchRate": 45,
+                  "maleRatio": 0,
+                  "baseExperienceYield": 255,
+                  "baseFriendship": 50,
+                  "evYield": {
+                        "hp": 0,
+                        "attack": 0,
+                        "defence": 0,
+                        "special_attack": 3,
+                        "special_defence": 0,
+                        "speed": 0
+                  },
+                  "experienceGroup": "slow",
+                  "eggCycles": 20,
+                  "eggGroups": [
+                        "fairy"
+                  ],
+                  "labels": [
+                        "gen8",
+                        "gmax"
+                  ],
+                  "aspects": [
+                        "gmax"
+                  ],
+                  "height": 260,
+                  "weight": 0,
+                  "cannotDynamax": false,
+                  "battleOnly": false,
+                  "pokedex": [
+                        "cobblemon.species.hatterene-gmax.desc"
+                  ],
+                  "dynamaxBlocked": true,
+                  "forms": [],
+                  "evolutions": []
+            }
+      ],
+      "baseExperienceYield": 255,
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "fairy"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:gravity",
+            "tm:storedpower",
+            "tm:imprison",
+            "tm:metronome",
+            "tm:psybeam",
+            "tm:batonpass",
+            "tutor:mistyexplosion",
+            "tm:guardswap",
+            "1:psychocut",
+            "tm:futuresight",
+            "tm:gigaimpact",
+            "tm:shadowclaw",
+            "tm:mistyexplosion",
+            "tm:charm",
+            "tm:aromatherapy",
+            "55:healingwish",
+            "tm:psychicnoise",
+            "tm:reflect",
+            "tm:psychicterrain",
+            "tm:safeguard",
+            "tm:magicalleaf",
+            "1:confusion",
+            "tm:psyshock",
+            "tm:quash",
+            "tm:terablast",
+            "1:lifedew",
+            "37:calmmind",
+            "tm:substitute",
+            "1:playnice",
+            "tm:psychocut",
+            "tm:sleeptalk",
+            "64:magicpowder",
+            "tm:expandingforce",
+            "15:aromatherapy",
+            "1:aromatherapy",
+            "tm:confusion",
+            "tm:nuzzle",
+            "egg:nuzzle",
+            "egg:mysticalfire",
+            "tm:mistyterrain",
+            "25:healpulse",
+            "tm:swift",
+            "tm:calmmind",
+            "tm:skillswap",
+            "tm:disarmingvoice",
+            "tm:powerswap",
+            "tm:attract",
+            "tm:brutalswing",
+            "tm:powerwhip",
+            "tm:thunderwave",
+            "tm:healpulse",
+            "20:psybeam",
+            "tm:snore",
+            "tm:facade",
+            "tm:shadowball",
+            "tm:drainingkiss",
+            "tm:agility",
+            "tm:afteryou",
+            "egg:quash",
+            "1:brutalswing",
+            "tm:wonderroom",
+            "tm:lightscreen",
+            "tm:lifedew",
+            "tm:mysticalfire",
+            "tm:psychic",
+            "tm:rest",
+            "tutor:expandingforce",
+            "tm:darkpulse",
+            "tm:gigadrain",
+            "tm:aromaticmist",
+            "tm:psychup",
+            "tm:protect",
+            "46:psychic",
+            "tm:hyperbeam",
+            "tm:trick",
+            "tm:swordsdance",
+            "30:dazzlinggleam",
+            "tm:playrough",
+            "tm:magicpowder",
+            "15:aromaticmist",
+            "tm:magicroom",
+            "tm:healingwish",
+            "egg:afteryou",
+            "tm:painsplit",
+            "egg:aromaticmist",
+            "tm:helpinghand",
+            "tm:playnice",
+            "tm:trickroom",
+            "tm:dazzlinggleam",
+            "tm:round",
+            "1:disarmingvoice"
+      ],
+      "labels": [
+            "gen8"
+      ],
+      "pokedex": [
+            "cobblemon.species.hatterene.desc"
+      ],
+      "preEvolution": "hattrem",
+      "evolutions": [],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 1.5,
+            "height": 4,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 0,
+            "special_attack": 3,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 21,
+      "weight": 51,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:babiri_berry",
+                        "percentage": 10.0
+                  }
+            ]
+      },
+      "implemented": true
+}

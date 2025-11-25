@@ -1,0 +1,157 @@
+{
+      "implemented": true,
+      "name": "Quaxly",
+      "nationalPokedexNumber": 912,
+      "primaryType": "water",
+      "abilities": [
+            "torrent",
+            "h:moxie"
+      ],
+      "drops": {
+            "amount": 1,
+            "entries": [
+                  {
+                        "item": "cobblemon:mystic_water",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "baseStats": {
+            "hp": 55,
+            "attack": 65,
+            "defence": 45,
+            "special_attack": 50,
+            "special_defence": 45,
+            "speed": 50
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 62,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+            "flying",
+            "water_1"
+      ],
+      "behaviour": {
+            "moving": {
+                  "walk": {
+                        "walkSpeed": 0.24
+                  },
+                  "swim": {
+                        "swimSpeed": 0.14,
+                        "canSwimInWater": true,
+                        "canBreatheUnderwater": true,
+                        "canWalkOnWater": true,
+                        "canSwimInLava": false
+                  }
+            },
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      },
+      "moves": [
+            "10:wingattack",
+            "tm:endure",
+            "tm:waterpledge",
+            "tm:mistyterrain",
+            "tm:terablast",
+            "tm:focusenergy",
+            "tm:aerialace",
+            "tm:raindance",
+            "tm:surf",
+            "tm:psychup",
+            "tm:protect",
+            "1:growl",
+            "tm:swift",
+            "tm:doublehit",
+            "tm:pound",
+            "tm:aircutter",
+            "tm:disarmingvoice",
+            "tm:substitute",
+            "tm:aquajet",
+            "tm:detect",
+            "1:watergun",
+            "tm:batonpass",
+            "tm:watergun",
+            "1:pound",
+            "24:airslash",
+            "egg:rapidspin",
+            "tm:airslash",
+            "21:aquacutter",
+            "tm:bravebird",
+            "17:doublehit",
+            "egg:roost",
+            "31:acrobatics",
+            "tm:chillingwater",
+            "tm:liquidation",
+            "tm:whirlpool",
+            "tm:aquacutter",
+            "tm:facade",
+            "tm:rapidspin",
+            "tm:sleeptalk",
+            "egg:detect",
+            "7:workup",
+            "35:liquidation",
+            "tm:lastresort",
+            "egg:lastresort",
+            "13:aquajet",
+            "tm:helpinghand",
+            "tm:lowkick",
+            "tm:growl",
+            "28:focusenergy",
+            "tm:acrobatics",
+            "tm:roost",
+            "tm:wingattack",
+            "tm:workup",
+            "tm:encore",
+            "tm:takedown",
+            "tm:rest",
+            "tm:hydropump"
+      ],
+      "labels": [
+            "gen9",
+            "starter"
+      ],
+      "aspects": [],
+      "height": 5,
+      "weight": 61,
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "quaxwell",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 16
+                        }
+                  ],
+                  "id": "quaxly_quaxwell"
+            }
+      ],
+      "baseScale": 0.6,
+      "hitbox": {
+            "width": 0.8,
+            "height": 1.1,
+            "fixed": false
+      },
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.quaxly.desc"
+      ],
+      "forms": []
+}

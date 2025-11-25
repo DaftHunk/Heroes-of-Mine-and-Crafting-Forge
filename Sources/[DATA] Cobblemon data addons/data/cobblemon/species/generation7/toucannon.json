@@ -1,0 +1,182 @@
+{
+      "name": "Toucannon",
+      "nationalPokedexNumber": 733,
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+            "keeneye",
+            "skilllink",
+            "h:sheerforce"
+      ],
+      "baseStats": {
+            "hp": 80,
+            "attack": 120,
+            "defence": 75,
+            "special_attack": 75,
+            "special_defence": 75,
+            "speed": 60
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 218,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+            "flying"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:flamecharge",
+            "tutor:skyattack",
+            "tutor:hypervoice",
+            "tutor:heatwave",
+            "tm:doubleteam",
+            "tm:hypervoice",
+            "tm:furyattack",
+            "1:rockblast",
+            "tutor:seedbomb",
+            "tm:gigaimpact",
+            "tm:echoedvoice",
+            "tm:supersonic",
+            "30:screech",
+            "tm:beakblast",
+            "1:rocksmash",
+            "tm:flashcannon",
+            "tm:smackdown",
+            "egg:boomburst",
+            "egg:skyattack",
+            "tm:pluck",
+            "34:drillpeck",
+            "tm:overheat",
+            "tm:hurricane",
+            "tm:terablast",
+            "1:growl",
+            "tm:substitute",
+            "13:supersonic",
+            "tm:airslash",
+            "tm:return",
+            "tm:tailwind",
+            "tm:sleeptalk",
+            "tm:endeavor",
+            "tm:knockoff",
+            "tm:skyattack",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:defog",
+            "tm:boomburst",
+            "tm:drillpeck",
+            "tm:gunkshot",
+            "tm:swift",
+            "tm:rockblast",
+            "tm:aircutter",
+            "tm:attract",
+            "1:peck",
+            "16:pluck",
+            "tutor:snore",
+            "egg:gunkshot",
+            "tm:bulletseed",
+            "egg:mirrormove",
+            "tm:facade",
+            "tm:rocksmash",
+            "tm:screech",
+            "21:roost",
+            "tm:peck",
+            "tm:mirrormove",
+            "tm:steelwing",
+            "tm:fly",
+            "tm:featherdance",
+            "24:furyattack",
+            "tm:rest",
+            "tm:temperflare",
+            "tm:aerialace",
+            "tm:psychup",
+            "tm:protect",
+            "tm:hyperbeam",
+            "1:echoedvoice",
+            "tm:throatchop",
+            "tm:brickbreak",
+            "tm:swordsdance",
+            "tm:toxic",
+            "tm:heatwave",
+            "tutor:gunkshot",
+            "tm:bravebird",
+            "1:beakblast",
+            "44:featherdance",
+            "tutor:defog",
+            "tm:scaryface",
+            "tm:seedbomb",
+            "tm:dualwingbeat",
+            "50:hypervoice",
+            "tm:helpinghand",
+            "tm:uproar",
+            "tm:uturn",
+            "tutor:knockoff",
+            "tm:growl",
+            "tm:acrobatics",
+            "tm:workup",
+            "tm:roost",
+            "tutor:tailwind",
+            "tm:thief",
+            "40:bulletseed",
+            "tm:encore",
+            "tm:hiddenpower",
+            "tutor:uproar",
+            "tm:confide",
+            "tm:round",
+            "tm:frustration",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen7"
+      ],
+      "pokedex": [
+            "cobblemon.species.toucannon.desc"
+      ],
+      "preEvolution": "trumbeak",
+      "evolutions": [],
+      "baseScale": 0.8,
+      "hitbox": {
+            "width": 0.6,
+            "height": 2.2,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 3,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 11,
+      "weight": 260,
+      "aspects": [],
+      "cannotDynamax": false,
+      "drops": {
+            "amount": 5,
+            "entries": [
+                  {
+                        "item": "minecraft:feather",
+                        "quantityRange": "0-3"
+                  },
+                  {
+                        "item": "minecraft:chicken"
+                  },
+                  {
+                        "item": "cobblemon:sharp_beak",
+                        "percentage": 5.0
+                  }
+            ]
+      },
+      "implemented": true,
+      "forms": [],
+      "behaviour": {
+            "moving": {
+                  "fly": {
+                        "canFly": true
+                  }
+            }
+      }
+}

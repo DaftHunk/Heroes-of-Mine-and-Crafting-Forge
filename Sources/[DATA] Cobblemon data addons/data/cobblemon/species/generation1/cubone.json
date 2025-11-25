@@ -1,0 +1,436 @@
+{
+      "implemented": true,
+      "name": "Cubone",
+      "nationalPokedexNumber": 104,
+      "primaryType": "ground",
+      "abilities": [
+            "rockhead",
+            "lightningrod",
+            "h:battlearmor"
+      ],
+      "baseStats": {
+            "hp": 50,
+            "attack": 50,
+            "defence": 95,
+            "special_attack": 40,
+            "special_defence": 50,
+            "speed": 35
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "shoulderMountable": false,
+      "baseExperienceYield": 64,
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "monster"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "minecraft:bone",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:nanab_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "moves": [
+            "tm:rockslide",
+            "egg:bellydrum",
+            "tm:endure",
+            "tutor:rage",
+            "tutor:attract",
+            "tm:curse",
+            "tutor:curse",
+            "tutor:protect",
+            "tutor:thrash",
+            "29:bonerush",
+            "16:retaliate",
+            "tutor:return",
+            "tm:blizzard",
+            "tm:doubleteam",
+            "tutor:irondefense",
+            "tutor:blizzard",
+            "tutor:sunnyday",
+            "tutor:watergun",
+            "tutor:bonerush",
+            "tutor:mudslap",
+            "tm:earthpower",
+            "tutor:toxic",
+            "tm:bodyslam",
+            "tm:echoedvoice",
+            "tm:captivate",
+            "36:endeavor",
+            "44:thrash",
+            "tutor:headbutt",
+            "tutor:bonemerang",
+            "tutor:swagger",
+            "tm:fireblast",
+            "tutor:facade",
+            "egg:endure",
+            "tutor:stealthrock",
+            "tm:rockclimb",
+            "1:mudslap",
+            "32:focusenergy",
+            "tutor:earthpower",
+            "tutor:megakick",
+            "tutor:thunderpunch",
+            "egg:screech",
+            "tutor:ironhead",
+            "tm:smackdown",
+            "tm:bonemerang",
+            "tm:rocktomb",
+            "40:bonemerang",
+            "tm:irondefense",
+            "tutor:dig",
+            "tm:terablast",
+            "tutor:bide",
+            "tm:earthquake",
+            "tm:doubleedge",
+            "1:growl",
+            "tm:megakick",
+            "tm:fling",
+            "tm:strength",
+            "tm:furycutter",
+            "tm:substitute",
+            "tm:bellydrum",
+            "tutor:megapunch",
+            "egg:skullbash",
+            "tm:return",
+            "8:falseswipe",
+            "tutor:perishsong",
+            "egg:doublekick",
+            "tm:scorchingsands",
+            "tm:focuspunch",
+            "20:fling",
+            "tm:sleeptalk",
+            "tutor:leer",
+            "tm:endeavor",
+            "tm:knockoff",
+            "tutor:ancientpower",
+            "12:headbutt",
+            "tm:naturalgift",
+            "egg:curse",
+            "egg:rage",
+            "tm:leer",
+            "tutor:bodyslam",
+            "tm:sunnyday",
+            "tutor:sandstorm",
+            "tm:icebeam",
+            "egg:perishsong",
+            "tutor:focusenergy",
+            "tutor:swordsdance",
+            "tutor:substitute",
+            "tutor:bellydrum",
+            "egg:ironhead",
+            "tutor:scorchingsands",
+            "tm:focusenergy",
+            "tm:thunderpunch",
+            "tm:swift",
+            "tm:thrash",
+            "tm:ironhead",
+            "tm:detect",
+            "tutor:thief",
+            "tm:attract",
+            "tutor:boneclub",
+            "egg:leer",
+            "tutor:irontail",
+            "48:doubleedge",
+            "tm:skullbash",
+            "23:rage",
+            "tutor:snore",
+            "tm:brutalswing",
+            "tutor:takedown",
+            "tutor:fireblast",
+            "egg:chipaway",
+            "tm:snore",
+            "tm:facade",
+            "tm:poweruppunch",
+            "tutor:bubblebeam",
+            "tm:chipaway",
+            "tutor:growl",
+            "tm:rocksmash",
+            "tm:ancientpower",
+            "tm:incinerate",
+            "tutor:sleeptalk",
+            "tutor:tailwhip",
+            "tm:megapunch",
+            "tm:screech",
+            "tutor:mimic",
+            "4:tailwhip",
+            "tutor:doubleteam",
+            "tm:perishsong",
+            "tm:secretpower",
+            "tutor:skullbash",
+            "1:leer",
+            "tm:mudslap",
+            "egg:swordsdance",
+            "tm:dig",
+            "tutor:endure",
+            "tm:firepunch",
+            "tutor:flamethrower",
+            "tutor:lowkick",
+            "egg:rockslide",
+            "tutor:icywind",
+            "tutor:brickbreak",
+            "egg:ancientpower",
+            "tm:rest",
+            "tm:stealthrock",
+            "tm:sandstorm",
+            "13:leer",
+            "tutor:seismictoss",
+            "tm:boneclub",
+            "tm:retaliate",
+            "tm:doublekick",
+            "tm:headbutt",
+            "tutor:counter",
+            "tm:icywind",
+            "tm:aerialace",
+            "tutor:focuspunch",
+            "tm:protect",
+            "1:boneclub",
+            "tutor:rest",
+            "tm:bulldoze",
+            "tm:brickbreak",
+            "tutor:falseswipe",
+            "tutor:fissure",
+            "tutor:rockslide",
+            "tm:falseswipe",
+            "tm:rage",
+            "tm:swordsdance",
+            "24:stompingtantrum",
+            "tm:toxic",
+            "tutor:endeavor",
+            "tutor:icebeam",
+            "tutor:rocksmash",
+            "7:boneclub",
+            "tutor:firepunch",
+            "tm:irontail",
+            "egg:detect",
+            "tutor:detect",
+            "tutor:frustration",
+            "tm:tailwhip",
+            "tm:bonerush",
+            "tutor:screech",
+            "tutor:knockoff",
+            "tm:uproar",
+            "tutor:furycutter",
+            "tm:lowkick",
+            "tutor:submission",
+            "tm:growl",
+            "tutor:doubleedge",
+            "tm:thief",
+            "tutor:dynamicpunch",
+            "tutor:hiddenpower",
+            "tutor:earthquake",
+            "tm:hiddenpower",
+            "tutor:strength",
+            "tm:stompingtantrum",
+            "tm:confide",
+            "tutor:uproar",
+            "tm:round",
+            "tm:frustration",
+            "tm:flamethrower",
+            "tm:swagger"
+      ],
+      "labels": [
+            "gen1",
+            "kantonian_form"
+      ],
+      "pokedex": [
+            "cobblemon.species.cubone.desc"
+      ],
+      "evolutions": [
+            {
+                  "variant": "level_up",
+                  "result": "marowak alolan",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "shadowbone"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 28
+                        },
+                        {
+                              "variant": "time_range",
+                              "range": "night"
+                        }
+                  ],
+                  "id": "cubone_marowak"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "marowak",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 28
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+                        }
+                  ],
+                  "id": "cubone_marowak-1"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "marowak alolan",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "shadowbone"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 28
+                        },
+                        {
+                              "variant": "time_range",
+                              "range": "night"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeCondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+                        }
+                  ],
+                  "id": "cubone_marowakalola"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "marowak",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 28
+                        }
+                  ],
+                  "id": "cubone_marowak-2"
+            },
+            {
+                  "variant": "level_up",
+                  "result": "marowak alolan",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "shadowbone"
+                  ],
+                  "requirements": [
+                        {
+                              "variant": "level",
+                              "minLevel": 28
+                        },
+                        {
+                              "variant": "time_range",
+                              "range": "night"
+                        }
+                  ],
+                  "id": "cubone_marowak_alolan"
+            }
+      ],
+      "baseScale": 0.7,
+      "hitbox": {
+            "width": 0.55,
+            "height": 0.87,
+            "fixed": false
+      },
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 0,
+            "defence": 1,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "height": 4,
+      "weight": 65,
+      "aspects": [],
+      "cannotDynamax": false,
+      "features": [
+            "alolan",
+            "region_bias"
+      ],
+      "target": "cobblemon:cubone",
+      "forms": [
+            {
+                  "weight": 65,
+                  "maleRatio": 0.5,
+                  "name": "Alola-Bias",
+                  "height": 4,
+                  "primaryType": "ground",
+                  "pokedex": [
+                        "cobblemon.species.cubone-alolabias.desc"
+                  ],
+                  "aspects": [
+                        "region-bias-alola"
+                  ],
+                  "dynamaxBlocked": false,
+                  "labels": [
+                        "gen7",
+                        "customized_official",
+                        "alolan_form"
+                  ],
+                  "forms": [],
+                  "evolutions": [
+                        {
+                              "variant": "level_up",
+                              "result": "marowak",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 28
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeCondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+                                    }
+                              ],
+                              "id": "cubone_marowak"
+                        },
+                        {
+                              "variant": "level_up",
+                              "result": "marowak alolan",
+                              "consumeHeldItem": false,
+                              "learnableMoves": [
+                                    "shadowbone"
+                              ],
+                              "requirements": [
+                                    {
+                                          "variant": "level",
+                                          "minLevel": 28
+                                    },
+                                    {
+                                          "variant": "time_range",
+                                          "range": "night"
+                                    },
+                                    {
+                                          "variant": "biome",
+                                          "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+                                    }
+                              ],
+                              "id": "cubone_marowakalola"
+                        }
+                  ]
+            }
+      ]
+}

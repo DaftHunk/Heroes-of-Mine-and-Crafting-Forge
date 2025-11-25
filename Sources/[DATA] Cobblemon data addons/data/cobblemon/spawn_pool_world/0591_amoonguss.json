@@ -1,0 +1,81 @@
+{
+      "enabled": true,
+      "neededInstalledMods": [],
+      "neededUninstalledMods": [],
+      "spawns": [
+            {
+                  "pokemon": "amoonguss",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "uncommon",
+                  "level": "35-48",
+                  "weight": 5.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "#cobblemon:is_mushroom"
+                        ]
+                  },
+                  "id": "amoonguss-1"
+            },
+            {
+                  "pokemon": "amoonguss",
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "rare",
+                  "level": "35-48",
+                  "weight": 3.0,
+                  "condition": {
+                        "canSeeSky": true,
+                        "biomes": [
+                              "minecraft:dark_forest"
+                        ]
+                  },
+                  "id": "amoonguss-2"
+            },
+            {
+                  "pokemon": "amoonguss",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "39-46",
+                  "weight": 1.0,
+                  "condition": {
+                        "minSkyLight": 0,
+                        "maxSkyLight": 7,
+                        "biomes": [
+                              "#cobblemon:is_mushroom"
+                        ]
+                  },
+                  "id": "amoonguss-3"
+            },
+            {
+                  "pokemon": "amoonguss",
+                  "presets": [
+                        "natural"
+                  ],
+                  "type": "pokemon",
+                  "context": "grounded",
+                  "bucket": "common",
+                  "level": "39-46",
+                  "weight": 1.0,
+                  "weightMultiplier": {
+                        "multiplier": 0.25,
+                        "condition": {
+                              "timeRange": "day"
+                        }
+                  },
+                  "condition": {
+                        "minSkyLight": 8,
+                        "maxSkyLight": 15,
+                        "biomes": [
+                              "#cobblemon:is_mushroom"
+                        ]
+                  },
+                  "id": "amoonguss-4"
+            }
+      ]
+}

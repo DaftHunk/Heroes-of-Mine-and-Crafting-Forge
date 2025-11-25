@@ -1,0 +1,148 @@
+{
+      "name": "Capsakid",
+      "nationalPokedexNumber": 951,
+      "primaryType": "grass",
+      "abilities": [
+            "chlorophyll",
+            "insomnia",
+            "h:klutz"
+      ],
+      "baseStats": {
+            "hp": 52,
+            "attack": 62,
+            "defence": 40,
+            "special_attack": 62,
+            "special_defence": 40,
+            "speed": 50
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 61,
+      "baseFriendship": 50,
+      "evYield": {
+            "hp": 0,
+            "attack": 1,
+            "defence": 0,
+            "special_attack": 0,
+            "special_defence": 0,
+            "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+            "grass"
+      ],
+      "moves": [
+            "tm:endure",
+            "tm:grassknot",
+            "egg:rollout",
+            "tm:magicalleaf",
+            "tm:terablast",
+            "tm:protect",
+            "tm:solarbeam",
+            "tm:zenheadbutt",
+            "tm:trailblaze",
+            "tm:substitute",
+            "tm:grassyglide",
+            "48:solarbeam",
+            "38:crunch",
+            "egg:ragepowder",
+            "tm:superfang",
+            "tm:bulletseed",
+            "17:sunnyday",
+            "1:leafage",
+            "tm:facade",
+            "21:bulletseed",
+            "tm:grassyterrain",
+            "tm:sleeptalk",
+            "24:headbutt",
+            "tm:endeavor",
+            "egg:ingrain",
+            "13:razorleaf",
+            "tm:leafstorm",
+            "tm:seedbomb",
+            "egg:leechseed",
+            "1:leer",
+            "tm:gigadrain",
+            "44:seedbomb",
+            "tm:helpinghand",
+            "4:bite",
+            "10:growth",
+            "tm:crunch",
+            "tm:sunnyday",
+            "tm:takedown",
+            "tm:thief",
+            "tm:rest",
+            "tm:stompingtantrum",
+            "28:zenheadbutt",
+            "tm:energyball",
+            "tm:sandstorm",
+            "egg:worryseed"
+      ],
+      "labels": [
+            "gen9"
+      ],
+      "aspects": [],
+      "height": 3,
+      "weight": 30,
+      "evolutions": [
+            {
+                  "variant": "item_interact",
+                  "result": "scovillain",
+                  "consumeHeldItem": false,
+                  "learnableMoves": [
+                        "flamethrower",
+                        "spicyextract"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:fire_stone",
+                  "id": "capsakid_scovillain"
+            },
+            {
+                  "variant": "item_interact",
+                  "result": "scovillain",
+                  "consumeHeldItem": true,
+                  "learnableMoves": [
+                        "spicyextract",
+                        "flamethrower"
+                  ],
+                  "requirements": [],
+                  "requiredContext": "cobblemon:fire_stone",
+                  "id": "capsakid_scovillain-1"
+            }
+      ],
+      "cannotDynamax": false,
+      "pokedex": [
+            "cobblemon.species.capsakid.desc"
+      ],
+      "drops": {
+            "amount": 2,
+            "entries": [
+                  {
+                        "item": "cobblemon:roasted_leek",
+                        "quantityRange": "0-1"
+                  },
+                  {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 2.5
+                  }
+            ]
+      },
+      "shoulderMountable": true,
+      "implemented": true,
+      "forms": [],
+      "hitbox": {
+            "width": 0.5,
+            "height": 0.65,
+            "fixed": false
+      },
+      "baseScale": 1,
+      "behaviour": {
+            "resting": {
+                  "canSleep": true,
+                  "willSleepOnBed": true,
+                  "depth": "normal",
+                  "light": "0-4"
+            }
+      }
+}
