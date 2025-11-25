@@ -5,6 +5,7 @@
       "primaryType": "electric",
       "secondaryType": "steel",
       "abilities": [
+			"levitate",
             "magnetpull",
             "sturdy",
             "h:analytic"
