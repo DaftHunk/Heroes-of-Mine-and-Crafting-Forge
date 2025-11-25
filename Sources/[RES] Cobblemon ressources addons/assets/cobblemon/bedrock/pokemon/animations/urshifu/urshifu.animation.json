@@ -2743,6 +2743,11 @@
 					"rotation": [0, 0, 0],
 					"position": [0, 0, 0]
 				}
+			},
+			"sound_effects": {
+				"0.1": {
+					"effect": "pokemon.urshifu.cry"
+				}
 			}
 		},
 		"animation.urshifu.sleep": {

@@ -1,59 +1,26 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "meltan",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "38-48",
-                  "weight": 5.06,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "#cobblemon:is_overworld"
-                        ],
-                        "neededNearbyBlocks": [
-                              "minecraft:iron_block"
-                        ]
-                  },
-                  "id": "meltan-1"
-            },
-            {
-                  "pokemon": "meltan",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "38-48",
-                  "weight": 2.5,
-                  "condition": {
-                        "biomes": [
-                              "minecraft:beach"
-                        ]
-                  },
-                  "id": "meltan-2"
-            },
-            {
-                  "pokemon": "meltan",
-                  "presets": [
-                        "ancient_city",
-                        "stronghold"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "11-41",
-                  "weight": 0.5,
-                  "condition": {
-                        "canSeeSky": false,
-                        "biomes": [
-                              "#cobblemon:is_overworld"
-                        ],
-                        "minY": 30
-                  },
-                  "id": "meltan-3"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "meltan-1",
+            "pokemon": "meltan",
+            "presets": [
+                "ancient_city",
+                "stronghold"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "11-41",
+            "weight": 1.5,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
             }
-      ]
+        }
+    ]
 }

@@ -1,22 +1,33 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "stakataka",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70-100",
-                  "weight": 2.0,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "minecraft:stony_peaks"
-                        ]
-                  },
-                  "id": "stakataka-1"
-            }
-      ]
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "stakataka-1",
+      "pokemon": "stakataka",
+      "presets": ["natural"],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "60",
+      "weight": 10.0,
+      "condition": {
+        "biomes": ["minecraft:deep_dark"]
+      }
+    },
+    {
+        "id": "stakataka-2",
+        "pokemon": "stakataka",
+        "presets": ["natural"],
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 10.0,
+        "condition": {
+          "biomes": ["minecraft:ancient_city"]
+        }
+      }
+  ]
 }

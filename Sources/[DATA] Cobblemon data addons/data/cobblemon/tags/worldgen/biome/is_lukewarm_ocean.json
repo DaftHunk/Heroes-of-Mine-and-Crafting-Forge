@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:lukewarm_ocean",
+    {
+      "id": "wythers:tropical_beach",
+      "required": false
+    },
+    {
+      "id": "wythers:tropical_island",
+      "required": false
+    },
+    {
+      "id": "wythers:warm_stony_shore",
+      "required": false
+    },
+        {
+      "id": "regions_unexplored:rocky_reef",
+      "required": false
+    },
+	{
+      "id": "regions_unexplored:tropics",
+      "required": false
+    }
+  ]
+}

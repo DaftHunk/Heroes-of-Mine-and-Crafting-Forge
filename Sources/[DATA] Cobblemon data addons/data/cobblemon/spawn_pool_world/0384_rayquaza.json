@@ -1,57 +1,43 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "rayquaza",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 1.5,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:is_mountain"
-                        ],
-                        "timeRange": "day",
-                        "isRaining": false
-                  },
-                  "id": "rayquaza-1"
-            },
-            {
-                  "pokemon": "rayquaza",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 0.4,
-                  "condition": {
-                        "biomes": [
-                              "minecraft:sunflower_plains"
-                        ],
-                        "timeRange": "day",
-                        "isRaining": false
-                  },
-                  "id": "rayquaza-2"
-            },
-            {
-                  "pokemon": "rayquaza",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70-100",
-                  "weight": 1,
-                  "condition": {
-                        "isRaining": false,
-                        "biomes": [
-                              "minecraft:sunflower_plains"
-                        ]
-                  },
-                  "id": "rayquaza-3"
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "rayquaza-1",
+      "pokemon": "rayquaza",
+      "presets": [
+          "natural"
+        ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 0.4,
+      "condition": {
+        "biomes": [ 
+          "#cobblemon:is_mountain"
+      ],
+      "timeRange": "day",
+      "isRaining": false
+      }
+    },
+    {
+            "id": "rayquaza-2",
+            "pokemon": "rayquaza",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-100",
+            "weight": 1.8,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": [
+    		    "aether:skyroot_meadow",
+   		    "aether:skyroot_grove"
+                ]
             }
-      ]
+    }    
+  ]
 }

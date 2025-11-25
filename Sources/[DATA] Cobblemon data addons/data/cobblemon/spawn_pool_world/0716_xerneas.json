@@ -1,39 +1,24 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "xerneas",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 5.5,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:is_floral"
-                        ],
-                        "timeRange": "day"
-                  },
-                  "id": "xerneas-1"
-            },
-            {
-                  "pokemon": "xerneas",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "65-75",
-                  "weight": 0.5,
-                  "condition": {
-                        "biomes": [
-                              "minecraft:flower_forest"
-                        ],
-                        "timeRange": "day",
-                        "isRaining": false,
-                        "maxY": 150
-                  },
-                  "id": "xerneas-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "xerneas-1",
+            "pokemon": "xerneas",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70",
+            "weight": 2.4,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": [
+    		    "aether:skyroot_woodland",
+  		        "aether:skyroot_forest"
+                ]
             }
-      ]
+        }
+    ]
 }

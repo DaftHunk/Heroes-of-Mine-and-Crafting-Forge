@@ -1,21 +1,22 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "arceus",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 0.8,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_end"
-                        ]
-                  },
-                  "id": "arceus-1"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "arceus-1",
+            "pokemon": "arceus",
+            "presets": [],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-80",
+            "weight": 0.05,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ]
             }
-      ]
+        }
+    ]
 }

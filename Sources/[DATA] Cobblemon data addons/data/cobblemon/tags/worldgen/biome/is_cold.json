@@ -1,0 +1,43 @@
+{
+  "replace": false,
+  "values": [
+    "#cobblemon:is_freezing",
+    "#cobblemon:is_frigid",
+    "#cobblemon:is_peak",
+    "#cobblemon:is_taiga",
+    "#cobblemon:is_tundra",
+    "#cobblemon:is_cold_ocean",
+    {
+      "id": "#byg:is_cold",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:tundra",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:snowy_maple_woods",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:snowy_coniferous_forest",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:crag",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:snowy_fir_clearing",
+      "required": false
+    },
+    {
+      "id": "wythers:berry_bog",
+      "required": false
+    },
+        {
+      "id": "regions_unexplored:cold_river",
+      "required": false
+    }
+  ]
+}

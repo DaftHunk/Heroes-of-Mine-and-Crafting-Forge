@@ -1,37 +1,25 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "marshadow",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "60-80",
-                  "weight": 2.5,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "minecraft:mangrove_swamp"
-                        ]
-                  },
-                  "id": "marshadow-1"
-            },
-            {
-                  "pokemon": "marshadow",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 2.5,
-                  "condition": {
-                        "canSeeSky": false,
-                        "biomes": [
-                              "#cobblemon:is_deep_dark"
-                        ]
-                  },
-                  "id": "marshadow-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "deeper-marshadow-1",
+            "pokemon": "marshadow",
+            "presets": [
+                "natural",
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "55-75",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:deeplands"
+                ]
             }
-      ]
+        }
+    ]
 }

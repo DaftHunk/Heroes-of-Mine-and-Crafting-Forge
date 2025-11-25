@@ -1,25 +1,26 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "registeel",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "50-75",
-                  "weight": 0.1,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "minecraft:jagged_peaks"
-                        ]
-                  },
-                  "id": "registeel-1"
-            }
-      ]
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "registeel-1",
+      "pokemon": "registeel",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 3.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      }
+    }
+  ]
 }

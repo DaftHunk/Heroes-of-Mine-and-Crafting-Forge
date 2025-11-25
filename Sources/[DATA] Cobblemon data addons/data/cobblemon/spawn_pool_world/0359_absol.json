@@ -1,103 +1,29 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "absol",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "timeRange": "night",
-                  "canSeeSky": "true",
-                  "level": "16-25",
-                  "weight": 8.0,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_mountain"
-                        ]
-                  },
-                  "id": "absol-1"
-            },
-            {
-                  "pokemon": "absol",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "uncommon",
-                  "timeRange": "midnight",
-                  "canSeeSky": "true",
-                  "level": "15-25",
-                  "weight": 4.0,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_mountain"
-                        ]
-                  },
-                  "id": "absol-2"
-            },
-            {
-                  "pokemon": "absol",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "timeRange": "midnight",
-                  "canSeeSky": "true",
-                  "level": "25-43",
-                  "weight": 6.0,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_mountain"
-                        ]
-                  },
-                  "id": "absol-3"
-            },
-            {
-                  "pokemon": "absol",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "common",
-                  "level": "35-52",
-                  "weight": 4.0,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_end"
-                        ]
-                  },
-                  "id": "absol-4"
-            },
-            {
-                  "pokemon": "absol",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "22-47",
-                  "weight": 10.0,
-                  "condition": {
-                        "minSkyLight": 8,
-                        "maxSkyLight": 15,
-                        "biomes": [
-                              "#cobblemon:is_mountain",
-                              "#cobblemon:is_snowy_forest",
-                              "#cobblemon:is_taiga"
-                        ]
-                  },
-                  "id": "absol-5"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "absol-1",
+            "pokemon": "absol",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "22-47",
+            "weight": 10.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_snowy_forest",
+                    "#cobblemon:is_taiga"
+                ]
             }
-      ]
+        }
+    ]
 }

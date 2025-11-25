@@ -1,25 +1,25 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "baxcalibur",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "58-67",
-                  "weight": 5.0,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "#cobblemon:is_glacial"
-                        ]
-                  },
-                  "id": "baxcalibur-1"
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "baxcalibur-1",
+            "pokemon": "baxcalibur",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "58-67",
+            "weight": 4.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_glacial"
+                ]
             }
-      ]
+        }
+    ]
 }

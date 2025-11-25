@@ -1,45 +1,73 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "tirtouga",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "15-40",
-                  "weight": 9.0,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_lush"
-                        ]
-                  },
-                  "id": "tirtouga-1"
-            },
-            {
-                  "pokemon": "tirtouga",
-                  "presets": [
-                        "underwater"
-                  ],
-                  "type": "pokemon",
-                  "context": "submerged",
-                  "bucket": "ultra-rare",
-                  "level": "15-40",
-                  "weight": 9.0,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_lush"
-                        ]
-                  },
-                  "id": "tirtouga-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "tirtouga-1",
+            "pokemon": "tirtouga",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "15-40",
+            "weight": 6.0,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "minecraft:lush_caves",
+                    "byg:lush_stacks",
+                    "biomesoplenty:rainforest",
+                    "biomesoplenty:wetland",
+                    "biomesoplenty:marsh",
+                    "terralith:underground_jungle",
+                    "deeperdarker:blooming_caverns",
+                    "regions_unexplored:ancient_delta",
+                    "terralith:cave/underground_jungle",
+                    "wythers:lichenous_caves",
+                    "wythers:lichenous_dripstone_caves",
+                    "wythers:lush_dripstone_caves",
+                    "wythers:lush_fungous_dripstone_caves",
+                    "wythers:lush_shroom_caves",
+                    "#forge:is_lush"
+                ]
             }
-      ]
+        },
+        {
+            "id": "tirtouga-2",
+            "pokemon": "tirtouga",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "ultra-rare",
+            "level": "15-40",
+            "weight": 6.0,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "minecraft:lush_caves",
+                    "byg:lush_stacks",
+                    "biomesoplenty:rainforest",
+                    "biomesoplenty:wetland",
+                    "biomesoplenty:marsh",
+                    "terralith:underground_jungle",
+                    "deeperdarker:blooming_caverns",
+                    "regions_unexplored:ancient_delta",
+                    "terralith:cave/underground_jungle",
+                    "wythers:lichenous_caves",
+                    "wythers:lichenous_dripstone_caves",
+                    "wythers:lush_dripstone_caves",
+                    "wythers:lush_fungous_dripstone_caves",
+                    "wythers:lush_shroom_caves",
+                    "#forge:is_lush"
+                ]
+            }
+        }
+    ]
 }

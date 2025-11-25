@@ -1,63 +1,24 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "necrozma",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 2.3,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_end"
-                        ],
-                        "neededBaseBlocks": [
-                              "minecraft:end_stone"
-                        ]
-                  },
-                  "id": "necrozma"
-            },
-            {
-                  "pokemon": "necrozma",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 0.2,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "#cobblemon:is_spooky"
-                        ],
-                        "timeRange": "night",
-                        "neededBaseBlocks": [
-                              "minecraft:grass_block"
-                        ]
-                  },
-                  "id": "necrozma-1"
-            },
-            {
-                  "pokemon": "necrozma",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "70",
-                  "weight": 0.4,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_end"
-                        ],
-                        "neededBaseBlocks": [
-                              "minecraft:end_stone"
-                        ]
-                  },
-                  "id": "necrozma-2"
-            }
-      ]
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "necrozma-1T",
+      "pokemon": "necrozma",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 0.7,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_end"
+        ]
+      }
+    }
+  ]
 }

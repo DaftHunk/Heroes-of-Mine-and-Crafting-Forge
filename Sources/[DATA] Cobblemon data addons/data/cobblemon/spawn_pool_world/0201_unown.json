@@ -1,39 +1,80 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "unown",
-                  "presets": [
-                        "stronghold"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "uncommon",
-                  "level": "14-63",
-                  "weight": 9.0,
-                  "condition": {
-                        "canSeeSky": false,
-                        "biomes": [
-                              "#cobblemon:is_overworld"
-                        ]
-                  },
-                  "id": "unown-1"
-            },
-            {
-                  "pokemon": "unown",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "common",
-                  "level": "15-55",
-                  "weight": 20.0,
-                  "condition": {
-                        "biomes": [
-                              "#minecraft:is_end"
-                        ]
-                  },
-                  "id": "unown-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "unown-1",
+            "pokemon": "unown",
+            "presets": [
+                "stronghold"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "14-63",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
             }
-      ]
+        },
+        {
+            "id": "unown-2",
+            "pokemon": "unown",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "40-60",
+            "weight": 15.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ]
+            }
+        },
+        {
+            "id": "unown-3",
+            "pokemon": "unown character=?",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "60-75",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ]
+            }
+        },
+        {
+            "id": "unown-4",
+            "pokemon": "unown character=!",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "60-75",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ]
+            }
+        },
+        {
+            "id": "unown-5",
+            "pokemon": "unown character=t",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "50-70",
+            "weight": 10.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ]
+            }
+        }
+    ]
 }

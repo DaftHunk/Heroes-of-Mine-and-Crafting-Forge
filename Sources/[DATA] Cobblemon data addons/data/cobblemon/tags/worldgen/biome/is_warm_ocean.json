@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:warm_ocean",
+    "#cobblemon:is_kelp",
+	{
+      "id": "byg:lush_stacks",
+      "required": false
+    }
+  ]
+}

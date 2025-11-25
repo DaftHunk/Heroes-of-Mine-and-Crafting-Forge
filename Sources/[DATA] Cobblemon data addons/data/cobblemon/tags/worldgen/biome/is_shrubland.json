@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+	{
+      "id": "regions_unexplored:shrubland",
+      "required": false
+    },
+	{
+      "id": "regions_unexplored:dry_bushland",
+      "required": false
+    }
+  ]
+}

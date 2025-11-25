@@ -1,25 +1,57 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "ragingbolt",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "60-75",
-                  "weight": 4.5,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:is_plains"
-                        ],
-                        "isThundering": "true"
-                  },
-                  "id": "ragingbolt-1"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "deeper-ragingbolt-1",
+            "pokemon": "ragingbolt",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "65-80",
+            "weight": 2.1,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:echoing_forest"
+                ]
             }
-      ]
+        },
+        {
+            "id": "ragingbolt-1T",
+            "pokemon": "ragingbolt shiny=no",
+             "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "60-80",
+            "weight": 1.0,
+            "weightMultipliers": [
+                {
+                    "multiplier": 1.5,
+                    "condition": {
+                        "isRaining": true
+                    }
+                },
+                {
+                    "multiplier": 3,
+                    "condition": {
+                        "isThundering": true
+                    }
+                }
+            ],
+            "condition": {
+                "timeRange":"day",
+                "biomes": [
+                    "#cobblemon:is_coast"
+                ]
+            }
+        }
+    ]
 }

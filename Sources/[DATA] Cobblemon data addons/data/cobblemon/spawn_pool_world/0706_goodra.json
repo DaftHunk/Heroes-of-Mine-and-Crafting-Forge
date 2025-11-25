@@ -1,91 +1,137 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "goodra",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "50-60",
-                  "weight": 0.1,
-                  "condition": {
-                        "minSkyLight": 8,
-                        "maxSkyLight": 15,
-                        "biomes": [
-                              "#cobblemon:is_swamp"
-                        ],
-                        "isRaining": true
-                  },
-                  "id": "goodra-1"
-            },
-            {
-                  "pokemon": "goodra",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "50-60",
-                  "weight": 0.1,
-                  "condition": {
-                        "minSkyLight": 8,
-                        "maxSkyLight": 15,
-                        "biomes": [
-                              "#cobblemon:is_swamp"
-                        ],
-                        "isRaining": false
-                  },
-                  "id": "goodra-2"
-            },
-            {
-                  "pokemon": "goodra hisuian",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "50-60",
-                  "weight": 0.1,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_dripstone",
-                              "#cobblemon:is_lush"
-                        ]
-                  },
-                  "id": "goodra-hisuian-3"
-            },
-            {
-                  "pokemon": "goodra hisuian",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "50-60",
-                  "weight": 0.1,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_overworld"
-                        ],
-                        "neededNearbyBlocks": [
-                              "#minecraft:water"
-                        ]
-                  },
-                  "id": "goodra-hisuian-4"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "goodra-1",
+            "pokemon": "goodra",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "50-60",
+            "weight": 0.25,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isRaining": true
             }
-      ]
+        },
+        {
+            "id": "goodra-2",
+            "pokemon": "goodra",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "50-60",
+            "weight": 0.4,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isRaining": false
+            },
+            "anticondition": {
+                "isSlimeChunk": true
+            }
+        },
+        {
+            "id": "goodra-4",
+            "pokemon": "goodra",
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "ultra-rare",
+            "level": "50-60",
+            "weight": 0.4,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ]
+            },
+            "anticondition": {
+                "isSlimeChunk": true
+            }
+        },
+        {
+            "id": "goodra-hisuian-7",
+            "pokemon": "goodra hisuian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "50-60",
+            "weight": 0.25,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_dripstone",
+                    "#cobblemon:is_lush"
+                ]
+            }
+        },
+        {
+            "id": "goodra-hisuian-8",
+            "pokemon": "goodra hisuian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "50-60",
+            "weight": 0.4,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "#minecraft:water"
+                ]
+            },
+            "anticondition": {
+                "isSlimeChunk": true,
+                "biomes": [
+                    "#cobblemon:is_dripstone",
+                    "#cobblemon:is_lush"
+                ]
+            }
+        },
+        {
+            "id": "deeper-goodra-1",
+            "pokemon": "goodra",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "54-67",
+            "weight": 3.8,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:blooming_caverns"
+                ]
+            }
+        }
+    ]
 }

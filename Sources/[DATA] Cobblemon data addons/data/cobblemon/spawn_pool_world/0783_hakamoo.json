@@ -1,45 +1,62 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "hakamoo",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "35-42",
-                  "weight": 0.9,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:is_jungle"
-                        ],
-                        "minY": 0
-                  },
-                  "id": "hakamoo-1"
-            },
-            {
-                  "pokemon": "hakamoo",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "35-42",
-                  "weight": 0.9,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:is_tropical_island"
-                        ],
-                        "minY": 0
-                  },
-                  "id": "hakamoo-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "hakamoo-1",
+            "pokemon": "hakamoo",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "35-42",
+            "weight": 3.6,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_jungle"
+                ],
+                "minY": 0
             }
-      ]
+        },
+        {
+            "id": "hakamoo-2",
+            "pokemon": "hakamoo",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "35-42",
+            "weight": 2.25,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_tropical_island"
+                ],
+                "minY": 0
+            }
+        },
+        {
+            "id": "deeper-hakamoo-1",
+            "pokemon": "hakamoo",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "34-48",
+            "weight": 1.6,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:overcast_columns"
+                ]
+            }
+        }
+    ]
 }

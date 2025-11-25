@@ -1,25 +1,21 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "regice",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "50-75",
-                  "weight": 0.1,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "minecraft:ice_spikes"
-                        ]
-                  },
-                  "id": "regice-1"
-            }
-      ]
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "regice-1",
+      "pokemon": "regice",
+      "type": "pokemon",
+      "context": "submerged",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 3,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ],
+        "canSeeSky": true,
+        "minLureLevel": 3
+      }
+    }
+  ]
 }

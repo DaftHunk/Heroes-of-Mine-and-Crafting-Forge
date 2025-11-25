@@ -1,25 +1,29 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "uxie",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "50-75",
-                  "weight": 0.1,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "minecraft:river"
-                        ]
-                  },
-                  "id": "uxie-1"
-            }
-      ]
-}
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+      {
+        "id": "uxie-1",
+        "pokemon": "uxie",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-75",
+        "weight": 0.1,
+        "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_river",
+          "#cobblemon:is_coast",
+          "#cobblemon:is_island",
+          "#cobblemon:is_sky"
+        ]
+      }
+      }
+    ]
+  }

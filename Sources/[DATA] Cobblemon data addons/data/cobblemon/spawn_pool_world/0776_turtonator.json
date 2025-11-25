@@ -1,25 +1,25 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "turtonator",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "uncommon",
-                  "level": "24-49",
-                  "weight": 10.0,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:nether/is_basalt"
-                        ]
-                  },
-                  "id": "turtonator-1"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "turtonator-1",
+            "pokemon": "turtonator",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "24-49",
+            "weight": 10.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:nether/is_basalt"
+                ]
             }
-      ]
+        }
+    ]
 }

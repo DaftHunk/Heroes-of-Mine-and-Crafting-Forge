@@ -3,15 +3,32 @@
 	"order": 0,
 	"variations": [
 		{
-			"aspects": [],
+			"aspects": ["single_strike-style"],
 			"poser": "cobblemon:urshifu",
 			"model": "cobblemon:urshifu.geo",
 			"texture": "cobblemon:textures/pokemon/urshifu/urshifu.png",
 			"layers": []
 		},
 		{
-			"aspects": [ "shiny" ],
+			"aspects": [ "single_strike-style","shiny" ],
+			"poser": "cobblemon:urshifu",
+			"model": "cobblemon:urshifu.geo",
 			"texture": "cobblemon:textures/pokemon/urshifu/urshifu_shiny.png"
+		},
+		{
+			"aspects": [ "rapid_strike-style"],
+			"poser": "cobblemon:urshifurs",
+			"model": "cobblemon:urshifurs.geo",
+			"texture": "cobblemon:textures/pokemon/urshifurs/urshifurs.png",
+			"layers": [
+				
+			]
+		},
+		{
+			"aspects": [  "rapid_strike-style","shiny" ],
+			"poser": "cobblemon:urshifurs",
+			"model": "cobblemon:urshifurs.geo",
+			"texture": "cobblemon:textures/pokemon/urshifurs/urshifurs_shiny.png"
 		}
 	]
 }

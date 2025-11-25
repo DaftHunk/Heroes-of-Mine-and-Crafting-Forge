@@ -1,44 +1,43 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "solosis",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "uncommon",
-                  "level": "15-35",
-                  "weight": 9.0,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "#cobblemon:is_magical"
-                        ],
-                        "timeRange": "day"
-                  },
-                  "id": "solosis-1"
-            },
-            {
-                  "pokemon": "solosis",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "common",
-                  "level": "19-29",
-                  "weight": 3.0,
-                  "condition": {
-                        "canSeeSky": true,
-                        "biomes": [
-                              "#cobblemon:is_end"
-                        ]
-                  },
-                  "id": "solosis-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "deeper-solosis-1",
+            "pokemon": "solosis",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "18-35",
+            "weight": 2.05,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:echoing_forest",
+                    "deeperdarker:blooming_caverns"
+                ]
             }
-      ]
+        },
+        {
+            "id": "deeper-solosis-2",
+            "pokemon": "solosis",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "18-35",
+            "weight": 8.4,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:echoing_forest",
+                    "deeperdarker:blooming_caverns"
+                ]
+            }
+        }
+    ]
 }

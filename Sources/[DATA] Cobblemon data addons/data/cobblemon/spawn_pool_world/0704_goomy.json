@@ -1,91 +1,154 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "goomy",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "5-30",
-                  "weight": 9.0,
-                  "condition": {
-                        "minSkyLight": 8,
-                        "maxSkyLight": 15,
-                        "biomes": [
-                              "#cobblemon:is_swamp"
-                        ],
-                        "isRaining": true
-                  },
-                  "id": "goomy-1"
-            },
-            {
-                  "pokemon": "goomy",
-                  "presets": [
-                        "natural",
-                        "wild"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "5-30",
-                  "weight": 9.0,
-                  "condition": {
-                        "minSkyLight": 8,
-                        "maxSkyLight": 15,
-                        "biomes": [
-                              "#cobblemon:is_swamp"
-                        ],
-                        "isRaining": false
-                  },
-                  "id": "goomy-2"
-            },
-            {
-                  "pokemon": "goomy region_bias=hisui",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "5-30",
-                  "weight": 9.0,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_dripstone",
-                              "#cobblemon:is_lush"
-                        ]
-                  },
-                  "id": "goomy-hisui-3"
-            },
-            {
-                  "pokemon": "goomy region_bias=hisui",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "5-30",
-                  "weight": 9.0,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_overworld"
-                        ],
-                        "neededNearbyBlocks": [
-                              "#minecraft:water"
-                        ]
-                  },
-                  "id": "goomy-hisui-4"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "goomy-1",
+            "pokemon": "goomy",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "5-30",
+            "weight": 7.5,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isRaining": true
             }
-      ]
+        },
+        {
+            "id": "goomy-2",
+            "pokemon": "goomy",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "5-30",
+            "weight": 6.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ],
+                "isRaining": false
+            },
+            "anticondition": {
+                "isSlimeChunk": true
+            }
+        },
+        {
+            "id": "goomy-4",
+            "pokemon": "goomy",
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "ultra-rare",
+            "level": "5-30",
+            "weight": 6.0,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_swamp"
+                ]
+            },
+            "anticondition": {
+                "isSlimeChunk": true
+            }
+        },
+        {
+            "id": "goomy-hisui-7",
+            "pokemon": "goomy region_bias=hisui",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "5-30",
+            "weight": 7.5,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_dripstone",
+                    "#cobblemon:is_lush"
+                ]
+            }
+        },
+        {
+            "id": "goomy-hisui-8",
+            "pokemon": "goomy region_bias=hisui",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "5-30",
+            "weight": 6.0,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "#minecraft:water"
+                ]
+            },
+            "anticondition": {
+                "isSlimeChunk": true,
+                "biomes": [
+                    "#cobblemon:is_dripstone",
+                    "#cobblemon:is_lush"
+                ]
+            }
+        },
+        {
+            "id": "deeper-goomy-1",
+            "pokemon": "goomy",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "19-42",
+            "weight": 3.5,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:deeplands"
+                ]
+            }
+        },
+        {
+            "id": "deeper-goomy-2",
+            "pokemon": "goomy",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "19-42",
+            "weight": 8.26,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:blooming_caverns"
+                ]
+            }
+        }
+    ]
 }

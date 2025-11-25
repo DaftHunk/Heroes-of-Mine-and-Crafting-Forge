@@ -1,51 +1,87 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "hydreigon",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "rare",
-                  "level": "64-69",
-                  "weight": 0.1,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_deep_dark"
-                        ]
-                  },
-                  "id": "hydreigon-1"
-            },
-            {
-                  "pokemon": "hydreigon",
-                  "presets": [
-                        "natural"
-                  ],
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "64-69",
-                  "weight": 0.1,
-                  "condition": {
-                        "minSkyLight": 0,
-                        "maxSkyLight": 7,
-                        "biomes": [
-                              "#cobblemon:is_overworld"
-                        ],
-                        "maxY": 0
-                  },
-                  "anticondition": {
-                        "biomes": [
-                              "#cobblemon:is_deep_dark"
-                        ]
-                  },
-                  "id": "hydreigon-2"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "hydreigon-1",
+            "pokemon": "hydreigon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "64-69",
+            "weight": 0.25,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
+                ]
             }
-      ]
+        },
+        {
+            "id": "hydreigon-2",
+            "pokemon": "hydreigon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "64-69",
+            "weight": 0.4,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "maxY": 0
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
+                ]
+            }
+        },
+        {
+            "id": "hydreigon-3",
+            "pokemon": "hydreigon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "64-69",
+            "weight": 0.25,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": [
+                    "#aether:is_aether"
+                ]
+            }
+        },
+        {
+            "id": "deeper-hydreigon-1",
+            "pokemon": "hydreigon",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "64-81",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:deeplands"
+                ]
+            }
+        }
+    ]
 }

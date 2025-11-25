@@ -1,26 +1,41 @@
 {
-      "enabled": true,
-      "neededInstalledMods": [],
-      "neededUninstalledMods": [],
-      "spawns": [
-            {
-                  "pokemon": "walkingwake",
-                  "type": "pokemon",
-                  "context": "grounded",
-                  "bucket": "ultra-rare",
-                  "level": "50-70",
-                  "weight": 0.5,
-                  "condition": {
-                        "biomes": [
-                              "#cobblemon:is_beach",
-                              "#cobblemon:is_coast"
-                        ],
-                        "timeRange": "morning",
-                        "neededBaseBlocks": [
-                              "minecraft:sand"
-                        ]
-                  },
-                  "id": "walkingwake-1"
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "deeper-walkingwake-1",
+            "pokemon": "walkingwake",
+            "presets": [
+                "deep_dark"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "65-80",
+            "weight": 3.15,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:blooming_caverns"
+                ]
             }
-      ]
+        },
+        {
+            "id": "deeper-walkingwake-2",
+            "pokemon": "walkingwake",
+            "presets": [
+                "water"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "ultra-rare",
+            "level": "65-80",
+            "weight": 3.15,
+            "condition": {
+                "biomes": [
+                    "deeperdarker:blooming_caverns"
+                ]
+            }
+        }
+    ]
 }
