@@ -1,0 +1,7 @@
+{
+  "parent": "eclipses_cobblebadges:custom/badgebox",
+  "textures": {
+    "0": "eclipses_cobblebadges:block/kantoboxbb",
+    "particle": "eclipses_cobblebadges:item/kantobox"
+  }
+}

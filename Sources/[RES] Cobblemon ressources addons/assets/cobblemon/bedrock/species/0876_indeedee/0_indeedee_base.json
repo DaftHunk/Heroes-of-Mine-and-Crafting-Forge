@@ -1,0 +1,26 @@
+
+{
+  "species": "cobblemon:indeedee",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:substitute",
+      "model": "cobblemon:cutout.geo",
+      "texture": "cobblemon:textures/pokemon/indeedee.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+	"layers": [
+			{
+			  "name": "shinyoverlay",
+			  "emissive": true,
+			  "texture": "cobblemon:textures/pokemon/shiny.png"
+			}
+		]
+    }
+  ]
+}
