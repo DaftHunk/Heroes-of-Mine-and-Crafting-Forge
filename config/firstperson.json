@@ -156,7 +156,10 @@
     "musketmod:musket",
     "musketmod:musket_with_bayonet",
     "musketmod:musket_with_scope",
-    "musketmod:pistol"
+    "musketmod:pistol",
+    "tinkers_things:shortbow",
+    "tconstruct:longbow",
+    "magistuarmory:longbow"
   ],
   "autoToggleModItems": [
     "exposure:camera",

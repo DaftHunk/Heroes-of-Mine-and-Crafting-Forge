@@ -5,7 +5,7 @@
 	#If you choose to disable this, vertical movement can still be achieved via dedicated keybindings.
 	camera_driven_flight = true
 	#When mounting and dismounting a dragon, should the camera automatically switch third-person perspectives?
-	third_person_on_mount = true
+	third_person_on_mount = false
 
 #The values that define the offset of the camera position when riding a dragon in the third person camera.
 [camera_offsets]
