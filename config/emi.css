@@ -108,7 +108,7 @@
 	/**
 	 * Whether the recipe tree button should be visible.
 	 */
-	recipe-tree-button-visibility: hidden;
+	recipe-tree-button-visibility: auto;
 
 	/**
 	 * The maximum height the recipe screen will grow to be if space is available in
@@ -349,7 +349,7 @@
 	/**
 	 * Display the recipe tree for a given stack.
 	 */
-	view-stack-tree: "key.keyboard.unknown";
+	view-stack-tree: "key.keyboard.g";
 
 	/**
 	 * Display the recipe tree.

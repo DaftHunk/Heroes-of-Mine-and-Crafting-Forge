@@ -10,6 +10,9 @@
 		"scguns:hive",
 		"scguns:dissident", 
 		"scguns:swarm",
+		"scguns:praetor",
+		"scguns:sulfurhead",	
+		"scguns:finforcer",
 		"crabbersdelight:crab",
 		"mowziesmobs:lantern",
 		"born_in_chaos_v1:maggot",
@@ -28,7 +31,10 @@
 		"cnb:yeti",
 		"cnb:lizard",
 		"cnb:sporeling",
-		"cnb:cactem"
+		"cnb:cactem",
+		"illagerinvasion:provoker",
+		"illagerinvasion:archivist",
+		"illagerinvasion:necromancer"
 	],
     "when": "onjoin",
     "result": "deny"
@@ -39,6 +45,11 @@
 		"scguns:cog_knight", 
 		"scguns:sky_carrier",
 		"scguns:supply_scamp",
+		"scguns:trauma_unit",
+		"scguns:subjugator",
+		"scguns:adjudicator",
+		"scguns:viventrum",
+		"scguns:scampler",
 		"born_in_chaos_v1:baby_skeleton",
 		"born_in_chaos_v1:siamese_skeletons",
 		"born_in_chaos_v1:zombie_clown",
@@ -57,9 +68,7 @@
 		"born_in_chaos_v1:nightmare_stalker",		
 		"born_in_chaos_v1:missioner",
 		"born_in_chaos_v1:krampus_henchman",
-		"born_in_chaos_v1:krampus",
-		"scguns:sulfurhead",
-		"scguns:trauma_unit"
+		"born_in_chaos_v1:krampus"		
 	],
 	"when": "onjoin",
 	"spawntype": ["natural", "chunk_generation"],

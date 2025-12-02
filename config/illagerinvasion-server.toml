@@ -17,7 +17,7 @@
 
 [necromancer]
 	#Does this illager take part in village raids.
-	participate_in_raids = true
+	participate_in_raids = false
 
 [inquisitor]
 	#Does this illager take part in village raids.
@@ -25,11 +25,11 @@
 
 [provoker]
 	#Does this illager take part in village raids.
-	participate_in_raids = true
+	participate_in_raids = false
 
 [archivist]
 	#Does this illager take part in village raids.
-	participate_in_raids = true
+	participate_in_raids = false
 
 [marauder]
 	#Does this illager take part in village raids.
