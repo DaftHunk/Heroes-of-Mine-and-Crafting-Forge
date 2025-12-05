@@ -186,7 +186,7 @@
 	#Adds an overlay to projectile weapons in gui displaying currently selected ammo
 	projectile_weapon_overlay = true
 	#Show a slime overlay when you hit an entity with a slimeball
-	overlay = true
+	overlay = false
 	#Makes enderman heads use vanilla texture. Enable for texture pack support
 	enderman_head_texture_pack_support = true
 
