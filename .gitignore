@@ -63,3 +63,5 @@ config/crash_assistant/modlist.json
 .mixin.out/class/net/minecraft/world/inventory/AbstractFurnaceMenu.class
 
 usercache.json
+
+config/blockswap/known_states/
