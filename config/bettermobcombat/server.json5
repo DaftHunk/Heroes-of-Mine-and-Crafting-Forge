@@ -63,7 +63,7 @@
 	   Use a JSON validator such as https://jsonlint.com/ to ensure your JSON strings are correct.
 	*/
 	"mob_relations": {
-		"guardvillagers:guard": "{\"guardvillagers:guard\":\"NEUTRAL\",\"minecraft:villager\":\"NEUTRAL\",\"minecraft:iron_golem\":\"NEUTRAL\",\"recruits:recruit\":\"NEUTRAL\",\"recruits:bowman\":\"NEUTRAL\",\"recruits:recruit_shieldman\":\"NEUTRAL\",\"recruits:nomad\":\"NEUTRAL\",\"recruits:horseman\":\"NEUTRAL\"}",
+		"guardvillagers:guard": "{\"guardvillagers:guard\":\"NEUTRAL\",\"minecraft:villager\":\"NEUTRAL\",\"minecraft:iron_golem\":\"NEUTRAL\"}",
 		"recruits:recruit": "{\"guardvillagers:guard\":\"NEUTRAL\",\"minecraft:villager\":\"NEUTRAL\",\"minecraft:iron_golem\":\"NEUTRAL\",\"recruits:recruit\":\"NEUTRAL\",\"recruits:bowman\":\"NEUTRAL\",\"recruits:recruit_shieldman\":\"NEUTRAL\",\"recruits:nomad\":\"NEUTRAL\",\"recruits:horseman\":\"NEUTRAL\"}",
 		"recruits:bowman": "{\"guardvillagers:guard\":\"NEUTRAL\",\"minecraft:villager\":\"NEUTRAL\",\"minecraft:iron_golem\":\"NEUTRAL\",\"recruits:recruit\":\"NEUTRAL\",\"recruits:bowman\":\"NEUTRAL\",\"recruits:recruit_shieldman\":\"NEUTRAL\",\"recruits:nomad\":\"NEUTRAL\",\"recruits:horseman\":\"NEUTRAL\"}",
 		"recruits:recruit_shieldman": "{\"guardvillagers:guard\":\"NEUTRAL\",\"minecraft:villager\":\"NEUTRAL\",\"minecraft:iron_golem\":\"NEUTRAL\",\"recruits:recruit\":\"NEUTRAL\",\"recruits:bowman\":\"NEUTRAL\",\"recruits:recruit_shieldman\":\"NEUTRAL\",\"recruits:nomad\":\"NEUTRAL\",\"recruits:horseman\":\"NEUTRAL\"}",

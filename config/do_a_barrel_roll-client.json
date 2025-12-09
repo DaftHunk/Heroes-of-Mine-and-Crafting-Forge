@@ -12,7 +12,7 @@
       "disable_when_submerged": true
     },
     "hud": {
-      "show_horizon": false
+      "show_horizon": true
     },
     "banking": {
       "enable_banking": true,

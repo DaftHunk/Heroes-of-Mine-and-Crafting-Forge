@@ -77,11 +77,11 @@
             "spawnType": "overworld"
         },
         "GeckotoaSpawnSettings": {
-            "shouldSpawn": true,
+            "shouldSpawn": false,
             "spawnDebug": false,
             "spawnYCeiling": 50000,
             "spawnYFloor": 60,
-            "spawnRandomChance": 10,
+            "spawnRandomChance": 0,
             "chunkFreq": 3,
             "chunkOffset": 1,
             "spawnType": "subterranean",

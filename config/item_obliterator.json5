@@ -92,7 +92,16 @@
 	"adorablehamsterpets:sunflower_seeds",	
 	"adorablehamsterpets:sunflower_block",
 	"adorablehamsterpets:wild_green_bean_bush",
-	"adorablehamsterpets:wild_cucumber_bush"
+	"adorablehamsterpets:wild_cucumber_bush",
+	"butchery:salt_block",	
+	"butchery:salt_formation_base",
+	"butchery:salt_formation_tip",
+	"butchery:saltformationfrustum",
+	"butchery:saltformationmiddle",
+	"butchery:salt",
+	"butchery:sulfur_ore",
+	"butchery:deepslate_sulfur_ore",
+	"butchery:sulfur"
   ],
   // -----------------------------------------------------------
   // Removes an item if it contains certain nbt tag. If the whole entry (or expression) is present, the item gets removed.

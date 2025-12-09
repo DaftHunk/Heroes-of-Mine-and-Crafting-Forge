@@ -12,6 +12,8 @@
 	"Weighted Carcasses" = false
 	#Enable looting when butchering carcasses
 	"Looting Enchantment" = true
+	#Enable sulfur ore generation
+	"Sulfur Ore Generation" = false
 
 [Mobs]
 	#Enable Axolotl Carcass

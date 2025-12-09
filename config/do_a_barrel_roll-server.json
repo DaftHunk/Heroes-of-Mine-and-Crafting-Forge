@@ -1,1 +1,4 @@
-{}
+{
+  "installedTimeout": 1,
+  "kineticDamage": "HIGH_SPEED"
+}
