@@ -6,7 +6,7 @@
 	"#blockrunner:slightly_quick_blocks": 1.15,
 	"#blockrunner:quick_blocks": 1.35,
 	"#blockrunner:very_quick_blocks": 1.55,
-	"#minecraft:stone_bricks": 1.15,
+	"minecraft:dirt_path": 1.15,
 	"mcwpaths:acacia_planks_path": 1.35,
 	"mcwpaths:andesite_basket_weave_paving": 1.35,
 	"mcwpaths:andesite_clover_paving": 1.35,
