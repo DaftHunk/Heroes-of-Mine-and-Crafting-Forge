@@ -135,19 +135,6 @@
                         }
                   ],
                   "id": "trumbeak_toucannon"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "toucannon",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 28
-                        }
-                  ],
-                  "id": "trumbeak_toucannon-1"
             }
       ],
       "baseScale": 1,

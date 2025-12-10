@@ -121,21 +121,6 @@
                   "result": "seismitoad",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "drainpunch"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 36
-                        }
-                  ],
-                  "id": "palpitoad_seismitoad"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "seismitoad",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "acid",
                         "drainpunch"
                   ],
@@ -145,7 +130,7 @@
                               "minLevel": 36
                         }
                   ],
-                  "id": "palpitoad_seismitoad-1"
+                  "id": "palpitoad_seismitoad"
             }
       ],
       "baseScale": 1,

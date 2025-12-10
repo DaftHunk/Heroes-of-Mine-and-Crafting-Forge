@@ -185,7 +185,9 @@
                   "variant": "level_up",
                   "result": "blaziken",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"blazekick"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -193,21 +195,6 @@
                         }
                   ],
                   "id": "combusken_blaziken"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "blaziken",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "blazekick"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 36
-                        }
-                  ],
-                  "id": "combusken_blaziken-1"
             }
       ],
       "baseScale": 0.6,

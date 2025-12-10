@@ -192,23 +192,12 @@
                   "result": "shiftry",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "leaftornado"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:leaf_stone",
-                  "id": "nuzleaf_shiftry"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "shiftry",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
                         "leaftornado",
                         "leafblade"
                   ],
                   "requirements": [],
                   "requiredContext": "cobblemon:leaf_stone",
-                  "id": "nuzleaf_shiftry-1"
+                  "id": "nuzleaf_shiftry"
             }
       ],
       "baseScale": 1,

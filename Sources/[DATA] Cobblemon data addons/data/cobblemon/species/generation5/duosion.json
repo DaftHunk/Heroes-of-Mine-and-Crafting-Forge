@@ -164,21 +164,6 @@
                   "result": "reuniclus",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "hammerarm"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 41
-                        }
-                  ],
-                  "id": "duosion_reuniclus"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "reuniclus",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "dizzypunch",
                         "hammerarm"
                   ],
@@ -188,7 +173,7 @@
                               "minLevel": 41
                         }
                   ],
-                  "id": "duosion_reuniclus-1"
+                  "id": "duosion_reuniclus"
             }
       ],
       "baseScale": 0.75,

@@ -1862,7 +1862,7 @@
                         {
                               "variant": "item_interact",
                               "result": "raichu",
-                              "consumeHeldItem": true,
+                              "consumeHeldItem": false,
                               "learnableMoves": [
                                     "thunderpunch"
                               ],
@@ -1882,7 +1882,7 @@
                         {
                               "variant": "item_interact",
                               "result": "raichu alolan",
-                              "consumeHeldItem": true,
+                              "consumeHeldItem": false,
                               "learnableMoves": [
                                     "psychic"
                               ],
@@ -2168,24 +2168,8 @@
             },
             {
                   "variant": "item_interact",
-                  "result": "raichu",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "thunderpunch"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "biome",
-                              "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
-                        }
-                  ],
-                  "requiredContext": "cobblemon:thunder_stone",
-                  "id": "pikachu_raichu-1"
-            },
-            {
-                  "variant": "item_interact",
                   "result": "raichu alolan",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "psychic"
                   ],

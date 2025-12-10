@@ -144,17 +144,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:ice_stone",
                   "id": "crabrawler_crabominable"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "crabominable",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "icepunch"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:ice_stone",
-                  "id": "crabrawler_crabominable-1"
             }
       ],
       "baseScale": 0.6,

@@ -230,21 +230,12 @@
                   "variant": "item_interact",
                   "result": "togekiss",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"airslash"
+				  ],
                   "requirements": [],
                   "requiredContext": "cobblemon:shiny_stone",
                   "id": "togetic_togekiss"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "togekiss",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "airslash"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:shiny_stone",
-                  "id": "togetic_togekiss-1"
             }
       ],
       "baseScale": 1,

@@ -160,21 +160,6 @@
                   "result": "altaria",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "dragonpulse"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 35
-                        }
-                  ],
-                  "id": "swablu_altaria"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "altaria",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "dragonbreath",
                         "dragonpulse"
                   ],
@@ -184,7 +169,7 @@
                               "minLevel": 35
                         }
                   ],
-                  "id": "swablu_altaria-1"
+                  "id": "swablu_altaria"
             }
       ],
       "baseScale": 1,

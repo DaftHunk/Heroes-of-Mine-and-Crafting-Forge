@@ -193,7 +193,9 @@
                   "variant": "level_up",
                   "result": "ariados",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"swordsdance"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -201,21 +203,6 @@
                         }
                   ],
                   "id": "spinarak_ariados"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "ariados",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "swordsdance"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 22
-                        }
-                  ],
-                  "id": "spinarak_ariados-1"
             }
       ],
       "baseScale": 0.6,

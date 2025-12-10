@@ -188,21 +188,6 @@
                   "result": "sceptile",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "dualchop"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 36
-                        }
-                  ],
-                  "id": "grovyle_sceptile"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "sceptile",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "dualchop",
                         "leafblade"
                   ],
@@ -212,7 +197,7 @@
                               "minLevel": 36
                         }
                   ],
-                  "id": "grovyle_sceptile-1"
+                  "id": "grovyle_sceptile"
             }
       ],
       "baseScale": 0.75,

@@ -210,7 +210,9 @@
                   "variant": "level_up",
                   "result": "dewgong",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"sheercold"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -218,21 +220,6 @@
                         }
                   ],
                   "id": "seel_dewgong"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "dewgong",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "sheercold"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 34
-                        }
-                  ],
-                  "id": "seel_dewgong-1"
             }
       ],
       "baseScale": 1,

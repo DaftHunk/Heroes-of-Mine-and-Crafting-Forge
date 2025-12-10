@@ -181,19 +181,6 @@
                   "variant": "level_up",
                   "result": "gabite",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 24
-                        }
-                  ],
-                  "id": "gible_gabite"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "gabite",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "dualchop"
                   ],
@@ -203,7 +190,7 @@
                               "minLevel": 24
                         }
                   ],
-                  "id": "gible_gabite-1"
+                  "id": "gible_gabite"
             }
       ],
       "baseScale": 0.75,

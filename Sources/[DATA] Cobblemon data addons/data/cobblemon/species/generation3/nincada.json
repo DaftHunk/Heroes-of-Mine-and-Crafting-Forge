@@ -163,24 +163,6 @@
                         }
                   ],
                   "id": "nincada_ninjask"
-            },
-            {
-                  "shedder": "shedinja",
-                  "variant": "level_up",
-                  "result": "ninjask",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "doubleteam",
-                        "screech",
-                        "furycutter"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 20
-                        }
-                  ],
-                  "id": "nincada_ninjask-1"
             }
       ],
       "baseScale": 0.45,

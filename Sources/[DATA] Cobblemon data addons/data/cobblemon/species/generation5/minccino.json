@@ -155,17 +155,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:shiny_stone",
                   "id": "minccino_cinccino"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "cinccino",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "tailslap"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:shiny_stone",
-                  "id": "minccino_cinccino-1"
             }
       ],
       "baseScale": 0.4,

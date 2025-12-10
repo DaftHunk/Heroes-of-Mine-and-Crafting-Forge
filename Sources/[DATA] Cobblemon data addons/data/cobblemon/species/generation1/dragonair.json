@@ -214,21 +214,6 @@
                   "result": "dragonite",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "hurricane"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 55
-                        }
-                  ],
-                  "id": "dragonair_dragonite"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "dragonite",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "wingattack",
                         "hurricane"
                   ],
@@ -238,7 +223,7 @@
                               "minLevel": 55
                         }
                   ],
-                  "id": "dragonair_dragonite-1"
+                  "id": "dragonair_dragonite"
             }
       ],
       "baseScale": 0.9,

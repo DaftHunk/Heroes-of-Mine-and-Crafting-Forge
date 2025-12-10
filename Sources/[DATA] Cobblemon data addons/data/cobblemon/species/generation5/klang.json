@@ -150,19 +150,6 @@
                   "variant": "level_up",
                   "result": "klinklang",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 49
-                        }
-                  ],
-                  "id": "klang_klinklang"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "klinklang",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "magneticflux"
                   ],
@@ -172,7 +159,7 @@
                               "minLevel": 49
                         }
                   ],
-                  "id": "klang_klinklang-1"
+                  "id": "klang_klinklang"
             }
       ],
       "baseScale": 1,

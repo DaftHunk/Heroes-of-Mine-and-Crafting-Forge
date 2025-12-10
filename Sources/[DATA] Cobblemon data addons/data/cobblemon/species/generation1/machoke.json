@@ -207,19 +207,11 @@
                   "variant": "trade",
                   "result": "machamp",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "id": "machoke_machamp"
-            },
-            {
-                  "variant": "trade",
-                  "result": "machamp",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "strength"
                   ],
                   "requirements": [],
-                  "id": "machoke_machamp-1"
+                  "id": "machoke_machamp"
             }
       ],
       "baseScale": 1,

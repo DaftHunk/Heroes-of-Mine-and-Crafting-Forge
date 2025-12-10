@@ -724,21 +724,6 @@
                   "result": "persian",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "powergem"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 28
-                        }
-                  ],
-                  "id": "meowth_persian"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "persian",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "swift",
                         "powergem"
                   ],
@@ -748,7 +733,7 @@
                               "minLevel": 28
                         }
                   ],
-                  "id": "meowth_persian-1"
+                  "id": "meowth_persian"
             }
       ],
       "aspects": [],

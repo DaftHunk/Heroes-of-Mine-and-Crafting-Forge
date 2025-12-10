@@ -344,17 +344,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:fire_stone",
                   "id": "growlithe_arcanine"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "arcanine",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "extremespeed"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:fire_stone",
-                  "id": "growlithe_arcanine-1"
             }
       ],
       "baseScale": 0.75,

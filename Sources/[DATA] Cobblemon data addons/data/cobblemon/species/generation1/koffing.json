@@ -195,21 +195,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "weezing galarian",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "doublehit"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 35
-                        }
-                  ],
-                  "id": "koffing_weezing"
-            },
-            {
-                  "variant": "level_up",
                   "result": "weezing",
                   "consumeHeldItem": false,
                   "learnableMoves": [
@@ -225,7 +210,7 @@
                               "biomeAnticondition": "#cobblemon:evolution/regional/koffing_galarbiome"
                         }
                   ],
-                  "id": "koffing_weezing-1"
+                  "id": "koffing_weezing"
             },
             {
                   "variant": "level_up",

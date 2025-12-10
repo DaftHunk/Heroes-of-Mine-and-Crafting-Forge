@@ -136,21 +136,6 @@
                   "result": "fletchinder",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "flamecharge"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 17
-                        }
-                  ],
-                  "id": "fletchling_fletchinder"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "fletchinder",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "ember",
                         "flamecharge"
                   ],
@@ -160,7 +145,7 @@
                               "minLevel": 17
                         }
                   ],
-                  "id": "fletchling_fletchinder-1"
+                  "id": "fletchling_fletchinder"
             }
       ],
       "baseScale": 0.6,

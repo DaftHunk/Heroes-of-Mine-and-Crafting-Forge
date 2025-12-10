@@ -147,7 +147,7 @@
             {
                   "variant": "item_interact",
                   "result": "escavalier",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [],
                   "requirements": [],
                   "requiredContext": "minecraft:iron_helmet",

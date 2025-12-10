@@ -185,22 +185,9 @@
                   "id": "duraludon_archaludon"
             },
             {
-                  "variant": "level_up",
-                  "result": "archaludon",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "held_item",
-                              "itemCondition": "cobblemon:metal_coat"
-                        }
-                  ],
-                  "id": "duraludon_archaludon-1"
-            },
-            {
                   "variant": "item_interact",
                   "result": "archaludon",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "electroshot"
                   ],

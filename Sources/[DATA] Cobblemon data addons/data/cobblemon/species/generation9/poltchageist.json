@@ -130,7 +130,7 @@
             {
                   "variant": "item_interact",
                   "result": "sinistcha matcha_authenticity=unremarkable",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "matchagotcha"
                   ],

@@ -170,20 +170,7 @@
                         }
                   ],
                   "id": "ogerpon_ogerponrock"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "ogerpon teal=true",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "held_item",
-                              "itemCondition": "minecraft:cyan_dye"
-                        }
-                  ],
-                  "id": "ogerpon_ogerponteal-1"
-            },
+            },            
             {
                   "variant": "level_up",
                   "result": "ogerpon wellspring=true",

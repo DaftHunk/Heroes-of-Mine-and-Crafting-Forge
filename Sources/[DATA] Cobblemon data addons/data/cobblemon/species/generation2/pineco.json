@@ -200,41 +200,6 @@
                   "result": "forretress",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "heavyslam"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 31
-                        }
-                  ],
-                  "id": "pineco_forretress"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "forretress shulker",
-                  "consumeHeldItem": true,
-                  "permanent": true,
-                  "learnableMoves": [
-                        "heavyslam"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 31
-                        },
-                        {
-                              "variant": "held_item",
-                              "itemCondition": "minecraft:shulker_shell"
-                        }
-                  ],
-                  "id": "pineco_forretress_shulker"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "forretress",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "mirrorshot",
                         "autotomize",
                         "heavyslam"
@@ -245,7 +210,7 @@
                               "minLevel": 31
                         }
                   ],
-                  "id": "pineco_forretress-1"
+                  "id": "pineco_forretress"
             },
             {
                   "variant": "level_up",

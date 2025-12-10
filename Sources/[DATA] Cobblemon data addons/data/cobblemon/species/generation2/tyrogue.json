@@ -176,62 +176,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "hitmonlee",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 20
-                        },
-                        {
-                              "variant": "stat_compare",
-                              "highStat": "atk",
-                              "lowStat": "def"
-                        }
-                  ],
-                  "id": "tyrogue_hitmonlee"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "hitmonchan",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 20
-                        },
-                        {
-                              "variant": "stat_compare",
-                              "highStat": "def",
-                              "lowStat": "atk"
-                        }
-                  ],
-                  "id": "tyrogue_hitmonchan"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "hitmontop",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "triplekick"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 20
-                        },
-                        {
-                              "variant": "stat_equal",
-                              "statOne": "atk",
-                              "statTwo": "def"
-                        }
-                  ],
-                  "id": "tyrogue_hitmontop"
-            },
-            {
-                  "variant": "level_up",
                   "result": "hitmonchan",
                   "consumeHeldItem": false,
                   "learnableMoves": [
@@ -249,7 +193,7 @@
                               "lowStat": "attack"
                         }
                   ],
-                  "id": "tyrogue_hitmonchan-1"
+                  "id": "tyrogue_hitmonchan"
             },
             {
                   "variant": "level_up",
@@ -270,7 +214,7 @@
                               "lowStat": "defence"
                         }
                   ],
-                  "id": "tyrogue_hitmonlee-1"
+                  "id": "tyrogue_hitmonlee"
             },
             {
                   "variant": "level_up",
@@ -291,7 +235,7 @@
                               "statTwo": "defence"
                         }
                   ],
-                  "id": "tyrogue_hitmontop-1"
+                  "id": "tyrogue_hitmontop"
             }
       ],
       "baseScale": 0.5,

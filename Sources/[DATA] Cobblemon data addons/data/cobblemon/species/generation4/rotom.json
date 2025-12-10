@@ -755,7 +755,7 @@
             {
                   "variant": "item_interact",
                   "result": "rotom appliance=fan",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "airslash"
                   ],
@@ -766,7 +766,7 @@
             {
                   "variant": "item_interact",
                   "result": "rotom appliance=frost",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "blizzard"
                   ],
@@ -777,7 +777,7 @@
             {
                   "variant": "item_interact",
                   "result": "rotom appliance=heat",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "overheat"
                   ],
@@ -788,7 +788,7 @@
             {
                   "variant": "item_interact",
                   "result": "rotom appliance=mow",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "leafstorm"
                   ],
@@ -799,7 +799,7 @@
             {
                   "variant": "item_interact",
                   "result": "rotom appliance=wash",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "hydropump"
                   ],

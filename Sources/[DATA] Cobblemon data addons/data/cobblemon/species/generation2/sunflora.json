@@ -204,7 +204,7 @@
                   }
             ]
       },
-      "implemented": true,
+      "implemented": false,
       "target": "cobblemon:sunflora",
       "forms": [],
       "behaviour": {

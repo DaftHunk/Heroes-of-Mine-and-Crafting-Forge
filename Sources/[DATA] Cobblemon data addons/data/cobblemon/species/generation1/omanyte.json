@@ -214,21 +214,6 @@
                   "result": "omastar",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "crunch"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 40
-                        }
-                  ],
-                  "id": "omanyte_omastar"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "omastar",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "spikecannon",
                         "crunch"
                   ],
@@ -238,7 +223,7 @@
                               "minLevel": 40
                         }
                   ],
-                  "id": "omanyte_omastar-1"
+                  "id": "omanyte_omastar"
             }
       ],
       "baseScale": 1.1,

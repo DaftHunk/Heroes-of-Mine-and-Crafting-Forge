@@ -179,15 +179,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:water_stone",
                   "id": "panpour_simipour"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "simipour",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:water_stone",
-                  "id": "panpour_simipour-1"
             }
       ],
       "baseScale": 0.6,

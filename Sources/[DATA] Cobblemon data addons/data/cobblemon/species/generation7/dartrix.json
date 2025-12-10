@@ -445,21 +445,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "decidueye",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "spiritshackle"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 34
-                        }
-                  ],
-                  "id": "dartrix_decidueye"
-            },
-            {
-                  "variant": "level_up",
                   "result": "decidueye hisuian",
                   "consumeHeldItem": false,
                   "learnableMoves": [
@@ -494,7 +479,7 @@
                               "biomeAnticondition": "#cobblemon:evolution/regional/dartrix_hisuibiome"
                         }
                   ],
-                  "id": "dartrix_decidueye-1"
+                  "id": "dartrix_decidueye"
             },
             {
                   "variant": "level_up",

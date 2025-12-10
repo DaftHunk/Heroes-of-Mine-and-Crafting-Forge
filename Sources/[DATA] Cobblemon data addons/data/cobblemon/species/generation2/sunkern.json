@@ -167,15 +167,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:sun_stone",
                   "id": "sunkern_sunflora"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "sunflora",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:sun_stone",
-                  "id": "sunkern_sunflora-1"
             }
       ],
       "baseScale": 0.75,
@@ -209,7 +200,7 @@
                   }
             ]
       },
-      "implemented": true,
+      "implemented": false,
       "target": "cobblemon:sunkern",
       "forms": [],
       "behaviour": {

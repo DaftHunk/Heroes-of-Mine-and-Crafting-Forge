@@ -162,15 +162,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:dusk_stone",
                   "id": "lampent_chandelure"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "chandelure",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:dusk_stone",
-                  "id": "lampent_chandelure-1"
             }
       ],
       "baseScale": 1,

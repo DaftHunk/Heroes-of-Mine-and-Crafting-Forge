@@ -461,19 +461,6 @@
                   "variant": "level_up",
                   "result": "muk",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 38
-                        }
-                  ],
-                  "id": "grimer_muk"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "muk",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "venomdrench"
                   ],
@@ -483,7 +470,7 @@
                               "minLevel": 38
                         }
                   ],
-                  "id": "grimer_muk-1"
+                  "id": "grimer_muk"
             }
       ],
       "aspects": [],

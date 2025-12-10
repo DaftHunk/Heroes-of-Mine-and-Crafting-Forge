@@ -147,21 +147,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "braviary hisuian",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "esperwing"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 54
-                        }
-                  ],
-                  "id": "rufflet_braviary"
-            },
-            {
-                  "variant": "level_up",
                   "result": "braviary",
                   "consumeHeldItem": false,
                   "learnableMoves": [
@@ -177,7 +162,7 @@
                               "biomeAnticondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
                         }
                   ],
-                  "id": "rufflet_braviary-1"
+                  "id": "rufflet_braviary"
             },
             {
                   "variant": "level_up",

@@ -75,25 +75,6 @@
                         }
                   ],
                   "id": "snom_frosmoth"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "frosmoth",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "icywind"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "friendship",
-                              "amount": 160
-                        },
-                        {
-                              "variant": "time_range",
-                              "range": "night"
-                        }
-                  ],
-                  "id": "snom_frosmoth-1"
             }
       ],
       "baseScale": 1,

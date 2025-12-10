@@ -217,7 +217,7 @@
                         {
                               "variant": "item_interact",
                               "result": "slowbro galarian",
-                              "consumeHeldItem": true,
+                              "consumeHeldItem": false,
                               "learnableMoves": [
                                     "shellsidearm"
                               ],
@@ -228,7 +228,7 @@
                         {
                               "variant": "item_interact",
                               "result": "slowking galarian",
-                              "consumeHeldItem": true,
+                              "consumeHeldItem": false,
                               "learnableMoves": [
                                     "eeriespell"
                               ],
@@ -523,7 +523,9 @@
                   "variant": "level_up",
                   "result": "slowbro",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"withdraw"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -544,21 +546,6 @@
                         }
                   ],
                   "id": "slowpoke_slowking"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "slowbro",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "withdraw"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 37
-                        }
-                  ],
-                  "id": "slowpoke_slowbro-1"
             }
       ],
       "baseScale": 0.75,

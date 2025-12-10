@@ -218,6 +218,7 @@
                   "result": "piloswine",
                   "consumeHeldItem": false,
                   "learnableMoves": [
+						"furyattack",
                         "icefang"
                   ],
                   "requirements": [
@@ -227,22 +228,6 @@
                         }
                   ],
                   "id": "swinub_piloswine"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "piloswine",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "furyattack",
-                        "icefang"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 33
-                        }
-                  ],
-                  "id": "swinub_piloswine-1"
             }
       ],
       "baseScale": 1.1,

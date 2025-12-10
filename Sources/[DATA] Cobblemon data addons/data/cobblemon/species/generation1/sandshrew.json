@@ -457,19 +457,6 @@
                   "variant": "level_up",
                   "result": "sandslash",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 22
-                        }
-                  ],
-                  "id": "sandshrew_sandslash"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "sandslash",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "crushclaw"
                   ],
@@ -479,7 +466,7 @@
                               "minLevel": 22
                         }
                   ],
-                  "id": "sandshrew_sandslash-1"
+                  "id": "sandshrew_sandslash"
             }
       ],
       "baseScale": 0.7,

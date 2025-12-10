@@ -231,21 +231,6 @@
                   "result": "kadabra",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "confusion"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 16
-                        }
-                  ],
-                  "id": "abra_kadabra"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "kadabra",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "kinesis",
                         "confusion"
                   ],
@@ -255,7 +240,7 @@
                               "minLevel": 16
                         }
                   ],
-                  "id": "abra_kadabra-1"
+                  "id": "abra_kadabra"
             }
       ],
       "baseScale": 0.85,

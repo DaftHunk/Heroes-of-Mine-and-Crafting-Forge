@@ -160,19 +160,6 @@
                         }
                   ],
                   "id": "shaymin_shayminsky"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "shaymin sky=true",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "held_item",
-                              "itemCondition": "minecraft:spore_blossom"
-                        }
-                  ],
-                  "id": "shaymin_shayminsky-1"
             }
       ],
       "forms": [

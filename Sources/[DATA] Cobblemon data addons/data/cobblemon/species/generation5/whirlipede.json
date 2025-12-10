@@ -126,19 +126,6 @@
                   "variant": "level_up",
                   "result": "scolipede",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 30
-                        }
-                  ],
-                  "id": "whirlipede_scolipede"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "scolipede",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "batonpass"
                   ],
@@ -148,7 +135,7 @@
                               "minLevel": 30
                         }
                   ],
-                  "id": "whirlipede_scolipede-1"
+                  "id": "whirlipede_scolipede"
             }
       ],
       "baseScale": 0.9,

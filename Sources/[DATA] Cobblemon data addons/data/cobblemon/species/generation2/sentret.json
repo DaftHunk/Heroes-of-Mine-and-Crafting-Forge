@@ -198,7 +198,9 @@
                   "variant": "level_up",
                   "result": "furret",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"agility"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -206,21 +208,6 @@
                         }
                   ],
                   "id": "sentret_furret"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "furret",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "agility"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 15
-                        }
-                  ],
-                  "id": "sentret_furret-1"
             }
       ],
       "baseScale": 0.6,

@@ -223,7 +223,9 @@
                   "variant": "level_up",
                   "result": "mamoswine",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"doublehit"
+				  ],
                   "requirements": [
                         {
                               "variant": "has_move",
@@ -231,21 +233,6 @@
                         }
                   ],
                   "id": "piloswine_mamoswine"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "mamoswine",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "doublehit"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "has_move",
-                              "move": "ancientpower"
-                        }
-                  ],
-                  "id": "piloswine_mamoswine-1"
             }
       ],
       "baseScale": 1,

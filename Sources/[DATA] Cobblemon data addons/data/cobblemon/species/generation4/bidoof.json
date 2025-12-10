@@ -168,7 +168,9 @@
                   "variant": "level_up",
                   "result": "bibarel",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"watergun"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -176,21 +178,6 @@
                         }
                   ],
                   "id": "bidoof_bibarel"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "bibarel",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "watergun"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 15
-                        }
-                  ],
-                  "id": "bidoof_bibarel-1"
             }
       ],
       "baseScale": 0.6,

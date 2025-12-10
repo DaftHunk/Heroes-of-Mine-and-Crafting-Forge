@@ -150,15 +150,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:sun_stone",
                   "id": "cottonee_whimsicott"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "whimsicott",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:sun_stone",
-                  "id": "cottonee_whimsicott-1"
             }
       ],
       "baseScale": 0.8,

@@ -118,15 +118,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:sun_stone",
                   "id": "helioptile_heliolisk"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "heliolisk",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:sun_stone",
-                  "id": "helioptile_heliolisk-1"
             }
       ],
       "baseScale": 1,

@@ -118,19 +118,6 @@
                   "variant": "level_up",
                   "result": "steenee",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 18
-                        }
-                  ],
-                  "id": "bounsweet_steenee"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "steenee",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "doubleslap"
                   ],
@@ -140,7 +127,7 @@
                               "minLevel": 18
                         }
                   ],
-                  "id": "bounsweet_steenee-1"
+                  "id": "bounsweet_steenee"
             }
       ],
       "baseScale": 0.8,

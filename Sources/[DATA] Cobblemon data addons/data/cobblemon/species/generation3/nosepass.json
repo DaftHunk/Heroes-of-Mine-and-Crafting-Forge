@@ -191,21 +191,12 @@
                   "variant": "item_interact",
                   "result": "probopass",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"triattack"
+				  ],
                   "requirements": [],
                   "requiredContext": "cobblemon:thunder_stone",
                   "id": "nosepass_probopass"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "probopass",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "triattack"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:thunder_stone",
-                  "id": "nosepass_probopass-1"
             }
       ],
       "baseScale": 0.8,

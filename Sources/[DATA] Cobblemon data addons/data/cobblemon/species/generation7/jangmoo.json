@@ -125,19 +125,6 @@
                   "variant": "level_up",
                   "result": "hakamoo",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 35
-                        }
-                  ],
-                  "id": "jangmoo_hakamoo"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "hakamoo",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "skyuppercut"
                   ],
@@ -147,7 +134,7 @@
                               "minLevel": 35
                         }
                   ],
-                  "id": "jangmoo_hakamoo-1"
+                  "id": "jangmoo_hakamoo"
             }
       ],
       "baseScale": 0.75,

@@ -100,41 +100,11 @@
                   ],
                   "requirements": [
                         {
-                              "variant": "has_move",
-                              "type": "dragoncheer"
-                        }
-                  ],
-                  "id": "dipplin_hydrapple"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "hydrapple",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "ficklebeam"
-                  ],
-                  "requirements": [
-                        {
                               "variant": "held_item",
                               "itemCondition": "minecraft:dragon_breath"
                         }
                   ],
-                  "id": "dipplin_hydrapple-1"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "hydrapple",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "ficklebeam"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "has_move",
-                              "move": "dragoncheer"
-                        }
-                  ],
-                  "id": "dipplin_hydrapple-2"
+                  "id": "dipplin_hydrapple"
             }
       ],
       "cannotDynamax": false,

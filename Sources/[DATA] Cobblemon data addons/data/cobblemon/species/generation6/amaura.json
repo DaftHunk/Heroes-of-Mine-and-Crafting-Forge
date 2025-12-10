@@ -156,23 +156,6 @@
                   "variant": "level_up",
                   "result": "aurorus",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 39
-                        },
-                        {
-                              "variant": "time_range",
-                              "range": "night"
-                        }
-                  ],
-                  "id": "amaura_aurorus"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "aurorus",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "freezedry"
                   ],
@@ -186,7 +169,7 @@
                               "range": "night"
                         }
                   ],
-                  "id": "amaura_aurorus-1"
+                  "id": "amaura_aurorus"
             }
       ],
       "baseScale": 1.2,

@@ -257,19 +257,11 @@
                   "variant": "trade",
                   "result": "gengar",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "id": "haunter_gengar"
-            },
-            {
-                  "variant": "trade",
-                  "result": "gengar",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "shadowpunch"
                   ],
                   "requirements": [],
-                  "id": "haunter_gengar-1"
+                  "id": "haunter_gengar"
             }
       ],
       "baseScale": 1.2,

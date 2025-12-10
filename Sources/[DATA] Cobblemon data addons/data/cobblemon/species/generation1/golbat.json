@@ -202,19 +202,6 @@
                   "variant": "level_up",
                   "result": "crobat",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "friendship",
-                              "amount": 160
-                        }
-                  ],
-                  "id": "golbat_crobat"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "crobat",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "crosspoison"
                   ],
@@ -224,7 +211,7 @@
                               "amount": 160
                         }
                   ],
-                  "id": "golbat_crobat-1"
+                  "id": "golbat_crobat"
             }
       ],
       "baseScale": 1.2,

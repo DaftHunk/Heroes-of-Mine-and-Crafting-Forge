@@ -229,7 +229,9 @@
                   "variant": "item_interact",
                   "result": "gallade",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"slash"
+				  ],
                   "requirements": [
                         {
                               "variant": "properties",
@@ -238,22 +240,6 @@
                   ],
                   "requiredContext": "cobblemon:dawn_stone",
                   "id": "kirlia_gallade"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "gallade",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "slash"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "properties",
-                              "target": "gender=male"
-                        }
-                  ],
-                  "requiredContext": "cobblemon:dawn_stone",
-                  "id": "kirlia_gallade-1"
             }
       ],
       "baseScale": 0.8,

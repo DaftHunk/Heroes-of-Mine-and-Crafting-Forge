@@ -339,15 +339,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:moon_stone",
                   "id": "jigglypuff_wigglytuff"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "wigglytuff",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:moon_stone",
-                  "id": "jigglypuff_wigglytuff-1"
             }
       ],
       "baseScale": 0.8,

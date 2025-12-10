@@ -205,7 +205,9 @@
                   "variant": "trade",
                   "result": "scizor",
                   "consumeHeldItem": true,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+                        "bulletpunch"
+                  ],
                   "requirements": [
                         {
                               "variant": "held_item",
@@ -224,32 +226,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:black_augurite",
                   "id": "scyther_kleavor"
-            },
-            {
-                  "variant": "trade",
-                  "result": "scizor",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "bulletpunch"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "held_item",
-                              "itemCondition": "cobblemon:metal_coat"
-                        }
-                  ],
-                  "id": "scyther_scizor-1"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "kleavor",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "stoneaxe"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:black_augurite",
-                  "id": "scyther_kleavor-1"
             }
       ],
       "baseScale": 0.8,

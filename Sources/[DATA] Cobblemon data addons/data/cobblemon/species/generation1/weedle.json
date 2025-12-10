@@ -70,7 +70,9 @@
                   "variant": "level_up",
                   "result": "kakuna",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"harden"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -78,21 +80,6 @@
                         }
                   ],
                   "id": "weedle_kakuna"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "kakuna",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "harden"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 7
-                        }
-                  ],
-                  "id": "weedle_kakuna-1"
             }
       ],
       "baseScale": 0.5,

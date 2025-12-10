@@ -560,7 +560,7 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "kyurem absofusion=white",
+                  "result": "kyurem white=true",
                   "consumeHeldItem": false,
                   "learnableMoves": [],
                   "requirements": [
@@ -574,34 +574,6 @@
             },
             {
                   "variant": "level_up",
-                  "result": "kyurem absofusion=black",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "party_member",
-                              "target": "zekrom",
-                              "contains": true
-                        }
-                  ],
-                  "id": "kyurem_black"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "kyurem white=true",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "party_member",
-                              "target": "reshiram",
-                              "contains": true
-                        }
-                  ],
-                  "id": "kyurem_white-1"
-            },
-            {
-                  "variant": "level_up",
                   "result": "kyurem black=true",
                   "consumeHeldItem": false,
                   "learnableMoves": [],
@@ -612,7 +584,7 @@
                               "contains": true
                         }
                   ],
-                  "id": "kyurem_black-1"
+                  "id": "kyurem_black"
             }
       ],
       "baseScale": 1,

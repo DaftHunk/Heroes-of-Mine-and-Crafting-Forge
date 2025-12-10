@@ -195,19 +195,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "mrmime galarian",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "has_move",
-                              "move": "mimic"
-                        }
-                  ],
-                  "id": "mimejr_mrmime"
-            },
-            {
-                  "variant": "level_up",
                   "result": "mrmime",
                   "consumeHeldItem": false,
                   "learnableMoves": [],
@@ -221,7 +208,7 @@
                               "biomeAnticondition": "#cobblemon:evolution/regional/mimejr_galarbiome"
                         }
                   ],
-                  "id": "mimejr_mrmime-1"
+                  "id": "mimejr_mrmime"
             },
             {
                   "variant": "level_up",

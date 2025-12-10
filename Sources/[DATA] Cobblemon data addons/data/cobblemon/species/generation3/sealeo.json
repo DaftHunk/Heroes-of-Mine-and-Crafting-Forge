@@ -156,7 +156,9 @@
                   "variant": "level_up",
                   "result": "walrein",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						 "icefang"
+				],
                   "requirements": [
                         {
                               "variant": "level",
@@ -164,21 +166,6 @@
                         }
                   ],
                   "id": "sealeo_walrein"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "walrein",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "icefang"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 44
-                        }
-                  ],
-                  "id": "sealeo_walrein-1"
             }
       ],
       "baseScale": 1,

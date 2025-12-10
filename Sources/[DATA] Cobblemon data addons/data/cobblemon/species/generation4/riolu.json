@@ -234,25 +234,6 @@
                         }
                   ],
                   "id": "riolu_lucario"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "lucario",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "aurasphere"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "friendship",
-                              "amount": 160
-                        },
-                        {
-                              "variant": "time_range",
-                              "range": "day"
-                        }
-                  ],
-                  "id": "riolu_lucario-1"
             }
       ],
       "baseScale": 0.8,

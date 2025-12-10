@@ -145,21 +145,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "avalugg hisuian",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "rockslide"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 37
-                        }
-                  ],
-                  "id": "bergmite_avalugg"
-            },
-            {
-                  "variant": "level_up",
                   "result": "avalugg",
                   "consumeHeldItem": false,
                   "learnableMoves": [
@@ -175,7 +160,7 @@
                               "biomeAnticondition": "#cobblemon:evolution/regional/bergmite_hisuibiome"
                         }
                   ],
-                  "id": "bergmite_avalugg-1"
+                  "id": "bergmite_avalugg"
             },
             {
                   "variant": "level_up",

@@ -45,32 +45,6 @@
                   "variant": "level_up",
                   "result": "silcoon",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 7
-                        }
-                  ],
-                  "id": "wurmple_silcoon"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "cascoon",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 7
-                        }
-                  ],
-                  "id": "wurmple_cascoon"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "silcoon",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "harden"
                   ],
@@ -84,7 +58,7 @@
                               "target": "wurmple cocoon_species=silcoon"
                         }
                   ],
-                  "id": "wurmple_silcoon-1"
+                  "id": "wurmple_silcoon"
             },
             {
                   "variant": "level_up",
@@ -103,7 +77,7 @@
                               "target": "wurmple cocoon_species=cascoon"
                         }
                   ],
-                  "id": "wurmple_cascoon-1"
+                  "id": "wurmple_cascoon"
             }
       ],
       "baseScale": 1,

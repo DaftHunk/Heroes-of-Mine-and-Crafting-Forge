@@ -152,15 +152,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:moon_stone",
                   "id": "munna_musharna"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "musharna",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:moon_stone",
-                  "id": "munna_musharna-1"
             }
       ],
       "baseScale": 0.8,

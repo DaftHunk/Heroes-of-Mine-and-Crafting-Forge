@@ -117,21 +117,6 @@
                         }
                   ],
                   "id": "finizen_palafin"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "palafin dolphin_form=zero",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "flipturn"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 38
-                        }
-                  ],
-                  "id": "finizen_palafin-1"
             }
       ],
       "cannotDynamax": false,

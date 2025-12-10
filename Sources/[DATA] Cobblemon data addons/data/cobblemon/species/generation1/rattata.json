@@ -367,19 +367,6 @@
                   "variant": "level_up",
                   "result": "raticate",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 20
-                        }
-                  ],
-                  "id": "rattata_raticate"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "raticate",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "scaryface"
                   ],
@@ -389,7 +376,7 @@
                               "minLevel": 20
                         }
                   ],
-                  "id": "rattata_raticate-1"
+                  "id": "rattata_raticate"
             }
       ],
       "baseScale": 0.8,

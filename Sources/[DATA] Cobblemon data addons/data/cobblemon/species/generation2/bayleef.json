@@ -179,7 +179,9 @@
                   "variant": "level_up",
                   "result": "meganium",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"petaldance"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -187,21 +189,6 @@
                         }
                   ],
                   "id": "bayleef_meganium"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "meganium",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "petaldance"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 32
-                        }
-                  ],
-                  "id": "bayleef_meganium-1"
             }
       ],
       "baseScale": 0.9,

@@ -173,23 +173,6 @@
                         }
                   ],
                   "id": "chingling_chimecho"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "chimecho",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "friendship",
-                              "amount": 160
-                        },
-                        {
-                              "variant": "time_range",
-                              "range": "night"
-                        }
-                  ],
-                  "id": "chingling_chimecho-1"
             }
       ],
       "baseScale": 0.7,

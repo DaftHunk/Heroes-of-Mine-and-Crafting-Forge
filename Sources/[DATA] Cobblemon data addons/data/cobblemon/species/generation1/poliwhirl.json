@@ -246,36 +246,12 @@
                   "result": "poliwrath",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "submission"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:water_stone",
-                  "id": "poliwhirl_poliwrath"
-            },
-            {
-                  "variant": "trade",
-                  "result": "politoed",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "held_item",
-                              "itemCondition": "cobblemon:kings_rock"
-                        }
-                  ],
-                  "id": "poliwhirl_politoed"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "poliwrath",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
                         "submission",
                         "dynamicpunch"
                   ],
                   "requirements": [],
                   "requiredContext": "cobblemon:water_stone",
-                  "id": "poliwhirl_poliwrath-1"
+                  "id": "poliwhirl_poliwrath"
             },
             {
                   "variant": "trade",
@@ -290,7 +266,7 @@
                               "itemCondition": "cobblemon:kings_rock"
                         }
                   ],
-                  "id": "poliwhirl_politoed-1"
+                  "id": "poliwhirl_politoed"
             }
       ],
       "baseScale": 0.9,

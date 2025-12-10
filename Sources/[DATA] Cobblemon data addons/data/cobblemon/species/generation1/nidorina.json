@@ -189,17 +189,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:moon_stone",
                   "id": "nidorina_nidoqueen"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "nidoqueen",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "superpower"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:moon_stone",
-                  "id": "nidorina_nidoqueen-1"
             }
       ],
       "baseScale": 0.9,

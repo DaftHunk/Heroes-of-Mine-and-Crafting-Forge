@@ -57,19 +57,6 @@
                   "variant": "level_up",
                   "result": "wobbuffet",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 15
-                        }
-                  ],
-                  "id": "wynaut_wobbuffet"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "wobbuffet",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "counter",
                         "mirrorcoat",
@@ -82,7 +69,7 @@
                               "minLevel": 15
                         }
                   ],
-                  "id": "wynaut_wobbuffet-1"
+                  "id": "wynaut_wobbuffet"
             }
       ],
       "baseScale": 0.85,

@@ -441,15 +441,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:fire_stone",
                   "id": "vulpix_ninetales"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "ninetales",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:fire_stone",
-                  "id": "vulpix_ninetales-1"
             }
       ],
       "baseScale": 0.7,

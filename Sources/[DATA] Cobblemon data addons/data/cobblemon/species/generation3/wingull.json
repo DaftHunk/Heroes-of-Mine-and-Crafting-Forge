@@ -188,7 +188,9 @@
                   "variant": "level_up",
                   "result": "pelipper",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"protect"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -196,21 +198,6 @@
                         }
                   ],
                   "id": "wingull_pelipper"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "pelipper",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "protect"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 25
-                        }
-                  ],
-                  "id": "wingull_pelipper-1"
             }
       ],
       "baseScale": 0.6,

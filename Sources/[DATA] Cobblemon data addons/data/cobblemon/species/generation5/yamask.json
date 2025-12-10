@@ -283,21 +283,6 @@
                   "result": "cofagrigus",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "shadowclaw"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 34
-                        }
-                  ],
-                  "id": "yamask_cofagrigus"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "cofagrigus",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "scaryface",
                         "shadowclaw"
                   ],
@@ -307,7 +292,7 @@
                               "minLevel": 34
                         }
                   ],
-                  "id": "yamask_cofagrigus-1"
+                  "id": "yamask_cofagrigus"
             }
       ],
       "baseScale": 0.5,

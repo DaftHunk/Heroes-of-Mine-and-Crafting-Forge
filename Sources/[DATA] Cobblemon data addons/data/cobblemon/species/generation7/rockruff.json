@@ -178,26 +178,6 @@
             },
             {
                   "variant": "level_up",
-                  "result": "lycanroc wolf_form=midday",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "accelerock",
-                        "suckerpunch"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 25
-                        },
-                        {
-                              "variant": "time_range",
-                              "range": "day"
-                        }
-                  ],
-                  "id": "rockruff_lycanroc-1"
-            },
-            {
-                  "variant": "level_up",
                   "result": "lycanroc wolf_form=midnight",
                   "consumeHeldItem": false,
                   "learnableMoves": [

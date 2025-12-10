@@ -313,15 +313,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:moon_stone",
                   "id": "clefairy_clefable"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "clefable",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:moon_stone",
-                  "id": "clefairy_clefable-1"
             }
       ],
       "baseScale": 0.8,

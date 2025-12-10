@@ -132,21 +132,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "cherrim",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "sunnyday"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 25
-                        }
-                  ],
-                  "id": "cherubi_cherrim"
-            },
-            {
-                  "variant": "level_up",
                   "result": "cherrim blossom_form=overcast",
                   "consumeHeldItem": false,
                   "learnableMoves": [
@@ -159,7 +144,7 @@
                               "minLevel": 25
                         }
                   ],
-                  "id": "cherubi_cherrim-1"
+                  "id": "cherubi_cherrim"
             }
       ],
       "baseScale": 1,

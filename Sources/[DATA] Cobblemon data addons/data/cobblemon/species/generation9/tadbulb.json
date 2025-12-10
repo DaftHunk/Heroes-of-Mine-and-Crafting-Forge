@@ -95,15 +95,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:thunder_stone",
                   "id": "tadbulb_bellibolt"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "bellibolt",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:thunder_stone",
-                  "id": "tadbulb_bellibolt-1"
             }
       ],
       "cannotDynamax": false,

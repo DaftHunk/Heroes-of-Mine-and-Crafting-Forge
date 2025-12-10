@@ -53,7 +53,9 @@
                   "variant": "level_up",
                   "result": "dustox",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"gust"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -61,21 +63,6 @@
                         }
                   ],
                   "id": "cascoon_dustox"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "dustox",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "gust"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 10
-                        }
-                  ],
-                  "id": "cascoon_dustox-1"
             }
       ],
       "baseScale": 1,

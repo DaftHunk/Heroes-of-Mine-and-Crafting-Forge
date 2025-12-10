@@ -202,19 +202,6 @@
                   "variant": "level_up",
                   "result": "golurk",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 43
-                        }
-                  ],
-                  "id": "golett_golurk"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "golurk",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "heavyslam"
                   ],
@@ -224,7 +211,7 @@
                               "minLevel": 43
                         }
                   ],
-                  "id": "golett_golurk-1"
+                  "id": "golett_golurk"
             }
       ],
       "baseScale": 0.9,

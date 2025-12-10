@@ -230,15 +230,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:dusk_stone",
                   "id": "murkrow_honchkrow"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "honchkrow",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:dusk_stone",
-                  "id": "murkrow_honchkrow-1"
             }
       ],
       "baseScale": 0.8,

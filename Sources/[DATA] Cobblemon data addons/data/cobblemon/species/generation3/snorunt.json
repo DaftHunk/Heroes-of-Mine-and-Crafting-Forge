@@ -146,7 +146,10 @@
                   "variant": "item_interact",
                   "result": "froslass",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"ominouswind",
+                        "hex"
+				  ],
                   "requirements": [
                         {
                               "variant": "properties",
@@ -155,23 +158,6 @@
                   ],
                   "requiredContext": "cobblemon:dawn_stone",
                   "id": "snorunt_froslass"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "froslass",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "ominouswind",
-                        "hex"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "properties",
-                              "target": "gender=female"
-                        }
-                  ],
-                  "requiredContext": "cobblemon:dawn_stone",
-                  "id": "snorunt_froslass-1"
             }
       ],
       "baseScale": 1,

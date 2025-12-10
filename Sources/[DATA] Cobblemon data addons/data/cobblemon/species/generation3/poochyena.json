@@ -169,7 +169,9 @@
                   "variant": "level_up",
                   "result": "mightyena",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"snarl"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -177,21 +179,6 @@
                         }
                   ],
                   "id": "poochyena_mightyena"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "mightyena",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "snarl"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 18
-                        }
-                  ],
-                  "id": "poochyena_mightyena-1"
             }
       ],
       "baseScale": 0.7,

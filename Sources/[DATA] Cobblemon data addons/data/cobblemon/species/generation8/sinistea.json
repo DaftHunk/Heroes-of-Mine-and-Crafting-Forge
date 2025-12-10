@@ -118,15 +118,6 @@
                               "requirements": [],
                               "requiredContext": "cobblemon:chipped_pot",
                               "id": "sinistea_polteageist"
-                        },
-                        {
-                              "variant": "item_interact",
-                              "result": "polteageist form=Antique",
-                              "consumeHeldItem": false,
-                              "learnableMoves": [],
-                              "requirements": [],
-                              "requiredContext": "cobblemon:chipped_pot",
-                              "id": "sinistea_polteageist-1"
                         }
                   ],
                   "cannotDynamax": false,
@@ -212,17 +203,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:cracked_pot",
                   "id": "sinistea_polteageist"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "polteageist tea_authenticity=phony",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "teatime"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:cracked_pot",
-                  "id": "sinistea_polteageist-1"
             }
       ],
       "baseScale": 1,

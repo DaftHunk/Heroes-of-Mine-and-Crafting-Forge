@@ -326,6 +326,7 @@
                   "result": "rapidash",
                   "consumeHeldItem": false,
                   "learnableMoves": [
+						"furyattack",
                         "smartstrike"
                   ],
                   "requirements": [
@@ -335,22 +336,6 @@
                         }
                   ],
                   "id": "ponyta_rapidash"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "rapidash",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "furyattack",
-                        "smartstrike"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 40
-                        }
-                  ],
-                  "id": "ponyta_rapidash-1"
             }
       ],
       "baseScale": 1,

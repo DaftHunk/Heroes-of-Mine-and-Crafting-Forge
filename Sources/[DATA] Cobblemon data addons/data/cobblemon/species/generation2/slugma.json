@@ -194,7 +194,9 @@
                   "variant": "level_up",
                   "result": "magcargo",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+					"shellsmash"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -202,21 +204,6 @@
                         }
                   ],
                   "id": "slugma_magcargo"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "magcargo",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "shellsmash"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 38
-                        }
-                  ],
-                  "id": "slugma_magcargo-1"
             }
       ],
       "baseScale": 0.7,

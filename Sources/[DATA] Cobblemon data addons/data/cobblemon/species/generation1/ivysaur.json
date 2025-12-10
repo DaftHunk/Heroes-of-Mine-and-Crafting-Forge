@@ -220,21 +220,6 @@
                   "result": "venusaur",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "petalblizzard"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 32
-                        }
-                  ],
-                  "id": "ivysaur_venusaur"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "venusaur",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "petaldance",
                         "petalblizzard"
                   ],
@@ -244,7 +229,7 @@
                               "minLevel": 32
                         }
                   ],
-                  "id": "ivysaur_venusaur-1"
+                  "id": "ivysaur_venusaur"
             }
       ],
       "baseScale": 0.95,

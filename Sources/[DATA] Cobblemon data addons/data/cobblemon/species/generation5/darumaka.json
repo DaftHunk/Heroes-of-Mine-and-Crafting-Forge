@@ -302,21 +302,6 @@
                         }
                   ],
                   "id": "darumaka_darmanitan"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "darmanitan blazing_mode=standard",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "hammerarm"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 35
-                        }
-                  ],
-                  "id": "darumaka_darmanitan-1"
             }
       ],
       "baseScale": 1,

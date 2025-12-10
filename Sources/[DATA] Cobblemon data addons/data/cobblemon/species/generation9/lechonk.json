@@ -125,19 +125,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "oinkologne f",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 18
-                        }
-                  ],
-                  "id": "lechonk_oinkologne"
-            },
-            {
-                  "variant": "level_up",
                   "result": "oinkologne male",
                   "consumeHeldItem": false,
                   "learnableMoves": [],
@@ -151,7 +138,7 @@
                               "target": "gender=male"
                         }
                   ],
-                  "id": "lechonk_oinkologne-1"
+                  "id": "lechonk_oinkologne"
             },
             {
                   "variant": "level_up",

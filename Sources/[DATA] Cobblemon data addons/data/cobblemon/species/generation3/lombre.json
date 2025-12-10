@@ -202,15 +202,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:water_stone",
                   "id": "lombre_ludicolo"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "ludicolo",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:water_stone",
-                  "id": "lombre_ludicolo-1"
             }
       ],
       "baseScale": 0.75,

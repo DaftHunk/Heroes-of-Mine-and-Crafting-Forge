@@ -224,15 +224,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:dusk_stone",
                   "id": "misdreavus_mismagius"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "mismagius",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:dusk_stone",
-                  "id": "misdreavus_mismagius-1"
             }
       ],
       "baseScale": 0.8,

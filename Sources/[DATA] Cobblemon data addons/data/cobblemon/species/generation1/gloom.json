@@ -187,33 +187,13 @@
                   "variant": "item_interact",
                   "result": "bellossom",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:sun_stone",
-                  "id": "gloom_bellossom"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "vileplume",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "petalblizzard"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:leaf_stone",
-                  "id": "gloom_vileplume-1"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "bellossom",
-                  "consumeHeldItem": true,
                   "learnableMoves": [
                         "magicalleaf",
                         "petalblizzard"
                   ],
                   "requirements": [],
                   "requiredContext": "cobblemon:sun_stone",
-                  "id": "gloom_bellossom-1"
+                  "id": "gloom_bellossom"
             }
       ],
       "baseScale": 1,

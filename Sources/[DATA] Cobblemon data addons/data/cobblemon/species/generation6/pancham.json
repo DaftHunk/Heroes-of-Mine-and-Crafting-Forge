@@ -153,26 +153,6 @@
                   "result": "pangoro",
                   "consumeHeldItem": false,
                   "learnableMoves": [
-                        "nightslash"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 32
-                        },
-                        {
-                              "variant": "party_member",
-                              "target": "type=dark",
-                              "contains": true
-                        }
-                  ],
-                  "id": "pancham_pangoro"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "pangoro",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
                         "bulletpunch",
                         "nightslash"
                   ],
@@ -187,7 +167,7 @@
                               "contains": true
                         }
                   ],
-                  "id": "pancham_pangoro-1"
+                  "id": "pancham_pangoro"
             }
       ],
       "baseScale": 1,

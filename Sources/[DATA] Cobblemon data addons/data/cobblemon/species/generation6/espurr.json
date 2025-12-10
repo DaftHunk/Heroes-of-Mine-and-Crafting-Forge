@@ -130,19 +130,6 @@
       "evolutions": [
             {
                   "variant": "level_up",
-                  "result": "meowstic f",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 25
-                        }
-                  ],
-                  "id": "espurr_meowstic"
-            },
-            {
-                  "variant": "level_up",
                   "result": "meowstic male",
                   "consumeHeldItem": false,
                   "learnableMoves": [],
@@ -156,7 +143,7 @@
                               "target": "gender=male"
                         }
                   ],
-                  "id": "espurr_meowstic-1"
+                  "id": "espurr_meowstic"
             },
             {
                   "variant": "level_up",

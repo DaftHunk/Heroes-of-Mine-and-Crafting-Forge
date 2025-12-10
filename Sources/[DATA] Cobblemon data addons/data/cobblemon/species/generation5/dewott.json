@@ -460,6 +460,10 @@
                         {
                               "variant": "level",
                               "minLevel": 36
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/dewott_hisuibiome"
                         }
                   ],
                   "id": "dewott_samurott"
@@ -482,26 +486,7 @@
                         }
                   ],
                   "id": "dewott_hisui_samurott"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "samurott",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "slash"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 36
-                        },
-                        {
-                              "variant": "biome",
-                              "biomeAnticondition": "#cobblemon:evolution/regional/dewott_hisuibiome"
-                        }
-                  ],
-                  "id": "dewott_samurott-1"
-            },
+            },            
             {
                   "variant": "level_up",
                   "result": "samurott hisuian",

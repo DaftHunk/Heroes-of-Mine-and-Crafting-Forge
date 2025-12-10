@@ -139,19 +139,6 @@
                   "variant": "level_up",
                   "result": "purugly",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 38
-                        }
-                  ],
-                  "id": "glameow_purugly"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "purugly",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "swagger"
                   ],
@@ -161,7 +148,7 @@
                               "minLevel": 38
                         }
                   ],
-                  "id": "glameow_purugly-1"
+                  "id": "glameow_purugly"
             }
       ],
       "baseScale": 0.7,

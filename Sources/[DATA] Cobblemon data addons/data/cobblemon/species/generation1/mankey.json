@@ -252,19 +252,6 @@
                   "variant": "level_up",
                   "result": "primeape",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 28
-                        }
-                  ],
-                  "id": "mankey_primeape"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "primeape",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "rage"
                   ],
@@ -274,7 +261,7 @@
                               "minLevel": 28
                         }
                   ],
-                  "id": "mankey_primeape-1"
+                  "id": "mankey_primeape"
             }
       ],
       "baseScale": 0.85,

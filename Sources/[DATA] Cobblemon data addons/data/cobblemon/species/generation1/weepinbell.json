@@ -202,22 +202,13 @@
                   "variant": "item_interact",
                   "result": "victreebel",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"leaftornado",
+                        "leafstorm"
+				  ],
                   "requirements": [],
                   "requiredContext": "cobblemon:leaf_stone",
                   "id": "weepinbell_victreebel"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "victreebel",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "leaftornado",
-                        "leafstorm"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:leaf_stone",
-                  "id": "weepinbell_victreebel-1"
             }
       ],
       "baseScale": 1,

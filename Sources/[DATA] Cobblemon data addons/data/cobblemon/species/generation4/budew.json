@@ -128,7 +128,9 @@
                   "variant": "level_up",
                   "result": "roselia",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"poisonsting"
+				  ],
                   "requirements": [
                         {
                               "variant": "friendship",
@@ -140,25 +142,6 @@
                         }
                   ],
                   "id": "budew_roselia"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "roselia",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "poisonsting"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "friendship",
-                              "amount": 160
-                        },
-                        {
-                              "variant": "time_range",
-                              "range": "day"
-                        }
-                  ],
-                  "id": "budew_roselia-1"
             }
       ],
       "baseScale": 0.5,

@@ -191,17 +191,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:moon_stone",
                   "id": "nidorino_nidoking"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "nidoking",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "megahorn"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:moon_stone",
-                  "id": "nidorino_nidoking-1"
             }
       ],
       "baseScale": 1,

@@ -187,6 +187,7 @@
                   "result": "venomoth",
                   "consumeHeldItem": false,
                   "learnableMoves": [
+						"gust",
                         "airslash"
                   ],
                   "requirements": [
@@ -196,22 +197,6 @@
                         }
                   ],
                   "id": "venonat_venomoth"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "venomoth",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "gust",
-                        "airslash"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 31
-                        }
-                  ],
-                  "id": "venonat_venomoth-1"
             }
       ],
       "baseScale": 1,

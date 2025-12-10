@@ -264,7 +264,7 @@
                         {
                               "variant": "item_interact",
                               "result": "lilligant",
-                              "consumeHeldItem": true,
+                              "consumeHeldItem": false,
                               "learnableMoves": [
                                     "petaldance"
                               ],
@@ -284,7 +284,7 @@
                         {
                               "variant": "item_interact",
                               "result": "lilligant hisuian",
-                              "consumeHeldItem": true,
+                              "consumeHeldItem": false,
                               "learnableMoves": [
                                     "victorydance"
                               ],
@@ -456,17 +456,6 @@
                   "learnableMoves": [
                         "petaldance"
                   ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:sun_stone",
-                  "id": "petilil_lilligant"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "lilligant",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "petaldance"
-                  ],
                   "requirements": [
                         {
                               "variant": "biome",
@@ -474,12 +463,12 @@
                         }
                   ],
                   "requiredContext": "cobblemon:sun_stone",
-                  "id": "petilil_lilligant-1"
+                  "id": "petilil_lilligant"
             },
             {
                   "variant": "item_interact",
                   "result": "lilligant hisuian",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "victorydance"
                   ],

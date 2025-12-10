@@ -420,14 +420,6 @@
                   "learnableMoves": [],
                   "requirements": [],
                   "id": "pumpkaboo_gourgeist"
-            },
-            {
-                  "variant": "trade",
-                  "result": "gourgeist",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "id": "pumpkaboo_gourgeist-1"
             }
       ],
       "baseScale": 0.8,

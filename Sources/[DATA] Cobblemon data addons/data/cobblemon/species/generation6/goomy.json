@@ -367,6 +367,10 @@
                         {
                               "variant": "level",
                               "minLevel": 40
+                        },
+                        {
+                              "variant": "biome",
+                              "biomeAnticondition": "#cobblemon:evolution/regional/goomy_hisuibiome"
                         }
                   ],
                   "id": "goomy_sliggoo"
@@ -389,26 +393,7 @@
                         }
                   ],
                   "id": "goomy_hisui_sliggoo"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "sliggoo",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "acidspray"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 40
-                        },
-                        {
-                              "variant": "biome",
-                              "biomeAnticondition": "#cobblemon:evolution/regional/goomy_hisuibiome"
-                        }
-                  ],
-                  "id": "goomy_sliggoo-1"
-            },
+            },            
             {
                   "variant": "level_up",
                   "result": "sliggoo hisuian",

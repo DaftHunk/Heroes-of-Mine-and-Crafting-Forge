@@ -97,18 +97,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:fire_stone",
                   "id": "capsakid_scovillain"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "scovillain",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "spicyextract",
-                        "flamethrower"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:fire_stone",
-                  "id": "capsakid_scovillain-1"
             }
       ],
       "cannotDynamax": false,

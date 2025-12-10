@@ -198,7 +198,9 @@
                   "variant": "level_up",
                   "result": "grovyle",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"furycutter"
+				  ],
                   "requirements": [
                         {
                               "variant": "level",
@@ -206,21 +208,6 @@
                         }
                   ],
                   "id": "treecko_grovyle"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "grovyle",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "furycutter"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 16
-                        }
-                  ],
-                  "id": "treecko_grovyle-1"
             }
       ],
       "baseScale": 0.65,

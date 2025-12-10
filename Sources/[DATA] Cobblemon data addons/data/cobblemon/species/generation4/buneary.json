@@ -240,7 +240,9 @@
                   "variant": "level_up",
                   "result": "lopunny",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
+                  "learnableMoves": [
+						"return"
+				  ],
                   "requirements": [
                         {
                               "variant": "friendship",
@@ -248,21 +250,6 @@
                         }
                   ],
                   "id": "buneary_lopunny"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "lopunny",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "return"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "friendship",
-                              "amount": 160
-                        }
-                  ],
-                  "id": "buneary_lopunny-1"
             }
       ],
       "baseScale": 0.5,

@@ -206,19 +206,6 @@
                   "variant": "level_up",
                   "result": "arbok",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 22
-                        }
-                  ],
-                  "id": "ekans_arbok"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "arbok",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "crunch"
                   ],
@@ -228,7 +215,7 @@
                               "minLevel": 22
                         }
                   ],
-                  "id": "ekans_arbok-1"
+                  "id": "ekans_arbok"
             }
       ],
       "baseScale": 0.8,

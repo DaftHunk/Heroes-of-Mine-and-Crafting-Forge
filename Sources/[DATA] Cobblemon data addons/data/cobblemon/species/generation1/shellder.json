@@ -221,17 +221,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:water_stone",
                   "id": "shellder_cloyster"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "cloyster",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [
-                        "iciclespear"
-                  ],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:water_stone",
-                  "id": "shellder_cloyster-1"
             }
       ],
       "baseScale": 0.8,

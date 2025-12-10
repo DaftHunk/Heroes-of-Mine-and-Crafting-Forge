@@ -123,15 +123,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:thunder_stone",
                   "id": "eelektrik_eelektross"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "eelektross",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:thunder_stone",
-                  "id": "eelektrik_eelektross-1"
             }
       ],
       "baseScale": 1,

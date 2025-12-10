@@ -224,27 +224,11 @@
                   ],
                   "requirements": [
                         {
-                              "variant": "use_move",
-                              "move": "psyshieldbash",
-                              "amount": 20
-                        }
-                  ],
-                  "id": "stantler_wyrdeer"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "wyrdeer",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "psyshieldbash"
-                  ],
-                  "requirements": [
-                        {
                               "variant": "has_move",
                               "move": "psyshieldbash"
                         }
                   ],
-                  "id": "stantler_wyrdeer-1"
+                  "id": "stantler_wyrdeer"
             }
       ],
       "baseScale": 1.2,

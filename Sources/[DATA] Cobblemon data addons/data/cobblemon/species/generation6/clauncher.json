@@ -138,19 +138,6 @@
                   "variant": "level_up",
                   "result": "clawitzer",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 37
-                        }
-                  ],
-                  "id": "clauncher_clawitzer"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "clawitzer",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "aurasphere"
                   ],
@@ -160,7 +147,7 @@
                               "minLevel": 37
                         }
                   ],
-                  "id": "clauncher_clawitzer-1"
+                  "id": "clauncher_clawitzer"
             }
       ],
       "baseScale": 0.75,

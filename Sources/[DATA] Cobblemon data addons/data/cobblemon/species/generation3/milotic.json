@@ -192,7 +192,7 @@
             {
                   "variant": "item_interact",
                   "result": "megamilotic",
-                  "consumeHeldItem": true,
+                  "consumeHeldItem": false,
                   "requirements": [],
                   "requiredContext": "lackingmegas:key_stone",
                   "id": "milotic_megamilotic"

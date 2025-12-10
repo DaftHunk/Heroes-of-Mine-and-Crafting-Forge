@@ -83,19 +83,6 @@
                   "variant": "level_up",
                   "result": "beedrill",
                   "consumeHeldItem": false,
-                  "learnableMoves": [],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 10
-                        }
-                  ],
-                  "id": "kakuna_beedrill"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "beedrill",
-                  "consumeHeldItem": false,
                   "learnableMoves": [
                         "twineedle",
                         "furyattack"
@@ -106,7 +93,7 @@
                               "minLevel": 10
                         }
                   ],
-                  "id": "kakuna_beedrill-1"
+                  "id": "kakuna_beedrill"
             }
       ],
       "baseScale": 0.75,

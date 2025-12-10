@@ -35,37 +35,7 @@
             "cobblemon.species.cosmoem.desc"
       ],
       "preEvolution": "cosmog",
-      "evolutions": [
-            {
-                  "variant": "level_up",
-                  "result": "solgaleo",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "sunsteelstrike"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 53
-                        }
-                  ],
-                  "id": "cosmoem_solgaleo"
-            },
-            {
-                  "variant": "level_up",
-                  "result": "lunala",
-                  "consumeHeldItem": false,
-                  "learnableMoves": [
-                        "moongeistbeam"
-                  ],
-                  "requirements": [
-                        {
-                              "variant": "level",
-                              "minLevel": 53
-                        }
-                  ],
-                  "id": "cosmoem_lunala"
-            },
+      "evolutions": [            
             {
                   "variant": "level_up",
                   "result": "solgaleo",
@@ -83,7 +53,7 @@
                               "range": "day"
                         }
                   ],
-                  "id": "cosmoem_solgaleo-1"
+                  "id": "cosmoem_solgaleo"
             },
             {
                   "variant": "level_up",
@@ -102,7 +72,7 @@
                               "range": "night"
                         }
                   ],
-                  "id": "cosmoem_lunala-1"
+                  "id": "cosmoem_lunala"
             }
       ],
       "baseScale": 0.15,

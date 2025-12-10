@@ -166,15 +166,6 @@
                   "requirements": [],
                   "requiredContext": "cobblemon:shiny_stone",
                   "id": "roselia_roserade"
-            },
-            {
-                  "variant": "item_interact",
-                  "result": "roserade",
-                  "consumeHeldItem": true,
-                  "learnableMoves": [],
-                  "requirements": [],
-                  "requiredContext": "cobblemon:shiny_stone",
-                  "id": "roselia_roserade-1"
             }
       ],
       "baseScale": 0.5,
