@@ -23,7 +23,7 @@
   "sleepDelay": 10,
   "hitboxLimit": 50,
   "captureRate": 5,
-  "tickCulling": true,
+  "tickCulling": false,
   "tickCullingWhitelist": [
     "create:contraption",
     "create:stationary_contraption",

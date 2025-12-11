@@ -108,7 +108,7 @@
 	/**
 	 * Whether the recipe tree button should be visible.
 	 */
-	recipe-tree-button-visibility: auto;
+	recipe-tree-button-visibility: hidden;
 
 	/**
 	 * The maximum height the recipe screen will grow to be if space is available in
@@ -359,12 +359,12 @@
 	/**
 	 * Return to the previous page in EMI.
 	 */
-	back: "key.keyboard.backspace";
+	back: "key.mouse.4";
 
 	/**
 	 * Return to the next page in EMI after going back.
 	 */
-	forward: "key.keyboard.unknown";
+	forward: "key.mouse.5";
 
 	/**
 	 * When on a stack with an associated recipe:

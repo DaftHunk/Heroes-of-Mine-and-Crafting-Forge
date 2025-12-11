@@ -357,7 +357,7 @@
 		allowForceloadPurchase=false
 		#The price per forceload chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		#Default: "coin;100-lightmanscurrency:coin_gold"
+		#Default: "coin;1-lightmanscurrency:coin_netherite"
 		forceloadPrice="coin;1-lightmanscurrency:coin_gold"
 		#The maximum number of extra forceload chunks allowed to be purchased with this command.
 		#Note: This count includes extra forceload chunks given to the player/team via normal FTB Chunks methods as well (if applicable).

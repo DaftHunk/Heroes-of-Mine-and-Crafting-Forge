@@ -20,7 +20,14 @@
 		"eclipses_cobblebadges:storm_badge",
 		"eclipses_cobblebadges:hive_badge",
 		"eclipses_cobblebadges:fog_badge",
-		"eclipses_cobblebadges:volcano_badge"
+		"eclipses_cobblebadges:volcano_badge",
+		"buddycards:buddycard_pack_base",
+		"buddycards:buddycard_pack_nether",
+		"buddycards:buddycard_pack_end",
+		"buddycards:buddycard_pack_mystery",
+		"simplehats:hatbag_common",
+		"simplehats:hatbag_uncommon",
+		"lootbags:loot_bag"
       ],
       "gradientType": "custom",
       "borderType": "static",
@@ -72,7 +79,17 @@
         "minecraft:totem_of_undying",
         "minecraft:heart_of_the_sea",
         "minecraft:creeper_banner_pattern",
-        "minecraft:skull_banner_pattern"
+        "minecraft:skull_banner_pattern",
+		"lightmanscurrency:coin_copper",
+		"lightmanscurrency:coin_iron",
+		"lightmanscurrency:coin_gold",
+		"lightmanscurrency:coinpile_copper",
+		"lightmanscurrency:coinpile_iron",
+		"lightmanscurrency:coinpile_gold",
+		"lightmanscurrency:coinblock_copper",
+		"lightmanscurrency:coinblock_iron",
+		"lightmanscurrency:coinblock_gold",
+		"homac:jeton"
       ],
       "gradientType": "custom",
       "borderType": "auto_gradient"
