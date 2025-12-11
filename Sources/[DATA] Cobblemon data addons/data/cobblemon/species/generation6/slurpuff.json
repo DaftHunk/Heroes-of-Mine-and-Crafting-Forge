@@ -142,5 +142,5 @@
       },
       "target": "cobblemon:slurpuff",
       "forms": [],
-      "implemented": true
+      "implemented": false
 }

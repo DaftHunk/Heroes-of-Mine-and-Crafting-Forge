@@ -14,6 +14,8 @@
 	"Looting Enchantment" = true
 	#Enable sulfur ore generation
 	"Sulfur Ore Generation" = false
+	#Enable salt generation
+	"Salt Generation" = false
 
 [Mobs]
 	#Enable Axolotl Carcass

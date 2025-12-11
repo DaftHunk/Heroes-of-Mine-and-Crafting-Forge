@@ -13,4 +13,12 @@
 	"Desert Chef House" = 2
 	#Desert Cook House Config - Default = 3
 	"Desert Cook House" = 1
+	#Savanna Chef House Config - Default = 6
+	"Savanna Chef House" = 2
+	#Savanna Cook House Config - Default = 2
+	"Savanna Cook House" = 1
+	#Snowy Chef House Config - Default = 4
+	"Snowy Chef House" = 2
+	#Snowy Cook House Config - Default = 1
+	"Snowy Cook House" = 1
 

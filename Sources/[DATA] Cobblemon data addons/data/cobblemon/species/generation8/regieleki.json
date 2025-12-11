@@ -106,6 +106,6 @@
       "weight": 1450,
       "aspects": [],
       "cannotDynamax": false,
-      "implemented": true,
+      "implemented": false,
       "forms": []
 }
