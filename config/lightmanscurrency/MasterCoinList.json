@@ -1,21 +1,22 @@
 {
     "Chains": [
         {
-            "chain": "secondary",
+            "chain": "casino",
             "name": {
                 "translate": "lightmanscurrency.money.chain.emeralds"
             },
-            "displayType": "homac:jeton",
+            "displayType": "lightmanscurrency:number",
+			"displayFormat": {
+				"translate": "lightmanscurrency.money.chain.emeralds.display"
+			  },
+			  "displayFormatWordy": {
+				"translate": "lightmanscurrency.money.chain.emeralds.display.wordy"
+			  },
             "InputType": "DEFAULT",
             "CoreChain": [
 				{
 					"Coin": "homac:jeton",
-					"initial": {
-						"translate": "lightmanscurrency.coin_emerald.initial"
-					},
-					"plural": {
-						"translate": "lightmanscurrency.coin_emerald.plural"
-					}
+					"baseUnit": true
 				}
 			]
         },

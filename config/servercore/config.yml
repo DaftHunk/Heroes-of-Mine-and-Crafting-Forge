@@ -4,7 +4,7 @@
 # Most miscellaneous feature toggles.
 features:
   # Stops the server from loading spawn chunks.
-  disable-spawn-chunks: false
+  disable-spawn-chunks: true
   # Prevents lagspikes caused by players moving into unloaded chunks.
   prevent-moving-into-unloaded-chunks: true
   # The amount of ticks between auto-saves when /save-on is active.
@@ -26,7 +26,7 @@ features:
 # Automatically modifies dynamic settings based on the server performance.
 dynamic:
   # Enables dynamic performance checks.
-  enabled: false
+  enabled: true
   # The average MSPT to target.
   target-mspt: 35
   # The settings that will be decreased when the server is overloaded, in the specified order.
@@ -37,28 +37,28 @@ dynamic:
   # ► interval = The amount of seconds between each check to increase or decrease.
   dynamic-settings:
     - setting: 'CHUNK_TICK_DISTANCE'
-      max: 10
-      min: 2
+      max: 8
+      min: 8
       increment: 1
-      interval: 15
+      interval: 60
 
     - setting: 'MOBCAP_PERCENTAGE'
       max: 100
       min: 30
       increment: 10
-      interval: 15
+      interval: 60
 
     - setting: 'SIMULATION_DISTANCE'
-      max: 10
-      min: 2
+      max: 8
+      min: 8
       increment: 1
-      interval: 15
+      interval: 60
 
     - setting: 'VIEW_DISTANCE'
-      max: 10
-      min: 2
+      max: 16
+      min: 8
       increment: 1
-      interval: 150
+      interval: 60
 
 
 # A special mobcap that only affects the breeding of animals and villagers.
@@ -106,8 +106,8 @@ mob-spawning:
   # ► spawn-interval = The interval between spawn attempts in ticks. Higher values mean less frequent spawn attempts.
   categories:
     - category: 'MONSTER'
-      mobcap: 70
-      spawn-interval: 1
+      mobcap: 40
+      spawn-interval: 10
 
     - category: 'CREATURE'
       mobcap: 10
@@ -115,23 +115,23 @@ mob-spawning:
 
     - category: 'AMBIENT'
       mobcap: 15
-      spawn-interval: 1
+      spawn-interval: 10
 
     - category: 'AXOLOTLS'
       mobcap: 5
-      spawn-interval: 1
+      spawn-interval: 10
 
     - category: 'UNDERGROUND_WATER_CREATURE'
       mobcap: 5
-      spawn-interval: 1
+      spawn-interval: 10
 
     - category: 'WATER_CREATURE'
       mobcap: 5
-      spawn-interval: 1
+      spawn-interval: 10
 
     - category: 'WATER_AMBIENT'
       mobcap: 20
-      spawn-interval: 1
+      spawn-interval: 10
 
 
 # Settings for commands and their formatting.

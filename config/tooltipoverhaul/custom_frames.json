@@ -59,6 +59,7 @@
         "minecraft:music_disc_pigstep"
       ],
       "gradientType": "custom",
+	  "specialEffect": "metal_shining"
       "borderType": "auto_gradient"
     },
     {
@@ -92,6 +93,7 @@
 		"homac:jeton"
       ],
       "gradientType": "custom",
+	  "specialEffect": "metal_shining"
       "borderType": "auto_gradient"
     },
     {
@@ -138,6 +140,7 @@
       ],
       "gradientType": "custom",
       "borderType": "gradient",
+	  "specialEffect": "metal_shining"
       "gradientColors": ["#A9A9A9", "#999999", "#8F8F8F"]
     },
     {
