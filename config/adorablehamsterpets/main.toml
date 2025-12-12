@@ -1,12 +1,12 @@
 # Don't change this! Version used to track needed updates.
 version = 0
-# Hand-delivers the sacred texts on first login. Read it—or don’t. I'm not your conscience.
+# Hand-delivers the sacred texts on first login. Read it— or don’t. I'm not your conscience.
 enableAutoGuidebookDelivery = false
 # Helpful whispers on what the heck that cucumber is for.
 enableItemTooltips = true
 # Little status mumbles when your co-pilot disembarks.
 enableShoulderDismountMessages = true
-# More stats than anyone asked for. Defaults to off—mercifully.
+# More stats than anyone asked for. Defaults to off— mercifully.
 enableJadeHamsterDebugInfo = false
 # The master switch for all announcement notifications. Turning this off is the same as clicking 'Disable All' in the announcement screen. Announcements can still be viewed in the §f§lHamster Tips§r guide book.
 enableNotificationIcons = false
@@ -61,7 +61,7 @@ tamingFoods = [
 # The hamster's everyday menu. These items will heal them or, if they're at full health, might give them... ideas about starting a family. Don't make it weird.
 standardFoods = [
     "hexerei:seed_mixture",
-	"call_of_yucutan:chili_pepper_seeds",
+    "call_of_yucutan:chili_pepper_seeds",
     "minecraft:apple",
     "minecraft:carrot",
     "minecraft:melon_slice",
@@ -86,9 +86,9 @@ buffFoods = [
 # The specific items that convince a tamed hamster your shoulder is the best seat in the house. Also acts as a bribe to lure them into their linked bed. Defaults to cheese, because of course it does.
 lureItems = [
     "ad_astra:cheese",
-	"minecolonies:cheddar_cheese",
-	"gourmet:cheese",
-	"brewinandchewin:flaxen_cheese_wedge"
+    "minecolonies:cheddar_cheese",
+    "gourmet:cheese",
+    "brewinandchewin:flaxen_cheese_wedge"
 ]
 # The list of specific items that, when used on a Hamster Bed, will set 'Wander Mode Settings > Allow Sleeping in Bed' to false. For when you need your hamster to stay awake and wander around for... reasons. This can be reversed by using a lure item (cheese by default) on the bed. Sneaking before right-clicking with this item will unlink the bed entirely.
 bedAvoidanceFoods = [
@@ -216,7 +216,7 @@ bedWakeUpCooldown = 300
 keepHamstersOnShoulderOnDeath = false
 # Should luring a hamster to your shoulder consume the item (e.g., cheese)? Turn this off if you believe your charm alone should be enough. The item will still be required, just not eaten.
 consumeLureItem = true
-# Tired of wasting perfectly good cheese? Enable this to use a dedicated keybind (unbound by default). Hold down this key while right-clicking your hamster to hoist them onto your shoulder, no questions asked. Uses a separate key you must set in Controls > Key Binds.
+# Tired of wasting perfectly good cheese? Enable this to use a dedicated keybind (unbound by default). Hold down this key while right-clicking your hamster to hoist them onto your shoulder, no questions asked. Uses a separate key you must set in Settings > Controls > Key Binds.
 enableShoulderMountKeybind = false
 # May save your inventory. Or your ears.
 enableShoulderCreeperDetection = true
@@ -270,7 +270,7 @@ standardFoodHealing = 2.0
 cheeseNutrition = 8
 # How long the hunger effect lasts. Cooked steak is 0.8. Don't get too crazy. Or do. I'm not your conscience.
 cheeseSaturation = 0.8
-# Steamed beans: power that fades faster than your attention span.
+# Steamed beans: power that fades faster than your attention span. (20 ticks = 1 second)
 greenBeanBuffDuration = 3600
 # Because someone has to go fast.
 greenBeanBuffAmplifierSpeed = 1
