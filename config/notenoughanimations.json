@@ -38,13 +38,13 @@
   "holdUpItemsMode": "CONFIG",
   "holdUpItemOffset": 0.0,
   "itemSwapAnimation": true,
-  "tweakElytraAnimation": false,
+  "tweakElytraAnimation": true,
   "petAnimation": true,
   "fallingAnimation": false,
   "freezingAnimation": true,
   "huggingAnimation": false,
   "narutoRunning": false,
   "enableInWorldBookRendering": false,
-  "disableLegSmoothing": true,
+  "disableLegSmoothing": false,
   "bowAnimation": "VANILLA"
 }

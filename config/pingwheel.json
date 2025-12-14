@@ -9,7 +9,6 @@
   "teamColorMode": "FULL",
   "pingSize": 100,
   "channel": "",
-  "serverChannels": {},
   "removeRadius": 10,
   "raycastDistance": 1024,
   "safeZoneLeft": 5,
