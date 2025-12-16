@@ -1,9 +1,9 @@
 {
   "last_acknowledged_update": "3.4.0",
-  "manifest_etag": "\"babafdc68d17b11863cdaf4168fdd3ee0c8cf8ba91b1230c3afedd40a4f64910\"",
+  "manifest_etag": "\"3a82470ef37175a5254545be07dc5b06051c5b0282786219d7e5c524a8737bc7\"",
   "seen_ids": [
+    "update-3.4.0",
     "whats-new-3.4.0",
-    "whats-new-3.3.0",
-    "update-3.4.0"
+    "whats-new-3.3.0"
   ]
 }

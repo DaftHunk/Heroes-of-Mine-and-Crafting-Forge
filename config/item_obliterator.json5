@@ -101,7 +101,22 @@
 	"butchery:salt",
 	"butchery:sulfur_ore",
 	"butchery:deepslate_sulfur_ore",
-	"butchery:sulfur"
+	"butchery:sulfur",
+	"unimplemented_items:repel",
+	"unimplemented_items:bottle_cap_gold",
+	"unimplemented_items:ability_capsule",
+	"unimplemented_items:shiny_charm",
+	"unimplemented_items:power_weight",
+	"unimplemented_items:power_bracer",
+	"unimplemented_items:power_lens",
+	"unimplemented_items:power_belt",
+	"unimplemented_items:power_band",
+	"unimplemented_items:power_anklet",
+	"unimplemented_items:ether",
+	"unimplemented_items:elixir",
+	"unimplemented_items:potion_max",
+	"unimplemented_items:potion_hyper",
+	"unimplemented_items:potion"
   ],
   // -----------------------------------------------------------
   // Removes an item if it contains certain nbt tag. If the whole entry (or expression) is present, the item gets removed.
