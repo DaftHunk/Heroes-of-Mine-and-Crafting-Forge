@@ -192,11 +192,11 @@ hamsterThrowDamage = 20.0
 avoidUnlinkedBeds = true
 # The initial wander distance set when a hamster is first linked to a bed. It defaults to medium, because that is the universally accepted starting point for all life choices.
 defaultWanderDistance = "MEDIUM"
-# The radius for the 'Near' wander distance setting. For the clingy hamster who wants freedom, but not too much.
+# The radius (in blocks) for the 'Near' wander distance setting. For the clingy hamster who wants freedom, but not too much.
 wanderDistanceNear = 8
-# The radius for the 'Medium' wander distance setting. A respectable distance. Not too close, not too far. Perfectly balanced, as all things should be.
+# The radius (in blocks) for the 'Medium' wander distance setting. A respectable distance. Not too close, not too far. Perfectly balanced, as all things should be.
 wanderDistanceMedium = 16
-# The radius for the 'Far' wander distance setting. For the adventurous hamster who might send you a postcard someday. Maybe.
+# The radius (in blocks) for the 'Far' wander distance setting. For the adventurous hamster who might send you a postcard someday. Maybe.
 wanderDistanceFar = 32
 # Get an action bar message when your hamster's bed is broken. Here's where you can turn it off if you prefer... complete immersion.
 enableBedBreakMessage = true
@@ -254,7 +254,7 @@ silencePhysicsSoundsInFirstPerson = false
 hamsterThrowVelocity = 1.5
 # The throw speed of your furry projectile when under the influence of Steamed Green Beans. Goes from 'yeet' to 'yote'.
 hamsterThrowVelocityBuffed = 2.5
-# How close a hostile mob can get before a hamster wakes up from it's power nap.
+# How close (in blocks) a hostile mob can get before a hamster wakes up from it's power nap.
 tamedSleepThreatDetectionRadiusBlocks = 8
 # Choose when your sitting hamster will succumb to drowsiness. 'True' means your sitting hamster will only doze off during the day— 'false' means it can doze off anytime. This setting does not affect the behavior of a hamster when sleeping in a bed.
 requireDaytimeForTamedSleep = true
@@ -282,7 +282,7 @@ greenBeanBuffAmplifierAbsorption = 1
 greenBeanBuffAmplifierRegen = 0
 # Permit hamsters to embark on solo get-rich-quick schemes?
 enableIndependentDiamondSeeking = true
-# How far a hamster scans once it’s decided to play prospector.
+# How far (in blocks) a hamster scans once it’s decided to play prospector.
 diamondSeekRadius = 10
 # The probability (0.0 to 1.0) that a hamster will seek gold instead of diamond, if both are available. At 0.5, it's a coin toss. At 1.0, it's guaranteed hamster sulking.
 goldMistakeChance = 0.33
@@ -290,13 +290,13 @@ goldMistakeChance = 0.33
 enableDiamondStealing = true
 # Probability (0.1 to 1.0) a hamster will succumb to temptation. High by default. You shouldn't leave your diamonds lying around anyway.
 diamondPounceChance = 0.75
-# The hamster's personal space bubble.
+# The hamster's personal space bubble (in blocks).
 minFleeDistance = 5
-# The maximum distance before the hamster gets bored and stops running to taunt you.
+# The maximum distance (in blocks) before the hamster gets bored and stops running to taunt you.
 maxFleeDistance = 20
-# The shortest amount of time the hamster will entertain this little game before getting bored and dropping your stuff.
+# The shortest amount of time (in seconds) the hamster will entertain this little game before getting bored and dropping your stuff.
 minStealDurationSeconds = 5
-# The longest your cardio session can last before the hamster's attention span gives out.
+# The longest (in seconds) your cardio session can last before the hamster's attention span gives out.
 maxStealDurationSeconds = 15
 
 # Control the icon's placement for standard GUIs. Because nothing says 'immersion' like a perfectly aligned notification bell. Position is relative to the GUI's top-right corner.

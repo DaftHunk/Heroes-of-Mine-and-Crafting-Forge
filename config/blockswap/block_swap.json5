@@ -80,10 +80,10 @@ to make editing this file much easier.
 	/* A map of blocks that specifies what the "old" block is and what its "new" block is.
 	   Example:
 	   	"swapper": {
-	   		"minecraft:coarse_dirt": "minecraft:dirt",
-	   		"minecraft:diamond_block": "minecraft:emerald_block",
-			"unimplemented_items:repel": "minecraft:air"
+			
 	   	}
 	*/
-	"swapper": { }
+	"swapper": {
+		"unimplemented_items:repel": "minecraft:air"
+	}
 }
