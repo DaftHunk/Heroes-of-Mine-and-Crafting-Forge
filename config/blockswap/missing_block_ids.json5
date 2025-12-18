@@ -19,6 +19,7 @@ to make editing this file much easier.
 	"id_remapper": {
 		"magnumtorch:amethyst_magnum_torch": "torchmaster:dreadlamp",
 		"magnumtorch:diamond_magnum_torch": "torchmaster:megatorch",
-		"magnumtorch:emerald_magnum_torch": "torchmaster:megatorch"
+		"magnumtorch:emerald_magnum_torch": "torchmaster:megatorch",
+		"unimplemented_items:repel": "minecraft:air"
 	}
 }

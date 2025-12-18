@@ -80,7 +80,7 @@ to make editing this file much easier.
 	/* A map of blocks that specifies what the "old" block is and what its "new" block is.
 	   Example:
 	   	"swapper": {
-			
+			"unimplemented_items:repel": "minecraft:air"
 	   	}
 	*/
 	"swapper": {
