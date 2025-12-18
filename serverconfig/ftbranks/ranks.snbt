@@ -78,6 +78,10 @@
 		command.team.modify.team.suffix.suffix: true
 		command.team.remove: true
 		command.team.remove.team: true
+		command.ftbteams.party.join.team: true
+		command.ftbteams.party.decline.team: true
+		command.ftbteams.party.decline: true
+		command.ftbteams.party.leave: true
 	}
 	modo: {
 		name: "Modérateur"
