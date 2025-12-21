@@ -16,6 +16,8 @@
 	"Sulfur Ore Generation" = false
 	#Enable salt generation
 	"Salt Generation" = false
+	#Enable blood spread
+	"Blood Spread" = true
 
 [Mobs]
 	#Enable Axolotl Carcass
