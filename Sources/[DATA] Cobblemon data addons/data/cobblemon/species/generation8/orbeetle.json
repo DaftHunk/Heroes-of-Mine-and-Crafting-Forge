@@ -1,5 +1,5 @@
 {
-      "name": "Gmax",
+      "name": "Orbeetle",
       "nationalPokedexNumber": 826,
       "primaryType": "bug",
       "secondaryType": "psychic",
@@ -21,7 +21,7 @@
       "shoulderMountable": false,
       "forms": [
             {
-                  "name": "Gmax",
+                  "name": "Orbeetle",
                   "primaryType": "bug",
                   "secondaryType": "psychic",
                   "abilities": [

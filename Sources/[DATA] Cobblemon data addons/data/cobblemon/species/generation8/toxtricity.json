@@ -1,5 +1,5 @@
 {
-      "name": "Low-Key",
+      "name": "Toxtricity",
       "nationalPokedexNumber": 849,
       "primaryType": "electric",
       "secondaryType": "poison",
@@ -22,7 +22,7 @@
       "shoulderMountable": false,
       "forms": [
             {
-                  "name": "Low-Key",
+                  "name": "Toxtricity",
                   "primaryType": "electric",
                   "secondaryType": "poison",
                   "abilities": [
@@ -161,7 +161,7 @@
                   "evolutions": []
             },
             {
-                  "name": "Gmax",
+                  "name": "Toxtricity",
                   "primaryType": "electric",
                   "secondaryType": "poison",
                   "abilities": [
@@ -209,7 +209,7 @@
                   "evolutions": []
             },
             {
-                  "name": "Low-Key-Gmax",
+                  "name": "Toxtricity",
                   "primaryType": "electric",
                   "secondaryType": "poison",
                   "abilities": [

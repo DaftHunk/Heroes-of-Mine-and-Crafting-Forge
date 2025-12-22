@@ -1,5 +1,5 @@
 {
-      "name": "Artisan",
+      "name": "Poltchageist",
       "nationalPokedexNumber": 1012,
       "primaryType": "grass",
       "secondaryType": "ghost",
@@ -142,7 +142,7 @@
       "cannotDynamax": false,
       "forms": [
             {
-                  "name": "Artisan",
+                  "name": "Poltchageist",
                   "primaryType": "grass",
                   "secondaryType": "ghost",
                   "abilities": [

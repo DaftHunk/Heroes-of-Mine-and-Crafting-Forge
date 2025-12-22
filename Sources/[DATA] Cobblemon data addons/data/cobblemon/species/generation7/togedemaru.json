@@ -1,5 +1,5 @@
 {
-      "name": "Totem",
+      "name": "Togedemaru",
       "nationalPokedexNumber": 777,
       "primaryType": "electric",
       "secondaryType": "steel",
@@ -22,7 +22,7 @@
       "shoulderMountable": false,
       "forms": [
             {
-                  "name": "Totem",
+                  "name": "Togedemaru",
                   "primaryType": "electric",
                   "secondaryType": "steel",
                   "abilities": [
