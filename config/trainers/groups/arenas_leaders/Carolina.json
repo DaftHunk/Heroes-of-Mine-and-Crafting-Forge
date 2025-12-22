@@ -187,9 +187,9 @@
       ]
     }
   ],
-  "winCommand": "",
-  "lossCommand": "",
-  "canOnlyBeatOnce": false,
+  "winCommand": "easy_npc dialog open 3ccafb39-c253-4460-b686-6e64e71bf805 %player% win_dial",
+  "lossCommand": "easy_npc dialog open 3ccafb39-c253-4460-b686-6e64e71bf805 %player% loss_dial",
+  "canOnlyBeatOnce": true,
   "cooldownSeconds": 0,
   "partyMaximumLevel": 100,
   "defeatRequiredTrainers": [

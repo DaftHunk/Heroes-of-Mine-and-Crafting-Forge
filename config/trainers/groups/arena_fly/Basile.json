@@ -104,9 +104,9 @@
       ]
     }
   ],
-  "winCommand": "easy_npc dialog afda157e-79e5-472f-b6e8-afd81b6c6e44 %player% win_dial",
-  "lossCommand": "easy_npc dialog afda157e-79e5-472f-b6e8-afd81b6c6e44 %player% loss_dial",
-  "canOnlyBeatOnce": false,
+  "winCommand": "easy_npc dialog open afda157e-79e5-472f-b6e8-afd81b6c6e44 %player% win_dial",
+  "lossCommand": "easy_npc dialog open afda157e-79e5-472f-b6e8-afd81b6c6e44 %player% loss_dial",
+  "canOnlyBeatOnce": true,
   "cooldownSeconds": 0,
   "partyMaximumLevel": 100,
   "defeatRequiredTrainers": [
