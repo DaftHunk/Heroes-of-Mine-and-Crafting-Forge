@@ -1,8 +1,10 @@
 {
-	"item.numismatics.spur": "Cran de cuivre",
-	"item.numismatics.bevel": "Cran de zinc",
-	"item.numismatics.sprocket": "Cran de fer",
-	"item.numismatics.cog": "Cran de laiton",
-	"item.numismatics.crown": "Cran d'or",
-	"item.numismatics.sun": "Cran de netherite"
+	"item.numismatics.spur": "[ANCIEN] Cran de cuivre",
+	"item.numismatics.bevel": "[ANCIEN] Cran de zinc",
+	"item.numismatics.sprocket": "[ANCIEN] Cran de fer",
+	"item.numismatics.cog": "[ANCIEN] Cran de laiton",
+	"item.numismatics.crown": "[ANCIEN] Cran d'or",
+	"item.numismatics.sun": "[ANCIEN] Cran de netherite",
+	"item.numismatics.coin.tooltip.value": "Ancienne monnaie, à échanger au banquier de Mitaraka !",
+	"item.numismatics.coin.tooltip.value.basic": "Ancienne monnaie, à échanger au banquier de Mitaraka !"
 }
