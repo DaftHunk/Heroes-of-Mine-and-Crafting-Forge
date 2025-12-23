@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#70D1F4",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "minecraft:diamond"
+  },
+  "name": {
+    "color": "#70D1F4",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "item.minecraft.diamond"
+      }
+    ]
+  }
+}

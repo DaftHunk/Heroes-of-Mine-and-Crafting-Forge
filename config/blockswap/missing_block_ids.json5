@@ -20,6 +20,7 @@ to make editing this file much easier.
 		"magnumtorch:amethyst_magnum_torch": "torchmaster:dreadlamp",
 		"magnumtorch:diamond_magnum_torch": "torchmaster:megatorch",
 		"magnumtorch:emerald_magnum_torch": "torchmaster:megatorch",
-		"unimplemented_items:repel": "minecraft:air"
+		"unimplemented_items:repel": "minecraft:air",
+		"ars_nouveau:portal": "minecraft:air"
 	}
 }

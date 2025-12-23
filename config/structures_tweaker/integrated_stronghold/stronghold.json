@@ -1,9 +1,9 @@
 {
   "configVersion": 2,
   "config": {
-    "canBreakBlocks": true,
+    "canBreakBlocks": false,
     "canInteract": true,
-    "canPlaceBlocks": true,
+    "canPlaceBlocks": false,
     "allowPlayerPVP": true,
     "allowCreatureSpawning": true,
     "allowFireSpread": true,

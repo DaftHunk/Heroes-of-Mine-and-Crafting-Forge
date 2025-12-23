@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#A46DE9",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 2.5
+      },
+      "scale": 0.35
+    },
+  "item": {
+    "item": "cobblemon:master_ball"
+  },
+  "name": {
+    "color": "#A46DE9",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Master Ball"
+      }
+    ]
+  }
+}

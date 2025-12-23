@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#E60000",
+    "base": "#1B5300"
+  },
+    "display": {
+      "offset": {
+        "y": 1.0
+      },
+      "scale": 0.5
+    },
+  "item": {
+    "item": "simplehats:christmastree"
+  },
+  "name": {
+    "color": "#E60000",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Sapin de Noël"
+      }
+    ]
+  }
+}

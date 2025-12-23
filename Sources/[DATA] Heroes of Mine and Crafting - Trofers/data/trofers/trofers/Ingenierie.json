@@ -1,0 +1,27 @@
+{
+  "colors": {
+    "accent": "#c39a74",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 1.35
+      },
+	  "rotation": {
+        "z": 30
+      },
+      "scale": 0.40
+    },
+  "item": {
+    "item": "create:wrench"
+  },
+  "name": {
+    "color": "#c39a74",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Ingénierie"
+      }
+    ]
+  }
+}

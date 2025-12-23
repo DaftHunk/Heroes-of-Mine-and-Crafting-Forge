@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#e446ff",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.65
+      },
+      "scale": 0.65
+    },
+  "item": {
+    "item": "ars_nouveau:dominion_wand"
+  },
+  "name": {
+    "color": "#e446ff",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Ars"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "accent": "#fcba03",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 2.0
+      },
+	  "rotation": {
+		"x": -45,
+        "z": -90
+      },
+      "scale": 0.90
+    },
+  "item": {
+    "item": "irons_spellbooks:necronomicon_spell_book"
+  },
+  "name": {
+    "color": "#fcba03",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Necronomicon"
+      }
+    ]
+  }
+}

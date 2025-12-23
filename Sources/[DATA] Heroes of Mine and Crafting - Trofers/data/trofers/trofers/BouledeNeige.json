@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#606060",
+    "base": "#FFFFFF"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "snowyspirit:snow_globe"
+  },
+  "name": {
+    "color": "#606060",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Boule à Neige"
+      }
+    ]
+  }
+}

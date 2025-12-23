@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "accent": "#fcba03",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 2.65
+      },
+	  "rotation": {
+        "y": 90
+      },
+      "scale": 0.70
+    },
+  "item": {
+    "item": "automobility:automobile_wheel",
+	 "nbt": {"wheel":"automobility:gilded"}
+  },
+  "name": {
+    "color": "#fcba03",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Mita'Rallye"
+      }
+    ]
+  }
+}

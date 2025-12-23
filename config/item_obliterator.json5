@@ -116,7 +116,8 @@
 	"unimplemented_items:elixir",
 	"unimplemented_items:potion_max",
 	"unimplemented_items:potion_hyper",
-	"unimplemented_items:potion"
+	"unimplemented_items:potion",
+	"ars_nouveau:stable_warp_scroll"
   ],
   // -----------------------------------------------------------
   // Removes an item if it contains certain nbt tag. If the whole entry (or expression) is present, the item gets removed.

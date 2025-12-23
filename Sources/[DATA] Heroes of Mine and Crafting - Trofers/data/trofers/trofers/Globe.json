@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#fcba03",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.0
+      },
+      "scale": 0.85
+    },
+  "item": {
+    "item": "supplementaries:globe"
+  },
+  "name": {
+    "color": "#fcba03",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Globe"
+      }
+    ]
+  }
+}

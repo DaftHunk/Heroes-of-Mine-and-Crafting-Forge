@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#606060",
+    "base": "#FFFFFF"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.65
+    },
+  "item": {
+    "item": "camera:camera"
+  },
+  "name": {
+    "color": "#606060",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Photo"
+      }
+    ]
+  }
+}

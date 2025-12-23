@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#FFFFFF",
+    "base": "#E60000"
+  },
+    "display": {
+      "offset": {
+        "y": 1.0
+      },
+      "scale": 0.40
+    },
+  "item": {
+    "item": "mcwholidays:snowman_with_top_hat"
+  },
+  "name": {
+    "color": "#E60000",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Bonhomme de Neige"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#606060",
+    "base": "#FFFFFF"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "snowyspirit:quark/sled_ancient"
+  },
+  "name": {
+    "color": "#606060",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Luge de Glace"
+      }
+    ]
+  }
+}

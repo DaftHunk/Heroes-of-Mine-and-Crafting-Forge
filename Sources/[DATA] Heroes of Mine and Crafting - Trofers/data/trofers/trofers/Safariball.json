@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#84913d",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 2.5
+      },
+      "scale": 0.35
+    },
+  "item": {
+    "item": "cobblemon:safari_ball"
+  },
+  "name": {
+    "color": "#84913d",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Safari Ball"
+      }
+    ]
+  }
+}

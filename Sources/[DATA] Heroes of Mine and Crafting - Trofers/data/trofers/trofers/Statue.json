@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#c4c4c4",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.0
+      },
+      "scale": 0.85
+    },
+  "item": {
+    "item": "supplementaries:statue"
+  },
+  "name": {
+    "color": "#c4c4c4",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Statue"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "accent": "#fcba03",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 1.0
+      },
+	  "rotation": {
+        "y": 90
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "automobility:automobile_engine",
+	 "nbt": {"engine":"automobility:gold"}
+  },
+  "name": {
+    "color": "#fcba03",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Mitara'Kart"
+      }
+    ]
+  }
+}

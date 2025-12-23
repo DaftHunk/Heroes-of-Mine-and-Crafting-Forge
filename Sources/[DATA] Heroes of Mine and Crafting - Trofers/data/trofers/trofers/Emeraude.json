@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#50C878",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "minecraft:emerald"
+  },
+  "name": {
+    "color": "#50C878",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "item.minecraft.emerald"
+      }
+    ]
+  }
+}

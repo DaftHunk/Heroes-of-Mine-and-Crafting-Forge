@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#fcba03",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "minecraft:totem_of_undying"
+  },
+  "name": {
+    "color": "#fcba03",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "Totem"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "accent": "#D97551",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+      "scale": 0.75
+    },
+  "item": {
+    "item": "minecraft:copper_ingot"
+  },
+  "name": {
+    "color": "#D97551",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "item.minecraft.copper_ingot"
+      }
+    ]
+  }
+}

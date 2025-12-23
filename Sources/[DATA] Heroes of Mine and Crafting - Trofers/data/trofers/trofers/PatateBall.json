@@ -1,0 +1,27 @@
+{
+  "colors": {
+    "accent": "#D97551",
+    "base": "#606060"
+  },
+    "display": {
+      "offset": {
+        "y": 0.5
+      },
+	  "rotation": {
+        "z": -25
+      },
+      "scale": 0.60
+    },
+  "item": {
+    "item": "create:potato_cannon"
+  },
+  "name": {
+    "color": "#D97551",
+    "translate": "trophy.trofers.composed",
+    "with": [
+      {
+        "translate": "PatateBall"
+      }
+    ]
+  }
+}
