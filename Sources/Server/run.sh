@@ -5,7 +5,7 @@
 #  pass them to this script directly
 while true
 do
-  java @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-47.4.0/unix_args.txt "$@"
+  /home/homc/graalvm-ee-java17-21.3.12/bin/java @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-47.4.0/unix_args.txt "$@"
   echo "Press [CTRL+C] to stop.."
   sleep 3
 done
