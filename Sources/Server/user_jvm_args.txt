@@ -58,5 +58,6 @@
 -XX:+SegmentedCodeCache 
 -XX:ThreadPriorityPolicy=1
 -XX:+EagerJVMCI 
+-Djava.awt.headless=true
 -Djdk.graal.TuneInlinerExploration=1 
 -Djdk.graal.CompilerConfiguration=enterprise 

@@ -3,6 +3,26 @@
         {
             "chain": "casino",
             "name": {
+                "translate": "lightmanscurrency.money.chain.casino"
+            },
+            "displayType": "lightmanscurrency:number",
+			"displayFormat": {
+				"translate": "lightmanscurrency.money.chain.casino.display"
+			  },
+			  "displayFormatWordy": {
+				"translate": "lightmanscurrency.money.chain.casino.display.wordy"
+			  },
+            "InputType": "DEFAULT",
+            "CoreChain": [
+				{
+					"Coin": "homac:jeton",
+					"baseUnit": true
+				}
+			]
+        },
+		{
+            "chain": "marchand",
+            "name": {
                 "translate": "lightmanscurrency.money.chain.emeralds"
             },
             "displayType": "lightmanscurrency:number",
@@ -15,7 +35,7 @@
             "InputType": "DEFAULT",
             "CoreChain": [
 				{
-					"Coin": "homac:jeton",
+					"Coin": "minecraft:emerald",
 					"baseUnit": true
 				}
 			]
