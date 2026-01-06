@@ -54,7 +54,7 @@
 		#The maximum number of chunks that a player can claim. Additional claims can be configured in the player config.
 		#This value can be overridden with a player permission.
 		#Range: > 0
-		maxPlayerClaims = 500
+		maxPlayerClaims = 1000
 		#The maximum number of claimed chunks that a player can forceload. Additional forceloads can be configured in the player config.
 		#This value can be overridden with a player permission.
 		#Range: > 0
@@ -71,7 +71,7 @@
 		adminModePermission = "xaero.pac_admin_mode"
 		#The maximum distance on the X or Z axis (forming a square) that a chunk can be claimed at by a player.
 		#Range: > 0
-		maxClaimDistance = 10
+		maxClaimDistance = 32
 		#The type of the list defined in "claimableDimensionsList". ONLY - include only the listed dimensions. ALL_BUT - include all but the listed dimensions.
 		#Allowed Values: ONLY, ALL_BUT
 		claimableDimensionsListType = "ALL_BUT"

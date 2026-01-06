@@ -9,7 +9,7 @@
 		#When not empty, used as the name for your claimed chunks.
 		name = ""
 		#Used as the color for your claims. Set to 0 to use the default automatic color.
-		color = 0
+		color = 14381203
 		#When enabled, the mod tries to protect your claimed chunks from other players. Workarounds are possible, especially with mods.
 		protectClaimedChunks = true
 		#The number of additional chunk claims that you can make on top of the normal limit.

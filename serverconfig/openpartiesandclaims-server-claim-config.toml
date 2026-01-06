@@ -177,7 +177,7 @@
 			#1) Every - protected from all players that don't have chunk access.
 			#2) Not Party - only players not in the same party as you.
 			#3) Not Ally - only players not in any party allied by yours.
-			itemUse = 1
+			itemUse = 0
 			#When enabled, the item use protection is extended to some right-click held item use in chunks directly next to the claimed ones. Item use affected by this is usually things that still work while looking at the sky (not block or entity) or item use with custom ray-tracing for blocks/fluids/entities (e.g. placing things on water), but also any item use of "additional banned items" configured on the server. Item use protection exceptions (e.g. food, potions etc) still apply.
 			neighborChunksItemUse = false
 			#When enabled, claimed chunk protection includes protection against dispensers that are "touching" and facing the protected chunks from outside. This does not protect wilderness.
@@ -430,7 +430,7 @@
 						#1) Party - players or entities owned by players in the same party as you.
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
 						#3) Every - all players/entities.
-						Controls = 0
+						Controls = 3
 
 					[playerConfig.claims.protection.exceptionGroups.block.break]
 						#When enabled, claimed chunk protection makes an exception for destruction of the following blocks: #minecraft:crops.
