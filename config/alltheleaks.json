@@ -1,5 +1,5 @@
 {
-  "preventSearchIgnoredItems": false,
+  "preventSearchIgnoredItems": true,
   "ingredientDedupe": false,
   "resourceLocationDedupe": false,
   "debugItemStackModifications": false,

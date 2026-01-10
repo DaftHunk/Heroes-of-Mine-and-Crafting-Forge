@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:the_void",
+      "required": false
+    },
+	{
+      "id": "#minecraft:is_end",
+      "required": false
+    },
+	{
+	  "id": "#forge:is_astra",
+      "required": false
+	}
+  ]
+}

@@ -7,7 +7,7 @@
 	#Instantly bleed carcasses.
 	"Instant Bleeding" = false
 	#Enable organ drops
-	Organs = false
+	Organs = true
 	#Enable carcass weight (slowness effect when carcasses are in your inventory)
 	"Weighted Carcasses" = false
 	#Enable looting when butchering carcasses
@@ -154,6 +154,8 @@
 	"Zombie Villager" = true
 	#Enable Zombified Piglin Corpses
 	"Zombified Piglin" = true
+	#Enable Player Corpses
+	Player = true
 
 ["Mod Compatibilities"]
 	#Enable Farmers Delight Compatibility

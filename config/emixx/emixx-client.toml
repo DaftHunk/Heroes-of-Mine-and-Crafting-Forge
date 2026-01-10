@@ -1,0 +1,11 @@
+
+[creativeModeTabs]
+	enableCreativeModeTabs = true
+	syncSelectedCreativeModeTab = false
+	enableBerryTheme = true
+	disabledCreativeModeTabs = ["minecraft:op_blocks", "easy_npc:spawn_eggs", "taxtg:giant_trees", "ftbfiltersystem:default", "idas:idas_tab", "easy_npc:config_items", "born_in_chaos_v1:bornin_chaos_mobs", "born_in_chaos_v1:debugging_bornin_chaos", "rctmod:creative_tab", "ftbquests:default", "multipiston:general", "realmrpg_skeletons:realm_rpg_skeletons_tab", "trofers:main", "magistuarmory:rusted", "realmrpg_wyrms:realm_rpg_wyrms_tab", "structurize:general", "born_in_chaos_v1:bornin_chaos_customization", "butchery:butcherycarcasses", "lootbags:itemgroup", "automobility:automobility_prefabs", "aether:spawn_eggs", "ars_creo:general"]
+
+[stackGroups]
+	enableStackGroups = true
+	disabledStackGroups = ["minecraft:shovels", "minecraft:pickaxes", "minecraft:axes", "minecraft:head_armor", "minecraft:hoes", "minecraft:swords", "minecraft:chest_armor", "minecraft:leg_armor", "minecraft:foot_armor", "c:raw_materials", "minecraft:infested_blocks", "minecraft:animal_armors", "c:foods", "minecraft:slabs", "minecraft:fences", "minecraft:planks", "minecraft:stairs", "minecraft:fence_gates", "minecraft:pressure_plates", "minecraft:rails", "minecraft:saplings", "minecraft:buttons", "minecraft:skulls", "minecraft:minecarts", "c:dyes", "c:ores", "minecraft:leaves", "c:seeds", "minecraft:logs", "minecraft:flowers", "minecraft:walls", "minecraft:terracotta", "c:glazed_terracottas", "c:concrete_powders", "c:concretes", "c:buckets", "minecraft:copper_blocks"]
+
