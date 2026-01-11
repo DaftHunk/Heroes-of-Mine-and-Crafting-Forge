@@ -4,7 +4,11 @@
     "server-override-mod-id"
   ],
   "client": [
-    "client-override-mod-id"
+    "colorwheel",
+	"cobblemon-ui-tweaks",
+	"fancytoasts",
+	"better_smithing_table",
+	"tooltipoverhaul"
   ],
   "both": [
     "both-override-mod-id"
