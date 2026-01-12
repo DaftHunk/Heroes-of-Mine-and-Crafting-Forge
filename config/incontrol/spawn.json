@@ -34,7 +34,8 @@
 		"cnb:cactem",
 		"illagerinvasion:provoker",
 		"illagerinvasion:archivist",
-		"illagerinvasion:necromancer"
+		"illagerinvasion:necromancer",
+		"tconstruct:terracube"
 	],
     "when": "onjoin",
     "result": "deny"

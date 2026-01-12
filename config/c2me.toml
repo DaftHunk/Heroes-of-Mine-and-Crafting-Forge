@@ -70,7 +70,7 @@ globalExecutorParallelism = "default"
 	# It is generally not recommended to disable this settings unless you know what you are doing  
 	# 
 	# 
-	enforceSafeWorldRandomAccess = "default"
+	enforceSafeWorldRandomAccess = false
 
 [threadedWorldGen]
 	# (Default: true) Whether to enable this feature
@@ -138,7 +138,7 @@ globalExecutorParallelism = "default"
 		# (Default: true) Whether to modify maximum view distance
 		enabled = "default"
 		# (Default: 54) Max render distance allowed in game options
-		maxViewDistance = "default"
+		maxViewDistance = 16
 
 [vanillaWorldGenOptimizations]
 	# (Default: true) Whether to enable aquifer optimizations to accelerate overworld worldgen
@@ -148,5 +148,5 @@ globalExecutorParallelism = "default"
 	# This is no longer included in lithium-fabric 
 	# (may cause incompatibility with other mods)
 	# 
-	useEndBiomeCache = "default"
+	useEndBiomeCache = false
 
