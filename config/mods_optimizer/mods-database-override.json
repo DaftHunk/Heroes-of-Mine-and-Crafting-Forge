@@ -8,7 +8,8 @@
 	"cobblemon-ui-tweaks",
 	"fancytoasts",
 	"better_smithing_table",
-	"tooltipoverhaul"
+	"tooltipoverhaul",
+	"spyglass_improvements"
   ],
   "both": [
     "both-override-mod-id"

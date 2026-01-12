@@ -1007,7 +1007,9 @@
 		"helmetDurability": 0,
 		"helmetDefense": 0,
 		"chestplateDurability": 335,
-		"chestplateDefense": 8
+		"chestplateDefense": 8,
+		"bootsDurability": 230,
+		"bootsDefense": 2
 	},
 	"darkbluedKastenbrust": {
 		"enabled": true,
