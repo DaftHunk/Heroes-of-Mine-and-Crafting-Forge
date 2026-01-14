@@ -1,11 +1,11 @@
 
 ["Dusty Decor Mob Drops"]
 	#Enable or Disable Guardians dropping Sea Glass Shards (True by default)
-	"Guardians Drop Seaglass" = true
+	"Guardians Drop Seaglass" = false
 	#Enable or Disable Animals dropping skulls (True by default)
-	"Drop Animal Skulls" = true
+	"Drop Animal Skulls" = false
 	#Enable or Disable Fish dropping fish bones (True by default)
-	"Drop Fish Bones" = true
+	"Drop Fish Bones" = false
 	#Chance of cow dropping skull ( 0.025 by default)
 	"% Drop Cow Skull" = 0.025
 	#Chance of fox or wolf dropping skull ( 0.025 by default)
