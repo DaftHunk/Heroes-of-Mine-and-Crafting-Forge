@@ -45,43 +45,43 @@ debugLevel=0
 		[crafting.coin_mint.mint]
 			#Whether the default mint recipe to mint copper coins from copper ingots will be loaded.
 			#Default: true
-			copper=true
+			copper=false
 			#Whether the default mint recipe to mint iron coins from iron ingots will be loaded.
 			#Default: true
-			iron=true
+			iron=false
 			#Whether the default mint recipe to mint gold coins from gold ingots will be loaded.
 			#Default: true
-			gold=true
+			gold=false
 			#Whether the default mint recipe to mint emerald coins from emeralds will be loaded.
 			#Default: true
-			emerald=true
+			emerald=false
 			#Whether the default mint recipe to mint diamond coins from diamonds will be loaded.
 			#Default: true
-			diamond=true
+			diamond=false
 			#Whether the default mint recipe to mint netherite coins from netherite ingots will be loaded.
 			#Default: true
-			netherite=true
+			netherite=false
 		#Specific Melting Options
 		#Does nothing if 'canMelt' is already false/disabled.
 		[crafting.coin_mint.melt]
 			#Whether the default mint recipe to melt copper coins back into copper ingots will be loaded.
 			#Default: true
-			copper=true
+			copper=false
 			#Whether the default mint recipe to melt iron coins back into iron ingots will be loaded.
 			#Default: true
-			iron=true
+			iron=false
 			#Whether the default mint recipe to melt gold coins back into gold ingots will be loaded.
 			#Default: true
-			gold=true
+			gold=false
 			#Whether the default mint recipe to melt emerald coins back into emeralds will be loaded.
 			#Default: true
-			emerald=true
+			emerald=false
 			#Whether the default mint recipe to melt diamond coins back into diamonds will be loaded.
 			#Default: true
-			diamond=true
+			diamond=false
 			#Whether the default mint recipe to melt netherite coins back into netherite ingots will be loaded.
 			#Default: true
-			netherite=true
+			netherite=false
 	#Money Chest Crafting
 	[crafting.money_chest]
 		#Whether the Money Chest can be crafted.
@@ -128,10 +128,10 @@ debugLevel=0
 	addCustomWanderingTrades=true
 	#Whether the banker villager profession will have any registered trades. The banker sells Lightman's Currency items for coins.
 	#Default: true
-	addBanker=true
+	addBanker=false
 	#Whether the cashier villager profession will have any registered trades.. The cashier sells an amalgamation of vanilla traders products for coins.
 	#Default: true
-	addCashier=true
+	addCashier=false
 	#Villager Trade Modification
 	#Note: Changes made only apply to newly generated trades. Villagers with trades already defined will not be changed.
 	[villagers.modification]
