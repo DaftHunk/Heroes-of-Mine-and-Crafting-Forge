@@ -215,7 +215,7 @@ bedWakeUpCooldown = 300
 # If true, any hamsters on your shoulder will remain there when you respawn. If false (default), they will remain at your death location, passed out from the sheer shock of seeing you die. They may need a quick pat to wake them up when you return.
 keepHamstersOnShoulderOnDeath = false
 # Should luring a hamster to your shoulder consume the item (e.g., cheese)? Turn this off if you believe your charm alone should be enough. The item will still be required, just not eaten.
-consumeLureItem = true
+consumeLureItem = false
 # Tired of wasting perfectly good cheese? Enable this to use a dedicated keybind (unbound by default). Hold down this key while right-clicking your hamster to hoist them onto your shoulder, no questions asked. Uses a separate key you must set in Settings > Controls > Key Binds.
 enableShoulderMountKeybind = false
 # May save your inventory. Or your ears.
