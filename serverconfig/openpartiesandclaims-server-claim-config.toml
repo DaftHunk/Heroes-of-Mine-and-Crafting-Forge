@@ -11,7 +11,7 @@
 		#Used as the color for your claims. Set to 0 to use the default automatic color.
 		color = 16777215
 		#When enabled, the mod tries to protect your claimed chunks from other players. Workarounds are possible, especially with mods.
-		protectClaimedChunks = false
+		protectClaimedChunks = true
 		#The number of additional chunk claims that you can make on top of the normal limit.
 		bonusChunkClaims = 0
 		#The number of additional chunk claim forceloads that you can make on top of the normal limit.
