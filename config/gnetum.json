@@ -30,7 +30,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "create:toolbox": {
       "enabled": {
@@ -54,7 +54,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "create_jetpack:jetpack_controls": {
       "enabled": {
@@ -96,7 +96,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "aether:moa_jumps": {
       "enabled": {
@@ -156,7 +156,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 1
+      "pass": 3
     },
     "aether:inebriation_vignette": {
       "enabled": {
@@ -192,7 +192,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "minecraft:scoreboard": {
       "enabled": {
@@ -210,7 +210,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 2
     },
     "supplementaries:slimed_overlay": {
       "enabled": {
@@ -246,7 +246,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "starcatcher:fish_tracker": {
       "enabled": {
@@ -276,7 +276,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "ars_nouveau:scry_camera": {
       "enabled": {
@@ -368,11 +368,17 @@
       },
       "pass": 3
     },
+    "starcatcher:tournament": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 3
+    },
     "gnetum:status_bar": {
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 3
     },
     "relics:researching_hint": {
       "enabled": {
@@ -408,7 +414,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 1
+      "pass": 3
     },
     "minecraft:debug_text": {
       "enabled": {
@@ -426,7 +432,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 2
+      "pass": 1
     }
   },
   "mapModdedElementsPre": {

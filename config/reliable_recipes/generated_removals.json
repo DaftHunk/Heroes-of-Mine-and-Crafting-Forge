@@ -1,0 +1,25 @@
+{
+  "recipe_modifications": [
+    {
+      "action": "remove",
+      "filter": {
+        "id": [
+			"furniture:telescope",
+			"furniture:gramophone",
+			"furniture:cash_register",
+			"furniture:coffer",
+			"furniture:tool_box",
+			"furniture:sewing_kit",
+			"furniture:explorers_box",
+			"furniture:blueprints",
+			"furniture:pells",
+			"furniture:boat_in_a_jar",
+			"furniture:copper_fish_tank",
+			"furniture:iron_fish_tank",
+			"furniture:terrarium",
+			"furniture:display"
+        ]
+      }
+    }
+  ]
+}

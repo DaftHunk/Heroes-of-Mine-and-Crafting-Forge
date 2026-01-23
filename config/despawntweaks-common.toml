@@ -6,7 +6,7 @@ allowMobsSpawnedBySpawnersToDespawn = true
 enableLetMeDespawnOptimization = true
 #.
 #Turn this off to disable the equipments drop on mobs despawn
-allowEquipmentDrops = true
+allowEquipmentDrops = false
 #.
 #If you add modIDs to this list, only mobs in the structures of the mods will be affected by DespawnTweaker.
 StructuresMods = []
