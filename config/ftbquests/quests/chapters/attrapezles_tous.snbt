@@ -18,17 +18,22 @@
 		}]
 		tasks: [{
 			action: "catch"
-			entity: "cobblemon_quests:choice_any"
-			form: "choice_any"
-			gender: "choice_any"
+			amount: 1L
+			biome: ""
+			dimension: ""
+			form: ""
+			gender: ""
 			icon: "cobblemon:poke_ball"
 			id: "6175E3DE9B0437A9"
-			pokemon_type: "choice_any"
-			region: "choice_any"
+			poke_ball_used: ""
+			pokemon: ""
+			pokemon_type: ""
+			region: ""
 			shiny: false
+			time_max: 24000L
+			time_min: 0L
 			title: "Le début d'un long voyage"
 			type: "cobblemon_tasks:cobblemon_task"
-			value: 1L
 		}]
 		x: 2.0d
 		y: 1.0d

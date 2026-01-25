@@ -1,13 +1,6 @@
 {
 	"pack": {
 		"pack_format": 15,
-		"description": "Heroes of Mine and Crafting resource & datapack"
-	},
-	"filter": {
-		"block":
-		[{
-			"namespace": "explorerscompass",
-			"path": "recipes/explorers_compass.json"
-		}]
+		"description": "HoMaC - Trophies"
 	}
 }

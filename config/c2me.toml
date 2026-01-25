@@ -132,14 +132,6 @@ globalExecutorParallelism = "default"
 	#  This will send chunks twice increasing network load
 	ensureChunkCorrectness = "default"
 
-[clientSideConfig]
-
-	[clientSideConfig.modifyMaxVDConfig]
-		# (Default: true) Whether to modify maximum view distance
-		enabled = "default"
-		# (Default: 54) Max render distance allowed in game options
-		maxViewDistance = 16
-
 [vanillaWorldGenOptimizations]
 	# (Default: true) Whether to enable aquifer optimizations to accelerate overworld worldgen
 	# (may cause incompatibility with other mods)
@@ -149,4 +141,12 @@ globalExecutorParallelism = "default"
 	# (may cause incompatibility with other mods)
 	# 
 	useEndBiomeCache = false
+
+[clientSideConfig]
+
+	[clientSideConfig.modifyMaxVDConfig]
+		# (Default: true) Whether to modify maximum view distance
+		enabled = "default"
+		# (Default: 54) Max render distance allowed in game options
+		maxViewDistance = "default"
 

@@ -22,11 +22,10 @@
 	id: "523C76327AB06FEE"
 	order_index: 1
 	quest_links: [ ]
-	quests: [{
-		id: "7EE56171C1D07E81"
-		tasks: [{
-			id: "5C441FA0CA420E92"
-			item: {
+	quests: [
+		{
+			description: ["Un étui idéal pour ranger vos badges comme un pro !"]
+			icon: {
 				Count: 1
 				ForgeCaps: {
 					Parent: {
@@ -35,11 +34,176 @@
 					}
 				}
 				id: "eclipses_cobblebadges:badgeboxitem"
+				tag: {
+					Inventory: {
+						Items: [ ]
+						Size: 9
+					}
+				}
 			}
-			type: "item"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+			id: "7EE56171C1D07E81"
+			tasks: [{
+				id: "5C441FA0CA420E92"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 9
+						}
+					}
+					id: "eclipses_cobblebadges:badgeboxitem"
+				}
+				type: "item"
+			}]
+			title: "Fabriquez un étui à badges"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			icon: "eclipses_cobblebadges:boulder_badge"
+			id: "36C7FA7527AFCEAD"
+			rewards: [{
+				id: "5FEBFB680479402D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "34D469483BA8E211"
+				item: "eclipses_cobblebadges:boulder_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Volcan"
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["36C7FA7527AFCEAD"]
+			id: "548D8BDDAB7398DB"
+			rewards: [{
+				id: "109A28D9D4AAA512"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "33124F8C12748D02"
+				item: "eclipses_cobblebadges:cascade_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Prisme"
+			x: 2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["548D8BDDAB7398DB"]
+			id: "426B2D2B39D29A77"
+			rewards: [{
+				id: "169BB60858AAD5B8"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "41F2173C6519F9D5"
+				item: "eclipses_cobblebadges:thunder_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Choc"
+			x: 2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["426B2D2B39D29A77"]
+			id: "6518C295F1A8EC97"
+			rewards: [{
+				id: "473D2474B9A21AA9"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "302ABDAC2A4E8B47"
+				item: "eclipses_cobblebadges:rainbow_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Esprit"
+			x: 1.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6518C295F1A8EC97"]
+			id: "5481B36920E4AB22"
+			rewards: [{
+				id: "5BBA75C22FED92FD"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7F671D7BDBA99F15"
+				item: "eclipses_cobblebadges:soul_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Zéphyr"
+			x: -1.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["5481B36920E4AB22"]
+			id: "00FD95424DA50B37"
+			rewards: [{
+				id: "24396DEDE607615F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "12653FE1E008A4D6"
+				item: "eclipses_cobblebadges:marsh_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Lever"
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["00FD95424DA50B37"]
+			id: "52BB66E02218FE76"
+			rewards: [{
+				id: "4A034E87440E7B74"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "580B367927E70B8C"
+				item: "eclipses_cobblebadges:volcano_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Glacier"
+			x: -2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["52BB66E02218FE76"]
+			id: "29FCE539C897F922"
+			rewards: [
+				{
+					id: "47B3C8EF269962CA"
+					type: "xp"
+					xp: 100
+				}
+				{
+					count: 3
+					id: "2D0849BC741FF913"
+					item: "cobblemon:rare_candy"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "1EFE1C41EDDA3E7A"
+				item: "eclipses_cobblebadges:earth_badge"
+				type: "item"
+			}]
+			title: "Obtenez le Badge Minéral"
+			x: -1.0d
+			y: -2.5d
+		}
+	]
 	title: "Régis est un con"
 }

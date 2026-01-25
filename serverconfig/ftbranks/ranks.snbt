@@ -82,11 +82,12 @@
 		command.ftbteams.party.decline.team: true
 		command.ftbteams.party.decline: true
 		command.ftbteams.party.leave: true
+		command.supplementaries.roll: true
+		command.supplementaries.roll.dice: true
 	}
 	modo: {
 		name: "Modérateur"
 		power: 50
-		ftbranks.name_format: "&b{name}"
 		command.help: true
 		command.advancement: true
 		command.alwaysday: true
@@ -107,13 +108,32 @@
 		command.time: true
 		command.weather: true
 		command.tp: true
+		ftbranks.name_format: "&2[Modo]&r{name}"
 	}
-	admin: {
-		name: "Administrateur"
+	op: {
+		name: "Opérateur"
 		power: 1000
 		condition: "op"
 		command: true
 		command.ftbranks: true
-		ftbranks.name_format: "&2{name}"
+	}
+	admin: {
+		name: "Administrateur"
+		power: 1000
+		command: true
+		command.ftbranks: true
+		ftbranks.name_format: "&5[Admin]&r{name}"
+	}
+	inge: {
+		name: "Ingé"
+		power: 2
+		name_format: "[Ingé]{name}"
+		ftbranks.name_format: "&6[Ingé]&r{name}"
+	}
+	mage: {
+		name: "Mage"
+		power: 2
+		name_format: "[Mage]{name}"
+		ftbranks.name_format: "&9[Mage]&r{name}"
 	}
 }

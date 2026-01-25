@@ -44,7 +44,7 @@
 			#Chunk access is always tested against the owner, whether this is enabled or not.
 			blocksRedirect = false
 			#When enabled, claimed chunk protection includes block protection against explosions. Keep in mind that creeper explosions are also affected by the block mob protection option.
-			blocksFromExplosions = false
+			blocksFromExplosions = true
 			#When enabled, claimed chunk protection includes protection against fire spread.
 			fromFireSpread = false
 			#When enabled, claimed chunk protection includes protection against frost walking by players/entities who don't have access to the chunks.

@@ -44,7 +44,7 @@ dynamic:
 
     - setting: 'MOBCAP_PERCENTAGE'
       max: 100
-      min: 80
+      min: 50
       increment: 10
       interval: 60
 
@@ -106,7 +106,7 @@ mob-spawning:
   # ► spawn-interval = The interval between spawn attempts in ticks. Higher values mean less frequent spawn attempts.
   categories:
     - category: 'MONSTER'
-      mobcap: 40
+      mobcap: 20
       spawn-interval: 10
 
     - category: 'CREATURE'
@@ -130,7 +130,7 @@ mob-spawning:
       spawn-interval: 10
 
     - category: 'WATER_AMBIENT'
-      mobcap: 20
+      mobcap: 10
       spawn-interval: 10
 
 

@@ -15,7 +15,7 @@
 				item: "minecraft:spruce_boat"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -6.0d
 			y: -3.5d
 		}
 		{
@@ -26,7 +26,7 @@
 				type: "item"
 			}]
 			x: -7.0d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			id: "4C216F2FA728F3C0"
@@ -36,7 +36,7 @@
 				type: "item"
 			}]
 			x: -5.0d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			id: "1C02BC6936D0BFA3"
@@ -46,7 +46,7 @@
 				type: "item"
 			}]
 			x: -5.0d
-			y: -5.0d
+			y: -4.5d
 		}
 		{
 			id: "348768542BD9C7C5"
@@ -56,7 +56,7 @@
 				type: "item"
 			}]
 			x: -7.0d
-			y: -5.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["7D2267B3FF076758"]
@@ -94,16 +94,6 @@
 			}]
 			x: 3.5d
 			y: -2.5d
-		}
-		{
-			id: "4B20A9756C1E5330"
-			tasks: [{
-				id: "0A5E1553D208FB9B"
-				item: "vs_eureka:oak_ship_helm"
-				type: "item"
-			}]
-			x: -4.0d
-			y: -3.5d
 		}
 		{
 			icon: "minecraft:compass"

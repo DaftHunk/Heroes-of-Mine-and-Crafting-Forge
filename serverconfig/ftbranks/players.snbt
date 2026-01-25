@@ -1,15 +1,23 @@
 {
 	ac7e2b04-2ea3-40c7-b02d-5c02fa672105: {
 		name: "Daft_Hunk"
+		ranks: {
+			admin: "2026-01-24T09:16:36.050393504Z"
+		}
 	}
 	660147ca-80a5-4391-aa54-72461cdccdf1: {
 		name: "Othnos"
 		ranks: {
 			modo: "2024-05-01T18:38:52.099625542Z"
+			admin: "2026-01-24T09:20:12.189784404Z"
 		}
 	}
 	29bf8272-b438-4bb6-8854-f2ce87339443: {
 		name: "TracynKyrayc"
+		ranks: {
+			inge: "2026-01-20T14:35:57.778839240Z"
+			admin: "2026-01-24T09:20:05.093599540Z"
+		}
 	}
 	832f1c3b-0c72-4250-b104-758ace1f04ed: {
 		name: "JMidway"
@@ -22,17 +30,105 @@
 	}
 	538cc7be-9e2f-493d-b719-0e6b521b58bb: {
 		name: "Amne_lys"
+		ranks: {
+			mage: "2026-01-21T12:40:59.137366102Z"
+		}
 	}
 	4abc25e9-00a5-4208-967e-81e47f1a73fd: {
 		name: "Naayos"
+		ranks: {
+			mage: "2026-01-20T14:26:55.432350429Z"
+		}
 	}
 	d9aa889d-5625-4ff5-ba8c-7dabb18efca8: {
 		name: "JeanDalfLeBourge"
+		ranks: {
+			modo: "2026-01-24T09:16:54.566928174Z"
+		}
 	}
 	15cd31c0-e654-42f6-b60b-91ba72eca3dd: {
 		name: "Caram_Hell"
+		ranks: {
+			mage: "2026-01-20T14:26:41.051941170Z"
+		}
 	}
 	00447e95-e714-45f4-b5fb-181ca1b58f55: {
 		name: "BadgeNoix"
+		ranks: {
+			mage: "2026-01-20T14:26:31.064156667Z"
+		}
+	}
+	4c7838f8-1162-4793-9899-63b279e9bdd2: {
+		name: "NyiyCe"
+		ranks: {
+			mage: "2026-01-20T10:02:57.546269664Z"
+		}
+	}
+	155cb562-46fc-407a-a140-7103d905b3fc: {
+		name: "kikaby"
+		ranks: {
+			inge: "2026-01-20T10:02:28.099949181Z"
+		}
+	}
+	8d179c90-5296-4cdb-8f41-a85a4d404f72: {
+		name: "Yyuyuyuna"
+		ranks: {
+			mage: "2026-01-20T10:21:46.474790083Z"
+		}
+	}
+	8769924f-6aab-429d-b139-83c57b37b8cd: {
+		name: "Saref_Slackminut"
+		ranks: {
+			mage: "2026-01-20T14:30:16.822579904Z"
+			inge: "2026-01-24T11:11:44.099126181Z"
+		}
+	}
+	b323650e-88ee-4e6c-be96-070d7cd6369a: {
+		name: "lysladonia"
+		ranks: {
+			mage: "2026-01-20T14:30:37.344888871Z"
+		}
+	}
+	caaa188e-5276-4c7a-a56b-2d3cf8d7564b: {
+		name: "BatMx"
+		ranks: {
+			mage: "2026-01-20T14:30:51.067624345Z"
+		}
+	}
+	07d64370-cace-4851-a9fd-b26daf00a481: {
+		name: "EdenBsck"
+		ranks: {
+			mage: "2026-01-20T14:31:09.753943398Z"
+		}
+	}
+	0398c018-6fe3-48b5-881d-42511902bcb6: {
+		name: "Syanaa_mye"
+		ranks: {
+			mage: "2026-01-20T14:31:19.329259431Z"
+		}
+	}
+	8d064241-c42f-4e68-9903-545121a1b27b: {
+		name: "WondRor"
+		ranks: {
+			inge: "2026-01-20T14:31:40.071443216Z"
+		}
+	}
+	e787a8a8-3e81-422f-b8fb-be322b8c76e2: {
+		name: "Fliven"
+		ranks: {
+			inge: "2026-01-20T14:32:00.392058028Z"
+		}
+	}
+	f7b0032e-80e7-4205-9455-bed9753a76b5: {
+		name: "xaphus"
+		ranks: {
+			inge: "2026-01-20T14:32:21.011234467Z"
+		}
+	}
+	c2d0b07f-d4be-4333-b2c2-027443e378af: {
+		name: "Tiber_Visaris"
+		ranks: {
+			inge: "2026-01-20T14:32:35.415839459Z"
+		}
 	}
 }

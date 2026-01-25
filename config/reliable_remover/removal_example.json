@@ -101,7 +101,8 @@
 				"unimplemented_items:potion_max",
 				"unimplemented_items:potion_hyper",
 				"unimplemented_items:potion",
-				"ars_nouveau:stable_warp_scroll"
+				"ars_nouveau:stable_warp_scroll",
+				"irons_spellbooks:portal_frame"
             ]
         }
     }

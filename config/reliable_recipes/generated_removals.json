@@ -17,7 +17,8 @@
 			"furniture:copper_fish_tank",
 			"furniture:iron_fish_tank",
 			"furniture:terrarium",
-			"furniture:display"
+			"furniture:display",
+			"explorerscompass:explorers_compass"
         ]
       }
     }
