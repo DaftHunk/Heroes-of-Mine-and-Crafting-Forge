@@ -92,7 +92,7 @@
 		"Love Chance" = 0.333333333
 		Range = 10.0
 		#Chance that an animal decides to look for a through. Closer it is to 1 the more performance it will take. Decreasing will make animals take longer to find one
-		"Look Chance" = 0.015
+		"Look Chance" = 0.001
 
 	[automation.iron_rod]
 		"Use Pre End Recipe" = false
