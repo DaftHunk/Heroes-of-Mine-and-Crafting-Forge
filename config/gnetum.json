@@ -54,7 +54,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 1
     },
     "create_jetpack:jetpack_controls": {
       "enabled": {
