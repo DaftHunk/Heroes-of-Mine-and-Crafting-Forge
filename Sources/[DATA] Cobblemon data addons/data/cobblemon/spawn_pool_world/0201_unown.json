@@ -30,7 +30,7 @@
             "weight": 15.0,
             "condition": {
                 "biomes": [
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ]
             }
         },
@@ -44,7 +44,7 @@
             "weight": 3.0,
             "condition": {
                 "biomes": [
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ]
             }
         },
@@ -58,7 +58,7 @@
             "weight": 3.0,
             "condition": {
                 "biomes": [
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ]
             }
         },
@@ -72,7 +72,7 @@
             "weight": 10.0,
             "condition": {
                 "biomes": [
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ]
             }
         }

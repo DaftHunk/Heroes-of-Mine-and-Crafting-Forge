@@ -13,7 +13,10 @@
                   "condition": {
                         "canSeeSky": true,
                         "biomes": [
-                              "minecraft:birch_forest"
+                              "#cobblemon:is_forest"
+                        ],
+                        "dimensions": [
+                              "minecraft:overworld"
                         ]
                   },
                   "id": "minccino-1"

@@ -20,7 +20,7 @@
           "percentage": 5.0
         },
         {
-          "item": "minecraft:cod",
+          "item": "minecraft:raw_cod",
           "quantityRange": "1-2",
           "percentage": 33
         }

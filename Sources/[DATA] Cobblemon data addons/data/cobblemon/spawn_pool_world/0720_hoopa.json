@@ -32,7 +32,7 @@
                   "weight": 5,
                   "condition": {
                         "biomes": [
-                              "#cobblemon:is_end"
+                              "#minecraft:is_end"
                         ]
                   },
                   "id": "hoopa-2"

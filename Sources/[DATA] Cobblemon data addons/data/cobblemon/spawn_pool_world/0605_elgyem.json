@@ -16,7 +16,7 @@
             "weight": 8.4,
             "condition": {
                 "biomes": [
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ]
             },
             "drops": {
