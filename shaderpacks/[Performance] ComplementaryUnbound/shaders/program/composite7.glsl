@@ -22,7 +22,7 @@ float GetLinearDepth(float depth) {
 }
 
 //Includes//
-#if FXAA_DEFINE == 1
+#if FXAA_DEFINE == 1 && FXAA_STRENGTH > 1
     #include "/lib/antialiasing/fxaa.glsl"
 #endif
 
@@ -33,7 +33,7 @@ void main() {
     #if LONG_EXPOSURE > 0
     if (hideGUI == 0 || isViewMoving()) {
     #endif
-        #if FXAA_DEFINE == 1
+        #if FXAA_DEFINE == 1 && FXAA_STRENGTH > 1
             // Apply FXAA only when GUI is hidden or view is moving
             FXAA311(color);
         #endif

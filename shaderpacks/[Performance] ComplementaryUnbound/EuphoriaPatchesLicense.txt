@@ -23,23 +23,23 @@ Euphoria Patches License Agreement v1.1
 
 2. Grants
 ---------
-  2.1. Generation Requirement  
+  2.1. Generation Requirement
        Except for Dev Versions, You may only obtain unmodified copies of This Pack by:
-         a. Running the Patcher Mod on the corresponding source, or  
-         b. Using the Complementary Installer (for official, unmodified builds only).  
+         a. Running the Patcher Mod on the corresponding source, or
+         b. Using the Complementary Installer (for official, unmodified builds only).
        Any other form of direct redistribution is prohibited.
 
-  2.2. Redistribution in Modpacks  
+  2.2. Redistribution in Modpacks
        You may include This Pack in a Modpack only if:
          a. The Modpack includes the required Patcher mod to generate this Pack.
 
-  2.3. Redistribution as a Modified Pack  
+  2.3. Redistribution as a Modified Pack
        You may distribute This Pack as part of a Modified Pack only if:
          a. It is distributed exclusively through a patching mechanism
             functionally similar to the Patcher Mod.
          b. All requirements in CLA §1.3 must be followed, including:
             - Clear credit to the Original Pack and Euphoria Patches with a link to euphoriapatches.com
-            - Inclusion of the unmodified latest version of this license  
+            - Inclusion of the unmodified latest version of this license
             - Proper name differentiation
             Exception: Big visual differences are not a requirement unlike the CLA
          c. The Modified Pack must not include “Euphoria” in its name, and there

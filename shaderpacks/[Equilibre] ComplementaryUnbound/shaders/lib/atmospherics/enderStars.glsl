@@ -27,7 +27,7 @@ vec3 GetEnderStars(vec3 viewPos, float VdotU, float sizeMult, float starAmount) 
     star = max0(star - starAmount * 0.1);
     star *= star;
 
-    vec3 starColor = GetStarColor(starCoord2, 
+    vec3 starColor = GetStarColor(starCoord2,
                                   endSkyColor,
                                   vec3(STAR_COLOR_1_END_R, STAR_COLOR_1_END_G, STAR_COLOR_1_END_B),
                                   vec3(STAR_COLOR_2_END_R, STAR_COLOR_2_END_G, STAR_COLOR_2_END_B),

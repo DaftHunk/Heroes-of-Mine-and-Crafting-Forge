@@ -54,7 +54,7 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
     #include "/lib/atmospherics/fog/mainFog.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
 
@@ -68,10 +68,6 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 
 #ifdef SS_BLOCKLIGHT
     #include "/lib/lighting/coloredBlocklight.glsl"
-#endif
-
-#ifdef AURORA_INFLUENCE
-    #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
 //Program//
@@ -90,7 +86,7 @@ void main() {
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         atmColorMult = GetAtmColorMult();
     #endif
 
@@ -101,7 +97,7 @@ void main() {
         if (pow2(cloudLinearDepth + OSIEBCA * dither) * renderDistance < min(lViewPos, renderDistance)) discard;
     #endif
 
-    float emission = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
+    float emission = 0.0, enderDragonDead = 1.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA, Reduce Reflection
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
@@ -114,74 +110,75 @@ void main() {
             float atlasCheck = 900.0;
         #endif
 
-    if (atlasSize.x < atlasCheck) {
-        if (color.b > 1.15 * (color.r + color.g) && color.g > color.r * 1.25 && color.g < 0.425 && color.b > 0.75) { // Water Particle
-            materialMask = 0.0;
-            color.rgb = sqrt3(color.rgb);
-            color.rgb *= 0.7;
-            if (dither > 0.4) discard;
-            #ifdef NO_RAIN_ABOVE_CLOUDS
-                if (cameraPosition.y > maximumCloudsHeight) discard;
-            #endif
-        #ifdef OVERWORLD
-        } else if (color.b > 0.7 && color.r < 0.28 && color.g < 0.425 && color.g > color.r * 1.4) { // physics mod rain
-            #ifdef NO_RAIN_ABOVE_CLOUDS
-                if (cameraPosition.y > maximumCloudsHeight) discard;
-            #endif
-            if (color.a < 0.1 || isEyeInWater == 3) discard;
-            color.a *= rainTexOpacity;
-            color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + ambientColor * lmCoord.y * (0.7 + 0.35 * sunFactor));
-        } else if (color.rgb == vec3(1.0) && color.a < 0.765 && color.a > 0.605) { // physics mod snow (default snow opacity only)
-            #ifdef NO_RAIN_ABOVE_CLOUDS
-                if (cameraPosition.y > maximumCloudsHeight) discard;
-            #endif
-            if (color.a < 0.1 || isEyeInWater == 3) discard;
-            color.a *= snowTexOpacity;
-            color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + lmCoord.y * (0.7 + 0.35 * sunFactor) + ambientColor * 0.2);
-        #endif
-        } else if (color.r == 1.0 && color.b < 0.778 && color.g < 0.97) { // Fire Particle
-            #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
-                color.rgb = changeColorFunction(color.rgb, 3.0, colorSoul, inSoulValley);
-            #endif
-            #ifdef PURPLE_END_FIRE_INTERNAL
-                color.rgb = changeColorFunction(color.rgb, 3.0, colorEndBreath, 1.0);
-            #endif
-            emission = 2.0;
-        } else if (color.r == color.g && color.r - 0.5 * color.b < 0.06) { // Underwater Particle
-            if (isEyeInWater == 1) {
-                color.rgb = sqrt2(color.rgb) * 0.35;
-                if (fract(playerPos.y + cameraPosition.y) > 0.25) discard;
-            }
-        } else if (color.a < 0.99 && dot(color.rgb, color.rgb) < 1.0) { // Campfire Smoke
-            color.a *= SMOKE_PARTICLE_OPACITY;
-            materialMask = 0.0;
-        } else if (max(abs(colorP.r - colorP.b), abs(colorP.b - colorP.g)) < 0.001) { // Grayscale Particles
-            float dotColor = dot(color.rgb, color.rgb);
-            if (dotColor > 0.25 && color.g < 0.5 && (color.b > color.r * 1.1 && color.r > 0.3 || color.r > (color.g + color.b) * 3.0)) {
-                // Ender Particle, Crying Obsidian Particle, Redstone Particle
-                emission = clamp(color.r * 8.0, 1.6, 5.0);
-                color.rgb = pow1_5(color.rgb);
-                lmCoordM = vec2(0.0);
-                #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS
-                    if (color.b > color.r * color.r && color.g < 0.16 && color.r > 0.2) color.rgb = changeColorFunction(color.rgb, 10.0, netherColor, 1.0); // Nether Portal
+        vec2 tSize = textureSize(tex, 0);
+        if (tSize.x < atlasCheck) {
+            if (color.b > 1.15 * (color.r + color.g) && color.g > color.r * 1.25 && color.g < 0.425 && color.b > 0.75) { // Water Particle
+                materialMask = OSIEBCA * 251.0; // No SSAO, Reduce Reflection
+                color.rgb = sqrt3(color.rgb);
+                color.rgb *= 0.7;
+                if (dither > 0.4) discard;
+                #ifdef NO_RAIN_ABOVE_CLOUDS
+                    if (cameraPosition.y > maximumCloudsHeight) discard;
                 #endif
-            } else if (color.r > 0.83 && color.g > 0.23 && color.b < 0.4) {
-                // Lava Particles
-                emission = 2.0;
-                color.b *= 0.5;
-                color.r *= 1.2;
-                color.rgb += vec3(min(pow2(pow2(emission * 0.35)), 0.4)) * LAVA_TEMPERATURE * 0.5;
-                emission *= LAVA_EMISSION;
+        #ifdef OVERWORLD
+            } else if (color.b > 0.7 && color.r < 0.28 && color.g < 0.425 && color.g > color.r * 1.4) { // physics mod rain
+                #ifdef NO_RAIN_ABOVE_CLOUDS
+                    if (cameraPosition.y > maximumCloudsHeight) discard;
+                #endif
+            if (color.a < 0.1 || isEyeInWater == 3) discard;
+                color.a *= rainTexOpacity;
+                color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + ambientColor * lmCoord.y * (0.7 + 0.35 * sunFactor));
+            } else if (color.rgb == vec3(1.0) && color.a < 0.765 && color.a > 0.605) { // physics mod snow (default snow opacity only)
+                #ifdef NO_RAIN_ABOVE_CLOUDS
+                    if (cameraPosition.y > maximumCloudsHeight) discard;
+                #endif
+            if (color.a < 0.1 || isEyeInWater == 3) discard;
+                color.a *= snowTexOpacity;
+                color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + lmCoord.y * (0.7 + 0.35 * sunFactor) + ambientColor * 0.2);
+            #endif
+            } else if (color.r == 1.0 && color.b < 0.778 && color.g < 0.97) { // Fire Particle
                 #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
-                    color.rgb = changeColorFunction(color.rgb, 3.5, colorSoul, inSoulValley);
+                    color.rgb = changeColorFunction(color.rgb, 3.0, colorSoul, inSoulValley);
                 #endif
                 #ifdef PURPLE_END_FIRE_INTERNAL
-                    color.rgb = changeColorFunction(color.rgb, 3.5, colorEndBreath, 1.0);
+                    color.rgb = changeColorFunction(color.rgb, 3.0, colorEndBreath, 1.0);
                 #endif
+                emission = 2.0;
+            } else if (color.r == color.g && color.r - 0.5 * color.b < 0.06) { // Underwater Particle
+                if (isEyeInWater == 1) {
+                    color.rgb = sqrt2(color.rgb) * 0.35;
+                    if (fract(playerPos.y + cameraPosition.y) > 0.25) discard;
+                }
+            } else if (color.a < 0.99 && dot(color.rgb, color.rgb) < 1.0) { // Campfire Smoke
+                color.a *= SMOKE_PARTICLE_OPACITY;
+                materialMask = OSIEBCA * 251.0; // No SSAO, Reduce Reflection
+            } else if (max(abs(colorP.r - colorP.b), abs(colorP.b - colorP.g)) < 0.001) { // Grayscale Particles
+                float dotColor = dot(color.rgb, color.rgb);
+                if (dotColor > 0.25 && color.g < 0.5 && (color.b > color.r * 1.1 && color.r > 0.3 || color.r > (color.g + color.b) * 3.0)) {
+                    // Ender Particle, Crying Obsidian Particle, Redstone Particle
+                    emission = clamp(color.r * 8.0, 1.6, 5.0);
+                    color.rgb = pow1_5(color.rgb);
+                    lmCoordM = vec2(0.0);
+                    #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS
+                        if (color.b > color.r * color.r && color.g < 0.16 && color.r > 0.2) color.rgb = changeColorFunction(color.rgb, 10.0, netherColor, 1.0); // Nether Portal
+                    #endif
+                } else if (color.r > 0.83 && color.g > 0.23 && color.b < 0.4) {
+                    // Lava Particles
+                    emission = 2.0;
+                    color.b *= 0.5;
+                    color.r *= 1.2;
+                    color.rgb += vec3(min(pow2(pow2(emission * 0.35)), 0.4)) * LAVA_TEMPERATURE * 0.5;
+                    emission *= LAVA_EMISSION;
+                    #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
+                        color.rgb = changeColorFunction(color.rgb, 3.5, colorSoul, inSoulValley);
+                    #endif
+                    #ifdef PURPLE_END_FIRE_INTERNAL
+                        color.rgb = changeColorFunction(color.rgb, 3.5, colorEndBreath, 1.0);
+                    #endif
+                }
             }
         }
-    }
-    bool noSmoothLighting = false;
+        bool noSmoothLighting = false;
     #else
         #if defined OVERWORLD && defined NO_RAIN_ABOVE_CLOUDS || defined NETHER && (defined BIOME_COLORED_NETHER_PORTALS || defined SOUL_SAND_VALLEY_OVERHAUL_INTERNAL)
             if (atlasSize.x < 900.0) {
@@ -239,7 +236,7 @@ void main() {
                 }
             }
         #endif
-    bool noSmoothLighting = true;
+        bool noSmoothLighting = true;
     #endif
 
     #ifdef REDUCE_CLOSE_PARTICLES
@@ -268,15 +265,6 @@ void main() {
         blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
     #endif
 
-    float auroraSpookyMix = 0.0;
-    #if defined SPOOKY && BLOOD_MOON > 0
-        ambientColor *= mix(vec3(1.0), vec3(1.0, 0.0, 0.0) * 3.0, getBloodMoon(moonPhase, sunVisibility));
-        auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-    #endif
-    #ifdef AURORA_INFLUENCE
-        ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
-    #endif
-
     bool isLightSource = lmCoord.x > 0.99;
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, dither,
@@ -292,7 +280,7 @@ void main() {
         float sky = 0.0;
 
         float prevAlpha = color.a;
-        DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither);
+        DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
         color.a = prevAlpha;
     #endif
 

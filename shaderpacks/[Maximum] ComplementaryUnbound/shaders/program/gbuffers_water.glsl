@@ -42,7 +42,7 @@ in vec3 blockUV;
 
 in vec4 glColor;
 
-#if WATER_STYLE >= 2 || (RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE) && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
+#if WATER_STYLE >= 2 || RAIN_PUDDLES >= 1 && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     flat in vec3 binormal, tangent;
 #endif
 
@@ -50,9 +50,9 @@ in vec4 glColor;
     in vec4 vTexCoordAM;
 #endif
 
-// #if SEASONS == 1 || SEASONS == 4 || defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
-//     flat in ivec2 pixelTexSize;
-// #endif
+#ifdef IRIS_FEATURE_FADE_VARIABLE
+    flat in float chunkFade;
+#endif
 
 //Pipeline Constants//
 
@@ -73,7 +73,7 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
     vec3 lightVec = sunVec;
 #endif
 
-#if WATER_STYLE >= 2 || (RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE) && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
+#if WATER_STYLE >= 2 || RAIN_PUDDLES >= 1 && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     mat3 tbnMatrix = mat3(
         tangent.x, binormal.x, normal.x,
         tangent.y, binormal.y, normal.y,
@@ -84,6 +84,16 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 //Common Functions//
 float GetLinearDepth(float depth) {
     return (2.0 * near) / (far + near - depth * (far - near));
+}
+
+void DoTranslucentTweaks(vec4 color, inout float fresnelM, inout float reflectMult, float lViewPos) {
+    float tweakDistance = 128.0;
+    float tweakIntensity = 0.5;
+
+    float factor = tweakIntensity * smoothstep(0.0, tweakDistance, lViewPos);
+
+    fresnelM = mix(fresnelM, 1.0, factor);
+    reflectMult = mix(reflectMult, reflectMult / color.a, factor);
 }
 
 //Includes//
@@ -104,7 +114,7 @@ float GetLinearDepth(float depth) {
     #include "/lib/colors/skyColors.glsl"
 #endif
 
-#if defined AURORA_INFLUENCE || (WATER_REFLECT_QUALITY >= 0 && defined SKY_EFFECT_REFLECTION && defined OVERWORLD && AURORA_STYLE > 0)
+#if WATER_REFLECT_QUALITY >= 0 && defined SKY_EFFECT_REFLECTION && defined OVERWORLD && AURORA_STYLE > 0
     #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
@@ -143,7 +153,7 @@ float GetLinearDepth(float depth) {
     #include "/lib/materials/materialHandling/customMaterials.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
 #ifdef MOON_PHASE_INF_ATMOSPHERE
@@ -191,7 +201,7 @@ void main() {
     #ifdef GBUFFERS_COLORWHEEL_TRANSLUCENT
         float ao;
         vec4 overlayColor;
-        
+
         clrwl_computeFragment(colorP, colorP, lmCoord, ao, overlayColor);
         vec4 color = mix(colorP, overlayColor, overlayColor.a);
         lmCoord = clamp((lmCoord - 1.0 / 32.0) * 32.0 / 30.0, 0.0, 1.0);
@@ -221,7 +231,7 @@ void main() {
     #ifdef LIGHT_COLOR_MULTS
         lightColorMult = GetLightColorMult();
     #endif
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         atmColorMult = GetAtmColorMult();
         sqrtAtmColorMult = sqrt(atmColorMult);
     #endif
@@ -309,7 +319,7 @@ void main() {
             materialMask = OSIEBCA * 252.0; // Versatile Selection Outline
         }
     #endif
-    
+
     #if defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
         #include "/lib/materials/overlayNoiseApply.glsl"
     #endif
@@ -339,18 +349,10 @@ void main() {
 
     #ifdef SS_BLOCKLIGHT
         float lmCoordXModified = lmCoord.x;
-        #ifdef IS_IRIS
+        #ifdef IRIS_FEATURE_BLOCK_EMISSION_ATTRIBUTE
             lmCoordXModified = lmCoord.x == 1.0 && blockLightEmission < 0.5 ? 0.0 : lmCoord.x;
         #endif
         blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoordXModified);
-    #endif
-
-    #if defined SPOOKY && BLOOD_MOON > 0
-        auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-        ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-    #endif
-    #ifdef AURORA_INFLUENCE
-        ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
     #endif
 
     bool isLightSource = false;
@@ -372,7 +374,7 @@ void main() {
 
     #ifdef SS_BLOCKLIGHT
         vec3 normalizedColor = normalize(color.rgb);
-        vec3 maskedLightAlbedo = 
+        vec3 maskedLightAlbedo =
             (mat == 30012 || mat == 30016 || (mat >= 31000 && mat < 32000) || mat == 32004) // Slime, Honey, Glass, Ice
             ? normalizedColor : vec3(0.0);
         vec3 lightAlbedo = mix(maskedLightAlbedo, normalizedColor * min1(emission), color.a);
@@ -386,9 +388,6 @@ void main() {
         #endif
         #ifdef MOON_PHASE_INF_REFLECTION
             highlightColor *= pow2(moonPhaseInfluence);
-        #endif
-        #ifdef SPOOKY
-            highlightColor *= 0.3;
         #endif
 
         fresnelM = (fresnelM * 0.85 + 0.15) * reflectMult;
@@ -414,14 +413,18 @@ void main() {
     float skyFade = 0.0;
     float prevAlpha = color.a;
     color.a = 1.0;
-    DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither);
-    #if defined END && END_CENTER_LIGHTING > 0
+    DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
+    #if defined END && END_CENTER_LIGHTING > 0 && MC_VERSION >= 10900
         float attentuation = doEndCenterFog(cameraPositionBest, normalize(playerPos), min(renderDistance, lViewPos), 0.5);
         vec3 pointLightFog = vec3(END_CENTER_LIGHTING_R, END_CENTER_LIGHTING_G, END_CENTER_LIGHTING_B) * 0.5 * END_CENTER_LIGHTING * 0.1 * attentuation * enderDragonDead;
         color.rgb = sqrt(pow2(color.rgb) + vec3(pointLightFog));
     #endif
     float fogAlpha = color.a;
     color.a = prevAlpha * (1.0 - skyFade);
+
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        skyLightFactor *= 0.5;
+    #endif
 
     #ifdef ENTITIES_ARE_LIGHT
         SSBLAlpha = 0.0;
@@ -486,7 +489,7 @@ out vec3 blockUV;
 
 out vec4 glColor;
 
-#if WATER_STYLE >= 2 || (RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE) && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
+#if WATER_STYLE >= 2 || RAIN_PUDDLES >= 1 && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     flat out vec3 binormal, tangent;
 #endif
 
@@ -494,9 +497,9 @@ out vec4 glColor;
     out vec4 vTexCoordAM;
 #endif
 
-// #if SEASONS == 1 || SEASONS == 4 || defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
-//     flat out ivec2 pixelTexSize;
-// #endif
+#ifdef IRIS_FEATURE_FADE_VARIABLE
+    flat out float chunkFade;
+#endif
 
 //Attributes//
 attribute vec4 mc_Entity;
@@ -505,7 +508,7 @@ attribute vec4 mc_midTexCoord;
 attribute vec4 at_tangent;
 
 //Common Variables//
-#if WATER_STYLE >= 2 || (RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE) && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
+#if WATER_STYLE >= 2 || RAIN_PUDDLES >= 1 && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2 || defined GENERATED_NORMALS || defined CUSTOM_PBR
 #else
     vec3 binormal;
     vec3 tangent;
@@ -570,11 +573,11 @@ void main() {
 
     vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
     playerPos = position.xyz;
-        
+
     #ifdef WAVING_WATER_VERTEX
         DoWave(position.xyz, mat);
     #endif
-    
+
     #ifdef MIRROR_DIMENSION
         doMirrorDimension(position);
     #endif
@@ -592,6 +595,10 @@ void main() {
 
     #ifdef TAA
         gl_Position.xy = TAAJitter(gl_Position.xy, gl_Position.w);
+    #endif
+
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        chunkFade = mc_chunkFade;
     #endif
 }
 

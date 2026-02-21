@@ -87,13 +87,13 @@ option.info15.comment=完整致谢名单可以访问 §deuphoriapatches.com/cred
 
 option.info16=§d§n如何支持 Euphoria Patches
 value.info16.0=
-option.info16.comment=使用 Euphoria Patches 即是最好的支持. 向更多人推荐和介绍本光影, 保持对我们未来的更新内容的好奇和热情. 可以直接通过 Patreon 和 Ko-Fi 来给予金钱支持的同时获得开发版本的光影文件. §d§l§neuphoriapatches.com/support 
+option.info16.comment=使用 Euphoria Patches 即是最好的支持. 向更多人推荐和介绍本光影, 保持对我们未来的更新内容的好奇和热情. 可以直接通过 Patreon 和 Ko-Fi 来给予金钱支持的同时获得开发版本的光影文件. §d§l§neuphoriapatches.com/support
 
 option.info17=测试版本: 从SpacEagle17的Patreon获取
 value.info17.0=
 option.info17.comment=可以直接通过 Patreon 和 Ko-Fi 对 SpacEagle17 进行支持的同时获得光影的独占开发版本. §d§l§neuphoriapatches.com/support
 
-option.info18=对应 Complementary r5.6.1 版本
+option.info18=对应 Complementary r5.7.1 版本
 value.info18.0=
 option.info18.comment=感谢您安装 Euphoria Patches :)
 
@@ -169,6 +169,9 @@ screen.COLORGRADING_SETTINGS.comment=与最终颜色通道混合相关的设置.
 screen.WORLD_BLUR_SETTINGS=视界模糊
 screen.WORLD_BLUR_SETTINGS.comment=与炫酷的视界模糊效果相关的设置.
 
+screen.TAA_SETTINGS=时间性过滤器设置
+screen.TAA_SETTINGS.comment=与决定时间性抗锯齿行为相关的设置.
+
 screen.MATERIAL_SETTINGS=材质
 screen.MATERIAL_SETTINGS.comment=与 Minecraft 的材质有关的设置.
 
@@ -200,8 +203,8 @@ screen.RAIN_LIGHT_MULTS=雨天天气
 screen.NETHER_LIGHT_MULTS=下界维度
 screen.END_LIGHT_MULTS=末地维度
 
-screen.BLOCKLIGHT_COLOR_SETTINGS=方块光颜色 §e[*]§r
-screen.BLOCKLIGHT_COLOR_SETTINGS.comment=调节光源方块发出光的颜色的设置. §e[*]§r 若启用了 高级颜色追踪 选项, 则本选项设置的颜色不会影响除了 方块光强度 滑块以外的大部分的光源.
+screen.BLOCKLIGHT_SETTINGS=方块光 §e[*]§r
+screen.BLOCKLIGHT_SETTINGS.comment=调节光源照明的设置. §e[*]§r 若启用了 高级颜色追踪 选项, 则本选项的红/绿/蓝颜色设定将不能调节大部分的光源照明颜色.
 
 screen.MOON_PHASE_INF_SETTINGS=月相影响
 screen.MOON_PHASE_INF_SETTINGS.comment=由不同月相影响夜晚照明的设置. 月相: 月亮的阴晴圆缺.
@@ -338,7 +341,7 @@ value.COLORED_LIGHTING.768=§4§l§n§o24 区块 §r§c[-]
 value.COLORED_LIGHTING.1024=§4§k-§r§4§l§n§o32 区块§r§4§k- §r§c[-]
 
 option.WORLD_SPACE_REFLECTIONS=世界空间反射 (WSR) §e[*]§r
-option.WORLD_SPACE_REFLECTIONS.comment=在世界空间中计算反射. §e[*]§r 这些功能只有在 性能设置 中启用 高级颜色追踪 选项并且仅当运行光影所用的设备支持它时才能生效. §e[*]§r 最大反射渲染距离取决于 高级颜色追踪 设置的距离, 但因技术原因, 在内部该效果实际最大生效距离上限为 16 区块. §c[-]§r 本选项的启用会严重影响性能, 尤其是 高级颜色追踪 设置的距离过高时. §c[-]§r 世界空间反射会在改变资源包时完全失效, 但可以通过重启游戏修复. §c[-]§r 世界空间反射可能会在模组或资源包中使用非 16x 分辨率的方块纹理的情况下导致部分方块反射出现疯狂闪烁的问题. 
+option.WORLD_SPACE_REFLECTIONS.comment=在世界空间中计算反射. §e[*]§r 这些功能只有在 性能设置 中启用 高级颜色追踪 选项并且仅当运行光影所用的设备支持它时才能生效. §e[*]§r 最大反射渲染距离取决于 高级颜色追踪 设置的距离, 但因技术原因, 在内部该效果实际最大生效距离上限为 16 区块. §c[-]§r 本选项的启用会严重影响性能, 尤其是 高级颜色追踪 设置的距离过高时. §c[-]§r 世界空间反射与部分的模组或资源包一起使用时会出现特定几种类型的问题.
 value.WORLD_SPACE_REFLECTIONS.-1=§a关
 value.WORLD_SPACE_REFLECTIONS.1=§4§l§n§o开
 
@@ -347,13 +350,18 @@ option.WORLD_SPACE_REF_MODE.comment=选择世界空间反射的作用模式. §e
 value.WORLD_SPACE_REF_MODE.1=仅 WSR
 value.WORLD_SPACE_REF_MODE.2=WSR + SSR
 
+option.WORLD_SPACE_PLAYER_REF=世界空间 [玩家] 反射
+option.WORLD_SPACE_PLAYER_REF.comment=使当前玩家的玩家模型可以参与世界空间反射.
+value.WORLD_SPACE_PLAYER_REF.-1=关
+value.WORLD_SPACE_PLAYER_REF.1=开
+
 option.SSAO_I=边缘阴影 (SSAO) 强度
 option.SSAO_I.comment=决定屏幕空间环境光遮蔽 (SSAO) 的强度 §e[*]§r 如在 性能设置 里禁用 SSAO, 则本选项不生效.
-value.SSAO_I.0=§c关
+value.SSAO_I.0=关
 
 option.VANILLAAO_I=原版边缘阴影 (AO) 强度
 option.VANILLAAO_I.comment=决定 Minecraft 的环境光遮蔽强度.
-value.VANILLAAO_I.0=§c关
+value.VANILLAAO_I.0=关
 
 option.BORDER_FOG=边界雾气
 option.BORDER_FOG.comment=在已加载的世界的边缘有强烈的雾气, 以隐藏加载区块的边界. §e[*]§r 当视距低于8区块时推荐关闭本选项.
@@ -376,7 +384,7 @@ option.CAVE_FOG.comment=在深入地下的区域启用额外的雾气.
 
 option.LIGHTSHAFT_BEHAVIOUR=光轴模式
 option.LIGHTSHAFT_BEHAVIOUR.comment=选择光轴的行为表现形式. §a[+]§r 场景感知模式下, 光轴会自动在 常规 和 极限 强度之间切换, 以提供最佳效果. §c[-]§r 不推荐在正常游玩时选择极限强度, 并且它会严重影响性能.
-value.LIGHTSHAFT_BEHAVIOUR.0=§c关
+value.LIGHTSHAFT_BEHAVIOUR.0=关
 value.LIGHTSHAFT_BEHAVIOUR.1=场景感知 §a[+]
 value.LIGHTSHAFT_BEHAVIOUR.2=常规
 value.LIGHTSHAFT_BEHAVIOUR.3=极限 §c[-]
@@ -391,10 +399,13 @@ option.LIGHTSHAFT_DAY_I=光轴 - 白天 - 倍率
 option.LIGHTSHAFT_NIGHT_I=光轴 - 夜晚 - 倍率
 option.LIGHTSHAFT_RAIN_I=光轴 - 雨天 - 倍率
 
+option.LIGHTSHAFT_SUNSET_SATURATION=晨昏额外光轴颜色
+option.LIGHTSHAFT_SUNSET_SATURATION.comment=调节晨昏时分添加到光轴的额外颜色的饱和度. 设定更高的值会导致光轴产生偏红的橙色, 较低的值则会使其偏移为寻常的黄色.
+
 option.CLOUD_STYLE_DEFINE=云层风格
 option.CLOUD_STYLE_DEFINE.comment=选择云层的视觉风格. §e[*]§r 由所选风格决定 意味着本选项会随着光影设置菜单主页里的 视觉风格 选项自动切换风格. §e[*]§r 原版 风格需要在视频设置中打开云层.
 value.CLOUD_STYLE_DEFINE.-1=由所选风格决定
-value.CLOUD_STYLE_DEFINE.0=§c关
+value.CLOUD_STYLE_DEFINE.0=关
 value.CLOUD_STYLE_DEFINE.1=Reimagined
 value.CLOUD_STYLE_DEFINE.3=Unbound
 value.CLOUD_STYLE_DEFINE.50=原版 §e[*]
@@ -419,8 +430,8 @@ option.CLOUD_B=云层 - 蓝色倍率
 option.CLOUD_UNBOUND_AMOUNT=云层数量
 option.CLOUD_UNBOUND_AMOUNT.comment=调节 Unbound 云层风格的云数量.
 
-option.CLOUD_UNBOUND_SIZE_MULT=云层大小
-option.CLOUD_UNBOUND_SIZE_MULT.comment=调节 Unbound 云层风格的云大小. 值越高云越小.
+option.CLOUD_UNBOUND_SIZE_MULT=云层大小 §c[-]§r
+option.CLOUD_UNBOUND_SIZE_MULT.comment=调节 Unbound 云层风格的云大小. 值越高云越小.  §c[-]§r 改变本设置会禁用 "玩家在相同服务器时同步云层动画" 功能.
 
 option.CLOUD_UNBOUND_RAIN_ADD=雨云增量
 option.CLOUD_UNBOUND_RAIN_ADD.comment=调节雨/雪天气时云层的增量.
@@ -607,8 +618,8 @@ value.SUN_MOON_STYLE_DEFINE.3=Unbound - 较小
 option.SUN_MOON_HORIZON=太阳/月亮地平线
 option.SUN_MOON_HORIZON.comment=启用以防止太阳/月亮出现在地平线以下.
 
-option.SUN_MOON_DURING_RAIN=太阳/月亮 (雨天)
-option.SUN_MOON_DURING_RAIN.comment=决定太阳和月亮在雨天是否可见.
+option.SUN_MOON_DURING_RAIN=太阳/月亮 (雨天) §e[*]§r
+option.SUN_MOON_DURING_RAIN.comment=决定太阳和月亮在雨天是否可见. §e[*]§r 本选项也同样影响雨天时的照明平衡.
 
 option.NIGHT_STAR_AMOUNT=夜空星星数量
 option.NIGHT_STAR_AMOUNT.comment=决定夜空中星星的数量.
@@ -624,15 +635,22 @@ value.RAINBOWS.0=关
 value.RAINBOWS.1=雨后
 value.RAINBOWS.3=保持开启
 
+option.RAINBOW_STYLE_DEFINE=彩虹风格
+option.RAINBOW_STYLE_DEFINE.comment=选择彩虹风格样式.  §e[*]§r 由所选风格决定 意味着本选项会随着光影设置菜单主页里的 视觉风格 选项自动切换风格.
+value.RAINBOW_STYLE_DEFINE.-1=由所选风格决定
+value.RAINBOW_STYLE_DEFINE.1=Reimagined
+value.RAINBOW_STYLE_DEFINE.4=Unbound
+
 option.AURORA_STYLE_DEFINE=北极光风格
 option.AURORA_STYLE_DEFINE.comment=选择出现在夜空中的北极光的视觉风格.
 value.AURORA_STYLE_DEFINE.-1=由所选风格决定
-value.AURORA_STYLE_DEFINE.0=§c关
+value.AURORA_STYLE_DEFINE.0=关
 value.AURORA_STYLE_DEFINE.1=Reimagined
 value.AURORA_STYLE_DEFINE.2=Unbound
 
 option.AURORA_CONDITION=极光出现情景
 option.AURORA_CONDITION.comment=极光出现情景设置决定出现北极光的条件. §e[*]§r 无论如何设置, 极光仅在夜晚出现.
+value.AURORA_CONDITION.-1=除新月之外的每个夜晚
 value.AURORA_CONDITION.0=每个夜晚
 value.AURORA_CONDITION.1=满月夜晚
 value.AURORA_CONDITION.2=积雪生物群系的每个夜晚
@@ -740,10 +758,40 @@ option.LENSFLARE_I=镜头眩光强度
 option.LENSFLARE_I.comment=调整镜头眩光效果的强度.
 
 option.TAA_MODE=§e时间性过滤器§r
-option.TAA_MODE.comment=决定 TAA (时间性抗锯齿) 的行为. 智能 & 轻量: 时间性过滤器以尽量不产生伪影的方式少量作用于图像. 强效: 提供更好的抗锯齿效果, 但会造成额外的脏点和闪烁; 帧率更高和更大分辨率情况下可能是更好的选择. 关 §c[-]§r: 关闭 TAA 会导致性能下降和效果质量变差.
-value.TAA_MODE.1=智能 & 轻量
-value.TAA_MODE.2=强效 §e[-]
+option.TAA_MODE.comment=启用时间性抗锯齿以助于降低颗粒感, 通过减少一部分对性能要求较高的效果的采样数来提升性能, 在适当设置下减少锯齿. 关 §c[-]§r: 关闭 TAA 会导致性能下降和效果质量变差.
 value.TAA_MODE.0=§c关 [-]
+value.TAA_MODE.1=开 §a[+]
+
+option.TAA_SMOOTHING=时间性平滑强度
+option.TAA_SMOOTHING.comment=调节时间性过滤器应用的平滑强度. 设定更高的值会产生更模糊的图片但是有效减少了闪烁和颗粒噪点. 静止时并不明显.
+value.TAA_SMOOTHING.2=低
+value.TAA_SMOOTHING.3=中
+value.TAA_SMOOTHING.4=高
+
+option.TAA_JITTER=时间性抖动 §e[*]§r
+option.TAA_JITTER.comment=抖动有助于更好的消除图像锯齿, 但也有一些缺点. §e[*]§r 设定更高的值可以增加抗锯齿效果, 但同时也会导致许多闪烁和模糊的情况. §e[*]§r 设置 "高" 时间性平滑强度时建议配合 "完整" 时间性抖动使用. §c[-]§r 关闭时间性抖动会失去抗锯齿的效果.
+value.TAA_JITTER.0=关 §c[-]
+value.TAA_JITTER.1=低
+value.TAA_JITTER.2=中
+value.TAA_JITTER.3=完整 §e[*]
+
+option.TAA_MOVEMENT_IMPROVEMENT_FILTER=Catmull-Rom 采样
+option.TAA_MOVEMENT_IMPROVEMENT_FILTER.comment=通过更先进的采样方法减小时间性过滤器的产生的模糊现象.
+value.TAA_MOVEMENT_IMPROVEMENT_FILTER.0=关 §c[-]
+value.TAA_MOVEMENT_IMPROVEMENT_FILTER.1=开
+
+option.FXAA_STRENGTH=FXAA 强度
+option.FXAA_STRENGTH.comment=调节快速近似抗锯齿效果的强度. 设定稍高的值可以提供更好抗锯齿效果但代价是使图像变模糊.
+value.FXAA_STRENGTH.-1=关
+
+option.FXAA_TAA_INTERACTION=FXAA 移动减益
+option.FXAA_TAA_INTERACTION.comment=镜头移动时降低快速近似抗锯齿的强度. 设定越高的值可以提供越锐利的图片但也会产生更多闪烁.
+value.FXAA_TAA_INTERACTION.0=关
+value.FXAA_TAA_INTERACTION.2=20
+value.FXAA_TAA_INTERACTION.4=40
+value.FXAA_TAA_INTERACTION.6=60
+value.FXAA_TAA_INTERACTION.8=80
+value.FXAA_TAA_INTERACTION.10=100
 
 option.DISTANT_LIGHT_BOKEH=远处光源虚化
 option.DISTANT_LIGHT_BOKEH.comment=通过应用一个单像素模糊使距离玩家有一定距离的光源看起来有点虚散的感觉 §a[+]§r 本选项的效果在启用 集成PBR+ (可选) 后因调节远处光源而使得效果更好.
@@ -808,10 +856,13 @@ option.IPBR_PARTICLE_FEATURES=集成PBR+粒子功能
 option.IPBR_PARTICLE_FEATURES.comment=启用粒子的多个集成PBR+功能, 包括岩浆的发光粒子和有更好颜色的水粒子等.
 
 option.FANCY_GLASS=更好的玻璃
-option.FANCY_GLASS.comment=通过在普通玻璃上增加一个半透明层来增加质感. §c[-]§r 在较旧版本的 Iris 上不生效.  §e[*]§r 资源包支持选项需设置为集成PBR+.
+option.FANCY_GLASS.comment=通过在普通玻璃上增加一个半透明层来增加质感. §c[-]§r 在较旧版本的 Iris 上不生效. §e[*]§r 资源包支持选项需设置为集成PBR+.
 
 option.GREEN_SCREEN_LIME=绿幕 - 黄绿色方块
 option.GREEN_SCREEN_LIME.comment=把 黄绿色混凝土, 黄绿色羊毛, 黄绿色地毯 转换为便于视频剪辑的绿幕. 提示一: 关闭泛光以提高和其他区域的分离程度. 提示二: 在黄绿色地毯下放置光源. 提示三: 可以关闭抗锯齿 (FXAA) 并且在性能设置里把细节质量设置为极低来禁用所有的过滤, 以得到完美像素分离效果.
+
+option.MIRROR_TINTED_GLASS=镜面遮光玻璃
+option.MIRROR_TINTED_GLASS.comment=增加遮光玻璃的反射率和不透明度. 启用世界空间发射以获得最好的结果.
 
 option.HAND_SWAYING=手部摇晃
 option.HAND_SWAYING.comment=为玩家的手添加缓慢的摇晃效果, 以模拟呼吸效果.
@@ -874,7 +925,7 @@ option.COATED_TEXTURE_MULT.comment=调节纹理上自动生成的的灰尘细节
 
 option.GLOWING_ORE_MASTER=§e矿石发光
 option.GLOWING_ORE_MASTER.comment=启用矿石发光功能. §e[*]§r 选择 由所选风格决定 选项会使矿石发光功能仅在 视觉风格 设置为 Unbound 的时候生效. §e[*]§r 若不启用, 本选项以下设置均不会生效.
-value.GLOWING_ORE_MASTER.0=§c关
+value.GLOWING_ORE_MASTER.0=关
 value.GLOWING_ORE_MASTER.1=由所选风格决定 [*]
 value.GLOWING_ORE_MASTER.2=§a开
 
@@ -897,12 +948,12 @@ option.GLOWING_ORE_MODDED=模组矿石发光 §e[*]§r
 option.GLOWING_ORE_MODDED.comment=§e[*]§r 可以手动添加模组的矿石方块的 ID 到 Complementary-->shaders-->block.properties 这个文件中来使它们发光. 可以使用任意文本编辑器 (例如: notepad) 来打开 block.properties 文件, 然后在 block.10024= 下面添加模组矿石方块的 ID .
 
 option.GLOWING_AMETHYST=紫水晶发光
-value.GLOWING_AMETHYST.0=§c关
+value.GLOWING_AMETHYST.0=关
 value.GLOWING_AMETHYST.1=紫水晶芽/簇
 value.GLOWING_AMETHYST.2=紫水晶芽/簇/块
 
 option.GLOWING_LICHEN=发光地衣发光
-value.GLOWING_LICHEN.0=§c关
+value.GLOWING_LICHEN.0=关
 value.GLOWING_LICHEN.1=仅在封闭区域发光
 value.GLOWING_LICHEN.2=保持发光
 
@@ -960,7 +1011,7 @@ value.DIRECTIONAL_BLOCKLIGHT.11=强烈 §c[-]
 
 option.HELD_LIGHTING_MODE=动态手持光源模式
 option.HELD_LIGHTING_MODE.comment=允许手持光源在视觉上点亮周围场景.
-value.HELD_LIGHTING_MODE.0=§c关
+value.HELD_LIGHTING_MODE.0=关
 value.HELD_LIGHTING_MODE.1=微弱
 value.HELD_LIGHTING_MODE.2=正常
 
@@ -1046,7 +1097,7 @@ option.UNDERWATER_DISTORTION.comment=当镜头在水中时在屏幕添加微妙�
 
 option.SELECT_OUTLINE=选择框描边
 option.SELECT_OUTLINE.comment=决定方块选择框的描边颜色.
-value.SELECT_OUTLINE.0=§c关
+value.SELECT_OUTLINE.0=关
 value.SELECT_OUTLINE.1=默认
 value.SELECT_OUTLINE.2=彩虹
 value.SELECT_OUTLINE.3=自定义颜色
@@ -1159,6 +1210,9 @@ option.XLIGHT_G=方块光 - 绿色 - 倍率
 option.XLIGHT_B=方块光 - 蓝色 - 倍率
 option.XLIGHT_I=方块光 - 强度 - 倍率
 
+option.XLIGHT_CURVE=方块光对比度
+option.XLIGHT_CURVE.comment=调节方块光的随距离增加而衰减的快速程度.
+
 ####### Euphoria Patches #######
 
 profile.SPACEAGLE17= §f۞ §kO§f调试 (请勿使用)§f§kO
@@ -1174,17 +1228,20 @@ value.WATERMARK.3=& 隐藏 GUI 且手持蜘蛛眼时
 value.WATERMARK.4=黑/白
 option.WATERMARK_SIZE=水印大小
 
-screen.EUPHORIA_SETTINGS=§dEuphoria Patches 相关设置
-screen.EUPHORIA_SETTINGS.comment=Euphoria Patches 为 Reimagined 额外添加的设置. §b可以通过 Patreon 和 Ko-Fi 对 SpacEagle17 进行支持来获得最新开发版本的光影文件. §r§d§l§neuphoriapatches.com/support 
+screen.EUPHORIA_SETTINGS=§d配置 Euphoria Patches >
+screen.EUPHORIA_SETTINGS.comment=Euphoria Patches 为 Reimagined 额外添加的设置. §b可以通过 Patreon 和 Ko-Fi 对 SpacEagle17 进行支持来获得最新开发版本的光影文件. §r§d§l§neuphoriapatches.com/support
 
 screen.ATMOSPHERE=大气
 screen.ATMOSPHERE.comment=与大气相关的设置.
 screen.CLOUDS=云层
 screen.CLOUD_REIMAGINED_SETTINGS_EUPHORIA=Reimagined 风格云层
+screen.CLOUD_REIMAGINED_SECOND_LAYER_SETTINGS=双层 Reimagined 风格云层
 screen.CLOUD_UNBOUND_SETTINGS_EUPHORIA=Unbound 风格云层
 screen.DOUBLE_UNBOUND_CLOUDS_SETTINGS=双层 Unbound 风格云层
+screen.CLOUD_SHADING_SETTINGS=云层明暗
 screen.AURORA_SETTINGS=北极光
 screen.AURORA_SETTINGS.comment=关于北极光的设置.
+screen.AURORA_INFLUENCE_SETTINGS=极光回响
 screen.AURORA_COLOR_SETTINGS=北极光颜色
 screen.AURORA_COLOR_SETTINGS.comment=关于北极光颜色的设置.
 screen.END_SKY=末地天空
@@ -1207,8 +1264,6 @@ screen.NEBULA_STAR_SETTINGS=星云星星设置
 
 screen.WORLD=世界
 screen.WORLD.comment=关于世界的设置.
-screen.SPOOKY_SETTINGS=Spooklementary 设置
-screen.EYES_SETTINGS=眼睛设置
 screen.BLOOD_MOON_SETTINGS=血月设置
 screen.OVERWORLD_WORLD=主世界
 screen.OVERWORLD_BEAM=主世界星束
@@ -1284,6 +1339,8 @@ screen.STATIC_NOISE_SETTINGS=静噪设置
 screen.HORIZONTAL_NOISE_SETTINGS=水平噪点设置
 screen.VERTICAL_SCREEN_DISPLACEMENT_SETTINGS=垂直屏幕偏移设置
 screen.PIXELATE_SCREEN_SETTINGS=像素化设置
+screen.DITHERING_SETTINGS=抖动设置
+screen.PALETTE_SETTINGS=色板设置
 screen.SCANLINE_SETTINGS=扫描线设置
 screen.HALFTONE_SETTINGS=半调设置
 screen.SPEED_LINES_SETTINGS=速度效果设置
@@ -1308,30 +1365,30 @@ screen.POPULAR_SETTINGS=§d最受欢迎的设置
 screen.POPULAR_SETTINGS.comment=Euphoria Patches 中最受欢迎的一些设置. 除开 高级颜色追踪 选项外(因为它是许多其他效选项的前置需求), 所有在此栏目中的选项都是 Euphoria Patches 独家选项.
 screen.POPULAR_SETTINGS_2=第二页
 screen.POPULAR_SETTINGS_3=第三页
-screen.EP_VERSION=Euphoria Patches §d1.7.8
-screen.EP_VERSION.comment=§b可以通过 Patreon 和 Ko-Fi 对 SpacEagle17 进行支持来获得最新开发版本的光影文件. §r§d§l§neuphoriapatches.com/support 
+screen.EP_VERSION=Euphoria Patches §d1.8.6
+screen.EP_VERSION.comment=§b可以通过 Patreon 和 Ko-Fi 对 SpacEagle17 进行支持来获得最新开发版本的光影文件. §r§d§l§neuphoriapatches.com/support
 
 option.DAYLIGHT_CYCLE_COMPAT=世界时间动画
 option.DAYLIGHT_CYCLE_COMPAT.comment=本选项提供了 "在关闭世界日期循环 ( /gamerule doDaylightCycle false ) 后云层和其他动画效果正常工作" 的选择. 但这意味着多人游戏各玩家间的动画效果不再同步了.
 
 option.AURORA_COLOR_PRESET=极光颜色预设
-option.AURORA_COLOR_PRESET.comment=选择默认的或定制的北极光颜色预设, 随机 (Varying) 选项意味着会在每 日/月 出现极光的夜晚, 北极光的颜色会在预设颜色中切换.
+option.AURORA_COLOR_PRESET.comment=选择默认的或定制的北极光颜色预设, 随机 (Varying) 选项意味着会在每 日/月 出现极光的夜晚, 北极光的颜色会在预设颜色中切换. 或者选择整晚随机且平滑渐变每日颜色预设.
+value.AURORA_COLOR_PRESET.-1=平滑随机 §o§lVarying
 value.AURORA_COLOR_PRESET.0=自定义
 value.AURORA_COLOR_PRESET.1=每日随机 §o§lVarying
 value.AURORA_COLOR_PRESET.2=每月随机 §o§lVarying
-value.AURORA_COLOR_PRESET.3=炎热 §cB§6l§ca§6z§ei§6n§eg
-value.AURORA_COLOR_PRESET.4=幽灵 §cG§4h§bo§3s§bt
-value.AURORA_COLOR_PRESET.5=星云 §9Ne§5bu§dl§5a
-value.AURORA_COLOR_PRESET.6=Complementary §9v§b4
-value.AURORA_COLOR_PRESET.7=末地风 §6E§dn§5d
-value.AURORA_COLOR_PRESET.8=冰 §bI§3c§9e
-value.AURORA_COLOR_PRESET.9=西瓜 §cWa§6t§ce§a§6r§am§2e§al§2on
-value.AURORA_COLOR_PRESET.10=空灵 §bEt§3h§be§dr§3e§dal
-value.AURORA_COLOR_PRESET.11=冻土 §bPe§3r§bm§3af§cr§3o§cst
-value.AURORA_COLOR_PRESET.12=甜心 §dP§5i§dn§5k
-value.AURORA_COLOR_PRESET.13=小丑 §aThe §5Joker
-value.AURORA_COLOR_PRESET.14=血浴 §cBlood §bBath
-value.AURORA_COLOR_PRESET.15=神秘 §bMysti§9cal
+value.AURORA_COLOR_PRESET.3=§9经典§b Complementary v4
+value.AURORA_COLOR_PRESET.4=§b冻§c土
+value.AURORA_COLOR_PRESET.5=§d绽§5光
+value.AURORA_COLOR_PRESET.6=§9星§d云
+value.AURORA_COLOR_PRESET.7=§5天§3舞
+value.AURORA_COLOR_PRESET.8=§a绿色闪光
+value.AURORA_COLOR_PRESET.9=§b空§d灵
+value.AURORA_COLOR_PRESET.10=§b冰§9赐
+value.AURORA_COLOR_PRESET.11=§5神§9秘
+value.AURORA_COLOR_PRESET.12=§c西§2瓜
+value.AURORA_COLOR_PRESET.13=§c血§b浴
+value.AURORA_COLOR_PRESET.14=§4幽§3灵
 
 option.RGB_AURORA=§4R§2G§9B§f北极光
 option.RGB_AURORA.comment=带着你的 §4R§2G§9B §r极光成为史诗!
@@ -1363,6 +1420,33 @@ option.AURORA_TERRAIN_INFLUENCE_INTENSITY=影响地表强度
 option.AURORA_TERRAIN_INFLUENCE_INTENSITY.comment=改变极光影响地表颜色的强度.
 value.AURORA_TERRAIN_INFLUENCE_INTENSITY.0.00=关
 
+option.RANDOM_AURORA=极光出现概率
+option.RANDOM_AURORA.comment=设置每晚极光出现的概率. 仍遵循 Complementary 设置里的极光出现条件.
+value.RANDOM_AURORA.0=默认
+value.RANDOM_AURORA.1=10%
+value.RANDOM_AURORA.2=20%
+value.RANDOM_AURORA.3=30%
+value.RANDOM_AURORA.4=40%
+value.RANDOM_AURORA.5=50%
+value.RANDOM_AURORA.6=60%
+value.RANDOM_AURORA.7=70%
+value.RANDOM_AURORA.8=80%
+value.RANDOM_AURORA.9=90%
+
+option.AURORA_NOISE_SCALE=极光噪声比例
+option.AURORA_NOISE_SCALE.comment=调节极光效果使用的噪声的比例.
+
+option.AURORA_PATTERN_WARP=极光涡旋强度
+option.AURORA_PATTERN_WARP.comment=调节极光旋转和扭曲的强度.
+value.AURORA_PATTERN_WARP.0=关
+
+option.AURORA_SATURATION=极光饱和度
+option.AURORA_SATURATION.comment=调节极光颜色的饱和度.
+value.AURORA_SATURATION.10=默认
+
+option.AURORA_COLOR_MIX_POWER=上层 ← 重点层 → 下层
+option.AURORA_COLOR_MIX_POWER.comment=选择最为突出的极光层.
+
 option.CLOUD_ROUNDNESS=云层圆润度 §e[*]§r
 value.CLOUD_ROUNDNESS.0.025=超方正 §e[*]§r
 value.CLOUD_ROUNDNESS.0.05=方正 §e[*]§r
@@ -1375,17 +1459,14 @@ value.CLOUD_SHADOW_ROUNDNESS.0.25=方正
 value.CLOUD_SHADOW_ROUNDNESS.0.35=圆润
 option.CLOUD_SHADOW_ROUNDNESS.comment=调节云层阴影的圆润程度.
 option.CLOUD_NARROWNESS=云层水平缩放
-value.CLOUD_NARROWNESS.0.1=0.20x
-value.CLOUD_NARROWNESS.0.075=0.67x
-value.CLOUD_NARROWNESS.0.07=1x
-value.CLOUD_NARROWNESS.0.025=2x
 option.CLOUD_NARROWNESS.comment=更改云在水平比例上的显示宽窄.
 
 option.CLOUD_SHADOW_UNBOUND_SIZE=云影尺寸
 option.CLOUD_SHADOW_UNBOUND_SIZE.comment=调节云层阴影的大小.
 
 option.CLOUD_STRETCH=云块高度
-option.CLOUD_TRANSPARENCY=云层透明度
+option.CLOUD_TRANSPARENCY=云层不透明度
+option.CLOUD_TRANSPARENCY.comment=调节云层不透明度.
 option.CLOUD_DIRECTION=云层流动方向
 option.CLOUD_DIRECTION.comment=改变云层移动的方向.
 option.CLOUD_TEXTURE=Minecraft 云层分布图
@@ -1411,6 +1492,21 @@ value.RAINBOW_CLOUD.10=100% 覆盖率
 option.CLOUD_RENDER_DISTANCE=云层渲染距离
 option.CLOUD_RENDER_DISTANCE.comment=用于改变云层渲染距离远近的选项.
 
+option.CLOUD_SHADING_AMOUNT=云层明暗强度
+option.CLOUD_SHADING_AMOUNT.comment=决定云层自身明暗对比强度.
+
+option.INVERTED_CLOUD_SHADING=反转云层明暗关系
+option.INVERTED_CLOUD_SHADING.comment=反转云层自身的明暗关系.
+
+option.CLOUD_LIGHT_MULTIPLIER=云层亮度 - 亮面
+option.CLOUD_LIGHT_MULTIPLIER.comment=云层亮面的亮度倍率.
+
+option.CLOUD_AMBIENT_MULTIPLIER=云层亮度 - 环境光面
+option.CLOUD_AMBIENT_MULTIPLIER.comment=云层仅受环境光影响一侧的亮度倍率.
+
+option.ROTATE_REIMAGINED_CLOUDS_90_NEW=90°旋转云图
+option.ROTATE_REIMAGINED_CLOUDS_90_NEW.comment=旋转 Reimagined 风格云层 90°.
+
 option.NIGHT_CLOUD_UNBOUND_REMOVE=夜晚云层消除强度
 option.NIGHT_CLOUD_UNBOUND_REMOVE.comment=在夜晚时云层被消除的数量.
 
@@ -1422,15 +1518,69 @@ option.CLOUD_LAYER2_SPEED_MULT=第二云层速度倍率
 option.DOUBLE_UNBOUND_CLOUDS=双层 Unbond 风格云层
 option.DOUBLE_UNBOUND_CLOUDS.comment=渲染第二层 Unbond 风格云层. §c[-]§r 本选项会影响性能.
 option.CLOUD_UNBOUND_LAYER2_ALTITUDE=第二云层高度
-option.CLOUD_UNBOUND_LAYER2_ALTITUDE.comment=决定第二云层出现的世界高度.
-option.CLOUD_UNBOUND_LAYER2_HEIGHT=第二云层自身高度
-option.CLOUD_UNBOUND_LAYER2_SIZE=第二云层自身大小
-option.CLOUD_UNBOUND_LAYER2_SIZE.comment=决定第二云层自身大小.
-option.CLOUD_UNBOUND_LAYER2_AMOUNT=第二云层数量
-option.CLOUD_UNBOUND_LAYER2_AMOUNT.comment=决定第二云层的数量.
+option.CLOUD_UNBOUND_LAYER2_ALTITUDE.comment=决定第二 Unbond 云层出现的世界高度.
+option.CLOUD_UNBOUND_LAYER2_HEIGHT=第二层 Unbond 云层自身高度
+option.CLOUD_UNBOUND_LAYER2_HEIGHT.comment=决定第二 Unbond 云层自身高度
+option.CLOUD_UNBOUND_LAYER2_SIZE=第二层 Unbond 云层自身大小
+option.CLOUD_UNBOUND_LAYER2_SIZE.comment=决定第二层 Unbond 云层自身大小.
+option.CLOUD_UNBOUND_LAYER2_AMOUNT=第二层 Unbond 云层数量
+option.CLOUD_UNBOUND_LAYER2_AMOUNT.comment=决定第二层 Unbond 云层的数量.
+option.CLOUD_UNBOUND_LAYER2_TRANSPARENCY=第二层 Unbond 云层不透明度
+option.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.comment=决定第二层 Unbond 云层的不透明度.
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.0=0.0
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.1=0.05
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.2=0.10
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.3=0.15
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.4=0.20
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.5=0.25
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.6=0.30
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.7=0.35
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.8=0.40
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.9=0.45
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.10=0.50
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.11=0.55
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.12=0.60
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.13=0.65
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.14=0.70
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.15=0.75
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.16=0.80
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.17=0.85
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.18=0.90
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.19=0.95
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.20=1.00
+
+option.CLOUD_REIMAGINED_LAYER2_HEIGHT=第二云层自身高度
+option.CLOUD_REIMAGINED_LAYER2_HEIGHT.comment=决定第二 Reimagined 云层自身高度
+option.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY=第二层 Reimagined 云层不透明度
+option.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.comment=决定第二 Reimagined 云层的不透明度.
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.0=0.0
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.1=0.05
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.2=0.10
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.3=0.15
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.4=0.20
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.5=0.25
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.6=0.30
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.7=0.35
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.8=0.40
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.9=0.45
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.10=0.50
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.11=0.55
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.12=0.60
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.13=0.65
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.14=0.70
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.15=0.75
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.16=0.80
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.17=0.85
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.18=0.90
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.19=0.95
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.20=1.00
 
 option.CLOUD_SUN_MOON_SHADING=日月对云层照明
 option.CLOUD_SUN_MOON_SHADING.comment=启用太阳和月亮对云层的照明效果.
+value.CLOUD_SUN_MOON_SHADING.0=关
+value.CLOUD_SUN_MOON_SHADING.1=仅月亮
+value.CLOUD_SUN_MOON_SHADING.2=仅太阳
+value.CLOUD_SUN_MOON_SHADING.3=两者
 
 option.END_SMOKE=末地烟云
 option.END_SMOKE.comment=有人纵火, 所以现在末地上下层虚空都有烟云.
@@ -1560,12 +1710,6 @@ value.STAR_BRIGHTNESS.31=2.8
 value.STAR_BRIGHTNESS.32=2.9
 value.STAR_BRIGHTNESS.33=3.0
 
-option.MORE_STARS_OVERWORLD=繁星密布 - 主世界
-option.MORE_STARS_OVERWORLD.comment=覆写 Complementary 的星星数量并使其更多. 应用于主世界.
-value.MORE_STARS_OVERWORLD.0=关
-value.MORE_STARS_OVERWORLD.1=很多
-value.MORE_STARS_OVERWORLD.2=过多
-
 option.TWINKLING_STARS=繁星闪烁
 option.TWINKLING_STARS.comment=让星星对你眨眼~
 value.TWINKLING_STARS.0=关
@@ -1610,7 +1754,7 @@ option.SHADER_WATER.comment=一个切换光影风格水体的开关.
 option.WATER_GENERATED_NORMALS=水体生成法线.
 
 option.RANDOM_BLOCKLIGHT=随机彩色方块光
-option.RANDOM_BLOCKLIGHT.comment=根据世界坐标对方块光随机应用颜色, 纯娱乐设置.
+option.RANDOM_BLOCKLIGHT.comment=根据世界坐标对方块光随机应用颜色, 纯属娱乐设置.
 option.RANDOM_BLOCKLIGHT_SIZE=随机彩色方块光尺度
 option.RANDOM_BLOCKLIGHT_SIZE.comment=调节随机彩色方块光随机化的规模尺度.
 
@@ -1740,6 +1884,7 @@ value.LAVA_VARIATION.1=自适应噪声 (推荐)
 value.LAVA_VARIATION.2=Blushing Hotness
 value.LAVA_VARIATION.3=Molten Cheese
 value.LAVA_VARIATION.4=Dark Islands
+value.LAVA_VARIATION.5=Chaotic Flow
 
 option.LAVA_TEMPERATURE=岩浆色温
 option.LAVA_TEMPERATURE.comment=改变岩浆的色温, 让它更红或者更白.
@@ -2009,10 +2154,11 @@ value.NETHER_NOISE.0=关
 value.NETHER_NOISE.1=开
 
 option.MCBL_MAIN_DEFINE=Euphoria 彩色照明
-option.MCBL_MAIN_DEFINE.comment=启用多重颜色方块光. 把本选项设置为 高级颜色追踪 + 屏幕空间 来使得屏幕空间彩色照明系统与 高级颜色追踪 一同生效. §e[*]§r本选项仅在 1.16.5 及以上的版本或者使用了 Angelica 模组的情况下生效.
+option.MCBL_MAIN_DEFINE.comment=启用多重颜色方块光. 把本选项设置为 高级颜色追踪 + 屏幕空间 来使得屏幕空间彩色照明系统与 高级颜色追踪 一同生效. 高级颜色追踪 + 屏幕空间 + 动态光源支持 会在多模组环境产生不正确的画面 - 应仅在 原版 + 动态光源 模组情况下启用本选项. §e[*]§r本选项仅在 MC 1.16.5 及以上的版本或者在使用 Angelica 模组的特定版本情况下生效.
 value.MCBL_MAIN_DEFINE.0=关
 value.MCBL_MAIN_DEFINE.1=屏幕空间
 value.MCBL_MAIN_DEFINE.2=高级颜色追踪 + 屏幕空间
+value.MCBL_MAIN_DEFINE.3=高级颜色追踪 + 屏幕空间 + 动态光源支持
 
 option.MCBL_INFLUENCE=彩色照明影响程度
 option.MCBL_INFLUENCE.comment=调节彩色照明颜色对默认方块光颜色的影响程度.
@@ -2027,13 +2173,13 @@ option.SOUL_SAND_VALLEY_OVERHAUL=灵魂沙峡谷主视觉增强
 option.SOUL_SAND_VALLEY_OVERHAUL.comment=使灵魂沙峡谷中与火焰相关的方块, 实体, 粒子颜色呈灵魂蓝色.
 
 option.PURPLE_END_FIRE=末地紫焰
-option.PURPLE_END_FIRE.comment=使末地中与火焰相关的方块, 实体, 粒子颜色呈末地紫色.
+option.PURPLE_END_FIRE.comment=使末地中与火焰相关的方块, 实体, 粒子颜色呈末地紫色. §e[*]§r 资源包支持选项需设置为集成PBR+.
 
 option.NO_RAIN_ABOVE_CLOUDS=云端之上无雨雪
 option.NO_RAIN_ABOVE_CLOUDS.comment=禁用高于云层的雨雪粒子. 在原版云层开启并且高度被修改的情况下不能很好的工作.
 
 option.RAIN_FADE_TIMER=降雨聚散时间
-option.RAIN_FADE_TIMER.comment=调节降雨相关效果淡入淡出的所需时间. 受影响的效果有云层, 雨水坑, 雾气, 彩虹等. 
+option.RAIN_FADE_TIMER.comment=调节降雨相关效果淡入淡出的所需时间. 受影响的效果有云层, 雨水坑, 雾气, 彩虹等.
 
 option.DOF_SNEAKING=在下蹲且手持望远镜时模糊视界
 option.DOF_SNEAKING.comment=仅在潜行(下蹲)且手持望远镜时激活视界模糊效果.
@@ -2081,9 +2227,44 @@ value.VERTICAL_STUTTER_SPEED.0.00=关
 option.VERTICAL_SCROLL_FREQUENCY=滚动频率
 option.VERTICAL_STUTTER_FREQUENCY=卡顿频率
 
-option.PIXELATE_SCREEN=像素化
 option.PIXELATED_SCREEN_SIZE=像素大小
-option.PIXELATED_SCREEN_SMOOTHNESS=平滑度
+option.PIXELATED_SCREEN_SIZE.comment=激活一个屏幕像素化效果并且允许调节像素大小.
+value.PIXELATED_SCREEN_SIZE.0=关
+option.PIXELATED_SCREEN_SMOOTHNESS=像素平滑度
+option.PIXELATED_SCREEN_SMOOTHNESS.comment=调节屏幕像素化效果的平滑度. 值越高, 像素间越平滑融洽.
+option.COLOR_LEVELS=海报化
+option.COLOR_LEVELS.comment=减少图像中的颜色数量来创造更复古的图像效果.
+option.POSTERIZE_STRENGTH=海报化强度
+option.POSTERIZE_STRENGTH.comment=调节海报化效果的强度.
+value.POSTERIZE_STRENGTH.0.0=关
+
+option.PALETTE_SWAP=色板
+option.PALETTE1R=颜色1 红色
+option.PALETTE1G=颜色1 绿色
+option.PALETTE1B=颜色1 蓝色
+option.PALETTE2R=颜色2 红色
+option.PALETTE2G=颜色2 绿色
+option.PALETTE2B=颜色2 蓝色
+option.PALETTE3R=颜色3 红色
+option.PALETTE3G=颜色3 绿色
+option.PALETTE3B=颜色3 蓝色
+option.PALETTE4R=颜色4 红色
+option.PALETTE4G=颜色4 绿色
+option.PALETTE4B=颜色4 蓝色
+option.PALETTE5R=颜色5 红色
+option.PALETTE5G=颜色5 绿色
+option.PALETTE5B=颜色5 蓝色
+option.PALETTE6R=颜色6 红色
+option.PALETTE6G=颜色6 绿色
+option.PALETTE6B=颜色6 蓝色
+option.USE_TEXTURE_PALETTE=纹理调色板
+option.USE_TEXTURE_PALETTE.comment=使用调色板文件夹中的 PNG 色板文件而非自定义设置.
+value.USE_TEXTURE_PALETTE.0=关
+
+option.SCREEN_DITHERING=抖动
+option.SCREEN_DITHERING.comment=为屏幕图像添加抖动来模拟比调色板允许的更多的颜色.
+option.SCREEN_DITHER_AMOUNT=抖动量
+option.SCREEN_DITHER_I=抖动强度
 
 option.SCANLINE=扫描线
 value.SCANLINE.0=关
@@ -2203,18 +2384,6 @@ value.EMISSIVE_FLOWERS_TYPE.1=冷色
 value.EMISSIVE_FLOWERS_TYPE.2=暖色
 
 option.EMISSIVE_FLOWERS_STRENGTH=发光强度
-
-option.SPOOKY=Spooklementary
-option.SPOOKY.comment=启用大量恐怖效果 :)
-option.EYES=眼睛
-option.EYE_FREQUENCY=眼睛频率
-option.EYE_SPEED=眼睛速度
-option.EYE_RED_PROBABILITY=红色眼睛出现概率
-option.BLOOD_MOON=血月
-value.BLOOD_MOON.0=关
-value.BLOOD_MOON.1=开 - 满月
-value.BLOOD_MOON.2=开 - 每晚
-option.EMISSIVE_BLOOD_MOON_FLOWERS=血月花朵发光
 
 option.DISTANCE_MIN_LIGHT=洞穴照明衰减
 option.DISTANCE_MIN_LIGHT.comment=在洞穴中距离使玩家越远的区域越暗. 通过更高的洞穴照明设置改善洞穴效果.
@@ -2519,14 +2688,18 @@ value.NEBULA_MOON_CONDITION.1=新月
 value.NEBULA_MOON_CONDITION.2=满月
 value.NEBULA_MOON_CONDITION.3=其他月相
 value.NEBULA_MOON_CONDITION.4=随机
+value.NEBULA_MOON_CONDITION.5=除新月之外的每个月相
 
 option.END_CENTER_LIGHTING=末地中心光源
-option.END_CENTER_LIGHTING.comment=更改末地中心的照明效果.
+option.END_CENTER_LIGHTING.comment=更改末地中心的照明效果. §e[*]§r 本选项仅在 MC 1.9+ 的版本中生效.
 value.END_CENTER_LIGHTING.0=关
 
 option.END_CENTER_LIGHTING_R=照明颜色 - 红
 option.END_CENTER_LIGHTING_G=照明颜色 - 绿
 option.END_CENTER_LIGHTING_B=照明颜色 - 蓝
+
+option.END_CENTER_LIGHTING_AFFECT_BLOCKLIGHT=影响方块光源颜色
+option.END_CENTER_LIGHTING_AFFECT_BLOCKLIGHT.comment=基于末地中心光源颜色来改变在末地维度中的方块光源颜色.
 
 option.NETHER_HEAT_DISTORTION=热失真
 option.NETHER_HEAT_DISTORTION.comment=为下界添加热失真效果.
@@ -2560,10 +2733,25 @@ option.WATER_CAULDRON_COLOR_OVERRIDE=盛水炼药锅颜色覆盖
 option.WATER_CAULDRON_COLOR_OVERRIDE.comment=防止自定义水面颜色设置影响装有水的炼药锅.
 
 option.END_FLASH_SHADOW=末地闪光阴影 §e[Iris]§r
-option.END_FLASH_SHADOW.comment=阴影根据末地闪光事件所投射, 而不是由末地日月斜角选项控制. §e[*]§r 本选项仅在 1.21.9+ 的版本中安装 Iris 时生效.
+option.END_FLASH_SHADOW.comment=阴影根据末地闪光事件所投射, 而不是由末地日月斜角选项控制. §e[*]§r 本选项仅在 MC 1.21.9+ 的版本中安装 Iris 时生效.
 
 option.EP_END_FLASH=末地闪光类型 §e[Iris]§r
-option.EP_END_FLASH.comment=修改末地闪光类型, 同时启用 默认类型 和 Euphoria 类型 或者只选择其一. §e[*]§r 本选项仅在 1.21.9+ 的版本中安装 Iris 时生效.
+option.EP_END_FLASH.comment=修改末地闪光类型, 同时启用 默认类型 和 Euphoria 类型 或者只选择其一. §e[*]§r 本选项仅在 MC 1.21.9+ 的版本中安装 Iris 时生效.
 value.EP_END_FLASH.0=仅默认类型
 value.EP_END_FLASH.1=仅 Euphoria 类型
 value.EP_END_FLASH.2=两者
+
+option.MIRROR_TINTED_GLASS_OPAQUE=不透明遮光玻璃
+option.MIRROR_TINTED_GLASS_OPAQUE.comment=使遮光玻璃方块不透明 (主要便于模拟镜子).
+
+option.COLORED_LIGHT_FOG_RAIN_I=彩色光雾强度 - 雨天
+option.COLORED_LIGHT_FOG_RAIN_I.comment=调节雨天时彩色光雾的亮度.
+value.COLORED_LIGHT_FOG_RAIN_I.0=默认
+
+option.BLOOD_MOON=血月
+option.BLOOD_MOON.comment=启用血月, 由玩家设定每次血月出现的间隔天数. 若设置高于 “每天” 的间隔时间, 血月不会在第一天夜晚或月相为新月的夜晚出现.
+value.BLOOD_MOON.0=关
+value.BLOOD_MOON.1=每天
+suffix.BLOOD_MOON=天1次
+option.EMISSIVE_BLOOD_MOON_FLOWERS=血月红花发光
+option.EMISSIVE_BLOOD_MOON_FLOWERS.comment=血月期间使红色花朵发光. §e[*]§r 资源包支持选项需设置为集成PBR+.

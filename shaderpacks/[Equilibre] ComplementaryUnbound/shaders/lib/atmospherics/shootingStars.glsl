@@ -25,29 +25,29 @@ float DrawLine(vec2 p, vec2 a, vec2 b) {
 }
 
 // Generate a single shooting star
-float ShootingStar(vec2 uv, vec2 startPos, vec2 direction) {    
+float ShootingStar(vec2 uv, vec2 startPos, vec2 direction) {
     vec2 id = floor(uv * 0.5);
     float h = hash12(id);
 
     float newMoonVisibility = 1.0 - abs(moonPhase - 4) / 4.0;
     float moonPhaseFactor = mix(0.8, 1.5, newMoonVisibility);
-    
+
     if (h >= pow1_5(SHOOTING_STARS_CHANCE * 0.065) * moonPhaseFactor) return 0.0;
 
     vec2 gv = fract(uv * 0.5) * 2.0 - 1.0;
     float line = DrawLine(gv, startPos, startPos + direction * 0.9);
-    
+
     vec2 toStart = gv - startPos;
     float alongTrail = dot(toStart, direction);
     float trail = smoothstep(SHOOTING_STARS_TRAIL_LENGTH, -0.1, alongTrail);
-    
+
     float headBrightness = 1.0 + 3.0 / (1.0 + pow2((alongTrail - 1.0) * 8.0));
-    
+
     return line * trail * headBrightness;
 }
 
 vec3 GetShootingStars(vec2 starCoord, float VdotU, float VdotS) {
-    float starsAroundSun = 1.0;   
+    float starsAroundSun = 1.0;
     #ifdef CELESTIAL_BOTH_HEMISPHERES
         float starBelowHorizonBrightness = 1.0;
         float horizonFactor = exp(-pow(VdotU / 0.1, 2.0));
@@ -61,17 +61,13 @@ vec3 GetShootingStars(vec2 starCoord, float VdotU, float VdotS) {
     #endif
 
     float visibility = max0(1.0 - 1.0 / (1.0 + abs(VdotS) * 1000.0) * starsAroundSun) * starBelowHorizonBrightness - horizonFactor * 0.5;
-    
+
     #ifndef DAYLIGHT_STARS
         visibility *= pow2(pow2(invNoonFactor2)) * (1.0 - 0.5 * sunVisibility);
     #endif
 
-    #if defined CLEAR_SKY_WHEN_RAINING || defined NO_RAIN_ABOVE_CLOUDS
-        #ifndef CLEAR_SKY_WHEN_RAINING
-            visibility *= mix(1.0, invRainFactor, heightRelativeToCloud);
-        #else
-            visibility *= mix(1.0, invRainFactor * 0.8 + 0.2, heightRelativeToCloud);
-        #endif
+    #ifdef CLEAR_SKY_WHEN_RAINING
+        visibility *= min1(invRainFactor + 0.4);
     #else
         visibility *= invRainFactor;
     #endif
@@ -114,7 +110,7 @@ vec3 GetShootingStars(vec2 starCoord, float VdotU, float VdotS) {
     for (int i = 0; i < SHOOTING_STARS_COUNT; i++) {
         float offsetAngle = (hash12(vec2(i, worldDay)) - 0.5) * 0.66;
         vec2 starDirection = rotate(offsetAngle) * todayDirection;
-                
+
         vec2 offsetUV = uv + starDirection * speed * (0.8 + 0.04 * float(i));
         stars += ShootingStar(offsetUV, startPositions[i], starDirection);
     }

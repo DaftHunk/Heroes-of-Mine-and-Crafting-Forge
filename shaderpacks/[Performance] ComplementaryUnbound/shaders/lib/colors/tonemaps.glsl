@@ -11,9 +11,13 @@ void linearToRGB(inout vec3 color) {
     color = mix((vec3(1.0) + k) * pow(color, vec3(1.0 / 2.4)) - k, 12.92 * color, lessThan(color, vec3(0.0031308)));
 }
 
+void doColorAdjustmentsWithoutExposure(inout vec3 color) {
+    color = pow(color, mix(vec3(T_LOWER_CURVE - 0.10), vec3(T_UPPER_CURVE - 0.30), sqrt(color)));
+}
+
 void doColorAdjustments(inout vec3 color) {
     color = TM_EXPOSURE * color;
-    color = pow(color, mix(vec3(T_LOWER_CURVE - 0.10), vec3(T_UPPER_CURVE - 0.30), sqrt(color)));
+    doColorAdjustmentsWithoutExposure(color);
 }
 
 vec3 DoCompTonemap(inout vec3 color) {
@@ -52,7 +56,7 @@ vec3 DoCompTonemap(inout vec3 color) {
     float darkLift = smoothstep(darkLiftStart, 0.0, initialLuminance);
     vec3 smoothColor = pow(color, vec3(1.0 / 2.2));
     colorOut = mix(colorOut, smoothColor, darkLift * darkLiftMix * max0(0.55 - abs(1.05 - TM_CONTRAST)) / 0.55);
-    
+
     // Path to White
     const float wpInputCurveStart = 0.0;
     const float wpInputCurveMax = 16.0; // Increase this value to reduce the effect of white path
@@ -66,8 +70,8 @@ vec3 DoCompTonemap(inout vec3 color) {
     float desaturatePath = smoothstep(dpInputCurveStart, dpInputCurveMax, initialLuminance);
     colorOut = mix(colorOut, vec3(GetLuminance(colorOut)), desaturatePath * TM_DARK_DESATURATION);
 
-    doColorAdjustments(colorOut);
-    
+    doColorAdjustmentsWithoutExposure(colorOut);
+
     color = clamp01(colorOut);
     return color;
 }
@@ -114,7 +118,7 @@ vec3 LottesTonemap(vec3 color) {
 vec3 ACESTonemap(vec3 color) {
     float white = ACES_WHITE;
     const float exposure_bias = ACES_EXPOSURE;
-    
+
     color *= rollOffBrightValues(color, ACES_BRIGHTNESS_ROLLOFF);
 
     const float A = 0.0245786f;
@@ -199,7 +203,7 @@ vec3 Uncharted2(vec3 x) {
     const float D = 0.20;
     const float E = 0.02;
     const float F = 0.30;
-    
+
     return ((x*(A*x+C*B)+D*E)/(x*(A*x+B)+D*F))-E/F;
 }
 
@@ -309,7 +313,7 @@ vec3 uchimura(vec3 color) {
 vec3 agxDefaultContrastApprox(vec3 x) {
   vec3 x2 = x * x;
   vec3 x4 = x2 * x2;
-  
+
   return x*(+0.12410293f
     +x*(+0.2078625f
     +x*(-5.9293431f
@@ -328,11 +332,11 @@ vec3 agx(vec3 val) {
 
     // Input transform
     val = agx_mat * val;
-    
+
     // Log2 space encoding
     val = clamp(log2(val), minEv, maxEv);
     val = (val - minEv) / (maxEv - minEv);
-    
+
     // Apply sigmoid function approximation
     val = agxDefaultContrastApprox(val);
 

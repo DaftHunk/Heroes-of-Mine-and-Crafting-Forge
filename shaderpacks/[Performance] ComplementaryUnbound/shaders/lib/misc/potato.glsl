@@ -1,12 +1,12 @@
 vec3 getPixelPotato(vec2 pixelCoord, vec3 color, vec2 size) { // Original Pixel art by Memokii
-    if (pixelCoord.x < 0.0 || pixelCoord.x >= size.x || 
+    if (pixelCoord.x < 0.0 || pixelCoord.x >= size.x ||
         pixelCoord.y < 0.0 || pixelCoord.y >= size.y) {
         return color;
     }
-    
+
     int x = int(pixelCoord.x);
     int y = int(pixelCoord.y);
-    
+
     if ((y == 0 || y == 8) && x >= 4 && x < 10) return hex2rgb(y == 0 ? 0x7C552Au : 0x652C14u);
 
     if (y == 1) {
@@ -196,7 +196,7 @@ vec3 rareShaderError(vec2 texCoordBorder) {
     float verticalIndicator = 0.0;
 
     applyVerticalScreenDisplacement(displacedCoord, verticalIndicator, 1.0, 1.0, 1.0, false);
-    
+
     // Convert the offset to screen space for text positioning
     int verticalTextOffset = int(displacedCoord.y * 8); // Adjust multiplier to match your text scale
     verticalTextOffset += int(displacedCoord.x * 10.0);
@@ -205,11 +205,11 @@ vec3 rareShaderError(vec2 texCoordBorder) {
         printString((_S, _h, _a, _d, _e, _r, _space, _E, _R, _R, _O, _R));
     endText(color);
     return color;
-} 
+}
 
 vec3 potatoError(){
     vec3 color = vec3(0.6);
-    
+
     // Calculate displacement value that we'll use for all elements
     vec2 texCoordBorder = curveDisplay(texCoord, 1.2, 3);
     vec2 displacedCoord = texCoordBorder;
@@ -218,15 +218,15 @@ vec3 potatoError(){
 
     applyVerticalScreenDisplacement(displacedCoord, verticalIndicator, 1.0, 1.0, 1.0, true);
     float verticalOffset = displacedCoord.y - texCoordBorder.y;
-    
+
     // Convert the offset to screen space for text positioning
     int verticalTextOffset = int(verticalOffset * 100.0); // Adjust multiplier to match your text scale
-    
+
     // Apply offset to text position
     color = printPhrase(color, verticalTextOffset);
 
     beginTextM(20, vec2(3, 20 + verticalTextOffset * 0.5)); text.fgCol = vec4(1.0, 0.0, 0.0, 0.85);
-        printString((letterAnimation(0.0, verticalIndicator), letterAnimation(0.1, verticalIndicator), letterAnimation(0.2, verticalIndicator), 
+        printString((letterAnimation(0.0, verticalIndicator), letterAnimation(0.1, verticalIndicator), letterAnimation(0.2, verticalIndicator),
         letterAnimation(0.3, verticalIndicator), letterAnimation(0.4, verticalIndicator), letterAnimation(0.5, verticalIndicator)));
     endText(color);
 

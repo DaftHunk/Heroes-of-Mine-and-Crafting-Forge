@@ -95,7 +95,7 @@ if (blockEntityId < 5028) {
             }
         } else {
             if (blockEntityId == 5036) { //
-            
+
             } else /*if (blockEntityId == 5040)*/ { //
 
             }
@@ -114,7 +114,7 @@ if (blockEntityId < 5028) {
                 smoothnessG = pow2(color.g) * 0.35;
 
                 if (color.b < 0.0001 && color.r > color.g) {
-                    emission = color.g * 4.0;
+                    emission = color.g * 3.5;
                 }
                 overlayNoiseIntensity = 0.3;
             }

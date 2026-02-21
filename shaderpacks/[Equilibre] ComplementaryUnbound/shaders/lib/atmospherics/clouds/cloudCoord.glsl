@@ -7,7 +7,10 @@
 
         // Thanks to SixthSurge
         vec2 GetRoundedCloudCoord(vec2 pos, float cloudRoundness) { // cloudRoundness is meant to be 0.125 for clouds and 0.35 for cloud shadows
-            vec2 coord = pos.xy + 0.5;
+            vec2 coord = pos.yx + 0.5;
+            #ifdef ROTATE_REIMAGINED_CLOUDS_90_NEW
+                coord = coord.yx;
+            #endif
             vec2 signCoord = sign(coord);
             coord = abs(coord) + 1.0;
             vec2 i, f = modf(coord, i);
@@ -29,12 +32,13 @@
         }
 
         #if CLOUD_DIRECTION == 1
-            tracePos.x += wind;
+            tracePos.x -= wind;
+            tracePos.z += cloudAltitude * 64.0;
         #else
-            tracePos.z += wind;
+            tracePos.z -= wind;
+            tracePos.x += cloudAltitude * 64.0;
         #endif
 
-        tracePos.z += cloudAltitude * 64.0;
         tracePos.xz *= cloudNarrowness;
         return tracePos.xyz;
     }

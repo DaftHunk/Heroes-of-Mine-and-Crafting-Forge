@@ -26,7 +26,7 @@
                     fract(voxelPos.z + 0.5)),
                 fract(voxelPos.x + 0.5)
             );
-            
+
             float easeAmount = 1.5;
             vec3 edgeColor = maxLavaColor;
             #if LAVA_EDGE_EFFECT == 2

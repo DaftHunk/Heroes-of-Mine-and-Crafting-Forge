@@ -71,7 +71,7 @@ float vlFactor = 0.0;
     #include "/lib/atmospherics/sky.glsl"
 #endif
 
-#if (AURORA_STYLE > 0 || defined AURORA_INFLUENCE) && defined OVERWORLD
+#if AURORA_STYLE > 0 && defined OVERWORLD
     #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
@@ -156,19 +156,11 @@ void main() {
         #endif
         color.rgb *= 1.2; // compensates for lack of texture and material reflections
     }
-    
+
     float fresnelM = (pow3(fresnel) * 0.85 + 0.15) * reflectMult;
 
     float lengthCylinder = max(length(playerPos.xz), abs(playerPos.y) * 2.0);
     color.a *= smoothstep(far * 0.5, far * 0.7, lengthCylinder);
-
-    #if defined SPOOKY && BLOOD_MOON > 0
-        auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-        ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-    #endif
-    #ifdef AURORA_INFLUENCE
-        ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
-    #endif
 
     #if MONOTONE_WORLD > 0
         #if MONOTONE_WORLD == 1
@@ -217,7 +209,7 @@ void main() {
     float sky = 0.0;
 
     float prevAlpha = color.a;
-    DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither);
+    DoFog(color, sky, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
     float fogAlpha = color.a;
     color.a = prevAlpha * (1.0 - sky);
 

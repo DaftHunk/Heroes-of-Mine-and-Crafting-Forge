@@ -81,10 +81,10 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
         if (z0 != z1) {
             /*vec4 reflection;
             AddBackgroundReflection(reflection, color, playerPos, normalM, normalMR, viewPos, nViewPos, nViewPosR,
-                                    shadowMult, RVdotU, RVdotS, dither, skyLightFactor, smoothness, highlightMult);
+                                    shadowMult, RVdotU, RVdotS, z0, dither, skyLightFactor, smoothness, highlightMult);
 
             return reflection;*/
-            vec4 reflection = getWSR(playerPos, normalMR, nViewPosR, RVdotU, RVdotS, dither);
+            vec4 reflection = getWSR(playerPos, normalMR, nViewPosR, RVdotU, RVdotS, z0, dither);
             refDist = length(playerPos - wsrHitPos);
             return reflection;
         }
@@ -143,19 +143,19 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
                 viewPosRT = start + tvector;
             }
 
+            float lViewPosRT = length(rfragpos);
+
             // Finalizing Terrain Reflection and Alpha
             if (
                 refPos.z < 0.99997
-                #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
-                    && err < 3.0 + lViewPos
+                #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0 && COLORED_LIGHTING_INTERNAL >= 256
+                    && (err < 2.0 + pow2(lViewPosRT) * 0.001 || lViewPosRT > 0.25 * COLORED_LIGHTING_INTERNAL)
                 #endif
             ) {
                 vec2 absPos = abs(refPos.xy - 0.5);
                 vec2 cdist = absPos / rEdge;
                 float border = clamp(1.0 - pow(max(cdist.x, cdist.y), 50.0), 0.0, 1.0);
                 reflection.a = border;
-
-                float lViewPosRT = length(rfragpos);
 
                 if (reflection.a > 0.001) {
                     vec2 edgeFactor = pow2(pow2(pow2(cdist)));
@@ -180,10 +180,12 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
 
                     float skyFade = 0.0;
 
-                    float reflectionPrevAlpha = reflection.a;
-                    DoFog(reflection, skyFade, lViewPosRT, ViewToPlayer(rfragpos.xyz), RVdotU, RVdotS, dither);
-                    reflection.a = reflectionPrevAlpha;
-                    //reflection.a *= 1.0 - skyFade;
+                    #ifdef GBUFFERS_WATER
+                        float reflectionPrevAlpha = reflection.a;
+                        DoFog(reflection, skyFade, lViewPosRT, ViewToPlayer(rfragpos.xyz), RVdotU, RVdotS, dither, true, lViewPos);
+                        reflection.a = reflectionPrevAlpha;
+                        //reflection.a *= 1.0 - skyFade;
+                    #endif
 
                     edgeFactor.x = pow2(edgeFactor.x);
                     edgeFactor = 1.0 - edgeFactor;
@@ -229,7 +231,7 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
                     vec4 viewPos1DH = dhProjectionInverse * (screenPos1DH * 2.0 - 1.0);
                     viewPos1DH /= viewPos1DH.w;
                     lViewPosR = min(lViewPosR, length(viewPos1DH.xyz));
-                    
+
                     z1R = min(z1R, z1RDH);
                 #endif
 
@@ -263,8 +265,8 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
     #endif
     {
         AddBackgroundReflection(reflection, color, playerPos, normalM, normalMR, viewPos, nViewPos, nViewPosR,
-                                shadowMult, RVdotU, RVdotS, dither, skyLightFactor, smoothness, highlightMult);
-    } 
+                                shadowMult, RVdotU, RVdotS, z0, dither, skyLightFactor, smoothness, highlightMult);
+    }
     // ============================== End of Step 3 ============================== //
 
     #if (defined COMPOSITE || (WATER_REFLECT_QUALITY >= 2 && defined SKY_EFFECT_REFLECTION)) && (END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0)
@@ -276,7 +278,7 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
         reflection.rgb += sqrt(GetEndPortalBeam(playerPos, refPosPlayer.xyz * reflection.a - playerPos).rgb);
     #endif
 
-    #if (defined COMPOSITE || WATER_REFLECT_QUALITY >= 2) && (WORLD_SPACE_REFLECTIONS_INTERNAL == -1 || WORLD_SPACE_REF_MODE == 2) && defined END && END_CENTER_LIGHTING > 0 && !defined DH_WATER
+    #if (defined COMPOSITE || WATER_REFLECT_QUALITY >= 2) && (WORLD_SPACE_REFLECTIONS_INTERNAL == -1 || WORLD_SPACE_REF_MODE == 2) && defined END && END_CENTER_LIGHTING > 0 && MC_VERSION >= 10900 && !defined DH_WATER
         if (reflection.a < 1.0) {
             float attentuation = doEndCenterFog(playerPos + cameraPositionBest, worldRefDir.xyz, length(viewPosRT - start), 0.07);
             vec3 pointLightFog = vec3(END_CENTER_LIGHTING_R, END_CENTER_LIGHTING_G + 0.05, END_CENTER_LIGHTING_B) * 0.355 * END_CENTER_LIGHTING * attentuation * enderDragonDead;

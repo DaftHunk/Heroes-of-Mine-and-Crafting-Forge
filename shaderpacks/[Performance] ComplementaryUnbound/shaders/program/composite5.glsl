@@ -129,7 +129,14 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
     if (isEyeInWater == 1) renderDistanceFade = lViewPos * 7.0 / far;
     float nightCaveDesaturation = NIGHT_CAVE_DESATURATION * 0.1;
 
-    float interiorFactor = isEyeInWater == 1 ? 0.0 : pow2(1.0 - texture6.b * (1.0 - lightFogFactor));
+    float skyLightFactor = texture6.b;
+
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        if (skyLightFactor > 0.50001) skyLightFactor = eyeBrightnessM;
+        else skyLightFactor *= 1.9999;
+    #endif
+
+    float interiorFactor = isEyeInWater == 1 ? 0.0 : pow2(1.0 - skyLightFactor * (1.0 - lightFogFactor));
     interiorFactor =  mix(interiorFactor, interiorFactorM, renderDistanceFade);
     interiorFactor -= sqrt2(eyeBrightnessM) * 0.66;
     interiorFactor = smoothstep(0.0, 1.0, clamp01(interiorFactor));
@@ -171,23 +178,23 @@ vec3 purkinjeShift(vec3 rgb, vec4 texture6, vec3 playerPos, float lViewPos, floa
     purkinjeIntensity *= clamp01(heldLight); // Reduce purkinje intensity when holding light sources
     purkinjeIntensity *= nightVisionFactor * (1.0 - isLightningActive()); // Reduce purkinje intensity when using night vision or during lightning
     purkinjeIntensity = clamp(purkinjeIntensity, 0.01, 1.0); // prevent it going to 0 to avoid NaNs
-    
+
     if (nightDesaturationIntensity < 300) {
         float blueDominance = rgb.b / max(max(rgb.r, rgb.g), 0.01);
         float blueReduction = smoothstep(0.9, 2.3, blueDominance);
-        
+
         // Create a darker tint for blue colors
         vec3 purkinjeTint = vec3(0.5, 0.7, 1.0);
         purkinjeTint *= mix(vec3(1.0), vec3(0.6, 0.7, 0.65), blueReduction * 0.7);
         purkinjeTint *= rec709ToRec2020;
-        
+
         const vec3 rodResponse = vec3(7.15e-5, 4.81e-1, 3.28e-1) * rec709ToRec2020;
         vec3 xyz = rgb * rec2020ToXyz;
         vec3 scotopicLuminance = xyz * (1.33 * (1.0 + (xyz.y + xyz.z) / xyz.x) - 0.5);
         float purkinje = dot(rodResponse, scotopicLuminance * xyzToRec2020) * 0.45;
-        
+
         float purkinjeFactor = exp2(-rcp(purkinjeIntensity) * purkinje) * (1.0 - blueReduction * 0.5);
-        
+
         rgb = mix(rgb, purkinje * purkinjeTint, purkinjeFactor);
     } else {
         rgb = mix(rgb, vec3(GetLuminance(rgb) * 0.9), clamp01(purkinjeIntensity));
@@ -218,7 +225,7 @@ void main() {
     vec3 color = texture2D(colortex0, texCoord).rgb;
 
     vec4 texture5 = texelFetch(colortex5, texelCoord, 0);
-    
+
     #if defined BLOOM_FOG || LENSFLARE_MODE > 0 && defined OVERWORLD || defined NIGHT_DESATURATION
         float z0 = texture2D(depthtex0, texCoord).r;
         vec4 screenPos = vec4(texCoord, z0, 1.0);
@@ -265,11 +272,7 @@ void main() {
     #ifdef TONEMAP_COMPARISON
         color = texCoord.x < mix(0.5, 0.0, isSneaking) ? tonemap_left(color) : tonemap_right(color); // Thanks to SixthSurge
     #else
-        #ifndef SPOOKY
-            color = tonemap(color);
-        #else
-            color = LottesTonemap(color);
-        #endif
+        color = tonemap(color);
     #endif
     color = clamp01(color);
 
@@ -288,12 +291,6 @@ void main() {
     #ifdef BLUE_SCREEN
         if (materialMaskInt == 239) { // Blue Screen Blue Blocks
             color = vec3(0.0, 0.0, 1.0);
-            purkinjeOverwrite = 0.0;
-        }
-    #endif
-
-    #ifdef NIGHT_DESATURATION
-        if (materialMaskInt == 251) { // Night Desaturation
             purkinjeOverwrite = 0.0;
         }
     #endif

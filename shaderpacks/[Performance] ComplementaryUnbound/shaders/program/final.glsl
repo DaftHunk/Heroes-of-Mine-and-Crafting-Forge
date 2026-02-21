@@ -21,6 +21,10 @@ noperspective in vec2 texCoord;
 //Common Variables//
 vec2 view = vec2(viewWidth, viewHeight);
 
+#if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+    #include "/lib/voxelization/SSBOs/clearSSBOs.glsl"
+#endif
+
 //Common Functions//
 #if IMAGE_SHARPENING > 0
     vec2 viewD = 1.0 / vec2(viewWidth, viewHeight);
@@ -93,27 +97,6 @@ vec3 scanline(vec2 texCoord, vec3 color, float frequency, float intensity, float
     return color += color * scanlines * intensity * 0.1;
 }
 
-vec3 sampleCell(sampler2D tex, vec2 origin, vec2 size, int count) {
-    vec3 sum = vec3(0.0);
-    float fCount = float(count);
-    for (int i = 0; i < count * count; i++) {
-        vec2 offset = vec2(mod(float(i), fCount) + 0.5, floor(float(i) / fCount) + 0.5) / fCount;
-        sum += texture2D(tex, origin + size * offset).rgb;
-    }
-    return sum / (fCount * fCount);
-}
-
-vec3 createPixelation(sampler2D tex, vec2 uv, float pixelSize, float sampleCount) {
-    vec2 cellSize = vec2(float(int(ceil(256.0 / pixelSize) + 1) & ~1)) / vec2(viewWidth, viewHeight);
-    vec2 cellOrigin = floor(uv / cellSize) * cellSize;
-    sampleCount = max0(sampleCount) + 1.0;     
-    return mix(
-        sampleCell(tex, cellOrigin, cellSize, int(sampleCount)),
-        sampleCell(tex, cellOrigin, cellSize, int(sampleCount) + 1),
-        fract(sampleCount)
-    );
-}
-
 float halftones(vec2 texCoord, float angle, float scale) { // Thanks to https://www.shadertoy.com/view/4sBBDK by starea
     vec2 coord = texCoord * viewSize;
     vec2 dots = rotate(angle) * coord * scale;
@@ -169,15 +152,6 @@ vec2 applyHorizontalNoise(vec2 texCoordM, float resolution, float intensity, flo
 // Function to apply vertical screen displacement
 void applyVerticalScreenDisplacement(inout vec2 texCoordM, inout float verticalOffset, float verticalScrollSpeed, float verticalStutterSpeed, float verticalEdgeGlitch, bool isVertical) {
     float displaceEffectOn = 1.0;
-    #if defined SPOOKY && (!defined RETRO_ON || !defined VERTICAL_SCREEN_DISPLACEMENT)
-        float randomShutterTime = 24000.0 * hash1(worldDay * 5);
-        int displaceEffect = int(hash1(worldDay / 2)) % (2 * 24000) + int(randomShutterTime);
-        displaceEffectOn = 0.0;
-        if (worldTime > displaceEffect && worldTime < displaceEffect + 100.0) {
-            displaceEffectOn = 1.0;
-        }
-    #endif
-
     float scrollSpeed = verticalScrollSpeed * 2.0;
     float stutterSpeed = verticalStutterSpeed * 0.2;
     float scroll = (1.0 - step(retroNoise(vec2(frameTimeCounter * 0.00002, 8.0)), 0.9 * (1.0 - VERTICAL_SCROLL_FREQUENCY * 0.3))) * scrollSpeed;
@@ -188,7 +162,7 @@ void applyVerticalScreenDisplacement(inout vec2 texCoordM, inout float verticalO
     else texCoordM.x = mix(texCoordM.x, mod(texCoordM.x + verticalOffset, verticalEdgeGlitch), displaceEffectOn);
 }
 
-#ifdef IS_IRIS
+#if defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000009
 vec4 waterMarkFunction(ivec2 pixelSize, vec2 textCoord, vec2 screenUV, float watermarkSizeMult, bool hideWatermark){
     float watermarkAspectRatio = float(pixelSize.x) / pixelSize.y;
     float watermarkSize = 1 / watermarkSizeMult;
@@ -201,7 +175,7 @@ vec4 waterMarkFunction(ivec2 pixelSize, vec2 textCoord, vec2 screenUV, float wat
         vec2 texCoordMapped = fract(textCoord);
         ivec2 fetchCoord = ivec2(texCoordMapped * pixelSize);
         vec4 EuphoriaPatchesText = texelFetch(epWatermark, fetchCoord, 0);
-        
+
         float guiIsNotHidden = 1.0;
         if (hideWatermark) {
             #if WATERMARK == 2
@@ -229,6 +203,38 @@ vec3 staticColor(vec3 color, float staticIntensity, float minStaticStrength, flo
     return mix(vec3(1.0), color - staticColor, staticIntensity);
 }
 
+float getUnderwaterDistortion(vec2 uv, float intensity) {
+    return WATER_REFRACTION_INTENSITY * intensity * sin((uv.x + uv.y) * 25.0 + frameTimeCounter * UNDERWATER_DISTORTION_STRENGTH);
+}
+
+vec2 getNetherHeatDistortion(vec2 uv, float z0, float lightmap) {
+    float heatAmount = max(0.0, eyeBrightnessSmooth.x / 240.0 - 0.2) * 1.25;
+    float verticalFalloff = 1.0 - pow3(uv.y); // More intensity at bottom of screen (heat rising effect)
+
+    float depthFactor = clamp01((z0 - 0.06) * 4.0); // Adjusted depth to only be 0 close to the player
+    float distanceAdjustedLightmap = pow3(lightmap) * 0.23 * (0.3 + min(depthFactor, 0.7)); // Boost distant lights, reduce close ones
+
+    // Blend frequencies based on distance - near:far
+    float freqY1 = mix(25.0, 14.0, depthFactor);
+    float freqY2 = mix(18.0, 27.0, depthFactor);
+    float freqX1 = mix(22.0, 14.8, depthFactor);
+    float freqX2 = mix(15.0, 21.7, depthFactor);
+
+    vec2 heatDistort = vec2(
+        sin((uv.y * NETHER_HEAT_DISTORTION_SCALE * freqY1) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.3) * 0.7 +
+        sin((uv.y * NETHER_HEAT_DISTORTION_SCALE * freqY2) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 0.9) * 0.2,
+
+        sin((uv.x * NETHER_HEAT_DISTORTION_SCALE * freqX1) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.5) * 0.7 +
+        sin((uv.x * NETHER_HEAT_DISTORTION_SCALE * freqX2) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.1) * 0.3
+    );
+
+    float playerSpeed = smoothstep(0.0, 0.75, 1.0 - clamp01(length(cameraPosition - previousCameraPosition) / sqrt3(frameTime)));
+
+    float distortionMask = max(heatAmount * pow2(verticalFalloff), distanceAdjustedLightmap) * playerSpeed;
+
+    return heatDistort * 0.00012 * NETHER_HEAT_DISTORTION * distortionMask;
+}
+
 #include "/lib/textRendering/textRenderer.glsl"
 
 void beginTextM(int textSize, vec2 offset) {
@@ -244,12 +250,17 @@ void beginTextM(int textSize, vec2 offset) {
     #include "/lib/misc/worldOutline.glsl"
 #endif
 
+#include "/lib/misc/pixelCraft.glsl"
+
 //Program//
 void main() {
     vec3 color = vec3(0.0);
     float viewWidthM = viewWidth;
     float viewHeightM = viewHeight;
     float animation = 0.0;
+    #if PIXELATED_SCREEN_SIZE > 0 || defined SCREEN_DITHERING_INTERNAL
+        vec2 cellSize = getCellSize();
+    #endif
 
     #if BORDER_AMOUNT != 0
         vec2 texCoordM = border(texCoord);
@@ -267,12 +278,12 @@ void main() {
         texCoordM = applyHorizontalNoise(texCoordM, HORIZONTAL_NOISE, HORIZONTAL_NOISE_INTENSITY, HORIZONTAL_NOISE_SPEED);
     #endif
 
-    #if (defined VERTICAL_SCREEN_DISPLACEMENT && defined RETRO_ON) || defined SPOOKY
-    float verticalOffset = 0.0;
+    #if defined VERTICAL_SCREEN_DISPLACEMENT && defined RETRO_ON
+        float verticalOffset = 0.0;
         applyVerticalScreenDisplacement(texCoordM, verticalOffset, VERTICAL_SCROLL_SPEED, VERTICAL_STUTTER_SPEED, VERTICAL_EDGE_GLITCH, true);
     #endif
 
-    #if WATERMARK > 0 && defined IS_IRIS
+    #if WATERMARK > 0 && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000009)
         vec4 watermarkColor = waterMarkFunction(ivec2(100, 29), vec2(0.05), texCoordM.xy, WATERMARK_SIZE, true);
     #endif
 
@@ -280,9 +291,9 @@ void main() {
         texCoordM += vec2(randomNoiseOverlay1(texCoordM + vec2(0.0, 0.0)), randomNoiseOverlay1(texCoordM + vec2(1.0, 1.0))) * 0.01 * CAMERA_NOISE_OVERLAY_INTENSITY;
     #endif
 
-    #ifdef UNDERWATER_DISTORTION
+    #if defined UNDERWATER_DISTORTION && PIXELATED_SCREEN_SIZE == 0
         if (isEyeInWater == 1)
-            texCoordM += WATER_REFRACTION_INTENSITY * 0.00035 * sin((texCoord.x + texCoord.y) * 25.0 + frameTimeCounter * UNDERWATER_DISTORTION_STRENGTH);
+            texCoordM += getUnderwaterDistortion(texCoord, 0.00035);
     #endif
 
     #if LETTERBOXING > 0 && defined EXCLUDE_ENTITIES || defined BAD_APPLE || DELTARUNE_BATTLE_BACKGROUND == 2 || defined ENTITIES_ARE_LIGHT || NETHER_HEAT_DISTORTION > 0 && defined NETHER
@@ -292,43 +303,18 @@ void main() {
         #endif
     #endif
 
-    #if NETHER_HEAT_DISTORTION > 0 && defined NETHER
-        float heatAmount = max(0.0, eyeBrightnessSmooth.x / 240.0 - 0.2) * 1.25;
-        float verticalFalloff = 1.0 - pow3(texCoord.y); // More intensity at bottom of screen (heat rising effect)
-
-        float lightmap = texture6.a;
-        float depthFactor = clamp01((z0 - 0.06) * 4.0); // Adjusted depth to only be 0 close to the player
-        float distanceAdjustedLightmap = pow3(lightmap) * 0.23 * (0.3 + min(depthFactor, 0.7)); // Boost distant lights, reduce close ones
-        
-        // Blend frequencies based on distance - near:far
-        float freqY1 = mix(25.0, 14.0, depthFactor);
-        float freqY2 = mix(18.0, 27.0, depthFactor);  
-        float freqX1 = mix(22.0, 14.8, depthFactor);
-        float freqX2 = mix(15.0, 21.7, depthFactor);
-                
-        vec2 heatDistort = vec2(
-            sin((texCoord.y * NETHER_HEAT_DISTORTION_SCALE * freqY1) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.3) * 0.7 +
-            sin((texCoord.y * NETHER_HEAT_DISTORTION_SCALE * freqY2) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 0.9) * 0.2,
-
-            sin((texCoord.x * NETHER_HEAT_DISTORTION_SCALE * freqX1) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.5) * 0.7 +
-            sin((texCoord.x * NETHER_HEAT_DISTORTION_SCALE * freqX2) + frameTimeCounter * NETHER_HEAT_DISTORTION_SPEED * 1.1) * 0.3
-        );
-
-        float playerSpeed = smoothstep(0.0, 0.75, 1.0 - clamp01(length(cameraPosition - previousCameraPosition) / sqrt3(frameTime)));
-
-        float distortionMask = max(heatAmount * pow2(verticalFalloff), distanceAdjustedLightmap) * playerSpeed;
-
-        texCoordM += heatDistort * 0.00012 * NETHER_HEAT_DISTORTION * distortionMask;
+    #if NETHER_HEAT_DISTORTION > 0 && defined NETHER && PIXELATED_SCREEN_SIZE == 0
+        texCoordM += getNetherHeatDistortion(texCoordM, z0, texture6.a);
     #endif
 
-    #if defined PIXELATE_SCREEN
-        #define textureFinal(tex) createPixelation(tex, texCoord, PIXELATED_SCREEN_SIZE, PIXELATED_SCREEN_SMOOTHNESS).rgb
+    #if PIXELATED_SCREEN_SIZE > 0
+        #define textureFinal(tex) createPixelation(tex, texCoordM, PIXELATED_SCREEN_SMOOTHNESS, cellSize);
     #else
         #define textureFinal(tex) texture2D(tex, texCoordM).rgb
     #endif
 
     #if LONG_EXPOSURE > 0
-        if (hideGUI == 0 || isViewMoving()) { 
+        if (hideGUI == 0 || isViewMoving()) {
             color = textureFinal(colortex3);
         } else {
             color = textureFinal(colortex2);
@@ -337,26 +323,46 @@ void main() {
         color = textureFinal(colortex3);
     #endif
 
-    #if CHROMA_ABERRATION > 0 || defined SPOOKY
-        vec2 scale = vec2(1.0, viewHeight / viewWidth);
-        #ifdef SPOOKY
-            float aberrationStrength = max(CHROMA_ABERRATION, playerMood * 10.0);
+    #ifdef SCREEN_DITHERING_INTERNAL
+        color = ditherColor(color, texCoordM, cellSize);
+    #endif
+    #ifdef PALETTE_SWAP
+        color = convertToPaletteColor(color);
+    #endif
+
+    #if CHROMA_ABERRATION > 0
+        #if PIXELATED_SCREEN_SIZE > 0
+            float scale = cellSize.x * viewWidth * 0.25;
+            vec2 aberration = (texCoordM - 0.5) * (2.0 / vec2(viewWidth, viewHeight)) * scale * CHROMA_ABERRATION;
+            #if LONG_EXPOSURE > 0
+                if (hideGUI == 0 || isViewMoving()) {
+                    color.rb = vec2(createPixelation(colortex3, texCoordM + aberration, PIXELATED_SCREEN_SMOOTHNESS, cellSize).r,
+                                    createPixelation(colortex3, texCoordM - aberration, PIXELATED_SCREEN_SMOOTHNESS, cellSize).b);
+                } else {
+                    color.rb = vec2(createPixelation(colortex2, texCoordM + aberration, PIXELATED_SCREEN_SMOOTHNESS, cellSize).r,
+                                    createPixelation(colortex2, texCoordM - aberration, PIXELATED_SCREEN_SMOOTHNESS, cellSize).b);
+                }
+            #else
+                color.rb = vec2(createPixelation(colortex3, texCoordM + aberration, PIXELATED_SCREEN_SMOOTHNESS, cellSize).r,
+                                createPixelation(colortex3, texCoordM - aberration, PIXELATED_SCREEN_SMOOTHNESS, cellSize).b);
+            #endif
         #else
+            vec2 scale = vec2(1.0, viewHeight / viewWidth);
             float aberrationStrength = CHROMA_ABERRATION;
-        #endif
-        vec2 aberration = (texCoordM - 0.5) * (2.0 / vec2(viewWidth, viewHeight)) * scale * aberrationStrength;
-        #if LONG_EXPOSURE > 0
-            if (hideGUI == 0 || isViewMoving()) {
+            vec2 aberration = (texCoordM - 0.5) * (2.0 / vec2(viewWidth, viewHeight)) * scale * aberrationStrength;
+            #if LONG_EXPOSURE > 0
+                if (hideGUI == 0 || isViewMoving()) {
+                    color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
+                } else {
+                    color.rb = vec2(texture2D(colortex2, texCoordM + aberration).r, texture2D(colortex2, texCoordM - aberration).b);
+                }
+            #else
                 color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
-            } else {
-                color.rb = vec2(texture2D(colortex2, texCoordM + aberration).r, texture2D(colortex2, texCoordM - aberration).b);
-            }
-        #else
-            color.rb = vec2(texture2D(colortex3, texCoordM + aberration).r, texture2D(colortex3, texCoordM - aberration).b);
+            #endif
         #endif
     #endif
 
-    #if IMAGE_SHARPENING > 0 && !defined PIXELATE_SCREEN
+    #if IMAGE_SHARPENING > 0 && PIXELATED_SCREEN_SIZE == 0
         #if LONG_EXPOSURE > 0
         if(hideGUI == 0 || isViewMoving()){ // GUI visible OR moving
         #endif
@@ -374,7 +380,7 @@ void main() {
         #if LETTERBOXING == 2
             letterboxMargin = mix(0.0, letterboxMargin, isSneaking);
         #endif
-        
+
         if (texCoord.y > 1.0 - letterboxMargin || texCoord.y < letterboxMargin) {
             #ifdef EXCLUDE_ENTITIES
                 if (int(texture6.g * 255.1) != 254) color *= 0.0;
@@ -387,7 +393,7 @@ void main() {
     #ifdef BAD_APPLE
         color = vec3((int(texture6.g * 255.1) != 254) ? 0.0 : 1.0);
     #endif
-    
+
     #if DELTARUNE_BATTLE_BACKGROUND > 0
             vec3 deltaruneColor = movingCheckerboard(texCoord, 100.0, 1.0, vec2(0.05, -0.05), vec3(1.0, 0.0, 1.0));
             deltaruneColor += movingCheckerboard(texCoord, 100.0, 1.0, vec2(-0.025, 0.025), vec3(1.0, 0.0, 1.0) * 0.5);
@@ -421,7 +427,7 @@ void main() {
         DoWorldOutline(color, z0, 1.0, vec3(1.0), far);
     #endif
 
-    #if WATERMARK > 0 && defined IS_IRIS
+    #if WATERMARK > 0 && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000009)
         #if WATERMARK < 4
             color.rgb = mix(color.rgb, watermarkColor.rgb, watermarkColor.a);
         #elif WATERMARK == 4
@@ -433,14 +439,10 @@ void main() {
         color = hash33(color * frameTimeCounter);
     #endif
 
-    #if (STATIC_NOISE > 0 && defined RETRO_ON) || defined SPOOKY
+    #if STATIC_NOISE > 0 && defined RETRO_ON
         float staticIntensity = 0.0;
-        #ifdef SPOOKY
-            if (playerMood > 0.9) staticIntensity = (playerMood * 10.0 - 9.0) * 0.75;
-        #else
-            staticIntensity = STATIC_NOISE * 0.1;
-        #endif
-        color *= staticColor(color, staticIntensity, MIN_STATIC_STRENGTH, MAX_STATIC_STRENGTH, STATIC_SPEED); 
+        staticIntensity = STATIC_NOISE * 0.1;
+        color *= staticColor(color, staticIntensity, MIN_STATIC_STRENGTH, MAX_STATIC_STRENGTH, STATIC_SPEED);
     #endif
 
     #if SCANLINE > 0 && defined RETRO_ON
@@ -459,10 +461,6 @@ void main() {
         color = vec3(colorOld * dotBrightness * 5.0 - 5.0 + halftones(texCoordM, dotAngle, dotScale));
     #endif
 
-    #ifdef SPOOKY
-        color.rgb = mix(color.rgb, color.rgb * GetLuminance(color), 0.60);
-    #endif
-
     #if SPEED_LINES > 0
         #if SPEED_LINES != 3
             float speedIntensity = (length(cameraPosition - previousCameraPosition) / frameTime) * 0.08;
@@ -473,7 +471,7 @@ void main() {
                 isSprintingM = isSprinting;
             #endif
             speedIntensity = max(speedFactor, isSprintingM);
-        #else 
+        #else
             float speedIntensity = 1.0;
         #endif
         float speedLines = speedLines(texCoordM, speedIntensity);
@@ -492,6 +490,10 @@ void main() {
             if (heldItemId == 45014 || heldItemId2 == 45014) isHoldingSpyglass = 1.0; //holding spyglass
             color += mix(0.0, grid, isHoldingSpyglass);
         #endif
+    #endif
+
+    #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+        clearSSBOs();
     #endif
 
     #ifdef VIGNETTE_R
@@ -519,6 +521,7 @@ void main() {
     // beginTextM(2, vec2(5));
     // text.fpPrecision = 6;
     // printFloat(placeholder);
+    // printLine();
     // endText(color.rgb);
     // color.rgb = texture2D(colortex9, texCoord).rgb;
 

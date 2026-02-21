@@ -1,5 +1,5 @@
 /*
-const int colortex0Format = R11F_G11F_B10F; //main color  
+const int colortex0Format = R11F_G11F_B10F; //main color
 const int colortex1Format = RGBA8_SNORM;    //half res normalM
 const int colortex2Format = RGBA16F;        //taa | long exposure + long exposure counter in g channel with long exposure enabled | Renko cut data in g channel with Renko cut enabled
 const int colortex3Format = RGBA8;          //(cloud/water map on deferred/gbuffer) | translucentMult & bloom & final color

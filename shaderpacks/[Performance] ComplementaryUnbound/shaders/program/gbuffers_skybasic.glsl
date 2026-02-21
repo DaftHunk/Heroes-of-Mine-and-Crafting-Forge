@@ -5,7 +5,9 @@
 
 //Common//
 #include "/lib/common.glsl"
+#include "/lib/shaderSettings/tonemaps.glsl"
 #include "/lib/shaderSettings/stars.glsl"
+//#define SECRET_CAELUM_SUPPORT_SETTING
 
 #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
     #include "/lib/misc/distortWorld.glsl"
@@ -33,6 +35,22 @@ float shadowTimeVar1 = abs(sunVisibility - 0.5) * 2.0;
 float shadowTimeVar2 = shadowTimeVar1 * shadowTimeVar1;
 float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 
+const int DoCompTonemap = 0;
+const int DoBSLTonemap = 1;
+const int ACESTonemap = 2;
+const int ACESRedModified = 3;
+const int BurgessTonemap = 4;
+const int LottesTonemap = 5;
+const int Uncharted2 = 6;
+const int uncharted2_tonemap_partial = 7;
+const int uncharted2_filmic = 8;
+const int reinhard2 = 9;
+const int filmic = 10;
+const int GTTonemap = 11;
+const int uchimura = 12;
+const int agxTonemap = 13;
+const int unreal = 14;
+
 //Common Functions//
 
 //Includes//
@@ -48,7 +66,7 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
     #include "/lib/atmospherics/fog/caveFactor.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
 #ifdef MOON_PHASE_INF_ATMOSPHERE
@@ -66,6 +84,7 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 //Program//
 void main() {
     vec4 color = vec4(glColor.rgb, 1.0);
+    float alphaColor = glColor.a;
 
     #ifdef OVERWORLD
         if (vanillaStars > 0.5) {
@@ -88,6 +107,9 @@ void main() {
         float dither = Bayer8(gl_FragCoord.xy);
 
         color.rgb = GetSky(VdotU, VdotS, dither, true, false);
+        #ifdef SECRET_CAELUM_SUPPORT_SETTING
+        if (alphaColor < 1.0 && alphaColor > 0.0) color.rgb = glColor.rgb * alphaColor;
+        #endif
 
         #ifdef ATM_COLOR_MULTS
             color.rgb *= GetAtmColorMult();
@@ -106,7 +128,7 @@ void main() {
             #if ADD_STAR_LAYER_OW1
                 starColor = max(starColor, GetStars(starCoord, VdotU, VdotS, 0.66, 0.0));
             #endif
-            
+
             #if ADD_STAR_LAYER_OW2
                 starColor = max(starColor, GetStars(starCoord, VdotU, VdotS, 2.2, 0.45));
             #endif
@@ -148,9 +170,8 @@ void main() {
                         sunMoonMixer *= 1.0 - 0.65 * GetCaveFactor();
                     #endif
                     float sunBrightness = 25.0;
-                    #ifdef SPOOKY
-                        sunBrightness = 18.0;
-                    #endif
+                    if (tonemap == ACESTonemap) color.rgb = mix(color.rgb, vec3(1.0, 0.698, 0.5451) * sunBrightness, sunMoonMixer);
+                    else
                     color.rgb = mix(color.rgb, vec3(0.9, 0.5, 0.3) * sunBrightness, sunMoonMixer);
                 } else {
                     float horizonFactor = GetHorizonFactor(-SdotU);
@@ -161,13 +182,11 @@ void main() {
                                     + texture2DLod(noisetex, starCoord * 2.5, 0.0).g * 0.7
                                     + texture2DLod(noisetex, starCoord * 5.0, 0.0).g * 0.5;
                     moonNoise = max0(moonNoise - 0.75) * 1.7;
-                    float moonNoiseIntensity = 1.0;
                     vec3 moonColor = vec3(0.38, 0.4, 0.5);
-                    #if defined SPOOKY && BLOOD_MOON > 0
-                        moonNoiseIntensity = mix(1.0, 1.5, getBloodMoon(moonPhase, sunVisibility));
-                        moonColor = mix(moonColor, vec3(1.0, 0.0, 0.0), getBloodMoon(moonPhase, sunVisibility));
+                    #if BLOOD_MOON > 0
+                        moonColor = mix(moonColor, vec3(0.4588, 0.149, 0.149) * 1.5, getBloodMoon(sunVisibility));
                     #endif
-                    moonColor *= (1.2 - (0.2 + 0.2 * sqrt1(nightFactor)) * moonNoise * moonNoiseIntensity);
+                    moonColor *= (1.2 - (0.2 + 0.2 * sqrt1(nightFactor)) * moonNoise);
 
                     if (moonPhase >= 1) {
                         float moonPhaseOffset = 0.0;
@@ -249,8 +268,15 @@ void main() {
     sunVec = GetSunVector();
 
     #ifdef OVERWORLD
-        //Vanilla Star Dedection by Builderb0y
-        vanillaStars = float(glColor.r == glColor.g && glColor.g == glColor.b && glColor.r > 0.0 && glColor.r < 0.51);
+        vanillaStars = 0.0;
+        #if MC_VERSION >= 11605 || defined IS_ANGELICA
+            if (renderStage == MC_RENDER_STAGE_STARS) {
+                vanillaStars = 1.0;
+            }
+        #else
+            //Vanilla Star Dedection by Builderb0y
+            vanillaStars = float(glColor.r == glColor.g && glColor.g == glColor.b && glColor.r > 0.0 && glColor.r < 0.51);
+        #endif
     #endif
 
     #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVE_EVERYTHING

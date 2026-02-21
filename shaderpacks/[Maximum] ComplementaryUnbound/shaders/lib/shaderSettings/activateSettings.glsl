@@ -126,3 +126,5 @@
 #endif
 #ifdef NO_WAVING_INDOORS
 #endif
+#ifdef SCREEN_DITHERING
+#endif

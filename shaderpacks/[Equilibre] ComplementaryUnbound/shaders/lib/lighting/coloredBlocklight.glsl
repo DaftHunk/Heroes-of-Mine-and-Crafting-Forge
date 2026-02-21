@@ -63,7 +63,7 @@ vec3 ApplyMultiColoredBlocklight(vec3 blocklightCol, vec3 screenPos, vec3 player
         ACTDecider = pow2(min1(maxPlayerPos / min(effectiveACTdistance, far) * 2.0)); // this is to make the effect fade at the edge of ACT range
         if (entityMask < 0.5 && ACTDecider < 0.5) return blocklightCol;
     #endif
-    
+
     vec3 cameraOffset = cameraPosition - previousCameraPosition;
     cameraOffset *= float(screenPos.z * 2.0 - 1.0 > 0.56);
 

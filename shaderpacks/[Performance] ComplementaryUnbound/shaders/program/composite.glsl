@@ -65,7 +65,7 @@ void main() {
     ivec2 texelCoord = ivec2(texCoord * view);
     vec4 color = texelFetch(colortex0, texelCoord, 0);
     vec4 texture4 = texelFetch(colortex4, texelCoord, 0);
-    
+
     z0 = texelFetch(depthtex0, texelCoord, 0).r;
     z1 = texelFetch(depthtex1, texelCoord, 0).r;
 
@@ -82,7 +82,6 @@ void main() {
         #endif
     ) {
         vec3 texture6 = texelFetch(colortex6, texelCoord, 0).rgb;
-        vec3 texture8 = texelFetch(colortex8, texelCoord, 0).rgb;
         vec3 normalM = mat3(gbufferModelView) * texture4.rgb;
         vec4 screenPos = vec4(texCoord, z0, 1.0);
         vec4 viewPos = gbufferProjectionInverse * (screenPos * 2.0 - 1.0);
@@ -90,7 +89,7 @@ void main() {
         float lViewPos = length(viewPos);
         vec3 nViewPos = normalize(viewPos.xyz);
         vec3 playerPos = ViewToPlayer(viewPos.xyz);
-        bool entityOrHand = z0 < 0.56;
+        bool entityOrParticle = z0 < 0.56;
 
         float dither = texture2DLod(noisetex, gl_FragCoord.xy / 128.0, 0.0).b;
         #if defined TAA || defined PBR_REFLECTIONS
@@ -104,6 +103,11 @@ void main() {
         float intenseFresnel = 0.0;
         float ssao = 1.0;
         vec3 reflectColor = vec3(1.0);
+
+        #ifdef IRIS_FEATURE_FADE_VARIABLE
+            if (skyLightFactor > 0.50001) skyLightFactor = eyeBrightnessM;
+            else skyLightFactor *= 1.9999;
+        #endif
 
         #include "/lib/materials/materialHandling/deferredMaterials.glsl"
 
@@ -119,7 +123,7 @@ void main() {
                 bool opaqueSurface = z0 == z1;
                 float minBlendFactor = 0.035 + 0.09 * pow2(pow2(pow2(smoothnessD)));
 
-                if (entityOrHand) {
+                if (entityOrParticle) {
                     noiseMult *= 0.125;
                     minBlendFactor = 0.125;
                     if (!opaqueSurface) reflectColor = vec3(0.0);
@@ -144,7 +148,7 @@ void main() {
             vec4 reflection = GetReflection(refNormal, viewPos.xyz, nViewPos, playerPos, lViewPos, z0,
                                             depthtex1, dither, skyLightFactor, fresnel,
                                             smoothnessDM, vec3(0.0), vec3(0.0), vec3(0.0), 0.0, enderDragonDead, vec2(0.0));
-            
+
             reflection.rgb *= reflectColor;
             reflectOutput = reflection;
 
@@ -235,7 +239,7 @@ out vec3 sunVec;
 //Program//
 void main() {
     gl_Position = ftransform();
-    
+
     texCoord = (gl_TextureMatrix[0] * gl_MultiTexCoord0).xy;
 
     sunVec = GetSunVector();

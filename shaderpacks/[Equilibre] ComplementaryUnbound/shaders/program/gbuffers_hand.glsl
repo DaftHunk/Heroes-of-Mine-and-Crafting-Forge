@@ -23,7 +23,7 @@ in vec3 normal;
 
 in vec4 glColor;
 
-#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
     in vec2 signMidCoordPos;
     flat in vec2 absMidCoordPos;
     flat in vec2 midCoord;
@@ -101,12 +101,8 @@ float skyLightCheck = 0.0;
     #include "/lib/lighting/coloredBlocklight.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
-#endif
-
-#ifdef AURORA_INFLUENCE
-    #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
 //Program//
@@ -115,7 +111,7 @@ void main() {
     vec4 color = texture2D(tex, texCoord);
     float purkinjeOverwrite = 0.0, emission = 0.0;
 
-    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
+    float smoothnessD = 0.0, enderDragonDead = 1.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA, Reduce Reflection
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, shadowMult = vec3(0.5); // Reduced shadowMult for held items to not get too bright
 
@@ -146,6 +142,7 @@ void main() {
         float smoothnessG = 0.0, highlightMult = 1.0, noiseFactor = 0.6;
         vec3 geoNormal = normalM;
         vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
+        vec3 maRecolor = vec3(0.0);
 
         float overlayNoiseIntensity = 1.0;
         float snowNoiseIntensity = 1.0;
@@ -155,8 +152,7 @@ void main() {
         bool isFoliage = false;
 
         #ifdef IPBR
-            #ifdef IS_IRIS
-                vec3 maRecolor = vec3(0.0);
+            #if defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008
                 #include "/lib/materials/materialHandling/irisIPBR.glsl"
 
                 if (materialMask != OSIEBCA * 254.0) materialMask += OSIEBCA * 100.0; // Entity Reflection Handling
@@ -201,14 +197,6 @@ void main() {
             blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
         #endif
 
-        #if defined SPOOKY && BLOOD_MOON > 0
-            auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-            ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-        #endif
-        #ifdef AURORA_INFLUENCE
-            ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
-        #endif
-
         emission *= EMISSION_MULTIPLIER;
 
         DoLighting(color, shadowMult, playerPos, viewPos, 0.0, geoNormal, normalM, 0.5,
@@ -217,15 +205,16 @@ void main() {
                    enderDragonDead);
 
         #ifdef SS_BLOCKLIGHT
-            lightAlbedo = normalize(color.rgb) * min1(emission);
+            lightAlbedo = normalize(color.rgb) * min1(emission) * float(heldBlockLightValue > 0 || heldBlockLightValue2 > 0 || heldItemId == 45032 || heldItemId2 == 45032);
         #endif
 
-        #if defined IPBR && defined IS_IRIS
+        #ifdef IPBR
             color.rgb += maRecolor;
         #endif
-
-        skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
     }
+
+    float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
+
     float handSSBLMask = 0.0;
     #ifdef ENTITIES_ARE_LIGHT
         handSSBLMask = 0.2 + isSneaking * 0.5;
@@ -235,8 +224,12 @@ void main() {
         ColorCodeProgram(color, -1);
     #endif
 
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        skyLightFactor *= 0.5;
+    #endif
+
     float purkinjeData = 1.0;
-    #if defined IS_IRIS || MC_VERSION >= 11600
+    #if defined IS_IRIS || defined IS_ANGELICA || MC_VERSION >= 11600
         purkinjeData = lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission);
     #endif
 
@@ -244,7 +237,7 @@ void main() {
     gl_FragData[0] = color;
     gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, purkinjeData);
 
-    #if BLOCK_REFLECT_QUALITY >= 2 && (RP_MODE >= 2 || defined IS_IRIS)
+    #if BLOCK_REFLECT_QUALITY >= 2 && (RP_MODE >= 2 || defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
         /* DRAWBUFFERS:064 */
         gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
@@ -271,7 +264,7 @@ out vec3 normal;
 
 out vec4 glColor;
 
-#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA)
     out vec2 signMidCoordPos;
     flat out vec2 absMidCoordPos;
     flat out vec2 midCoord;
@@ -288,7 +281,7 @@ out vec4 glColor;
 #endif
 
 //Attributes//
-#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
     attribute vec4 mc_midTexCoord;
 #endif
 
@@ -324,7 +317,7 @@ void main() {
     northVec = normalize(gbufferModelView[2].xyz);
     sunVec = GetSunVector();
 
-    #if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+    #if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
         midCoord = (gl_TextureMatrix[0] * mc_midTexCoord).st;
         vec2 texMinMidCoord = texCoord - midCoord;
         signMidCoordPos = sign(texMinMidCoord);

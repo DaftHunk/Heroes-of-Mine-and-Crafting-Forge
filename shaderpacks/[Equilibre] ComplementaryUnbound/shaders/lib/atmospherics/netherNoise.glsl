@@ -32,7 +32,7 @@ vec3 GetNetherNoise(vec3 viewPos, float VdotU, float dither) {
             spots += noise * currentM * 6.0;
         }
 
-        #ifdef EPIC_THUNDERSTORM
+        #ifdef RAIN_ATMOSPHERE
             spots += 2.0 * isLightningActive();
         #endif
 

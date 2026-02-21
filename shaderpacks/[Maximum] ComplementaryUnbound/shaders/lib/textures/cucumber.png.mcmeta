@@ -1,6 +1,5 @@
 {
-  "liminals":
-  {
+  "liminals": {
     "blur": false,
     "clamp": false
   }

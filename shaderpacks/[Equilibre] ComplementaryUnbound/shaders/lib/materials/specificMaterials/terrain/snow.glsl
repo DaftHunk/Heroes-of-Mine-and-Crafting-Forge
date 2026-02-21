@@ -7,7 +7,7 @@ smoothnessD = smoothnessG;
     DoBrightBlockTweaks(color.rgb, 0.5, shadowMult, highlightMult);
 #endif
 
-#if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+#if RAIN_PUDDLES >= 1
     noPuddles = 1.0;
 #endif
 

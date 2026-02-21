@@ -1,10 +1,10 @@
 void AddBackgroundReflection(inout vec4 reflection, vec3 color, vec3 playerPos, vec3 normalM, vec3 normalMR, vec3 viewPos, vec3 nViewPos, vec3 nViewPosR,
-                             vec3 shadowMult, float RVdotU, float RVdotS, float dither, float skyLightFactor, float smoothness, float highlightMult) {
+                             vec3 shadowMult, float RVdotU, float RVdotS, float z0, float dither, float skyLightFactor, float smoothness, float highlightMult) {
     #ifdef OVERWORLD
         #if defined COMPOSITE || WATER_REFLECT_QUALITY >= 2
-            vec3 skyReflection = GetSky(RVdotU, RVdotS, dither, true, true);
+            vec3 skyReflection = GetSky(RVdotU, RVdotS, dither, isEyeInWater == 0, true);
         #else
-            vec3 skyReflection = GetLowQualitySky(RVdotU, RVdotS, dither, true, true);
+            vec3 skyReflection = GetLowQualitySky(RVdotU, RVdotS, dither, isEyeInWater == 0, true);
         #endif
 
         #ifdef ATM_COLOR_MULTS
@@ -19,7 +19,7 @@ void AddBackgroundReflection(inout vec4 reflection, vec3 color, vec3 playerPos, 
         #else
             float specularHighlight = GGX(normalM, nViewPos, lightVec, max(dot(normalM, lightVec), 0.0), smoothness);
             skyReflection += specularHighlight * highlightColor * shadowMult * highlightMult * invRainFactor;
-            
+
             #if WATER_REFLECT_QUALITY >= 1
                 #ifdef SKY_EFFECT_REFLECTION
                     float cloudLinearDepth = 1.0;
@@ -35,7 +35,7 @@ void AddBackgroundReflection(inout vec4 reflection, vec3 color, vec3 playerPos, 
                         nightNebula += GetNightNebula(nViewPosR, RVdotU, RVdotS);
                         skyReflection += nightNebula;
                     #endif
-                    
+
                     vec2 starCoord = GetStarCoord(nViewPos, 0.5);
                     #ifdef PIXELATED_WATER_REFLECTIONS
                         vec3 absPlayerPos = abs(playerPos);
@@ -53,7 +53,7 @@ void AddBackgroundReflection(inout vec4 reflection, vec3 color, vec3 playerPos, 
                         #if ADD_STAR_LAYER_OW1
                             starColor = max(starColor, GetStars(starCoord, RVdotU, RVdotS, 0.66 * starSize, 0.0));
                         #endif
-                        
+
                         #if ADD_STAR_LAYER_OW2
                             starColor = max(starColor, GetStars(starCoord, RVdotU, RVdotS, 2.2 * starSize, 0.45));
                         #endif
@@ -98,7 +98,7 @@ void AddBackgroundReflection(inout vec4 reflection, vec3 color, vec3 playerPos, 
     #endif
 
     #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0 && defined COMPOSITE && (BLOCK_REFLECT_QUALITY >= 2 || WATER_REFLECT_QUALITY >= 2)
-        vec4 wsrReflection = getWSR(playerPos, normalMR, nViewPosR, RVdotU, RVdotS, dither);
+        vec4 wsrReflection = getWSR(playerPos, normalMR, nViewPosR, RVdotU, RVdotS, z0, dither);
         reflection = mix(wsrReflection, vec4(reflection.rgb, 1.0), reflection.a);
         refDist = min(refDist, length(wsrHitPos - playerPos));
     #endif

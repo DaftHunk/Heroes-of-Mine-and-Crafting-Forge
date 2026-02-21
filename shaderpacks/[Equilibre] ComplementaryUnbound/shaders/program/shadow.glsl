@@ -41,7 +41,7 @@ void DoNaturalShadowCalculation(inout vec4 color1, inout vec4 color2) {
     color1.rgb *= glColor.rgb;
     color1.rgb = mix(vec3(1.0), color1.rgb, pow(color1.a, (1.0 - color1.a) * 0.5) * 1.05);
     color1.rgb *= 1.0 - pow(color1.a, 64.0);
-    color1.rgb *= 0.2; // Natural Strength
+    color1.rgb *= 0.1; // 423HDSS: Shadow color strength is stored 10 times lower to allow for water shadows going above 1.0
 
     color2.rgb = normalize(color1.rgb) * 0.5;
 }
@@ -78,7 +78,7 @@ void main() {
                         #ifdef CONNECTED_GLASS_EFFECT
                             DoSimpleConnectedGlass(color1);
                         #endif
-                        
+
                         #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
                             positionYM = 0.0; // 86AHGA: For scene-aware light shafts to be less prone to get extreme under large glass planes
                         #endif
@@ -106,9 +106,9 @@ void main() {
                         #endif
                     #else
                         #define WATER_SPEED_MULT_M WATER_SPEED_MULT * 0.035
-                        vec2 causticWind = vec2(frameTimeCounter * WATER_SPEED_MULT_M, 0.0);
-                        vec2 cPos1 = worldPos.xz * 0.10 - causticWind;
-                        vec2 cPos2 = worldPos.xz * 0.05 + causticWind;
+                        vec2 causticWind = vec2(0.0, frameTimeCounter * WATER_SPEED_MULT_M);
+                        vec2 cPos1 = worldPos.xz * 0.08 + causticWind;
+                        vec2 cPos2 = worldPos.xz * 0.06 - causticWind;
 
                         float cMult = 14.0;
                         float offset = 0.001;
@@ -135,6 +135,7 @@ void main() {
                         #endif
                     #endif
                     color1.rgb *= vec3(0.6, 0.8, 1.1);
+                    color1.rgb = pow(color1.rgb, vec3(0.75)) * 0.5;
                     ////
 
                     // Underwater Light Shafts
@@ -169,7 +170,7 @@ void main() {
                     color1.rgb *= color1.rgb;
                     color1.rgb = mix(vec3(1.0), color1.rgb, pow(color1.a, (1.0 - color1.a) * 0.5) * 1.05);
                     color1.rgb *= 1.0 - pow(color1.a, 64.0);
-                    color1.rgb *= 0.28;
+                    color1.rgb *= 0.14; // 423HDSS
 
                     color2.rgb = normalize(pow(color1.rgb, vec3(0.25))) * 0.5;
                 }
@@ -185,7 +186,7 @@ void main() {
                     }
                 #endif
                 if (color1.a > 0.5) color1 = vec4(0.0, 0.0, 0.0, 1.0);
-                else color1 = vec4(vec3(0.2 * (1.0 - GLASS_OPACITY)), 1.0);
+                else color1 = vec4(vec3(0.1 * (1.0 - GLASS_OPACITY)), color1.a); // 423HDSS
                 color2.rgb = vec3(0.3);
 
                 #if defined LIGHTSHAFTS_ACTIVE && LIGHTSHAFT_BEHAVIOUR == 1 && defined OVERWORLD
@@ -196,18 +197,8 @@ void main() {
             }
         }
     #endif
-    #ifdef EPIC_THUNDERSTORM
+    #ifdef RAIN_ATMOSPHERE
         if (entityId == 50004) discard; //remove lightning shadows
-    #endif
-
-    #ifdef SPOOKY
-        int seed = worldDay / 2; // Thanks to Bálint
-        int currTime = (worldDay % 2) * 24000 + worldTime; // Effect happens every 2 minecraft days
-        float randomTime = 24000 * hash1(worldDay * 5); // Effect happens randomly throughout the day
-        int timeWhenItHappens = (int(hash1(seed)) % (2 * 24000)) + int(randomTime);
-        if (currTime > timeWhenItHappens && currTime < timeWhenItHappens + 100) { // 100 in ticks - 5s, how long the effect will be on, aka leaves are gone
-            if (mat == 10007 || mat == 10009 || mat == 10011) discard; // disable leaves
-        }
     #endif
 
     /* DRAWBUFFERS:0 */
@@ -254,7 +245,7 @@ attribute vec4 at_midBlock;
 //Common Variables//
 vec2 lmCoord;
 
-#if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
+#if COLORED_LIGHTING_INTERNAL > 0
     writeonly uniform uimage3D voxel_img;
 
     #ifdef PUDDLE_VOXELIZATION
@@ -263,9 +254,8 @@ vec2 lmCoord;
 
     #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
         writeonly uniform uimage3D wsr_img;
-        writeonly uniform uimage3D wsr_img_lod;
     #endif
-    
+
     #ifdef ACT_GROUND_LEAVES_FIX
         writeonly uniform uimage3D leaves_img;
     #endif
@@ -280,7 +270,7 @@ vec2 lmCoord;
     #include "/lib/materials/materialMethods/wavingBlocks.glsl"
 #endif
 
-#if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
+#if COLORED_LIGHTING_INTERNAL > 0
     #include "/lib/voxelization/lightVoxelization.glsl"
 
     #ifdef PUDDLE_VOXELIZATION
@@ -336,19 +326,6 @@ void main() {
         absMidCoordPos  = abs(texMinMidCoord);
     #endif
 
-    // #ifdef SPOOKY
-    //  if (mat == 10744) { // Cobweb Thanks to gri
-    //      vec3 irisThirdPersonPull = vec3(0.0);
-    //      #ifdef IS_IRIS
-    //          irisThirdPersonPull = eyePosition - cameraPosition;
-    //      #endif
-    //      vec3 pullCenter = vec3(0.1, -0.1, -0.05) - irisThirdPersonPull;
-    //      float pullFactor = pow(min(abs(sin(1.81 * frameTimeCounter) + cos(0.9124 * frameTimeCounter)), 1.0), 10.0) * 4.0 / (length(position.xyz) + max(20 * texture2DLod(noisetex, vec2(frameTimeCounter * 0.1), 0.0).r, 10.0));
-    //      vec3 pullDir = pullCenter - position.xyz - at_midBlock.xyz / 64.0;
-    //      position.xyz += pullDir * pullFactor;
-    //  }
-    // #endif
-
     #ifdef PERPENDICULAR_TWEAKS
         if (mat == 10003 || mat == 10005 || mat == 10015 || mat == 10017 || mat == 10019 || mat == 10029 || mat == 10039) { // Foliage
             #ifndef CONNECTED_GLASS_EFFECT
@@ -368,9 +345,9 @@ void main() {
 
     vec3 normal = mat3(shadowModelViewInverse) * gl_NormalMatrix * gl_Normal;
 
-    #if COLORED_LIGHTING_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL
+    #if COLORED_LIGHTING_INTERNAL > 0
         if (gl_VertexID % 4 == 0) {
-            UpdateVoxelMap(mat, normal);
+            UpdateVoxelMap(mat);
             #ifdef PUDDLE_VOXELIZATION
                 UpdatePuddleVoxelMap(mat);
             #endif
@@ -378,13 +355,19 @@ void main() {
                 vec3 normal = mat3(shadowModelViewInverse) * gl_NormalMatrix * gl_Normal;
                 UpdateSceneVoxelMap(mat, normal, position.xyz);
             #endif
-            #ifdef ACT_GROUND_LEAVES_FIX
-                UpdateLeavesVoxelMap(mat);
-            #endif
-            #ifdef END_PORTAL_BEAM_INTERNAL
-                if (mat == 10556 && normal.y > 0.99 && length(position.xyz) < 32) SetEndPortalLoc(position.xyz);
-            #endif
         }
+
+        #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0 && WORLD_SPACE_PLAYER_REF == 1
+            UpdatePlayerVertexList(position.xyz);
+        #endif
+
+        #ifdef ACT_GROUND_LEAVES_FIX
+            UpdateLeavesVoxelMap(mat);
+        #endif
+    #endif
+
+    #ifdef END_PORTAL_BEAM_INTERNAL
+        if (mat == 10556 && normal.y > 0.99 && length(position.xyz) < 32) SetEndPortalLoc(position.xyz);
     #endif
 
     #if END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0
@@ -403,6 +386,10 @@ void main() {
         if (entityId == 50204) { // ender dragon
             UpdateDragonPos(position.xyz);
         }
+
+        #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0 && WORLD_SPACE_PLAYER_REF == 1
+            UpdatePlayerVertexList(position.xyz);
+        #endif
     #endif
 
     gl_Position = shadowProjection * shadowModelView * position;

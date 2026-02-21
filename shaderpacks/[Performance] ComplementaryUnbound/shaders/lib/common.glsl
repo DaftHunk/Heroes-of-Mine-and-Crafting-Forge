@@ -41,6 +41,7 @@
 
             #if WORLD_SPACE_REFLECTIONS > 0
                 #define WORLD_SPACE_REFLECTIONS_INTERNAL 1
+                #define WORLD_SPACE_PLAYER_REF -1 //[-1 1]
             #else
                 #define WORLD_SPACE_REFLECTIONS_INTERNAL -1
             #endif
@@ -80,15 +81,15 @@
     #define RAIN_PUDDLES 0 //[0 1 2 3 4]
 
     #define AURORA_STYLE_DEFINE -1 //[-1 0 1 2]
-    #define AURORA_CONDITION 3 //[0 1 2 3 4]
     #define NIGHT_NEBULAE -1 //[-1 1]
-    #define NIGHT_NEBULA_I 100 //[10 15 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 220 240 260 280 300]
+    #define NIGHT_NEBULA_I 100 //[10 12 15 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 220 240 260 280 300]
     #define WEATHER_TEX_OPACITY 100 //[25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 220 240 260 280 300 325 350 375 400 425 450 475 500 550 600 650 700 750 800 850 900]
     #define SPECIAL_BIOME_WEATHER
     #define RAIN_STYLE 1 //[1 2]
     #define SUN_MOON_STYLE_DEFINE -1 //[-1 1 2 3]
     #define SUN_MOON_HORIZON
     #define SUN_MOON_DURING_RAIN
+    #define RAINBOW_STYLE_DEFINE -1 //[-1 1 4]
     #define CLOUD_STYLE_DEFINE -1 //[-1 0 1 3 50]
     //#define CLOUD_SHADOWS
     #define CLOUD_ALT1 192 //[-96 -92 -88 -84 -80 -76 -72 -68 -64 -60 -56 -52 -48 -44 -40 -36 -32 -28 -24 -20 -16 -10 -8 -4 0 4 8 12 16 20 22 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 256 260 264 268 272 276 280 284 288 292 296 300 304 308 312 316 320 324 328 332 336 340 344 348 352 356 360 364 368 372 376 380 384 388 392 396 400 404 408 412 416 420 424 428 432 436 440 444 448 452 456 460 464 468 472 476 480 484 488 492 496 500 510 520 530 540 550 560 570 580 590 600 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800]
@@ -108,11 +109,16 @@
     #define ATM_FOG_ALTITUDE 63 //[0 5 10 15 20 25 30 35 40 45 50 52 54 56 58 60 61 62 63 64 65 66 67 68 69 70 72 74 76 78 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160 165 170 175 180 185 190 195 200 210 220 230 240 250 260 270 280 290 300]
     #define CAVE_FOG
     #define LIGHTSHAFT_BEHAVIOUR 1 //[0 1 2 3]
-    
+
     #define LENSFLARE_MODE 0 //[0 1 2]
     #define LENSFLARE_I 1.00 //[0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.10 1.20 1.30 1.40 1.50 1.60 1.70 1.80 1.90 2.00 2.20 2.40 2.60 2.80 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75 5.00]
-    #define TAA_MODE 1 //[1 2 0]
     #define DISTANT_LIGHT_BOKEH
+    #define TAA_MODE 1 //[0 1]
+    #define TAA_SMOOTHING 3 //[2 3 4]
+    #define TAA_JITTER 1 //[0 1 2 3]
+    #define TAA_MOVEMENT_IMPROVEMENT_FILTER 1 //[0 1]
+    #define FXAA_TAA_INTERACTION 10 //[0 2 4 6 8 10]
+    #define FXAA_STRENGTH 75 //[-1 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100]
 
     #define IPBR_EMISSIVE_MODE 1 //[1 3 2]
     //#define IPBR_COMPAT_MODE_DEFINE
@@ -176,6 +182,7 @@
     #define XLIGHT_G 1.00 //[0.01 0.03 0.05 0.07 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.10 1.20 1.30 1.40 1.50 1.60 1.70 1.80 1.90 2.00]
     #define XLIGHT_B 1.00 //[0.01 0.03 0.05 0.07 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.10 1.20 1.30 1.40 1.50 1.60 1.70 1.80 1.90 2.00]
     #define XLIGHT_I 1.00 //[0.01 0.03 0.05 0.07 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.10 1.20 1.30 1.40 1.50 1.60 1.70 1.80 1.90 2.00]
+    #define XLIGHT_CURVE 1.00 //[0.20 0.25 0.30 0.40 0.50 0.60 0.70 0.80 0.90 1.00 1.10 1.20 1.30 1.40 1.50 1.60 1.80 2.00 2.20 2.40 2.60 2.80 3.00]
 
 
 //════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -225,7 +232,7 @@
     #define E_SKY_COLORI 1.65 //[0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.55 1.60 1.65 1.70 1.75 1.80 1.85 1.90 1.95 2.00]
     #define END_SKY_FOG_INFLUENCE 1.00 // [0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00]
 
-    //#define DRAGON_DEATH_EFFECT
+    #define DRAGON_DEATH_EFFECT 0 //[0 1 2]
     #define END_CRYSTAL_VORTEX 0 //[0 1 2 3]
     //#define END_PORTAL_BEAM
 
@@ -276,7 +283,11 @@
     #if COLORED_LIGHTING_INTERNAL == 0 || MCBL_MAIN_DEFINE > 1 || defined ENTITIES_ARE_LIGHT
         #if (MCBL_MAIN_DEFINE >= 1 || defined SSBL_OVERRIDE || defined ENTITIES_ARE_LIGHT) && (MC_VERSION >= 11604 || defined IS_IRIS || defined IS_ANGELICA)
             #define SS_BLOCKLIGHT
+        #else
+            #undef SS_BLOCKLIGHT
         #endif
+    #else
+        #undef SS_BLOCKLIGHT
     #endif
 
     //#define RANDOM_BLOCKLIGHT
@@ -296,9 +307,6 @@
     #define RETRO_LOOK_G 1.00 // [0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00]
     #define RETRO_LOOK_B 0.00 // [0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00]
     #define RETRO_LOOK_I 1.00 //[0.25 0.50 0.75 1.00 1.25 1.50 1.75 2.00]
-
-    //#define SPOOKY
-    #define BLOOD_MOON 1 //[0 1 2] Off, Full Moon, Every Moon
 
     //#define RENKO_CUT
 
@@ -329,6 +337,8 @@
     #ifdef END_CENTER_LIGHTING
     #endif
 
+    #define BLOOD_MOON 0 //[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50]
+
 
 //Internal Settings//
     #define SIDE_SHADOWING
@@ -350,7 +360,7 @@
 
 //Extensions//
 
-//Visual Style and Performance Setting Handling//
+//RP Mode, Visual Style and Performance Setting Handling//
     #if RP_MODE == 1
         #define IPBR
         #define IPBR_PARTICLE_FEATURES
@@ -358,30 +368,27 @@
         //#define COATED_TEXTURES
         //#define FANCY_GLASS
         //#define GREEN_SCREEN_LIME
+        //#define MIRROR_TINTED_GLASS
     #endif
     #if RP_MODE >= 2
         #define CUSTOM_PBR
         #define POM
     #endif
 
-    #ifdef SPOOKY
-        #define WATER_STYLE_DEFAULT 3
-        //#define WATER_CAUSTIC_STYLE_DEFAULT 3
-        #define AURORA_STYLE_DEFAULT 2
-        #define SUN_MOON_STYLE_DEFAULT 3
-        #define CLOUD_STYLE_DEFAULT 3
-    #elif SHADER_STYLE == 1
+    #if SHADER_STYLE == 1
         #define WATER_STYLE_DEFAULT 1
         //#define WATER_CAUSTIC_STYLE_DEFAULT 1
         #define AURORA_STYLE_DEFAULT 1
         #define SUN_MOON_STYLE_DEFAULT 1
         #define CLOUD_STYLE_DEFAULT 1
+        #define RAINBOW_STYLE_DEFAULT 1
     #elif SHADER_STYLE == 4
         #define WATER_STYLE_DEFAULT 3
         //#define WATER_CAUSTIC_STYLE_DEFAULT 3
         #define AURORA_STYLE_DEFAULT 2
         #define SUN_MOON_STYLE_DEFAULT 2
         #define CLOUD_STYLE_DEFAULT 3
+        #define RAINBOW_STYLE_DEFAULT 4
     #endif
     #if WATER_STYLE_DEFINE == -1
         #define WATER_STYLE WATER_STYLE_DEFAULT
@@ -408,10 +415,13 @@
     #else
         #define CLOUD_STYLE CLOUD_STYLE_DEFINE
     #endif
+    #if RAINBOW_STYLE_DEFINE == -1
+        #define RAINBOW_STYLE RAINBOW_STYLE_DEFAULT
+    #else
+        #define RAINBOW_STYLE RAINBOW_STYLE_DEFINE
+    #endif
     // Thanks to SpacEagle17 and isuewo for the sun angle handling
-    #ifdef SPOOKY
-        const float sunPathRotation = -40.0;
-    #elif defined END
+    #ifdef END
         #if END_SUN_ANGLE == 0
             const float sunPathRotation = 0.0;
         #elif END_SUN_ANGLE == 20
@@ -510,8 +520,6 @@
     #if DETAIL_QUALITY >= 2 // Medium
         #undef WATER_MAT_QUALITY
         #define WATER_MAT_QUALITY 2
-        #define FXAA_TAA_INTERACTION
-        #define TAA_MOVEMENT_IMPROVEMENT_FILTER
     #endif
     #if DETAIL_QUALITY >= 3 // High
         #undef WATER_MAT_QUALITY
@@ -627,7 +635,7 @@
     #endif
 
 
-    #if SEASONS > 0
+    #if SEASONS > 0 || defined GBUFFERS_COLORWHEEL
         #undef SNOWY_WORLD
     #endif
 
@@ -635,19 +643,16 @@
         #undef AURORA_INFLUENCE
     #endif
 
-    #ifdef SPOOKY
-        #define SPOOKY_RAIN_PUDDLE_OVERRIDE
-    #endif
-
-    #if defined RAIN_ATMOSPHERE || defined SPOOKY
-        #define EPIC_THUNDERSTORM
-    #endif
-
-    #if defined END && defined IRIS_FEATURE_CUSTOM_IMAGES && defined DRAGON_DEATH_EFFECT
-        #define DRAGON_DEATH_EFFECT_INTERNAL 1
+    #if defined END && defined IRIS_FEATURE_CUSTOM_IMAGES && DRAGON_DEATH_EFFECT > 0
+        #if DRAGON_DEATH_EFFECT == 1
+            #define DRAGON_DEATH_EFFECT_INTERNAL 1
+        #elif DRAGON_DEATH_EFFECT == 2
+            #define DRAGON_DEATH_EFFECT_INTERNAL 2
+        #endif
     #else
         #define DRAGON_DEATH_EFFECT_INTERNAL 0
     #endif
+
     #if defined END && defined IRIS_FEATURE_CUSTOM_IMAGES && END_CRYSTAL_VORTEX > 0
         #if END_CRYSTAL_VORTEX == 1
             #define END_CRYSTAL_VORTEX_INTERNAL 1
@@ -661,7 +666,7 @@
     #else
         #define END_CRYSTAL_VORTEX_INTERNAL 0
     #endif
-    #if defined END_PORTAL_BEAM && defined IS_IRIS && defined OVERWORLD && !defined MC_OS_MAC
+    #if defined END_PORTAL_BEAM && defined IRIS_FEATURE_CUSTOM_IMAGES && defined OVERWORLD && !defined MC_OS_MAC
         #define END_PORTAL_BEAM_INTERNAL
     #endif
     #if defined SOUL_SAND_VALLEY_OVERHAUL && defined NETHER
@@ -745,12 +750,23 @@
     float cloudGradientLength = 20.0; // in blocks, probably...
     float heightRelativeToCloud = clamp(1.0 - (eyeAltitude - maximumCloudsHeight) / cloudGradientLength, 0.0, 1.0);
 
+    #ifndef NO_RAIN_ABOVE_CLOUDS
+        float rainFactor = rainFactorUniform;
+        float wetnessM = wetness;
+    #else
+        float rainFactor = rainFactorUniform * heightRelativeToCloud;
+        float wetnessM = wetness * heightRelativeToCloud;
+    #endif
+
     float rainFactor2 = rainFactor * rainFactor;
     float invRainFactor = 1.0 - rainFactor;
     float invNoonFactor = 1.0 - noonFactor;
     float invNoonFactor2 = invNoonFactor * invNoonFactor;
 
     float vsBrightness = clamp(screenBrightness, 0.0, 1.0);
+
+    float nightVisionWithAddedSupport = screenBrightness > 1.0 ? 1.0 : nightVision; // Add support for fullbright mods
+    #define nightVision nightVisionWithAddedSupport
 
     int modifiedWorldDay = int(mod(worldDay, 100) + 5.0);
     #if defined DAYLIGHT_CYCLE_COMPAT || defined FROZEN_TIME
@@ -770,8 +786,6 @@
         vec3 previousCameraPositionBestFract = fract(previousCameraPosition);
         vec3 cameraPositionBest = cameraPosition;
     #endif
-
-    float auroraSpookyMix = 0.0;
 
     #if WATERCOLOR_MODE >= 2
         vec3 underwaterColorM1 = pow(fogColor, vec3(0.33, 0.21, 0.26));
@@ -852,11 +866,11 @@
             230 to 240: Consistent metalness with still increasing f0
     241 to 255 - PBR Independant:
         OSIEBCA * 241.0 = Water
-    
-        OSIEBCA * 251.0 = Composite Effects
+
+        OSIEBCA * 251.0 = No SSAO, Reduce Reflection
         OSIEBCA * 252.0 = Versatile Selection Outline
         OSIEBCA * 253.0 = Reduced Edge TAA
-        OSIEBCA * 254.0 = No SSAO, No TAA
+        OSIEBCA * 254.0 = No SSAO, No TAA, Reduce Reflection
         OSIEBCA * 255.0 = *Unused as 1.0 is the clear color*
     */
 

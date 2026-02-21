@@ -58,12 +58,8 @@ vec2 lmCoordM = lmCoord;
     #include "/lib/voxelization/leavesVoxelization.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
-#endif
-
-#ifdef AURORA_INFLUENCE
-    #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
 #define GBUFFERS_TERRAIN
@@ -102,8 +98,9 @@ void main() {
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         atmColorMult = GetAtmColorMult();
+        sqrtAtmColorMult = sqrt(atmColorMult);
     #endif
 
     bool noSmoothLighting = false, noDirectionalShading = false, noVanillaAO = false, centerShadowBias = false;
@@ -130,15 +127,6 @@ void main() {
     if (mat == DH_BLOCK_LEAVES) {
         #include "/lib/materials/specificMaterials/terrain/leaves.glsl"
 	    dhSSAOBrightnessBoost = 1.35; // make brighter to compensate SSAO
-        #ifdef SPOOKY
-            int seed = worldDay / 2; // Thanks to Bálint
-            int currTime = (worldDay % 2) * 24000 + worldTime; // Effect happens every 2 minecraft days
-            float randomTime = 24000 * hash1(worldDay * 5); // Effect happens randomly throughout the day
-            int timeWhenItHappens = (int(hash1(seed)) % (2 * 24000)) + int(randomTime);
-            if (currTime > timeWhenItHappens && currTime < timeWhenItHappens + 100) { // 100 in ticks - 5s, how long the effect will be on, aka leaves are gone
-                discard; // disable leaves
-            }
-        #endif
     } else if (mat == DH_BLOCK_GRASS) {
         smoothnessG = pow2(color.g) * 0.85;
 	    dhSSAOBrightnessBoost = mix(1.0, 1.2, 1.0 - clamp01(dot(worldGeoNormal, ViewToPlayer(upVec)))); // only make brighter on the sides
@@ -152,7 +140,7 @@ void main() {
         #else
             color.rgb *= 0.89;
         #endif
-	    dhSSAOBrightnessBoost = 0.9;        
+	    dhSSAOBrightnessBoost = 0.9;
     } else if (mat == DH_BLOCK_ILLUMINATED) {
         emission = 2.5;
         snowNoiseIntensity = 0.0;
@@ -190,14 +178,6 @@ void main() {
         #define GBUFFERS_TERRAIN
         #include "/lib/materials/seasons.glsl"
         #undef GBUFFERS_TERRAIN
-    #endif
-
-    #if defined SPOOKY && BLOOD_MOON > 0
-        auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-        ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-    #endif
-    #ifdef AURORA_INFLUENCE
-        ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
     #endif
 
     #if MONOTONE_WORLD > 0

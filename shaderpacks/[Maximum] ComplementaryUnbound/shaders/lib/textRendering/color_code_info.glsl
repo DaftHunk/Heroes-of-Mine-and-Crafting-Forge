@@ -71,7 +71,7 @@ if (displayIndex == 0) {
         printString((_R, _e, _d, _minus));
         text.fgCol = vec4(0.0, 0.0, 2.0, 1.0);  // Blue
         printString((_B, _l, _u, _e, _space, _V, _e, _r, _t, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for SPIDEREYES
         text.fgCol = vec4(2.0, 0.0, 0.0, 1.0);  // Red
         printString((_S));
@@ -102,7 +102,7 @@ if (displayIndex == 0) {
         printString((_R, _e, _d, _minus));
         text.fgCol = vec4(0.0, 0.0, 2.0, 1.0);  // Blue
         printString((_B, _l, _u, _e, _space, _H, _o, _r, _i, _z, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for TEXTURED
         text.fgCol = vec4(2.0, 0.0, 0.0, 1.0);  // Red
         printString((_T));
@@ -129,7 +129,7 @@ if (displayIndex == 0) {
         printString((_R, _e, _d, _minus));
         text.fgCol = vec4(0.0, 2.0, 0.0, 1.0);  // Green
         printString((_G, _r, _e, _e, _n, _space, _V, _e, _r, _t, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for CLOUDS
         text.fgCol = vec4(2.0, 0.0, 0.0, 1.0);  // Red
         printString((_C));
@@ -152,7 +152,7 @@ if (displayIndex == 0) {
         printString((_R, _e, _d, _minus));
         text.fgCol = vec4(0.0, 2.0, 0.0, 1.0);  // Green
         printString((_G, _r, _e, _e, _n, _space, _H, _o, _r, _i, _z, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for BEACONBEAM
         text.fgCol = vec4(2.0, 0.0, 0.0, 1.0);  // Red
         printString((_B));
@@ -183,7 +183,7 @@ if (displayIndex == 0) {
         printString((_B, _l, _a, _c, _k, _minus));
         text.fgCol = vec4(1.5, 1.5, 1.5, 1.0);  // White
         printString((_W, _h, _i, _t, _e, _space, _V, _e, _r, _t, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for ARMOR_GLINT
         text.fgCol = vec4(0.0, 0.0, 0.0, 1.0);  // Black
         printString((_A));
@@ -216,7 +216,7 @@ if (displayIndex == 0) {
         printString((_B, _l, _a, _c, _k, _minus));
         text.fgCol = vec4(1.5, 1.5, 1.5, 1.0);  // White
         printString((_W, _h, _i, _t, _e, _space, _H, _o, _r, _i, _z, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for DAMAGEDBLOCK
         text.fgCol = vec4(0.0, 0.0, 0.0, 1.0);  // Black
         printString((_D));
@@ -251,7 +251,7 @@ if (displayIndex == 0) {
         printString((_G, _r, _e, _e, _n, _minus));
         text.fgCol = vec4(0.0, 0.0, 2.0, 1.0);  // Blue
         printString((_B, _l, _u, _e, _space, _H, _o, _r, _i, _z, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for SKYTEXTURED
         text.fgCol = vec4(0.0, 2.0, 0.0, 1.0);  // Green
         printString((_S));
@@ -284,7 +284,7 @@ if (displayIndex == 0) {
         printString((_Y, _e, _l, _l, _o, _w, _minus));
         text.fgCol = vec4(0.0, 0.0, 2.0, 1.0);  // Blue
         printString((_B, _l, _u, _e, _space, _H, _o, _r, _i, _z, _space, _S, _t, _r, _i, _p, _e, _s, _colon, _space));
-        
+
         // Alternating colors for LIGHTNING
         text.fgCol = vec4(2.0, 2.0, 0.0, 1.0);  // Yellow
         printString((_L));

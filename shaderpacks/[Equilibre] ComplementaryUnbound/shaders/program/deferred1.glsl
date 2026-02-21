@@ -45,6 +45,10 @@ vec2 view = vec2(viewWidth, viewHeight);
     float vlFactor = 0.0;
 #endif
 
+#ifdef IRIS_FEATURE_FADE_VARIABLE
+    float chunkFade = 1.0;
+#endif
+
 //Common Functions//
 float GetLinearDepth(float depth) {
     return (2.0 * near) / (far + near - depth * farMinusNear);
@@ -52,14 +56,14 @@ float GetLinearDepth(float depth) {
 
 // Improved linear depth calculation with safety checks
 float CalculateLinearDepth(float depth_sample, float near_plane, float far_plane) {
-    if (far_plane == near_plane) 
+    if (far_plane == near_plane)
         return depth_sample > 0.5 ? 1.0 : 0.0; // Avoid division by zero or undefined behavior
-    
+
     float far_minus_near = far_plane - near_plane;
-    
-    if (far_plane + near_plane - depth_sample * far_minus_near == 0.0) 
+
+    if (far_plane + near_plane - depth_sample * far_minus_near == 0.0)
         return 1.0; // Return max linear depth
-    
+
     return (2.0 * near_plane) / (far_plane + near_plane - depth_sample * far_minus_near);
 }
 
@@ -71,9 +75,9 @@ float CalculateLinearDepth(float depth_sample, float near_plane, float far_plane
     }
 
     // Improved offset distribution function for DH SSAO
-    vec2 OffsetDistImproved(float x_norm, int s) { 
-        float n = fract(x_norm * 1.41421356237f) * 6.28318530718f; 
-        float radius_mult = x_norm; 
+    vec2 OffsetDistImproved(float x_norm, int s) {
+        float n = fract(x_norm * 1.41421356237f) * 6.28318530718f;
+        float radius_mult = x_norm;
         return vec2(cos(n), sin(n)) * radius_mult;
     }
 
@@ -120,7 +124,7 @@ float CalculateLinearDepth(float depth_sample, float near_plane, float far_plane
 
         #define SSAO_IM SSAO_I * SSAO_I_FACTOR
 
-        #ifdef EPIC_THUNDERSTORM
+        #ifdef RAIN_ATMOSPHERE
             vec3 lightningPos = getLightningPos(playerPos, lightningBoltPosition.xyz, false);
             vec2 lightningAdd = lightningFlashEffect(lightningPos, vec3(0), 550.0, 0, 0) * isLightningActive() * 0.5;
             ao += lightningAdd.y;
@@ -175,7 +179,7 @@ float CalculateLinearDepth(float depth_sample, float near_plane, float far_plane
     #include "/lib/misc/darkOutline.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
 
@@ -214,7 +218,7 @@ void main() {
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         atmColorMult = GetAtmColorMult();
         sqrtAtmColorMult = sqrt(atmColorMult);
     #endif
@@ -231,6 +235,8 @@ void main() {
     vec3 normalM = vec3(0);
     float fresnelM = 0.0;
     float linearZ0_DH;
+
+    vec4 texture6 = texelFetch(colortex6, texelCoord, 0).rgba;
 
     if (z0 < 1.0) {
         #ifdef DISTANT_LIGHT_BOKEH
@@ -255,9 +261,8 @@ void main() {
             float ssao = 1.0;
         #endif
 
-        vec4 texture6 = texelFetch(colortex6, texelCoord, 0).rgba;
+        bool entityOrParticle = z0 < 0.56;
         int materialMaskInt = int(texture6.g * 255.1);
-        bool entityOrHand = z0 < 0.56;
         float intenseFresnel = 0.0;
         float smoothnessD = texture6.r;
         vec3 reflectColor = vec3(1.0);
@@ -266,7 +271,7 @@ void main() {
 
         #ifdef WORLD_OUTLINE
             #ifndef WORLD_OUTLINE_ON_ENTITIES
-                if (!entityOrHand)
+                if (!entityOrParticle)
             #endif
             DoWorldOutline(color.rgb, linearZ0, pixelVisibilityFactor, playerPos, far);
         #endif
@@ -294,10 +299,12 @@ void main() {
             fresnelM = fresnelM * sqrt1(smoothnessD) - dither * 0.01;
         #endif
 
+        #ifdef IRIS_FEATURE_FADE_VARIABLE
+            chunkFade = texture6.b > 0.50001 ? (1.0 - texture6.b) * 2.0 : 1.0;
+        #endif
+
         waterRefColor = color.rgb;
-
-        DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither);
-
+        DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
     } else { // Sky
         #ifdef DISTANT_HORIZONS
             float z0DH = texelFetch(dhDepthTex, texelCoord, 0).r;
@@ -313,13 +320,13 @@ void main() {
                 #endif
 
                 #if SSAO_QUALI > 0
-                    float ssao_dh = DoAmbientOcclusionDH(z0DH, linearZ0_DH, dhDepthTex, dither);
+                    float ssao_dh = DoAmbientOcclusionDH(z0DH, linearZ0_DH, dhDepthTex, dither, texture6.a);
                     color.rgb *= ssao_dh;
                 #endif
 
                 waterRefColor = color.rgb;
 
-                DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither);
+                DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
             } else { // Start of Actual Sky
         #endif
 
@@ -338,7 +345,7 @@ void main() {
         #ifdef NETHER
             color.rgb = netherColor * (1.0 - maxBlindnessDarkness);
 
-            #if defined ATM_COLOR_MULTS || defined SPOOKY
+            #ifdef ATM_COLOR_MULTS
                 color.rgb *= atmColorMult;
             #endif
         #endif
@@ -353,7 +360,7 @@ void main() {
                 #if ADD_STAR_LAYER_END1
                     starColor = max(starColor, GetEnderStars(viewPos.xyz, VdotU, 0.66, 0.0));
                 #endif
-                
+
                 #if ADD_STAR_LAYER_END2
                     starColor = max(starColor, GetEnderStars(viewPos.xyz, VdotU, 2.2, 0.33));
                 #endif
@@ -369,7 +376,7 @@ void main() {
                 }
             #endif
 
-            #if defined ATM_COLOR_MULTS || defined SPOOKY
+            #ifdef ATM_COLOR_MULTS
                 color.rgb *= atmColorMult;
             #endif
         #endif
@@ -437,7 +444,7 @@ void main() {
             color.rgb += pow4(skyFade) * bedrockNoise;
         #endif
     #endif
-    #if defined END && END_CENTER_LIGHTING > 0
+    #if defined END && END_CENTER_LIGHTING > 0 && MC_VERSION >= 10900
         float attentuation = doEndCenterFog(cameraPositionBest, normalize(playerPos), min(renderDistance, lViewPos), 0.5);
         vec3 pointLightFog = vec3(END_CENTER_LIGHTING_R, END_CENTER_LIGHTING_G + 0.05, END_CENTER_LIGHTING_B) * 0.25 * END_CENTER_LIGHTING * 0.1 * attentuation * (1.0 - vlFactor);
         color.rgb = sqrt(pow2(color.rgb) + vec3(pointLightFog));

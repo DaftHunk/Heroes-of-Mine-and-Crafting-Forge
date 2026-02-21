@@ -14,9 +14,9 @@ float getOffsetStrength(float animation, vec2 dir, float maxRadius) {
     #elif SHOCKWAVE == 2
         float wave = sdBox(dir / aspectRatio, vec2(animation * maxRadius));
     #endif
-    
+
     wave *= 1.0 - smoothstep(0.0, 0.2, abs(wave)); // Mask the ripple
-    
+
     wave *= smoothstep(0.0, 0.2, animation); // Smooth intro
     wave *= 1.0 - smoothstep(0.5, 1.0, animation); // Smooth outro
     return wave * 0.05;
@@ -28,13 +28,13 @@ vec4 doShockwave(vec3 playerPos, vec2 texCoord){ // Based on https://editor.p5js
     float animation = pow(isShockwave, 1.0 / 1.2);
     vec4 shockwaveColor = vec4(0);
     float maxRadius = 4;
-    
+
     // Chromatic aberration
     float aberrationOffset = 0.05 * sin(animation * pi);
     float rWave = getOffsetStrength(animation + aberrationOffset, dir, maxRadius);
     float gWave = getOffsetStrength(animation, dir, maxRadius);
     float bWave = getOffsetStrength(animation - aberrationOffset, dir, maxRadius);
-    
+
     dir = normalize(dir);
 
     float value = 1.0;
@@ -59,7 +59,7 @@ vec4 doShockwave(vec3 playerPos, vec2 texCoord){ // Based on https://editor.p5js
         float b = texture2D(tex, texCoord + dir * bWave * value).b;
         float a = texture2D(tex, texCoord).a;
     #endif
-    
+
     float shading = gWave * 15.0; // use gWave as it has no chromatic aberration
 
     shockwaveColor = vec4(r, g, b, a);

@@ -25,7 +25,7 @@ in vec3 normal;
 
 in vec4 glColor;
 
-#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
     in vec2 signMidCoordPos;
     flat in vec2 absMidCoordPos;
     flat in vec2 midCoord;
@@ -105,12 +105,8 @@ float entitySSBLMask = 1.0;
     #include "/lib/lighting/coloredBlocklight.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
-#endif
-
-#ifdef AURORA_INFLUENCE
-    #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
 #if SHOCKWAVE > 0
@@ -137,7 +133,7 @@ void main() {
     vec3 colorP = color.rgb;
     color *= glColor;
 
-    float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = OSIEBCA * 254.0, enderDragonDead = 1.0; // No SSAO, No TAA
+    float smoothnessD = 0.0, enderDragonDead = 1.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA, Reduce Reflection
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, shadowMult = vec3(1.0);
 
@@ -178,28 +174,26 @@ void main() {
             dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
         #endif
 
-        #ifdef DISTANT_HORIZONS
-            if (entityId != 0 && getDHFadeFactor(playerPos) < dither) {
-                discard;
-            }
-        #endif
-
         color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 
         bool noSmoothLighting = atlasSize.x < 600.0; // To fix fire looking too dim
         bool noGeneratedNormals = false, noDirectionalShading = false, noVanillaAO = false;
         float smoothnessG = 0.0, highlightMult = 0.0, emission = 0.0, noiseFactor = 0.75;
+        vec3 maRecolor = vec3(0.0);
 
-        if (entityId == 50016 || entityId == 50017) { // Player
+        if (entityId >= 50015 && entityId <= 50017) { // Player
             #include "/lib/materials/specificMaterials/others/SpacEagle17.glsl"
         }
 
         #ifdef IPBR
-            #include "/lib/materials/materialHandling/entityIPBR.glsl"
-
-            #ifdef IS_IRIS
-                vec3 maRecolor = vec3(0.0);
-                #include "/lib/materials/materialHandling/irisIPBR.glsl"
+            #if defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008
+                if (currentRenderedItemId == 0) {
+                    #include "/lib/materials/materialHandling/entityIPBR.glsl"
+                } else {
+                    #include "/lib/materials/materialHandling/irisIPBR.glsl"
+                }
+            #else
+                #include "/lib/materials/materialHandling/entityIPBR.glsl"
             #endif
 
             if (materialMask != OSIEBCA * 254.0) materialMask += OSIEBCA * 100.0; // Entity Reflection Handling
@@ -221,7 +215,7 @@ void main() {
             #endif
 
             if (entityId == 50004) { // Lightning Bolt
-                #include "/lib/materials/specificMaterials/entities/lightningBolt.glsl"
+                #include "/lib/materials/specificMaterials/others/lightningBolt.glsl"
             } else if (entityId == 50008) { // Item Frame, Glow Item Frame
                 noSmoothLighting = true;
             } else if (entityId == 50016 || entityId == 50017) { // Player
@@ -245,7 +239,7 @@ void main() {
                 }
             #endif
         #endif
-    
+
         color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 
         normalM = gl_FrontFacing ? normalM : -normalM; // Inverted Normal Workaround
@@ -257,14 +251,6 @@ void main() {
             blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
         #endif
 
-        #if defined SPOOKY && BLOOD_MOON > 0
-            auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-            ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-        #endif
-        #ifdef AURORA_INFLUENCE
-            ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
-        #endif
-
         emission *= EMISSION_MULTIPLIER;
 
         bool isLightSource = lmCoord.x > 0.99;
@@ -274,13 +260,15 @@ void main() {
                    true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
                    enderDragonDead);
 
-        #if defined IPBR && defined IS_IRIS
+        #ifdef IPBR
             color.rgb += maRecolor;
         #endif
 
-        skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
         emissionOld = emission;
     }
+
+    vec3 translucentMult = mix(vec3(0.666), color.rgb * (1.0 - pow2(pow2(color.a))), color.a);
+    float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef ENTITIES_ARE_LIGHT
         entitySSBLMask = 1.0;
@@ -290,21 +278,26 @@ void main() {
         ColorCodeProgram(color, -1);
     #endif
 
-    /* DRAWBUFFERS:06 */
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        skyLightFactor *= 0.5;
+    #endif
+
+    /* DRAWBUFFERS:036 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emissionOld));
+    gl_FragData[1] = vec4(1.0 - translucentMult, 1.0);
+    gl_FragData[2] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emissionOld));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
-        /* DRAWBUFFERS:064 */
-        gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
+        /* DRAWBUFFERS:0364 */
+        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0649 */
-            gl_FragData[3] = vec4(lightAlbedo, entitySSBLMask);
+            /* DRAWBUFFERS:03649 */
+            gl_FragData[4] = vec4(lightAlbedo, entitySSBLMask);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:069 */
-        gl_FragData[2] = vec4(lightAlbedo, entitySSBLMask);
+        /* DRAWBUFFERS:0369 */
+        gl_FragData[3] = vec4(lightAlbedo, entitySSBLMask);
     #endif
 }
 
@@ -321,7 +314,7 @@ out vec3 normal;
 
 out vec4 glColor;
 
-#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
     out vec2 signMidCoordPos;
     flat out vec2 absMidCoordPos;
     flat out vec2 midCoord;
@@ -338,7 +331,7 @@ out vec4 glColor;
 #endif
 
 //Attributes//
-#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || (defined IPBR && defined IS_IRIS) || defined WAVE_EVERYTHING
+#if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || (defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)) || defined WAVE_EVERYTHING
     attribute vec4 mc_midTexCoord;
 #endif
 
@@ -381,7 +374,7 @@ void main() {
     northVec = normalize(gbufferModelView[2].xyz);
     sunVec = GetSunVector();
 
-    #if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && defined IS_IRIS
+    #if defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || defined IPBR && (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008)
         midCoord = (gl_TextureMatrix[0] * mc_midTexCoord).st;
         vec2 texMinMidCoord = texCoord - midCoord;
         signMidCoordPos = sign(texMinMidCoord);
@@ -462,7 +455,7 @@ void main() {
         gl_Position = vec4(-1);
     }
     #endif
-    #if DRAGON_DEATH_EFFECT_INTERNAL > 0 && !defined IRIS_TAG_SUPPORT
+    #if DRAGON_DEATH_EFFECT_INTERNAL == 1 && !defined IRIS_TAG_SUPPORT
         if (entityId == 0 && gl_Color.a < 0.2 && abs(normal.y) < 0.2) {
             glColor.a = -100000.0;
         }

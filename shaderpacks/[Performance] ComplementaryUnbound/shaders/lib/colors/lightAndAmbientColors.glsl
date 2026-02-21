@@ -46,7 +46,7 @@
             vec3 drlcRainM = vec3(0.0);
         #endif
         vec3 dayRainLightColor   = vec3(0.21, 0.16, 0.13) * 0.85 + noonFactor * vec3(0.0, 0.02, 0.06)
-                                + rainFactor * (drlcRainM + drlcSnowM + drlcDryM);
+                                 + drlcRainM + drlcSnowM + drlcDryM;
         vec3 dayRainAmbientColor = vec3(0.2, 0.2, 0.25) * (1.8 + 0.5 * vsBrightness);
 
         vec3 nightRainLightColor   = vec3(0.03, 0.035, 0.05) * (0.5 + 0.5 * vsBrightness);
@@ -62,16 +62,23 @@
         vec3 clearLightColor   = mix(nightClearLightColor, dayLightColor, sunVisibility2);
         vec3 clearAmbientColor = mix(nightClearAmbientColor, dayAmbientColor, sunVisibility2);
 
-        vec3 rainLightColor   = mix(nightRainLightColor, dayRainLightColor, sunVisibility2) * 2.5;
-        vec3 rainAmbientColor = mix(nightRainAmbientColor, dayRainAmbientColor, sunVisibility2);
-        #ifdef SPOOKY
-            vec3 lightColor   = mix(clearLightColor, rainLightColor, rainFactor) * 0.4;
-        #else
-            vec3 lightColor   = mix(clearLightColor, rainLightColor, rainFactor);
-        #endif
-        #ifdef SPOOKY
-            vec3 ambientColor = mix(clearAmbientColor, rainAmbientColor, rainFactor) * 0.4;
-        #elif SILHOUETTE == 0
+        float rainShadowVisReduce = 0.0
+            #ifdef SUN_MOON_DURING_RAIN
+                #ifdef SPECIAL_BIOME_WEATHER
+                    + 0.2 * inSnowy + 0.2 * inDry
+                #elif RAIN_STYLE == 2
+                    + 0.2
+                #endif
+            #else
+                + 0.4
+            #endif
+        ;
+
+        vec3 rainLightColor   = mix(nightRainLightColor, dayRainLightColor * (1.0 - rainShadowVisReduce), sunVisibility2) * 2.5;
+        vec3 rainAmbientColor = mix(nightRainAmbientColor, dayRainAmbientColor * (1.0 + rainShadowVisReduce), sunVisibility2);
+
+        vec3 lightColor   = mix(clearLightColor, rainLightColor, rainFactor);
+        #if SILHOUETTE == 0
             vec3 ambientColor = mix(clearAmbientColor, rainAmbientColor, rainFactor);
         #elif SILHOUETTE == 1
             vec3 ambientColor = mix(clearAmbientColor, rainAmbientColor, rainFactor) * mix(SILHOUETTE_BRIGHTNESS, 1.0, sunVisibility);
@@ -87,23 +94,14 @@
         #endif
     #elif defined NETHER
         vec3 lightColor   = vec3(0.0);
-        #ifdef SPOOKY
-            vec3 ambientColor = (netherColor + 0.5 * lavaLightColor) * (0.9 + 0.45 * vsBrightness) * 0.4;
-        #else
-            vec3 ambientColor = (netherColor + 0.5 * lavaLightColor) * (0.9 + 0.45 * vsBrightness);
-        #endif
+        vec3 ambientColor = (netherColor + 0.5 * lavaLightColor) * (0.9 + 0.45 * vsBrightness);
     #elif defined END
         float fogLuminance = dot(fogColor, vec3(0.299, 0.587, 0.114));
         vec3 endLightColor = clamp(mix(fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - fogLuminance), vec3(0.68, 0.51, 1.07), inVanillaEnd * float(END_SKY_FOG_INFLUENCE)), 0.0, 1.0);
         vec3 endOrangeCol = vec3(E_DRAGON_BEAM_R_NEW, E_DRAGON_BEAM_G_NEW, E_DRAGON_BEAM_B_NEW) * E_DRAGON_BEAM_I;
         float endLightBalancer = 0.2 * vsBrightness;
-        #ifdef SPOOKY
-            vec3 lightColor   = endLightColor * (0.35 - endLightBalancer) * 0.4;
-            vec3 ambientCol   = endLightColor * (0.2 + endLightBalancer) * 0.4;
-        #else
-            vec3 lightColor   = endLightColor * (0.35 - endLightBalancer);
-            vec3 ambientCol   = endLightColor * (0.2 + endLightBalancer);
-        #endif
+        vec3 lightColor   = endLightColor * (0.35 - endLightBalancer);
+        vec3 ambientCol   = endLightColor * (0.2 + endLightBalancer);
         vec3 ambientColor = mix(ambientCol, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;
         vec3 endColorBeam = mix(vec3(E_BEAM_R_NEW, E_BEAM_G_NEW, E_BEAM_B_NEW), ambientCol, E_BEAMS_AMBIENT_INFLUENCE);
 

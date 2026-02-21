@@ -10,9 +10,9 @@ void DoWorldOutline(inout vec3 color, float linearZ0, float pixelFade, vec3 play
     #ifdef DISTANT_HORIZONS
         float horizontalDistance = length(playerPos.xz);
         float verticalDistance = abs(playerPos.y);
-        
+
         float distanceToCamera = max(horizontalDistance, verticalDistance);
-        
+
         float fadeStart = minecraft_far * 0.7;
         float fadeEnd = minecraft_far * 0.9;
         if (fadeStart >= fadeEnd) {
@@ -37,7 +37,11 @@ void DoWorldOutline(inout vec3 color, float linearZ0, float pixelFade, vec3 play
     #else
         #define WORLD_OUTLINE_THICKNESSM WORLD_OUTLINE_THICKNESS
     #endif
-    int sampleCount = WORLD_OUTLINE_THICKNESSM * 4;
+    #if PIXELATED_SCREEN_SIZE > 0
+        int sampleCount = WORLD_OUTLINE_THICKNESSM * 4 + abs(9 - int(PIXELATED_SCREEN_SIZE_INTERNAL * 0.1));
+    #else
+        int sampleCount = WORLD_OUTLINE_THICKNESSM * 4;
+    #endif
 
     for (int i = 0; i < sampleCount; i++) {
         vec2 offset = (1.0 + floor(i / 4.0)) * scale * worldOutlineOffset[int(mod(float(i), 4))];

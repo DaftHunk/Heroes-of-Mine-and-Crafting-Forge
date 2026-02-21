@@ -25,7 +25,7 @@ vec3 GetColoredLightFog(vec3 nPlayerPos, vec3 translucentMult, float lViewPos, f
         vec4 lightVolume = GetLightVolume(voxelPos);
         vec3 lightSample = lightVolume.rgb;
 
-        #if defined END && END_CENTER_LIGHTING > 0 && defined END_CENTER_LIGHTING_AFFECT_BLOCKLIGHT
+        #if defined END && END_CENTER_LIGHTING > 0 && MC_VERSION >= 10900 && defined END_CENTER_LIGHTING_AFFECT_BLOCKLIGHT
             vec3 endCenterCol = saturateColors(vec3(END_CENTER_LIGHTING_R, END_CENTER_LIGHTING_G, END_CENTER_LIGHTING_B), 1.1);
             vec3 endCenterPos = vec3(0.5, 60.5, 0.5) - (tracePos + cameraPositionBest);
             endCenterPos.y *= 0.66; // Make it a pill-shaped point light
@@ -36,13 +36,13 @@ vec3 GetColoredLightFog(vec3 nPlayerPos, vec3 translucentMult, float lViewPos, f
 
         float lTracePosM = length(
             vec3(
-                tracePos.x, 
+                tracePos.x,
                 #if COLORED_LIGHTING_INTERNAL <= 512
-                    tracePos.y * 2.0, 
+                    tracePos.y * 2.0,
                 #elif COLORED_LIGHTING_INTERNAL == 768
-                    tracePos.y * 3.0, 
+                    tracePos.y * 3.0,
                 #elif COLORED_LIGHTING_INTERNAL == 1024
-                    tracePos.y * 4.0, 
+                    tracePos.y * 4.0,
                 #endif
                 tracePos.z
             )
@@ -72,6 +72,7 @@ vec3 GetColoredLightFog(vec3 nPlayerPos, vec3 translucentMult, float lViewPos, f
     #endif
 
     lightFog *= 1.0 - maxBlindnessDarkness;
+    lightFog = pow(lightFog / sampleCount, vec3(0.25));
 
-    return pow(lightFog / sampleCount, vec3(0.25));
+    return lightFog;
 }

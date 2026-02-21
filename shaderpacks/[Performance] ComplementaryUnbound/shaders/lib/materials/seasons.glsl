@@ -124,7 +124,7 @@
                             vec3 leafFloorColorRandomMess = mix(mix(mix(mix(autumnLeafColor0, autumnLeafColor1, noiseLeavesFloorColor), autumnLeafColor2, noiseLeavesFloorColor), autumnLeafColor3, noiseLeavesFloorColor), autumnLeafColor4, noiseLeavesFloorColor) * 2.0;
 
                             vec3 leafFloorColor = mix(leafFloorColorRandomMess, leafMainColor, 0.66); // this mixes between the random colors and the colors of the leaves at the world pos
-                            
+
                             float topCheck = abs(clamp01(dot(normal, upVec)));
                             float leafSide = 0.0;
                             if (((mat == 10132 || mat == 10133) && glColor.b < 0.999) || (mat == 10126 && color.b + color.g < color.r * 2.0 && color.b > 0.3 && color.g < 0.45) || (mat == 10493 && color.r > 0.52 && color.b < 0.30 && color.g > 0.41 && color.g + color.b * 0.95 > color.r * 1.2)) { // Normal Grass Block and Dirt Path
@@ -143,19 +143,19 @@
                                 if (skylightCheck > 0.001) {
                                     uint underneathLeaves = 0u;
                                     #define LEAVES_VOXEL_RANGE 20 // 20 blocks, increasing this to a large number would have a severe performance impact
-                                    
+
                                     float dither1 = 0.0, dither2 = 0.0, scatterAmount = 0.0;
                                     #ifdef TAA
                                         dither1 = fract(Bayer64(gl_FragCoord.xy) + goldenRatio * mod(float(frameCounter), 3600.0)) * 2.0 - 1.0;
                                         dither2 = fract(Bayer64(0.5 * gl_FragCoord.xy + 23) - goldenRatio * mod(float(frameCounter), 3600.0)) * 2.0 - 1.0;
                                         scatterAmount = 2.0;
                                     #endif
-                                        
+
                                     vec3 voxelPos = SceneToLeavesVoxel(playerPos + scatterAmount * vec3(dither1, -0.1, dither2)); // -0.1 fixes flickering inside water
 
                                     for (int i = 0; i < LEAVES_VOXEL_RANGE; i++) {
                                         voxelPos.y += 1;
-                                        
+
                                         if (!CheckInsideLeavesVoxelVolume(voxelPos)) {
                                             underneathLeaves = 1u; // We don't touch the detection outside of the voxel volume
                                             break;
@@ -215,7 +215,7 @@
             #endif
             float noiseLeaveAlpha = step(autumnWinterTime * LESS_LEAVES * 0.15, hash13(floor(mod(playerPos.xyz - 0.001 * (mat3(gbufferModelViewInverse) * normal) + cameraPosition.xyz, vec3(100.0)) * 4) * 4)); // remove some leaves with noise
             noiseLeaveAlpha += step(autumnWinterTime * LESS_LEAVES * 0.13, hash13(floor(mod(playerPos.xyz - 0.001 * (mat3(gbufferModelViewInverse) * normal) + cameraPosition.xyz, vec3(100.0)) * 16) * 16));
-            color.a *= noiseLeaveAlpha;
+            color.a *= clamp01(noiseLeaveAlpha);
         }
     #endif
 
@@ -253,7 +253,7 @@
 
             winterColor = desaturatedColor;
 
-            #ifdef GBUFFERS_ENTITIES
+            #if defined GBUFFERS_ENTITIES || defined GBUFFERS_COLORWHEEL
                 oldColor = mix(color.rgb, winterColor, winterTime);
             #else
                 float winterAlpha = color.a;
@@ -402,7 +402,7 @@
                         );
 
                         for (int i = 1; i <= FLOWER_AMOUNT; i++) {
-                            if (NdotU > 0.5) {
+                            if (NdotU > 0.99) {
                                 ivec2 randomFlower1UV = ivec2((hash33(mod(floor(worldPos + atMidBlock / 64), vec3(200)) + i) * 0.5 + 0.5) * (FLOWER_SIZE + 1 - flower1Size.x)); // here the bigger component of flower1Size should be used, currently all flowers are symmetric
                                 ivec2 randomFlower2UV = ivec2((hash33(mod(floor(worldPos + atMidBlock / 64), vec3(300)) + i) * 0.5 + 0.5) * (FLOWER_SIZE + 1 - flower2Size.x));
                                 ivec2 randomFlower3UV = ivec2((hash33(mod(floor(worldPos + atMidBlock / 64), vec3(400)) + i) * 0.5 + 0.5) * (FLOWER_SIZE + 1 - flower3Size.x));
@@ -459,7 +459,7 @@
                             #elif EMISSIVE_FLOWERS_TYPE == 2
                                 if (color.r < max(color.b * 1.15, color.g * 1.1) * 0.95) emission = 0.0;
                             #endif
-                            emission = 2.0 * skyLightCheck * flowerEmissionMask;
+                            emission = 2.0 * skyLightCheck * flowerEmissionMask * pow3(springTime);
                             #if EMISSIVE_FLOWERS == 2
                                 emission = max(emission, mix(0.0, rainFactor + 1.0 * rainFactor, flowerEmissionMask));
                             #endif

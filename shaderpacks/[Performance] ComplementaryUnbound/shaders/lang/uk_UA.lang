@@ -44,7 +44,7 @@ option.info5.comment=Параметр із жовтою назвою означ�
 
 option.info6=
 value.info6.0=
-option.info6.comment= 
+option.info6.comment=
 
 option.info7=
 value.info7.0=
@@ -90,7 +90,7 @@ option.info17=Бета-версія: SpacEagle17 Patreon
 value.info17.0=
 option.info17.comment=Ви можете підтримати SpacEagle17 на Patreon або Ko-Fi і отримати версію для розробників. §l§neuphoriapatches.com/support.
 
-option.info18=Для Complementary r5.6.1
+option.info18=Для Complementary r5.7.1
 value.info18.0=
 option.info18.comment=Дякую за встановлення Euphoria Patches :).
 
@@ -166,6 +166,9 @@ screen.COLORGRADING_SETTINGS.comment=Налаштування для змішу�
 screen.WORLD_BLUR_SETTINGS=Розмиття світу
 screen.WORLD_BLUR_SETTINGS.comment=Налаштування, які стосуються для красивого розмиття світу.
 
+screen.TAA_SETTINGS=Налаштування тимчасового фільтру
+screen.TAA_SETTINGS.comment=Налаштування, які стосуються поведінки тимчасового згладжування.
+
 screen.MATERIAL_SETTINGS=Матеріали
 screen.MATERIAL_SETTINGS.comment=Налаштування, які стосуються матеріалів гри.
 
@@ -197,8 +200,8 @@ screen.RAIN_LIGHT_MULTS=Дощ
 screen.NETHER_LIGHT_MULTS=Незер
 screen.END_LIGHT_MULTS=Енд
 
-screen.BLOCKLIGHT_COLOR_SETTINGS=Колір світла блоків §e[*]§r
-screen.BLOCKLIGHT_COLOR_SETTINGS.comment=Налаштування кольору світла, випромінюваного блоками, які є джерелами світла. §e[*]§r Ці налаштування кольорів не впливатимуть на більшість джерел світла, якщо ввімкнено розширене кольорове трасування, за винятком повзунка «інтенсивність» в цьому розділі.
+screen.BLOCKLIGHT_SETTINGS=Світло блоків §e[*]§r
+screen.BLOCKLIGHT_SETTINGS.comment=Налаштування світла, випромінюваного блоками, які є джерелами світла. §e[*]§r Червоні/зелені/сині кольорів не впливатимуть на більшість джерел світла, якщо ввімкнено розширене кольорове трасування.
 
 screen.MOON_PHASE_INF_SETTINGS=Вплив фаз Місяця
 screen.MOON_PHASE_INF_SETTINGS.comment=Налаштування які стосуються впливу різних фаз Місяця на освітлення вночі.
@@ -335,7 +338,7 @@ value.COLORED_LIGHTING.768=§4§l§n§o24 чанки§r§c[-]
 value.COLORED_LIGHTING.1024=§4§k-§r§4§l§n§o32 чанки§r§4§k- §r§c[-]
 
 option.WORLD_SPACE_REFLECTIONS=Відблиски простору світу §e[*]§r
-option.WORLD_SPACE_REFLECTIONS.comment=Обчислює відблиски у просторі світу, а не в просторі екрана. §c[-]§r Імовірно, ламається з блоками з модів. §e[*]§r Ця функція працює, лише якщо розширене кльорове трасування ввімкнено в налаштуваннях продуктивности та ваша система підтримує. §e[*]§r Максимальна дальність цього ефекту залежить від дільности розширеного кольорового трасування, але з технічних причин вона внутрішньо обмеження 16 чанків. §c[-]§r Цей ефект може серйозно вплинути на продуктивність, особливо з більшою дальністю розширеного кольорового трасування. §c[-]§r Відблиски простору світу можуть повністю зламатися після зміни пакетів ресурсів, але це буде виправлено після перезапуску гри. §c[-]§r Відблиски простору світу можуть спричинити інтенсивне мерехтіння з модами або пакетами ресурсів, які використовують роздільну здатність вище 16x для будь-яких текстур блоків.
+option.WORLD_SPACE_REFLECTIONS.comment=Обчислює відблиски у просторі світу, а не в просторі екрана. §c[-]§r Імовірно, ламається з блоками з модів. §e[*]§r Ця функція працює, лише якщо розширене кольорове трасування ввімкнено в налаштуваннях продуктивности та ваша система підтримує. §e[*]§r Максимальна дальність цього ефекту залежить від дільности розширеного кольорового трасування, але з технічних причин вона внутрішньо обмеження 16 чанків. §c[-]§r Цей ефект може серйозно вплинути на продуктивність, особливо з більшою відстанню розширеного кольорового трасування. §c[-]§r Відблиски світового простору можуть мати кілька типів проблем із модами чи пакетами ресурсів.
 value.WORLD_SPACE_REFLECTIONS.-1=§aВИМК.
 value.WORLD_SPACE_REFLECTIONS.1=§4§l§n§oУВІМК.
 
@@ -344,13 +347,18 @@ option.WORLD_SPACE_REF_MODE.comment=Керує режимом роботи ві�
 value.WORLD_SPACE_REF_MODE.1=Лише ВПС
 value.WORLD_SPACE_REF_MODE.2=ВПС + ВПЕ
 
+option.WORLD_SPACE_PLAYER_REF=Відблисковий гравець ПС
+option.WORLD_SPACE_PLAYER_REF.comment=Робить власну модель гравця поточного гравця віблисковий за відблисків простору світу.
+value.WORLD_SPACE_PLAYER_REF.-1=ВИМК.
+value.WORLD_SPACE_PLAYER_REF.1=УВІМК.
+
 option.SSAO_I=Інтенсивність краю тіней (НОПЕ)
 option.SSAO_I.comment=Керує силою навколишньої оклюзії простору екрана (НОПЕ), що додає додаткові тіні навколишнього середовища до країв сцени. §e[*]§r Це не працюватиме, якщо НОПЕ вимкнено в «Продуктивність».
-value.SSAO_I.0=§cВИМК.
+value.SSAO_I.0=ВИМК.
 
 option.VANILLAAO_I=Інтенсивність краю тіней (усталено)
 option.VANILLAAO_I.comment=Керує силою навколишньої оклюзії гри, що додає додаткові тіні навколишнього середовища до країв сцени.
-value.VANILLAAO_I.0=§cВИМК.
+value.VANILLAAO_I.0=ВИМК.
 
 option.BORDER_FOG=Межа туману
 option.BORDER_FOG.comment=Інтенсивний туман на межі видимого світу, щоб приховати межі чанків. §e[*]§r Рекомендовано вимкнути це під час гри з менш ніж 8 чанками.
@@ -373,7 +381,7 @@ option.CAVE_FOG.comment=Умикає додатковий туман глибо�
 
 option.LIGHTSHAFT_BEHAVIOUR=Режим світлових потоків
 option.LIGHTSHAFT_BEHAVIOUR.comment=Керує поведінкою світлових потоків. §a[+]§r Свідомий режим автоматично перемикаються між звичайним і екстремальним режимами, щоб забезпечити найкращі результати. §c[-]§r Екстремальний режим не рекомендується використовувати для загального ігрового процесу, і він може серйозно вплинути на продуктивність.
-value.LIGHTSHAFT_BEHAVIOUR.0=§cВИМК.
+value.LIGHTSHAFT_BEHAVIOUR.0=ВИМК.
 value.LIGHTSHAFT_BEHAVIOUR.1=Свідомий §a[+]
 value.LIGHTSHAFT_BEHAVIOUR.2=Звичний
 value.LIGHTSHAFT_BEHAVIOUR.3=Величезний §c[-]
@@ -388,10 +396,13 @@ option.LIGHTSHAFT_DAY_I=Множник удень
 option.LIGHTSHAFT_NIGHT_I=Множник уночі
 option.LIGHTSHAFT_RAIN_I=Множник при дощу
 
+option.LIGHTSHAFT_SUNSET_SATURATION=Колір світла сонячних потоків
+option.LIGHTSHAFT_SUNSET_SATURATION.comment=Керує додатковою насиченістю кольору світлових потоків під час сходу та заходу сонця. Вищі значення дадуть червоно-помаранчевий відтінок, тоді як нижчі значення зсунуть його в бік жовтого.
+
 option.CLOUD_STYLE_DEFINE=Стиль хмар
-option.CLOUD_STYLE_DEFINE.comment=Установлює стиль хмар. §e[*]§r «Усталено» означає, що налаштування буде автоматично керуватиметься «Візуальний стиль» налаштування шейдерів у головному меню. §e[*]§r «Усталено» вимагає ввімкнення хмар у налаштуваннях відео.
+option.CLOUD_STYLE_DEFINE.comment=Установлює стиль хмар. §e[*]§r «Усталено» означає, що налаштування буде автоматично керуватиметься параметром «Візуальний стиль» у головному меню налаштувань шейдерів. §e[*]§r «Усталено» вимагає ввімкнення хмар у налаштуваннях відео.
 value.CLOUD_STYLE_DEFINE.-1=Поточний стиль
-value.CLOUD_STYLE_DEFINE.0=§cВИМК.
+value.CLOUD_STYLE_DEFINE.0=ВИМК.
 value.CLOUD_STYLE_DEFINE.1=Переосмислений
 value.CLOUD_STYLE_DEFINE.3=Непов'язаний
 value.CLOUD_STYLE_DEFINE.50=Усталено §e[*]
@@ -406,7 +417,7 @@ option.CLOUD_ALT1=Висота хмар
 option.CLOUD_ALT1.comment=Керує висотою, на якій з'являться хмари. §e[*]§r Це працює лише з переосмисленим або непов'язаним стилями хмари/
 
 option.CLOUD_SPEED_MULT=Швидкість хмар
-option.CLOUD_SPEED_MULT.comment=Керує з якою швидкістю рухаються хмари. «Синхронізовано зі світовим часом використовує час гри для руху хмарі; це дозволяє хмарам виглядати однаково між гравцями на одному сервері. §e[*]§r Це працює лише з переосмисленим або непов'язаним стилями хмари.
+option.CLOUD_SPEED_MULT.comment=Керує з якою швидкістю рухаються хмари. «Синхронізовано зі світовим часом» використовує ігровий час для руху хмарі; це дозволяє хмарам виглядати однаково між гравцями на одному сервері. §e[*]§r Це працює лише з переосмисленим або непов'язаним стилями хмари.
 value.CLOUD_SPEED_MULT.100=Синхрон. час
 
 option.CLOUD_R=Множник червоного
@@ -416,8 +427,8 @@ option.CLOUD_B=Множник синього
 option.CLOUD_UNBOUND_AMOUNT=Кількість хмар
 option.CLOUD_UNBOUND_AMOUNT.comment=Керує кількістю непов'язаних хмар.
 
-option.CLOUD_UNBOUND_SIZE_MULT=Розмір хмар
-option.CLOUD_UNBOUND_SIZE_MULT.comment=Керує розміром непов'язаних хмар. Великі значення призведуть до маленьких хмар.
+option.CLOUD_UNBOUND_SIZE_MULT=Драбність хмар §c[-]§r
+option.CLOUD_UNBOUND_SIZE_MULT.comment=Керує розміром непов'язаних хмар. Великі значення призведуть до маленьких хмар. §c[-]§r Зміна цього параметра вимкне функцію Complementary «синхронізації хмар між гравцями на одному сервері».
 
 option.CLOUD_UNBOUND_RAIN_ADD=Доповнення дощових хмар
 option.CLOUD_UNBOUND_RAIN_ADD.comment=Налаштовує кількість хмар, які застосовуються під час дощу і снігопаду.
@@ -604,8 +615,8 @@ value.SUN_MOON_STYLE_DEFINE.3=Непов'язаний — малий
 option.SUN_MOON_HORIZON=Горизонт Сонця і Місяця
 option.SUN_MOON_HORIZON.comment=Запобігає появі Сонця і Місяця під лінією горизонту.
 
-option.SUN_MOON_DURING_RAIN=Сонце і Місяць під час дощу
-option.SUN_MOON_DURING_RAIN.comment=Керує тим, чи буде Сонце і Місяць видно під час дощу чи ні.
+option.SUN_MOON_DURING_RAIN=Сонце/Місяць під час дощу §e[*]§r
+option.SUN_MOON_DURING_RAIN.comment=Керує тим, чи буде Сонце і Місяць видно під час дощу чи ні. §e[*]§r Цей параметр також змінює баланс освітлення під час дощу.
 
 option.NIGHT_STAR_AMOUNT=Кількість зірок уночі
 option.NIGHT_STAR_AMOUNT.comment=Керує тим, скільки зірок буде на нічному небі.
@@ -621,15 +632,22 @@ value.RAINBOWS.0=ВИМК.
 value.RAINBOWS.1=Після дощу
 value.RAINBOWS.3=Завжди
 
+option.RAINBOW_STYLE_DEFINE=Стиль веселки
+option.RAINBOW_STYLE_DEFINE.comment=Керує стилем веселок. §e[*]§r «Поточний стиль» означає, що параметр автоматично керуватиметься параметром «Візуальний стиль» у головному меню налаштувань шейдера.
+value.RAINBOW_STYLE_DEFINE.-1=Поточний силь
+value.RAINBOW_STYLE_DEFINE.1=Переосмислений
+value.RAINBOW_STYLE_DEFINE.4=Непов'язаний
+
 option.AURORA_STYLE_DEFINE=Стиль полярного сяйва
 option.AURORA_STYLE_DEFINE.comment=Керує стилем полярного сяйва, яке з'являється на нічному небі.
 value.AURORA_STYLE_DEFINE.-1=Поточний стиль
-value.AURORA_STYLE_DEFINE.0=§cВИМК.
+value.AURORA_STYLE_DEFINE.0=ВИМК.
 value.AURORA_STYLE_DEFINE.1=Переосмислений
 value.AURORA_STYLE_DEFINE.2=Непов'язаний
 
 option.AURORA_CONDITION=Умови поляр. сяйва
 option.AURORA_CONDITION.comment=Умови стану полярного сяйва керує умовою(-ами) появи полярного сяйва. §e[*]§r Полярного сяйво з'являтиметься лише вночі незалежно від цього налаштування.
+value.AURORA_CONDITION.-1=Крім молодика
 value.AURORA_CONDITION.0=Щоночі
 value.AURORA_CONDITION.1=Повня
 value.AURORA_CONDITION.2=Сніжний біоми
@@ -737,10 +755,40 @@ option.LENSFLARE_I=Інтенсивність відблиску об'єктив
 option.LENSFLARE_I.comment=Керує силлю відблиску об'єктива.
 
 option.TAA_MODE=§eТимчасовий фільтр§r
-option.TAA_MODE.comment=Керує поведінкою тимчасового згладжування. Розумний і тонкий §a[+]§r: фільтр застосовується в невеликих кількостях до зображення таким чином, щоб не викликати артефактів. Товстий §e[*]§r: забезпечує краще згладжування, але це спричинить додаткове розмазування та мерехтіння; це може бути кращим вибором із вищою частотою кадрів і роздільною здатністю. ВИМК.§c[-]§r: вимкнення призведе до погіршення продуктивности та погіршення якости ефекту.
-value.TAA_MODE.1=Розумний і тонкий §a[+]
-value.TAA_MODE.2=Товстий §e[*]
+option.TAA_MODE.comment=Умикає тимчасове згладжування, яке допомагає згладити зернисті ефекти, покращує продуктивність, зменшуючи кількість семплів для деяких більш важких ефектів, і може зменшити згладжування за допомогою правильних налаштувань. §c[-]§r Вимкнення призведе до погіршення продуктивности та погіршення якости ефекту.
 value.TAA_MODE.0=§сВИМК. [-]
+value.TAA_MODE.1=УВІМК. §a[+]
+
+option.TAA_SMOOTHING=Тимчасове згладжування
+option.TAA_SMOOTHING.comment=Налаштовує ступінь згладжування, який застосовуватиме часовий фільтр. Вищі значення створюють розмитіше зображення, але зменшують мерехтіння та зернистість. Різниця не буде помітна, якщо стояти на місці.
+value.TAA_SMOOTHING.2=Низьке
+value.TAA_SMOOTHING.3=Середнє
+value.TAA_SMOOTHING.4=Високе
+
+option.TAA_JITTER=Тимчасове тремтіння §e[*]§r
+option.TAA_JITTER.comment=Тремтіння допомагає тимчасовому фільтру краще згладжувати зображення, але має деякі недоліки. §e[*]§r Вищі значення покращать згладжування, але водночас призведуть до значного мерехтіння та розмиття. §e[*]§r Рекомендується високе тимчасове згладжування з повним тремтінням. §c[-]§r Вимкнення тремтіння усуне переваги згладжування.
+value.TAA_JITTER.0=ВИМК. §c[-]
+value.TAA_JITTER.1=Низьке
+value.TAA_JITTER.2=Середнє
+value.TAA_JITTER.3=Повне §e[*]
+
+option.TAA_MOVEMENT_IMPROVEMENT_FILTER=Catmull-Rom Sampling
+option.TAA_MOVEMENT_IMPROVEMENT_FILTER.comment=Reduces the blurriness of Temporal Filter by using a more advanced sampling method.
+value.TAA_MOVEMENT_IMPROVEMENT_FILTER.0=ВИМК. §c[-]
+value.TAA_MOVEMENT_IMPROVEMENT_FILTER.1=УВІМК.
+
+option.FXAA_STRENGTH=Сила ШНЗ
+option.FXAA_STRENGTH.comment=Керує інтенсивністю ефекту ШНЗ. Вищі значення створять краще згладжування за рахунок більш розмитого зображення.
+value.FXAA_STRENGTH.-1=ВИМК.
+
+option.FXAA_TAA_INTERACTION=Зменшення ШНЗ під час руху
+option.FXAA_TAA_INTERACTION.comment=Зменшує силу ШНЗ під час руху камери. Вищі значення створюють чіткіше зображення, але також викликають більше мерехтіння.
+value.FXAA_TAA_INTERACTION.0=ВИМК.
+value.FXAA_TAA_INTERACTION.2=20
+value.FXAA_TAA_INTERACTION.4=40
+value.FXAA_TAA_INTERACTION.6=60
+value.FXAA_TAA_INTERACTION.8=80
+value.FXAA_TAA_INTERACTION.10=100
 
 option.DISTANT_LIGHT_BOKEH=Боке віддаленого світла
 option.DISTANT_LIGHT_BOKEH.comment=Робить віддалені джерела світла розсіяними, застосовуючи один піксель розмиття на відстані. §a[+]§r Цей ефект отримує переваги від IntegratedPBR+ (опціонально), регулюючи віддалені джерела світла для кращого вигляду.
@@ -810,6 +858,9 @@ option.FANCY_GLASS.comment=Покращує скло, додаючи до ньо
 option.GREEN_SCREEN_LIME=Зелений екран
 option.GREEN_SCREEN_LIME.comment=Перетворює лаймовий бетон, вовну і килим на зелені екрани для редагування відео. Порада 1: вимкніть «світіння», щоб покращити розділення. Порада 2: для освітлення встановіть джерела світла під лаймовими килимами. Порада 3: ви можете вимкнути згладжування (ШНЗ) і встановити якість деталей на «Картопля» в налаштуваннях продуктивности, щоб вимкнути всі фільтри та отримати ідеальне розділення пікселів.
 
+option.MIRROR_TINTED_GLASS=Дзеркальне тоноване скло
+option.MIRROR_TINTED_GLASS.comment=Підвищує відбивність і непрозорість блоків тонованого скла. Увімкніть відблиски простору світу для найкращих результатів.
+
 option.HAND_SWAYING=Похитування руки
 option.HAND_SWAYING.comment=Додає повільний рух руки гравця, щоб імітувати анімацію дихання.
 value.HAND_SWAYING.0=ВИМК.
@@ -871,7 +922,7 @@ option.COATED_TEXTURE_MULT.comment=Керує силою «Покриття те
 
 option.GLOWING_ORE_MASTER=§eСяйні руди
 option.GLOWING_ORE_MASTER.comment=Умикає функцію сяйних руд. §e[*]§r Вибір «Поточний стиль» увімкне сяйні руди, лише якщо для «Візуальний стиль» встановлено значення «Непов'язаний». §e[*]§r Параметри нижче не працюватимуть, якщо це не ввімкнено.
-value.GLOWING_ORE_MASTER.0=§cВИМК.
+value.GLOWING_ORE_MASTER.0=ВИМК.
 value.GLOWING_ORE_MASTER.1=Поточний стиль
 value.GLOWING_ORE_MASTER.2=§aУВІМК.
 
@@ -894,12 +945,12 @@ option.GLOWING_ORE_MODDED=Сяйні руди з модів §e[*]§r
 option.GLOWING_ORE_MODDED.comment=§e[*]§r Ви можете додати ID з мода руди до файлу «Complementary—>shaders—>block.properties», щоб вони сяяли. Ви можете відкрити block.properties за допомогою будь-якого текстового редактора, як-от блокнот, а потім додати ID блока руди з мода поруч із «block.10024=».
 
 option.GLOWING_AMETHYST=Сяйний аметист
-value.GLOWING_AMETHYST.0=§cВИМК.
+value.GLOWING_AMETHYST.0=ВИМК.
 value.GLOWING_AMETHYST.1=Кристал
 value.GLOWING_AMETHYST.2=Кристал і блок
 
 option.GLOWING_LICHEN=Сяйний світлолишайник
-value.GLOWING_LICHEN.0=§cВИМК.
+value.GLOWING_LICHEN.0=ВИМК.
 value.GLOWING_LICHEN.1=У кімнатах
 value.GLOWING_LICHEN.2=Завжди
 
@@ -957,7 +1008,7 @@ value.DIRECTIONAL_BLOCKLIGHT.11=Товсте §c[-]
 
 option.HELD_LIGHTING_MODE=Динамічне освітлення
 option.HELD_LIGHTING_MODE.comment=Дозволяє джерелам світла світитися в руці.
-value.HELD_LIGHTING_MODE.0=§cВИМК.
+value.HELD_LIGHTING_MODE.0=ВИМК.
 value.HELD_LIGHTING_MODE.1=Слабке
 value.HELD_LIGHTING_MODE.2=Нормальне
 
@@ -1043,7 +1094,7 @@ option.UNDERWATER_DISTORTION.comment=Додає тонке заломлення,
 
 option.SELECT_OUTLINE=Тип контуру
 option.SELECT_OUTLINE.comment=Керує коліром контуру для блоків.
-value.SELECT_OUTLINE.0=§cВИМК.
+value.SELECT_OUTLINE.0=ВИМК.
 value.SELECT_OUTLINE.1=Усталений
 value.SELECT_OUTLINE.2=Веселковий
 value.SELECT_OUTLINE.3=Вибраний колір
@@ -1156,6 +1207,9 @@ option.XLIGHT_G=Зелений
 option.XLIGHT_B=Синій
 option.XLIGHT_I=Інтенсивність
 
+option.XLIGHT_CURVE=Контраст світла блоків
+option.XLIGHT_CURVE.comment=Керує швидкістю згасання інтенсивности світла блоків, коли воно віддаляється від джерела світла.
+
 ####### Euphoria Patches #######
 
 profile.SPACEAGLE17=§f۞§kO§fНалагодження(не чіпати)§f§kO
@@ -1171,17 +1225,20 @@ value.WATERMARK.3=&Приховано і тримати око павука
 value.WATERMARK.4=Чорний/білий
 option.WATERMARK_SIZE=Розмір вотермарка
 
-screen.EUPHORIA_SETTINGS=§dНалаштування Euphoria Patches
+screen.EUPHORIA_SETTINGS=§dНалаштування Euphoria Patches >
 screen.EUPHORIA_SETTINGS.comment=Налаштування, додані Euphoria Patches. §bВи можете підтримати SpacEagle17 на Patreon або Ko-Fi та отримувати за це ексклюзивні бета-збірки. §r§l§neuphoriapatches.com/support.
 
 screen.ATMOSPHERE=Атмосфера
 screen.ATMOSPHERE.comment=Налаштування, які стосуються атмосфери.
 screen.CLOUDS=Хмари
 screen.CLOUD_REIMAGINED_SETTINGS_EUPHORIA=Переосмислені хмари
+screen.CLOUD_REIMAGINED_SECOND_LAYER_SETTINGS=Другий шар хмар
 screen.CLOUD_UNBOUND_SETTINGS_EUPHORIA=Непов'язані хмари
 screen.DOUBLE_UNBOUND_CLOUDS_SETTINGS=Подвійні непов'язані хмари
+screen.CLOUD_SHADING_SETTINGS=Затінення хмар
 screen.AURORA_SETTINGS=Полярне сяйво
 screen.AURORA_SETTINGS.comment=Налаштування, які стосуються полярного сяйва.
+screen.AURORA_INFLUENCE_SETTINGS=Вплив поляр. сяйва
 screen.AURORA_COLOR_SETTINGS=Налаштування кольору поляр. сяйва
 screen.AURORA_COLOR_SETTINGS.comment=Налаштування, які стосуються кольору полярного сяйва.
 screen.END_SKY=Небо Енду
@@ -1204,8 +1261,6 @@ screen.NEBULA_STAR_SETTINGS=Налаштування зірок туманнос
 
 screen.WORLD=Світ
 screen.WORLD.comment=Налаштування, які стосуються світу.
-screen.SPOOKY_SETTINGS=Налаштування страхоповнення
-screen.EYES_SETTINGS=Налаштування очей
 screen.BLOOD_MOON_SETTINGS=Налаштування кривавої Місяця
 screen.OVERWORLD_WORLD=Верхній світ
 screen.OVERWORLD_BEAM=Промені Верхнього світу
@@ -1282,6 +1337,8 @@ screen.HORIZONTAL_NOISE_SETTINGS=Налаштування горизонталь
 screen.VERTICAL_SCREEN_DISPLACEMENT_SETTINGS=Налаштування вертикального переміщення екрана
 screen.PIXELATE_SCREEN_SETTINGS=Налаштування пікселізації
 screen.SCANLINE_SETTINGS=Налаштування сканування
+screen.DITHERING_SETTINGS=Налаштування розсипчастости
+screen.PALETTE_SETTINGS=Налаштування палітри
 screen.HALFTONE_SETTINGS=Налаштування півтону
 screen.SPEED_LINES_SETTINGS=Налаштування швидкости лінії
 screen.CAMERA_NOISE_OVERLAY_SETTINGS=Налаштування накладання шуму
@@ -1305,30 +1362,30 @@ screen.POPULAR_SETTINGS=§dПопулярні налаштування
 screen.POPULAR_SETTINGS.comment=Це деякі з найпопулярніших налаштувань у Euphoria Patches. Окрім розширеноuj кольоровоuj трасування (яка потрібна для багатьох ефектів), усі параметри тут є ексклюзивними для Euphoria Patches, і їх неможливо знайти в оригінальному пакеті шейдерів Complementary.
 screen.POPULAR_SETTINGS_2=Сторінка 2
 screen.POPULAR_SETTINGS_3=Сторінка 3
-screen.EP_VERSION=Euphoria Patches §d1.7.8
+screen.EP_VERSION=Euphoria Patches §d1.8.6
 screen.EP_VERSION.comment=§bВи можете підтримати SpacEagle17 на Patreon або Ko-Fi і отримати за це нові ексклюзивні бета-збірки. §r§d§l§neuphoriapatches.com/support.
 
 option.DAYLIGHT_CYCLE_COMPAT=Час анімації світу
 option.DAYLIGHT_CYCLE_COMPAT.comment=Використовуйте це ТІЛЬКИ, якщо ігрове правилом doDaylightCycle установлене на false. Якщо ввімкнути хмари та інше, вони анімуються в світах із вимкненим циклом денного світла, але вони більше не синхронізуються між гравцями.
 
 option.AURORA_COLOR_PRESET=Пресет кольору поляр. сяйва
-option.AURORA_COLOR_PRESET.comment=Виберіть між типовим виглядом і спеціальними кольоровими полярного сяйвами, різнокольоровими полярними сяйвами, коли колір полярного сяйва змінюється кожного ігрового дня або Місяця, або попередні налаштування кольорів.
+option.AURORA_COLOR_PRESET.comment=Вибирайте між типовим виглядом/спеціальними кольоровими полярними сяйвами, різнокольоровими полярними сяйвами, де колір полярного сяйва змінюється кожного дня/місяця Minecraft, або попередні налаштування кольорів. Або гладкий щоденний, який плавно змінює колір протягом ночі.
+value.AURORA_COLOR_PRESET.-1=§o§lРізне — плавно щодня
 value.AURORA_COLOR_PRESET.0=Корист.
 value.AURORA_COLOR_PRESET.1=§o§lЗмінна — денний
 value.AURORA_COLOR_PRESET.2=§o§lЗмінна — нічний
-value.AURORA_COLOR_PRESET.3=§cП§6л§cо§6м§eі§6н§eь
-value.AURORA_COLOR_PRESET.4=§cП§4р§bи§3в§bи§9д
-value.AURORA_COLOR_PRESET.5=§9Тум§5ані§dсть
-value.AURORA_COLOR_PRESET.6=§9v§b4
-value.AURORA_COLOR_PRESET.7=§6Е§dн§5д
-value.AURORA_COLOR_PRESET.8=§bЛ§3і§9д
-value.AURORA_COLOR_PRESET.9=§cК§6а§cв§2у§aн
-value.AURORA_COLOR_PRESET.10=§bЕ§3ф§bі§dр§3н§dи§5й
-value.AURORA_COLOR_PRESET.11=§bВіч§3на §bме§3р§bз§3ло§cта
-value.AURORA_COLOR_PRESET.12=§dРо§5же§dви§5й
-value.AURORA_COLOR_PRESET.13=§aДжо§5кер
-value.AURORA_COLOR_PRESET.14=§cКривава §bванна
-value.AURORA_COLOR_PRESET.15=§bМісти§9чний
+value.Avalue.AURORA_COLOR_PRESET.3=§9Cnfhbq§b Complementary v4
+value.AURORA_COLOR_PRESET.4=§bВі§3чн§bа §3мер§cзл§3о§cта
+value.AURORA_COLOR_PRESET.5=§dКвітуче §5світло
+value.AURORA_COLOR_PRESET.6=§9Тум§5ан§dні§5сть
+value.AURORA_COLOR_PRESET.7=§5Небесний §3танець
+value.AURORA_COLOR_PRESET.8=§aGreen Flash
+value.AURORA_COLOR_PRESET.9=§bЕ§3т§bе§dр§3н§dий
+value.AURORA_COLOR_PRESET.10=§bЛьодовикове §9благо
+value.AURORA_COLOR_PRESET.11=§5Міс§9ти§bчний
+value.AURORA_COLOR_PRESET.12=§cК§6а§cв§aу§6н§aо§2в§aи§2oй
+value.AURORA_COLOR_PRESET.13=§cКривава §bванна
+value.AURORA_COLOR_PRESET.14=§cПр§4и§bв§3и§bд
 
 option.RGB_AURORA=RGB поляр. сяйва
 option.RGB_AURORA.comment=Станьте епічним гравцем із полярним сяйвом §4R§2G§9B§r.
@@ -1360,6 +1417,33 @@ option.AURORA_TERRAIN_INFLUENCE_INTENSITY=Інтенс. впливу на тер
 option.AURORA_TERRAIN_INFLUENCE_INTENSITY.comment=Зміна інтенсивности впливу полярного сяйва на територію.
 value.AURORA_TERRAIN_INFLUENCE_INTENSITY.0.00=ВИМК.
 
+option.RANDOM_AURORA=Випадкова видим. поляр. сяйва
+option.RANDOM_AURORA.comment=Змінює ймовірність появи полярного сяйва щоночі. Усе ще поважає звичайні умови полярного сяйва в додаткових налаштуваннях.
+value.RANDOM_AURORA.0=Усталена
+value.RANDOM_AURORA.1=Шанс 10%
+value.RANDOM_AURORA.2=Шанс 20%
+value.RANDOM_AURORA.3=Шанс 30%
+value.RANDOM_AURORA.4=Шанс 40%
+value.RANDOM_AURORA.5=Шанс 50%
+value.RANDOM_AURORA.6=Шанс 60%
+value.RANDOM_AURORA.7=Шанс 70%
+value.RANDOM_AURORA.8=Шанс 80%
+value.RANDOM_AURORA.9=Шанс 90%
+
+option.AURORA_NOISE_SCALE=Шкала шуму поляр. сяйва
+option.AURORA_NOISE_SCALE.comment=Змінює масштаб шуму, який використовується в ефекті полярного сяйва.
+
+option.AURORA_PATTERN_WARP=Вихряність
+option.AURORA_PATTERN_WARP.comment=Змінює ступінь обертання та викривлення полярного сяйва.
+value.AURORA_PATTERN_WARP.0=ВИМК
+
+option.AURORA_SATURATION=Насиченість полярного сяйва
+option.AURORA_SATURATION.comment=Змінює насиченість кольорів полярного сяйва.
+value.AURORA_SATURATION.10=За замовчуванням
+
+option.AURORA_COLOR_MIX_POWER=Домінантний лаш
+option.AURORA_COLOR_MIX_POWER.comment=Змінює, який шар полярного сяйва є найбільш помітним.
+
 option.CLOUD_ROUNDNESS=Округлість хмар §e[*]§r
 value.CLOUD_ROUNDNESS.0.025=Додат. кубічні §e[*]§r
 value.CLOUD_ROUNDNESS.0.05=Кубічна §e[*]§r
@@ -1371,18 +1455,15 @@ value.CLOUD_SHADOW_ROUNDNESS.0.15=Додат. кубічні
 value.CLOUD_SHADOW_ROUNDNESS.0.25=Кубічна
 value.CLOUD_SHADOW_ROUNDNESS.0.35=Кругла
 option.CLOUD_SHADOW_ROUNDNESS.comment=Змінює вигляд круглих тіней від хмар.
-option.CLOUD_NARROWNESS=Вузькість хмар
-value.CLOUD_NARROWNESS.0.1=Ультра тонка
-value.CLOUD_NARROWNESS.0.075=Тонка
-value.CLOUD_NARROWNESS.0.07=Посередня
-value.CLOUD_NARROWNESS.0.025=Широка
-option.CLOUD_NARROWNESS.comment=Змінює вузькість хмар на горизонтальній шкалі.
+option.CLOUD_NARROWNESS=Ширина хмар
+option.CLOUD_NARROWNESS.comment=Змінює ширину хмар по горизонталі.
 
 option.CLOUD_SHADOW_UNBOUND_SIZE=Розмір тіней хмар
 option.CLOUD_SHADOW_UNBOUND_SIZE.comment=Змінює розмір тіні хмар.
 
 option.CLOUD_STRETCH=Висота хмар
-option.CLOUD_TRANSPARENCY=Прозорість хмар
+option.CLOUD_TRANSPARENCY=Непрозоріст хмар
+option.CLOUD_TRANSPARENCY.comment=Зінює непрозорість хмар.
 option.CLOUD_DIRECTION=Напрямок
 option.CLOUD_DIRECTION.comment=Змінює напрямок руху хмар.
 option.CLOUD_TEXTURE=Текстура хмар
@@ -1408,6 +1489,21 @@ value.RAINBOW_CLOUD.10=Зона дії 100%
 option.CLOUD_RENDER_DISTANCE=Дальн. промал. хмар
 option.CLOUD_RENDER_DISTANCE.comment=Керує дальністю промальовування хмар.
 
+option.CLOUD_SHADING_AMOUNT=затемненість хмар
+option.CLOUD_SHADING_AMOUNT.comment=Креує тим, наскільки хмари затінені.
+
+option.INVERTED_CLOUD_SHADING=Інвертовані хмари
+option.INVERTED_CLOUD_SHADING.comment=Інвертує ефект затінення хмар.
+
+option.CLOUD_LIGHT_MULTIPLIER=Множник світла хмар
+option.CLOUD_LIGHT_MULTIPLIER.comment=Збільшує яскравість сторони освітлення хмар.
+
+option.CLOUD_AMBIENT_MULTIPLIER=Множник навколишнього освітлення хмар
+option.CLOUD_AMBIENT_MULTIPLIER.comment=Збільшує яскравість сторони зовнішнього освітлення хмар.
+
+option.ROTATE_REIMAGINED_CLOUDS_90_NEW=Обернути хмари на 90°
+option.ROTATE_REIMAGINED_CLOUDS_90_NEW.comment=Обертає переосмислені хмари на 90 градусів.
+
 option.NIGHT_CLOUD_UNBOUND_REMOVE=Видалити кі-сть хмар уночі
 option.NIGHT_CLOUD_UNBOUND_REMOVE.comment=Кількість хмар, які видаляються протягом ночі.
 
@@ -1422,12 +1518,66 @@ option.CLOUD_UNBOUND_LAYER2_ALTITUDE=Вершина 2 шару хмар
 option.CLOUD_UNBOUND_LAYER2_ALTITUDE.comment=Керує висотою, на якій з'являться хмари другого шару.
 option.CLOUD_UNBOUND_LAYER2_HEIGHT=Висота 2 шару хмар
 option.CLOUD_UNBOUND_LAYER2_SIZE=Розмір 2 шару хмар
-option.CLOUD_UNBOUND_LAYER2_SIZE.comment=Керує розміром хмар другого шару.
+option.CLOUD_UNBOUND_LAYER2_SIZE.comment=Керує розміром непов'язаних хмар другого шару.
 option.CLOUD_UNBOUND_LAYER2_AMOUNT=Кількість 2 шару хмар
-option.CLOUD_UNBOUND_LAYER2_AMOUNT.comment=Керує кількістю хмар другого шару.
+option.CLOUD_UNBOUND_LAYER2_AMOUNT.comment=Керує кількістю непов'язаних хмар другого шару.
+option.CLOUD_UNBOUND_LAYER2_TRANSPARENCY=Непрозорість 2 шару хмар
+option.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.comment=Керує непрозорістю незв'язаних хмар другого шару.
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.0=0.0
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.1=0.05
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.2=0.10
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.3=0.15
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.4=0.20
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.5=0.25
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.6=0.30
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.7=0.35
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.8=0.40
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.9=0.45
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.10=0.50
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.11=0.55
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.12=0.60
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.13=0.65
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.14=0.70
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.15=0.75
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.16=0.80
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.17=0.85
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.18=0.90
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.19=0.95
+value.CLOUD_UNBOUND_LAYER2_TRANSPARENCY.20=1.00
+
+
+option.CLOUD_REIMAGINED_LAYER2_HEIGHT=Висота 2 шару хмар
+option.CLOUD_REIMAGINED_LAYER2_HEIGHT.comment=керує висотою переосмислених хмар другого шару.
+option.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY=Непрозорість 2 шару хмар
+option.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.comment=Керує непрозорістю переосмислених хмар другого шару.
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.0=0.0
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.1=0.05
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.2=0.10
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.3=0.15
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.4=0.20
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.5=0.25
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.6=0.30
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.7=0.35
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.8=0.40
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.9=0.45
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.10=0.50
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.11=0.55
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.12=0.60
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.13=0.65
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.14=0.70
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.15=0.75
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.16=0.80
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.17=0.85
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.18=0.90
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.19=0.95
+value.CLOUD_REIMAGINED_LAYER2_TRANSPARENCY.20=1.00
 
 option.CLOUD_SUN_MOON_SHADING=Затінення Сонця та Місяця
 option.CLOUD_SUN_MOON_SHADING.comment=Умикає затінення сонця та місяця на хмарах.
+value.CLOUD_SUN_MOON_SHADING.0=ВИМК.
+value.CLOUD_SUN_MOON_SHADING.1=Лише Місяць
+value.CLOUD_SUN_MOON_SHADING.2=Лише Сонце
+value.CLOUD_SUN_MOON_SHADING.3=УВІМК.
 
 option.END_SMOKE=Дим
 option.END_SMOKE.comment=О ні, хтось залишив вогонь без нагляду, і тепер Енд димить згори і знизу!
@@ -1466,13 +1616,16 @@ option.OW_BEAM_B_NEW=Синій променів Верхнього світу
 option.END_BEAMS=Промені Енду
 option.END_BEAMS.comment=Налаштування, яке вмикає туманноподібні промені в Енді.
 option.END_CRYSTAL_VORTEX=Вихрові кристали Енду
-option.END_CRYSTAL_VORTEX.comment=Налаштування, яке дозволяє променям енергії йти вгору від кінцевих кристалів до кінця. §4[***]§r Умикає §cтіні сутностей§r. [§e*§r] Лише Iris. [§e*§r] Не працює в MacOS.
+option.END_CRYSTAL_VORTEX.comment=Налаштування, яке дозволяє променям енергії йти вгору від кінцевих кристалів до кінця. §4[***]§r Умикає §cтіні сутностей§r. [§e*§r] Лише Iris. [§e*§r] Не працює в MacOS. Дальність тіней в розширених налаштуваннях впливає на відстань, на якій видно вихори.
 value.END_CRYSTAL_VORTEX.0=ВИМК.
 value.END_CRYSTAL_VORTEX.1=Вихровий
 value.END_CRYSTAL_VORTEX.2=Промінь зцілення
 value.END_CRYSTAL_VORTEX.3=Обидва
-option.DRAGON_DEATH_EFFECT=Ефект смерті дракона
-option.DRAGON_DEATH_EFFECT.comment=Налаштування, яке замінює промені смерті дракона об'ємним ефектом. §4[***]§r Умикає §cтіні сутностей§r. [§e*§r] Лише Iris. [§e*§r] Не працює в MacOS.
+option.DRAGON_DEATH_EFFECT=Ефект смерти дракона
+option.DRAGON_DEATH_EFFECT.comment=Налаштування, яке замінює промені смерти дракона об'ємним ефектом. §4[***]§r Умикає §cтіні сутностей§r. [§e*§r] Лише Iris. [§e*§r] Не працює в MacOS.
+value.DRAGON_DEATH_EFFECT.0=ВИМК.
+value.DRAGON_DEATH_EFFECT.1=Об'ємний
+value.DRAGON_DEATH_EFFECT.2=Об'ємний + оригінальні промені
 option.E_BEAMS_AMBIENT_INFLUENCE=Вплив кольору на середовище
 option.E_BEAMS_AMBIENT_INFLUENCE.comment=Промені матимуть навколишній колір 1.00 та вказаний користувачем колір 0.00. Не стосується променів дракона Енду.
 option.E_BEAM_R_NEW=Червоний променів Енду
@@ -2020,7 +2173,7 @@ option.SOUL_SAND_VALLEY_OVERHAUL=Ремонт долини піску душ
 option.SOUL_SAND_VALLEY_OVERHAUL.comment=Робить пов'язані з вогнем блоки, сутностей та частинки синіми в долині піску душ.
 
 option.PURPLE_END_FIRE=Фіолетовий вогонь Енду
-option.PURPLE_END_FIRE.comment=Робить пов'язані з вогнем блоки, сутностей та частинки фіолетовими в Енді.
+option.PURPLE_END_FIRE.comment=Робить пов'язані з вогнем блоки, сутностей та частинки фіолетовими в Енді. §e[*]§r Для отримання найкращих результатів параметр підтримки ПР має бути встановлений на Integrated PBR+.
 
 option.NO_RAIN_ABOVE_CLOUDS=Без дощу вище хмар
 option.NO_RAIN_ABOVE_CLOUDS.comment=Прибирає дощ над хмарами. Не працює належним чином, якщо висоту усталених хмар було змінено з увімкненими усталеними хмарами.
@@ -2074,9 +2227,44 @@ value.VERTICAL_STUTTER_SPEED.0.00=ВИМК.
 option.VERTICAL_SCROLL_FREQUENCY=Частота прокрутки
 option.VERTICAL_STUTTER_FREQUENCY=Частота зависань
 
-option.PIXELATE_SCREEN=Піксельний
 option.PIXELATED_SCREEN_SIZE=Розмір пікселя
-option.PIXELATED_SCREEN_SMOOTHNESS=Гладкість
+option.PIXELATED_SCREEN_SIZE.comment=Умикає ефект пікселізації екрана та змінює розмір пікселів.
+значення.PIXELATED_SCREEN_SIZE.0=ВИМК.
+option.PIXELATED_SCREEN_SMOOTHNESS=Гладкість пікселів
+option.PIXELATED_SCREEN_SMOOTHNESS.comment=Змінює плавність ефекту піксельного екрана. Вищі значення посилюють змішування пікселів.
+option.COLOR_LEVELS=Постеризація
+option.COLOR_LEVELS.comment=Зменшує кількість кольорів у зображенні, щоб надати йому більш ретро вигляду.
+option.POSTERIZE_STRENGTH=Ступінь постеризації
+option.POSTERIZE_STRENGTH.comment=Змінює ступінь ефекту постеризації.
+value.POSTERIZE_STRENGTH.0.0=ВИМК.
+
+option.PALETTE_SWAP=Палітра
+option.PALETTE1R=Колір1 червоний
+option.PALETTE1G=Колір1 зелений
+option.PALETTE1B=Колір1 синій
+option.PALETTE2R=Колір2 червоний
+option.PALETTE2G=Колір2 зелений
+option.PALETTE2B=Колір2 синій
+option.PALETTE3R=Колір3 червоний
+option.PALETTE3G=Колір3 зелений
+option.PALETTE3B=Колір3 синій
+option.PALETTE4R=Колір4 червоний
+option.PALETTE4G=Колір4 зелений
+option.PALETTE4B=Колір4 синій
+option.PALETTE5R=Колір5 червоний
+option.PALETTE5G=Колір5 зелений
+option.PALETTE5B=Колір5 синій
+option.PALETTE6R=Колір6 червоний
+option.PALETTE6G=Колір6 зелений
+option.PALETTE6B=Колір6 синій
+option.USE_TEXTURE_PALETTE=Палітра текстур
+option.USE_TEXTURE_PALETTE.comment=Використовує зображення PNG палітри з теки palettes замість зображення налаштувань GUI.
+value.USE_TEXTURE_PALETTE.0=ВИМК.
+
+option.SCREEN_DITHERING=Розсипчастість
+option.SCREEN_DITHERING.comment=Додає розмитість до екрана, щоб імітувати більше кольорів, ніж дозволяє палітра.
+option.SCREEN_DITHER_AMOUNT=Кількітсь розсипчастости
+option.SCREEN_DITHER_I=Інтенсивність розсипчастости
 
 option.SCANLINE=Сканування
 value.SCANLINE.0=ВИМК.
@@ -2196,18 +2384,6 @@ value.EMISSIVE_FLOWERS_TYPE.1=Холодні кольори
 value.EMISSIVE_FLOWERS_TYPE.2=Теплі кольори
 
 option.EMISSIVE_FLOWERS_STRENGTH=Інтенсивність сяяння
-
-option.SPOOKY=Страхоповнення
-option.SPOOKY.comment=Умикає багато страшних функцій :).
-option.EYES=Очі
-option.EYE_FREQUENCY=Частота очей
-option.EYE_SPEED=Швидкість очей
-option.EYE_RED_PROBABILITY=Ймовірність червоних очей
-option.BLOOD_MOON=Кривавий Місяця
-value.BLOOD_MOON.0=ВИМК.
-value.BLOOD_MOON.1=Повня
-value.BLOOD_MOON.2=Завжди ніч
-option.EMISSIVE_BLOOD_MOON_FLOWERS=Сяйні квіти кривавого Місяця
 
 option.DISTANCE_MIN_LIGHT=Зникання печерного освітлення
 option.DISTANCE_MIN_LIGHT.comment=Робить печери темнішими зі збільшенням відстані від гравця. Покращує зовнішній вигляд печер за допомогою вищого значення печерного освітлення.
@@ -2512,9 +2688,10 @@ value.NEBULA_MOON_CONDITION.1=Молодик
 value.NEBULA_MOON_CONDITION.2=Повня
 value.NEBULA_MOON_CONDITION.3=Часткові Місяці
 value.NEBULA_MOON_CONDITION.4=Випадково
+value.NEBULA_MOON_CONDITION.5=Завжди, крім молодика
 
 option.END_CENTER_LIGHTING=Центральне освітлення Енду
-option.END_CENTER_LIGHTING.comment=Змінює освітлення центра Енду.
+option.END_CENTER_LIGHTING.comment=Змінює освітлення центра Енду. §e[*]§r Працює лише на Minecraft 1.9+.
 value.END_CENTER_LIGHTING.0=ВИМК.
 
 option.END_CENTER_LIGHTING_R=Червоний освітлення
@@ -2563,3 +2740,19 @@ option.EP_END_FLASH.comment=Змінює тип спалаху Енду: уст�
 value.EP_END_FLASH.0=Усталений
 value.EP_END_FLASH.1=Euphoria
 value.EP_END_FLASH.2=Обидва
+
+option.MIRROR_TINTED_GLASS_OPAQUE=Непрозоре тоноване скло
+option.MIRROR_TINTED_GLASS_OPAQUE.comment=Робить блоки тонованого скла непрозорими (переважно для дзеркал).
+
+option.COLORED_LIGHT_FOG_RAIN_I=Інтен. дощу за кольор. світл. туману
+option.COLORED_LIGHT_FOG_RAIN_I.comment=Змінює інтенсивність кольорового світла туману під час дощу.
+value.COLORED_LIGHT_FOG_RAIN_I.0=Усталена
+
+option.BLOOD_MOON=Кривавий місяць
+option.BLOOD_MOON.comment=Умикає криваві Місяці, які відбуваються протягом кількості днів Minecraft, які користувач встановив у цьому параметрі. Криваві Місяці не відбуваються в першу ніч, якщо встановлено будь-яке вище щоночі. Кривавий Місяць не відбувається в молодики, якщо встановлено будь-яке вище щоночі.
+value.BLOOD_MOON.0=ВИМК.
+value.BLOOD_MOON.1=Щоночі
+suffix.BLOOD_MOON=\ ігрових ночей
+option.BLOOD_MOON.comment=Умикає криваві місяці, які відбуваються протягом кількости днів Minecraft, які користувач встановив у цьому параметрі.
+option.EMISSIVE_BLOOD_MOON_FLOWERS=Випром. квіти кривавого Місяця
+option.EMISSIVE_BLOOD_MOON_FLOWERS.comment=Змушує червоні квіти світитися під час кривавих Місяців. §e[*]§r Для параметра «Підтримка ПР» має бути встановлено значення Integrated PBR+.

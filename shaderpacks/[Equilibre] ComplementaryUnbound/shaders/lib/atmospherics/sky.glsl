@@ -31,15 +31,10 @@
         // Mix the colors
             // Set sky gradient
             float scatteredGroundMixerMult = 1.0;
-            float spookyMiddleMult = 1.0;
-            #ifdef SPOOKY
-                scatteredGroundMixerMult = 0.2;
-                spookyMiddleMult = 0.8;
-            #endif
             float VdotUM1 = pow2(1.0 - VdotUmax0);
                   VdotUM1 = pow(VdotUM1, 1.0 - VdotSM2 * 0.4);
                   VdotUM1 = mix(VdotUM1, 1.0, rainFactor2 * 0.15);
-            vec3 finalSky = mix(upColor, middleColor * spookyMiddleMult, VdotUM1);
+            vec3 finalSky = mix(upColor, middleColor, VdotUM1);
 
             // Add sunset color
             float VdotUM2 = pow2(1.0 - abs(VdotU));
@@ -63,45 +58,44 @@
         if (isEyeInWater == 1)
             finalSky = mix(finalSky * 3.0, waterFogColor, VdotUmax0M);
 
-    // Sun/Moon Glare
+        // Sun/Moon Glare
         #if SUN_GLARE_AMOUNT > 0 || MOON_GLARE_AMOUNT > 0
-        if (doGlare) {
-            if (0.0 < VdotSML) {
-                float glareScatter = 3.0 * (2.0 - clamp01(VdotS * 1000.0));
-                float VdotSM4 = pow(abs(VdotS), glareScatter);
+            if (doGlare) {
+                if (0.0 < VdotSML) {
+                    float glareScatter = 3.0 * (2.0 - clamp01(VdotS * 1000.0));
+                    #ifndef SUN_MOON_DURING_RAIN
+                        glareScatter *= 1.0 - 0.75 * rainFactor2;
+                    #endif
+                    float VdotSM4 = pow(abs(VdotS), glareScatter);
 
-                float visfactor = 0.075;
-                float glare = visfactor / (1.0 - (1.0 - visfactor) * VdotSM4) - visfactor;
-                glare *= 0.7;
+                    float visfactor = 0.075;
+                    float glare = visfactor / (1.0 - (1.0 - visfactor) * VdotSM4) - visfactor;
+                    glare *= 0.7;
 
-                float glareWaterFactor = isEyeInWater * sunVisibility;
-                vec3 glareColor = mix(vec3(0.38, 0.4, 0.5) * 0.3, vec3(1.5, 0.7, 0.3) + vec3(0.0, 0.5, 0.5) * noonFactor, sunVisibility);
-                #if defined SPOOKY && BLOOD_MOON > 0
-                    glareColor = mix(glareColor, vec3(1.0, 0.0, 0.0) * 1.5, getBloodMoon(moonPhase, sunVisibility));
-                #endif
-                glareColor = glareColor + glareWaterFactor * vec3(7.0);
+                    float glareWaterFactor = isEyeInWater * sunVisibility;
+                    vec3 glareColor = mix(vec3(0.38, 0.4, 0.5) * 0.3, vec3(1.5, 0.7, 0.3) + vec3(0.0, 0.5, 0.5) * noonFactor, sunVisibility);
+                    #if BLOOD_MOON > 0
+                        glareColor = mix(glareColor, vec3(0.6314, 0.0431, 0.0431), getBloodMoon(sunVisibility));
+                    #endif
+                    glareColor = glareColor + glareWaterFactor * vec3(7.0);
 
-                #ifdef SUN_MOON_DURING_RAIN
-                    glare *= 1.0 - 0.6 * rainFactor;
+                    #ifdef SUN_MOON_DURING_RAIN
+                        glare *= 1.0 - 0.6 * rainFactor;
+                    #else
+                        glare *= 1.0 - 0.8 * rainFactor;
+                    #endif
                     #if RAIN_STYLE == 1
                         float glareDesaturateFactor = 0.5 * rainFactor;
                     #elif RAIN_STYLE == 2
                         float glareDesaturateFactor = rainFactor;
                     #endif
                     glareColor = mix(glareColor, vec3(GetLuminance(glareColor)), glareDesaturateFactor);
-                #else
-                    glare *= 1.0 - rainFactor;
-                #endif
 
-                glare *= mix(MOON_GLARE_AMOUNT * 0.1, SUN_GLARE_AMOUNT * 0.1, sunVisibility);
+                    glare *= mix(MOON_GLARE_AMOUNT * 0.1, SUN_GLARE_AMOUNT * 0.1, sunVisibility);
 
-                #ifdef SPOOKY
-                    glare *= 0.5;
-                #endif
-
-                finalSky += glare * shadowTime * glareColor;
+                    finalSky += glare * shadowTime * glareColor;
+                }
             }
-        }
         #endif
 
         #ifdef CAVE_FOG

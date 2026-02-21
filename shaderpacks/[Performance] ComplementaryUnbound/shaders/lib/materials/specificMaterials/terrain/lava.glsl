@@ -53,7 +53,7 @@ vec3 lavaNoiseColor = color.rgb;
 vec3 maxLavaColor = max(previousLavaColor, lavaNoiseColor);
 vec3 minLavaColor = min(previousLavaColor, lavaNoiseColor);
 
-#if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+#if RAIN_PUDDLES >= 1
     noPuddles = 1.0;
 #endif
 

@@ -21,11 +21,7 @@
 #ifdef FRAGMENT_SHADER
 
 in vec2 texCoord;
-#ifdef GBUFFERS_COLORWHEEL
-    vec2 lmCoord;
-#else
-    in vec2 lmCoord;
-#endif
+in vec2 lmCoord;
 
 flat in int mat;
 
@@ -124,12 +120,8 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
     #include "/lib/lighting/coloredBlocklight.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
-#endif
-
-#ifdef AURORA_INFLUENCE
-    #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
 #if SEASONS > 0 || defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
@@ -154,6 +146,8 @@ void main() {
     #endif
     float lViewPos = length(viewPos);
     vec3 playerPos = ViewToPlayer(viewPos);
+    vec3 nViewPos = normalize(viewPos);
+    float VdotN = dot(nViewPos, normal);
     vec3 worldPos = playerPos + cameraPosition;
 
     #if SHOCKWAVE > 0
@@ -162,16 +156,7 @@ void main() {
         vec4 color = texture2D(tex, texCoord);
     #endif
     vec3 colorP = color.rgb;
-    #ifdef GBUFFERS_COLORWHEEL
-        float ao;
-        vec4 overlayColor;
-        
-        clrwl_computeFragment(color, color, lmCoord, ao, overlayColor);
-        color.rgb = mix(color.rgb, overlayColor.rgb, overlayColor.a);
-        lmCoord = clamp((lmCoord - 1.0 / 32.0) * 32.0 / 30.0, 0.0, 1.0);
-    #else
-        color *= glColor;
-    #endif
+    color *= glColor;
 
     float dither = Bayer64(gl_FragCoord.xy);
     #ifdef TAA
@@ -194,7 +179,7 @@ void main() {
     bool isFoliage = false;
     vec3 dhColor = vec3(1.0);
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         atmColorMult = GetAtmColorMult();
         sqrtAtmColorMult = sqrt(atmColorMult);
     #endif
@@ -203,7 +188,8 @@ void main() {
     float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = 0.0, enderDragonDead = 1.0;
     float smoothnessG = 0.0, highlightMult = 1.0, emission = 0.0, noiseFactor = 1.0;
     vec2 lmCoordM = lmCoord;
-    vec3 normalM = normal, geoNormal = normal, shadowMult = vec3(1.0);
+    vec3 normalM = VdotN > 0.0 ? -normal : normal; // Inverted Normal Workaround
+    vec3 geoNormal = normalM, shadowMult = vec3(1.0);
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     float purkinjeOverwrite = 0.0;
 
@@ -281,14 +267,6 @@ void main() {
         blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoord.x);
     #endif
 
-    #if defined SPOOKY && BLOOD_MOON > 0
-        auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-        ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-    #endif
-    #ifdef AURORA_INFLUENCE
-        ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
-    #endif
-
     emission *= EMISSION_MULTIPLIER;
 
     bool isLightSource = lmCoord.x > 0.99;
@@ -304,27 +282,33 @@ void main() {
         if (blockEntityId == 5004) lightAlbedo = vec3(0.0); // fix glowing sign text affecting blocklight color
     #endif
 
+    vec3 translucentMult = mix(vec3(0.666), color.rgb * (1.0 - pow2(pow2(color.a))), color.a);
     skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, blockEntityId);
     #endif
 
-    /* DRAWBUFFERS:06 */
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        skyLightFactor *= 0.5;
+    #endif
+
+    /* DRAWBUFFERS:036 */
     gl_FragData[0] = color;
-    gl_FragData[1] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
+    gl_FragData[1] = vec4(1.0 - translucentMult, 1.0);
+    gl_FragData[2] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emission));
 
     #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE != 0
-        /* DRAWBUFFERS:064 */
-        gl_FragData[2] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
+        /* DRAWBUFFERS:0364 */
+        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
 
         #ifdef SS_BLOCKLIGHT
-            /* DRAWBUFFERS:0649 */
-            gl_FragData[3] = vec4(lightAlbedo, 0.0);
+            /* DRAWBUFFERS:03649 */
+            gl_FragData[4] = vec4(lightAlbedo, 0.0);
         #endif
     #elif defined SS_BLOCKLIGHT
-        /* DRAWBUFFERS:069 */
-        gl_FragData[2] = vec4(lightAlbedo, 0.0);
+        /* DRAWBUFFERS:0369 */
+        gl_FragData[3] = vec4(lightAlbedo, 0.0);
     #endif
 }
 
@@ -338,11 +322,7 @@ void main() {
 #endif
 
 out vec2 texCoord;
-#ifdef GBUFFERS_COLORWHEEL
-    vec2 lmCoord;
-#else
-    out vec2 lmCoord;
-#endif
+out vec2 lmCoord;
 
 flat out int mat;
 

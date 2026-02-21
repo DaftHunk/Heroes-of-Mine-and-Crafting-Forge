@@ -82,14 +82,14 @@ void main() {
     #endif
 
     // SS_BLOCKLIGHT code
-    #ifdef SS_BLOCKLIGHT        
+    #ifdef SS_BLOCKLIGHT
         vec4 lightAlbedo = texture2D(colortex9, texCoord);
 
         dither = texture2DLod(noisetex, texCoord * view / 128.0, 0.0).b;
         #ifdef TAA
             dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
         #endif
-        
+
         #ifdef ENTITIES_ARE_LIGHT
             int heldBlockLight = 0;
             heldBlockLight = (viewPos.x > 0.0 ^^ isRightHanded) ? heldBlockLightValue2 : heldBlockLightValue;
@@ -98,7 +98,7 @@ void main() {
                 lightAlbedo.a *= 30;
             }
         #endif
-        
+
         float lightZ = z >= 1.0 ? z0 : z;
         vec4 coloredLight = GetMultiColoredBlocklight(lightAlbedo, texCoord, lightZ, dither);
     #endif

@@ -68,7 +68,7 @@ float fbmCloud2(vec2 inCoord, float minimum){
     return (smoothstep(minimum, 1.0, value) - minimum) / (1.0 - minimum);
 }
 
-vec2 warpCoords(vec2 coord, float warpAmount) {    
+vec2 warpCoords(vec2 coord, float warpAmount) {
     float angle = perlin(coord * 0.5) * 6.28318 * warpAmount;
     float strength = perlin(coord * 0.7 + 0.5) * warpAmount;
     vec2 offset = vec2(cos(angle), sin(angle)) * strength;
@@ -82,28 +82,24 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
         VdotUFactor = VdotU;
         #ifdef SUN_MOON_HORIZON
             starsAroundSun = max0(sign(VdotU));
-        #endif  
+        #endif
     #endif
     float originalVdotUFactor = VdotUFactor;
     float horizonPower = NEBULA_HORIZON_STRENGTH * 0.05 + 0.5;
-    
+
     #if NEBULA_HORIZON_STRENGTH < 10
         VdotUFactor = pow(VdotUFactor, horizonPower);
     #endif
 
     float nebulaFactor = pow2(VdotUFactor * min1(nightFactor * 2.0));
-    
+
     #if NEBULA_HORIZON_STRENGTH < 10
         float brightnessCompensation = 1.0 - (1.0 - horizonPower) * 0.5 * max0(originalVdotUFactor);
         nebulaFactor *= brightnessCompensation;
     #endif
 
-    #if defined CLEAR_SKY_WHEN_RAINING || defined NO_RAIN_ABOVE_CLOUDS
-        #ifndef CLEAR_SKY_WHEN_RAINING
-            nebulaFactor *= mix(1.0, invRainFactor, heightRelativeToCloud);
-        #else
-            nebulaFactor *= mix(1.0, invRainFactor * 0.8 + 0.2, heightRelativeToCloud);
-        #endif
+    #ifdef CLEAR_SKY_WHEN_RAINING
+        nebulaFactor *= min1(invRainFactor + 0.4);
     #else
         nebulaFactor *= invRainFactor;
     #endif
@@ -117,7 +113,9 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
     #elif NEBULA_MOON_CONDITION == 3
         if (moonPhase == 0 || moonPhase == 4) return vec3(0.0);
     #elif NEBULA_MOON_CONDITION == 4
-        nebulaFactor *= step(0.5, hash11(float(worldDay) + float(moonPhase) * 37.0)); 
+        nebulaFactor *= step(0.5, hash11(float(worldDay) + float(moonPhase) * 37.0));
+    #elif NEBULA_MOON_CONDITION == 5
+        nebulaFactor *= clamp01(max(moonPhase, 1) % 4);
     #endif
 
     if (nebulaFactor < 0.001) return vec3(0.0);
@@ -169,7 +167,7 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
     float starIntensity = GetStarNoise(starCoord) * GetStarNoise(starCoord + 0.1) - (starAmount + 0.5);
     starIntensity *= getStarEdgeFactor(fractPart, STAR_ROUNDNESS_OW / 10.0, STAR_SOFTNESS_OW);
 
-    #if TWINKLING_STARS > 0 || defined SPOOKY
+    #if TWINKLING_STARS > 0
         starIntensity *= getTwinklingStars(starCoord * 4, float(TWINKLING_STARS));
     #endif
 
@@ -193,7 +191,7 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
         nebulaTexture.rgb = hsv2rgb(nebulaTexture.rgb);
     #endif
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         nebulaTexture.rgb *= sqrtAtmColorMult; // C72380KD - Reduced atmColorMult impact on some things
     #endif
 

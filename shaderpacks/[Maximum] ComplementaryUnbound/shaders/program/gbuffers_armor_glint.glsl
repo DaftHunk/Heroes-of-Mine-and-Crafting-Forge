@@ -87,17 +87,19 @@ void main() {
     #endif
 
     #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVE_EVERYTHING
-        vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
-        #ifdef MIRROR_DIMENSION
-            doMirrorDimension(position);
-        #endif
-        #ifdef WORLD_CURVATURE
-            position.y += doWorldCurvature(position.xz);
-        #endif
-        #ifdef WAVE_EVERYTHING
-            DoWaveEverything(position.xyz);
-        #endif
-        gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
+        if (gl_ProjectionMatrix[2][2] < -0.5) {
+            vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
+            #ifdef MIRROR_DIMENSION
+                doMirrorDimension(position);
+            #endif
+            #ifdef WORLD_CURVATURE
+                position.y += doWorldCurvature(position.xz);
+            #endif
+            #ifdef WAVE_EVERYTHING
+                DoWaveEverything(position.xyz);
+            #endif
+            gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
+        }
     #endif
 }
 

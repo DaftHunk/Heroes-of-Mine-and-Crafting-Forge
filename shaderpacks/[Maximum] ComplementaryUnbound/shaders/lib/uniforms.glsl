@@ -15,7 +15,7 @@
 uniform bool isRightHanded = true;
 uniform bool heavyFog = false;
 uniform bool firstPersonCamera = true;
-uniform bool isSpectator = false;
+uniform bool is_invisible = false;
 
 uniform int renderStage;
 uniform int blockEntityId;
@@ -53,7 +53,6 @@ uniform float far;
 uniform float near;
 uniform float nightVision;
 uniform float rainStrength;
-uniform float thunderStrength = 0.0;
 uniform float screenBrightness;
 uniform float viewHeight;
 uniform float viewWidth;
@@ -101,6 +100,7 @@ uniform sampler2D colortex10;
 #endif
 uniform sampler2D depthtex0;
 uniform sampler2D depthtex1;
+uniform sampler2D depthtex2;
 uniform sampler2D gaux2;
 uniform sampler2D gaux4;
 uniform sampler2D normals;
@@ -108,7 +108,7 @@ uniform sampler2D noisetex;
 uniform sampler2D specular;
 uniform sampler2D tex;
 
-#if defined IS_IRIS && defined FINAL
+#if (defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000009) && defined FINAL
 uniform sampler2D epWatermark;
 #endif
 
@@ -120,7 +120,6 @@ uniform vec3 previousCameraPositionFract;
 #ifdef IS_IRIS
     #if MC_VERSION >= 12109
         uniform float endFlashIntensity;
-        uniform float previousEndFlashIntensity;
         uniform vec3 endFlashPosition;
     #endif
 #endif
@@ -173,7 +172,14 @@ uniform vec3 previousCameraPositionFract;
     uniform sampler2D textureAtlas;
 
     uniform usampler3D wsr_sampler;
-    uniform usampler3D wsr_sampler_lod;
+
+    #if WORLD_SPACE_PLAYER_REF == 1
+        uniform sampler2D playerAtlas_sampler;
+    #endif
+
+    #ifdef CLOUD_SHADOWS
+        uniform sampler2D cloudWaterTex;
+    #endif
 #endif
 
 #ifdef ACT_GROUND_LEAVES_FIX
@@ -193,6 +199,7 @@ uniform bool isOnGround = true;
 uniform float framemod2;
 uniform float framemod4;
 uniform float framemod8;
+uniform float framemod600;
 uniform float isEyeInCave;
 uniform float inDry;
 uniform float inRainy;
@@ -201,7 +208,7 @@ uniform float starter;
 uniform float frameTimeSmooth;
 uniform float eyeBrightnessM;
 uniform float eyeBrightnessM2;
-uniform float rainFactor;
+uniform float rainFactorUniform;
 uniform float inBasaltDeltas = 0.0;
 uniform float inCrimsonForest = 0.0;
 uniform float inNetherWastes = 1.0;
@@ -223,6 +230,7 @@ uniform float eyeBrightnessXM;
 uniform float eyeBrightnessXM2;
 uniform float waterAltitude = 61.9;
 uniform float inJungle = 0.0;
+uniform float thunderFactor = 0.0;
 
 uniform vec2 viewSize;
 uniform vec2 texelSize;

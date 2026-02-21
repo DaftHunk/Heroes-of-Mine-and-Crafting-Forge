@@ -33,7 +33,12 @@
                 cloudOffset1.z += distToCloudLayer1 / NVdotLM;
             #endif
             vec2 cloudPos1 = GetRoundedCloudCoord(ModifyTracePos(worldPos + cloudOffset1, cloudAlt1i).xz, CLOUD_SHADOW_ROUNDNESS);
-            float cloudSample = texture2D(gaux4, cloudPos1).b;
+
+            #ifndef COMPOSITE
+                float cloudSample = texture2D(gaux4, cloudPos1).b;
+            #else
+                float cloudSample = texture2D(cloudWaterTex, cloudPos1).b;
+            #endif
             cloudSample *= clamp(distToCloudLayer1 * 0.1, 0.0, 1.0);
 
             #ifdef DOUBLE_REIM_CLOUDS

@@ -33,6 +33,13 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
         vec2 shadowMapResolutionM = textureSize(shadowtex0, 0);
     #endif
 
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        vec3 texture6 = texelFetch(colortex6, texelCoord, 0).rgb;
+        float chunkFade = texture6.b > 0.50001 ? (1.0 - texture6.b) * 2.0 : 1.0;
+        float chunkFadeM = mix(1.0, chunkFade, pow2(clamp01(lViewPos0 * 0.015))); // don't do fade very close to the player
+        lViewPos1 = mix(far, lViewPos1, chunkFadeM);
+    #endif
+
     #ifdef OVERWORLD
         vec3 vlColor = lightColor;
         vec3 vlColorReducer = vec3(1.0);
@@ -45,7 +52,7 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
 
         if (sunVisibility < 0.5) {
             vlSceneIntensity = 0.0;
-            
+
             float vlMultNightModifier = (0.3 + 0.4 * rainFactor2 + 0.5 * max0(far - lViewPos1) / far);
             #ifdef SPECIAL_PALE_GARDEN_LIGHTSHAFTS
                 vlMultNightModifier = mix(vlMultNightModifier, 1.0, inPaleGarden);
@@ -57,6 +64,11 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
         } else {
             vlColorReducer = 1.0 / sqrt(vlColor);
         }
+
+        #if BLOOD_MOON > 0
+            vec3 hsvVlColor = rgb2hsv(vlColor);
+            vlColor = mix(vlColor, hsv2rgb(vec3(0, max(0.8, hsvVlColor.y), hsvVlColor.z * 1.7)), getBloodMoon(sunVisibility));
+        #endif
 
         #ifdef SPECIAL_PALE_GARDEN_LIGHTSHAFTS
             vlSceneIntensity = mix(vlSceneIntensity, 1.0, inPaleGarden);
@@ -80,6 +92,10 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
             int sampleCount = vlSceneIntensity < 0.5 ? 10 : 20;
         #elif LIGHTSHAFT_QUALI == 1
             int sampleCount = vlSceneIntensity < 0.5 ? 6 : 12;
+        #endif
+
+        #ifndef TAA
+            sampleCount *= 2;
         #endif
 
         #ifdef LIGHTSHAFT_SMOKE
@@ -122,6 +138,10 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
     // Fast but inaccurate perspective distortion approximation
     maxDist *= viewFactor;
     distMult *= viewFactor;
+
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        depth1 = mix(depth1, far, pow2(pow2(1.0 - chunkFadeM)));
+    #endif
 
     #ifdef OVERWORLD
         float maxCurrentDist = min(depth1, maxDist);
@@ -171,7 +191,7 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
                 shadowSample = clamp((shadowSample-shadowPosition.z)*65536.0,0.0,1.0);
 
                 vlSample = vec3(shadowSample);
-                
+
                 #ifdef END_FLASH_SHADOW_INTERNAL
                     vlSample = mix(vec3(1.0), vlSample, endFlashIntensity);
                 #endif
@@ -214,7 +234,7 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
         #ifdef OVERWORLD
             #ifdef LIGHTSHAFT_SMOKE
                 vec3 smokePos = 0.0015 * (playerPos + cameraPosition);
-                vec3 smokeWind = frameTimeCounter * vec3(0.002, 0.001, 0.0);
+                vec3 smokeWind = frameTimeCounter * vec3(0.0, 0.001, -0.002);
                 float smoke = 0.65 * Noise3D(smokePos + smokeWind)
                             + 0.25 * Noise3D((smokePos - smokeWind) * 3.0)
                             + 0.10 * Noise3D((smokePos + smokeWind) * 9.0);
@@ -295,8 +315,8 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
     #endif
 
     #ifdef OVERWORLD
-        vlColor = pow(vlColor, vec3(0.5 + 0.5 * invNoonFactor * invRainFactor + 0.3 * rainFactor));
-        vlColor *= 1.0 - (0.3 + 0.3 * noonFactor) * rainFactor - 0.5 * rainyNight;
+        vlColor = pow(vlColor, vec3(0.5 + (0.5 + LIGHTSHAFT_SUNSET_SATURATION * sunVisibility) * invNoonFactor * invRainFactor + 0.3 * rainFactor));
+        vlColor *= 1.0 - (0.3 + 0.3 * noonFactor) * rainFactor - 0.5 * rainyNight + sunVisibility * pow2(invNoonFactor) * invRainFactor;
 
         #if LIGHTSHAFT_DAY_I != 100 || LIGHTSHAFT_NIGHT_I != 100 || LIGHTSHAFT_RAIN_I != 100
             #define LIGHTSHAFT_DAY_IM LIGHTSHAFT_DAY_I * 0.01
@@ -349,11 +369,6 @@ vec4 GetVolumetricLight(inout vec3 color, inout float vlFactor, vec3 translucent
         volumetricLight *= vec4(0.0);
     #elif RETRO_LOOK == 2
         volumetricLight *= mix(vec4(1.0), vec4(0.0), nightVision);
-    #endif
-
-    #ifdef SPOOKY
-        if (isEyeInWater == 1) volumetricLight *= 0.2;
-        volumetricLight *= 0.35;
     #endif
 
     return volumetricLight;

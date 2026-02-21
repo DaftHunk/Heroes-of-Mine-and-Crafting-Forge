@@ -41,7 +41,7 @@
         #include "/lib/antialiasing/jitter.glsl"
     #endif
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         #include "/lib/colors/colorMultipliers.glsl"
     #endif
     #ifdef MOON_PHASE_INF_ATMOSPHERE
@@ -86,7 +86,7 @@ void main() {
             color.a *= clamp01(cloudDistance * 3.0);
         #endif
 
-        color.a *= CLOUD_TRANSPARENCY;        
+        color.a *= CLOUD_TRANSPARENCY;
 
         #ifdef OVERWORLD
             vec3 cloudLight = mix(vec3(0.8, 1.6, 1.5) * sqrt1(nightFactor), mix(dayDownSkyColor, dayMiddleSkyColor, 0.1), sunFactor);
@@ -96,22 +96,15 @@ void main() {
 
                 cloudLight *= getRainbowColor(wpos.xz * rainbowCloudDistribution * 0.3, 0.05);
             #endif
-            #if defined SPOOKY && BLOOD_MOON > 0
-                auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-                cloudLight *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-            #endif
             #ifdef AURORA_INFLUENCE
-                cloudLight = mix(AuroraAmbientColor(cloudLight, viewPos), cloudLight, auroraSpookyMix);
-            #endif
-            #ifdef SPOOKY
-                color.rgb *= 0.5;
+                color.rgb = getAuroraAmbientColor(color.rgb, viewPos, 0.096, AURORA_CLOUD_INFLUENCE_INTENSITY, 0.7);
             #endif
             color.rgb *= sqrt(cloudLight) * (1.2 + 0.4 * noonFactor * invRainFactor);
 
             #if CLOUD_R != 100 || CLOUD_G != 100 || CLOUD_B != 100
                 color.rgb *= vec3(CLOUD_R, CLOUD_G, CLOUD_B) * 0.01;
             #endif
-            #if defined ATM_COLOR_MULTS || defined SPOOKY
+            #ifdef ATM_COLOR_MULTS
                 color.rgb *= sqrt(GetAtmColorMult()); // C72380KD - Reduced atmColorMult impact on things
             #endif
             #ifdef MOON_PHASE_INF_ATMOSPHERE

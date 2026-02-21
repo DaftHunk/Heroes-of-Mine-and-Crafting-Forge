@@ -35,13 +35,8 @@
     float SdotU = dot(sunVec, upVec);
     float sunFactor = SdotU < 0.0 ? clamp(SdotU + 0.375, 0.0, 0.75) / 0.75 : clamp(SdotU + 0.03125, 0.0, 0.0625) / 0.0625;
 
-    #ifndef SPACEAGLE17
-        float DoFSneaking = isSneaking * float(heldItemId == 45014 || heldItemId2 == 45014);
-        bool isDoFGUI = hideGUI == 0 && (heldItemId == 45014 || heldItemId2 == 45014); // while holding a spyglass
-    #else
-        float DoFSneaking = isSneaking;
-        bool isDoFGUI = hideGUI == 0;
-    #endif
+    float DoFSneaking = isSneaking * float(heldItemId == 45014 || heldItemId2 == 45014);
+    bool isDoFGUI = hideGUI == 0 && (heldItemId == 45014 || heldItemId2 == 45014); // while holding a spyglass
 
     vec2 dofOffsets[18] = vec2[18](
         vec2( 0.0    ,  0.25  ),
@@ -68,7 +63,7 @@
 vec2 getPolygonOffset(float angle, int sides, float radius) { // based on the hexablur function by halcy from https://www.shadertoy.com/view/4tK3WK
     float rotationRadians = DOF_SHAPE_ROTATION_DEGREES * (pi / 180.0);
 
-    // Calculate regular polygon coordinates 
+    // Calculate regular polygon coordinates
     float segmentAngle = 2.0 * pi / float(sides);
     float r = cos(pi / float(sides)) / cos(mod(angle, segmentAngle) - pi / float(sides));
     r *= radius;
@@ -159,20 +154,20 @@ vec2 getPolygonOffset(float angle, int sides, float radius) { // based on the he
             #elif DOF_SHAPE >= 3 && DOF_SHAPE <= 8
                 float totalWeight = 0.0;
                 float lod = log2(viewHeight * aspectRatio * coc * 0.75 / 320.0);
-                
+
                 int polygonSamples = int(DOF_POLYGON_SAMPLES * 10);
-                
+
                 // Sample in multiple concentric rings to fill the polygon
                 for (int ring = 1; ring <= DOF_POLYGON_RINGS; ring++) {
                     float ringFactor = float(ring) / float(DOF_POLYGON_RINGS);
-                    
+
                     // For each polygon ring, sample multiple points
                     for (int i = 0; i < polygonSamples; i++) {
                         float angle = float(i) * (2.0 * pi) / float(polygonSamples);
-                        
+
                         vec2 offset = getPolygonOffset(angle, DOF_SHAPE, ringFactor * coc * 0.01) * dofScale;
                         float weight = 1.0 - 0.2 * ringFactor; // Weight based on distance from center
-                        
+
                         #ifndef WB_CHROMATIC
                             vec3 sampleColor = texture2DLod(colortex0, texCoord + offset, lod).rgb;
                             dof += sampleColor * weight;
@@ -183,11 +178,11 @@ vec2 getPolygonOffset(float angle, int sides, float radius) { // based on the he
                                 texture2DLod(colortex0, texCoord + offset - aberration, lod).b
                             ) * weight;
                         #endif
-                        
+
                         totalWeight += weight;
                     }
                 }
-                
+
                 dof /= totalWeight;
             #endif
 
@@ -246,11 +241,11 @@ void main() {
         #endif
     #endif
 
-    #ifdef PIXELATE_SCREEN
+    #if PIXELATED_SCREEN_SIZE > 0
         if (int(texelFetch(colortex6, texelCoord, 0).g * 255.1) == 252) { // Selection Outline
-            color *= max(100.0 - PIXELATED_SCREEN_SIZE * 3.0, 1.0);
+            color *= max(abs(100.0 - PIXELATED_SCREEN_SIZE * 2.0), 1.0);
             #if SELECT_OUTLINE == 4 || SELECT_OUTLINE == 1
-                color *= 10;
+                color *= 4;
             #endif
         }
     #endif

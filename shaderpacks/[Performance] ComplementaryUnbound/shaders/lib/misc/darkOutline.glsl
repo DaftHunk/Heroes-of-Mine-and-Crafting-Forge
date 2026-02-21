@@ -18,9 +18,9 @@ void DoDarkOutline(inout vec3 color, float z0, float pixelFade, vec3 playerPos, 
     #ifdef DISTANT_HORIZONS
         float horizontalDistance = length(playerPos.xz);
         float verticalDistance = abs(playerPos.y);
-        
+
         float distanceToCamera = max(horizontalDistance, verticalDistance);
-        
+
         float fadeStart = minecraft_far * 0.7;
         float fadeEnd = minecraft_far * 0.9;
         if (fadeStart >= fadeEnd) {

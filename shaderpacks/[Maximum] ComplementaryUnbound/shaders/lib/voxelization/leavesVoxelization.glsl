@@ -18,7 +18,7 @@ bool CheckInsideLeavesVoxelVolume(vec3 voxelPos) {
     void UpdateLeavesVoxelMap(int mat) {
         if (renderStage == MC_RENDER_STAGE_ENTITIES)
             return;
-        
+
         vec3 model_pos = gl_Vertex.xyz + at_midBlock.xyz / 64.0;
         vec3 view_pos  = mat3(gl_ModelViewMatrix) * model_pos + gl_ModelViewMatrix[3].xyz;
         vec3 scenePos = mat3(shadowModelViewInverse) * view_pos + shadowModelViewInverse[3].xyz;

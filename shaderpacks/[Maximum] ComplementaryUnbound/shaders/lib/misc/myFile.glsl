@@ -1,3 +1,2 @@
-// Euphoria Patches 1.7.8
+// Euphoria Patches 1.8.6
 // Developed by SpacEagle17
-#define EUPHORIA_PATCHES_OCULUS_VERSION 10800

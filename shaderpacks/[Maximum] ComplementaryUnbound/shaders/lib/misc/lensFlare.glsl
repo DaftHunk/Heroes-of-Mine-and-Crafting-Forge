@@ -3,17 +3,17 @@ float fovmult = gbufferProjection[1][1] / 1.37373871;
 vec2 getLensFlarePolygonOffset(float angle, int sides, float radius) {
     float rotationRadians = LENS_FLARE_SHAPE_ROTATION * (pi / 180.0);
     angle += rotationRadians;
-    
+
     float segmentAngle = 2.0 * pi / float(sides);
     float r = cos(pi / float(sides)) / cos(mod(angle, segmentAngle) - pi / float(sides));
     r *= radius;
-    
+
     return vec2(sin(angle), cos(angle)) * r;
 }
 
 float BaseLens(vec2 lightPos, float size, float dist, float hardness) {
     vec2 lensCoord = texCoord + (lightPos * dist - 0.5);
-    
+
     #if LENS_FLARE_SHAPE >= 3
         float radius = length(lensCoord * vec2(aspectRatio, 1.0));
         float angle = atan(lensCoord.y, lensCoord.x * aspectRatio);
@@ -23,7 +23,7 @@ float BaseLens(vec2 lightPos, float size, float dist, float hardness) {
     #else
         float lens = clamp(1.0 - length(lensCoord * vec2(aspectRatio, 1.0)) / (size * fovmult), 0.0, 1.0 / hardness) * hardness;
     #endif
-    
+
     lens *= lens; lens *= lens;
     return lens;
 }
@@ -61,7 +61,7 @@ vec2 lensFlareCheckOffsets[4] = vec2[4](
 float AnamorphicLensFlare(vec2 lightPos, float size, float intensity) {
     vec2 lensCoord = abs(texCoord - lightPos - 0.5) * vec2(aspectRatio * 0.06, 0.7); // Create horizontal stretched flare
     float lens = clamp01(1.0 - length(pow(lensCoord / (size * fovmult), vec2(0.85))) * 4.0);
-    
+
     lens *= sqrt1(max0(1.0 - 5.0 * pow2(distance(texCoord, lightPos + 0.5)))) * pow2(lens); // Control intensity falloff with distance
     return lens * intensity;
 }
@@ -101,7 +101,7 @@ void DoLensFlare(inout vec3 color, vec3 viewPos, float dither) {
     float str = length(lightPos * vec2(aspectRatio, 1.0));
     str = pow(clamp(str * 8.0, 0.0, 1.0), 2.0) - clamp(str * 3.0 - 1.5, 0.0, 1.0);
     flareFactor *= str;
-    
+
     float oldFlareFactor = flareFactor;
     #ifdef SUN_MOON_DURING_RAIN
         flareFactor *= 0.65 - 0.4 * rainFactor;
@@ -138,15 +138,21 @@ void DoLensFlare(inout vec3 color, vec3 viewPos, float dither) {
 
     #if ANAMORPHIC_LENS_FLARE > 0
         float anamorphicIntensity = ANAMORPHIC_LENS_FLARE * 0.1;
-        
+
         float anamorphicFlare = AnamorphicLensFlare(lightPos, 0.53, 1.0);
         vec3 anamorphicColor = vec3(0.4, 0.8, 1.0) * anamorphicFlare * anamorphicIntensity;
 
         float secondaryFlare = AnamorphicLensFlare(lightPos, 0.22, 1.35);
         anamorphicColor += vec3(0.8667, 0.2196, 0.5961) * secondaryFlare * max0(anamorphicIntensity - 0.24);
-        
+
         #if LENSFLARE_MODE == 2
-            if (sunVec.z > 0.0) anamorphicColor = anamorphicColor * 0.35 + GetLuminance(anamorphicColor) * vec3(0.3, 0.4, 0.6);
+            if (sunVec.z > 0.0) {
+                anamorphicColor = anamorphicColor * 0.35 + GetLuminance(anamorphicColor) * vec3(0.3, 0.4, 0.6);
+                #if BLOOD_MOON > 0
+                    vec3 hsvAnamorphicColor = rgb2hsv(anamorphicColor);
+                    anamorphicColor = mix(anamorphicColor, hsv2rgb(vec3(0, max(1.0, hsvAnamorphicColor.y), hsvAnamorphicColor.z * 2.7)), getBloodMoon(0));
+                #endif
+            }
         #endif
 
         flare += anamorphicColor * flareFactor;

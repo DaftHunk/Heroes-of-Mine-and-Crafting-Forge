@@ -1,12 +1,19 @@
 #include "/lib/shaderSettings/cloudsAndLighting.glsl"
 #include "/lib/atmospherics/clouds/cloudCoord.glsl"
 
-const float cloudStretch = CLOUD_STRETCH * 4.2;
-const float cloudTallness  = cloudStretch * 2.0;
+#ifdef DOUBLE_REIM_CLOUDS
+    const float cloudStretch = CLOUD_STRETCH * 4.2;
+    const float L2cloudStretch = cloudStretch * CLOUD_REIMAGINED_LAYER2_HEIGHT;
+    const float cloudTallness = cloudStretch * 2.0;
+#else
+    const float cloudStretch = CLOUD_STRETCH * 4.2;
+    const float cloudTallness = cloudStretch * 2.0;
+#endif
+const float cloudRoundness = CLOUD_ROUNDNESS;
 
 bool GetCloudNoise(vec3 tracePos, inout vec3 tracePosM, int cloudAltitude) {
     tracePosM = ModifyTracePos(tracePos, cloudAltitude);
-    vec2 coord = GetRoundedCloudCoord(tracePosM.xz, CLOUD_ROUNDNESS);
+    vec2 coord = GetRoundedCloudCoord(tracePosM.xz, cloudRoundness);
 
     #ifdef DEFERRED1
         float noise = texture2D(colortex3, coord).b;
@@ -19,11 +26,30 @@ bool GetCloudNoise(vec3 tracePos, inout vec3 tracePosM, int cloudAltitude) {
     return noise > threshold * 0.5 + 0.25;
 }
 
-vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float cloudLinearDepth, float skyFade, float skyMult0, vec3 cameraPos, vec3 nPlayerPos, float lViewPosM, float VdotS, float VdotU, float dither, vec3 sunVec) {
+float Get2DCloudSample(vec2 pos) {
+    #ifdef DEFERRED1
+        return texture2D(colortex3, GetRoundedCloudCoord(pos, cloudRoundness)).b;
+    #else
+        return texture2D(gaux4, GetRoundedCloudCoord(pos, cloudRoundness)).b;
+    #endif
+}
+
+vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float cloudLinearDepth, float skyFade, float skyMult0, vec3 cameraPos, vec3 nPlayerPos, float lViewPosM, float VdotS, float VdotU, float dither, vec3 sunVec, vec3 viewPos) {
     vec4 volumetricClouds = vec4(0.0);
 
-    float higherPlaneAltitude = cloudAltitude + cloudStretch;
-    float lowerPlaneAltitude  = cloudAltitude - cloudStretch;
+    // Use local variables to avoid modifying globals
+    float localCloudStretch = cloudStretch;
+    float localCloudTallness = cloudTallness;
+
+    #ifdef DOUBLE_REIM_CLOUDS
+        if (cloudAltitude != cloudAlt1i) { // second layer
+            localCloudStretch = L2cloudStretch;
+            localCloudTallness = 2.0 * localCloudStretch;
+        }
+    #endif
+
+    float higherPlaneAltitude = cloudAltitude + localCloudStretch;
+    float lowerPlaneAltitude  = cloudAltitude - localCloudStretch;
 
     float lowerPlaneDistance  = (lowerPlaneAltitude - cameraPos.y) / nPlayerPos.y;
     float higherPlaneDistance = (higherPlaneAltitude - cameraPos.y) / nPlayerPos.y;
@@ -49,6 +75,10 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
 
     #ifdef FIX_AMD_REFLECTION_CRASH
         sampleCount = min(sampleCount, 30); //BFARC
+    #endif
+
+    #ifdef AURORA_INFLUENCE
+        cloudAmbientColor = getAuroraAmbientColor(cloudAmbientColor, viewPos, 0.032, AURORA_CLOUD_INFLUENCE_INTENSITY, 0.75);
     #endif
 
     for (int i = 0; i < sampleCount; i++) {
@@ -80,8 +110,12 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
                 }
             #endif
 
-            float cloudShading = 1.0 - (higherPlaneAltitude - tracePos.y) / cloudTallness;
-                  cloudShading = pow(max0(cloudShading), 0.8);
+            #ifdef INVERTED_CLOUD_SHADING
+                float cloudShading = (higherPlaneAltitude - tracePos.y) / localCloudTallness;
+            #else
+                float cloudShading = 1.0 - (higherPlaneAltitude - tracePos.y) / localCloudTallness;
+            #endif
+            cloudShading = pow(max0(cloudShading), max0(CLOUD_SHADING_AMOUNT * 0.1 - 0.2));
             float VdotSM1 = max0(sunVisibility > 0.5 ? VdotS : - VdotS);
 
             #if CLOUD_QUALITY_INTERNAL >= 2
@@ -99,52 +133,87 @@ vec4 GetVolumetricClouds(int cloudAltitude, float distanceThreshold, inout float
 
                 float light = 2.0;
                 cLightPos += (1.0 + gradientNoise) * cLightPosAdd;
-                #ifdef DEFERRED1
-                    light -= texture2D(colortex3, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b * cloudShadingM;
-                #else
-                    light -= texture2D(gaux4, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b * cloudShadingM;
-                #endif
+                    light -= Get2DCloudSample(cLightPos.xz) * cloudShadingM;
                 cLightPos += gradientNoise * cLightPosAdd;
-                #ifdef DEFERRED1
-                    light -= texture2D(colortex3, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b * cloudShadingM;
-                #else
-                    light -= texture2D(gaux4, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b * cloudShadingM;
-                #endif
+                    light -= Get2DCloudSample(cLightPos.xz) * cloudShadingM;
 
                 float VdotSM2 = VdotSM1 * shadowTime * 0.25;
                     VdotSM2 += 0.5 * cloudShading + 0.08;
                 cloudShading = VdotSM2 * light * lightMult;
             #endif
 
-            #ifdef CLOUD_SUN_MOON_SHADING
-                vec3 worldLightVec = mat3(gbufferModelViewInverse) * sunVec;
-                float cloudLightRadius = 375.0;
+            #if CLOUD_SUN_MOON_SHADING > 0
+                float visibilityFactor = 1.0;
+                #if CLOUD_SUN_MOON_SHADING == 1
+                    visibilityFactor = 1.0 - sunVisibility;
+                #elif CLOUD_SUN_MOON_SHADING == 2
+                    visibilityFactor = sunVisibility;
+                #endif
 
-                float aboveFade = 1.0 - smoothstep(-20.0, 0.0, cameraPos.y - cloudAltitude);
-                float sunPlaneIntersect = (cloudAltitude - cameraPos.y) / worldLightVec.y;
-                vec2 posVector = cameraPos.xz + worldLightVec.xz * sunPlaneIntersect - tracePos.xz;
-                
-                float moonVisibility = abs(1.0 - moonPhase / 4.0);
-                float sunMult = mix(moonVisibility, 0.75, sunVisibility);
-                float falloff = exp((1.0 - max0(1.0 - length(posVector) / cloudLightRadius)) * -6.0) * aboveFade * sunMult;
+                if (visibilityFactor > 0.0) {
+                    vec3 worldLightVec = mat3(gbufferModelViewInverse) * sunVec;
+                    float cloudLightRadius = 375.0;
 
-                cloudShading += falloff * 6.5 * mix(1.0, (lTracePos - minPlaneDistance) / (maxPlaneDistance - minPlaneDistance), 0.7);
+                    float aboveFade = 1.0 - smoothstep(-20.0, 0.0, cameraPos.y - cloudAltitude);
+                    float sunPlaneIntersect = (cloudAltitude - cameraPos.y) / worldLightVec.y;
+                    vec2 posVector = cameraPos.xz + worldLightVec.xz * sunPlaneIntersect - tracePos.xz;
+
+                    float moonVisibility = abs(1.0 - moonPhase / 4.0);
+                    float sunMult = mix(moonVisibility, 0.75, sunVisibility);
+                    float falloff = exp((1.0 - max0(1.0 - length(posVector) / cloudLightRadius)) * -6.0) * aboveFade * sunMult;
+
+                    float sunCloudMult = clamp01(falloff * 2.5 * mix(1.0, (lTracePos - minPlaneDistance) / (maxPlaneDistance - minPlaneDistance), 0.6));
+
+                    vec3 bloodMoonCloudColor = vec3(1.0);
+                    #if BLOOD_MOON > 0
+                        bloodMoonCloudColor = mix(bloodMoonCloudColor, vec3(0.302, 0.0078, 0.0078) * 5, getBloodMoon(sunVisibility));
+                    #endif
+
+                    cloudLightColor += bloodMoonCloudColor * sunCloudMult * 0.11 * visibilityFactor;
+                    cloudShading += sunCloudMult * 1.5 * visibilityFactor;
+                }
+            #endif
+
+            #if BLOOD_MOON > 0
+                vec3 hsvCloudLightColor = rgb2hsv(cloudLightColor);
+                cloudLightColor = mix(cloudLightColor, hsv2rgb(vec3(0, max(0.66, hsvCloudLightColor.y), hsvCloudLightColor.z)), getBloodMoon(sunVisibility));
+            #endif
+
+            #ifdef AURORA_INFLUENCE
+                cloudLightColor = getAuroraAmbientColor(cloudLightColor, viewPos, 0.1, AURORA_CLOUD_INFLUENCE_INTENSITY, 0.75);
             #endif
 
             vec3 colorSample = cloudAmbientColor * 0.95 * (1.0 - 0.35 * cloudShading) + cloudLightColor * (0.1 + cloudShading);
-            #ifdef EPIC_THUNDERSTORM
+
+            #ifdef RAIN_ATMOSPHERE
+                // Lightning flashes around lightning bolt position
                 vec3 lightningPos = getLightningPos(tracePos - cameraPos, lightningBoltPosition.xyz, false);
                 vec2 lightningAdd = lightningFlashEffect(lightningPos, vec3(1.0), 450.0, 0.0, 0) * isLightningActive() * 10.0;
                 colorSample += lightningAdd.y;
+
+                // Thunderstorm cloud highlights (randomly appear in stormy weather)
+                float highlightBoost = getThunderstormCloudHighlights(tracePos, cameraPos.xz, lTracePos, minPlaneDistance, maxPlaneDistance, 0.005);
+                colorSample += highlightBoost;
             #endif
-            vec3 cloudSkyColor = GetSky(VdotU, VdotS, dither, true, false);
+
+            vec3 cloudSkyColor = GetSky(VdotU, VdotS, dither, isEyeInWater == 0, false);
             #ifdef ATM_COLOR_MULTS
                 cloudSkyColor *= sqrtAtmColorMult; // C72380KD - Reduced atmColorMult impact on some things
             #endif
             float distanceRatio = (distanceThreshold - lTracePosXZ) / distanceThreshold;
             float cloudFogFactor = pow2(clamp(distanceRatio, 0.0, 1.0)) * 0.75;
             float nightCloudRemove = NIGHT_CLOUD_UNBOUND_REMOVE * (1.0 - sunVisibility) * -1 + 1.0; // mapped to 1 to 0 range
-            cloudMult *= CLOUD_TRANSPARENCY * nightCloudRemove;
+
+            #if defined DOUBLE_REIM_CLOUDS && CLOUD_REIMAGINED_LAYER2_TRANSPARENCY != 20
+                if (cloudAltitude != cloudAlt1i) { // second layer uses custom transparency
+                    cloudMult *= (CLOUD_REIMAGINED_LAYER2_TRANSPARENCY * 0.05) * nightCloudRemove;
+                } else {
+                    cloudMult *= CLOUD_TRANSPARENCY * nightCloudRemove;
+                }
+            #else
+                cloudMult *= CLOUD_TRANSPARENCY * nightCloudRemove;
+            #endif
+
             float skyMult1 = 1.0 - 0.2 * (1.0 - skyFade) * max(sunVisibility2, nightFactor);
             float skyMult2 = 1.0 - 0.33333 * skyFade;
             colorSample = mix(cloudSkyColor, colorSample * skyMult1, cloudFogFactor * skyMult2);

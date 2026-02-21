@@ -27,12 +27,8 @@ vec4 DrawOverworldBeams(float VdotU, vec3 playerPos, vec3 viewPos) {
         vec4 beams = vec4(0.0);
         float gradientMix = 1.0;
 
-        #if defined SPOOKY && BLOOD_MOON > 0
-            auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-            beamCol *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-        #endif
         #ifdef AURORA_INFLUENCE
-            beamCol = mix(AuroraAmbientColor(beamCol, viewPos), beamCol, auroraSpookyMix) * OVERWORLD_BEAMS_INTENSITY;
+            beamCol = getAuroraAmbientColor(beamCol, viewPos, 1.0, AURORA_CLOUD_INFLUENCE_INTENSITY, 0.85) * OVERWORLD_BEAMS_INTENSITY;
         #endif
 
         for(int i = 0; i < sampleCount; i++) {
@@ -59,6 +55,9 @@ vec4 DrawOverworldBeams(float VdotU, vec3 playerPos, vec3 viewPos) {
         beams.rgb *= beams.a * beams.a * beams.a * 5000.0;
         beams.rgb *= sqrt(beams.rgb);
         result = sqrt(beams.rgb);
+
+        if(any(isnan(result.rgb))) result.rgb = vec3(0.0);
+
         return vec4(result * visibility / sampleCount, beams.a);
     }
     return vec4(1.0);

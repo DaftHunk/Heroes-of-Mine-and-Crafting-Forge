@@ -129,7 +129,7 @@ void main() {
             for (int i = 0; i < sampleCount; i++, coord += velocity) {
                 vec2 coordb = clamp(coord, doublePixel, 1.0 - doublePixel);
                 vec3 sampleb = texture2DLod(colortex0, coordb, 0).rgb;
-                
+
                 #ifdef MOTION_BLUR_BLOOM_FOG_FIX
                     float z1 = texture2D(depthtex1, coordb).r;
                     vec4 screenPos = vec4(coordb, z1, 1.0);
@@ -144,7 +144,7 @@ void main() {
                 mbwg += 1.0;
             }
             color /= mbwg;
-            
+
             #ifdef MOTION_BLUR_BLOOM_FOG_FIX
                 // Reapply bloom fog because we removed it from our samples
                 color *= GetBloomFog(lViewPos);

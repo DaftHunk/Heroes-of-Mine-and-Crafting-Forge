@@ -15,7 +15,7 @@
     #if LAVA_VARIATION == 1 // Adaptive Noise
         lavaNoiseColor += min(pow2(pow2(lavaNoiseEmission * 0.50)), 0.2) * LAVA_TEMPERATURE * 0.65 + 0.1;
         #ifdef NETHER
-            #ifdef DH_TERRAIN   
+            #ifdef DH_TERRAIN
             if ((worldPos.y > 30 && worldPos.y < 32.3 || (worldPos.y > 35 && worldPos.y < 37.3) && dhLavaSides < 0.5) && BLOCK_LAVA_STILL_DEFINE) { // lava lakes in the nether
             #else
             if ((worldPos.y > 30 && worldPos.y < 32.3 || (worldPos.y > 35 && worldPos.y < 37.3)) && BLOCK_LAVA_STILL_DEFINE) {

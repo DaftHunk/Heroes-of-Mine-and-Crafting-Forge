@@ -35,21 +35,11 @@
     vec3 GetAtmColorMult() {
         vec3 atmColorMult;
 
-        float spookyIntensityNight = 1.0;
-        float spookyIntensityRain = 1.0;
-        float spookyIntensityNether = 1.0;
-        float spookyIntensityEnd = 1.0;
-        #ifdef SPOOKY
-            spookyIntensityNight = 0.5;
-            spookyIntensityRain = 0.75;
-            spookyIntensityNether = 0.3;
-        #endif
-
         #ifdef OVERWORLD
             vec3 morningAtmMult = vec3(ATM_MORNING_R, ATM_MORNING_G, ATM_MORNING_B) * ATM_MORNING_I;
             vec3 noonAtmMult = vec3(ATM_NOON_R, ATM_NOON_G, ATM_NOON_B) * ATM_NOON_I;
-            vec3 nightAtmMult = vec3(ATM_NIGHT_R, ATM_NIGHT_G, ATM_NIGHT_B) * ATM_NIGHT_I * spookyIntensityNight;
-            vec3 rainAtmMult = vec3(ATM_RAIN_R, ATM_RAIN_G, ATM_RAIN_B) * ATM_RAIN_I * spookyIntensityRain;
+            vec3 nightAtmMult = vec3(ATM_NIGHT_R, ATM_NIGHT_G, ATM_NIGHT_B) * ATM_NIGHT_I;
+            vec3 rainAtmMult = vec3(ATM_RAIN_R, ATM_RAIN_G, ATM_RAIN_B) * ATM_RAIN_I;
 
             atmColorMult = mix(noonAtmMult, morningAtmMult, invNoonFactor2);
             atmColorMult = mix(nightAtmMult, atmColorMult, sunVisibility2);
@@ -64,14 +54,10 @@
             atmColorMult = endAtmMult;
         #endif
 
-        #ifdef SPOOKY
-            return atmColorMult;
+        #ifdef COLOR_MULTIPLIER_COMPARISON
+            return gl_FragCoord.x < mix(0.5, 0.0, isSneaking) * viewWidth ? vec3(1.0) : atmColorMult;
         #else
-            #ifdef COLOR_MULTIPLIER_COMPARISON
-                return gl_FragCoord.x < mix(0.5, 0.0, isSneaking) * viewWidth ? vec3(1.0) : atmColorMult;
-            #else
-                return atmColorMult;
-            #endif
+            return atmColorMult;
         #endif
     }
 

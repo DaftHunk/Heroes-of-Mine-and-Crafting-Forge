@@ -122,7 +122,7 @@ void main() {
         color = shadow2D(shadowtex0, vec3(0.5)); // To Activate Shadowmap in Nether
     #endif
 
-    #if DRAGON_DEATH_EFFECT_INTERNAL > 0 && !defined GBUFFERS_LINE
+    #if DRAGON_DEATH_EFFECT_INTERNAL == 1 && !defined GBUFFERS_LINE
         if (color.a == 1.0 && GetLuminance(color.rgb) > 0.9999 && color.g > 0.9999 && color.b > 0.9999) {
             discard;
         }

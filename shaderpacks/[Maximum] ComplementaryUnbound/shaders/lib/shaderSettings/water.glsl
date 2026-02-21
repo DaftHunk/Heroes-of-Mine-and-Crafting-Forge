@@ -15,7 +15,7 @@
 
 
 #define SHADER_WATER
-#define FRESNEL_MULTIPLIER 0.5 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+#define FRESNEL_MULTIPLIER 1.0 //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
 #define WATER_GENERATED_NORMALS
 
 #define COMP_WATER_TWEAKS
@@ -24,5 +24,7 @@
 
 #ifdef BRIGHT_CAVE_WATER
 #endif
+
+// #define MIRROR_TINTED_GLASS_OPAQUE
 
 #endif

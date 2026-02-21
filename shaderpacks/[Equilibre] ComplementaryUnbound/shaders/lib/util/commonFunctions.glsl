@@ -43,7 +43,11 @@ float GetSkyLightFactor(vec2 lmCoordM, vec3 shadowMult) {
             #endif
         #endif
     #else
-        float skyLightFactor = dot(shadowMult, shadowMult) * 0.333333;
+        #if WORLD_SPACE_REFLECTIONS_INTERNAL == -1 || MC_VERSION < 12109
+            float skyLightFactor = dot(shadowMult, shadowMult) * 0.333333;
+        #else
+            float skyLightFactor = lmCoordM.y;
+        #endif
     #endif
 
     return skyLightFactor;
@@ -300,6 +304,10 @@ vec4 smoothstep1(vec4 x) {
     return x * x * (3.0 - 2.0 * x);
 }
 
+float dot3(vec3 x) {
+    return dot(x, x);
+}
+
 #define rcp(x) (1.0 / (x))
 
 float maxOf(vec2 v) { return max(v.x, v.y); }
@@ -400,6 +408,24 @@ float fuzzyOr(float a, float b) {
     return clamp01(a + b - (a * b));
 }
 
+float getBloodMoon(float sunVisibility) {
+    float visibility = 0.0;
+    #if BLOOD_MOON == 0
+        return visibility;
+    #else
+        visibility = 1.0 - sunVisibility;
+
+        // BLOOD_MOON defines how many nights between blood moons
+        // 1 = every night, 2 = every other night, 5 = every 5th night, etc.
+        if ((worldDay % BLOOD_MOON) != 0) visibility = 0.0;
+        #if BLOOD_MOON > 1
+            visibility *= float(min(worldDay, 1)); // no blood moon on day 0
+            if (moonPhase == 4) visibility = 0.0; // no blood moon on new moon
+        #endif
+    #endif
+    return clamp01(visibility);
+}
+
 bool isViewMoving() {
     if (cameraPosition == previousCameraPosition) {
         mat3 previousModelView = mat3(gbufferPreviousModelView);
@@ -457,16 +483,6 @@ vec2 lightningFlashEffect(vec3 lightningPos, vec3 normal, float lightDistance, f
     return vec2(lightningLightX * NdotL, lightningLightY);
 }
 
-float getBloodMoon(int moonPhase, float sunVisibility) {
-    float visibility = 1.0 - sunVisibility;
-    #if BLOOD_MOON == 0
-        visibility = 0.0;
-    #elif BLOOD_MOON == 1
-        visibility -= moonPhase;
-    #endif
-    return clamp01(visibility);
-}
-
 void redstoneIPBR(inout vec3 color, inout float emission) {
     #ifdef REDSTONE_IPBR
         if (color.r * REDSTONE_IPBR_R > max(color.b * 1.15 * REDSTONE_IPBR_B, color.g * 3.5 * REDSTONE_IPBR_G) * 0.97) {
@@ -488,23 +504,23 @@ float getStarEdgeFactor(vec2 fractPart, float starShape, float softness) {
     vec2 squareToCircle = fractPart - 0.5;
     float distFromCenter = length(squareToCircle);
     float maxComponent = max(abs(squareToCircle.x), abs(squareToCircle.y));
-    
+
     // Interpolate between square and circle
     float shapeFactor = mix(maxComponent, distFromCenter, starShape);
-    
+
     // Adjust the edge transition
     float edgeWidth = 0.05 + softness * 0.5;
     return smoothstep(0.5, 0.5 - edgeWidth, shapeFactor);
 }
 
-vec3 GetStarColor(vec2 starCoord, vec3 baseColor, vec3 starColor1, vec3 starColor2, vec3 starColor3, float starColorVariation) {   
+vec3 GetStarColor(vec2 starCoord, vec3 baseColor, vec3 starColor1, vec3 starColor2, vec3 starColor3, float starColorVariation) {
     if (starColorVariation > 0.0) {
         int starColorDecider = int(mod((starCoord.x + starCoord.y) * 1000.0, 3.0));
-        vec3 chosenColor = (starColorDecider == 0) ? starColor1 : 
+        vec3 chosenColor = (starColorDecider == 0) ? starColor1 :
                            (starColorDecider == 1) ? starColor2 : starColor3;
-        
+
         baseColor = mix(chosenColor, vec3(GetStarNoise(starCoord)), (1.0 - starColorVariation) * 0.5);
-    }    
+    }
     return baseColor;
 }
 
@@ -561,20 +577,20 @@ float DoAutomaticEmission(inout bool noSmoothLighting, inout bool noDirectionalS
 
 float getDHFadeFactor(vec3 playerPosition) {
     float horizontalDistance = length(playerPosition.xz);
-    
+
     float verticalDistance = abs(playerPosition.y);
-    
+
     float fadeTransitionLength = (far - near) * RENDER_EDGE_FADE_TRANSITION_PERCENT;
     fadeTransitionLength = max(fadeTransitionLength, 1.0);
     float fadeStartPoint = far - fadeTransitionLength;
-    fadeStartPoint = max(near + 0.01 * (far - near), fadeStartPoint); 
+    fadeStartPoint = max(near + 0.01 * (far - near), fadeStartPoint);
     if (fadeStartPoint >= far) {
-        fadeStartPoint = far - max(0.001 * (far - near), 0.1); 
+        fadeStartPoint = far - max(0.001 * (far - near), 0.1);
     }
 
     float horizontalFade = smoothstep(far, fadeStartPoint, horizontalDistance);
     float verticalFade = smoothstep(far, fadeStartPoint, verticalDistance);
-    
+
     return min(horizontalFade, verticalFade);
 }
 
@@ -697,4 +713,38 @@ float smoothHash12(vec2 x) {
     f = f * f * (3.0 - 2.0 * f);
     vec2 a = vec2(1.0, 0.0);
     return mix(mix(hash12(p + a.yy), hash12(p + a.xy), f.x), mix(hash12(p + a.yx), hash12(p + a.xx), f.x), f.y);
+}
+
+float getThunderstormCloudHighlights(vec3 tracePos, vec2 cameraPos, float lTracePos, float minPlaneDistance, float maxPlaneDistance, float distanceFalloff) {
+    if (thunderFactor == 0.0) return 0.0;
+    float eventTime = frameTimeCounter * 3;
+    float eventPeriod = 8.0; // seconds between possible events
+    float eventPhase = mod(eventTime, eventPeriod);
+    float eventSeed = floor(eventTime / eventPeriod);
+    float eventTrigger = hash11(eventSeed);
+
+    bool highlightActive = (eventPhase < 6.5) && (eventTrigger > 0.77);
+
+    if (!highlightActive) return 0.0;
+
+    float highlightBoost = 0.0;
+    float positionTime = floor(frameTimeCounter * 2.0) * 0.5;
+
+    for (int h = 0; h < 4; h++) {
+        float posSeed = float(h) * 24.0 + positionTime * 0.007;
+
+        vec2 highlightOffset = (hash21(posSeed) - 0.5) * 1600.0;
+        vec2 highlightPos = cameraPos + highlightOffset * 1.2;
+        float dist = length(tracePos.xz - highlightPos);
+
+        float flickerSeed = frameTimeCounter * 28.0 + float(h) * 2.5;
+        float flickerNoise = hash11(flickerSeed * 0.1) * 0.6 + 0.55; // add subtle randomness
+        float fade = smoothstep(0.0, 1.0, sin(flickerSeed) * 0.5 + 0.5) * flickerNoise;
+
+        float falloff = exp(-dist * distanceFalloff) * fade;
+        float shadowMix = mix(1.0, (lTracePos - minPlaneDistance) / (maxPlaneDistance - minPlaneDistance), 0.85);
+
+        highlightBoost += falloff * shadowMix * 0.5 * thunderFactor;
+    }
+    return highlightBoost;
 }

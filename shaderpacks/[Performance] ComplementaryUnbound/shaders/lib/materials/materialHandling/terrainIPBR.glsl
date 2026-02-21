@@ -48,7 +48,7 @@ if (mat < 11024) {
                                                     if (color.r < max(color.b * 1.15, color.g * 1.1) * 0.95) emission = 0.0;
                                                 #endif
                                             #else
-                                                emission *= int(color.r > max(color.b * 1.15, color.g * 2.5) * 0.95) * getBloodMoon(moonPhase, sunVisibility);
+                                                emission = int(color.r > max(color.b * 1.15, color.g * 2.5) * 0.95) * getBloodMoon(sunVisibility);
                                             #endif
                                             emission *= EMISSIVE_FLOWERS_STRENGTH;
                                         }
@@ -85,7 +85,7 @@ if (mat < 11024) {
                                     float factor = color.g;
                                     smoothnessG = factor * 0.5;
                                     highlightMult = factor * 4.0 + 2.0;
-                                    
+
                                     #ifdef GBUFFERS_TERRAIN
                                         float fresnel = clamp(1.0 + dot(normalM, normalize(viewPos)), 0.0, 1.0);
                                         highlightMult *= 1.0 - pow2(pow2(fresnel));
@@ -148,13 +148,13 @@ if (mat < 11024) {
                                                     if (color.r < max(color.b * 1.15, color.g * 1.1) * 0.95) emission = 0.0;
                                                 #endif
                                             #else
-                                                emission *= int(color.r > max(color.b * 1.15, color.g * 2.5) * 0.95) * getBloodMoon(moonPhase, sunVisibility);
+                                                emission = int(color.r > max(color.b * 1.15, color.g * 2.5) * 0.95) * getBloodMoon(sunVisibility);
                                             #endif
                                             emission *= EMISSIVE_FLOWERS_STRENGTH;
                                         }
                                     #endif
                                 }
-                            } else { 
+                            } else {
                                 if (mat < 10025) { // Auto Modded Ores - Stone
                                     #ifdef GLOWING_ORE_MODDED
                                         #include "/lib/materials/specificMaterials/terrain/autoModdedOres.glsl"
@@ -331,7 +331,8 @@ if (mat < 11024) {
                                     vec2 coordM = abs(fractPos.xz - 0.5);
                                     bool cauldronInteriorCheck = (max(coordM.x, coordM.y) < 0.375 && fractPos.y > 0.3);
                                     #ifdef GBUFFERS_COLORWHEEL
-                                        cauldronInteriorCheck = maxAll(abs(fract(blockUV) - vec3(0.5))) < 0.5;
+                                        vec2 centered = abs(fract(texCoord));
+                                        cauldronInteriorCheck = max(centered.x, centered.y) > 0.9;
                                     #endif
                                     if (cauldronInteriorCheck && NdotU > 0.9) {
                                         #ifdef SHADER_WATER
@@ -344,7 +345,7 @@ if (mat < 11024) {
                                                 smoothnessG = 0.3;
                                                 smoothnessD = 1.0;
                                             #endif
-                                            
+
                                             #ifdef GBUFFERS_TERRAIN
                                                 #ifdef WATER_CAULDRON_COLOR_OVERRIDE
                                                     #undef WATERCOLOR_CHANGED
@@ -371,7 +372,8 @@ if (mat < 11024) {
                                     vec2 coordM = abs(fractPos.xz - 0.5);
                                     bool cauldronInteriorCheck = (max(coordM.x, coordM.y) < 0.375 && fractPos.y > 0.3);
                                     #ifdef GBUFFERS_COLORWHEEL
-                                        cauldronInteriorCheck = maxAll(abs(fract(blockUV) - vec3(0.5))) < 0.5;
+                                        vec2 centered = abs(fract(texCoord));
+                                        cauldronInteriorCheck = max(centered.x, centered.y) > 0.9;
                                     #endif
                                     if (cauldronInteriorCheck && NdotU > 0.9) {
 
@@ -392,7 +394,8 @@ if (mat < 11024) {
                                     vec2 coordM = abs(fractPos.xz - 0.5);
                                     bool cauldronInteriorCheck = (max(coordM.x, coordM.y) < 0.375 && fractPos.y > 0.3);
                                     #ifdef GBUFFERS_COLORWHEEL
-                                        cauldronInteriorCheck = maxAll(abs(fract(blockUV) - vec3(0.5))) < 0.5;
+                                        vec2 centered = abs(fract(texCoord));
+                                        cauldronInteriorCheck = max(centered.x, centered.y) > 0.9;
                                     #endif
 
                                     if (cauldronInteriorCheck && NdotU > 0.9) {
@@ -556,7 +559,7 @@ if (mat < 11024) {
                                 }
                             } else {
                                 if (mat < 10124) { // Dripstone+, Daylight Detector
-                                    smoothnessG = color.r * 0.35 + 0.2;
+                                    smoothnessG = pow2(GetLuminance(color.rgb)) * 0.9 + 0.1;
                                     smoothnessD = smoothnessG;
 
                                     #ifdef COATED_TEXTURES
@@ -862,12 +865,12 @@ if (mat < 11024) {
                                         DoOceanBlockTweaks(smoothnessD);
                                     #endif
 
-                                    #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+                                    #if RAIN_PUDDLES >= 1
                                         noPuddles = 1.0;
                                     #endif
                                 }
                                 else /*if (mat < 10240)*/ { // Red Sand
-                                    smoothnessG = pow(color.r * 1.08, 16.0) * 2.0;
+                                    smoothnessG = pow(color.r, 10.0);
                                     smoothnessG = min1(smoothnessG);
                                     smoothnessD = smoothnessG;
                                     highlightMult = 2.0;
@@ -876,7 +879,7 @@ if (mat < 11024) {
                                         noiseFactor = 0.77;
                                     #endif
 
-                                    #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+                                    #if RAIN_PUDDLES >= 1
                                         noPuddles = 1.0;
                                     #endif
                                 }
@@ -899,7 +902,7 @@ if (mat < 11024) {
                                 }
                                 else /*if (mat < 10248)*/ { // Red Sandstone+
                                     highlightMult = 2.0;
-                                    smoothnessG = pow2(pow2(color.r * 1.08)) * 0.5;
+                                    smoothnessG = pow2(pow2(color.r)) * 0.35;
                                     smoothnessG = min1(smoothnessG);
                                     smoothnessD = smoothnessG;
 
@@ -948,7 +951,7 @@ if (mat < 11024) {
                                     #include "/lib/materials/specificMaterials/terrain/ironBlock.glsl"
                                 }
                                 else /*if (mat < 10264)*/ { // ACT solid blocks with no properties
-                                    
+
                                 }
                             } else {
                                 if (mat < 10268) { // Iron Block, Heavy Weighted Pressure Plate
@@ -1249,7 +1252,7 @@ if (mat < 11024) {
                                         emission = dot(color.rgb, color.rgb) * 0.3;
                                         overlayNoiseEmission = 0.5;
                                     #endif
-                                    
+
                                     #if ALTERNATIVE_AMETHYST_STYLE == 1
                                         smoothnessG = max(sqrt(1.0 - factor), 0.04);
                                         smoothnessD = factor * 2;
@@ -1296,7 +1299,7 @@ if (mat < 11024) {
                                         color.rgb *= 1.5;
                                         color.g *= 0.6;
                                         color.rgb = saturateColors(color.rgb, 0.7);
-                                    #endif                                
+                                    #endif
 
                                     #ifdef COATED_TEXTURES
                                         noiseFactor = 0.66;
@@ -1539,14 +1542,6 @@ if (mat < 11024) {
                                     #endif
 
                                     overlayNoiseIntensity = 0.3;
-
-                                    #ifdef SPOOKY
-                                        float noiseAdd = 0.0;
-                                        #ifdef GBUFFERS_TERRAIN
-                                            noiseAdd = hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.000001, vec3(100)));
-                                        #endif
-                                        emission *= mix(0.0, 1.0, smoothstep(0.2, 0.9, texture2DLod(noisetex, vec2(frameTimeCounter * 0.025 + noiseAdd), 0.0).r));
-                                    #endif
                                 }
                             }
                         } else {
@@ -1684,7 +1679,7 @@ if (mat < 11024) {
                                     #else
                                         float factor = pow2(pow2(min(dot(color.rgb, color.rgb), 2.5) / 2.5));
                                     #endif
-                                    
+
                                     emission = pow2(color.b) * 1.6 + 2.2 * factor;
                                     emission *= 0.4 + max0(0.6 - 0.006 * lViewPos);
 
@@ -1707,7 +1702,7 @@ if (mat < 11024) {
                                     if (color.g > 0.22) { // Emissive Part
                                         emission = pow2(pow2(color.r)) * 4.0;
 
-                                        #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+                                        #if RAIN_PUDDLES >= 1
                                             noPuddles = color.g * 4.0;
                                         #endif
 
@@ -1875,8 +1870,8 @@ if (mat < 11024) {
                                         #ifdef PURPLE_END_FIRE_INTERNAL
                                             if (color.g > 0.5) color.rgb = changeColorFunction(color.rgb, 2.0, colorEndBreath, 1.0);
                                         #endif
-                                    } 
-                                    
+                                    }
+
                                     #ifdef GBUFFERS_TERRAIN
                                         else if (abs(NdotU) < 0.5) {
                                             #ifndef IPBR_COMPAT_MODE
@@ -1932,7 +1927,7 @@ if (mat < 11024) {
                                         #endif
                                     }
 
-                                    #if defined GBUFFERS_TERRAIN && ! defined GBUFFERS_COLORWHEEL 
+                                    #if defined GBUFFERS_TERRAIN && !defined GBUFFERS_COLORWHEEL
                                         else { // Directional Self-light Effect
                                             vec3 fractPos = abs(fract(playerPos + cameraPosition) - 0.5);
                                             float maxCoord = max(fractPos.x, max(fractPos.y, fractPos.z));
@@ -2194,7 +2189,7 @@ if (mat < 11024) {
                                     emission = 4.3 * max0(color.r - color.b);
                                     emission += min(pow2(pow2(0.75 * dot(color.rgb, color.rgb))), 5.0);
                                     color.gb *= pow(vec2(0.8, 0.7), vec2(sqrt(emission) * 0.5));
-                                    
+
                                     #ifdef DISTANT_LIGHT_BOKEH
                                         DoDistantLightBokehMaterial(color, vec4(1.0, 0.6, 0.2, 1.0), emission, 5.0, lViewPos);
                                     #endif
@@ -2538,8 +2533,8 @@ if (mat < 11024) {
                                 }
                                 else /*if (mat < 10648)*/ { // Repeater, Comparator
                                     noSmoothLighting = true;
-                                    
-                                    #if ANISOTROPIC_FILTER > 0
+
+                                    #if ANISOTROPIC_FILTER > 0 && !defined DURING_WORLDSPACE_REF
                                         color = texture2D(tex, texCoord); // Fixes artifacts
                                         color.rgb *= glColor.rgb;
                                     #endif
@@ -2575,7 +2570,7 @@ if (mat < 11024) {
                                     overlayNoiseIntensity = 0.3;
                                 }
                                 else /*if (mat < 10656)*/ { // Campfire:Lit
-                                    #ifdef GBUFFERS_TERRAIN 
+                                    #ifdef GBUFFERS_TERRAIN
                                         vec3 fractPos = fract(playerPos + cameraPosition) - 0.5;
                                         #ifdef GBUFFERS_COLORWHEEL
                                             fractPos = blockUV - 0.5;
@@ -2612,7 +2607,7 @@ if (mat < 11024) {
                                                     gradient = mix(1.0, 0.0, handUV + 0.4);
                                                 #endif
                                             #endif
-                                            #ifdef END 
+                                            #ifdef END
                                                 colorFire = colorEndBreath;
                                                 #ifdef GBUFFERS_TERRAIN
                                                     gradient = mix(1.0, 0.0, clamp01(blockUV.y + 0.07 - 1.1 * clamp01(sin(texture2DLod(noisetex, vec2(frameTimeCounter * 0.01), 0.0).r) * blockUV.y)));
@@ -2881,7 +2876,7 @@ if (mat < 11024) {
                                                     if (color.r < max(color.b * 1.15, color.g * 1.1) * 0.95) emission = 0.0;
                                                 #endif
                                             #else
-                                                emission *= int(color.r > max(color.b * 1.15, color.g * 2.5) * 0.95) * getBloodMoon(moonPhase, sunVisibility);
+                                                emission = int(color.r > max(color.b * 1.15, color.g * 2.5) * 0.95) * getBloodMoon(sunVisibility);
                                             #endif
                                             emission *= EMISSIVE_FLOWERS_STRENGTH;
                                         }
@@ -2940,7 +2935,7 @@ if (mat < 11024) {
                                             vec3 playerPosM = playerPos + relativeEyePosition;
                                             if (length(playerPosM) < 3.0 && length(playerPosM.y) > 1.1)
                                             if (color.r < 0.26 && color.r > 0.257 && color.g < 0.2 && color.b < 0.17 && blockUV.y > 0.9999 // A lot of hardcoded stuff
-                                            &&(blockUV.x > 0.625 && blockUV.z < 0.5 && blockUV.z > 0.375 
+                                            &&(blockUV.x > 0.625 && blockUV.z < 0.5 && blockUV.z > 0.375
                                             || blockUV.x < 0.5 && blockUV.x > 0.25 && blockUV.z < 0.1875
                                             || blockUV.x < 0.375 && blockUV.z > 0.8125)) {
                                                 float randomPos = step(0.5, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.0001, vec3(100))));
@@ -3544,8 +3539,8 @@ if (mat < 11024) {
                                         #else
                                             emission = 2.2;
                                         #endif
-                                    } 
-                                    
+                                    }
+
                                     #ifdef GBUFFERS_TERRAIN
                                         else if (abs(NdotU) < 0.5) {
                                             #ifndef IPBR_COMPAT_MODE
@@ -3576,8 +3571,8 @@ if (mat < 11024) {
 
                                     if (color.g - color.r > 0.2 && abs(color.r - color.b) < 0.1 || lum > 0.8) {
                                         emission = 4.0 * lum;
-                                    } 
-                                    
+                                    }
+
                                     #ifdef DISTANT_LIGHT_BOKEH
                                         //DoDistantLightBokehMaterial(color, vec4(1.0, 0.6, 0.2, 1.0), emission, 5.0, lViewPos);
                                     #endif

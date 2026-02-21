@@ -1,7 +1,6 @@
 // ============================== Step 1: Color Prep ============================== //
 #include "/lib/shaderSettings/water.glsl"
 vec3 glColorM = vec3(0.43, 0.6, 0.8);
-SSBLAlpha = 0.0;
 #if MC_VERSION >= 11300
     #if WATERCOLOR_MODE >= 2
         glColorM = glColor.rgb;
@@ -60,8 +59,9 @@ SSBLAlpha = 0.0;
 #endif
 
 #if defined GBUFFERS_WATER || defined DH_WATER
+    SSBLAlpha = 0.0;
     lmCoordM.y = min(lmCoord.y * 1.07, 1.0); // Iris/Sodium skylight inconsistency workaround
-    
+
     float fresnel2 = pow2(fresnel);
     float fresnel4 = pow2(fresnel2);
 
@@ -77,7 +77,7 @@ SSBLAlpha = 0.0;
     #if WATER_MAT_QUALITY >= 2 || WATER_STYLE >= 2
         #define WATER_SPEED_MULT_M WATER_SPEED_MULT * 0.018
         float rawWind = frameTimeCounter * WATER_SPEED_MULT_M;
-        vec2 wind = vec2(rawWind, 0.0);
+        vec2 wind = vec2(0.0, -rawWind);
         vec3 worldPos = playerPos + cameraPosition;
         vec2 waterPos = worldPos.xz;
         #if WATER_STYLE < 3 && defined GBUFFERS_WATER
@@ -86,11 +86,11 @@ SSBLAlpha = 0.0;
         #endif
         waterPos = 0.032 * (waterPos + worldPos.y * 2.0);
         #ifdef CLEAR_WATER_SPOTS
-            waterBumpNoise = 1 - clamp01((1 - smoothstep(0, 0.5, texture2DLod(noisetex, waterPos.x * 0.045 + waterPos * 0.042 + wind * 0.006, 0.0).g)) * 2) * 0.85;
+            waterBumpNoise = 1 - clamp01((1 - smoothstep(0.0, 0.5, texture2DLod(noisetex, waterPos.x * 0.045 + waterPos * 0.042 + wind * 0.006, 0.0).g)) * 2) * 0.85;
         #endif
     #endif
 
-    #if WATER_STYLE >= 2 || (RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE) && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2
+    #if WATER_STYLE >= 2 || RAIN_PUDDLES >= 1 && WATER_STYLE == 1 && WATER_MAT_QUALITY >= 2
         vec3 normalMap = vec3(0.0, 0.0, 1.0);
         #if WATER_STYLE >= 2
             vec2 waterPosM = waterPos;
@@ -135,7 +135,8 @@ SSBLAlpha = 0.0;
                 vec3 pNormalNoise1 = texture2DLod(noisetex, pNormalCoord1, 0.0).rgb;
                 vec3 pNormalNoise2 = texture2DLod(noisetex, pNormalCoord2, 0.0).rgb;
 
-                normalMap.xy = (pNormalNoise1.xy + pNormalNoise2.xy - vec2(1.0)) * pNormalMult;
+                normalMap.xy = (pNormalNoise1.xy + pNormalNoise2.yx - vec2(1.0)) * pNormalMult;
+                normalMap.xy *= 2.0 - 1.8 * fresnel2;
         #endif
 
             normalMap.z = sqrt(1.0 - (pow2(normalMap.x) + pow2(normalMap.y)));
@@ -260,7 +261,7 @@ SSBLAlpha = 0.0;
         } else { // Underwater
             noDirectionalShading = true;
 
-            reflectMult = FRESNEL_MULTIPLIER;
+            reflectMult = 0.5;
 
             #if MC_VERSION < 11300 && WATER_STYLE >= 3 && PIXEL_WATER == 0
                 color.a = 0.7;
@@ -273,6 +274,13 @@ SSBLAlpha = 0.0;
                     translucentMult.rgb *= 1.0 - 0.9 * max(0.5 * sqrt(fresnel4), fresnel4);
                 #endif
             #endif
+
+            #if WORLD_SPACE_REFLECTIONS_INTERNAL > 0
+                reflectMult = 1.0 / color.a;
+                fresnelM = 1.0;
+            #endif
+
+            reflectMult = clamp01(reflectMult * FRESNEL_MULTIPLIER);
         }
     #else
         shadowMult = vec3(0.0);

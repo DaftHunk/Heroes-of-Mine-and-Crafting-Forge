@@ -14,8 +14,20 @@ if (mat < 32008) {
                     bool isPane = false;
                     DoConnectedGlass(colorP, color, noGeneratedNormals, playerPos, worldGeoNormal, voxelID, isPane);
                 #endif
-                color.a = pow(color.a, 1.0 - fresnel * 0.65);
-                reflectMult = 0.75;
+                color.a = pow(color.a, 1.0 - fresnelM);
+                reflectMult = 1.0;
+
+                #ifndef MIRROR_TINTED_GLASS
+                    DoTranslucentTweaks(color, fresnelM, reflectMult, lViewPos);
+                #else
+                    color.a = color.a * 0.3 + 0.7;
+                    fresnelM = fresnelM * 0.5 + 0.5;
+                    reflectMult /= color.a;
+                    noGeneratedNormals = true;
+                    #ifdef MIRROR_TINTED_GLASS_OPAQUE
+                        color.a = 1.0;
+                    #endif
+                #endif
                 overlayNoiseAlpha = 0.95;
                 sandNoiseIntensity = 0.5;
                 mossNoiseIntensity = 0.5;

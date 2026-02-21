@@ -52,7 +52,7 @@ in vec3 vertexPos;
 
 in vec4 glColorRaw;
 
-#if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE || defined GENERATED_NORMALS || defined CUSTOM_PBR
+#if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     flat in vec3 binormal, tangent;
 #endif
 
@@ -64,6 +64,10 @@ in vec4 glColorRaw;
 
 #if ANISOTROPIC_FILTER > 0
     in vec4 spriteBounds;
+#endif
+
+#ifdef IRIS_FEATURE_FADE_VARIABLE
+    flat in float chunkFade;
 #endif
 
 //Pipeline Constants//
@@ -98,7 +102,7 @@ vec4 glColor = glColorRaw;
     vec3 lightVec = sunVec;
 #endif
 
-#if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE || defined GENERATED_NORMALS || defined CUSTOM_PBR
+#if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     mat3 tbnMatrix = mat3(
         tangent.x, binormal.x, normal.x,
         tangent.y, binormal.y, normal.y,
@@ -214,12 +218,8 @@ void DoOceanBlockTweaks(inout float smoothnessD) {
     #include "/lib/lighting/coloredBlocklight.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#if defined ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
-#endif
-
-#ifdef AURORA_INFLUENCE
-    #include "/lib/atmospherics/auroraBorealis.glsl"
 #endif
 
 #if SEASONS > 0 || defined MOSS_NOISE_INTERNAL || defined SAND_NOISE_INTERNAL
@@ -270,7 +270,7 @@ void main() {
     #ifdef GBUFFERS_COLORWHEEL
         float ao;
         vec4 overlayColor;
-        
+
         clrwl_computeFragment(color, color, lmCoord, ao, overlayColor);
         color.rgb = mix(color.rgb, overlayColor.rgb, overlayColor.a);
         lmCoord = clamp((lmCoord - 1.0 / 32.0) * 32.0 / 30.0, 0.0, 1.0);
@@ -291,7 +291,6 @@ void main() {
     vec3 worldGeoNormal = normalize(ViewToPlayer(geoNormal * 10000.0));
     vec3 dhColor = vec3(1.0);
     float purkinjeOverwrite = 0.0;
-    float SSBLAlpha = 1.0;
 
     bool isLightSource = false;
     if (lmCoord.x > 0.99 || blockLightEmission > 0) { // Mod support for light level 15 (and all light levels with iris 1.7) light sources
@@ -302,6 +301,7 @@ void main() {
         overlayNoiseIntensity = 0.0;
     }
 
+    #ifndef GBUFFERS_COLORWHEEL
     if (length(abs(worldGeoNormal.xz) - vec2(sqrt(0.5))) < 0.01) { // Auto SSS on unknown cross model blocks (modded)
         if (mat == 0) {
             subsurfaceMode = 1;
@@ -310,30 +310,6 @@ void main() {
         isFoliage = true;
         sandNoiseIntensity = 0.3, mossNoiseIntensity = 0.0;
     }
-    #ifdef EYES
-        #ifdef SPOOKY
-            vec3 eyes1 = vec3(0.0);
-            vec3 eyes2 = vec3(0.0);
-            float sideRandom = hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.00001, vec3(100)));
-            vec3 blockUVEyes = blockUV;
-            if (step(0.5, sideRandom) > 0.0) { // Randomly make eyes visible only on either the x or z axis
-                blockUVEyes.x = 0.0;
-            } else {
-                blockUVEyes.z = 0.0;
-            }
-            float spookyEyesFrequency = EYE_FREQUENCY;
-            float spookyEyesSpeed = EYE_SPEED;
-
-            float randomEyesTime = 24000 * hash1(worldDay * 3); // Effect happens randomly throughout the day
-            int moreEyesEffect = (int(hash1(worldDay / 2)) % (2 * 24000)) + int(randomEyesTime);
-            if (worldTime > moreEyesEffect && worldTime < moreEyesEffect + 30) { // 30 in ticks - 1.5s, how long the effect will be on
-                spookyEyesFrequency = 20.0; // make eyes appear everywhere
-            }
-            if ((blockUVEyes.x > 0.15 && blockUVEyes.x < 0.43 || blockUVEyes.x < 0.85 && blockUVEyes.x > 0.57 || blockUVEyes.z > 0.15 && blockUVEyes.z < 0.43 || blockUVEyes.z < 0.85 && blockUVEyes.z > 0.57) && blockUVEyes.y > 0.42 && blockUVEyes.y < 0.58 && abs(clamp01(dot(normal, upVec))) < 0.99) eyes1 = vec3(1.0); // Eye Shape 1 Horizontal
-            if ((blockUVEyes.x > 0.65 && blockUVEyes.x < 0.8 || blockUVEyes.x < 0.35 && blockUVEyes.x > 0.2 || blockUVEyes.z > 0.65 && blockUVEyes.z < 0.8 || blockUVEyes.z < 0.35 && blockUVEyes.z > 0.2) && blockUVEyes.y > 0.3 && blockUVEyes.y < 0.7 && abs(clamp01(dot(normal, upVec))) < 0.99) eyes2 = vec3(1.0); // Eye Shape 2 Vertical
-            vec3 spookyEyes = mix(eyes1, eyes2, step(0.75, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.00005, vec3(100))))); // have either eye shape 1 or 2 randomly, the horizontal ones have a 0.75 to 0.25 higher probability of appearing
-            spookyEyes *= vec3(step(1.0075 - spookyEyesFrequency * 0.01, hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.0000005 * spookyEyesSpeed, vec3(100))))); // Make them appear randomly and much less
-        #endif
     #endif
 
     #ifdef IPBR
@@ -395,10 +371,10 @@ void main() {
             #endif
             vec3 maxLavaColor = max(previousLavaColor, lavaNoiseColor);
             vec3 minLavaColor = min(previousLavaColor, lavaNoiseColor);
-            #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+            #if RAIN_PUDDLES >= 1
                 noPuddles = 1.0;
             #endif
-            
+
             #include "/lib/materials/specificMaterials/terrain/lavaEdge.glsl"
 
             emission *= LAVA_EMISSION;
@@ -459,17 +435,12 @@ void main() {
         #endif
     #endif
 
-    #if RAIN_PUDDLES >= 1 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+    #if RAIN_PUDDLES >= 1
         float puddleLightFactor = max0(lmCoord.y * 32.0 - 31.0) * clamp((1.0 - 1.15 * lmCoord.x) * 10.0, 0.0, 1.0);
         float puddleNormalFactor = pow2(max0(NdotUmax0 - 0.5) * 2.0);
-        #ifdef NO_RAIN_ABOVE_CLOUDS
-            puddleNormalFactor *= mix(0.0, 1.0, heightRelativeToCloud);
-        #endif
         float puddleMixer = puddleLightFactor * inRainy * puddleNormalFactor;
-        #if RAIN_PUDDLES < 3
-            float wetnessM = wetness;
-        #else
-            float wetnessM = 1.0;
+        #if RAIN_PUDDLES >= 3
+            wetnessM = 1.0;
         #endif
         #ifdef PUDDLE_VOXELIZATION
             vec3 voxelPos = SceneToPuddleVoxel(playerPos);
@@ -497,7 +468,7 @@ void main() {
             vec3 puddleNormal = vec3((pNormalNoise1.xy + pNormalNoise2.xy - vec2(1.0)) * pNormalMult, 1.0);
             puddleNormal = clamp(normalize(puddleNormal * tbnMatrix), vec3(-1.0), vec3(1.0));
 
-            #if RAIN_PUDDLES == 1 || RAIN_PUDDLES == 3 || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+            #if RAIN_PUDDLES == 1 || RAIN_PUDDLES == 3
                 vec2 puddlePosForm = puddlePosNormal * 0.05;
                 float pFormNoise  = texture2DLod(noisetex, puddlePosForm, 0.0).b        * 3.0;
                       pFormNoise += texture2DLod(noisetex, puddlePosForm * 0.5, 0.0).b  * 5.0;
@@ -524,25 +495,10 @@ void main() {
 
     #ifdef SS_BLOCKLIGHT
         float lmCoordXModified = lmCoord.x;
-        #ifdef IS_IRIS
+        #ifdef IRIS_FEATURE_BLOCK_EMISSION_ATTRIBUTE
             lmCoordXModified = lmCoord.x == 1.0 && blockLightEmission < 0.5 ? 0.0 : lmCoord.x;
         #endif
         blocklightCol = ApplyMultiColoredBlocklight(blocklightCol, screenPos, playerPos, lmCoordXModified);
-    #endif
-
-    #if defined SPOOKY && BLOOD_MOON > 0
-        auroraSpookyMix = getBloodMoon(moonPhase, sunVisibility);
-        ambientColor *= 1.0 + auroraSpookyMix * vec3(2.0, -1.0, -1.0);
-    #endif
-    #ifdef AURORA_INFLUENCE
-        ambientColor = mix(AuroraAmbientColor(ambientColor, viewPos), ambientColor, auroraSpookyMix);
-    #endif
-
-    #ifdef SPOOKY
-        if (mat != 10068 && mat != 10070) { // Lava
-            float noiseAdd = hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.000001, vec3(100)));
-            emission *= mix(clamp(noiseAdd * 1.5, 0.1, 2.0), 1.0, smoothstep(0.1, 0.11, texture2DLod(noisetex, vec2(frameTimeCounter * 0.008 + noiseAdd), 0.0).r));
-        }
     #endif
 
     emission *= EMISSION_MULTIPLIER;
@@ -572,30 +528,15 @@ void main() {
         color.rgb += maRecolor;
     #endif
 
-    #if defined SPOOKY && defined EYES
-        vec2 flickerEyeNoise = texture2DLod(noisetex, vec2(frameTimeCounter * 0.025 + hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.000001, vec3(100)))), 0.0).rb;
-        if (length(playerPos) > 8.0) {
-            vec3 eyesColor = mix(vec3(1.0), vec3(3.0, 0.0, 0.0), vec3(step(1.0 - EYE_RED_PROBABILITY * mix(1.0, 2.0, getBloodMoon(moonPhase, sunVisibility)), hash13(mod(floor(worldPos + atMidBlock / 64) + frameTimeCounter * 0.0000002, vec3(500)))))); // Make Red eyes appear rarely, 7% chance
-            color.rgb += spookyEyes * 3.0 * skyLightCheck * min1(max(flickerEyeNoise.r, flickerEyeNoise.g)) * clamp((1.0 - 1.15 * lmCoord.x) * 10.0, 0.0, 1.0) * eyesColor;
-        }
-    #endif
-
     float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef COLOR_CODED_PROGRAMS
         ColorCodeProgram(color, mat);
     #endif
 
-    // color.rgb = lmCoord.x == 1.0 && blockLightEmission == 0 ? vec3(1) : vec3(0);
-
-    #ifdef SPOOKY
-        int seed = worldDay / 2; // Thanks to Bálint
-        int currTime = (worldDay % 2) * 24000 + worldTime; // Effect happens every 2 minecraft days
-        float randomTime = 24000 * hash1(worldDay * 5); // Effect happens randomly throughout the day
-        int timeWhenItHappens = (int(hash1(seed)) % (2 * 24000)) + int(randomTime);
-        if (currTime > timeWhenItHappens && currTime < timeWhenItHappens + 100) { // 100 in ticks - 5s, how long the effect will be on, aka leaves are gone
-            if (mat == 10007 || mat == 10009 || mat == 10011) discard; // Disable leaves
-        }
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        skyLightFactor *= 0.5;
+        if (chunkFade < 1.0) skyLightFactor = 1.0 - chunkFade * 0.5;
     #endif
 
     /* DRAWBUFFERS:06 */
@@ -608,11 +549,11 @@ void main() {
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:0649 */
-            gl_FragData[3] = vec4(lightAlbedo, SSBLAlpha);
+            gl_FragData[3] = vec4(lightAlbedo, 0.0);
         #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:069 */
-        gl_FragData[2] = vec4(lightAlbedo, SSBLAlpha);
+        gl_FragData[2] = vec4(lightAlbedo, 0.0);
     #endif
 }
 
@@ -646,7 +587,7 @@ out vec3 vertexPos;
 
 out vec4 glColorRaw;
 
-#if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+#if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     flat out vec3 binormal, tangent;
 #endif
 
@@ -660,12 +601,16 @@ out vec4 glColorRaw;
     out vec4 spriteBounds;
 #endif
 
+#ifdef IRIS_FEATURE_FADE_VARIABLE
+    flat out float chunkFade;
+#endif
+
 //Attributes//
 attribute vec4 mc_Entity;
 attribute vec4 mc_midTexCoord;
 attribute vec4 at_midBlock;
 
-#if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+#if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR
     attribute vec4 at_tangent;
 #endif
 
@@ -719,7 +664,7 @@ void main() {
 
     #ifndef GBUFFERS_COLORWHEEL
         if ((mat == 10132 || mat == 10133)){ // Improve Patrix Resource pack extra grass block model
-            if (isCross(gl_Normal) < 0.5) mat = 10005; // First detect cross models 
+            if (isCross(gl_Normal) < 0.5) mat = 10005; // First detect cross models
             else if (infnorm(gl_Normal) < 0.99) mat = 10031; // Then detect extruding faces, but ONLY if it's not already detected as cross
         }
     #endif
@@ -753,22 +698,11 @@ void main() {
                 position.xyz = playerPosM - relativeEyePosition;
             }
         #endif
-        // #ifdef SPOOKY
-        //  if (mat == 10744) { // Cobweb Thanks to gri
-        //      vec3 irisThirdPersonPull = vec3(0.0);
-        //      #ifdef IS_IRIS
-        //          irisThirdPersonPull = eyePosition - cameraPosition;
-        //      #endif
-        //      vec3 pullCenter = vec3(0.1, -0.1, -0.05) - irisThirdPersonPull;
-        //      float pullFactor = pow(min(abs(sin(1.81 * frameTimeCounter) + cos(0.9124 * frameTimeCounter)), 1.0), 10.0) * 4.0 / (length(position.xyz) + max(20 * texture2DLod(noisetex, vec2(frameTimeCounter * 0.1), 0.0).r, 10.0));
-        //      vec3 pullDir = pullCenter - position.xyz - at_midBlock.xyz / 64.0;
-        //      position.xyz += pullDir * pullFactor;
-        //  }
-        // #endif
+
         #ifdef WAVE_EVERYTHING
             DoWaveEverything(position.xyz);
         #endif
-        
+
     #endif
     gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
 
@@ -780,7 +714,7 @@ void main() {
         gl_Position.xy = TAAJitter(gl_Position.xy, gl_Position.w);
     #endif
 
-    #if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR || defined SPOOKY_RAIN_PUDDLE_OVERRIDE
+    #if RAIN_PUDDLES >= 1 || defined GENERATED_NORMALS || defined CUSTOM_PBR
         binormal = normalize(gl_NormalMatrix * cross(at_tangent.xyz, gl_Normal.xyz) * at_tangent.w);
         tangent  = normalize(gl_NormalMatrix * at_tangent.xyz);
     #endif
@@ -803,6 +737,10 @@ void main() {
         vec2 bottomLeft = mc_midTexCoord.xy - spriteRadius;
         vec2 topRight = mc_midTexCoord.xy + spriteRadius;
         spriteBounds = vec4(bottomLeft, topRight);
+    #endif
+
+    #ifdef IRIS_FEATURE_FADE_VARIABLE
+        chunkFade = mc_chunkFade;
     #endif
 }
 

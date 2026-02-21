@@ -6,12 +6,12 @@
     #define OPTIFINE_AF_ERROR
 #endif
 
-#if COLORED_LIGHTING > 0 && !defined IS_IRIS
-    #define OPTIFINE_ACT_ERROR
-#endif
-
 #if COLORED_LIGHTING > 0 && defined MC_OS_MAC
     #define APPLE_ACT_ERROR
+#endif
+
+#if COLORED_LIGHTING > 0 && (!defined IS_IRIS || !defined IRIS_FEATURE_CUSTOM_IMAGES)
+    #define OPTIFINE_ACT_ERROR
 #endif
 
 #if defined END_PORTAL_BEAM && !defined IS_IRIS
@@ -22,11 +22,11 @@
     #define APPLE_PORTAL_BEAM_ERROR
 #endif
 
-#if defined DRAGON_DEATH_EFFECT && !defined IS_IRIS
+#if DRAGON_DEATH_EFFECT > 0 && !defined IS_IRIS
     #define OPTIFINE_DRAGON_DEATH_ERROR
 #endif
 
-#if defined DRAGON_DEATH_EFFECT && defined MC_OS_MAC
+#if DRAGON_DEATH_EFFECT > 0 && defined MC_OS_MAC
     #define APPLE_DRAGON_DEATH_ERROR
 #endif
 
@@ -89,6 +89,8 @@
     #include "/lib/textRendering/error_optifine_end_crystal.glsl"
 #elif defined ACT_SHADOW_ERROR
     #include "/lib/textRendering/error_shadows_act.glsl"
+#elif USE_TEXTURE_PALETTE > 0 && defined PALETTE_SWAP
+    #include "/lib/textRendering/error_palette_not_found.glsl"
 #else
     #if defined COORDINATES_ACT_ERROR && !defined ACT_DISTANCE_WARNING_OVERRIDE
         ivec2 absCameraPositionIntXZ = abs(cameraPositionInt.xz);

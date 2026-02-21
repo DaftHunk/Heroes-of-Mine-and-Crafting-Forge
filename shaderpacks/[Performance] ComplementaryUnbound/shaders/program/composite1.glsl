@@ -15,6 +15,9 @@
 #ifndef NETHER
     #undef NETHER_STORM
 #endif
+#define COLORED_LIGHT_FOG_RAIN_I 0 //[0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160 165 170 175 180 185 190 195 200]
+#ifdef COLORED_LIGHT_FOG_RAIN_I
+#endif
 
 //////////Fragment Shader//////////Fragment Shader//////////Fragment Shader//////////
 #ifdef FRAGMENT_SHADER
@@ -67,7 +70,7 @@ float GetLinearDepth(float depth) {
     #include "/lib/atmospherics/fog/bloomFog.glsl"
 #endif
 
-#if defined ATM_COLOR_MULTS || defined SPOOKY
+#ifdef ATM_COLOR_MULTS
     #include "/lib/colors/colorMultipliers.glsl"
 #endif
 
@@ -84,7 +87,7 @@ float GetLinearDepth(float depth) {
     #include "/lib/atmospherics/volumetricLight.glsl"
 #endif
 
-#if WATER_MAT_QUALITY >= 3 || defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL  || (defined END && END_CENTER_LIGHTING > 0)
+#if WATER_MAT_QUALITY >= 3 || defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL  || (defined END && END_CENTER_LIGHTING > 0 && MC_VERSION >= 10900)
     #include "/lib/util/spaceConversion.glsl"
 #endif
 
@@ -154,6 +157,24 @@ void main() {
     #if defined PBR_REFLECTIONS || WATER_REFLECT_QUALITY > 0 && WORLD_SPACE_REFLECTIONS_INTERNAL > 0
         if (z0 < 1.0) {
             vec4 compositeReflection = texture2D(colortex7, texCoord);
+
+            // Partial fix for half resolution WSR-only reflections having a lot of sky gaps
+            #if WORLD_SPACE_REF_MODE == 1
+                if (REFLECTION_RES < 0.6) {
+                    vec2 refOffsets[4] = vec2[4](
+                        vec2( 1.0, 1.0),
+                        vec2(-1.0, 1.0),
+                        vec2( 1.0,-1.0),
+                        vec2(-1.0,-1.0)
+                    );
+
+                    for (int i = 0; i < 4; i++) {
+                        vec4 compositeRefSample = texture2D(colortex7, texCoord + refOffsets[i] * 1.5 / view);
+                        if (compositeRefSample.a > compositeReflection.a * 1.01) compositeReflection = compositeRefSample;
+                    }
+                }
+            #endif
+
             float fresnelM = pow2(texture2D(colortex4, texCoord).a); // including attenuation through fog and clouds
             if (abs(fresnelM - 0.5) < 0.5) { // 0.0 fresnel doesnt need ref calculations, and 1.0 fresnel basically means error
                 if (z0 == z1 || z0 <= 0.56) { // Solids
@@ -162,7 +183,7 @@ void main() {
                             compositeReflection = sampleBlurFilteredReflection(compositeReflection, dither, z0);
 
                             compositeReflection.rgb = max(compositeReflection.rgb, vec3(0.0)); // We seem to have some negative values for some reason
-                            
+
                             // This physically doesn't make sense but fits Minecraft
                             const float texturePreservation = 0.7;
                             compositeReflection.rgb = mix(compositeReflection.rgb, max(color, compositeReflection.rgb), texturePreservation);
@@ -203,21 +224,21 @@ void main() {
     #if defined LIGHTSHAFTS_ACTIVE || RAINBOWS > 0 && defined OVERWORLD
         vec3 nViewPos = normalize(viewPos1.xyz);
         float VdotL = dot(nViewPos, lightVec);
+        float VdotU = dot(nViewPos, upVec);
     #endif
 
-    #if defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL || (defined END && END_CENTER_LIGHTING > 0)
+    #if defined NETHER_STORM || defined COLORED_LIGHT_FOG || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL || (defined END && END_CENTER_LIGHTING > 0 && MC_VERSION >= 10900)
         vec3 playerPos = ViewToPlayer(viewPos1.xyz);
         vec3 nPlayerPos = normalize(playerPos);
     #endif
 
-    #if RAINBOWS > 0 && defined OVERWORLD && !defined SPOOKY
-        if (isEyeInWater == 0) color += GetRainbow(translucentMult, z0, z1, lViewPos, lViewPos1, VdotL, dither);
+    #if RAINBOWS > 0 && defined OVERWORLD
+        color += GetRainbow(translucentMult, nViewPos, z0, z1, lViewPos, lViewPos1, VdotL, VdotU, dither);
     #endif
 
     float vlFactorM = 0.0;
     #ifdef LIGHTSHAFTS_ACTIVE
         vlFactorM = vlFactor;
-        float VdotU = dot(nViewPos, upVec);
 
         volumetricEffect = GetVolumetricLight(color, vlFactorM, translucentMult, lViewPos, lViewPos1, nViewPos, VdotL, VdotU, texCoord, z0, z1, dither);
     #endif
@@ -232,7 +253,7 @@ void main() {
         volumetricEffect = GetNetherStorm(color, translucentMult, nPlayerPos, playerPos, lViewPos, lViewPos1, dither);
     #endif
 
-    #if defined ATM_COLOR_MULTS || defined SPOOKY
+    #ifdef ATM_COLOR_MULTS
         volumetricEffect.rgb *= GetAtmColorMult();
     #endif
     #ifdef MOON_PHASE_INF_ATMOSPHERE
@@ -256,8 +277,8 @@ void main() {
         //if (heldItemId == 40000 && heldItemId2 != 40000) lightFogMult = 0.0; // Hold spider eye to disable light fog
 
         #ifdef OVERWORLD
-            #ifdef EPIC_THUNDERSTORM
-                lightFogMult = mix(lightFogMult, min(lightFogMult * 1.75, 1.7), rainFactor * inRainy);
+            #if COLORED_LIGHT_FOG_RAIN_I > 0
+                lightFogMult = mix(lightFogMult, COLORED_LIGHT_FOG_RAIN_I * 0.01, rainFactor * inRainy);
             #endif
             lightFogMult *= 0.2 + 0.6 * mix(1.0, 1.0 - sunFactor * invRainFactor, eyeBrightnessM);
         #endif
@@ -316,7 +337,13 @@ void main() {
 
     #ifdef COLORED_LIGHT_FOG
         color /= 1.0 + pow2(GetLuminance(lightFog)) * lightFogMult * 2.0;
-        color += lightFog * lightFogMult * 0.5;
+
+        lightFog = lightFog * lightFogMult * 0.5;
+        #ifdef TAA
+            // TAA neighbourhood clamping causes light fog to go too bandy. Extra dither fixes it.
+            lightFog = max(vec3(0.0), lightFog + (dither - 0.5) * 0.02);
+        #endif
+        color += lightFog;
     #endif
 
     color = pow(color, vec3(2.2));
@@ -345,7 +372,7 @@ void main() {
     #if LIGHTSHAFT_QUALI_DEFINE > 0 && LIGHTSHAFT_BEHAVIOUR == 1 && SHADOW_QUALITY >= 1 && defined OVERWORLD || defined END || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL || defined COLORED_LIGHT_FOG
         vec4 texture5 = vec4(0.0);
         #if LENSFLARE_MODE > 0 || defined ENTITY_TAA_NOISY_CLOUD_FIX || END_CRYSTAL_VORTEX_INTERNAL > 0 || DRAGON_DEATH_EFFECT_INTERNAL > 0 || defined END_PORTAL_BEAM_INTERNAL || defined COLORED_LIGHT_FOG
-            texture5 = texelFetch(colortex5, texelCoord, 0); 
+            texture5 = texelFetch(colortex5, texelCoord, 0);
             if (viewWidth + viewHeight - gl_FragCoord.x - gl_FragCoord.y > 1.5)
                 vlFactorM = texture5.a;
         #endif
