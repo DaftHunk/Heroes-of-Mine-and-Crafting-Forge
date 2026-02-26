@@ -36,7 +36,8 @@
   		"illagerinvasion:archivist",
   		"illagerinvasion:necromancer",
   		"tconstruct:terracube",
-		"ars_nouveau:drygmy"
+		"ars_nouveau:drygmy",
+   		"relics:life_essence"
 	  ],
     "when": "onjoin",
     "result": "deny"
