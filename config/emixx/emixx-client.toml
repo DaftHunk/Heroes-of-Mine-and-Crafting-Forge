@@ -7,5 +7,4 @@
 
 [stackGroups]
 	enableStackGroups = true
-	disabledStackGroups = ["minecraft:shovels", "minecraft:pickaxes", "minecraft:axes", "minecraft:head_armor", "minecraft:hoes", "minecraft:swords", "minecraft:chest_armor", "minecraft:leg_armor", "minecraft:foot_armor", "c:raw_materials", "minecraft:infested_blocks", "minecraft:animal_armors", "c:foods", "minecraft:slabs", "minecraft:fences", "minecraft:planks", "minecraft:stairs", "minecraft:fence_gates", "minecraft:pressure_plates", "minecraft:rails", "minecraft:saplings", "minecraft:buttons", "minecraft:skulls", "minecraft:minecarts", "c:dyes", "c:ores", "minecraft:leaves", "c:seeds", "minecraft:logs", "minecraft:flowers", "minecraft:walls", "minecraft:terracotta", "c:glazed_terracottas", "c:concrete_powders", "c:concretes", "c:buckets", "minecraft:copper_blocks"]
 
