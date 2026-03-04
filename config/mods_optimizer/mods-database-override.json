@@ -1,7 +1,7 @@
 {
   "description": "Override entries from mods-database.json. This file is never modified automatically.",
   "server": [
-    "server-override-mod-id"
+    "shutdowner"
   ],
   "client": [
     "colorwheel",
@@ -9,7 +9,9 @@
 	"fancytoasts",
 	"better_smithing_table",
 	"tooltipoverhaul",
-	"spyglass_improvements"
+	"spyglass_improvements",
+	"cubes_without_borders",
+	"tponder"
   ],
   "both": [
     "both-override-mod-id"

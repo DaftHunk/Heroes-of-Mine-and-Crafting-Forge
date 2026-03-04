@@ -1,0 +1,48 @@
+[
+  {
+    "inputs": [
+      "unimplemented_items:repel"
+    ],
+    "output": "minecraft:air"
+  },{
+    "inputs": [
+      "ars_nouveau:portal"
+    ],
+    "output": "minecraft:air"
+  },{
+    "inputs": [
+      "magnumtorch:amethyst_magnum_torch"
+    ],
+    "output": "torchmaster:dreadlamp"
+  },{
+    "inputs": [
+      "magnumtorch:diamond_magnum_torch"
+    ],
+    "output": "torchmaster:megatorch"
+  },{
+    "inputs": [
+      "magnumtorch:emerald_magnum_torch"
+    ],
+    "output": "torchmaster:megatorch"
+  },{
+    "inputs": [
+      "butchery:deepslate_sulfur_ore"
+    ],
+    "output": "minecraft:deepslate"
+  },{
+    "inputs": [
+      "buddycards:deepslate_luminis_ore"
+    ],
+    "output": "minecraft:deepslate"
+  },{
+    "inputs": [
+      "butchery:sulfur_ore"
+    ],
+    "output": "minecraft:stone"
+  },{
+    "inputs": [
+      "buddycards:luminis_ore"
+    ],
+    "output": "minecraft:stone"
+  }
+]
