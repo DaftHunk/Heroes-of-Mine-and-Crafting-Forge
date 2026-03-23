@@ -1,6 +1,6 @@
 {
-  "config_version": "2.0.11",
-  "config_datetime": "2026-01-12_23-28-10",
+  "config_version": "2.0.19",
+  "config_datetime": "2026-03-16_11-58-39",
   "general": {
     "disable_all_structures": false,
     "prevent_structure_overlap": true,
@@ -12,6 +12,13 @@
       "name": "global",
       "is_disabled": false,
       "override_global_flatness_check": false,
+      "enable_flatness_check": true,
+      "flatness_check_allow_non_solid_blocks": false
+    },
+    {
+      "name": "mvs",
+      "is_disabled": false,
+      "override_global_flatness_check": true,
       "enable_flatness_check": true,
       "flatness_check_allow_non_solid_blocks": false
     }

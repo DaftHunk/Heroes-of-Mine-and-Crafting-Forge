@@ -10,8 +10,8 @@
   "name": "gui.xaero_entity_category_root",
   "protection": true,
   "settingOverrides": {
-    "displayHeight": 0.0,
     "displayed": true,
+    "displayHeight": 0.0,
     "heightBasedFade": true,
     "renderOrder": 0.0,
     "color": 13.0,
@@ -22,11 +22,51 @@
     "dotSize": 2.0,
     "renderOverMinimapFrame": 1.0,
     "icons": 2.0,
-    "heightLimit": 40.0,
     "names": 2.0,
+    "heightLimit": 40.0,
     "iconScale": 1.0
   },
   "subCategories": [
+    {
+      "hardInclude": "nothing",
+      "includeList": [
+        "minecolonies:amazon",
+        "minecolonies:amazonchief",
+        "minecolonies:amazonspearman",
+        "minecolonies:archerbarbarian",
+        "minecolonies:archermummy",
+        "minecolonies:archerpirate",
+        "minecolonies:barbarian",
+        "minecolonies:campamazonchief",
+        "minecolonies:camparcherbarbarian",
+        "minecolonies:campbarbarian",
+        "minecolonies:campchiefpirate",
+        "minecolonies:campdrownedchiefpirate",
+        "minecolonies:chiefbarbarian",
+        "minecolonies:chiefpirate",
+        "minecolonies:drownedarcherpirate",
+        "minecolonies:drownedchiefpirate",
+        "minecolonies:drownedpirate",
+        "minecolonies:mummy",
+        "minecolonies:norsemenarcher",
+        "minecolonies:norsemenchief",
+        "minecolonies:pharao",
+        "minecolonies:pirate",
+        "minecolonies:shieldmaiden"
+      ],
+      "includeListInSuperCategory": true,
+      "excludeMode": "ONLY",
+      "excludeList": [],
+      "name": "minecolonies",
+      "protection": false,
+      "settingOverrides": {
+        "displayed": true,
+        "names": 2.0,
+        "color": 4.0,
+        "icons": 0.0
+      },
+      "subCategories": []
+    },
     {
       "hardInclude": "living",
       "includeList": [],
@@ -127,8 +167,8 @@
           "settingOverrides": {
             "displayed": true,
             "renderOrder": 6.0,
-            "names": 2.0,
             "heightLimit": 2050.0,
+            "names": 2.0,
             "color": 2.0,
             "icons": 2.0
           },

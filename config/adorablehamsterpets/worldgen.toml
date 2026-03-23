@@ -14,7 +14,7 @@ spawnBiomeTags = [
     "minecraft:is_taiga",
     "minecraft:is_mountain"
 ]
-# A list of 'c:' convention biome tags where hamsters can spawn. Used for broad mod compatibility. By default, this includes most overworld tags as a 'catch-all', and the filtering for different hamster variants in each biome is hard coded.
+# A list of convention biome tags where hamsters can spawn. Used for broad mod compatibility.
 spawnBiomeConventionTags = [
     "c:is_cold",
     "c:is_hot",
@@ -244,6 +244,12 @@ includeBiomes = [
 excludeBiomes = [
     "mod_id:biome_name"
 ]
+# A list of Biome Tags to NEVER allow spawns in. For excluding broad categories like Oceans or Rivers without listing every single ID. Overrides inclusions.
+excludeBiomeTags = [
+    "minecraft:is_ocean",
+    "minecraft:is_river",
+    "minecraft:is_deep_ocean"
+]
 blueBiomes = [
     "terralith:glacial_chasm",
     "terralith:mirage_isles",
@@ -362,31 +368,97 @@ chocolateExclusionBiomes = [
 chocolateExclusionTags = [
     "c:tag_name"
 ]
+# The overall probability (0.0 to 1.0) that ANY wild hamster has stuffed something in its face. Set to 0.0 to enforce strict economic austerity.
+globalCheekLootChance = 0.5
+# The curated selection of pocket lint, seeds, and snacks that hamsters naturally forage. Edit this if you think hamsters should naturally forage for diamonds.
+defaultCheekLootList = [
+    "minecraft:wheat_seeds",
+    "minecraft:pumpkin_seeds",
+    "minecraft:melon_seeds",
+    "minecraft:beetroot_seeds",
+    "minecraft:carrot",
+    "minecraft:potato",
+    "minecraft:poisonous_potato",
+    "minecraft:apple",
+    "minecraft:stick",
+    "minecraft:feather",
+    "minecraft:string",
+    "minecraft:gold_nugget",
+    "minecraft:iron_nugget",
+    "minecraft:flint",
+    "adorablehamsterpets:sunflower_seeds",
+    "adorablehamsterpets:cucumber_seeds",
+    "adorablehamsterpets:green_bean_seeds",
+    "adorablehamsterpets:acorn"
+]
+# The chance (0.0 to 1.0) that a wild hamster spawns with the default junk (seeds, nuggets, carrots, etc). 0.5 = 50%.
+defaultCheekLootChance = 0.5
+# A list of item IDs (e.g. 'minecraft:cookie') or tags (e.g. '#c:fruits') that wild hamsters can spawn with. If you want them to spawn with Nether Stars, this is where you make that bad decision.
+extraCheekLootList = [  ]
+# The chance (0.0 to 1.0) that a wild hamster spawns with items from your Extra Loot list above. Independent of the default loot check.
+extraCheekLootChance = 0.5
+# The shiny rocks, glowing berries, and industrial debris found in the cheeks of cave-dwelling hamsters. Spelunking rodents have expensive tastes.
+caveCheekLootList = [
+    "minecraft:raw_iron",
+    "minecraft:raw_copper",
+    "minecraft:raw_gold",
+    "minecraft:coal",
+    "minecraft:amethyst_shard",
+    "minecraft:glow_berries",
+    "minecraft:redstone",
+    "minecraft:lapis_lazuli",
+    "minecraft:flint",
+    "minecraft:clay_ball"
+]
+# The chance (0.0 to 1.0) that a hamster spawning in a cave actually found something cool instead of just a rock. Applies ONLY to hamsters spawning in valid cave biomes or deep underground.
+caveCheekLootChance = 0.5
+# Chance (0.0 to 1.0) to find Cucumber, Green Bean, or Sunflower seeds in general loot chests.
+seedLootChance = 0.6
+# Chance (0.0 to 1.0) to find Acorn, Iron, or Gold hamster armor in standard Dungeons, Temples, Mineshafts, etc.
+standardArmorLootChance = 0.3
+# Chance (0.0 to 1.0) to find Diamond hamster armor in high-level chests (End City, Nether Fortress).
+highTierArmorLootChance = 0.15
+# Vanilla horse armor doesn't spawn in Netherite, but maybe you think that's stupid. Enable this to allow Netherite Hamster Armor to appear in chests.
+enableNetheriteArmorLoot = false
+# Chance (0.0 to 1.0) to find Netherite Hamster Armor in high-level chests. Only applies if the toggle above is ON. Don't be too liberal with it. Or do. See if I care.
+netheriteArmorLootChance = 0.1
+# Chance (0.0 to 1.0) to find Iron and Gold upgrade templates in High-Tier chests (Bastions, Fortresses, etc).
+basicSmithingTemplateLootChance = 0.2
+# Chance (0.0 to 1.0) to find Diamond and Netherite upgrade templates in Legendary chests (Ancient Cities, Ominous Vaults, etc).
+advancedSmithingTemplateLootChance = 0.1
+# Chance (0.0 to 1.0) to find accessories in rare chests. Default is low.
+accessoryLootChance = 0.05
+# Chance (0.0 to 1.0) for an Oak Leaf block to drop an Acorn when broken. Default is low, similar to Apples.
+oakLeavesAcornChance = 0.05
 # Higher = slower, lower = faster. Makes perfect sense.
 wildBushRegrowthModifier = 1.0
 # Higher = slower, lower = faster. Photosynthesis is hard, okay?
 sunflowerRegrowthModifier = 1.0
-# A list of biome tags where these custom Sunflowers can replace vanilla ones. The 'c:is_plains' tag provides wide compatibility with modded biomes.
-sunflowerBiomeTags = []
+# A list of biome tags where these custom Sunflowers can replace vanilla ones. My custom union tag 'adorablehamsterpets:is_plains' points to 'c:is_plains', which provides wide compatibility with modded biomes.
+sunflowerBiomeTags = [  ]
 # Specific biome IDs where these sunflowers can replace the vanilla ones. Format: 'mod_id:biome_name'. They’re picky.
-sunflowerBiomes = []
+sunflowerBiomes = [  ]
+# Enables the 'CasualAnimalEnjoyer' Protocol. A small chance for a random nearby sunflower to become a bioluminescent beacon at night— a reference to the Kikoriki cartoon, 'It Can't Be True' episode, around the 3:22 mark. Added upon request as a thank-you to CasualAnimalEnjoyer for their massive help with mod compatibility.
+enableGlowingSunflowers = true
+# 1 in X random ticks (20 ticks per second). Lower = more likely. Higher = more rare. Note: This only runs at night.
+glowingSunflowerChance = 1000
 # 1 in X chunks. Lower numbers means cucumbers take over the planet.
 wildCucumberBushRarity = 100
 # Biome tags where cucumbers feel at home. Format: 'mod_id:tag_name', for example: 'minecraft:is_jungle'.
-cucumberBushTags = []
-# Convention tags for maximum mod-pack harmony. Format: 'c:tag_name', for example: 'c:is_temperate'.
-cucumberBushConventionTags = []
+cucumberBushTags = [  ]
+# Convention tags for maximum mod-pack harmony. Format: 'namespace:tag_name', for example: 'adorablehamsterpets:is_temperate', which points to the 'c:is_temperate' convention tag.
+cucumberBushConventionTags = [  ]
 # Specific biome IDs where cucumbers can sprout. Format: 'mod_id:biome_name', for example: 'minecraft:savanna'.
-cucumberBushBiomes = []
+cucumberBushBiomes = [  ]
 # Biomes where cucumbers are absolutely NOT allowed. Overrides everything else. Format: 'mod_id:biome_name', for example: 'minecraft:ocean'.
-cucumberBushExclusions = []
+cucumberBushExclusions = [  ]
 # 1 in X chunks. Lower = beanpocalypse. For those of you in the back, it means they'll spam everywhere.
 wildGreenBeanBushRarity = 100
 # Biome tags for bean growth. Empty by default—choose wisely. Format: 'mod_id:tag_name', for example: 'minecraft:is_jungle'.
-greenBeanBushTags = []
-# Convention tags for mod-friendly bean spam. Format: 'c:tag_name', for example: 'c:is_wet'.
-greenBeanBushConventionTags = []
+greenBeanBushTags = [  ]
+# Convention tags for mod-friendly bean spam. Format: 'namespace:tag_name', for example: 'adorablehamsterpets:is_wet', which points to the 'c:is_wet' convention tag.
+greenBeanBushConventionTags = [  ]
 # Specific biomes where beans sprout like gossip in chat. Format: 'mod_id:biome_name', for example: 'minecraft:swamp'.
-greenBeanBushBiomes = []
+greenBeanBushBiomes = [  ]
 # Absolutely no beans here, thank you very much. Overrides all other settings. Format: 'mod_id:biome_name', for example: 'minecraft:beach'.
-greenBeanBushExclusions = []
+greenBeanBushExclusions = [  ]
