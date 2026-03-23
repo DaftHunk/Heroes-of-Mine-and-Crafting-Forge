@@ -114,6 +114,9 @@
     "jade_plugin3": true,
     "jade_plugin1": true
   },
+  "betternether": {
+    "plant_growth": true
+  },
   "item-descriptions": {
     "block_descriptions": true,
     "entity_descriptions": true
