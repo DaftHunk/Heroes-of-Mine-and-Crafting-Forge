@@ -79,3 +79,5 @@ schematics/
 easy_npc/backup/
 
 .boss_checklist_data/
+
+music_sheets/.cache/
