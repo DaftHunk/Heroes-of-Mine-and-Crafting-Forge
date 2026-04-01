@@ -73,7 +73,7 @@
 	8d179c90-5296-4cdb-8f41-a85a4d404f72: {
 		name: "Yyuyuyuna"
 		ranks: {
-			mage: "2026-01-20T10:21:46.474790083Z"
+			inge: "2026-01-31T22:23:06.702562792Z"
 		}
 	}
 	8769924f-6aab-429d-b139-83c57b37b8cd: {
@@ -130,5 +130,14 @@
 		ranks: {
 			inge: "2026-01-20T14:32:35.415839459Z"
 		}
+	}
+	0154cad7-f126-44d9-9f61-1bf14f78a395: {
+		name: "alexis349"
+	}
+	93109b19-fd40-4b3a-b401-85af677d20fc: {
+		name: "CrimsonVorteks"
+	}
+	d432aa75-1f29-4933-a3df-beb8741ff78d: {
+		name: "kiwicali"
 	}
 }

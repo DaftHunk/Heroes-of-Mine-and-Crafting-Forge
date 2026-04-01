@@ -190,3 +190,34 @@
 					#Range: 0.0 ~ 2.147483647E9
 					increasePerBuildingLevel = 0.0
 
+			[modules.ewewukeks_musketmod.job.gunner_blunderbuss]
+
+				[modules.ewewukeks_musketmod.job.gunner_blunderbuss.attackDelay]
+					#will reload before every shot and reload duration is '40' ticks
+					#Range: 10 ~ 200
+					base = 28
+					#Range: 0.0 ~ 200.0
+					decreasePerSkillLevel = 1.0
+					#Range: 0.0 ~ 200.0
+					decreasePerBuildingLevel = 0.0
+
+				[modules.ewewukeks_musketmod.job.gunner_blunderbuss.defaultBulletDamage]
+					#Range: 0.0 ~ 2.147483647E9
+					base = 2.0
+					#Range: 0.0 ~ 2.147483647E9
+					increasePerSkillLevel = 0.2
+					#Range: 0.0 ~ 2.147483647E9
+					increasePerBuildingLevel = 0.0
+
+	#Applied Energistics 2
+	[modules.appliedenergistics2]
+
+		#Citizen Terminal
+		[modules.appliedenergistics2.citizenTerminal]
+			#Ticks allowed for AE2 crafting calculation to complete before being cancelled (20 ticks = 1 second, default = 400 = 20s)
+			#Range: 20 ~ 9223372036854775807
+			calculationTimeoutTicks = 400
+			#Number of consecutive 5-tick checks with no crafting progress before the job is cancelled (default = 1200 ≈ 5 minutes)
+			#Range: > 1
+			linkNoProgressChecks = 1200
+

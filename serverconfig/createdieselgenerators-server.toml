@@ -30,4 +30,6 @@
 		"Infinite oil chunk threshold" = 10000000
 		"Oil chunk threshold" = 4000000
 		"Oil chunk map scale" = 1.0
+		"Disable normal oil chunks" = false
+		"Disable high oil chunks" = false
 

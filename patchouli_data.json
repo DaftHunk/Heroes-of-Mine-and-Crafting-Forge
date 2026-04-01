@@ -2,13 +2,6 @@
   "bookGuiScale": 0,
   "clickedVisualize": false,
   "bookData": {
-    "butchery:butchers_guide": {
-      "viewedEntries": [
-        "butchery:items/salt"
-      ],
-      "bookmarks": [],
-      "completedManualQuests": []
-    },
     "apotheosis:apoth_chronicle": {
       "viewedEntries": [
         "apotheosis:adventure/affix_loot/affixes",
@@ -18,7 +11,8 @@
         "apotheosis:adventure/attributes/armor",
         "apotheosis:adventure/attributes/attack_damage",
         "apotheosis:adventure/attributes/cold_damage",
-        "apotheosis:adventure/attributes/armor_toughness"
+        "apotheosis:adventure/attributes/armor_toughness",
+        "apotheosis:adventure/affix_loot/gem_dust"
       ],
       "bookmarks": [],
       "completedManualQuests": []
@@ -26,6 +20,57 @@
     "cobblepedia:cobblepedia": {
       "viewedEntries": [
         "cobblepedia:dawn_stone_ore"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "parcool:parcool_guide": {
+      "viewedEntries": [
+        "parcool:about/stamina"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "megamons:megamons_guide": {
+      "viewedEntries": [
+        "megamons:mega_stones/mega_stones"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "littlelogistics:guide": {
+      "viewedEntries": [
+        "littlelogistics:chest_barge",
+        "littlelogistics:tug_route"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "irons_spellbooks:iss_guide_book": {
+      "viewedEntries": [
+        "irons_spellbooks:progression/early_game"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "simplyswords:runic_grimoire": {
+      "viewedEntries": [
+        "simplyswords:weapon_variants/entry_cutlass"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "butchery:butchers_guide": {
+      "viewedEntries": [
+        "butchery:items/salt",
+        "butchery:blocks/metal_butchers_table"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "lightmanscurrency:trader_guide": {
+      "viewedEntries": [
+        "lightmanscurrency:trade_rules/daily_trades"
       ],
       "bookmarks": [],
       "completedManualQuests": []
@@ -39,7 +84,28 @@
         "adorablehamsterpets:announcement_whats-new-3.4.0",
         "adorablehamsterpets:crops_food/sunflower",
         "adorablehamsterpets:crops_food/hamster_food_mix",
-        "adorablehamsterpets:crops_food/green_beans"
+        "adorablehamsterpets:crops_food/green_beans",
+        "adorablehamsterpets:shoulder_hamsters/the_hamster_yeet"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "dynamictrees:guide": {
+      "viewedEntries": [],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "ad_astra:astrodux": {
+      "viewedEntries": [
+        "ad_astra:the_first_launch/your_first_rocket"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "siegemachines:siege_guide": {
+      "viewedEntries": [
+        "siegemachines:getting_started/controls",
+        "siegemachines:getting_started/siege_workbench"
       ],
       "bookmarks": [],
       "completedManualQuests": []

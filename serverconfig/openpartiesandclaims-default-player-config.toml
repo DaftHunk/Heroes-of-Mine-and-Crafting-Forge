@@ -353,13 +353,13 @@
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
 						#3) Every - all players/entities.
 						Doors = 3
-						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: minecraft:chest, minecraft:trapped_chest, #forge:chests/wooden, #farmersdelight:cabinets, handcrafted:*.
+						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: minecraft:chest, minecraft:trapped_chest, #forge:chests/wooden, decoration_delight:trash_bin, redeco:trash_bin.
 						#
 						#1) Party - players or entities owned by players in the same party as you.
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
 						#3) Every - all players/entities.
 						Chests = 0
-						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: minecraft:barrel, #forge:barrels.
+						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: minecraft:barrel, #forge:barrels, farmersdelight:*cabinet*, decoration_delight:*counter*, handcrafted:*cupboard*, handcrafted:*shelf*.
 						#
 						#1) Party - players or entities owned by players in the same party as you.
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
@@ -419,18 +419,24 @@
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
 						#3) Every - all players/entities.
 						Enchanting_Tables = 3
-						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: #cobblemon:machines, #create:seats, casinocraft:*, betternether:*stool*, numismatics:vendor.
+						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: #cobblemon:machines, #create:seat, casinocraft:*, bountiful:*, lightmanscurrency:*, create:carriage_contraption, create:controls, immersive_paintings:*.
 						#
 						#1) Party - players or entities owned by players in the same party as you.
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
 						#3) Every - all players/entities.
 						Machines = 3
-						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: minecraft:lever, #minecraft:buttons.
+						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: minecraft:lever, #minecraft:buttons, create:*crank*, create:*valve*.
 						#
 						#1) Party - players or entities owned by players in the same party as you.
 						#2) Allies - players or entities owned by players in parties that are allied by yours.
 						#3) Every - all players/entities.
 						Controls = 3
+						#When enabled, claimed chunk protection makes an exception for interaction with the following blocks: betterend:*chair*, betterend:*stool*, betterend:*taburet*, betternether:*chair*, betternether:*stool*, betternether:*taburet*, quark:*stool*, redeco:*stool*, redeco:*chair*, redeco:*bench*, cluttered:*stool*, cluttered:*chair*, cluttered:*bench*, dawnoftimebuilder:*stool*, dawnoftimebuilder:*chair*, unusual_furniture:*stool*, unusual_furniture:*chair*, unusual_furniture:*bench*, handcrafted:*chair*, handcrafted:*bench*, furniture:*chair*, furniture:*bench*, interiors:*chair*, decoration_delight:*stool*.
+						#
+						#1) Party - players or entities owned by players in the same party as you.
+						#2) Allies - players or entities owned by players in parties that are allied by yours.
+						#3) Every - all players/entities.
+						Chairs = 0
 
 					[playerConfig.claims.protection.exceptionGroups.block.break]
 						#When enabled, claimed chunk protection makes an exception for destruction of the following blocks: #minecraft:crops.

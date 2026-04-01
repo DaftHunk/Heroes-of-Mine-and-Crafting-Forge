@@ -5,7 +5,7 @@ maxWalkwayLength = 128
 #.
 #[in blocks]
 #Range: 2 ~ 1024
-maxEscalatorHeight = 32
+maxEscalatorHeight = 64
 #.
 #[in blocks]
 #Range: 1 ~ 256
