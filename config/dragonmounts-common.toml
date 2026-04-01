@@ -85,3 +85,11 @@
 	#Range: > -1
 	water = 2
 
+["balancing - requires restart"]
+	#Should dragons be able to use their breath attack?
+	#If false, the AI goal will not be added to the dragon and the keybind for the breath attack will not work.
+	breath_attack_enabled = true
+	#The base damage dealt by all dragon breaths. Default is 6.0 (3 hearts).
+	#Range: 0.0 ~ 1.7976931348623157E308
+	global_breath_damage = 6.0
+
