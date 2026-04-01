@@ -121,17 +121,6 @@
         "value": 100
       }
     },
-    "protection_pixel:effectclear": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
     "attributeslib:armor_pierce": {
       "enabled": false,
       "min": {
@@ -143,7 +132,7 @@
         "value": 1000
       }
     },
-    "protection_pixel:highspeeddamageincrease": {
+    "protection_pixel:effectclear": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -174,6 +163,17 @@
       "max": {
         "default": 100000,
         "value": 100000
+      }
+    },
+    "protection_pixel:highspeeddamageincrease": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
       }
     },
     "minecraft:generic.luck": {
@@ -275,17 +275,6 @@
         "value": 100
       }
     },
-    "protection_pixel:neutrality": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
     "feathers:feathers.feather_regen": {
       "enabled": false,
       "min": {
@@ -295,6 +284,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "protection_pixel:neutrality": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
       }
     },
     "protection_pixel:breathinswimming": {
@@ -462,17 +462,6 @@
         "value": 30
       }
     },
-    "block_factorys_bosses:movement_recovery": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 5,
-        "value": 5
-      }
-    },
     "irons_spellbooks:evocation_magic_resist": {
       "enabled": false,
       "min": {
@@ -482,6 +471,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "block_factorys_bosses:movement_recovery": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 5,
+        "value": 5
       }
     },
     "forge:block_reach": {
@@ -825,6 +825,17 @@
         "value": 1
       }
     },
+    "cataclysm:nature_heal": {
+      "enabled": false,
+      "min": {
+        "default": -256,
+        "value": -256
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
     "protection_pixel:preventburial": {
       "enabled": false,
       "min": {
@@ -834,6 +845,17 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "block_factorys_bosses:roll_count": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 9,
+        "value": 9
       }
     },
     "protection_pixel:suspension": {
@@ -1089,17 +1111,6 @@
         "value": 100
       }
     },
-    "protection_pixel:hellfire": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
     "irons_spellbooks:spell_power": {
       "enabled": false,
       "min": {
@@ -1109,6 +1120,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "protection_pixel:hellfire": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
       }
     },
     "attributeslib:dodge_chance": {
@@ -1166,17 +1188,6 @@
         "value": 1000000
       }
     },
-    "protection_pixel:shielda": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 25,
-        "value": 25
-      }
-    },
     "forge:swim_speed": {
       "enabled": false,
       "min": {
@@ -1186,6 +1197,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "protection_pixel:shielda": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 25,
+        "value": 25
       }
     },
     "reach-entity-attributes:attack_range": {
@@ -1232,6 +1254,17 @@
         "value": 100
       }
     },
+    "attributeslib:crit_damage": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
     "protection_pixel:arrowmarking": {
       "enabled": false,
       "min": {
@@ -1252,17 +1285,6 @@
       "max": {
         "default": 1,
         "value": 1
-      }
-    },
-    "attributeslib:crit_damage": {
-      "enabled": false,
-      "min": {
-        "default": 1,
-        "value": 1
-      },
-      "max": {
-        "default": 100,
-        "value": 100
       }
     },
     "tconstruct:generic.bouncy": {
@@ -1318,6 +1340,17 @@
       "max": {
         "default": 1000,
         "value": 1000
+      }
+    },
+    "cataclysm:additional_critical_damage": {
+      "enabled": false,
+      "min": {
+        "default": -512,
+        "value": -512
+      },
+      "max": {
+        "default": 512,
+        "value": 512
       }
     },
     "obscure_api:parry": {
@@ -1397,11 +1430,33 @@
         "value": 1000000
       }
     },
+    "cataclysm:eat_speed": {
+      "enabled": false,
+      "min": {
+        "default": -100,
+        "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
     "irons_spellbooks:blood_spell_power": {
       "enabled": false,
       "min": {
         "default": -100,
         "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "obscure_api:critical_hit": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
       },
       "max": {
         "default": 100,
@@ -1417,17 +1472,6 @@
       "max": {
         "default": 1,
         "value": 1
-      }
-    },
-    "obscure_api:critical_hit": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
       }
     },
     "tconstruct:generic.knockback_multiplier": {
@@ -1463,15 +1507,15 @@
         "value": 1024
       }
     },
-    "protection_pixel:arrowbarrier": {
+    "cataclysm:charge_time": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": -100,
+        "value": -100
       },
       "max": {
-        "default": 1,
-        "value": 1
+        "default": 512,
+        "value": 512
       }
     },
     "tconstruct:player.mining_speed_multiplier": {
@@ -1483,6 +1527,17 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "protection_pixel:arrowbarrier": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
       }
     },
     "tconstruct:generic.protection_cap": {
