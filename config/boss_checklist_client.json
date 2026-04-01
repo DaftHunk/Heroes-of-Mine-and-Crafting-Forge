@@ -1,7 +1,11 @@
 {
-  "ProgressionMode": true,
-  "ProgressionModePlus": false,
-  "isAnimationEnabled": true,
-  "ShowConfigScreen": true,
-  "isChecklistButtonEnabled": true
+  "progressionMode": true,
+  "progressionModePlus": false,
+  "animationsEnabled": true,
+  "showConfigScreen": true,
+  "openButtonEnabled": true,
+  "searchBarEnabled": true,
+  "progressBarEnabled": true,
+  "statisticsTabEnabled": true,
+  "openButtonYOffset": 0
 }
