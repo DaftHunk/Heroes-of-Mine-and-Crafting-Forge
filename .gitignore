@@ -81,3 +81,11 @@ easy_npc/backup/
 .boss_checklist_data/
 
 music_sheets/.cache/
+
+fieldguide_cache/
+
+immersive_paintings/
+
+exposures/
+
+.mixin.out/

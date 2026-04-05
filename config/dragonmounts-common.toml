@@ -92,4 +92,7 @@
 	#The base damage dealt by all dragon breaths. Default is 6.0 (3 hearts).
 	#Range: 0.0 ~ 1.7976931348623157E308
 	global_breath_damage = 6.0
+	#The max distance a dragon breath projectile can travel. Default is 20.0 blocks.
+	#Range: 1.0 ~ 1.7976931348623157E308
+	global_breath_range = 20.0
 

@@ -143,6 +143,17 @@
         "value": 1
       }
     },
+    "familiarslib:sound_spell_power": {
+      "enabled": false,
+      "min": {
+        "default": -100,
+        "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
     "irons_spellbooks:lightning_magic_resist": {
       "enabled": false,
       "min": {
@@ -526,6 +537,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "familiarslib:sound_magic_resist": {
+      "enabled": false,
+      "min": {
+        "default": -100,
+        "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
       }
     },
     "scguns:bullet_damage_multiplier": {

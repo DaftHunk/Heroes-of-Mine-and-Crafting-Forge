@@ -114,6 +114,10 @@
     "jade_plugin3": true,
     "jade_plugin1": true
   },
+  "exposure": {
+    "lightroom": true,
+    "photograph_frame": true
+  },
   "betternether": {
     "plant_growth": true
   },

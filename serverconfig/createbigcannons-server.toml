@@ -36,6 +36,12 @@
 	#If projectiles can bounce, ricochet, and be deflected.
 	projectilesCanBounce = true
 	#.
+	#Range: 0.0 ~ 1.0
+	baseProjectileBounceChance = 0.33000001311302185
+	#.
+	#Range: 0.0 ~ 1.0
+	baseProjectileFluidBounceChance = 0.8999999761581421
+	#.
 	#[in Meters per Tick]
 	#The minimum velocity necessary to activate the penetration bonus.
 	#Range: 0.0 ~ 3.4028234663852886E38
@@ -51,76 +57,17 @@
 	#Allowed Values: ALL_DAMAGE, NO_EXPLOSIVE_DAMAGE, NO_DAMAGE
 	damageRestriction = "ALL_DAMAGE"
 	#.
-	#Range: 0.0 ~ 1.0
-	baseProjectileBounceChance = 0.33000001311302185
-	#.
-	#Range: 0.0 ~ 1.0
-	baseProjectileFluidBounceChance = 0.8999999761581421
-	#.
 	projectilesChangeSurroundings = true
 	#.
 	munitionBlocksCanExplode = true
 
 	#.
-	#Projectile Fuzes
-	[munitions.fuzes]
+	#Damp Big Cannon Propellant
+	[munitions.dampBigCannonPropellant]
 		#.
-		#Chance that the Impact Fuze/Delayed Impact Fuze will detonate on hitting something. 0 is 0% (never), 1 is 100% (always).
-		#Range: 0.0 ~ 1.0
-		impactFuzeDetonationChance = 0.6700000166893005
+		dampPropellantBlocksStartingIgnition = true
 		#.
-		#How many blocks the Impact Fuze/Delayed Impact Fuze can hit before breaking. Set to -1 to never break.
-		#Range: > -1
-		impactFuzeDurability = 3
-		#.
-		#[in Ticks]
-		#Time it takes for a proximity fuze to arm itself.
-		#After the fuze has been in the air for the specified arming time, it will detonate when it gets close enough to a block or entity.
-		#Range: > 0
-		proximityFuzeArmingTime = 20
-		#.
-		#Scale of the area covered by the Proximity Fuze. Larger number means wider area covered
-		#Range: 1 ~ 10
-		proximityFuzeScale = 5
-		#.
-		#[in Blocks]
-		#Spacing of the detection points of the Proximity Fuze.
-		#Range: 0.5 ~ 2.0
-		proximityFuzeSpacing = 1.5
-		#.
-		#Chance that the Inertia Fuze/Delayed Inertia Fuze will detonate on hitting something. 0 is 0% (never), 1 is 100% (always).
-		#Range: 0.0 ~ 1.0
-		inertiaFuzeDetonationChance = 0.8999999761581421
-		#.
-		#How many blocks the Inertia Fuze/Delayed Inertia Fuze can hit before breaking. Set to -1 to never break.
-		#Range: > -1
-		inertiaFuzeDurability = 3
-
-	#.
-	#Grouped Munitions
-	[munitions.groupedMunitions]
-		#.
-		#The chance of a fluid blob affecting a block in its area of effect (AOE). 0 is 0% (never), 1 is 100% (always).
-		#Range: 0.0 ~ 1.0
-		fluidBlobBlockEffectChance = 0.5
-
-	#.
-	#Autocannon Munitions
-	[munitions.autocannonMunitions]
-		#.
-		#Makes all shot autocannon projectiles tracers regardless if the item had a tracer tip applied. Emulates legacy behavior.
-		allAutocannonProjectilesAreTracers = false
-		#.
-		#How many autocannon rounds the Autocannon Ammo Container can store.
-		#Range: 1 ~ 128
-		autocannonAmmoContainerAutocannonRoundCapacity = 16
-		#.
-		#How many machine gun rounds the Autocannon Ammo Container can store.
-		#Range: 1 ~ 128
-		autocannonAmmoContainerMachineGunRoundCapacity = 64
-		#.
-		#Allowed Values: NONE, LONG, SHORT
-		trailType = "SHORT"
+		dampPropellantWeakensPropellant = true
 
 	#.
 	#Chunkloading
@@ -147,12 +94,65 @@
 		quickFiringBreechItemGoesToInventory = false
 
 	#.
-	#Damp Big Cannon Propellant
-	[munitions.dampBigCannonPropellant]
+	#Projectile Fuzes
+	[munitions.fuzes]
 		#.
-		dampPropellantBlocksStartingIgnition = true
+		#Chance that the Impact Fuze/Delayed Impact Fuze will detonate on hitting something. 0 is 0% (never), 1 is 100% (always).
+		#Range: 0.0 ~ 1.0
+		impactFuzeDetonationChance = 0.6700000166893005
 		#.
-		dampPropellantWeakensPropellant = true
+		#How many blocks the Impact Fuze/Delayed Impact Fuze can hit before breaking. Set to -1 to never break.
+		#Range: > -1
+		impactFuzeDurability = 3
+		#.
+		#Chance that the Inertia Fuze/Delayed Inertia Fuze will detonate on hitting something. 0 is 0% (never), 1 is 100% (always).
+		#Range: 0.0 ~ 1.0
+		inertiaFuzeDetonationChance = 0.8999999761581421
+		#.
+		#How many blocks the Inertia Fuze/Delayed Inertia Fuze can hit before breaking. Set to -1 to never break.
+		#Range: > -1
+		inertiaFuzeDurability = 3
+		#.
+		#[in Ticks]
+		#Time it takes for a proximity fuze to arm itself.
+		#After the fuze has been in the air for the specified arming time, it will detonate when it gets close enough to a block or entity.
+		#Range: > 0
+		proximityFuzeArmingTime = 5
+		#.
+		#Scale of the area covered by the Proximity Fuze. Larger number means wider area covered
+		#Range: 1 ~ 10
+		proximityFuzeScale = 5
+		#.
+		#[in Blocks]
+		#Spacing of the detection points of the Proximity Fuze.
+		#Range: 0.5 ~ 2.0
+		proximityFuzeSpacing = 1.5
+
+	#.
+	#Grouped Munitions
+	[munitions.groupedMunitions]
+		#.
+		#The chance of a fluid blob affecting a block in its area of effect (AOE). 0 is 0% (never), 1 is 100% (always).
+		#Range: 0.0 ~ 1.0
+		fluidBlobBlockEffectChance = 0.5
+
+	#.
+	#Autocannon Munitions
+	[munitions.autocannonMunitions]
+		#.
+		#Allowed Values: NONE, LONG, SHORT
+		trailType = "SHORT"
+		#.
+		#Makes all shot autocannon projectiles tracers regardless if the item had a tracer tip applied. Emulates legacy behavior.
+		allAutocannonProjectilesAreTracers = false
+		#.
+		#How many autocannon rounds the Autocannon Ammo Container can store.
+		#Range: 1 ~ 128
+		autocannonAmmoContainerAutocannonRoundCapacity = 16
+		#.
+		#How many machine gun rounds the Autocannon Ammo Container can store.
+		#Range: 1 ~ 128
+		autocannonAmmoContainerMachineGunRoundCapacity = 64
 
 #.
 #These values affect the characteristics of cannon materials and cannon structures

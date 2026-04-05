@@ -27,7 +27,7 @@
 	minthleveltoteleport = 3
 	#Modificateur de la consommation alimentaire. [Defaut: 1.000000, min: 0.100000, max: 100.000000]
 	#Range: 0.1 ~ 100.0
-	foodmodifier = 4.0
+	foodmodifier = 1.0
 	#A quel point les maladies sont courantes. 1 = Très commun, 100 = Extrêmement rare. [Defaut: 5, min: 1, max: 100]
 	#Range: 1 ~ 100
 	diseasemodifier = 10
@@ -158,7 +158,7 @@
 	minimumrailstopath = 8
 	#Nombre de processus additionnels à utiliser pour le Pathfinding. [Defaut: 1, min: 1, max: 10]
 	#Range: 1 ~ 10
-	pathfindingmaxthreadcount = 6
+	pathfindingmaxthreadcount = 2
 
 #Toutes les configurations liées au système de requête
 [requestSystem]
