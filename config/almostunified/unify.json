@@ -32,7 +32,8 @@
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
     "forge:storage_blocks/raw_{material}",
-	"forge:crops/{material}"
+	"forge:crops/{material}",
+	"homac:coffee_beans"
   ],
   "materials": [
     "aeternium",
@@ -87,7 +88,12 @@
 	"cabbage"
   ],
   "priorityOverrides": {},
-  "customTags": {},
+  "customTags": {
+	"homac:coffee_beans": [
+		"rusticdelight:coffee_beans",
+		"herbalbrews:coffee_beans"
+	]
+  },
   "tagOwnerships": {},
   "itemTagInheritanceMode": "ALLOW",
   "itemTagInheritance": {},

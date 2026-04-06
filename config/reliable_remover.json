@@ -149,6 +149,11 @@
     "scholar:indigo_writable_book",
     "scholar:coral_writable_book",
     "scholar:rose_writable_book",
-	"scholar:maroon_writable_book"
+    "scholar:maroon_writable_book",
+    "rusticdelight:wild_cotton",
+    "rusticdelight:cotton_seeds",
+    "rusticdelight:cotton_seeds_bag",
+    "rusticdelight:cotton_boll_crate",
+    "rusticdelight:cotton_boll"
   ]
 }

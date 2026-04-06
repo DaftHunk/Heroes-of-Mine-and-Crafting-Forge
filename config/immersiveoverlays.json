@@ -1,7 +1,7 @@
 {
   "version": 4,
   "enabled": true,
-  "avoid_overlapping": true,
+  "avoid_overlapping": false,
   "moved_by_effects": true,
   "require_item": true,
   "require_item_in_hand": false,
@@ -11,7 +11,7 @@
   "render_endcap": true,
   "hide_from_debug": true,
   "compass_enable": true,
-  "compass_vertical_position": 174,
+  "compass_vertical_position": 194,
   "compass_horizontal_position_left": false,
   "compass_direction": false,
   "compass_single_line": false,
@@ -79,7 +79,7 @@
   "biome_reduced_info": false,
   "biome_text_tinted": true,
   "biome_text_colour": 14737632,
-  "biome_vertical_position": 148,
+  "biome_vertical_position": 174,
   "biome_horizontal_position_left": false,
   "biome_items": [
     "minecraft:map",

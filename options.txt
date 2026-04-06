@@ -145,8 +145,6 @@ key_key.shouldersurfing.enter_third_person_back:key.keyboard.unknown
 key_key.shouldersurfing.enter_shoulder_surfing:key.keyboard.unknown
 key_key.astikorcarts.desc:key.keyboard.r
 key_key.weaponmaster_ydm.opengui:key.keyboard.right.bracket
-key_key.familiarslib.summoning_key:key.keyboard.j
-key_key.familiarslib.screen_key:key.keyboard.comma
 key_key.cataclysm.ability:key.keyboard.unknown
 key_key.cataclysm.helmet_ability:key.keyboard.unknown
 key_key.cataclysm.chestplate_ability:key.keyboard.unknown
@@ -245,11 +243,11 @@ key_placebo.toggleWings:key.keyboard.unknown
 key_key.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_key.sophisticatedbackpacks.inventory_interaction:key.keyboard.c
 key_key.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
-key_key.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.z:ALT
 key_key.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
 key_key.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_key.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
 key_key.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.x:ALT
+key_key.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.z:ALT
 key_key.minecolonies.toggle_goggles:key.keyboard.unknown
 key_key.next_image:key.keyboard.down
 key_key.previous_image:key.keyboard.up
@@ -289,6 +287,7 @@ key_key.irons_spellbooks.spell_quick_cast_12:key.keyboard.unknown
 key_key.irons_spellbooks.spell_quick_cast_13:key.keyboard.unknown
 key_key.irons_spellbooks.spell_quick_cast_14:key.keyboard.unknown
 key_key.irons_spellbooks.spell_quick_cast_15:key.keyboard.unknown
+key_key.reliable_remover.emi_delete:key.keyboard.delete
 key_key.do_a_barrel_roll.toggle_enabled:key.keyboard.unknown
 key_key.do_a_barrel_roll.toggle_thrust:key.keyboard.unknown
 key_key.do_a_barrel_roll.open_config:key.keyboard.unknown
