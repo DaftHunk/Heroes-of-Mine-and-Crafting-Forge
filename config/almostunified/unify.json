@@ -92,6 +92,58 @@
 	"homac:coffee_beans": [
 		"rusticdelight:coffee_beans",
 		"herbalbrews:coffee_beans"
+	],
+	"quark:stools": [
+		"dye_the_world:amber_quark_stool",
+		"dye_the_world:aqua_quark_stool",
+		"dye_the_world:beige_quark_stool",
+		"dye_the_world:coral_quark_stool",
+		"dye_the_world:forest_quark_stool",
+		"dye_the_world:ginger_quark_stool",
+		"dye_the_world:indigo_quark_stool",
+		"dye_the_world:maroon_quark_stool",
+		"dye_the_world:mint_quark_stool",
+		"dye_the_world:navy_quark_stool",
+		"dye_the_world:olive_quark_stool",
+		"dye_the_world:rose_quark_stool",
+		"dye_the_world:slate_quark_stool",
+		"dye_the_world:tan_quark_stool",
+		"dye_the_world:teal_quark_stool",
+		"dye_the_world:verdant_quark_stool"
+	],
+	"minecolonies:glazed_terracotta": [
+		"dye_depot:amber_glazed_terracotta",
+		"dye_depot:aqua_glazed_terracotta",
+		"dye_depot:beige_glazed_terracotta",
+		"dye_depot:coral_glazed_terracotta",
+		"dye_depot:forest_glazed_terracotta",
+		"dye_depot:ginger_glazed_terracotta",
+		"dye_depot:indigo_glazed_terracotta",
+		"dye_depot:maroon_glazed_terracotta",
+		"dye_depot:mint_glazed_terracotta",
+		"dye_depot:navy_glazed_terracotta",
+		"dye_depot:olive_glazed_terracotta",
+		"dye_depot:rose_glazed_terracotta",
+		"dye_depot:slate_glazed_terracotta",
+		"dye_depot:tan_glazed_terracotta",
+		"dye_depot:teal_glazed_terracotta",
+		"dye_depot:verdant_glazed_terracotta"
+	],
+	"nirvana:bongs": [
+		"nirvana:bong",
+		"nirvana:potion_bong"
+	],
+	"nirvana:pipes": [
+		"nirvana:old_pipe",
+		"nirvana:stuffed_pipe",
+		"nirvana:suspicious_pipe"
+	],
+	"supplementaries:bamboo_spikes": [
+		"supplementaries:bamboo_spikes",
+		"supplementaries:bamboo_spikes_tipped"
+	],
+	"supplementaries:buntings": [
+		"supplementaries:bunting"
 	]
   },
   "tagOwnerships": {},
