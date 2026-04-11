@@ -7,7 +7,7 @@
   "require_item_in_hand": false,
   "search_containers": true,
   "search_containers_for_containers": true,
-  "render_background": true,
+  "render_background": false,
   "render_endcap": true,
   "hide_from_debug": true,
   "compass_enable": true,

@@ -95,4 +95,8 @@
 	#The max distance a dragon breath projectile can travel. Default is 20.0 blocks.
 	#Range: 1.0 ~ 1.7976931348623157E308
 	global_breath_range = 20.0
+	#The radius of the area a dragon will patrol when in 'Wander' mode.
+	#The total area will be a cube of (range * 2). Default is 30 (60x60x60 area). Setting this to lower numbers might restrict your dragons too much.
+	#Range: 1 ~ 128
+	dragon_wander_range = 30
 
