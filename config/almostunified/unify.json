@@ -137,13 +137,6 @@
 		"nirvana:old_pipe",
 		"nirvana:stuffed_pipe",
 		"nirvana:suspicious_pipe"
-	],
-	"supplementaries:bamboo_spikes": [
-		"supplementaries:bamboo_spikes",
-		"supplementaries:bamboo_spikes_tipped"
-	],
-	"supplementaries:buntings": [
-		"supplementaries:bunting"
 	]
   },
   "tagOwnerships": {},
