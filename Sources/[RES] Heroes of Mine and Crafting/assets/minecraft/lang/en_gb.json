@@ -60,5 +60,9 @@
     "itemGroup.redstone": "\u00a7fRedstone Blocks",
     "itemGroup.search": "\u00a7fSearch",
     "itemGroup.spawnEggs": "\u00a7fSpawn Eggs",
-    "itemGroup.tools": "\u00a7fTools & Utilities"
+    "itemGroup.tools": "\u00a7fTools & Utilities",
+	"curios.identifier.clock": "Montre",
+	"curios.identifier.compass": "Boussole",
+	"curios.identifier.biome": "Boussole de la nature",
+	"curios.identifier.back_weapon": "Holster (Appuyez sur V)"
 }

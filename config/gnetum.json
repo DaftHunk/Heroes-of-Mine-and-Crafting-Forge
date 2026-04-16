@@ -5,8 +5,12 @@
   "showHudFps": {
     "value": "ON"
   },
+  "downscale": {
+    "value": "OFF"
+  },
   "numberOfPasses": 3,
   "maxFps": 60,
+  "screenMaxFps": 20,
   "mapVanillaElements": {
     "minecraft:record_overlay": {
       "enabled": {
@@ -200,6 +204,12 @@
       },
       "pass": 3
     },
+    "sophisticatedstorage:storage_tool_info": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 1
+    },
     "minecraft:subtitles": {
       "enabled": {
         "value": "AUTO"
@@ -267,6 +277,12 @@
       "pass": 3
     },
     "create:schematic": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 1
+    },
+    "sophisticatedstorage:paintbrush_info": {
       "enabled": {
         "value": "AUTO"
       },
@@ -404,6 +420,12 @@
       },
       "pass": 3
     },
+    "exposure:viewfinder": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 3
+    },
     "minecraft:spyglass": {
       "enabled": {
         "value": "AUTO"
@@ -421,6 +443,12 @@
         "value": "AUTO"
       },
       "pass": 3
+    },
+    "sophisticatedstorageinmotion:paintbrush_moving_storage_info": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 1
     },
     "create:goggle_info": {
       "enabled": {
@@ -486,6 +514,12 @@
       },
       "pass": 3
     },
+    "exposure": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 3
+    },
     "thief": {
       "enabled": {
         "value": "AUTO"
@@ -502,7 +536,7 @@
       "enabled": {
         "value": "AUTO"
       },
-      "pass": 3
+      "pass": 1
     },
     "architectury": {
       "enabled": {

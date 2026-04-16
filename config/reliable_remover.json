@@ -10,6 +10,8 @@
   "removeItemsFromLootChests": true,
   "removeItemsFromStorage": true,
   "removeItemsFromInfoTabs": true,
+  "removeItemsFromTrades": true,
+  "removeRecipes": true,
   "removeMobEquipment": true,
   "enableEmiRemoval": false,
   "showEmiToast": true,
@@ -154,6 +156,8 @@
     "rusticdelight:cotton_seeds",
     "rusticdelight:cotton_seeds_bag",
     "rusticdelight:cotton_boll_crate",
-    "rusticdelight:cotton_boll"
+    "rusticdelight:cotton_boll",
+    "lowlands_clothing:golden_kouign_amann",
+    "quark:feeding_trough"
   ]
 }

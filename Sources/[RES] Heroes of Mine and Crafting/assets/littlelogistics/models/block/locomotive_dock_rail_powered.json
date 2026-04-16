@@ -1,0 +1,9 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "littlelogistics:block/locomotive_dock_rail",
+	"textures": {
+		"2": "littlelogistics:block/rays_locomotive_dock_rail_powered",
+		"particle": "littlelogistics:block/rays_locomotive_dock_rail_powered"
+	}
+}

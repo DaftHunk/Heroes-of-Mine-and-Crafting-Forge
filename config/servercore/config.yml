@@ -36,30 +36,17 @@ dynamic:
   # ► increment = The amount the setting will be increased or decreased by.
   # ► interval = The amount of seconds between each check to increase or decrease.
   dynamic-settings:
-    - setting: 'CHUNK_TICK_DISTANCE'
-      max: 8
+    - setting: 'VIEW_DISTANCE'
+      max: 16
       min: 8
-      increment: 1
-      interval: 60
-
-    - setting: 'MOBCAP_PERCENTAGE'
+      increment: 4
+      interval: 10
+      
+   - setting: 'MOBCAP_PERCENTAGE'
       max: 100
       min: 50
       increment: 10
-      interval: 60
-
-    - setting: 'SIMULATION_DISTANCE'
-      max: 8
-      min: 8
-      increment: 1
-      interval: 60
-
-    - setting: 'VIEW_DISTANCE'
-      max: 8
-      min: 8
-      increment: 1
-      interval: 120
-
+      interval: 60   
 
 # A special mobcap that only affects the breeding of animals and villagers.
 breeding-cap:
