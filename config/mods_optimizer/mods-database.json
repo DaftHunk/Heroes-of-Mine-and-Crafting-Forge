@@ -19,7 +19,9 @@
     "server_side_mod_id",
     "simplebackups",
     "smoothchunk",
-    "villagerdeathmessages"
+    "villagerdeathmessages",
+	"shutdowner",
+	"Shutdowner"
   ],
   "client": [
     "3dskinlayers",

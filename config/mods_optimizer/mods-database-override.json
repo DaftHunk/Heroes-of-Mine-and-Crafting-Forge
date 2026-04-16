@@ -1,6 +1,7 @@
 {
   "description": "Override entries from mods-database.json. This file is never modified automatically.",
   "server": [
+	"shutdowner"
   ],
   "client": [
     "colorwheel",
