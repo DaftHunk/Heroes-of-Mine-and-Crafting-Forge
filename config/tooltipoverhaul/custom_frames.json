@@ -25,6 +25,8 @@
 		"buddycards:buddycard_pack_nether",
 		"buddycards:buddycard_pack_end",
 		"buddycards:buddycard_pack_mystery",
+		"buddycards:buddycard_pack_cave",
+		"createbuddycards:buddycard_pack_create",
 		"simplehats:hatbag_common",
 		"simplehats:hatbag_uncommon",
 		"lootbags:loot_bag"

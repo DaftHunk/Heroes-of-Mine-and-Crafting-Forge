@@ -99,3 +99,9 @@
 	#Range: 0.0 ~ 1.0
 	overOdds = 0.015
 
+[misc]
+	#
+	#Chance to pull an extra card in a pack when using a Charged Buddysteel Ring, 0-1, default is 50%
+	#Range: 0.0 ~ 1.0
+	buddysteelRingChance = 0.5
+

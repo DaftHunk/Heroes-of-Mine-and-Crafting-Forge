@@ -1,10 +1,9 @@
 # Don't change this! Version used to track needed updates.
 version = 0
 # Hand-delivers the sacred texts on first login.
-enableAutoGuidebookDelivery = true
+enableAutoGuidebookDelivery = false
 # A list of UUIDs for players who have already seen the missing guidebook warning. Ensures that everyone sees this, but only once unless you delete your name from this list.
 playersWhoHaveSeenGuidebookWarning = [
-    "Daft_Hunk"
 ]
 # How long (in ticks) I wait before realizing you're book-less and panicking. 3600 = 3 minutes.
 guidebookWarningTimer = 3600
