@@ -15,4 +15,6 @@
 	colonyteamborders = true
 	#Le contenu des vacances doit-il être affiché? [Defaut: true]
 	holidayfeatures = false
+	#Si cette option est activée, les articles en cuir teint afficheront une infobulle vous indiquant la couleur à utiliser. [Defaut: true]
+	showdyetooltips = true
 
