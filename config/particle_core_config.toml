@@ -2,11 +2,11 @@
 version = 1
 disableParticles = false
 byTypeReductions = {  }
-maxParticlesPerSheet = 16384
-particleRenderDistanceMultiplier = 1.0
+maxParticlesPerSheet = 2048
+particleRenderDistanceMultiplier = 0.5036764705882353
 asynchronousTicking = true
 reduceAllChance = 0.0
 reduceDecreasedChance = 0.0
 turnOffPotionParticlesV2 = [
-    "NONE"
+    "ALL"
 ]
