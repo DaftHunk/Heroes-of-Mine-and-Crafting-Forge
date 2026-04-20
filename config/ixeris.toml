@@ -21,7 +21,7 @@ logCacheIssues = false
 
 [bufferedRawInput]
 	#Enable to use buffered raw input for the mouse when supported, which can greatly improve event polling performance and reduce CPU usage.
-	mouse = true
+	mouse = false
 	#Enable to use buffered raw input for the keyboard when supported, which can offer a small performance boost to event polling performance.
 	keyboard = false
 	#Specifies the initial raw input buffer size.
