@@ -86,14 +86,15 @@
     "registry_name": "ON",
     "mod_name": true
   },
-  "adorablehamsterpets": {
-    "hamster_debug_info": true,
-    "hamster_bed_info": true,
-    "wild_bush_tooltips": true
-  },
   "apotheosis": {
     "adventure": true,
     "ench": true
+  },
+  "adorablehamsterpets": {
+    "hamster_debug_info": true,
+    "hamster_bed_info": true,
+    "wild_bush_tooltips": true,
+    "hamster_genetics": true
   },
   "infinitybuttons": {
     "hide_secret_buttons": true,
