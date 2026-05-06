@@ -137,6 +137,17 @@
 		"nirvana:old_pipe",
 		"nirvana:stuffed_pipe",
 		"nirvana:suspicious_pipe"
+	],
+	"create:tracks": [
+		"railways:track_quark_blossom",
+		"railways:track_quark_blossom_wide",
+		"railways:track_quark_blossom_narrow",
+		"railways:track_quark_ancient",
+		"railways:track_quark_ancient_wide",
+		"railways:track_quark_ancient_narrow",
+		"railways:track_quark_azalea",
+		"railways:track_quark_azalea_wide",
+		"railways:track_quark_azalea_narrow"
 	]
   },
   "tagOwnerships": {},

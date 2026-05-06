@@ -1,7 +1,7 @@
 # Don't change this! Version used to track needed updates.
 version = 1
 disableParticles = false
-maxParticlesPerSheet = 16384
+maxParticlesPerSheet = 1638400
 particleRenderDistanceMultiplier = 1.0
 asynchronousTicking = true
 reduceAllChance = 0.0
@@ -12,3 +12,4 @@ turnOffPotionParticlesV2 = [
 
 [byTypeReductions]
 "minecraft:smoke" = 0.4950980392156863
+"ars_nouveau:glow" = 0.4950980392156863
