@@ -156,6 +156,12 @@
       },
       "pass": 1
     },
+    "emberstextapi:immersive_messages": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 3
+    },
     "gnetum:minecraft_hand": {
       "enabled": {
         "value": "AUTO"
@@ -353,6 +359,12 @@
         "value": "AUTO"
       },
       "pass": 1
+    },
+    "emberstextapi:legacy_immersive_messages": {
+      "enabled": {
+        "value": "AUTO"
+      },
+      "pass": 3
     },
     "createbigcannons:gas_mask_overlay": {
       "enabled": {

@@ -7,5 +7,5 @@
 
 [stackGroups]
 	enableStackGroups = true
-	enableCreateStackGroupButton = false
+	enableCreateStackGroupButton = true
 
