@@ -7,10 +7,10 @@ enabledOnLinux = true
 #Specifies whether to enable the mod on other platforms
 enabledOnOtherPlatforms = true
 #Enable to use some experimental GLFW state cache, which may improve performance with some mods
-aggressiveCaching = false
+aggressiveCaching = true
 #Enable to use a more flexible threading model, which improves performance while obeying threading requirements of the underlying operating system.
 flexibleThreading = true
-#Enable to disallow delaying of any GLFW call. Might reduce performance considerably.
+#Enable to disallow delaying of any GLFW/SDL call. Might reduce performance considerably.
 fullyBlockingMode = false
 #Specifies the priority of the event polling thread. Valid values are 0~10, where 0 = auto decide.
 eventPollingThreadPriority = 0
