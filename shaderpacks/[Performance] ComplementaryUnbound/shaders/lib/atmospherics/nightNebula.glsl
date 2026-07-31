@@ -26,7 +26,7 @@ float cosM(float x) {
 }
 
 float rand(vec2 inCoord){
-    return fract(sinM(dot(inCoord, vec2(23.53, 44.0))) * 42350.45);
+    return fract(sinM(dot(inCoord, vec2(23.5, 44.0))) * 42350.45);
 }
 
 float perlin(vec2 inCoord){
@@ -99,9 +99,9 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
     #endif
 
     #ifdef CLEAR_SKY_WHEN_RAINING
-        nebulaFactor *= min1(invRainFactor + 0.4);
+        nebulaFactor *= min1(invRainFactorDynamic + 0.4);
     #else
-        nebulaFactor *= invRainFactor;
+        nebulaFactor *= invRainFactorDynamic;
     #endif
 
     nebulaFactor -= maxBlindnessDarkness;
@@ -174,8 +174,7 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
     float starGlow = pow2(clamp(starIntensity, 0.0, 0.3 + starAmount)) * starBrightness * NEBULA_STAR_BRIGHTNESS;
 
     #ifdef NEBULA_ONLY_STARS
-        nebulaTexture.a = step(0.15, nebulaTexture.a);
-        nebulaTexture.rgb = vec3(3.0 * starGlow);
+        nebulaTexture.rgb = vec3(10.0 * starGlow);
     #else
         nebulaTexture.rgb *= 1.5 + 10.0 * starGlow;
     #endif

@@ -8,7 +8,7 @@
 #define WAVING_FOLIAGE
 #define WAVING_LEAVES
 #define WAVING_LAVA
-#define WAVING_LILY_PAD
+//#define WAVING_LILY_PAD
 #define WAVING_WATER_VERTEX
 
 #ifdef NETHER

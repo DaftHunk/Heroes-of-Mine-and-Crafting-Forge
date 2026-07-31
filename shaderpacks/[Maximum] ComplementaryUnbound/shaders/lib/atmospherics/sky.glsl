@@ -11,7 +11,28 @@
         #include "/lib/atmospherics/fog/caveFactor.glsl"
     #endif
 
-    vec3 GetSky(float VdotU, float VdotS, float dither, bool doGlare, bool doGround) {
+    vec3 getCustomSkyColor(out bool isCustomSky) {
+        isCustomSky = false;
+        #ifdef SAVE_SKYBOX_DATA
+            vec4 skyColor = texelFetch(colortex13, texelCoord, 0);
+            int hasCustomSky = int(texelFetch(colortex6, texelCoord, 0).g * 255.1);
+            if (hasCustomSky == 238 || skyColor.rgb != vec3(0.0)) {
+                isCustomSky = true;
+                return skyColor.rgb;
+            }
+        #endif
+        return vec3(0.0);
+    }
+
+    vec3 GetSky(float VdotU, float VdotS, float dither, bool doGlare, bool doGround, out bool isCustomSky, bool skipCustomSky) {
+        isCustomSky = false;
+        #ifdef SAVE_SKYBOX_DATA
+            vec3 customSkyColor = getCustomSkyColor(isCustomSky);
+            if (isCustomSky && !skipCustomSky) {
+                return customSkyColor;
+            }
+        #endif
+
         // Prepare variables
         float nightFactorSqrt2 = sqrt2(nightFactor);
         float nightFactorM = sqrt2(nightFactorSqrt2) * 0.4;
@@ -24,7 +45,11 @@
         float VdotUmax0M = 1.0 - pow2(VdotUmax0);
 
         // Prepare colors
-        vec3 upColor = mix(nightUpSkyColor * (1.5 - 0.5 * nightFactorSqrt2 + nightFactorM * VdotSM3 * 1.5), dayUpSkyColor, sunFactor);
+        float aroundMoonSkyFactor = 1.0;
+        #ifndef EUPHORIA_PATCHES_IS_SPACE_MOD_INSTALLED
+            aroundMoonSkyFactor = 1.5 - 0.5 * nightFactorSqrt2 + nightFactorM * VdotSM3 * 1.5;
+        #endif
+        vec3 upColor = mix(nightUpSkyColor * aroundMoonSkyFactor, dayUpSkyColor, sunFactor);
         vec3 middleColor = mix(nightMiddleSkyColor * (3.0 - 2.0 * nightFactorSqrt2), dayMiddleSkyColor * (1.0 + VdotSM2 * 0.3), sunFactor);
         vec3 downColor = mix(nightDownSkyColor, dayDownSkyColor, (sunFactor + sunVisibility) * 0.5);
 
@@ -59,7 +84,7 @@
             finalSky = mix(finalSky * 3.0, waterFogColor, VdotUmax0M);
 
         // Sun/Moon Glare
-        #if SUN_GLARE_AMOUNT > 0 || MOON_GLARE_AMOUNT > 0
+        #if (SUN_GLARE_AMOUNT > 0 || MOON_GLARE_AMOUNT > 0) && !defined EUPHORIA_PATCHES_IS_SPACE_MOD_INSTALLED
             if (doGlare) {
                 if (0.0 < VdotSML) {
                     float glareScatter = 3.0 * (2.0 - clamp01(VdotS * 1000.0));
@@ -156,6 +181,29 @@
         #endif
 
         return finalSky;
+    }
+
+    vec3 GetSkyReflected(float VdotU, float VdotS, float dither, bool doGlare, bool doGround, out bool isCustomSky) {
+        vec3 regularSkyColor = GetSky(VdotU, VdotS, dither, doGlare, doGround, isCustomSky, true);
+        #ifdef SAVE_SKYBOX_DATA
+            vec3 customSkyColor = getCustomSkyColor(isCustomSky);
+            if (isCustomSky) {
+                return mix(regularSkyColor, customSkyColor, 0.33);
+            }
+        #endif
+        return regularSkyColor;
+    }
+
+    vec3 GetLowQualitySkyReflected(float VdotU, float VdotS, float dither, bool doGlare, bool doGround, out bool isCustomSky) {
+        vec3 regularSkyColor = GetLowQualitySky(VdotU, VdotS, dither, doGlare, doGround);
+        isCustomSky = false;
+        #ifdef SAVE_SKYBOX_DATA
+            vec3 customSkyColor = getCustomSkyColor(isCustomSky);
+            if (isCustomSky) {
+                return mix(regularSkyColor, customSkyColor, 0.33);
+            }
+        #endif
+        return regularSkyColor;
     }
 
 #endif //INCLUDE_SKY

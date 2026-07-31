@@ -86,7 +86,7 @@ if (mat < 32008) {
                 }
             }
         } else {
-            if (mat == 32000) { // Water
+            if (mat < 32004) { // Water
                 #ifdef SHADER_WATER
                     #include "/lib/materials/specificMaterials/translucents/water.glsl"
                 #endif

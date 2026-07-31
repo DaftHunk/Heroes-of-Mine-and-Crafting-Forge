@@ -136,6 +136,10 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
     #include "/lib/misc/shockwave.glsl"
 #endif
 
+#ifdef GBUFFERS_BLOCK_TRANSLUCENT
+    #include "/lib/atmospherics/fog/mainFog.glsl"
+#endif
+
 //Program//
 void main() {
     vec3 screenPos = vec3(gl_FragCoord.xy / vec2(viewWidth, viewHeight), gl_FragCoord.z);
@@ -163,12 +167,6 @@ void main() {
         dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
     #endif
 
-    #ifdef DISTANT_HORIZONS
-        if (getDHFadeFactor(playerPos) < dither) {
-            discard;
-        }
-    #endif
-
     float overlayNoiseIntensity = 1.0;
     float snowNoiseIntensity = 1.0;
     float sandNoiseIntensity = 1.0;
@@ -184,9 +182,12 @@ void main() {
         sqrtAtmColorMult = sqrt(atmColorMult);
     #endif
 
-    bool noSmoothLighting = false, noDirectionalShading = false;
+    bool noSmoothLighting = false, noDirectionalShading = false, noGeneratedNormals = false;
     float smoothnessD = 0.0, skyLightFactor = 0.0, materialMask = 0.0, enderDragonDead = 1.0;
     float smoothnessG = 0.0, highlightMult = 1.0, emission = 0.0, noiseFactor = 1.0;
+    #ifdef PHOTONICS_LIGHTING
+        vec3 oldAlbedo = vec3(0.0);
+    #endif
     vec2 lmCoordM = lmCoord;
     vec3 normalM = VdotN > 0.0 ? -normal : normal; // Inverted Normal Workaround
     vec3 geoNormal = normalM, shadowMult = vec3(1.0);
@@ -256,7 +257,7 @@ void main() {
     #endif
 
     #ifdef GENERATED_NORMALS
-        GenerateNormals(normalM, colorP);
+        if (!noGeneratedNormals) GenerateNormals(normalM, colorP);
     #endif
 
     #ifdef COATED_TEXTURES
@@ -270,6 +271,10 @@ void main() {
     emission *= EMISSION_MULTIPLIER;
 
     bool isLightSource = lmCoord.x > 0.99;
+
+    #ifdef PHOTONICS_LIGHTING
+        oldAlbedo = color.rgb;
+    #endif
 
     DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, false,
@@ -289,8 +294,31 @@ void main() {
         ColorCodeProgram(color, blockEntityId);
     #endif
 
+    #ifdef GBUFFERS_BLOCK_TRANSLUCENT
+        float VdotU = dot(nViewPos, upVec);
+        float VdotS = dot(nViewPos, sunVec);
+
+        float skyFade = 0.0;
+        float prevAlpha = color.a;
+        color.a = 1.0;
+        DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
+        float fogAlpha = color.a;
+        color.a = prevAlpha * (1.0 - skyFade);
+    #endif
+
     #ifdef IRIS_FEATURE_FADE_VARIABLE
         skyLightFactor *= 0.5;
+    #endif
+
+    #ifdef PHOTONICS_LIGHTING
+        vec4 phAlbedoOut = vec4(oldAlbedo, 1.0);
+        vec3 playerPosDelta = vec3(0.0);
+        #ifdef DO_PIXELATION_EFFECTS
+            // Compute snap delta here where dFdx/dFdy are valid (same triangle in 2x2 quad)
+            // Store world-space delta so post-passes can apply it without any derivatives
+            vec2 pixelationOffset = ComputeTexelOffset(tex, texCoord);
+            playerPosDelta = TexelSnap(playerPos, pixelationOffset) - playerPos;
+        #endif
     #endif
 
     /* DRAWBUFFERS:036 */
@@ -306,9 +334,22 @@ void main() {
             /* DRAWBUFFERS:03649 */
             gl_FragData[4] = vec4(lightAlbedo, 0.0);
         #endif
+
+        #ifdef PHOTONICS_LIGHTING
+            /* RENDERTARGETS:0,3,6,4,10,11,20 */
+            gl_FragData[4] = phAlbedoOut;
+            gl_FragData[5] = vec4(playerPosDelta, 1.0);
+            gl_FragData[6] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);
+        #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:0369 */
         gl_FragData[3] = vec4(lightAlbedo, 0.0);
+    #elif defined PHOTONICS_LIGHTING
+        /* RENDERTARGETS:0,3,6,4,10,11,20 */
+        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
+        gl_FragData[4] = phAlbedoOut;
+        gl_FragData[5] = vec4(playerPosDelta, 1.0);
+        gl_FragData[6] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);
     #endif
 }
 
@@ -432,8 +473,10 @@ void main() {
     // #endif
 
     #if defined GENERATED_NORMALS || defined CUSTOM_PBR
-        binormal = normalize(gl_NormalMatrix * cross(at_tangent.xyz, gl_Normal.xyz) * at_tangent.w);
-        tangent  = normalize(gl_NormalMatrix * at_tangent.xyz);
+        vec3 rawBinormal = gl_NormalMatrix * cross(at_tangent.xyz, gl_Normal.xyz) * at_tangent.w;
+        binormal = rawBinormal * inversesqrt(max(dot(rawBinormal, rawBinormal), 1e-8));
+        vec3 rawTangent = gl_NormalMatrix * at_tangent.xyz;
+        tangent = rawTangent * inversesqrt(max(dot(rawTangent, rawTangent), 1e-8));
     #endif
 
     #ifdef POM

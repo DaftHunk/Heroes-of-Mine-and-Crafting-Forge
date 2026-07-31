@@ -4,7 +4,7 @@ Euphoria Patches License Agreement v1.1
 0. Definitions
 --------------
   Capitalized terms not defined below have the meanings given in the
-  Complementary License Agreement (“CLA”) v1.5. In addition:
+  Complementary License Agreement (“CLA”) v1.6. In addition:
 
   a. “Patcher Mod” means the EuphoriaPatcher mod used to generate Euphoria Patches.
 
@@ -17,8 +17,8 @@ Euphoria Patches License Agreement v1.1
 
 1. Scope & Inheritance
 ----------------------
-  1.1. This License extends and supplements the CLA v1.5. Except as explicitly
-       modified herein, all terms, definitions, and conditions of the CLA v1.5 apply.
+  1.1. This License extends and supplements the CLA v1.6. Except as explicitly
+       modified herein, all terms, definitions, and conditions of the CLA v1.6 apply.
        Where any conflicts exist between this License and the CLA, this License takes precedence.
 
 2. Grants

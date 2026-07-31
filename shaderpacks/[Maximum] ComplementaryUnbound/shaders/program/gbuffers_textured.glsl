@@ -120,21 +120,23 @@ void main() {
                 #ifdef NO_RAIN_ABOVE_CLOUDS
                     if (cameraPosition.y > maximumCloudsHeight) discard;
                 #endif
-        #ifdef OVERWORLD
+            #ifdef OVERWORLD
             } else if (color.b > 0.7 && color.r < 0.28 && color.g < 0.425 && color.g > color.r * 1.4) { // physics mod rain
                 #ifdef NO_RAIN_ABOVE_CLOUDS
                     if (cameraPosition.y > maximumCloudsHeight) discard;
                 #endif
-            if (color.a < 0.1 || isEyeInWater == 3) discard;
+                if (color.a < 0.1 || isEyeInWater == 3) discard;
                 color.a *= rainTexOpacity;
                 color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + ambientColor * lmCoord.y * (0.7 + 0.35 * sunFactor));
+                color.rgb *= vec3(WEATHER_TEX_R, WEATHER_TEX_G, WEATHER_TEX_B);
             } else if (color.rgb == vec3(1.0) && color.a < 0.765 && color.a > 0.605) { // physics mod snow (default snow opacity only)
                 #ifdef NO_RAIN_ABOVE_CLOUDS
                     if (cameraPosition.y > maximumCloudsHeight) discard;
                 #endif
-            if (color.a < 0.1 || isEyeInWater == 3) discard;
+                if (color.a < 0.1 || isEyeInWater == 3) discard;
                 color.a *= snowTexOpacity;
                 color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + lmCoord.y * (0.7 + 0.35 * sunFactor) + ambientColor * 0.2);
+                color.rgb *= vec3(WEATHER_TEX_R, WEATHER_TEX_G, WEATHER_TEX_B);
             #endif
             } else if (color.r == 1.0 && color.b < 0.778 && color.g < 0.97) { // Fire Particle
                 #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
@@ -301,9 +303,8 @@ void main() {
     gl_FragData[2] = vec4(1.0 - translucentMult, 1.0);
 
     #ifdef SS_BLOCKLIGHT
-        /* RENDERTARGETS: 0,6,3,9,10 */
+        /* DRAWBUFFERS:0639 */
         gl_FragData[3] = vec4(0.0, 0.0, 0.0, SSBLMask);
-        gl_FragData[4] = vec4(0.0, 0.0, 0.0, SSBLMask);
     #endif
 }
 
