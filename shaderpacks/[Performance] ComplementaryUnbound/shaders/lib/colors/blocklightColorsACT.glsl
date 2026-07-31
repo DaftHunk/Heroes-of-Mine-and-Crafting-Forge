@@ -1,23 +1,30 @@
+
+#ifdef PHOTONICS_LIGHTING
+	#define LAVA_ACT_ALPHA 0.25
+#else
+	#define LAVA_ACT_ALPHA 0.8
+#endif
+
 #ifdef SOUL_SAND_VALLEY_OVERHAUL_INTERNAL
     vec3 fireSpecialLightColorGradient = mix(vec3(2.0, 0.87, 0.27) * 3.8, mix(vec3(2.5, 0.87, 0.27), vec3(0.5, 1.9, 2.1) * 3.8, 0.3), inSoulValley);
     vec3 torchBlockSpecialLightColor = mix(vec3(2.0, 0.87, 0.27) * 3.8, mix(vec3(2.5, 0.87, 0.27), vec3(0.5, 1.9, 2.1) * 3.8, 0.5), inSoulValley);
     vec3 lanternBlockSpecialLightColor = mix(vec3(2.0, 0.87, 0.27) * 3.8, mix(vec3(2.5, 0.87, 0.27), vec3(0.5, 1.9, 2.1) * 3.8, 0.4), inSoulValley);
 	vec3 fireSpecialLightColor = mix(vec3(2.25, 0.83, 0.27) * 3.7, vec3(0.5, 1.9, 2.1) * 3.8, inSoulValley);
-	vec4 lavaSpecialLightColor = vec4(mix(vec3(3.25, 0.9, 0.2) * 3.9, vec3(0.5, 1.9, 2.1) * 4.0, inSoulValley), 0.8);
+	vec4 lavaSpecialLightColor = vec4(mix(vec3(3.25, 0.9, 0.2) * 3.9, vec3(0.5, 1.9, 2.1) * 4.0, inSoulValley), LAVA_ACT_ALPHA);
 	vec4 brewingStandSpecialLightColor = vec4(mix(vec3(2.5, 1.2, 0.4) * 0.1, vec3(0.5, 1.9, 2.1) * 0.1, inSoulValley), 0.1);
 #elif defined PURPLE_END_FIRE_INTERNAL
     vec3 fireSpecialLightColor = vec3(0.6, 0.3, 2.4) * 3.8;
 	vec3 fireSpecialLightColorGradient = mix(vec3(2.0, 0.77, 0.17) * 3.8, fireSpecialLightColor, clamp01(0.7 + max(0.0, clamp01(sin(pow2(texture2DLod(noisetex, vec2(frameTimeCounter * 0.01), 0.0).r))))));
 	vec3 torchBlockSpecialLightColor = mix(vec3(2.0, 0.87, 0.27), fireSpecialLightColor, clamp01(0.75)); // Super odd intel nan fix
 	vec3 lanternBlockSpecialLightColor = fireSpecialLightColor;
-	vec4 lavaSpecialLightColor = vec4(vec3(1.0, 0.5, 4.0) * 4.0, 0.8);
+	vec4 lavaSpecialLightColor = vec4(vec3(1.0, 0.5, 4.0) * 4.0, LAVA_ACT_ALPHA);
 	vec4 brewingStandSpecialLightColor = vec4(vec3(0.10, 0.05, 0.4) * 0.4, 0.1);
 #else
 	vec3 fireSpecialLightColor = vec3(2.25, 0.83, 0.27) * 3.7;
 	vec3 fireSpecialLightColorGradient = fireSpecialLightColor;
 	vec3 torchBlockSpecialLightColor = fireSpecialLightColor;
 	vec3 lanternBlockSpecialLightColor = fireSpecialLightColor;
-	vec4 lavaSpecialLightColor = vec4(vec3(3.25, 0.9, 0.2) * 3.9, 0.8);
+	vec4 lavaSpecialLightColor = vec4(vec3(3.25, 0.9, 0.2) * 3.9, LAVA_ACT_ALPHA);
 	vec4 brewingStandSpecialLightColor = vec4(vec3(2.5, 1.2, 0.4) * 0.1, 0.1);
 #endif
 #if defined NETHER && defined BIOME_COLORED_NETHER_PORTALS

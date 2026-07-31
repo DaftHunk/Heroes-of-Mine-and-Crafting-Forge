@@ -3,6 +3,8 @@
         vec2 lmCoord = (gl_TextureMatrix[1] * gl_MultiTexCoord1).xy;
         return clamp((lmCoord - 0.03125) * 1.06667, 0.0, 1.0);
     }
+#endif
+#if defined VERTEX_SHADER || defined VOXY_PATCH
     vec3 GetSunVector() {
         const vec2 sunRotationData = vec2(cos(sunPathRotation * 0.01745329251994), -sin(sunPathRotation * 0.01745329251994));
         #ifdef OVERWORLD
@@ -10,13 +12,67 @@
             ang = (ang + (cos(ang * 3.14159265358979) * -0.5 + 0.5 - ang) / 3.0) * 6.28318530717959;
             return normalize((gbufferModelView * vec4(vec3(-sin(ang), cos(ang) * sunRotationData) * 2000.0, 1.0)).xyz);
         #elif defined END
-            float ang = 0.0;
-            return normalize((gbufferModelView * vec4(vec3(0.0, sunRotationData * 2000.0), 1.0)).xyz);
+            #ifdef END_FLASH_SHADOW_INTERNAL
+                return normalize(mix((gbufferModelView * vec4(0.0, 2000.0, 0.0, 1.0)).xyz, endFlashPosition, endFlashIntensityM));
+            #else
+                return normalize((gbufferModelView * vec4(vec3(0.0, sunRotationData * 2000.0), 1.0)).xyz);
+            #endif
         #else
             return vec3(0.0);
         #endif
     }
 #endif
+
+float GetLuminance(vec3 color) {
+    return dot(color, vec3(0.299, 0.587, 0.114));
+}
+
+vec3 DoLuminanceCorrection(vec3 color) {
+    return color / (GetLuminance(color) + 0.0001);
+}
+
+vec3 DoReducedLuminanceCorrection(vec3 color, float reduceAmount) {
+    return color / mix(GetLuminance(color), 1.0, reduceAmount);
+}
+
+float GetBiasFactor(float NdotLM) {
+    float NdotLM2 = NdotLM * NdotLM;
+    return 1.25 * (1.0 - NdotLM2 * NdotLM2) / NdotLM;
+}
+
+float GetHorizonFactor(float XdotU) {
+    #ifdef SUN_MOON_HORIZON
+        float horizon = clamp((XdotU + 0.1) * 10.0, 0.0, 1.0);
+        horizon *= horizon;
+        return horizon * horizon * (3.0 - 2.0 * horizon);
+    #else
+        #ifdef CELESTIAL_BOTH_HEMISPHERES
+            return 1.0;
+        #endif
+        float horizon = min(XdotU + 1.0, 1.0);
+        horizon *= horizon;
+        horizon *= horizon;
+        return horizon * horizon;
+    #endif
+}
+
+bool CheckForColor(vec3 albedo, vec3 check) { // Thanks to Builderb0y
+    vec3 dif = albedo - check * 0.003921568;
+    return dif == clamp(dif, vec3(-0.001), vec3(0.001));
+}
+
+bool CheckForStick(vec3 albedo) {
+    return CheckForColor(albedo, vec3(40, 30, 11)) ||
+            CheckForColor(albedo, vec3(73, 54, 21)) ||
+            CheckForColor(albedo, vec3(104, 78, 30)) ||
+            CheckForColor(albedo, vec3(137, 103, 39));
+}
+
+float GetMaxColorDif(vec3 color) {
+    vec3 dif = abs(vec3(color.r - color.g, color.g - color.b, color.r - color.b));
+    return max(dif.r, max(dif.g, dif.b));
+}
+
 float Noise3D(vec3 p) {
     p.z = fract(p.z) * 128.0;
     float iz = floor(p.z);
@@ -29,7 +85,7 @@ float Noise3D(vec3 p) {
 }
 
 float GetSkyLightFactor(vec2 lmCoordM, vec3 shadowMult) {
-    #ifdef OVERWORLD
+    #if defined OVERWORLD || defined END && MC_VERSION >= 12109
         #if WORLD_SPACE_REFLECTIONS_INTERNAL == -1
             float skyLightFactor = max(lmCoordM.y - 0.7, 0.0) * 3.33333;
                   skyLightFactor *= skyLightFactor;
@@ -42,12 +98,15 @@ float GetSkyLightFactor(vec2 lmCoordM, vec3 shadowMult) {
                 skyLightFactor = max(skyLightFactor, dot(shadowMult, shadowMult) * 0.333333);
             #endif
         #endif
+    #elif defined END && MC_VERSION < 12109
+        float skyLightFactor = min(1.0, dot(shadowMult, shadowMult) * 0.333333);
     #else
-        #if WORLD_SPACE_REFLECTIONS_INTERNAL == -1 || MC_VERSION < 12109
-            float skyLightFactor = dot(shadowMult, shadowMult) * 0.333333;
-        #else
-            float skyLightFactor = lmCoordM.y;
-        #endif
+        float skyLightFactor = 0.0;
+    #endif
+
+    #ifdef VOXY_TRANSLUCENT
+        // A bug seems to make glass in voxy chunks have low skylight
+        skyLightFactor = pow(skyLightFactor, 0.25);
     #endif
 
     return skyLightFactor;
@@ -58,6 +117,15 @@ int min1(int x) {
 }
 float min1(float x) {
     return min(x, 1.0);
+}
+vec2 min1(vec2 x) {
+    return min(x, vec2(1.0));
+}
+vec3 min1(vec3 x) {
+    return min(x, vec3(1.0));
+}
+vec4 min1(vec4 x) {
+    return min(x, vec4(1.0));
 }
 int max0(int x) {
     return max(x, 0);
@@ -75,15 +143,19 @@ vec4 max0(vec4 x) {
     return max(x, vec4(0.0));
 }
 
-float maxAll(vec2 x) {
-    return max(x.x, x.y);
-}
-float maxAll(vec3 x) {
-    return max(x.x, max(x.y, x.z));
-}
-float maxAll(vec4 x) {
-    return max(x.x, max(x.y, max(x.z, x.w)));
-}
+float maxOf(vec2 v) { return max(v.x, v.y); }
+float maxOf(vec3 v) { return max(v.x, max(v.y, v.z)); }
+float maxOf(vec4 v) { return max(v.x, max(v.y, max(v.z, v.w))); }
+int maxOf(ivec2 x)  { return max(x.x, x.y); }
+int maxOf(ivec3 x)  { return max(x.x, max(x.y, x.z)); }
+int maxOf(ivec4 x)  { return max(x.x, max(x.y, max(x.z, x.w))); }
+
+float minOf(vec2 v) { return min(v.x, v.y); }
+float minOf(vec3 v) { return min(v.x, min(v.y, v.z)); }
+float minOf(vec4 v) { return min(v.x, min(v.y, min(v.z, v.w))); }
+int minOf(ivec2 x)  { return min(x.x, x.y); }
+int minOf(ivec3 x)  { return min(x.x, min(x.y, x.z)); }
+int minOf(ivec4 x)  { return min(x.x, min(x.y, min(x.z, x.w))); }
 
 int clamp01(int x) {
     return clamp(x, 0, 1);
@@ -310,13 +382,6 @@ float dot3(vec3 x) {
 
 #define rcp(x) (1.0 / (x))
 
-float maxOf(vec2 v) { return max(v.x, v.y); }
-float maxOf(vec3 v) { return max(v.x, max(v.y, v.z)); }
-float maxOf(vec4 v) { return max(v.x, max(v.y, max(v.z, v.w))); }
-float minOf(vec2 v) { return min(v.x, v.y); }
-float minOf(vec3 v) { return min(v.x, min(v.y, v.z)); }
-float minOf(vec4 v) { return min(v.x, min(v.y, min(v.z, v.w))); }
-
 // Smoothing function used by smoothstep
 // Zero derivative at zero and one
 float cubic_smooth(float x) {
@@ -337,52 +402,6 @@ float pulse(float x, float center, float width, const float period) {
 	return pulse(x, 0.0, width);
 }
 
-float GetLuminance(vec3 color) {
-    return dot(color, vec3(0.299, 0.587, 0.114));
-}
-
-vec3 DoLuminanceCorrection(vec3 color) {
-    return color / GetLuminance(color);
-}
-
-float GetBiasFactor(float NdotLM) {
-    float NdotLM2 = NdotLM * NdotLM;
-    return 1.25 * (1.0 - NdotLM2 * NdotLM2) / NdotLM;
-}
-
-float GetHorizonFactor(float XdotU) {
-    #ifdef SUN_MOON_HORIZON
-        float horizon = clamp((XdotU + 0.1) * 10.0, 0.0, 1.0);
-        horizon *= horizon;
-        return horizon * horizon * (3.0 - 2.0 * horizon);
-    #else
-        #ifdef CELESTIAL_BOTH_HEMISPHERES
-            return 1.0;
-        #endif
-        float horizon = min(XdotU + 1.0, 1.0);
-        horizon *= horizon;
-        horizon *= horizon;
-        return horizon * horizon;
-    #endif
-}
-
-bool CheckForColor(vec3 albedo, vec3 check) { // Thanks to Builderb0y
-    vec3 dif = albedo - check * 0.003921568;
-    return dif == clamp(dif, vec3(-0.001), vec3(0.001));
-}
-
-bool CheckForStick(vec3 albedo) {
-    return CheckForColor(albedo, vec3(40, 30, 11)) ||
-            CheckForColor(albedo, vec3(73, 54, 21)) ||
-            CheckForColor(albedo, vec3(104, 78, 30)) ||
-            CheckForColor(albedo, vec3(137, 103, 39));
-}
-
-float GetMaxColorDif(vec3 color) {
-    vec3 dif = abs(vec3(color.r - color.g, color.g - color.b, color.r - color.b));
-    return max(dif.r, max(dif.g, dif.b));
-}
-
 vec3 RgbFrom256(int r, int g, int b) {
     return vec3(float(r)/256.0 ,float(g)/256.0 ,float(b)/256.0);
 }
@@ -400,8 +419,8 @@ vec3 getRainbowColor(vec2 coord, float speed) {
 
 vec3 saturateColors(vec3 col, float saturationMult) {
     if (saturationMult == 1.0) return col;
-    float brightness = maxAll(col);
-    return (col - brightness) * saturationMult + brightness;
+    float brightness = maxOf(col);
+    return max0((col - brightness) * saturationMult + brightness);
 }
 
 float fuzzyOr(float a, float b) {
@@ -575,29 +594,33 @@ float DoAutomaticEmission(inout bool noSmoothLighting, inout bool noDirectionalS
     return max(minEmission, (baseEmission - 0.1) * 2.5);
 }
 
-float getDHFadeFactor(vec3 playerPosition) {
-    float horizontalDistance = length(playerPosition.xz);
-
-    float verticalDistance = abs(playerPosition.y);
-
-    float fadeTransitionLength = (far - near) * RENDER_EDGE_FADE_TRANSITION_PERCENT;
-    fadeTransitionLength = max(fadeTransitionLength, 1.0);
-    float fadeStartPoint = far - fadeTransitionLength;
-    fadeStartPoint = max(near + 0.01 * (far - near), fadeStartPoint);
-    if (fadeStartPoint >= far) {
-        fadeStartPoint = far - max(0.001 * (far - near), 0.1);
-    }
-
-    float horizontalFade = smoothstep(far, fadeStartPoint, horizontalDistance);
-    float verticalFade = smoothstep(far, fadeStartPoint, verticalDistance);
-
-    return min(horizontalFade, verticalFade);
-}
-
 vec2 causticOffsetDist(float x, int s) {
     float n = fract(x * 2.427) * 3.1415;
     return vec2(cos(n), sin(n)) * 2.0 * x / float(s) / 256.0;
 }
+
+#ifdef PHOTONICS_LIGHTING
+    // Above 30k blocks photonics has an existential crisis :D
+    float getPhotonicsAllowedDistance() {
+        return 1.0 - step(30001.0, float(max(abs(cameraPositionInt.x), abs(cameraPositionInt.z))));
+    }
+
+    // Keep vanilla block light as a fallback outside that range.
+    float getPhotonicsFade(vec3 playerPos) {
+        float dist = maxOf(abs(playerPos));
+        #if PHOTONICS_MAX_ALLOWED_DISTANCE < 100
+            float minDist = min(max(far - 16.0, 16.0), 16 * PHOTONICS_MAX_ALLOWED_DISTANCE);
+        #else
+            float minDist = far - 16.0;
+        #endif
+        float fadeStart = max0(minDist - 16.0);
+        float fadeEnd = minDist;
+
+        float phRtCoverage = 1.0 - smoothstep(fadeStart, fadeEnd, dist);
+
+        return phRtCoverage * photonicsMasterTimer * getPhotonicsAllowedDistance();
+    }
+#endif
 
 float hash1(uint n) {
     // The MIT License

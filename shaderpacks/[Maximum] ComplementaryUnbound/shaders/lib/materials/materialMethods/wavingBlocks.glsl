@@ -85,7 +85,16 @@ void DoWave_Water(inout vec3 playerPos, vec3 worldPos) {
         wave *= 0.1;
     #endif
 
-    playerPos.y += wave * 0.125 - 0.05;
+    wave = wave * 0.125 - 0.05;
+
+    #ifdef VOXY
+        // Fixes water alignment between normal water and voxy water
+        float renderDisEdge = min1(max0(length(playerPos) * 2.0 - far) / far);
+        wave *= 1.0 - renderDisEdge;
+        wave += 0.02 * renderDisEdge;
+    #endif
+
+    playerPos.y += wave;
 
     #if defined GBUFFERS_WATER && WATER_STYLE == 1
         normal = mix(normal, tangent, wave * 0.01);
@@ -103,6 +112,13 @@ void DoWave_Lava(inout vec3 playerPos, vec3 worldPos) {
         #if defined NETHER && defined WAVIER_LAVA
             if (worldPos.y > 30 && worldPos.y < 32) wave *= 4.5;
             else wave *= 2.0;
+        #endif
+
+        #ifdef VOXY
+            // Fixes lava alignment between normal lava and voxy lava
+            float renderDisEdge = min1(max0(length(playerPos) * 2.0 - far) / far);
+            wave *= 1.0 - renderDisEdge;
+            wave += 0.02 * renderDisEdge;
         #endif
 
         playerPos.y += wave * 0.0125;

@@ -3,7 +3,8 @@
 #include "/lib/colors/skyColors.glsl"
 #include "/lib/shaderSettings/stars.glsl"
 
-vec2 GetStarCoord(vec3 viewPos, float sphereness) {
+#ifdef CELESTIAL_BOTH_HEMISPHERES
+vec2 GetStarCoordBothHemispheres(vec3 viewPos, float sphereness) {
     vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
     float ySign = sign(wpos.y);
     float yMagnitude = abs(wpos.y);
@@ -20,9 +21,26 @@ vec2 GetStarCoord(vec3 viewPos, float sphereness) {
 
     return starCoord.xz;
 }
+#endif
+
+vec2 GetStarCoordUpperHemisphere(vec3 viewPos, float sphereness) {
+    vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
+    vec3 starCoord = wpos / (wpos.y + length(wpos.xz) * sphereness);
+    starCoord.x += 0.006 * syncedTime;
+
+    return starCoord.xz;
+}
+
+vec2 GetStarCoord(vec3 viewPos, float sphereness) {
+    #ifdef CELESTIAL_BOTH_HEMISPHERES
+        return GetStarCoordBothHemispheres(viewPos, sphereness);
+    #else
+        return GetStarCoordUpperHemisphere(viewPos, sphereness);
+    #endif
+}
 
 vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float starAmount) {
-    #if NIGHT_STAR_AMOUNT == 0
+    #if NIGHT_STAR_AMOUNT == 0 || (defined EUPHORIA_PATCHES_IS_SPYGLASS_ASTRONOMY_INSTALLED && defined GBUFFERS_SKYBASIC)
         return vec3(0.0, 0.0, 0.0);
     #endif
     float starsAroundSun = 1.0;
@@ -71,9 +89,9 @@ vec3 GetStars(vec2 starCoord, float VdotU, float VdotS, float sizeMult, float st
     #endif
 
     #ifdef CLEAR_SKY_WHEN_RAINING
-        star *= min1(invRainFactor + 0.4);
+        star *= min1(invRainFactorDynamic + 0.4);
     #else
-        star *= invRainFactor;
+        star *= invRainFactorDynamic;
     #endif
 
     vec3 starColor = GetStarColor(starCoord,

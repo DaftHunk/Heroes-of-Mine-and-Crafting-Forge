@@ -96,14 +96,15 @@
         vec3 lightColor   = vec3(0.0);
         vec3 ambientColor = (netherColor + 0.5 * lavaLightColor) * (0.9 + 0.45 * vsBrightness);
     #elif defined END
-        float fogLuminance = dot(fogColor, vec3(0.299, 0.587, 0.114));
-        vec3 endLightColor = clamp(mix(fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - fogLuminance), vec3(0.68, 0.51, 1.07), inVanillaEnd * float(END_SKY_FOG_INFLUENCE)), 0.0, 1.0);
-        vec3 endOrangeCol = vec3(E_DRAGON_BEAM_R_NEW, E_DRAGON_BEAM_G_NEW, E_DRAGON_BEAM_B_NEW) * E_DRAGON_BEAM_I;
+        float endFogLumina = dot(fogColor, vec3(0.299, 0.587, 0.114));
+        vec3 endLightTempC = vec3(0.68, 0.51, 1.07); // Ensure the clamp below does not cap the max number here off... 1 year with too little blue smh
+        vec3 endLightColor = clamp(mix(endLightTempC, fogColor * 0.6 + 0.3 * normalize(fogColor + 0.0001) + 0.25 * (1.0 - endFogLumina), (-inVanillaEnd + 1.0) * float(END_SKY_FOG_INFLUENCE)), 0.0, 1.5);
+        vec3 endOrangeCol  = vec3(E_DRAGON_BEAM_R_NEW, E_DRAGON_BEAM_G_NEW, E_DRAGON_BEAM_B_NEW) * E_DRAGON_BEAM_I;
         float endLightBalancer = 0.2 * vsBrightness;
-        vec3 lightColor   = endLightColor * (0.35 - endLightBalancer);
-        vec3 ambientCol   = endLightColor * (0.2 + endLightBalancer);
-        vec3 ambientColor = mix(ambientCol, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;
-        vec3 endColorBeam = mix(vec3(E_BEAM_R_NEW, E_BEAM_G_NEW, E_BEAM_B_NEW), ambientCol, E_BEAMS_AMBIENT_INFLUENCE);
+        vec3 lightColor    = endLightColor * (0.35 - endLightBalancer);
+        vec3 ambientTempC  = endLightColor * (0.2 + endLightBalancer);
+        vec3 ambientColor  = mix(ambientTempC, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;
+        vec3 endColorBeam  = mix(vec3(E_BEAM_R_NEW, E_BEAM_G_NEW, E_BEAM_B_NEW), ambientTempC, E_BEAMS_AMBIENT_INFLUENCE);
 
     #endif
 

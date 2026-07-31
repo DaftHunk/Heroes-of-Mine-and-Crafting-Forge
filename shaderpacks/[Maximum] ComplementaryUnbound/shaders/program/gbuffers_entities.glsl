@@ -71,6 +71,38 @@ float entitySSBLMask = 1.0;
 #endif
 
 //Common Functions//
+#ifdef IS_IRIS
+    bool ProbablyMainPlayer(vec3 playerPos) {
+        vec3 boxOffsets = vec3(2.0);
+
+        return all(lessThan(abs(playerPos + relativeEyePosition), boxOffsets));
+    }
+
+    void HideArmor(inout vec4 color, vec3 playerPos) {
+        if (atlasSize.x > 1000.0) return; // Skip Dropped Items
+        #if HIDE_ARMOR == 1
+            if (ProbablyMainPlayer(playerPos))
+        #endif
+        color.a = 0.0;
+    }
+
+    void HideArmorDontSkip(inout vec4 color, vec3 playerPos) {
+        #if HIDE_ARMOR == 1
+            if (ProbablyMainPlayer(playerPos))
+        #endif
+        color.a = 0.0;
+    }
+
+    void HideElytra(inout vec4 color, vec3 playerPos) {
+        if (atlasSize.x > 1000.0) return; // Skip Dropped Items
+        if (!isElytraFlying) {
+            #if HIDE_ARMOR == 1
+                if (ProbablyMainPlayer(playerPos))
+            #endif
+            color.a = 0.0;
+        }
+    }
+#endif
 
 //Includes//
 #include "/lib/util/dither.glsl"
@@ -99,6 +131,10 @@ float entitySSBLMask = 1.0;
 
 #ifdef COLOR_CODED_PROGRAMS
     #include "/lib/misc/colorCodedPrograms.glsl"
+#endif
+
+#ifdef GBUFFERS_ENTITIES_TRANSLUCENT
+    #include "/lib/atmospherics/fog/mainFog.glsl"
 #endif
 
 #ifdef SS_BLOCKLIGHT
@@ -136,6 +172,9 @@ void main() {
     float smoothnessD = 0.0, enderDragonDead = 1.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA, Reduce Reflection
     vec2 lmCoordM = lmCoord;
     vec3 normalM = normal, shadowMult = vec3(1.0);
+    #ifdef PHOTONICS_LIGHTING
+        vec3 oldAlbedo = vec3(0.0);
+    #endif
 
     vec3 lightAlbedo = vec3(0.0);
 
@@ -255,6 +294,10 @@ void main() {
 
         bool isLightSource = lmCoord.x > 0.99;
 
+        #ifdef PHOTONICS_LIGHTING
+            oldAlbedo = color.rgb;
+        #endif
+
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
                    true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
@@ -278,8 +321,36 @@ void main() {
         ColorCodeProgram(color, -1);
     #endif
 
+    #ifdef GBUFFERS_ENTITIES_TRANSLUCENT
+        float VdotU = dot(nViewPos, upVec);
+        float VdotS = dot(nViewPos, sunVec);
+
+        float dither = Bayer64(gl_FragCoord.xy);
+        #ifdef TAA
+            dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
+        #endif
+
+        float skyFade = 0.0;
+        float prevAlpha = color.a;
+        color.a = 1.0;
+        DoFog(color, skyFade, lViewPos, playerPos, VdotU, VdotS, dither, false, 0.0);
+        float fogAlpha = color.a;
+        color.a = prevAlpha * (1.0 - skyFade);
+    #endif
+
     #ifdef IRIS_FEATURE_FADE_VARIABLE
         skyLightFactor *= 0.5;
+    #endif
+
+    #ifdef PHOTONICS_LIGHTING
+        vec4 phAlbedoOut = vec4(oldAlbedo, 1.0);
+        vec3 playerPosDelta = vec3(0.0);
+        #ifdef DO_PIXELATION_EFFECTS
+            // Compute snap delta here where dFdx/dFdy are valid (same triangle in 2x2 quad)
+            // Store world-space delta so post-passes can apply it without any derivatives
+            vec2 pixelationOffset = ComputeTexelOffset(tex, texCoord);
+            playerPosDelta = TexelSnap(playerPos, pixelationOffset) - playerPos;
+        #endif
     #endif
 
     /* DRAWBUFFERS:036 */
@@ -295,9 +366,22 @@ void main() {
             /* DRAWBUFFERS:03649 */
             gl_FragData[4] = vec4(lightAlbedo, entitySSBLMask);
         #endif
+
+        #ifdef PHOTONICS_LIGHTING
+            /* RENDERTARGETS:0,3,6,4,10,11,20 */
+            gl_FragData[4] = phAlbedoOut; // SS_BLOCKLIGHT is undefined with Photonics
+            gl_FragData[5] = vec4(playerPosDelta, 1.0);
+            gl_FragData[6] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);
+        #endif
     #elif defined SS_BLOCKLIGHT
         /* DRAWBUFFERS:0369 */
         gl_FragData[3] = vec4(lightAlbedo, entitySSBLMask);
+    #elif defined PHOTONICS_LIGHTING
+        /* RENDERTARGETS:0,3,6,4,10,11,20 */
+        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
+        gl_FragData[4] = phAlbedoOut;
+        gl_FragData[5] = vec4(playerPosDelta, 1.0);
+        gl_FragData[6] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);
     #endif
 }
 
@@ -382,8 +466,10 @@ void main() {
     #endif
 
     #if defined GENERATED_NORMALS || defined CUSTOM_PBR
-        binormal = normalize(gl_NormalMatrix * cross(at_tangent.xyz, gl_Normal.xyz) * at_tangent.w);
-        tangent  = normalize(gl_NormalMatrix * at_tangent.xyz);
+        vec3 rawBinormal = gl_NormalMatrix * cross(at_tangent.xyz, gl_Normal.xyz) * at_tangent.w;
+        binormal = rawBinormal * inversesqrt(max(dot(rawBinormal, rawBinormal), 1e-8));
+        vec3 rawTangent = gl_NormalMatrix * at_tangent.xyz;
+        tangent = rawTangent * inversesqrt(max(dot(rawTangent, rawTangent), 1e-8));
     #endif
 
     #ifdef POM

@@ -7,7 +7,12 @@
 #include "/lib/common.glsl"
 #include "/lib/shaderSettings/tonemaps.glsl"
 #include "/lib/shaderSettings/stars.glsl"
-//#define SECRET_CAELUM_SUPPORT_SETTING
+#define CUSTOM_SKY_MOD_SUPPORT
+#ifdef CUSTOM_SKY_MOD_SUPPORT
+#endif
+#define HIDE_VANILLA_STARS
+#ifdef HIDE_VANILLA_STARS
+#endif
 
 #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
     #include "/lib/misc/distortWorld.glsl"
@@ -50,6 +55,7 @@ const int GTTonemap = 11;
 const int uchimura = 12;
 const int agxTonemap = 13;
 const int unreal = 14;
+const int doSimpleTonemap = 15;
 
 //Common Functions//
 
@@ -87,9 +93,11 @@ void main() {
     float alphaColor = glColor.a;
 
     #ifdef OVERWORLD
-        if (vanillaStars > 0.5) {
-            discard;
-        }
+        #if defined HIDE_VANILLA_STARS && !defined EUPHORIA_PATCHES_IS_ASTROCRAFT_INSTALLED
+            if (vanillaStars > 0.5) {
+                discard;
+            }
+        #endif
 
         #if IRIS_VERSION >= 10800 && IRIS_VERSION < 10805
             if (renderStage == MC_RENDER_STAGE_MOON) {
@@ -106,9 +114,10 @@ void main() {
         float VdotS = dot(nViewPos, sunVec);
         float dither = Bayer8(gl_FragCoord.xy);
 
-        color.rgb = GetSky(VdotU, VdotS, dither, true, false);
-        #ifdef SECRET_CAELUM_SUPPORT_SETTING
-        if (alphaColor < 1.0 && alphaColor > 0.0) color.rgb = glColor.rgb * alphaColor;
+        bool isCustomSky;
+        color.rgb = GetSky(VdotU, VdotS, dither, true, false, isCustomSky, false);
+        #if defined CUSTOM_SKY_MOD_SUPPORT && MC_VERSION >= 11605
+            if (alphaColor < 1.0 && alphaColor > 0.0 && renderStage != MC_RENDER_STAGE_SKY) color.rgb = glColor.rgb * alphaColor;
         #endif
 
         #ifdef ATM_COLOR_MULTS
@@ -177,7 +186,7 @@ void main() {
                     float horizonFactor = GetHorizonFactor(-SdotU);
                     sunMoonMixer = max0(sunMoonMixer - 0.25) * 1.33333 * horizonFactor;
 
-                    starCoord = GetStarCoord(viewPos.xyz, 1.0) * 0.5 + 0.617;
+                    starCoord = GetStarCoordUpperHemisphere(viewPos.xyz, 1.0) * 0.5 + 0.617;
                     float moonNoise = texture2DLod(noisetex, starCoord, 0.0).g
                                     + texture2DLod(noisetex, starCoord * 2.5, 0.0).g * 0.7
                                     + texture2DLod(noisetex, starCoord * 5.0, 0.0).g * 0.5;
@@ -268,29 +277,12 @@ void main() {
     sunVec = GetSunVector();
 
     #ifdef OVERWORLD
-        vanillaStars = 0.0;
-        #if MC_VERSION >= 11605 || defined IS_ANGELICA
-            if (renderStage == MC_RENDER_STAGE_STARS) {
-                vanillaStars = 1.0;
-            }
+        #if MC_VERSION >= 11605 && (defined IS_ANGELICA || defined IS_IRIS)
+            vanillaStars = float(renderStage == MC_RENDER_STAGE_STARS);
         #else
             //Vanilla Star Dedection by Builderb0y
             vanillaStars = float(glColor.r == glColor.g && glColor.g == glColor.b && glColor.r > 0.0 && glColor.r < 0.51);
         #endif
-    #endif
-
-    #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE || defined WAVE_EVERYTHING
-        vec4 position = gbufferModelViewInverse * gl_ModelViewMatrix * gl_Vertex;
-        #ifdef MIRROR_DIMENSION
-            doMirrorDimension(position);
-        #endif
-        #ifdef WORLD_CURVATURE
-            position.y += doWorldCurvature(position.xz);
-        #endif
-        #ifdef WAVE_EVERYTHING
-            DoWaveEverything(position.xyz);
-        #endif
-        gl_Position = gl_ProjectionMatrix * gbufferModelView * position;
     #endif
 }
 

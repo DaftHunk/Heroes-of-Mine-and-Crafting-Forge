@@ -15,4 +15,6 @@
 #ifdef EP_END_FLASH
 #endif
 
+#define NIGHT_DESATURATION_REMOVE_NEAR_LIGHTS
+
 #endif

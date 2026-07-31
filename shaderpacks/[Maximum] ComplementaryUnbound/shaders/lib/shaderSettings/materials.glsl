@@ -73,4 +73,7 @@
     #define EMISSIVE_BLOOD_MOON_FLOWERS
 #endif
 
+#ifdef GLOWING_ORE_MODDED
+#endif
+
 #endif
