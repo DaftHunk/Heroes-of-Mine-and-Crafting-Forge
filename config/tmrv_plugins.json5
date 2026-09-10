@@ -1,6 +1,6 @@
 {
-	"allowDefaultAsync": null,
-	"defaultDisableDuplicatePlugins": false,
+	"allowDefaultAsync": true,
+	"defaultDisableDuplicatePlugins": true,
 	"typeOverrides": {
 	
 	},
