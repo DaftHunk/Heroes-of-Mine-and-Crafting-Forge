@@ -88,3 +88,5 @@ immersive_paintings/
 exposures/
 
 .mixin.out/
+
+config/emi-accelerator/stack-cache.emic
