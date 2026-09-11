@@ -20,7 +20,10 @@
 #These entries define the chance values of which a dragon egg can appear in its respective loot table.
 #Due to the static nature of configs in general, DML cannot modify the chances of custom breed eggs
 #outside the built-in defaults, so those should be configured to use minecraft's built in random chance conditions.
-#(It is however, possible to point custom egg chances to the built-in values via the loot condition, therefore using a config chance)
+#It is however, possible to point custom egg chances to the built-in values via the loot condition, therefore using a config chance
+#In which dragon mounts legacy tweaked uses. This is also possible if you made a custom breed via datapack.
+#If you want to modify spawnrates of dragons this fork added, this link will serve as your reference to what structures they can spawn in.
+#See https://github.com/Xvareon/Dragon-Mounts-Legacy-Tweaked/blob/mc/1.20-updates/src/generated/resources/data/forge/loot_modifiers/global_loot_modifiers.json
 [egg_loot_chances]
 	#The chance that a aether egg appears in chests/simple_dungeon.
 	#0 = Never Appears, 1 = Guaranteed
@@ -92,7 +95,7 @@
 	#The base damage dealt by all dragon breaths. Default is 6.0 (3 hearts).
 	#Range: 0.0 ~ 1.7976931348623157E308
 	global_breath_damage = 6.0
-	#The max distance a dragon breath projectile can travel. Default is 20.0 blocks.
+	#The max distance a dragon breath projectile can travel. Default is 40.0 blocks.
 	#Range: 1.0 ~ 1.7976931348623157E308
 	global_breath_range = 20.0
 	#The radius of the area a dragon will patrol when in 'Wander' mode.
