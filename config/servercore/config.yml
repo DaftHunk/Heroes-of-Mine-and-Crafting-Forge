@@ -42,7 +42,7 @@ dynamic:
       increment: 4
       interval: 10
       
-   - setting: 'MOBCAP_PERCENTAGE'
+    - setting: 'MOBCAP_PERCENTAGE'
       max: 100
       min: 50
       increment: 10

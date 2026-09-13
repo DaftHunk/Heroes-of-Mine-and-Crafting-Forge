@@ -2,7 +2,7 @@
   "version": 5,
   "enabled": true,
   "avoid_overlapping": false,
-  "moved_by_effects": true,
+  "moved_by_effects": false,
   "require_item": true,
   "require_item_in_hand": false,
   "search_containers": true,
