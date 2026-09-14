@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwlights:minecraft_block_tiki_torches",
+  "tag": "mcwlights:tiki_torches",
+  "registry": "minecraft:block",
+  "enabled": true
+}

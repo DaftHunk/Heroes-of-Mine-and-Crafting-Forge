@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:treated_brass_gun_tier",
+  "tag": "scguns:treated_brass_gun_tier",
+  "registry": "minecraft:item",
+  "enabled": true
+}

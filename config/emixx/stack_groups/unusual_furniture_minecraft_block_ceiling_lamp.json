@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "unusual_furniture:minecraft_block_ceiling_lamp",
+  "tag": "unusual_furniture:ceiling_lamp",
+  "registry": "minecraft:block",
+  "enabled": true
+}

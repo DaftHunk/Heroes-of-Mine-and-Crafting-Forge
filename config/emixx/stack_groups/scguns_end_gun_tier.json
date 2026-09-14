@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:end_gun_tier",
+  "tag": "scguns:end_gun_tier",
+  "registry": "minecraft:item",
+  "enabled": true
+}

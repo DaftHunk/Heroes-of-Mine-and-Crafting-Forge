@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "unusual_furniture:minecraft_block_curtain",
+  "tag": "unusual_furniture:curtain",
+  "registry": "minecraft:block",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwbridges:minecraft_block_stone_piers",
+  "tag": "mcwbridges:stone_piers",
+  "registry": "minecraft:block",
+  "enabled": true
+}

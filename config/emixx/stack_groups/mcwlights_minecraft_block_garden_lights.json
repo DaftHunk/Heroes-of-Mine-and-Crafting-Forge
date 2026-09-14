@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwlights:minecraft_block_garden_lights",
+  "tag": "mcwlights:garden_lights",
+  "registry": "minecraft:block",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:ocean_gun_tier",
+  "tag": "scguns:ocean_gun_tier",
+  "registry": "minecraft:item",
+  "enabled": true
+}

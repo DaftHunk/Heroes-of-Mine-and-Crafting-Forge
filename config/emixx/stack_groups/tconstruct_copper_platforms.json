@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "tconstruct:copper_platforms",
+  "tag": "tconstruct:copper_platforms",
+  "registry": "minecraft:item",
+  "enabled": true
+}

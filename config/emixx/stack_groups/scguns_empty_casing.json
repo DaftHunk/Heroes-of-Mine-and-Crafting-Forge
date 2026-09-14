@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:empty_casing",
+  "tag": "scguns:empty_casing",
+  "registry": "minecraft:item",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwbridges:minecraft_block_stone_stairs",
+  "tag": "mcwbridges:stone_stairs",
+  "registry": "minecraft:block",
+  "enabled": true
+}

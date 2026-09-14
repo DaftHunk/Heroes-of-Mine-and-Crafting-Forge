@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwbridges:minecraft_block_log_stairs",
+  "tag": "mcwbridges:log_stairs",
+  "registry": "minecraft:block",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "labels:minecraft_block_lowers_labels",
+  "tag": "labels:lowers_labels",
+  "registry": "minecraft:block",
+  "enabled": true
+}

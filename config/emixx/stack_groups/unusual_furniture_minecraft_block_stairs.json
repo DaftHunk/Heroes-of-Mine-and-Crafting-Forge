@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "unusual_furniture:minecraft_block_stairs",
+  "tag": "unusual_furniture:stairs",
+  "registry": "minecraft:block",
+  "enabled": true
+}

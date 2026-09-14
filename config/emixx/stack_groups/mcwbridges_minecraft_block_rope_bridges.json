@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwbridges:minecraft_block_rope_bridges",
+  "tag": "mcwbridges:rope_bridges",
+  "registry": "minecraft:block",
+  "enabled": true
+}

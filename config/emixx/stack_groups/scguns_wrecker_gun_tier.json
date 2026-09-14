@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:wrecker_gun_tier",
+  "tag": "scguns:wrecker_gun_tier",
+  "registry": "minecraft:item",
+  "enabled": true
+}

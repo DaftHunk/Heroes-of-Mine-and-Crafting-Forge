@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "hexerei:infused_fabric_carpet",
+  "tag": "hexerei:infused_fabric_carpet",
+  "registry": "minecraft:item",
+  "enabled": true
+}

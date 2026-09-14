@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwlights:minecraft_block_ceiling_lights",
+  "tag": "mcwlights:ceiling_lights",
+  "registry": "minecraft:block",
+  "enabled": true
+}

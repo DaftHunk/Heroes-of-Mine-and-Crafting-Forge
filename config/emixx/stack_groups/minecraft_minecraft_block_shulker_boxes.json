@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "minecraft:minecraft_block_shulker_boxes",
+  "tag": "minecraft:shulker_boxes",
+  "registry": "minecraft:block",
+  "enabled": true
+}

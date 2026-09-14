@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "nightlights:fairy_lights",
+  "tag": "nightlights:fairy_lights",
+  "registry": "minecraft:item",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "utilitarian:minecraft_block_trapped_soliciting_carpets",
+  "tag": "utilitarian:trapped_soliciting_carpets",
+  "registry": "minecraft:block",
+  "enabled": true
+}

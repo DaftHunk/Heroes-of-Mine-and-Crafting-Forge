@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:rocket_ammo",
+  "tag": "scguns:rocket_ammo",
+  "registry": "minecraft:item",
+  "enabled": true
+}

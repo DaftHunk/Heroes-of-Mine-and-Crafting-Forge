@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwbridges:minecraft_block_wooden_piers",
+  "tag": "mcwbridges:wooden_piers",
+  "registry": "minecraft:block",
+  "enabled": true
+}

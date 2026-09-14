@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "unusual_furniture:minecraft_block_coffee_table",
+  "tag": "unusual_furniture:coffee_table",
+  "registry": "minecraft:block",
+  "enabled": true
+}

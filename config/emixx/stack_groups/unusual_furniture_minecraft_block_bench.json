@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "unusual_furniture:minecraft_block_bench",
+  "tag": "unusual_furniture:bench",
+  "registry": "minecraft:block",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:shotgun_ammo",
+  "tag": "scguns:shotgun_ammo",
+  "registry": "minecraft:item",
+  "enabled": true
+}

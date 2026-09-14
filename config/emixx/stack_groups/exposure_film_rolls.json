@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "exposure:film_rolls",
+  "tag": "exposure:film_rolls",
+  "registry": "minecraft:item",
+  "enabled": true
+}

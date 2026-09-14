@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "scguns:scorched_gun_tier",
+  "tag": "scguns:scorched_gun_tier",
+  "registry": "minecraft:item",
+  "enabled": true
+}

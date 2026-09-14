@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwpaths:minecraft_block_stone_engraved_blocks",
+  "tag": "mcwpaths:stone_engraved_blocks",
+  "registry": "minecraft:block",
+  "enabled": true
+}

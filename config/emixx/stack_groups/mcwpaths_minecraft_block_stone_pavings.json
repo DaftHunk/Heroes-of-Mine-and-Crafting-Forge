@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwpaths:minecraft_block_stone_pavings",
+  "tag": "mcwpaths:stone_pavings",
+  "registry": "minecraft:block",
+  "enabled": true
+}

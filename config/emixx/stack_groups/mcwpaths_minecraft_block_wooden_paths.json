@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwpaths:minecraft_block_wooden_paths",
+  "tag": "mcwpaths:wooden_paths",
+  "registry": "minecraft:block",
+  "enabled": true
+}

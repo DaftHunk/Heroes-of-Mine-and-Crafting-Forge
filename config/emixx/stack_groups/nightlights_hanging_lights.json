@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "nightlights:hanging_lights",
+  "tag": "nightlights:hanging_lights",
+  "registry": "minecraft:item",
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwlights:minecraft_block_candle_holders",
+  "tag": "mcwlights:candle_holders",
+  "registry": "minecraft:block",
+  "enabled": true
+}

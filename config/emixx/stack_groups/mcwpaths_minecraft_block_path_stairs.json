@@ -1,0 +1,7 @@
+{
+  "type": "remi:tag",
+  "id": "mcwpaths:minecraft_block_path_stairs",
+  "tag": "mcwpaths:path_stairs",
+  "registry": "minecraft:block",
+  "enabled": true
+}
