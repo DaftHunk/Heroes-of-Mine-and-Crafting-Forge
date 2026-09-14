@@ -9,6 +9,9 @@
 #include "/lib/shaderSettings/entities.glsl"
 #include "/lib/shaderSettings/emissionMult.glsl"
 //#define NIGHT_DESATURATION
+//#define REFLECTIVE_HORSES
+#ifdef REFLECTIVE_HORSES
+#endif
 
 #if defined MIRROR_DIMENSION || defined WORLD_CURVATURE
     #include "/lib/misc/distortWorld.glsl"
@@ -169,9 +172,9 @@ void main() {
     vec3 colorP = color.rgb;
     color *= glColor;
 
-    float smoothnessD = 0.0, enderDragonDead = 1.0, materialMask = OSIEBCA * 254.0; // No SSAO, No TAA, Reduce Reflection
+    float smoothnessD = 0.0, enderDragonDead = 1.0, materialMask = OSIEBCA * 254.0, materialAO = 1.0; // No SSAO, No TAA, Reduce Reflection
     vec2 lmCoordM = lmCoord;
-    vec3 normalM = normal, shadowMult = vec3(1.0);
+    vec3 normalM = normal, shadowMult = vec3(1.0), rawAlbedoM = vec3(1.0);
     #ifdef PHOTONICS_LIGHTING
         vec3 oldAlbedo = vec3(0.0);
     #endif
@@ -220,10 +223,6 @@ void main() {
         float smoothnessG = 0.0, highlightMult = 0.0, emission = 0.0, noiseFactor = 0.75;
         vec3 maRecolor = vec3(0.0);
 
-        if (entityId >= 50015 && entityId <= 50017) { // Player
-            #include "/lib/materials/specificMaterials/others/SpacEagle17.glsl"
-        }
-
         #ifdef IPBR
             #if defined IS_IRIS || defined IS_ANGELICA && ANGELICA_VERSION >= 20000008
                 if (currentRenderedItemId == 0) {
@@ -246,11 +245,11 @@ void main() {
             #endif
 
             #if IPBR_EMISSIVE_MODE != 1
-                emission = GetCustomEmissionForIPBR(color, emission);
+                emission = GetCustomEmissionForIPBR(color, glColor, emission);
             #endif
         #else
             #ifdef CUSTOM_PBR
-                GetCustomMaterials(color, normalM, lmCoordM, NdotU, shadowMult, smoothnessG, smoothnessD, highlightMult, emission, materialMask, viewPos, lViewPos);
+                GetCustomMaterials(color, normalM, lmCoordM, NdotU, shadowMult, smoothnessG, smoothnessD, highlightMult, emission, materialMask, materialAO, viewPos, lViewPos);
             #endif
 
             if (entityId == 50004) { // Lightning Bolt
@@ -279,6 +278,10 @@ void main() {
             #endif
         #endif
 
+        if (entityId >= 50015 && entityId <= 50017) { // Player
+            #include "/lib/materials/specificMaterials/others/SpacEagle17.glsl"
+        }
+
         color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 
         normalM = gl_FrontFacing ? normalM : -normalM; // Inverted Normal Workaround
@@ -298,10 +301,25 @@ void main() {
             oldAlbedo = color.rgb;
         #endif
 
+        rawAlbedoM = color.rgb;
+
+        // Tints the direct-light specular highlight for named labPBR metals with their F0 color
+        #ifdef BETTER_LABPBR_REFLECTIONS_INTERNAL
+            int materialMaskIntM = int(materialMask * 255.1);
+            vec3 metalHighlightTintM = (RP_MODE == 3 && materialMaskIntM >= 215 && materialMaskIntM <= 222) ? GetLabPBRMetalF0(materialMaskIntM, rawAlbedoM) : vec3(1.0);
+        #else
+            vec3 metalHighlightTintM = vec3(1.0);
+        #endif
+
         DoLighting(color, shadowMult, playerPos, viewPos, lViewPos, geoNormal, normalM, 0.5,
                    worldGeoNormal, lmCoordM, noSmoothLighting, noDirectionalShading, noVanillaAO,
                    true, 0, smoothnessG, highlightMult, emission, purkinjeOverwrite, isLightSource,
-                   enderDragonDead);
+                   enderDragonDead, metalHighlightTintM);
+
+        #ifdef BETTER_LABPBR_AO_INTERNAL
+            float lightExposureM = max(GetLuminance(shadowMult), lmCoordM.x);
+            color.rgb *= mix(materialAO, 1.0, lightExposureM);
+        #endif
 
         #ifdef IPBR
             color.rgb += maRecolor;
@@ -311,6 +329,7 @@ void main() {
     }
 
     vec3 translucentMult = mix(vec3(0.666), color.rgb * (1.0 - pow2(pow2(color.a))), color.a);
+    translucentMult.rgb = mix(translucentMult.rgb, vec3(1.0), min1(lViewPos / 50.0));
     float skyLightFactor = GetSkyLightFactor(lmCoordM, shadowMult);
 
     #ifdef ENTITIES_ARE_LIGHT
@@ -328,6 +347,11 @@ void main() {
         float dither = Bayer64(gl_FragCoord.xy);
         #ifdef TAA
             dither = fract(dither + goldenRatio * mod(float(frameCounter), 3600.0));
+        #endif
+
+        #ifdef ATM_COLOR_MULTS
+            atmColorMult = GetAtmColorMult();
+            sqrtAtmColorMult = sqrt(atmColorMult);
         #endif
 
         float skyFade = 0.0;
@@ -353,14 +377,23 @@ void main() {
         #endif
     #endif
 
+    float reflectNormalAlpha = 1.0; // Translucent ones need to be 1.0 otherwise we get reflective horses
+    #ifndef GBUFFERS_ENTITIES_TRANSLUCENT
+        reflectNormalAlpha = clamp(maxOf(rawAlbedoM), 0.02, 0.99) * 2.0 - 1.0;
+    #elif defined REFLECTIVE_HORSES
+        if (entityId == 50013) { // Your horse is now happy.
+            reflectNormalAlpha = clamp(maxOf(rawAlbedoM), 0.02, 0.99) * 2.0 - 1.0;
+        }
+    #endif
+
     /* DRAWBUFFERS:036 */
     gl_FragData[0] = color;
     gl_FragData[1] = vec4(1.0 - translucentMult, 1.0);
     gl_FragData[2] = vec4(smoothnessD, materialMask, skyLightFactor, lmCoord.x + clamp01(purkinjeOverwrite) + clamp01(emissionOld));
 
-    #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1
+    #if BLOCK_REFLECT_QUALITY >= 2 && RP_MODE >= 1 || WORLD_SPACE_REFLECTIONS > 0
         /* DRAWBUFFERS:0364 */
-        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
+        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, reflectNormalAlpha);
 
         #ifdef SS_BLOCKLIGHT
             /* DRAWBUFFERS:03649 */
@@ -378,7 +411,7 @@ void main() {
         gl_FragData[3] = vec4(lightAlbedo, entitySSBLMask);
     #elif defined PHOTONICS_LIGHTING
         /* RENDERTARGETS:0,3,6,4,10,11,20 */
-        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, 1.0);
+        gl_FragData[3] = vec4(mat3(gbufferModelViewInverse) * normalM, reflectNormalAlpha);
         gl_FragData[4] = phAlbedoOut;
         gl_FragData[5] = vec4(playerPosDelta, 1.0);
         gl_FragData[6] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);

@@ -71,8 +71,8 @@ const int doSimpleTonemap = 15;
 void main() {
     float materialMask = 0.0;
     int hasCustomSky = 0;
-    vec4 skyColor = vec4(0);
-    vec4 averageSkyColor = vec4(0);
+    vec4 skyColor = vec4(0.0);
+    vec4 averageSkyColor = vec4(0.0);
     #ifdef OVERWORLD
         vec2 tSize = textureSize(tex, 0);
         vec4 color = texture2D(tex, texCoord);
@@ -95,12 +95,22 @@ void main() {
         float VdotU = dot(nViewPos, upVec);
 
         float sunMaskRadius = 0.95;
+        #if SUN_MOON_STYLE == 2
+            sunMaskRadius = 0.92;
+        #endif
         #ifdef IS_IRIS
             bool sunSideCheck = VdotS > sunMaskRadius;
             bool isSun = renderStage == MC_RENDER_STAGE_SUN;
             bool isMoon = renderStage == MC_RENDER_STAGE_MOON;
+
+            #if defined EUPHORIA_PATCHES_MOD_INSTALLED && defined CURRENT_EUPHORIA_PATCHES_DIMENSION_AETHER_THE_AETHER
+                isSun = renderStage == MC_RENDER_STAGE_CUSTOM_SKY;
+                isMoon = renderStage == MC_RENDER_STAGE_CUSTOM_SKY;
+            #endif
+
             bool aroundSunMoon = isSun || isMoon;
-            #if IRIS_VERSION < 10902
+
+            #if IRIS_VERSION < 10814
                 if (sunSideCheck) isSun = true; // Workaround for sun rendering as MC_RENDER_STAGE_MOON in some Iris versions
                 isMoon = VdotS < -sunMaskRadius; // Workaround for moon rendering as MC_RENDER_STAGE_SUN in some Iris versions
                 aroundSunMoon = abs(VdotS) > sunMaskRadius;
@@ -119,16 +129,16 @@ void main() {
         #endif
 
         if (isSun || isMoon) {
-            #if SUN_MOON_STYLE >= 2 && IRIS_VERSION >= 10902
+            #if SUN_MOON_STYLE >= 2 && IRIS_VERSION >= 10814
                 discard;
             #endif
 
-            #if defined SAVE_SKYBOX_DATA && defined EUPHORIA_PATCHES_IS_SKYBOX_MOD_INSTALLED && IRIS_VERSION < 10902 && SUN_MOON_STYLE >= 2
+            #if defined SAVE_SKYBOX_DATA && defined EUPHORIA_PATCHES_IS_SKYBOX_MOD_INSTALLED && IRIS_VERSION < 10814 && SUN_MOON_STYLE >= 2
                 if (hasCustomSky < 1) discard;
             #endif
 
             #ifndef EUPHORIA_PATCHES_IS_SKYBOX_MOD_INSTALLED
-                #if SUN_MOON_STYLE >= 2 && IRIS_VERSION < 10902
+                #if SUN_MOON_STYLE >= 2 && IRIS_VERSION < 10814
                     discard;
                 #endif
 
@@ -166,7 +176,7 @@ void main() {
             #endif
         } else { // Custom Sky
             #if MC_VERSION >= 11300 || defined IS_ANGELICA
-                #ifdef CUSTOM_SKY_SUPPORT
+                #if CUSTOM_SKY_SUPPORT_SLIDER > 0
                     color.rgb *= mix(vec3(1.0), color.rgb * smoothstep1(sqrt1(max0(VdotU))), float(aroundSunMoon)); // we only want it near the sun and moon
                 #else
                     color.rgb *= color.rgb * smoothstep1(sqrt1(max0(VdotU)));
@@ -188,14 +198,19 @@ void main() {
             color.a *= 1.0 - rainFactorM;
         #endif
 
-        #ifdef CUSTOM_SKY_SUPPORT
+        #if CUSTOM_SKY_SUPPORT_SLIDER > 0
             // Complementary by default shows the sun/moon while raining. But in vanilla they have an alpha of 0 while raining.
             float vanillaSunMoonMask = float(isSun || isMoon);
             #ifdef EUPHORIA_PATCHES_IS_SKYBOX_MOD_INSTALLED
                 vanillaSunMoonMask = 0; // No mask with skybox mod as it breaks visuals
             #endif
             color.rgb *= max0(clamp01(glColor.a) + vanillaSunMoonMask * rainStrength); // Support fop skybox altering mods
-            color.a *= max(mix(0.0, clamp01(glColor.a), step(0.02, glColor.a)), vanillaSunMoonMask); // Based on vanilla mask we only set alpha to 0 when glColor.a is 0 and not sun/moon
+
+            float customSkySupportSlider = CUSTOM_SKY_SUPPORT_SLIDER * 0.1;
+            #ifdef EUPHORIA_PATCHES_IS_STELLAR_VIEW_INSTALLED
+                customSkySupportSlider = 0.0; // Breaks stellar view visuals, so we disable it when stellar view is installed
+            #endif
+            color.a *= max(mix(0.0, mix(1.0, clamp01(glColor.a), customSkySupportSlider), step(0.02, glColor.a)), vanillaSunMoonMask); // Based on vanilla mask we only set alpha to 0 when glColor.a is 0 and not sun/moon
         #endif
     #endif
 

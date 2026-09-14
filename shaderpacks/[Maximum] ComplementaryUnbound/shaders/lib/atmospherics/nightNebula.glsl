@@ -121,7 +121,7 @@ vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {
     if (nebulaFactor < 0.001) return vec3(0.0);
 
     vec2 UV = GetStarCoord(viewPos, 0.75);
-    float TIME = syncedTime * 0.003 + 15.0;
+    float TIME = syncedTimeDynamic * 0.003 + 15.0;
     float timescaled = TIME * timescale;
 
     float sinTime = sinM(0.07 * timescaled);

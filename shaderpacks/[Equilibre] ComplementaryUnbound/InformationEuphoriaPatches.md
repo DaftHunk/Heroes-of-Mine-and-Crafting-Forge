@@ -23,7 +23,7 @@ Euphoria Patches Updates Immediately after a new Complementary Version is out. T
 
 # Contribute
 
-Add **[Modded Blocks](https://github.com/EuphoriaPatches/propertiesFiles)** or **[Translation Files](https://github.com/EuphoriaPatches/langFiles)** to Euphoria Patches!
+Add **[Modded Blocks](https://www.euphoriapatches.com/properties/)** or **[Translation Files](https://www.euphoriapatches.com/lang/)** to Euphoria Patches!
 
 # How to support Euphoria Patches
 

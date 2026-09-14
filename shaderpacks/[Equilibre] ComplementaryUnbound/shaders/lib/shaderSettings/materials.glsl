@@ -61,6 +61,8 @@
 
 //#define PINKER_CHERRY_LEAVES
 
+//#define DISCARD_FOLIAGE_SHADOW
+
 #define ALTERNATIVE_AMETHYST_STYLE 0 //[0 1]
 
 //#define SSS_SNOW_ICE
