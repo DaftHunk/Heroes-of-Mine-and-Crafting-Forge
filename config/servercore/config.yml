@@ -36,6 +36,12 @@ dynamic:
   # ► increment = The amount the setting will be increased or decreased by.
   # ► interval = The amount of seconds between each check to increase or decrease.
   dynamic-settings:
+    - setting: 'CHUNK_TICK_DISTANCE'
+      max: 8
+      min: 8
+      increment: 1
+      interval: 60
+
     - setting: 'VIEW_DISTANCE'
       max: 8
       min: 8
