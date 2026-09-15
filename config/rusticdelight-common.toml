@@ -26,7 +26,7 @@ enable_coffee = true
 #Enable the Bell Pepper crop family (all colors, slices, roasted, rolls, stuffed, soup, pasta, giant blocks, crates, seeds, related trades).
 enable_bell_peppers = false
 #Enable potato slices. Disabling removes potato slices (raw and baked) from the creative tab and disables their cutting-board recipes.
-enable_potato_slices = false
+enable_potato_slices = true
 #Enable fried foods. Disabling removes Cooking Oil and everything fried with it (fried dough, dumplings, spring rolls, beignet, fried calamari/chicken/mushrooms) from the creative tab and disables their recipes.
 enable_fried_foods = true
 #Enable cherry blossom foods (cherry blossom roll, cookie, pancakes, cheesecake, coffee). Disabling also removes Rice Roll Royale, which needs a Cherry Blossom Roll.
@@ -37,5 +37,5 @@ enable_pancakes = true
 enable_syrup_foods = true
 #Chance of generating a patch of bell pepper blocks in the jungle. Smaller value = more frequent (vanilla melons use 6).
 #Range: > 0
-bell_pepper_block_patch_chance = 16
+bell_pepper_block_patch_chance = 0
 
