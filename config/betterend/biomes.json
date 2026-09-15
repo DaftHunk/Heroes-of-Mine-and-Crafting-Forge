@@ -74,6 +74,12 @@
     },
     "lush_smaragdant_cave": {
       "enabled [default: true]": true
+    },
+    "flower_islets": {
+      "enabled [default: true]": true
+    },
+    "waterfall_ponds": {
+      "enabled [default: true]": true
     }
   }
 }

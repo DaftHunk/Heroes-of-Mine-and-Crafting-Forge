@@ -50,7 +50,12 @@
     "spawn_egg_naga [default: true]": true,
     "spawn_egg_flying_pig [default: true]": true,
     "spawn_egg_jungle_skeleton [default: true]": true,
-    "spawn_egg_skull [default: true]": true
+    "spawn_egg_skull [default: true]": true,
+    "music_disc_gloom_woods [default: true]": true,
+    "music_disc_gloom_wisps [default: true]": true,
+    "music_disc_gloomsculk [default: true]": true,
+    "gloomwood_boat [default: true]": true,
+    "gloomwood_chest_boat [default: true]": true
   },
   "tools": {
     "cincinnasite_leggings [default: true]": true,
@@ -86,5 +91,10 @@
     "flaming_ruby_helmet [default: true]": true,
     "flaming_ruby_chestplate [default: true]": true,
     "flaming_ruby_boots [default: true]": true
+  },
+  "musicDiscs": {
+    "music_disc_gloom_woods [default: true]": true,
+    "music_disc_gloom_wisps [default: true]": true,
+    "music_disc_gloomsculk [default: true]": true
   }
 }

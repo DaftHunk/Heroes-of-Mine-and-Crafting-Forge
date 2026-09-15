@@ -121,5 +121,9 @@
   "violecite_layer [default: true]": true,
   "flavolite_layer [default: true]": true,
   "crashed_ship [default: true]": true,
-  "silk_moth_nest [default: true]": true
+  "silk_moth_nest [default: true]": true,
+  "dragon_helix_tree [default: true]": true,
+  "amaranita_patch [default: true]": true,
+  "small_end_island [default: true]": true,
+  "pond_with_waterfall [default: true]": true
 }
