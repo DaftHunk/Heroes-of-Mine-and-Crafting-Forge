@@ -90,3 +90,5 @@ exposures/
 .mixin.out/
 
 config/emi-accelerator/stack-cache.emic
+
+bivrik/
